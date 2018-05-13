@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{tikz-cd}
+
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\ggen}[1]{\langle#1\rangle}
+\newcommand{\rgen}[1]{\left(#1\right)}
+\renewcommand{\mod}{\text{ mod }}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\renewcommand{\O}{\operatorname{O}} % Bound otherwise
+\renewcommand{\o}{\operatorname{o}}
+\newcommand{\T}{\text{yes}}
+\newcommand{\F}{\text{no}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\tens}{\otimes}
+\newcommand{\idl}{\mathfrak}
+\newcommand{\cat}[1]{\rgen{\textbf{#1}}}
+\newcommand{\op}{{op}}
+\newcommand{\OP}{\text{OP}}
+
+\DeclareMathOperator{\Dic}{Dic}
+% \DeclareMathOperator{\deg}{deg}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\End}{End}
+% \DeclareMathOperator{\gcd}{gcd}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\conj}{conj}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\obj}{obj}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\fchar}{char}
+\DeclareMathOperator{\id}{id}
+
+\newcommand{\reg}{{reg}}
+\newcommand{\rar}[1]{\xrightarrow{#1}}
+\newcommand{\pdot}{\bullet}
+\newcommand{\del}{\partial}
+% \newcommand{\modz}{(Mod-\Z)}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\cocolim}{\varprojlim}
+
+\begin{document}
+% \maketitle
+
+\pagestyle{fancy}	
+\fancyhf{} % Reset headers and footers
+\lhead{Peter Huston\\
+\today}
+\setlength{\headheight}{60pt} 
+
+\begin{center}
+	\textbf{The Finite Dimensional Basic Construction}
+\end{center}
+
+Suppose $A\subseteq B$ is a unital inclusion of finite dimensional Von-Neumann algebras, denoted by $\iota:A\to B$. We know that $A$ is of the form $\oplus_{i=1}^nA_i$, where $A_i\cong M_{\alpha_i}(\C)$, and $B$ is of the form $\oplus_{j=1}^mB_j$, where $B_j\cong M_{\beta_j}(\C)$. Let $p_i$ be the central projection in $A$ with $p_iA=A_i$, and let $q_j$ be the central projection in $B$ with $q_jB=B_j$. From our study of unital inclusions of multimatrix algebras, we know that $p_iB_jp_i\cong A_i\otimes M_{\Lambda_{ij}}(\C)$. In particular, we can find a system $(r_{i,j}^{a,b})_{a,b=1}^{\Lambda_i,j}$ of (rank $\alpha_i$) matrix units in the compression of $B$ by $p_iq_j$ so that for each $a$ from $1$ to $\Lambda_{ij}$, we have $r_{i,j}^{a,a}B_jr_{i,j}^{a,a}\cong A_i$, and if $\mu:A_i\otimes\C[r_{i,j}^{a,b}]_{a,b}\to B$ is induced by the multiplication of $B$, then the triangle 
+\[\begin{tikzcd}
+	A_i\ar[r,"\id_{A_i}\otimes1_{\C}"]\ar[dr,"\iota"] & A_i\otimes\C[r_{i,j}^{a,b}]_{a,b}\ar[d,"\mu"]\\
+	& B
+\end{tikzcd}\]
+commutes. Since this situation arises so frequently in what follows, if $X$ is an algebra and $Y$ and $Z$ are subspaces (usually algebras) of $X$, we permit $Y\tens Z$ to denote the subalgebra $YZ$ of $X$ provided that the multiplication $\mu:Y\otimes Z\to X$ is an injection. This may be considered a tensor product internal to $X$, in the same sense as we often discuss direct sums internal to some algebra. 
+
+\end{document}
