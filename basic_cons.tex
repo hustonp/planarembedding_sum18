@@ -85,11 +85,21 @@
 	\textbf{The Finite Dimensional Basic Construction}
 \end{center}
 
+Since this situation arises so frequently in what follows, if $X$ is an algebra and $Y$ and $Z$ are subspaces (usually algebras) of $X$, we permit $Y\tens Z$ to denote the subalgebra $YZ$ of $X$, provided that the multiplication $\mu:Y\otimes Z\to X$ is an injection. This may be considered a tensor product internal to $X$, in the same sense as we often discuss direct sums internal to some algebra. 
+This allows for a concise statement of a basic result about relative commutants. We know that $(X\tens Y)\bigcap(X\tens 1)'=1\tens Y$, and vice-versa. Consequently, if $Z=X\tens Y$ as an internal tensor product, then $X'\bigcap Z=Y$, and $Y'\bigcap Z=X$. % HERE think more about this?
+By lattice duality, % HERE say more?
+we also know that if $(Y_k)_{k=1}^n$ are subspaces of $Z$, then $(\sum_kY_k)'\bigcap Z=\bigcap_k(Y_k'\bigcap Z)$. These two facts about relative commutants, together with appropriate decompositions, will suffice to let us compute the Bratteli diagram of the basic construction. 
+
 Suppose $A\subseteq B$ is a unital inclusion of finite dimensional Von-Neumann algebras, denoted by $\iota:A\to B$. We know that $A$ is of the form $\oplus_{i=1}^nA_i$, where $A_i\cong M_{\alpha_i}(\C)$, and $B$ is of the form $\oplus_{j=1}^mB_j$, where $B_j\cong M_{\beta_j}(\C)$. Let $p_i$ be the central projection in $A$ with $p_iA=A_i$, and let $q_j$ be the central projection in $B$ with $q_jB=B_j$. From our study of unital inclusions of multimatrix algebras, we know that $p_iB_jp_i\cong A_i\otimes M_{\Lambda_{ij}}(\C)$. In particular, we can find a system $(r_{i,j}^{a,b})_{a,b=1}^{\Lambda_i,j}$ of (rank $\alpha_i$) matrix units in the compression of $B$ by $p_iq_j$ so that for each $a$ from $1$ to $\Lambda_{ij}$, we have $r_{i,j}^{a,a}B_jr_{i,j}^{a,a}\cong A_i$, and if $\mu:A_i\otimes\C[r_{i,j}^{a,b}]_{a,b}\to B$ is induced by the multiplication of $B$, then the triangle 
 \[\begin{tikzcd}
 	A_i\ar[r,"\id_{A_i}\otimes1_{\C}"]\ar[dr,"\iota"] & A_i\otimes\C[r_{i,j}^{a,b}]_{a,b}\ar[d,"\mu"]\\
 	& B
 \end{tikzcd}\]
-commutes. Since this situation arises so frequently in what follows, if $X$ is an algebra and $Y$ and $Z$ are subspaces (usually algebras) of $X$, we permit $Y\tens Z$ to denote the subalgebra $YZ$ of $X$ provided that the multiplication $\mu:Y\otimes Z\to X$ is an injection. This may be considered a tensor product internal to $X$, in the same sense as we often discuss direct sums internal to some algebra. 
+commutes; in our terms, $A_i\tens\C[r_{i,j}^{a,b}]_{a,b}\subseteq B$. 
+
+In the simplest instance, $n=m=1$, and so $A\subseteq B$ is just $M_\alpha\subseteq M_\beta$. Then, we actually have $B\cong M_\alpha\tens M_{\beta/\alpha}$, or more precisely, $B=\iota(M_\alpha)\tens\C[r_{1,1}^{a,b}]_{a,b=1}^{\beta/\alpha}$. By the above lemma, we have $A'\bigcap B\cong M_{\beta/\alpha}$ in this case. 
+
+Now, we consider the general case. 
+
 
 \end{document}
