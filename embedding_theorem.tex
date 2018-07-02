@@ -153,6 +153,11 @@
 \newcommand{\bbOne}{\mathbbm{1}}
 \renewcommand{\alg}[1]{{\bm{\langle} #1\bm{\rangle}}}
 
+
+% some math commands specific to this document %%%%%%%%%%%%
+\newcommand{\xalt}{x^{\text{alt}\otimes n}}
+\newcommand{\xbaralt}{\overline{x}^{\text{alt}\otimes n}}
+
 \newcommand{\dave}[1]{\marginpar{\tiny \textcolor{orange}{DP: #1}}}
 \newcommand{\corey}[1]{\marginpar{\tiny \textcolor{green}{CJ: #1}}}
 \newcommand{\Af}{\mathcal{A}\Lambda_{F}}
@@ -299,7 +304,49 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \maketitle
+\begin{abstract}
+Please read our paper it's great, like really really great seriously please.
+\end{abstract}
+\section{Introduction}
+\section{Preliminaries}
 \section{Construction of the Planar Algebra Associated to a Module Category}
-\subsection{Construction of the Markov Sequence}
+\subsection{Construction of a Markov Sequence}
+Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ a module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
+$$
+\cM 
+=
+\begin{pmatrix}
+\cC_{31} & \cC_{32} 
+\end{pmatrix}
+\qquad\qquad
+\cC
+=
+\begin{pmatrix}
+\cC_{00} & \cC_{01} 
+\\
+\cC_{10} & \cC_{11}
+\end{pmatrix}
+\subset
+\begin{pmatrix}
+\cC_{00} & \cC_{01} & \cC_{02}
+\\
+\cC_{10} & \cC_{11} & \cC_{12}
+\\
+\cC_{20} & \cC_{21} & \cC_{22}
+\end{pmatrix}
+=
+\widetilde{\cC}
+$$
+
+Let $x\in \cC_{01}$ be the strand \textcolor{red}{insert picture here}, by the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
+$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd.
+
+We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects of the form $m\otimes \xalt$ as: \textcolor{red}{insert picture here}
+
+where the red strand represents $m$. We have a faithful tracial state given by: \textcolor{red}{insert picture here}
+
+this makes $A_n$ a finite dimensional von Neumann algebra.
+\section{The Embedding Theorem}
 
 \end{document}
