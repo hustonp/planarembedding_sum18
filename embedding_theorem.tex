@@ -157,6 +157,7 @@
 % some math commands specific to this document %%%%%%%%%%%%
 \newcommand{\xalt}{x^{\text{alt}\otimes n}}
 \newcommand{\xbaralt}{\overline{x}^{\text{alt}\otimes n}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\dave}[1]{\marginpar{\tiny \textcolor{orange}{DP: #1}}}
 \newcommand{\corey}[1]{\marginpar{\tiny \textcolor{green}{CJ: #1}}}
@@ -340,13 +341,135 @@ $$
 
 Let $x\in \cC_{01}$ be the strand \textcolor{red}{insert picture here}, by the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd.
+$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We can similarly define $\xbaralt$.
 
 We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects of the form $m\otimes \xalt$ as: \textcolor{red}{insert picture here}
 
-where the red strand represents $m$. We have a faithful tracial state given by: \textcolor{red}{insert picture here}
+where the red strand represents $m$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
+\begin{equation}\label{eq:TraceAn}
+\tr_n(f) 
+\,:=\, 
+\frac{1}{\dim_\cC(m)\dim_\cC(x)^n}\cdot\tr_\cC(f)
+\,=\,
+\frac{1}{\dim_\cC(m)}\cdot
+\frac{1}{d^n}
+\cdot
+\left(
+\begin{tikzpicture}[baseline=-.1cm, rotate=90]
+	\draw[thick, red] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
+	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%	\node at (-.7,-.35) {\scriptsize{$n$}};
+	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
+	\node at (0,.75) {\scriptsize{$\overline{m}$}};
+%	\node at (.7,.35) {\scriptsize{$m$}};
+\end{tikzpicture}
+\right)
+\end{equation}
+Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. This makes each $A_n$ a finite dimensional von Neumann algebra.
 
-this makes $A_n$ a finite dimensional von Neumann algebra.
+\begin{rem}
+The aforementioned trace can be identified with a complex scalar exactly when $m$ is simple. Indeed the fist two cups define a morphism in $Hom_{\cC}(1, \overline{m}\otimes m)\otimes Hom_{\cC}( 1,  n \otimes \overline{n})$ but $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(m,m)\cong \C$. Thus $\Hom_{\cC}(1,\overline{m}\otimes m)$ is one dimensional so there is some $i$ such that $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(1_i,\overline{m}\otimes m)$. So the first two cups define a map whose source is isomorphic to $1_i$, and similarly the target is isomorphic to $1_i$, so it defines a map in $\End_{\cC}(1_i)$.
+\end{rem}
+
+We also have a natural inclusion $A_n \rightarrow A_{n+1}$ such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
+\begin{equation}\label{eq:Inclusion}
+\begin{tikzpicture}[baseline=-.1cm, rotate=90]
+	\draw[thick, red] (-.7,.15) -- (.7,.15);
+	\draw (-.7,-.15) -- (.7,-.15);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (-.9,-.15) {\scriptsize{$n$}};
+	\node at (.9,-.15) {\scriptsize{$n$}};
+\end{tikzpicture}
+\mapsto
+\begin{tikzpicture}[baseline=-.2cm, rotate=90]
+	\draw[thick, red] (-.7,.15) -- (.7,.15);
+	\draw (-.7,-.15) -- (.7,-.15);
+	\draw (-.7,-.45) -- (.7,-.45);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (-.9,-.15) {\scriptsize{$n$}};
+	\node at (.9,-.15) {\scriptsize{$n$}};
+	\node at (0,-.6) {\scriptsize{$1$}};
+\end{tikzpicture}
+\end{equation}
+
+The 1 indicates 1 string to the right (with appropriate shading). We also have a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$ which acts a left inverse to the previously defined inclusion:
+
+\begin{equation}\label{eq:ConditionalExpectationAn}
+\begin{tikzpicture}[baseline=-.1cm]
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.3,.5) {\scriptsize{$n$}};
+	\node at (.3,-.5) {\scriptsize{$n$}};
+\end{tikzpicture}
+\mapsto\,
+\frac{1}{d}
+\cdot
+\left(\,\,
+\begin{tikzpicture}[baseline=-.1cm]
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.4,.6) {\scriptsize{$n-1$}};
+	\node at (.4,-.6) {\scriptsize{$n-1$}};
+	\node at (.6,0) {\scriptsize{$1$}};
+\end{tikzpicture}
+\right)
+\end{equation}
+
+Where $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$, which is also the value of a closed loop appearing in the diagram. Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly we have that $tr_n=tr_{n-1} \circ E_n$.
+
+Finally we will define the jones projections for each inclusion $A_{n}\subset A_{n+1}$ is given by
+
+\begin{equation}\label{eq:JonesProjections}
+e_n=
+\frac1d\cdot
+\left(\,\,
+\begin{tikzpicture}[baseline=-.1cm]
+	\draw[thick, red] (-.3,-.7) -- (-.3,.7);
+	\draw (-.1,-.7) -- (-.1,.7);
+	\draw (.1,-.7) -- (.1,-.4) arc (180:0:.15cm) -- (.4,-.7);
+	\draw (.1,.7) -- (.1,.4) arc (-180:0:.15cm) -- (.4,.7);
+%	\node at (-.1,-1) {\scriptsize{$n-1$}};
+	\node at (.3,0) {\scriptsize{$n-1$}};
+	\node at (.6,.5) {\scriptsize{$1$}};
+	\node at (.6,-.5) {\scriptsize{$1$}};
+\end{tikzpicture}
+\right)
+\in
+A_{n+1}.
+\end{equation}
+
+Where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb-
+Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly 
+for any $x\in A_n$ we have that: $e_nxe_n=E_n(x)e_n$. Clearly $E_{n+1}(e_n)=d^{-2}id_{m \otimes \xalt}$. Finally the pull 
+down condition holds as for each $x\in A_{n+1}$ we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently $A_{n} e_n A_n$ is a 
+two sided ideal in $A_{n+1}$. Thus the tower algebras given by the $A_n$ is indeed a Markov sequence.
+ 
+\begin{prop}
+The Markov sequence of von Neumann Algebras $(A_n, tr_n)_{n\geq 0}$ is finite depth.
+\end{prop}
+
+\begin{proof}
+$m\otimes \xalt$ generates $\cM$. Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of nonisomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements. 
+
+Recall that $\Hom_{\cC}(s^i_k,s^i_l)\cong \delta_{kl}\bbC$, thus:
+
+$$\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
+If we have that 
+$$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
+where $i$ is 0 if $n$ is even and odd if $n$ is 1, and where:
+$$n_js^i_j:=\underbrace{s^i_j\oplus s^i_j\oplus \cdots \oplus s^i_j}_{n_j \,\, \text{summands}}$$
+
+Thus at each level of the Bratelli diagram corresponding to $A_n$ there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite.
+\end{proof}
+
+\begin{thm}
+The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is independent of the choice of $m$.
+\end{thm}
+
 \section{The Embedding Theorem}
 
 \end{document}
