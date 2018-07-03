@@ -1,0 +1,298 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumerate}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{bm}
+
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage[dvips]{graphicx}
+\fi
+\usepackage{tikz}
+ 	 \usetikzlibrary{arrows,backgrounds}
+\usepackage[all]{xy}
+
+\usepackage{multicol}
+
+\usepackage{tocvsec2}
+
+\usepackage{bbm}
+
+\input xy
+\xyoption{all}
+
+\usepackage[pdftex,plainpages=false,hypertexnames=false,pdfpagelabels]{hyperref}
+\newcommand{\arxiv}[1]{\href{http://arxiv.org/abs/#1}{\tt arXiv:\nolinkurl{#1}}}
+\newcommand{\arXiv}[1]{\href{http://arxiv.org/abs/#1}{\tt arXiv:\nolinkurl{#1}}}
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{{\tt DOI:#1}}}
+\newcommand{\euclid}[1]{\href{http://projecteuclid.org/getRecord?id=#1}{{\tt #1}}}
+\newcommand{\mathscinet}[1]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{\tt #1}}
+\newcommand{\googlebooks}[1]{(preview at \href{http://books.google.com/books?id=#1}{google books})}
+\newcommand{\Ws}{\text{W*}}
+
+\usepackage{xcolor}
+\definecolor{dark-red}{rgb}{0.7,0.25,0.25}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.55}
+\definecolor{medium-blue}{rgb}{0,0,.8}
+\definecolor{DarkGreen}{RGB}{0,150,0}
+\definecolor{rho}{named}{red}
+\hypersetup{
+   colorlinks, linkcolor={purple},
+   citecolor={medium-blue}, urlcolor={medium-blue}
+}
+
+%\addtolength{\textwidth}{.5in}
+\usepackage{longtable}
+\usepackage{fullpage}
+%\renewcommand{\arraystretch}{1.5}
+
+% Page size %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\topmargin{-.25in}
+\setlength\headheight{0in}
+\setlength\headsep{.2in}
+\setlength\textheight{9in}
+%\addtolength{\hoffset}{-0.25in}
+%\addtolength{\textwidth}{.5in}
+\setlength\parindent{0.25in}
+
+% Theorems %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[]
+\newtheorem*{thm*}{Theorem}
+\newtheorem{thmalpha}{Theorem}
+\renewcommand*{\thethmalpha}{\Alph{thmalpha}}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{coralpha}[thmalpha]{Corollary}
+\newtheorem*{cor*}{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{conjalpha}[thmalpha]{Conjecture}
+\newtheorem*{conj*}{Conjecture}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{facts}[thm]{Facts}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{quest}[thm]{Question}
+\newtheorem*{quest*}{Question}
+\newtheorem*{claim*}{Claim}
+\newtheorem{quests}[thm]{Questions}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{construction}[thm]{Construction}
+\newtheorem{alg}[thm]{Algorithm}
+\newtheorem{assumption}[thm]{Assumption}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{nb}[thm]{Note}
+\newtheorem{note}[thm]{Note}
+\newtheorem{exs}[thm]{Examples}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{sub-ex}[thm]{Sub-Example}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{rem*}{Remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{rems}[thm]{Remarks}
+\newtheorem{warn}[thm]{Warning}
+
+% Operators %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\coev}{coev}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\ONB}{ONB}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\rev}{rev}
+\DeclareMathOperator{\spann}{span}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Gr}{Gr}
+
+
+% Math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\D}{\displaystyle}
+\newcommand{\comment}[1]{}
+\newcommand{\hs}{\hspace{.07in}}
+\newcommand{\hsp}[1]{\hs\text{#1}\hs}
+\newcommand{\be}{\begin{enumerate}[label=(\arabic*)]}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\itm}[1]{\item[\underline{\ensuremath{#1}:}]}
+\newcommand{\itt}[1]{\item[\underline{\text{#1}:}]}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Natural}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\I}{\infty}
+\newcommand{\set}[2]{\left\{#1 \middle| #2\right\}}
+\newcommand{\thh}{^{\text{th}}}
+\renewcommand{\a}{\mathfrak{a}}
+\renewcommand{\b}{\mathfrak{b}}
+\renewcommand{\c}{\mathfrak{c}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\bbOne}{\mathbbm{1}}
+\renewcommand{\alg}[1]{{\bm{\langle} #1\bm{\rangle}}}
+
+
+% some math commands specific to this document %%%%%%%%%%%%
+\newcommand{\xalt}{x^{\text{alt}\otimes n}}
+\newcommand{\xbaralt}{\overline{x}^{\text{alt}\otimes n}}
+
+\newcommand{\dave}[1]{\marginpar{\tiny \textcolor{orange}{DP: #1}}}
+\newcommand{\corey}[1]{\marginpar{\tiny \textcolor{green}{CJ: #1}}}
+\newcommand{\Af}{\mathcal{A}\Lambda_{F}}
+\newcommand{\WStar}{\bfW\text{*}}
+%\newcommand{\Irr}{\text{Irr}(\mathcal{C})}
+
+% tricky way to iterate macros over a list
+\def\semicolon{;}
+\def\applytolist#1{
+    \expandafter\def\csname multi#1\endcsname##1{
+        \def\multiack{##1}\ifx\multiack\semicolon
+            \def\next{\relax}
+        \else
+            \csname #1\endcsname{##1}
+            \def\next{\csname multi#1\endcsname}
+        \fi
+        \next}
+    \csname multi#1\endcsname}
+
+% \def\cA{{\cal A}} for A..Z
+\def\calc#1{\expandafter\def\csname c#1\endcsname{{\mathcal #1}}}
+\applytolist{calc}QWERTYUIOPLKJHGFDSAZXCVBNM;
+% \def\bbA{{\mathbb A}} for A..Z
+\def\bbc#1{\expandafter\def\csname bb#1\endcsname{{\mathbb #1}}}
+\applytolist{bbc}QWERTYUIOPLKJHGFDSAZXCVBNM;
+% \def\bfA{{\mathbf A}} for A..Z
+\def\bfc#1{\expandafter\def\csname bf#1\endcsname{{\mathbf #1}}}
+\applytolist{bfc}QWERTYUIOPLKJHGFDSAZXCVBNM;
+% \def\sA{{\sf A}} for A..Z
+\def\sfc#1{\expandafter\def\csname s#1\endcsname{{\sf #1}}}
+\applytolist{sfc}QWERTYUIOPLKJHGFDSAZXCVBNM;
+% \def\fA{{\mathfrak A}} for A..Z
+\def\fc#1{\expandafter\def\csname f#1\endcsname{{\mathfrak #1}}}
+\applytolist{fc}QWERTYUIOPLKJHGFDSAZXCVBNM;
+
+
+\newcommand{\PA}{\cP\hspace{-.1cm}\cA}
+\newcommand{\Fun}{{\sf Fun}}
+\newcommand{\Rep}{{\sf Rep}}
+\newcommand{\Set}{{\sf Set}}
+\newcommand{\FreeMod}{{\sf FreeMod}}
+\newcommand{\Mod}{{\sf Mod}}
+\newcommand{\Proj}{{\sf Proj}}
+\newcommand{\AlgBim}{{\sf AlgBim}}
+\newcommand{\Bim}{{\sf Bim}}
+\newcommand{\bfBim}{{\sf Bim_{bf}}}
+\newcommand{\spBim}{{\sf Bim^{sp}}}
+\newcommand{\spbfBim}{{\sf Bim_{bf}^{sp}}}
+\renewcommand{\Vec}{{\sf Vec}}
+\newcommand{\fdVec}{{\sf Vec_{fd}}}
+\newcommand{\Hilb}{{\sf Hilb}}
+\newcommand{\fdHilb}{{\sf Hilb_{fd}}}
+\newcommand{\ConAlg}{{\sf ConAlg}}
+\newcommand{\DisInc}{{\sf DisInc}}
+
+
+\newcommand{\jw}[1]{f^{(#1)}}
+\newcommand{\todo}[1]{\textcolor{blue}{\textbf{TODO: #1}}}
+\newcommand{\nn}[1]{\textcolor{red}{[[#1]]}}
+\newcommand{\noshow}[1]{}
+\newcommand{\MR}[1]{}
+\newcommand{\TL}{\cT\hspace{-.08cm}\cL}
+\newcommand{\rhoE}{\textcolor{rho}{e_1}}
+\newcommand{\rhoJW}{\textcolor{rho}{\jw{2}}}
+
+
+% TikZ operators %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{shapes}
+\usetikzlibrary{cd}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations,decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{fit,calc,through}
+\usetikzlibrary{external}
+\usetikzlibrary{arrows}
+\tikzset{vertex/.style = {shape=circle,draw,fill=black,inner sep=0pt,minimum size=5pt}}
+\tikzset{edge/.style = {->,> = latex', bend right}}
+\tikzset{
+	super thick/.style={line width=3pt}
+}
+\tikzset{
+    quadruple/.style args={[#1] in [#2] in [#3] in [#4]}{
+        #1,preaction={preaction={preaction={draw,#4},draw,#3}, draw,#2}
+    }
+}
+\tikzstyle{shaded}=[fill=red!10!blue!20!gray!30!white]
+\tikzstyle{unshaded}=[fill=white]
+\tikzstyle{empty box}=[circle, draw, thick, fill=white, opaque, inner sep=2mm]
+\tikzstyle{annular}=[scale=.7, inner sep=1mm, baseline]
+\tikzstyle{rectangular}=[scale=.75, inner sep=1mm, baseline=-.1cm]
+\tikzstyle{mid>}=[decoration={markings, mark=at position 0.5 with {\arrow{>}}}, postaction={decorate}]
+\tikzstyle{mid<}=[decoration={markings, mark=at position 0.5 with {\arrow{<}}}, postaction={decorate}]
+\tikzstyle{over}=[double, draw=white, super thick, double=]
+
+\newcommand{\roundNbox}[6]{
+	\draw[rounded corners=5pt, very thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
+	\coordinate (ZZa) at ($#2+(-#4,0)$);
+	\coordinate (ZZb) at ($#2+(#5,0)$);
+	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
+}
+
+
+\newcommand{\nbox}[6]{
+	\draw[thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
+	\coordinate (ZZa) at ($#2+(-#4,0)$);
+	\coordinate (ZZb) at ($#2+(#5,0)$);
+	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
+}
+
+\newcommand{\ncircle}[4]{
+	\draw[very thick, #1] #2 circle (#3);
+	\node at #2 {#4};
+%	\filldraw[red] ($#2+(#4:#3cm)$) circle (.05cm);
+%	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
+}
+
+  \newcommand{\tikzmath}[2][]
+     {\vcenter{\hbox{\begin{tikzpicture}[#1]#2
+                     \end{tikzpicture}}}
+     }
+
+% colors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cupcolor}{DarkGreen}
+\newcommand{\alphacolor}{blue}
+\newcommand{\betacolor}{red}
+
+% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\title{The Embedding Theorem for Module Categories}
+\author{Desmond Coles, Peter Huston, David Penneys, \& Srivatsa Srinivas}
+
+\begin{document}
+\maketitle
+
+
+In the field of subfactor theory a powerful and well known tool for constructing subfactors are planar algebras, in particular one may be interested in planar subalgebras of a given planar algebra. In 2011 Vaughan Jones and David Penneys showed that a finite depth subfactor planar algebra, $P_{\bullet}$, can embedded in the bipartite graph planar algebra of the principal graph of $P_{\bullet}$. We generalize this result by showing that a finite depth subfactor planar algebra embeds into the bipartite graph planar algebra of the fusion graph for any module over a category constructed from $P_{\bullet}$. Our techniques are largely based on the same tower of algebras approach used by Jones and Penneys, and in particular we construct a tower of algebras to prove the theorem using a generating object in a multifusion category constructed from $P_{\bullet}$, many computations are done using string diagrams for morphisms in the aforementioned multifusion category.
+\end{document}
