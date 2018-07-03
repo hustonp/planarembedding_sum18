@@ -312,7 +312,7 @@ Please read our paper it's great, like really really great seriously please.
 \section{Preliminaries}
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
-Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ a module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
+Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ an indecomposable module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
 $$
 \cM 
 =
@@ -467,8 +467,39 @@ Thus at each level of the Bratelli diagram corresponding to $A_n$ there are at m
 \end{proof}
 
 \begin{thm}
-The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is independent of the choice of $m$.
+The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for $\cM$.
 \end{thm}
+
+\begin{proof}
+First recall that for a finite depth Markov sequence the principal graph is canonically isomorphic to the Bratelli for the inclusion $A_n\subset A_{n+1}$ when $n$ is such that this inclusion is now standard. So it suffices to show this graph is isomorphic to the fusion graph for $\cM$. 
+
+Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of nonisomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements, as in the previous proof. We will work the index $i$ mod 1 so that we may write $s^{i+1}_j$ for brevity of notation. Let the nonnegative integers $p^{i,j}_k$ be defined by the following equation:
+
+$$s^i_j\otimes x^{?}=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_ks^{i+1}_k$$
+
+Where $x^{?}$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd.  These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
+
+Recall from the previous proof that:
+
+$$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
+If we have that 
+$$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
+Note that we may take $n$ such that all $n_j$ are strictly positive as there is some $n$ such that $s^{i}_1\oplus\cdots \oplus s^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now we know that:
+
+$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes x^{?})\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(\sum\limits_{j=1}^{r_i}(p^{i,j}_kn_j)s^{i+1}_k)\cong M_{(\sum\limits_{j=1}^{r_i}p^{i,j}_k n_j)}(\bbC)$$
+
+Furthermore the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion and it's given by $\phi \mapsto \phi \otimes \id_{x^{?}}$. Each $\phi \in A_n$ is uniquely defined a direct sum:
+$$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
+Where each $\phi_j$ is an element of $\End_{\cC}(n_js^{i}_j)$. Then by the commutativity of tensor products and direct sums we may write $\phi$ as:
+$$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{x^{?}})$$
+But then:
+$$\phi_j \otimes \id_{x^{?}}\in \End_{\cC}(n_js^{i}_j\otimes x^{?})\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
+
+Since all $n_j\neq 0$ we have that the $j$th summand of $A_n$ when viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand $A_{n+1}$. So the Bratelli diagram is indeed given by the fusion graph for $x^{?}$.
+
+\end{proof}
+
+
 
 \section{The Embedding Theorem}
 
