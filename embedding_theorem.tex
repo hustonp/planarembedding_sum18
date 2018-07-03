@@ -339,7 +339,33 @@ $$
 \widetilde{\cC}
 $$
 
-Let $x\in \cC_{01}$ be the strand \textcolor{red}{insert picture here}, by the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+Let $x\in \cC_{01}$ be the strand as pictured below:
+
+$$x=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,-.7);
+	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (.7,.7);
+	\fill[gray!25!white] (0,-.7) rectangle (-.7,.7);
+	\draw[fill] (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,.7);
+	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.7,-.7) -- (.7,.7);
+
+\end{tikzpicture}
+$$
+
+By the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We can similarly define $\xbaralt$.
 
