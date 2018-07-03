@@ -369,9 +369,19 @@ By the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we tak
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We can similarly define $\xbaralt$.
 
-We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects of the form $m\otimes \xalt$ as: \textcolor{red}{insert picture here}
+We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects in $\End_{\cC}(m\otimes \xalt)$ as: 
+$$
+\begin{tikzpicture}[baseline=.4cm]
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	
+	\node at (.3,-.5) {\scriptsize{$n$}};
 
-where the red strand represents $m$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
+\end{tikzpicture}
+$$
+where the red strand represents $m$ and the $n$ represents $\xalt$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
 \begin{equation}\label{eq:TraceAn}
 \tr_n(f) 
 \,:=\, 
