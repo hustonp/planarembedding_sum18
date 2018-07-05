@@ -312,7 +312,7 @@ Please read our paper it's great, like really really great seriously please.
 \section{Preliminaries}
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
-Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ a module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
+Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ an indecomposable module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
 $$
 \cM 
 =
@@ -339,13 +339,49 @@ $$
 \widetilde{\cC}
 $$
 
-Let $x\in \cC_{01}$ be the strand \textcolor{red}{insert picture here}, by the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+Let $x\in \cC_{01}$ be the strand as pictured below:
+
+$$x=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,-.7);
+	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (.7,.7);
+	\fill[gray!25!white] (0,-.7) rectangle (-.7,.7);
+	\draw[fill] (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,.7);
+	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.7,-.7) -- (.7,.7);
+
+\end{tikzpicture}
+$$
+
+By the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We can similarly define $\xbaralt$.
 
-We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects of the form $m\otimes \xalt$ as: \textcolor{red}{insert picture here}
+We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects in $\End_{\cC}(m\otimes \xalt)$ as: 
+$$
+\begin{tikzpicture}[baseline=.4cm]
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	
+	\node at (.3,-.5) {\scriptsize{$n$}};
 
-where the red strand represents $m$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
+\end{tikzpicture}
+$$
+where the red strand represents $m$ and the $n$ represents $\xalt$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
 \begin{equation}\label{eq:TraceAn}
 \tr_n(f) 
 \,:=\, 
@@ -467,8 +503,39 @@ Thus at each level of the Bratelli diagram corresponding to $A_n$ there are at m
 \end{proof}
 
 \begin{thm}
-The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is independent of the choice of $m$.
+The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for $\cM$.
 \end{thm}
+
+\begin{proof}
+First recall that for a finite depth Markov sequence the principal graph is canonically isomorphic to the Bratelli for the inclusion $A_n\subset A_{n+1}$ when $n$ is such that this inclusion is now standard. So it suffices to show this graph is isomorphic to the fusion graph for $\cM$. 
+
+Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of nonisomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements, as in the previous proof. We will work the index $i$ mod 1 so that we may write $s^{i+1}_j$ for brevity of notation. Let the nonnegative integers $p^{i,j}_k$ be defined by the following equation:
+
+$$s^i_j\otimes x^{?}=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_ks^{i+1}_k$$
+
+Where $x^{?}$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd.  These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
+
+Recall from the previous proof that:
+
+$$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
+If we have that 
+$$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
+Note that we may take $n$ such that all $n_j$ are strictly positive as there is some $n$ such that $s^{i}_1\oplus\cdots \oplus s^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now we know that:
+
+$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes x^{?})\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(\sum\limits_{j=1}^{r_i}(p^{i,j}_kn_j)s^{i+1}_k)\cong M_{(\sum\limits_{j=1}^{r_i}p^{i,j}_k n_j)}(\bbC)$$
+
+Furthermore the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion and it's given by $\phi \mapsto \phi \otimes \id_{x^{?}}$. Each $\phi \in A_n$ is uniquely defined a direct sum:
+$$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
+Where each $\phi_j$ is an element of $\End_{\cC}(n_js^{i}_j)$. Then by the commutativity of tensor products and direct sums we may write $\phi$ as:
+$$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{x^{?}})$$
+But then:
+$$\phi_j \otimes \id_{x^{?}}\in \End_{\cC}(n_js^{i}_j\otimes x^{?})\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
+
+Since all $n_j\neq 0$ we have that the $j$th summand of $A_n$ when viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand $A_{n+1}$. So the Bratelli diagram is indeed given by the fusion graph for $x^{?}$.
+
+\end{proof}
+
+
 
 \section{The Embedding Theorem}
 
