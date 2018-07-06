@@ -405,10 +405,10 @@ where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes
 Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. This makes each $A_n$ a finite dimensional von Neumann algebra.
 
 \begin{rem}
-	The trace can be identified with a complex scalar. Because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End(1_0)\subseteq\End(1)$. 
+	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End(1_0)\subseteq\End(1)$. 
 \end{rem}
 
-We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
+We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$. % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 \begin{equation}\label{eq:Inclusion}
 \begin{tikzpicture}[baseline=-.1cm, rotate=90]
 	\draw[thick, red] (-.7,.15) -- (.7,.15);
@@ -455,7 +455,7 @@ and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, lef
 \right)
 \end{equation}
 
-Here, $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal?
+Here, $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal? In response: Emily peter's uses the term closed circles (on page 7 of her thesis), if that's the woridng you mean, and the equality follows from sphericality, maybe we should this should probably be in the preliminary discussion of the paragroup and the constructed multifusion category
 Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
 
 Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
@@ -501,7 +501,7 @@ $$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
 $$n_js^i_j:=\underbrace{s^i_j\oplus s^i_j\oplus \cdots \oplus s^i_j}_{n_j \,\, \text{summands}}$$
 
 Thus, at each level of the Bratteli diagram corresponding to $A_n$ % should be an inclusion, 
-	there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite. % remark that the principal graph is (contained in?) the direct limit of Bratteli diagrams or something? Unclear what this implies in the infinite case...
+	there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite. % remark that the principal graph is (contained in?) the direct limit of Bratteli diagrams or something? Unclear what this implies in the infinite case... In reponse: the veritce correspond to the algebras, edges to these inclusions which is why I worded it the way I did.
 \end{proof}
 
 \begin{thm}
