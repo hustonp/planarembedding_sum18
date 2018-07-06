@@ -365,7 +365,7 @@ $$x=
 \end{tikzpicture}
 $$
 
-By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{01}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
 
@@ -405,7 +405,7 @@ where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes
 Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. This makes each $A_n$ a finite dimensional von Neumann algebra.
 
 \begin{rem}
-The aforementioned trace can be identified with a complex scalar exactly when $m$ is simple. The first two cups define a morphism in $Hom_{\cC}(1, \overline{m}\otimes m)\otimes Hom_{\cC}( 1,  n \otimes \overline{n})$; but $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(m,m)\cong \C$. Thus, $\Hom_{\cC}(1,\overline{m}\otimes m)$ is one dimensional, so there is some $i$ such that $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(1_i,\overline{m}\otimes m)$. So the first two cups define a map whose source is isomorphic to $1_i$, and similarly the target is isomorphic to $1_i$, so it defines a map in $\End_{\cC}(1_i)$. % awk 
+	The trace can be identified with a complex scalar. Because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End(1_0)\subseteq\End(1)$. 
 \end{rem}
 
 We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
