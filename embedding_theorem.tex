@@ -312,12 +312,12 @@ Please read our paper it's great, like really really great seriously please.
 \section{Preliminaries}
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
-Given a subfactor planar algebra $Q_{\bullet}$ let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ an indecomposable module category for $\cC$. We know that there is a  $3\times 3$ unitary multifusion category, $\widetilde{\cC}$, where $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$, and $\cC$ the non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$ we can take $\cM$ to be  $\cC_{20}\oplus \cC_{21}$, so we have that:
+Given a subfactor planar algebra $Q_{\bullet}$, let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ be an indecomposable module category for $\cC$. We know that there is a $3\times 3$ unitary multifusion category $\widetilde{\cC}$, with $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ and $\cC$ the  non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$, so that $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
 $$
 \cM 
 =
 \begin{pmatrix}
-\cC_{31} & \cC_{32} 
+\cC_{20} & \cC_{21} 
 \end{pmatrix}
 \qquad\qquad
 \cC
@@ -339,7 +339,7 @@ $$
 \widetilde{\cC}
 $$
 
-Let $x\in \cC_{01}$ be the strand as pictured below:
+Let $x\in \cC_{01}$ be the strand pictured below:
 
 $$x=
 \begin{tikzpicture}[baseline=-.1cm]
@@ -365,11 +365,11 @@ $$x=
 \end{tikzpicture}
 $$
 
-By the construction of $\cC$ $x$ is a generating object for $\cC$. Now if we take any $m\in \cC_{01}$ then we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{01}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We can similarly define $\xbaralt$.
+$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
 
-We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Let $A_n=\End_{\cC}(m\otimes \xalt)$, $A_n$ is an algebra when multiplication is defined to be composition of morphisms. We can represent objects in $\End_{\cC}(m\otimes \xalt)$ as: 
+We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Set $A_n=\End_{\cC}(m\otimes \xalt)$. We can represent morphisms in $A_n$ as 
 $$
 \begin{tikzpicture}[baseline=.4cm]
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
@@ -381,7 +381,7 @@ $$
 
 \end{tikzpicture}
 $$
-where the red strand represents $m$ and the $n$ represents $\xalt$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
+where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
 \begin{equation}\label{eq:TraceAn}
 \tr_n(f) 
 \,:=\, 
@@ -405,10 +405,10 @@ where the red strand represents $m$ and the $n$ represents $\xalt$. We have a fa
 Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. This makes each $A_n$ a finite dimensional von Neumann algebra.
 
 \begin{rem}
-The aforementioned trace can be identified with a complex scalar exactly when $m$ is simple. Indeed the fist two cups define a morphism in $Hom_{\cC}(1, \overline{m}\otimes m)\otimes Hom_{\cC}( 1,  n \otimes \overline{n})$ but $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(m,m)\cong \C$. Thus $\Hom_{\cC}(1,\overline{m}\otimes m)$ is one dimensional so there is some $i$ such that $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(1_i,\overline{m}\otimes m)$. So the first two cups define a map whose source is isomorphic to $1_i$, and similarly the target is isomorphic to $1_i$, so it defines a map in $\End_{\cC}(1_i)$.
+The aforementioned trace can be identified with a complex scalar exactly when $m$ is simple. The first two cups define a morphism in $Hom_{\cC}(1, \overline{m}\otimes m)\otimes Hom_{\cC}( 1,  n \otimes \overline{n})$; but $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(m,m)\cong \C$. Thus, $\Hom_{\cC}(1,\overline{m}\otimes m)$ is one dimensional, so there is some $i$ such that $\Hom_{\cC}(1,\overline{m}\otimes m)\cong \Hom_{\cC}(1_i,\overline{m}\otimes m)$. So the first two cups define a map whose source is isomorphic to $1_i$, and similarly the target is isomorphic to $1_i$, so it defines a map in $\End_{\cC}(1_i)$. % awk 
 \end{rem}
 
-We also have a natural inclusion $A_n \rightarrow A_{n+1}$ such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
+We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 \begin{equation}\label{eq:Inclusion}
 \begin{tikzpicture}[baseline=-.1cm, rotate=90]
 	\draw[thick, red] (-.7,.15) -- (.7,.15);
@@ -429,7 +429,7 @@ We also have a natural inclusion $A_n \rightarrow A_{n+1}$ such that the trace r
 \end{tikzpicture}
 \end{equation}
 
-The 1 indicates 1 string to the right (with appropriate shading). We also have a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$ which acts a left inverse to the previously defined inclusion:
+and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, left inverse to the inclusion
 
 \begin{equation}\label{eq:ConditionalExpectationAn}
 \begin{tikzpicture}[baseline=-.1cm]
@@ -455,9 +455,10 @@ The 1 indicates 1 string to the right (with appropriate shading). We also have a
 \right)
 \end{equation}
 
-Where $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$, which is also the value of a closed loop appearing in the diagram. Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly we have that $tr_n=tr_{n-1} \circ E_n$.
+Here, $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal?
+Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
 
-Finally we will define the jones projections for each inclusion $A_{n}\subset A_{n+1}$ is given by
+Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
 
 \begin{equation}\label{eq:JonesProjections}
 e_n=
@@ -478,28 +479,29 @@ e_n=
 A_{n+1}.
 \end{equation}
 
-Where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb-
-Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly 
-for any $x\in A_n$ we have that: $e_nxe_n=E_n(x)e_n$. Clearly $E_{n+1}(e_n)=d^{-2}id_{m \otimes \xalt}$. Finally the pull 
-down condition holds as for each $x\in A_{n+1}$ we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently $A_{n} e_n A_n$ is a 
-two sided ideal in $A_{n+1}$. Thus the tower algebras given by the $A_n$ is indeed a Markov sequence.
+Where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
+Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
+for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}id_{m \otimes \xalt}$. Finally, the pull 
+down condition % probably we should define the condition somewhere in the prelims, and then this becomes ``(some number)''; if not, then we should explicitly give the condition here, whatever it is. 
+holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
+two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov sequence.
  
 \begin{prop}
 The Markov sequence of von Neumann Algebras $(A_n, tr_n)_{n\geq 0}$ is finite depth.
 \end{prop}
 
 \begin{proof}
-$m\otimes \xalt$ generates $\cM$. Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of nonisomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements. 
+$m\otimes \xalt$ generates $\cM$. Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of non-isomorphic simple objects spanning $\cC_{2i}$. Recall that $\Hom_{\cC}(s^i_k,s^i_l)\cong \delta_{kl}\bbC$, 
 
-Recall that $\Hom_{\cC}(s^i_k,s^i_l)\cong \delta_{kl}\bbC$, thus:
-
+% warning: a lot of indices are undefined and text is missing in this block. 
 $$\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
 If we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
-where $i$ is 0 if $n$ is even and odd if $n$ is 1, and where:
+	where $i=n\text{ mod }2$, then 
 $$n_js^i_j:=\underbrace{s^i_j\oplus s^i_j\oplus \cdots \oplus s^i_j}_{n_j \,\, \text{summands}}$$
 
-Thus at each level of the Bratelli diagram corresponding to $A_n$ there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite.
+Thus, at each level of the Bratteli diagram corresponding to $A_n$ % should be an inclusion, 
+	there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite. % remark that the principal graph is (contained in?) the direct limit of Bratteli diagrams or something? Unclear what this implies in the infinite case...
 \end{proof}
 
 \begin{thm}
@@ -507,31 +509,34 @@ The principal graph obtained from the Markov sequence $(A_n)_{n\geq 0}$ is indep
 \end{thm}
 
 \begin{proof}
-First recall that for a finite depth Markov sequence the principal graph is canonically isomorphic to the Bratelli for the inclusion $A_n\subset A_{n+1}$ when $n$ is such that this inclusion is now standard. So it suffices to show this graph is isomorphic to the fusion graph for $\cM$. 
+First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subset A_{n+1}$ for $n$ large enough that this inclusion is standard. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. 
 
-Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of nonisomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements, as in the previous proof. We will work the index $i$ mod 1 so that we may write $s^{i+1}_j$ for brevity of notation. Let the nonnegative integers $p^{i,j}_k$ be defined by the following equation:
+Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of non-isomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements, as in the previous proof. 
+	We will work the index $i$ mod 1 so that we may write $s^{i+1}_j$ for brevity of notation. % no idea what this can mean
+	Let the non-negative integers $p^{i,j}_k$ be defined by the following equation:
 
 $$s^i_j\otimes x^{?}=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_ks^{i+1}_k$$
 
-Where $x^{?}$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd.  These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
+where $x^{?}$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd. % This is dual to the previous definition of x^?. But I don't understand what is going on so I can't tell if it is correct. 
+	These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
 
 Recall from the previous proof that:
 
 $$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
-If we have that 
+if we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
-Note that we may take $n$ such that all $n_j$ are strictly positive as there is some $n$ such that $s^{i}_1\oplus\cdots \oplus s^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now we know that:
+Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $s^{i}_1\oplus\cdots \oplus s^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
 
 $$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes x^{?})\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(\sum\limits_{j=1}^{r_i}(p^{i,j}_kn_j)s^{i+1}_k)\cong M_{(\sum\limits_{j=1}^{r_i}p^{i,j}_k n_j)}(\bbC)$$
 
-Furthermore the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion and it's given by $\phi \mapsto \phi \otimes \id_{x^{?}}$. Each $\phi \in A_n$ is uniquely defined a direct sum:
+Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{x^{?}}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
 $$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
-Where each $\phi_j$ is an element of $\End_{\cC}(n_js^{i}_j)$. Then by the commutativity of tensor products and direct sums we may write $\phi$ as:
+where each $\phi_j$ is an element of $\End_{\cC}(n_js^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
 $$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{x^{?}})$$
 But then:
 $$\phi_j \otimes \id_{x^{?}}\in \End_{\cC}(n_js^{i}_j\otimes x^{?})\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
 
-Since all $n_j\neq 0$ we have that the $j$th summand of $A_n$ when viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand $A_{n+1}$. So the Bratelli diagram is indeed given by the fusion graph for $x^{?}$.
+Since all $n_j\neq 0$, we have that the $j$th summand of $A_n$ viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand of $A_{n+1}$. So the Bratteli diagram is indeed given by the fusion graph for $x^{?}$.
 
 \end{proof}
 
