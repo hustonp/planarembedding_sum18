@@ -548,7 +548,7 @@ Since all $n_j\neq 0$, we have that the $j$th summand of $A_n$ viewed as a multi
 A subfactor planar algebra can be embedded into the bipartite graph planar algebra of the principle graph obtained by right-acting the subfactor planar algebra on a cyclic module.
 \end{claim*}
 From the paper of Penneys and Jones, % cite
-we see that for any strongly Markov tower of algebras, we can construct a canonical relative commutant planar algebra. This planar algebra was isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower. We have shown that the inclusions of $\left(A_{n}\right)$ are eventually standard (the tower $\left(A_{n}\right)$ is of finite depth). Thus, if we fix a number $r$ such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, then the canonical relative commutant planar algebra constructed on the strongly Markov tower $B_{n}=A_{2r+n}$ would be isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$. (The principle graph of $A_{n}$ is the Bratteli diagram of the first inclusion in $\left(B_{n}\right)$.)\\
+we see that for any strongly Markov tower of algebras, we can construct a canonical relative commutant planar algebra. This planar algebra was isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower. We have shown that the inclusions of $\left(A_{n}\right)$ are eventually standard (the tower $\left(A_{n}\right)$ is of finite depth). Thus, if we fix a number $r$ such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, then the canonical relative commutant planar algebra constructed on the strongly Markov tower $B_{n}=A_{2r+n}$ would be isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$. (The principle graph of $A_{n}$ is the Bratteli diagram of the first inclusion in $\left(B_{n}\right)$.)
 
 If we denote the canonical relative commutant planar algebra on $\left(B_{n}\right)$ by $P_{\bullet}$, then by construction, we have the following:
 \begin{align*}
@@ -556,7 +556,7 @@ If we denote the canonical relative commutant planar algebra on $\left(B_{n}\rig
 	P_{n,-}  &= A'_{2r+1}\cap A_{2r+n+1} 
 \end{align*}
 
-Consider the linear extension of following map, $\Phi$, which puts $2r$ strings on the left of elements of $Q_{n,+}$ and $2r+1$ strings on the left of elements of $Q_{n,-}$\todo{insert picture here} \\ 
+Consider the linear extension of following map, $\Phi$, which puts $2r$ strings on the left of elements of $Q_{n,+}$ and $2r+1$ strings on the left of elements of $Q_{n,-}$\todo{insert picture here} 
 
 This map sends $Q_{n,+}$ to $P_{n,+}$ and $Q_{n,-}$ to $P_{n,-}$. In order to check that $\Phi$ is a planar embedding map, we use Lemma 2.48 in the paper of Penneys and Jones. % cite
 We denote the traces in $Q_{\bullet}$ by $\overline{\tr}$ and in $P_{\bullet}$ by $\tr$. We denote the Jones projections in $Q_{\bullet}$ by $E_{j}$ and the Jones projections in  $P_{\bullet}$ by $F_{j}$.
@@ -572,13 +572,13 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 	\Phi(xy) &= \Phi(x)\Phi(y) \\
 	\overline{\tr}_{n}(x) &= \frac{1}{\dim_\cC(x)^{2r}}\cdot\tr_{n}(\Phi(x)) 
 \end{align*}
-To prove injectivity, we can use the faithfulness of the traces and the third equation displayed above. \\
+To prove injectivity, we can use the faithfulness of the traces and the third equation displayed above.
 \begin{enumerate}[(1)]
-\item By the construction of $P_{\bullet}$ we have that $\Phi(E_j)=F_j$. Thus $\Phi(Q_{\bullet})$ is closed under multiplication by Jones projections. \\ 
+\item By the construction of $P_{\bullet}$ we have that $\Phi(E_j)=F_j$. Thus $\Phi(Q_{\bullet})$ is closed under multiplication by Jones projections. 
 \item \begin{enumerate}[(i)]
-\item We have that $\Phi(E_n(x)) = E_2r+n(\Phi(x))$. This follows from the graphical calculi in both the domain and range. Thus, $\Phi(Q_{\bullet})$ is closed under conditional expectation. We also have that $E_{2r+n | Q'_{2r}\cap Q_{2r+n}} = E_{P_{n,+}}$ because they both are faithful trace preserving conditional expectations on $P_{n,+}$\\ 
-\item We have that $\Phi(\beta_n(x)) = \beta_2r+n(\Phi(x))$ due to graphical calculi in the domain and range. Also, note that the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the inclusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. \\ 
-\item \todo{left capping via Pimsner-Popa bases} \\
+\item We have that $\Phi(E_n(x)) = E_2r+n(\Phi(x))$. This follows from the graphical calculi in both the domain and range. Thus, $\Phi(Q_{\bullet})$ is closed under conditional expectation. We also have that $E_{2r+n | Q'_{2r}\cap Q_{2r+n}} = E_{P_{n,+}}$ because they both are faithful trace preserving conditional expectations on $P_{n,+}$
+\item We have that $\Phi(\beta_n(x)) = \beta_2r+n(\Phi(x))$ due to graphical calculi in the domain and range. Also, note that the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the inclusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$.
+\item \todo{left capping via Pimsner-Popa bases}
 \end{enumerate}
 \item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Graphically, this is equivalent to adding a string on the left. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{\bullet}$. Thus, we have that for x in $Q_{n,-}$.
 \[ i^{-}_{n}(\Phi(x)) = \Phi(x) = \Phi(\overline{i^{-}_{n}}(x)) \]
