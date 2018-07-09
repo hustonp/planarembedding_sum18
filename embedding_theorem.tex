@@ -310,6 +310,157 @@ Please read our paper it's great, like really really great seriously please.
 \end{abstract}
 \section{Introduction}
 \section{Preliminaries}
+\subsection{Markov Sequences}
+
+
+\begin{defn}
+A \emph{Markov sequence} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$ such that:
+\begin{itemize}
+\item
+The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations:
+\begin{enumerate}[(1)]
+\item
+$e_i^2 = e_i = e_i^*$ for all $i$,
+\item
+$e_i e_j = e_j e_i$ for $|i-j|>1$, and
+\item
+there is a fixed constant $d>0$ such that $e_{i} e_{i\pm 1} e_i = d^{-2} e_i$ for all $i$.
+\end{enumerate}
+\item
+For all $x\in M_n$, $e_n x e_n = E_n(x)e_n$ where $E_n: M_n \to M_{n-1}$ is the canonical faithful trace-preserving conditional expectation.
+\item
+For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
+\item
+(pull down)
+For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
+
+\end{itemize}
+\end{defn}
+
+
+\begin{rem}
+$M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ iff the pull down condition holds. Indeed if the pull down condition holds then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$, and the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
+\end{rem}
+
+
+
+
+\begin{prop} Markov sequence satisfies the following elementary properties for $n\geq 1$.
+\begin{enumerate}[(A)]
+\item
+\label{EP:injective}
+The map $M_{n}\ni y\mapsto ye_n \in M_{n+1}$ is injective.
+
+\item
+\label{EP:UniquePullDown}
+For all $x\in M_{n+1}$, $d^{2}E_{n+1}(x e_n)$ is the unique element $y\in M_n$ such that $x e_n = ye_n$ \cite[Lem.~1.2]{MR860811}.
+
+\item
+\label{EP:MarkovTraces}
+The traces $\tr_{n+1}$ satisfy the following \emph{Markov property} with respect to $M_n$ and $e_n$: for all $x\in M_n$, $\tr_{n+1}(xe_n) = d^{-2} \tr_n(x)$.
+
+\item
+\label{EP:CompressM_{n+1}}
+$e_n M_{n+1}e_n = M_{n-1}e_n$.
+
+\item
+\label{EP:2SidedIdeal}
+$X_{n+1}:=M_n e_n M_n$ is a 2-sided ideal of $M_{n+1}$, and thus $M_{n+1}$ splits as a direct sum of von Neumann algebras $X_{n+1}\oplus Y_{n+1}$.
+(In \cite[Thm.~4.1.4 and Thm.~4.6.3]{MR999799}, $Y_{n+1}$ is the so-called `new stuff'.)
+By convention, we define $Y_0 = M_0$ and $Y_1 = M_0$, so that $X_0 = (0)$ and $X_1 = (0)$.
+
+\item
+\label{EP:BasicContruction}
+The map $ae_n b\mapsto ap_n b$ gives a $*$-isomorphism from $X_{n+1}=M_n e_n M_n$ to $\langle M_n , p_n\rangle=M_np_nM_n$, the Jones basic construction of $M_{n-1} \subseteq M_n$ acting on $L^2(M_n,\tr_n)$.
+
+\item
+\label{EP:OtherMarkovDef}
+Under the isomorphism $X_{n+1} \cong M_n p_n M_n$, the canonical non-normalized trace $\Tr_{n+1}$ on the Jones basic construction algebra $M_np_nM_n$ satisfying $\Tr_{n+1}(ap_nb) = \tr_n(ab)$ for $a,b\in M_n$ equals $d^2 \tr_{n+1}|_{X_{n+1}}$.
+
+\item
+\label{EP:NewStuff}
+If $y\in Y_{n+1}$ and $x\in X_{n}$, then $yx = 0$ in $M_{n+1}$.
+Hence $E_{n+1}(Y_{n+1}) \subseteq Y_{n}$.
+(``The new stuff comes only from the old new stuff" \cite{MR999799}.)
+
+\item
+\label{EP:FiniteDepth}
+If $Y_n =(0)$, then $Y_{k} = (0)$ for all $k\geq n$.
+
+\end{enumerate}
+\end{prop}
+
+\begin{proof} 
+
+\begin{enumerate}[(A)]
+\item
+
+We know that $d^2E_{n+1}(ye_n) = y $ so the proposed map has a left inverse.
+
+\item
+
+If $xe_n = ye_n$ for $y\in M_n$,  $E_{n+1}(xe_n) = E_{n+1}(y e_n) = y E_{n+1}(e_n) = d^{-2} y$, and the map $M_n\ni z\mapsto ze_n\in M_{n+1}$ is injective.
+
+\item
+
+For $x\in M_n$, $\tr_{n+1}(xe_n) = \tr_n(E_{n+1}(xe_n)) = \tr_n(x E_{n+1}(e_n)) = d^{-2} \tr_n(x)$ since $E_{n+1}(e_n) = d^{-2}$.
+
+\item
+
+$M_{n+1} e_n = M_n e_n$ and $e_nxe_n = E_n(x)e_n$ for all $x\in M_n$.
+
+\item
+
+$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition.
+
+\item
+
+It suffices to show the map is injective, which shows it is well-defined.
+Suppose $\sum a_i p_n b_i = 0$.
+Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, which implies $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective.
+Hence $0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$ for all $a,b\in M_n$, which implies $\sum a_i e_n b_i = 0$.
+
+\item
+
+For $a,b\in M_n$, 
+$\Tr_{n+1}(ap_n b) = \tr_n(ab) = \tr_n(ba) = d^2\tr_{n+1}(bae_n) = d^2 \tr_{n+1}(ae_n b)$.
+
+\item
+
+Since $X_0 = (0)$ and $X_1 = (0)$ by definition, we may assume $n\geq 2$.
+As in the proof of \cite[Thm.~4.6.3.vi]{MR999799} and (5), we may assume $y$ is a central projection in $M_{n+1}$ such that $y e_{n} = 0$.
+Then for all $ae_{n-1} b \in X_n$, $y ae_n b = d^2 yae_n e_{n+1}e_n b = d^2 ae_n ye_{n+1} e_n b = 0$.
+The final claim follows from $z_{n}E_{n+1}(y) = E_{n+1}(z_n y)= 0$ where $z_n$ is the central support of $e_{n-1}$ in $M_n$.
+
+\item
+
+This follows immediately from the previous fact.
+
+\end{enumerate}
+
+\end{proof}
+
+
+Notice that by \ref{EP:BasicContruction} the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
+
+
+\begin{defn}
+The \emph{principal graph} of the Markov sequence $(M_n,\tr_n)$ with Jones projections $(e_n)$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
+
+The sequence is said to have \emph{finite depth} if the principal graph is finite.
+\end{defn}
+
+
+It follows then that the Markov sequence has finite depth if and only if there is an $n\in \bbN$ such that $Y_n = (0)$ as in Elementary Property \eqref{EP:FiniteDepth}. If a Markov sequence has finite depth then let $n\in \bbN$ be such that $Y_n=(0)$. Note that the Bratelli diagram for $M_0\subseteq M_1$ is part of the principal graph and the Bratelli diagram for $M_1\subseteq M_2$ is the Bratelli diagram for $M_0\subseteq M_1$ reflected upwards along with some new edges between the vertices corresponding to $Y_1$ and $Y_2$. So there is a natural isomorphism between the Bratelli diagram for $M_1\subseteq M_2$ and the subgraph of principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2$. Similarly we can naturally identify the Bratelli diagram of $M_2\subseteq M_3$ with the subgraph of principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2\subseteq M_3$. Continuing on this way we see that we have a natural identification of the prinicapl graph with the Bratelli diagram of $M_n\subseteq M_{n+1}$, and for $k\geq n$ the Bratelli diagram of $M_{k}\subset M_{k+1}$ is the bratelli diagram of $M_{k-1}\subset M_{k}$ (possibly reflected). This gives the following proposition:
+
+\begin{prop}
+If a Markov sequence has finite depth then let $n\in \bbN$ be such that $Y_n=(0)$. Then if $k\geq n$ there is a canonical graph isomorphism between the principal graph of the sequence and the Bratelli diagram for $M_{k}\subset M_{k+1}$.
+\end{prop}
+
+\begin{ex}
+The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. 
+\end{ex}
+
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
 Given a subfactor planar algebra $Q_{\bullet}$, let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ be an indecomposable module category for $\cC$. We know that there is a $3\times 3$ unitary multifusion category $\widetilde{\cC}$, with $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ and $\cC$ the  non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$, so that $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
