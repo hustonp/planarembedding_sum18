@@ -338,9 +338,7 @@ $$
 =
 \widetilde{\cC}
 $$
-
 Let $x\in \cC_{01}$ be the strand pictured below:
-
 $$x=
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (-.7,-.7);
@@ -364,7 +362,6 @@ $$x=
 
 \end{tikzpicture}
 $$
-
 By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
@@ -408,7 +405,7 @@ Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. Thi
 	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End(1_0)\subseteq\End(1)$. 
 \end{rem}
 
-We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$. % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
+We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 \begin{equation}\label{eq:Inclusion}
 \begin{tikzpicture}[baseline=-.1cm, rotate=90]
 	\draw[thick, red] (-.7,.15) -- (.7,.15);
@@ -428,9 +425,7 @@ We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$. % such that 
 	\node at (0,-.6) {\scriptsize{$1$}};
 \end{tikzpicture}
 \end{equation}
-
-and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, left inverse to the inclusion
-
+and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, 
 \begin{equation}\label{eq:ConditionalExpectationAn}
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
@@ -454,12 +449,12 @@ and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, lef
 \end{tikzpicture}
 \right)
 \end{equation}
+left inverse to the inclusion.
 
 Here, $d:=\dim_{\cC}(x)=\dim_{\cC}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal? In response: Emily peter's uses the term closed circles (on page 7 of her thesis), if that's the woridng you mean, and the equality follows from sphericality, maybe we should this should probably be in the preliminary discussion of the paragroup and the constructed multifusion category
 Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
 
 Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
-
 \begin{equation}\label{eq:JonesProjections}
 e_n=
 \frac1d\cdot
@@ -478,7 +473,6 @@ e_n=
 \in
 A_{n+1}.
 \end{equation}
-
 where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
 Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
 for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}id_{m \otimes \xalt}$. Finally, the pull 
@@ -511,26 +505,21 @@ Let $s^i_1,\ldots s^i_{r_i}$, for $i=0$ or $1$ be a collection of non-isomorphic
 	Let the non-negative integers $p^{i,j}_k$ be defined by the following equation:
 
 $$s^i_j\otimes x^{?}=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_ks^{i+1}_k$$
-
 where $x^{?}$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd. % This is dual to the previous definition of x^?. But I don't understand what is going on so I can't tell if it is correct. 
-	These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
+These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x^{?}$.
 
 Recall from the previous proof that:
-
 $$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
 if we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j}n_js^i_j$$
 Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $s^{i}_1\oplus\cdots \oplus s^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
-
 $$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes x^{?})\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(\sum\limits_{j=1}^{r_i}(p^{i,j}_kn_j)s^{i+1}_k)\cong M_{(\sum\limits_{j=1}^{r_i}p^{i,j}_k n_j)}(\bbC)$$
-
 Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{x^{?}}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
 $$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
 where each $\phi_j$ is an element of $\End_{\cC}(n_js^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
 $$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{x^{?}})$$
 But then:
 $$\phi_j \otimes \id_{x^{?}}\in \End_{\cC}(n_js^{i}_j\otimes x^{?})\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_ks^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
-
 Since all $n_j\neq 0$, we have that the $j$th summand of $A_n$ viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand of $A_{n+1}$. So the Bratteli diagram is indeed given by the fusion graph for $x^{?}$.
 
 \end{proof}
