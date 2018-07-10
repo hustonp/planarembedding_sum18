@@ -638,10 +638,10 @@ The Markov sequence of von Neumann Algebras $(A_n, tr_n)_{n\geq 0}$ is finite de
 \end{prop}
 
 \begin{proof}
-	Every object of $\cM$ is a subobject of $m\otimes \xalt$ for some $n$. Let $s^i_1,\ldots s^i_{r_i}$, be a collection of non-isomorphic simple objects spanning $\cC_{2i}$, for $i\in\{0,1\}$. Then 
+	Every object of $\cM$ is a subobject of $m\otimes \xalt$ for some $n$. Let $Y^l_1,\ldots Y^l_{r_il}$, be a collection of non-isomorphic simple objects spanning $\cC_{2l}$, for $l\in\{0,1\}$. Then 
 
 % warning: a lot of indices are undefined and text is missing in this block. 
-	\[\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j s^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)\]
+	\[\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j Y^l_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)\]
 	At each level of the Bratteli diagram corresponding to $A_{n-1}\subseteq A_n$, 
 	there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite. 
 \end{proof}
@@ -655,27 +655,27 @@ We will proceed by noting that because $x$ generates $\cC$ and $\cM$ is cyclic t
 
 First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subset A_{n+1}$ for $n$ large enough that this inclusion is standard, by \cite{BratelliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. 
 
-Let $Y^i_1,\ldots Y^i_{r_i}$, for $i=0$ or $1$ be a collection of non-isomorphic simple objects in $\cC_{2i}$ such that every object in $\cC_{2i}$ is isomorphic to a direct sum of these elements, as in the previous proof. 
-	We will work with the index $i$ mod 2 so that we may write $Y^{i+1}_j$ for brevity of notation. 
-	Let the non-negative integers $p^{i,j}_k$ be defined by the following equation:
+Let $Y^l_1,\ldots Y^l_{r_l}$, for $l=0$ or $1$ be a collection of non-isomorphic simple objects in $\cC_{2l}$ such that every object in $\cC_{2l}$ is isomorphic to a direct sum of these elements, as in the previous proof. 
+	We will work with the index $l$ mod 2 so that we may write $Y^{l+1}_j$ for brevity of notation. 
+	Let the non-negative integers $p^{l}_{i,j}$ be defined by the following equation:
 
-$$m\otimes \xalt\otimes \act=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_kY^{i+1}_k$$
+$$Y^l_j\otimes \act=\bigoplus\limits_{i=1}^{r_{l+1}}p_{i,j}^lY^{l+1}_k$$
 where $\act$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd. 
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $\act$.
 
 Recall that:
-$$A_n=\End_{\cC}(m\otimes\xalt)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_i}n_j Y^i_j)$$
+$$A_n=\End_{\cC}(m\otimes\xalt)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_l}n_j Y^l_j)$$
 if we have that 
-$$m \otimes \xalt \cong \bigoplus\limits_{j}n_jY^i_j$$
-Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y^{i}_1\oplus\cdots \oplus Y^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
-$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_i}\bigoplus\limits_{k=1}^{r_{i+1}}(p^{i,j}_kn_jY^{i+1}_k))$$
-Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{\act}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
-$$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
-where each $\phi_j$ is an element of $\End_{\cC}(n_jY^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
-$$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{\act})$$
-But then:
-$$\phi_j \otimes \id_{\act}\in \End_{\cC}(n_jY^{i}_j\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_kY^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_kY^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
-Since all $n_j\neq 0$, we have that the $j$th summand of $A_n$ viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand of $A_{n+1}$. So the Bratteli diagram is indeed given by the fusion graph for $\act$.
+$$m \otimes \xalt \cong \bigoplus\limits_{j=1}^{r_l}n_jY^l_j$$
+Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y^{l}_1\oplus\cdots \oplus Y^{l}_{r_il}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
+$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{i=1}^{r_l}\bigoplus\limits_{j=1}^{r_{l+1}}(p_{i,j}^ln_jY^{l+1}_j))$$
+%Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{\act}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
+%$$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
+%where each $\phi_j$ is an element of $\End_{\cC}(n_jY^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
+%$$\bigoplus_{j=1}^{r_i}(\phi_j \otimes \id_{\act})$$
+%But then:
+%$$\phi_j \otimes \id_{\act}\in \End_{\cC}(n_jY^{i}_j\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{k=1}^{r_{i+1}}n_jp^{i,j}_kY^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(n_jp^{i,j}_kY^{i+1}_k)\cong \bigoplus\limits_{k=1}^{r_{i+1}}M_{(n_jp^{i,j}_k)}(\bbC)$$
+%Since all $n_j\neq 0$, we have that the $j$th summand of $A_n$ viewed as a multimatrix algebra includes $p^{i,j}_k$ times into the $k$th summand of $A_{n+1}$. So the Bratteli diagram is indeed given by the fusion graph for $\act$.
 
 \end{proof}
 
