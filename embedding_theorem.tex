@@ -659,16 +659,16 @@ Let $Y^i_1,\ldots Y^i_{r_i}$, for $i=0$ or $1$ be a collection of non-isomorphic
 	We will work with the index $i$ mod 2 so that we may write $Y^{i+1}_j$ for brevity of notation. 
 	Let the non-negative integers $p^{i,j}_k$ be defined by the following equation:
 
-$$M^i_j\otimes \act=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_kY^{i+1}_k$$
+$$m\otimes \xalt\otimes \act=\bigoplus\limits_{k=1}^{r_{i+1}}p^{i,j}_kY^{i+1}_k$$
 where $\act$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd. 
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $\act$.
 
 Recall that:
-$$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j Y^i_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)$$
+$$A_n=\End_{\cC}(m\otimes\xalt)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_i}n_j Y^i_j)$$
 if we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j}n_jY^i_j$$
 Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y^{i}_1\oplus\cdots \oplus Y^{i}_{r_i}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
-$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \bigoplus\limits_{k=1}^{r_{i+1}}\End_{\cC}(\sum\limits_{j=1}^{r_i}(p^{i,j}_kn_j)Y^{i+1}_k)\cong M_{(\sum\limits_{j=1}^{r_i}p^{i,j}_k n_j)}(\bbC)$$
+$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_i}\bigoplus\limits_{k=1}^{r_{i+1}}(p^{i,j}_kn_jY^{i+1}_k))$$
 Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{\act}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
 $$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
 where each $\phi_j$ is an element of $\End_{\cC}(n_jY^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
