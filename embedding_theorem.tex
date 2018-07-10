@@ -659,7 +659,7 @@ Let $Y^l_1,\ldots Y^l_{r_l}$, for $l=0$ or $1$ be a collection of non-isomorphic
 	We will work with the index $l$ mod 2 so that we may write $Y^{l+1}_j$ for brevity of notation. 
 	Let the non-negative integers $p^{l}_{i,j}$ be defined by the following equation:
 
-$$Y^l_j\otimes \act=\bigoplus\limits_{i=1}^{r_{l+1}}p_{i,j}^lY^{l+1}_k$$
+$$Y^l_j\otimes \act=\bigoplus\limits_{i=1}^{r_{l+1}}p_{i,j}^lY^{l+1}_i$$
 where $\act$ is $x$ if $n$ is even and $\overline{x}$ if $n$ is odd. 
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $\act$.
 
@@ -667,8 +667,8 @@ Recall that:
 $$A_n=\End_{\cC}(m\otimes\xalt)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_l}n_j Y^l_j)$$
 if we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j=1}^{r_l}n_jY^l_j$$
-Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y^{l}_1\oplus\cdots \oplus Y^{l}_{r_il}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
-$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{i=1}^{r_l}\bigoplus\limits_{j=1}^{r_{l+1}}(p_{i,j}^ln_jY^{l+1}_j))$$
+Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y^{l}_1\oplus\cdots \oplus Y^{l}_{r_l}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). But now, we know that:
+$$A_{n+1}=\End_{\cC}(m\otimes\xalt\otimes \act)\cong \End_{\cC}(\bigoplus\limits_{j=1}^{r_l}\bigoplus\limits_{i=1}^{r_{l+1}}(p_{i,j}^ln_jY^{l+1}_i))$$
 %Furthermore, the inclusion of $A_n \hookrightarrow A_{n+1}$ is a unital inclusion, given by $\phi \mapsto \phi \otimes \id_{\act}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
 %$$\bigoplus\limits_{j=1}^{r_i}\phi_j$$
 %where each $\phi_j$ is an element of $\End_{\cC}(n_jY^{i}_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
