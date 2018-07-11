@@ -62,7 +62,7 @@
 
 % Theorems %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \theoremstyle{plain}
-\newtheorem{thm}{Theorem}[]
+\newtheorem{thm}{Theorem}[section]
 \newtheorem*{thm*}{Theorem}
 \newtheorem{thmalpha}{Theorem}
 \renewcommand*{\thethmalpha}{\Alph{thmalpha}}
@@ -97,6 +97,10 @@
 \newtheorem{remark}[thm]{Remark}
 \newtheorem{rems}[thm]{Remarks}
 \newtheorem{warn}[thm]{Warning}
+
+% Figure Numbering %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{chngcntr} %Numbers figures by section
+\counterwithin{figure}{section}
 
 % Operators %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareMathOperator{\Ad}{Ad}
