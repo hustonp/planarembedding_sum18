@@ -317,8 +317,72 @@ Please read our paper it's great, like really really great seriously please.
 \section{Introduction}
 \section{Preliminaries}
 \subsection{Planar Algebras and the Paragroup}
-%Planar algebras were originally introduced in \cite{planaralg1}, we will use the same definitions and conventions as \cite{penneys}, \cite{peters}, \cite{jones}, and \cite{planaralg2}. The reader is referred to these references for further information on planar algebras.
+Planar algebras were originally introduced in \cite{planaralg1}, we will use the same definitions and conventions as \cite{penneys}, \cite{peters}, \cite{jones}, and \cite{planaralg2}. The reader is referred to these references for further information on planar algebras. From any subfactor planar algebra one may construct a 2-category from it, we refer the reader to \cite{paragroup} and \cite{paragroup2} for more details, we will refer to the definitions used in \cite{paragroup} as we wish to work with shaded planar algebras.
 
+\begin{defn}\textnormal{
+Let $Q_{\bullet}$ be a subfactor planar algebra, we will define a 2-category $\cG$ called the \textit{paragroup}.
+\begin{itemize}
+\item The 0-morphisms of $\cG$ are the two objects
+$
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture}
+$ 
+and
+$
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture}
+$.
+\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$ and are given as follows:
+\begin{itemize}
+\item $\Hom_{\cG}(
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture}
+\rightarrow
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture})=
+\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}
+$
+\item $\Hom_{\cG}(
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture}
+\rightarrow
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture})
+=
+\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}
+$
+\item $\Hom_{\cG}(
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture}
+\rightarrow
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture})
+=
+\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}
+$
+\item $\Hom_{\cG}(
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture}
+\rightarrow
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture})=
+\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}
+$
+\end{itemize}
+Composition is denoted by $\otimes$ and is represented diagrammatically by horizontal concatenation of diagrams.
+\item The 2-morphisms of $\cG$ are defined as follows, for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$ then $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$ and $P_{j\rightarrow i}$ is $P_{i+j}$ with elements represented $j$ with strings emanating from the top and $i$ from the bottom. If $i$ and $j$ don't have the same parity this does not exist to we take the morphisms to be zero.
+\end{itemize}}
+\end{defn}
 
 
 \subsection{Markov Sequences}
