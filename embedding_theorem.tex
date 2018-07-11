@@ -830,7 +830,7 @@ To prove the injectivity of $\Phi$, we can use the faithfullness of the traces a
 \[
  \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\dagger
 \]
-where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\gamma^{+}_n$ preserves $\Phi(Q_{\bullet})$. Let $x \in Q_{n,+}$. We now pictorially manipulate $\gamma^{+}_n(\Phi(x))$:
+where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\gamma^{+}_n$ preserves $\Phi(Q_{\bullet})$. Let $x \in Q_{n,+}$. We now pictorially manipulate $d^2\gamma^{+}_n(\Phi(x))$:
 
 \centerline{
   \begin{minipage}{\linewidth}
@@ -899,8 +899,44 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 }
 Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$.
 \end{enumerate}
-\item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Graphically this is equivalent to adding a string on the left. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Thus we have that for x in $Q_{n,-}$.
-\[ i^{-}_{n}(\Phi(x)) = \Phi(x) = \Phi(\overline{i^{-}_{n}}(x)) \]
+\item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically this is equivalent to adding a string on the left. Thus for $x$ in $Q_{n,-}$ we have that:
+\[
+\begin{tikzpicture}[baseline]
+	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
+	\draw (-0.45,-0.7) -- (-0.45,0.7);
+	\draw (0.15,-0.7) -- (0.15,0.7);
+	\roundNbox{unshaded}{(0.15,0)}{.3}{0}{0}{$x$};
+	\node at (0.15,0.8){\tiny{$n$}};
+	\node at (-0.45, -0.9){\tiny{$2r+1$}};
+	\node at (-0.35,-1.6){\scriptsize{$ i^{-}_{n}(\Phi(x))$}};
+\end{tikzpicture}
+\quad
+=
+\quad
+\begin{tikzpicture}[baseline]
+	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
+	\draw (-0.45,-0.7) -- (-0.45,0.7);
+	\draw (0.15,-0.7) -- (0.15,0.7);
+	\roundNbox{unshaded}{(0.15,0)}{.3}{0}{0}{$x$};
+	\node at (0.15,0.8){\tiny{$n$}};
+	\node at (-0.45, -0.9){\tiny{$2r+1$}};
+	\node at (-0.30,-1.6){\scriptsize{$\Phi(x)$}};
+\end{tikzpicture}
+\quad
+=
+\quad
+\begin{tikzpicture}[baseline]
+	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
+	\draw (-0.45,-0.7) -- (-0.45,0.7);
+	\draw (0.6,-0.7) -- (0.6,0.7);
+	\draw (0.15,-0.7) -- (0.15,0.7);
+	\roundNbox{unshaded}{(.6,0)}{0.3}{0}{0}{$x$};
+	\draw[dashed] (-0.15,-1.1) -- (-0.15,1.1) -- (1.05,1.1) --  (1.05,-1.1) -- (-0.15,-1.1);
+	\node at (0.6,0.8){\tiny{$n$}};
+	\node at (-0.45, -0.9){\tiny{$2r$}};
+	\node at (0.15,-0.9){\tiny{1}};
+	\node at (0.15,-1.6){\scriptsize{$\Phi(\overline{i^{-}_{n}}(x))$}};
+\end{tikzpicture}\]
 \end{enumerate}
 \end{proof}
 
