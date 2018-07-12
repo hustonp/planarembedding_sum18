@@ -420,7 +420,7 @@ $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if t
 
 
 
-\begin{prop} A Markov sequence satisfies the following elementary properties for $n\geq 1$.
+\begin{prop}\label{prop:ElementaryMarkov} A Markov sequence satisfies the following elementary properties for $n\geq 1$.
 \begin{enumerate}[(A)]
 \item
 \label{EP:Injective}
@@ -526,18 +526,20 @@ Notice that by \ref{EP:BasicContruction}, the Bratteli diagram for the inclusion
 \begin{defn}
 The \emph{principal graph} of the Markov sequence $(M_n,\tr_n)$ with Jones projections $(e_n)$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
 
-The sequence is said to have \emph{finite depth} if the principal graph is finite.
+A Markov sequence is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
 
-It follows then that the Markov sequence has finite depth if and only if there is an $n\in \bbN$ such that $Y_n = (0)$ as in Elementary Property \eqref{EP:FiniteDepth}. If a Markov sequence has finite depth then let $n\in \bbN$ be such that $Y_n=(0)$. Note that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph and the Bratteli diagram for $M_1\subseteq M_2$ is the Bratteli diagram for $M_0\subseteq M_1$ reflected upwards along with some new edges between the vertices corresponding to $Y_1$ and $Y_2$. So there is a natural isomorphism between the Bratteli diagram for $M_1\subseteq M_2$ and the subgraph of principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2$. Similarly we can naturally identify the Bratteli diagram of $M_2\subseteq M_3$ with the subgraph of principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2\subseteq M_3$. Continuing on this way we see that we have a natural identification of the prinicapl graph with the Bratteli diagram of $M_n\subseteq M_{n+1}$, and for $k\geq n$ the Bratteli diagram of $M_{k}\subset M_{k+1}$ is the bratelli diagram of $M_{k-1}\subset M_{k}$ (possibly reflected). This gives the following proposition:
+It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and let $n\in \bbN$ be such that $Y_n=(0)$. 
+Note that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph, and the Bratteli diagram for $M_1\subseteq M_2$ is the Bratteli diagram for $M_0\subseteq M_1$ reflected upwards, along with some new edges between the vertices corresponding to $Y_1$ and $Y_2$. Therefore, there is a natural isomorphism between the Bratteli diagram for $M_1\subseteq M_2$ and the subgraph of the principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2$. Similarly, we can naturally identify the Bratteli diagram of $M_2\subseteq M_3$ with the subgraph of the principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2\subseteq M_3$. Continuing on in this way, we see that we have a natural identification of the prinicapl graph with the Bratteli diagram of $M_n\subseteq M_{n+1}$, and for $k\geq n$, the Bratteli diagram of $M_{k}\subset M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subset M_{k}$ (possibly reflected). % This whole inductive argument should either be turned into a more rigorous proof of the following proposition, or drastically shortened into a sketch
+This gives the following proposition:
 
 \begin{prop}\label{BratteliPrincipal}
-If a Markov sequence has finite depth then let $n\in \bbN$ be such that $Y_n=(0)$. Then if $k\geq n$ there is a canonical graph isomorphism between the principal graph of the sequence and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
+	If a Markov sequence $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
 \end{prop}
 
 \begin{ex}
-The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. The principal graph is $A_{\infty}$.
+The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
 \end{ex}
 
 \section{Construction of the Planar Algebra Associated to a Module Category}
