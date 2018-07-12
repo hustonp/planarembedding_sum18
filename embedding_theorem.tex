@@ -760,16 +760,14 @@ Since all $n_j\neq 0$ and the inclusion is unital, it's clear that $p_{i,j}^{l}$
 \begin{claim*}
 A finite depth subfactor planar algebra can be embedded into the bipartite graph planar algebra of the fusion graph obtained by right-acting the subfactor planar algebra on a cyclic module.
 \end{claim*}
-As was described in \cite{penneys}, one can define a canonical shaded planar *-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by theorem 3.28 of \cite{penneys}. We have shown that the Markov sequence $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar *-algebra associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
-
-\vspace{0.3cm}
+As was described in \cite{penneys}, one can define a canonical shaded planar *-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by theorem 3.28 of \cite{penneys}. We have shown that the Markov sequence $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar *-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
 If we denote the canonical *-planar algebra associated to $B_0\subseteq(B_1,tr_1)$ by $P_{\bullet}$, then by construction, we have the following:
 \begin{align*}
 	P_{n,+} &=  A'_{2r}\cap A_{2r+n} \\
 	P_{n,-}  &= A'_{2r+1}\cap A_{2r+n+1} 
 \end{align*}
 
-Consider the linear extension of following map, $\Phi$, which places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$
+Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
 \[ \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
@@ -790,8 +788,8 @@ Consider the linear extension of following map, $\Phi$, which places $2r$ string
 	\node at (0.6,-.5) {\scriptsize{$n$}};
 	\node at (0,-0.9){\scriptsize{$2r$}};
 \end{tikzpicture} \]
-This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi(Q_{\bullet})$ is a sub $\dagger$-planar algebra, we use Lemma 2.48 in the paper of Penneys and Jones. We shall state it here for the reader's convenience 
-
+This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi(Q_{\bullet})$ is a sub $\dagger$-planar algebra, we use Lemma 2.48 in the paper of Penneys and Jones. % cite
+We shall state it here for the reader's convenience 
 \begin{lem}[Preservation under action of tangles]
 Suppose that $P_\bullet$ is a planar $\dagger$-algebra with modulus $d \neq 0$ and $Q_{n,\pm} \subset P_{n,\pm}$ are $\dagger$-subalgebras which are preserved by the action of the following tangles:
 
@@ -810,7 +808,6 @@ Suppose that $P_\bullet$ is a planar $\dagger$-algebra with modulus $d \neq 0$ a
 \end{tikzpicture}
 \in P_{n,+}
 $
-\vspace{5mm}
 \item 
 \begin{enumerate}[(i)]
 \item (Right Capping) $\alpha_n = 
@@ -888,13 +885,14 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 	\overline{\tr}_{n}(x) &= \frac{1}{\dim_\cC(x)^{2r}}\cdot\tr_{n}(\Phi(x)) 
 \end{align*}
 
-To prove the injectivity of $\Phi$, we can use the faithfullness of the traces and the third equation displayed above. In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to well known functions! Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48  
+	To prove the injectivity of $\Phi$, we can use the faithfullness of the traces and the third equation displayed above. % confusing. Number (or name) your equations for clarity in this situation. 
+	In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to well known functions! Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48  
 \begin{enumerate}[(1)]
-\item By the construction of $P_{\bullet}$ we have that $\Phi(E_j)=F_j$. Thus $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
+\item By the construction of $P_{\bullet}$, we have that $\Phi(E_j)=F_j$. Thus, $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
 \item \begin{enumerate}[(i)]
-\item We have that $\Phi(E_n(x)) = E_{2r+n}(\Phi(x))$. This follows from the graphical calculi in both the domain and range. Note that $E_{2r+n | Q'_{2r}\cap Q_{2r+n}} = E_{P_{n,+}}$ because they both are faithful trace preserving conditional expectations on $P_{n,+}$
+\item We have that $\Phi(E_n(x)) = E_{2r+n}(\Phi(x))$. This follows from the graphical calculi in both the domain and range. Note that $E_{2r+n | Q'_{2r}\cap Q_{2r+n}} = E_{P_{n,+}}$ because they are both faithful trace preserving conditional expectations on $P_{n,+}$.
 \item We have that $\Phi(\beta_n(x)) = \beta_{2r+n}(\Phi(x))$ due to graphical calculi in the domain and range. Also note that the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the incusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. 
-\item In the section \todo{Section with Rel com algebra} we showed that the Left Capping tangle in the Relative commutant planar algebra was algebraically described as:
+\item In the section \todo{Section with Rel com algebra} we showed that the left capping tangle $\gamma_n$ in the relative commutant planar algebra was algebraically described as:
 \[
  \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\dagger
 \]
