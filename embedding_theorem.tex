@@ -503,7 +503,7 @@ $\Tr_{n+1}(ap_n b) = \tr_n(ab) = \tr_n(ba) = d^2\tr_{n+1}(bae_n) = d^2 \tr_{n+1}
 \item
 
 Since $X_0 = (0)$ and $X_1 = (0)$ by definition, we may assume $n\geq 2$.
-As in the proof of \cite[Thm.~4.6.3.vi]{MR999799} and (5), we may assume $y$ is a central projection in $M_{n+1}$ such that $y e_{n} = 0$.
+As in the proof of \cite[Thm.~4.6.3.vi]{MR999799}, we may assume $y$ is a central projection in $M_{n+1}$ such that $y e_{n} = 0$.
 Then for all $ae_{n-1} b \in X_n$, $y ae_n b = d^2 yae_n e_{n+1}e_n b = d^2 ae_n ye_{n+1} e_n b = 0$.
 The final claim follows from $z_{n}E_{n+1}(y) = E_{n+1}(z_n y)= 0$ where $z_n$ is the central support of $e_{n-1}$ in $M_n$.
 
@@ -879,14 +879,14 @@ The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\ast$-planar subal
 
 \begin{proof}
 Observe that for all $x,y \in Q_{\bullet}$, we have that 
-\begin{align*}
+\begin{align}
 	\Phi(x^{*}) &= \Phi(x)^{\ast} \\
 	\Phi(xy) &= \Phi(x)\Phi(y) \\
-	\overline{\tr}_{n}(x) &= \frac{1}{\dim_\cC(x)^{2r}}\cdot\tr_{n}(\Phi(x)) 
-\end{align*}
+	\overline{\tr}_{n}(x) &= \frac{1}{\dim_\cC(x)^{2r}}\cdot\tr_{n}(\Phi(x)) \label{eq3}
+\end{align}
 
-	To prove the injectivity of $\Phi$, we can use the faithfullness of the traces and the third equation displayed above. % confusing. Number (or name) your equations for clarity in this situation. 
-	In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to well known functions! Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48  
+	To prove the injectivity of $\Phi$, we can use the faithfullness of the traces and equation \eqref{eq3}.
+	In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to known functions. Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48  
 \begin{enumerate}[(1)]
 \item By the construction of $P_{\bullet}$, we have that $\Phi(E_j)=F_j$. Thus, $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
 \item \begin{enumerate}[(i)]
