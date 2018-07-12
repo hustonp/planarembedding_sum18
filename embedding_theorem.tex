@@ -389,7 +389,7 @@ For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can
 
 
 \begin{defn}
-A \emph{Markov sequence} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$ such that:
+A \emph{Markov sequence} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
 \begin{itemize}
 \item
 The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations:
@@ -402,7 +402,7 @@ $e_i e_j = e_j e_i$ for $|i-j|>1$, and
 there is a fixed constant $d>0$ such that $e_{i} e_{i\pm 1} e_i = d^{-2} e_i$ for all $i$.
 \end{enumerate}
 \item
-For all $x\in M_n$, $e_n x e_n = E_n(x)e_n$ where $E_n: M_n \to M_{n-1}$ is the canonical faithful trace-preserving conditional expectation.
+For all $x\in M_n$, $e_n x e_n = E_n(x)e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical faithful trace-preserving conditional expectation.
 \item
 For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \item
@@ -414,16 +414,16 @@ For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
 
 
 \begin{rem}
-$M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ iff the pull down condition holds. Indeed if the pull down condition holds then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$, and the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
+$M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
 \end{rem}
 
 
 
 
-\begin{prop} Markov sequence satisfies the following elementary properties for $n\geq 1$.
+\begin{prop} A Markov sequence satisfies the following elementary properties for $n\geq 1$.
 \begin{enumerate}[(A)]
 \item
-\label{EP:injective}
+\label{EP:Injective}
 The map $M_{n}\ni y\mapsto ye_n \in M_{n+1}$ is injective.
 
 \item
@@ -442,7 +442,7 @@ $e_n M_{n+1}e_n = M_{n-1}e_n$.
 \label{EP:2SidedIdeal}
 $X_{n+1}:=M_n e_n M_n$ is a 2-sided ideal of $M_{n+1}$, and thus $M_{n+1}$ splits as a direct sum of von Neumann algebras $X_{n+1}\oplus Y_{n+1}$.
 (In \cite[Thm.~4.1.4 and Thm.~4.6.3]{MR999799}, $Y_{n+1}$ is the so-called `new stuff'.)
-By convention, we define $Y_0 = M_0$ and $Y_1 = M_0$, so that $X_0 = (0)$ and $X_1 = (0)$.
+By convention, we define $Y_0 = M_0$ and $Y_1 = M_1$, so that $X_0 = (0)$ and $X_1 = (0)$.
 
 \item
 \label{EP:BasicContruction}
@@ -470,15 +470,15 @@ If $Y_n =(0)$, then $Y_{k} = (0)$ for all $k\geq n$.
 \begin{enumerate}[(A)]
 \item
 
-We know that $d^2E_{n+1}(ye_n) = y $ so the proposed map has a left inverse.
+We know that $d^2E_{n+1}(ye_n) = y $, so the proposed map has a left inverse.
 
 \item
 
-If $xe_n = ye_n$ for $y\in M_n$,  $E_{n+1}(xe_n) = E_{n+1}(y e_n) = y E_{n+1}(e_n) = d^{-2} y$, and the map $M_n\ni z\mapsto ze_n\in M_{n+1}$ is injective.
+If $xe_n = ye_n$ for $y\in M_n$,  then $E_{n+1}(xe_n) = E_{n+1}(y e_n) = y E_{n+1}(e_n) = d^{-2} y$, and the map $M_n\ni z\mapsto ze_n\in M_{n+1}$ is injective.
 
 \item
 
-For $x\in M_n$, $\tr_{n+1}(xe_n) = \tr_n(E_{n+1}(xe_n)) = \tr_n(x E_{n+1}(e_n)) = d^{-2} \tr_n(x)$ since $E_{n+1}(e_n) = d^{-2}$.
+For $x\in M_n$, we have $\tr_{n+1}(xe_n) = \tr_n(E_{n+1}(xe_n)) = \tr_n(x E_{n+1}(e_n)) = d^{-2} \tr_n(x)$, since $E_{n+1}(e_n) = d^{-2}$.
 
 \item
 
@@ -490,14 +490,18 @@ $M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition.
 
 \item
 
-It suffices to show the map is injective, which shows it is well-defined.
+% It suffices to show the map is injective, which shows it is well-defined. % This was written here, but I can't make sense of it. 
+First, we check that the map $\phi:ae_nb\to ap_nb$ is injective. 
 Suppose $\sum a_i p_n b_i = 0$.
 Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, which implies $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective.
-Hence $0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$ for all $a,b\in M_n$, which implies $\sum a_i e_n b_i = 0$.
+Hence $0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$ for all $a,b\in M_n$, which implies $\sum a_i e_n b_i = 0$, showing that $\phi$ is injective. 
+
+		To show that $\phi$ is well-defined, we may reverse the above argument, using \ref{EP:Injective}. % perhaps cite (A), but this is not robust wrt reordering
+		It is clear that $\phi$ is surjective. 
 
 \item
 
-For $a,b\in M_n$, 
+For $a,b\in M_n$, we have 
 $\Tr_{n+1}(ap_n b) = \tr_n(ab) = \tr_n(ba) = d^2\tr_{n+1}(bae_n) = d^2 \tr_{n+1}(ae_n b)$.
 
 \item
@@ -516,7 +520,7 @@ This follows immediately from the previous fact.
 \end{proof}
 
 
-Notice that by \ref{EP:BasicContruction} the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
+Notice that by \ref{EP:BasicContruction}, the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
 
 
 \begin{defn}
