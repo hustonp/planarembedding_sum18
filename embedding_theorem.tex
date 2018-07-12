@@ -748,22 +748,23 @@ Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q
 \[ \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
-	\node at (0.15,.5) {\scriptsize{$n$}};
-	\node at (0.15,-.5) {\scriptsize{$n$}};
+	\node at (0,-.9) {\tiny{$n$}};
 \end{tikzpicture}
+\quad
 \begin{tikzpicture}[baseline]
 	\clip (0.5,0.9) -- (-0.5,0.9) -- (-0.5,-0.9) -- (0.5,-0.9);
 	\draw [|->,thick] (-0.3,0)--(0.3,0);
-	\node at (0,0.25) {$\Phi$};
+	\node at (0,0.25) {\scriptsize{$\Phi$}};
 \end{tikzpicture}
+\quad
 \begin{tikzpicture}[baseline]
+	\fill[shadedpink] (-.3,-.7) -- (-0.3,.7) -- (-.7,0.7) -- (-.7,-0.7) -- (-.3,-0.7);
 	\draw[thick,red] (-0.3,-.7) -- (-0.3,0.7);
 	\draw (0.45,-.7) -- (0.45,.7);
 	\draw (0,-.7) -- (0,.7);
 	\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
-	\node at (0.6,.5) {\scriptsize{$n$}};
-	\node at (0.6,-.5) {\scriptsize{$n$}};
-	\node at (0,-0.9){\scriptsize{$2r$}};
+	\node at (0.45,-.9) {\tiny{$n$}};
+	\node at (0,-0.9){\tiny{$2r$}};
 \end{tikzpicture} \]
 This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi(Q_{\bullet})$ is a sub $\ast$-planar algebra, we use Lemma 2.48 in \cite{penneys}.
 We shall state it here for the reader's convenience:
@@ -772,75 +773,56 @@ Suppose that $P_\bullet$ is a planar $\ast$-algebra with modulus $d \neq 0$ and 
 
 \begin{enumerate}[(1)]
 \item Multiplication by tangles of the form $E_n = 
-\begin{tikzpicture}[rectangular]
-	\clip (2,1) --(-2,1) -- (-2,-1) -- (2,-1);
-	\filldraw[shaded] (-1.4,1)--(-1.4,-1)--(-1,-1)--(-1,1);
-	\draw (.4,1)--(.4,-1);
-	\draw (0.8,1)--(.8,0.75) arc (-180:0:.4cm)--(1.6,1);
-	\draw  (0.8,-1)--(.8,-0.75) arc (180:0:.4cm)--(1.6,-1);
-	\draw [ultra thick] (2,1) --(-2,1) -- (-2,-1) -- (2,-1)--(2,1);	
-	\draw[<->, thick] (-1.6,-.075) -- (0.65,-.075);
-	\node at (-.475,-.3) {$_{n-1}$};
-	\node at (-.3,.4) {$\cdots$};
+\begin{tikzpicture}[baseline]
+	\draw (-.1,-.7) -- (-.1,.7);
+	\draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
+	\draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
+%	\node at (-.1,-1) {\scriptsize{$n-1$}};
+	\node at (-.1,-.9) {\tiny{$n-1$}};
 \end{tikzpicture}
-\in P_{n,+}
+: \mathbb{C} \to P_{n,+}
 $
 \item 
 \begin{enumerate}[(i)]
 \item (Right Capping) $\alpha_n = 
-\begin{tikzpicture}[rectangular]
-	\clip (2,1) --(-2,1) -- (-2,-1) -- (2,-1);
-	\filldraw[shaded] (-1.2,1.5)--(-1.2,-1.5)--(-.8,-1.5)--(-.8,1.5);
-	\draw (.6,1.5)--(.6,-1.5);
-	\draw (1,.5) arc (180:0:.3cm) -- (1.6,-.5);
-	\draw (1,-.5) arc (-180:0:.3cm);
-	\draw [ultra thick] (2,1) --(-2,1) -- (-2,-1) -- (2,-1)--(2,1);
-	\filldraw[thick, unshaded] (1.3,.5) --(1.3,-.5) -- (-1.4,-.5) -- (-1.4,.5)--(1.3,.5);
-	\node at (-.1,.75) {$\cdots$};
-	\node at (-.1,-.75) {$\cdots$};
-	\node at (-.05,0) {};
+\begin{tikzpicture}[baseline]
+	\draw (0,-.7) -- (0,.7);
+	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-0.9) {\tiny{$n-1$}};
 \end{tikzpicture}
 : P_{n,+} \to P_{n-1,+}
 $
 \item (Inclusion) $\beta_n = 
-\begin{tikzpicture}[rectangular]
-	\clip (2,1) --(-2,1) -- (-2,-1) -- (2,-1);
-	\filldraw[shaded] (-1.2,1.5)--(-1.2,-1.5)--(-.8,-1.5)--(-.8,1.5);
-	\draw (1.6,1.5)--(1.6,-1.5);
-	\draw (1,1.5) --(1,-1.5);
-	\draw [ultra thick] (2,1) --(-2,1) -- (-2,-1) -- (2,-1)--(2,1);
-	\filldraw[thick, unshaded] (1.2,.5) --(1.2,-.5) -- (-1.4,-.5) -- (-1.4,.5)--(1.2,.5);
-	\node at (0.1,.75) {$\cdots$};
-	\node at (0.1,-.75) {$\cdots$};
-	\node at (-0.1,0) {};
+\begin{tikzpicture}[baseline]
+	\draw (0,-.7) -- (0,0.7);
+	\draw (0.45,-.7) -- (0.45,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-.9) {\tiny{$n$}};
+	\node at (0.45,-.9) {\tiny{$1$}};
 \end{tikzpicture}
 : P_{n,+} \to P_{n+1,+}
 $
 \item (Left Capping) $\gamma^{+}_n =
-\begin{tikzpicture}[rectangular]
-	\clip (2,1) --(2,-1) -- (-2,-1) -- (-2,1);
-	\filldraw[shaded] (-2.5,1.5)--(-2.5,-1.5)--(-.6,-1.5)--(-.6,1.5);
-	\draw (1.3,1.5)--(1.3,-1.5);
-	\filldraw[unshaded] (-1,.5) arc (0:180:.3cm) -- (-1.6,-.5) arc (-180:0:.3cm) -- (-1,.5);
-	\draw [ultra thick] (2,1) --(-2,1) -- (-2,-1) -- (2,-1)--(2,1);
-	\filldraw[thick, unshaded] (1.5,.5) --(1.5,-.5) -- (-1.2,-.5) -- (-1.2,.5)--(1.5,.5);
-	\node at (.4,.75) {$\cdots$};
-	\node at (.4,-.75) {$\cdots$};
-	\node at (.15,0) {};
+\begin{tikzpicture}[baseline]
+	\fill[left color=white, right color= shaded-blue] (0,-.7) -- (-.8,-.7) -- (-.8,.7) -- (0,.7) -- (0,-.7);
+	\fill[unshaded] (-.15,.3) arc(0:180:.15cm) -- (-.45,-.3)arc(-180:0:0.15cm)--(-.15,.3);
+	\draw (0,-.7) -- (0,.7);
+	\draw (-.15,.3) arc (0:180:.15cm) -- (-.45,-.3) arc (-180:0:.15cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-0.9) {\tiny{$n-1$}};
 \end{tikzpicture}
 : P_{n,+} \to P_{n-1,-}
 $ 
 \end{enumerate}
 \item (Left inclusion) $i^{-}_n =
-\begin{tikzpicture}[rectangular]
-	\clip (2,1) --(-2,1) -- (-2,-1) -- (2,-1);
-	\filldraw[shaded] (-1.6,1.5)--(-1.6,-1.5)--(-1,-1.5)--(-1,1.5);
-	\draw (1.2,1.5)--(1.2,-1.5);
-	\draw [ultra thick] (2,1) --(-2,1) -- (-2,-1) -- (2,-1)--(2,1);
-	\filldraw[thick, unshaded] (-1.2,.5) --(-1.2,-.5) -- (1.4,-.5) -- (1.4,.5)--(-1.2,.5);
-	\node at (0.2,.75) {$\cdots$};
-	\node at (0.2,-.75) {$\cdots$};
-	\node at (0.1,0) {};
+\begin{tikzpicture}[baseline]
+	\fill[shaded-blue] (-0.45,.7) -- (0,.7) -- (0,-.7) -- (-0.45,-.7) -- (-0.45,.7);
+	\draw (0,-.7) -- (0,0.7);
+	\draw (-0.45,-.7) -- (-0.45,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-.9) {\tiny{$n$}};
+	\node at (-0.45,-.9) {\tiny{$1$}};
 \end{tikzpicture}
 : P_{n,-} \to P_{n+1,+}
 $ 
@@ -867,7 +849,7 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 \begin{enumerate}[(1)]
 \item By the construction of $P_{\bullet}$, we have that $\Phi(E_j)=F_j$. Thus, $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
 \item \begin{enumerate}[(i)]
-\item \label{condex} Clearly: $\Phi(E_n(x)) = E_{2r+n}(\Phi(x))$.
+\item \label{condex} Clearly: $\Phi(\alpha_n(x)) = \alpha_{2r+n}(\Phi(x))$.
 \item Similarly to \eqref{condex}, it is clear that $\Phi(\beta_n(x)) = \beta_{2r+n}(\Phi(x))$. In fact, the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the inclusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. 
 \item In the section 2, %cite whatever lemma this will be
  we showed that the left capping tangle $\gamma_n$ in the canonical $*$-planar algebra is given by:
