@@ -285,6 +285,19 @@
                      \end{tikzpicture}}}
      }
 
+% premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\uscircle}{
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (1mm) ;
+\end{tikzpicture}
+}
+
+\newcommand{\scircle}{
+\begin{tikzpicture}
+\filldraw[thick][shaded] (0,0) circle (1mm);
+\end{tikzpicture}
+}
+
 % colors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\cupcolor}{DarkGreen}
 \newcommand{\alphacolor}{blue}
@@ -323,61 +336,13 @@ Planar algebras were originally introduced in \cite{planaralg1}. We will use the
 		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
 \begin{itemize}
 \item The 0-morphisms of $\cG$ are the two objects
-$
-\begin{tikzpicture}
-\draw[thick] (0,0) circle (1mm) ;
-\end{tikzpicture}
-$ 
-and
-$
-\begin{tikzpicture}
-\filldraw[thick][shaded] (0,0) circle (1mm);
-\end{tikzpicture}
-$.
+$\uscircle$ and $\scircle$.
 \item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
 \begin{itemize}
-\item $\Hom_{\cG}(
-\begin{tikzpicture}
-\draw[thick] (0,0) circle (1mm) ;
-\end{tikzpicture}
-\rightarrow
-\begin{tikzpicture}
-\draw[thick] (0,0) circle (1mm) ;
-\end{tikzpicture})=
-\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}
-$
-\item $\Hom_{\cG}(
-\begin{tikzpicture}
-\draw[thick] (0,0) circle (1mm) ;
-\end{tikzpicture}
-\rightarrow
-\begin{tikzpicture}
-\filldraw[thick][shaded] (0,0) circle (1mm);
-\end{tikzpicture})
-=
-\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}
-$
-\item $\Hom_{\cG}(
-\begin{tikzpicture}
-\filldraw[thick][shaded] (0,0) circle (1mm);
-\end{tikzpicture}
-\rightarrow
-\begin{tikzpicture}
-\draw[thick] (0,0) circle (1mm) ;
-\end{tikzpicture})
-=
-\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}
-$
-\item $\Hom_{\cG}(
-\begin{tikzpicture}
-\filldraw[thick][shaded] (0,0) circle (1mm);
-\end{tikzpicture}
-\rightarrow
-\begin{tikzpicture}
-\filldraw[thick][shaded] (0,0) circle (1mm);
-\end{tikzpicture})=
-\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}
-$
+	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
+	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
 \end{itemize}
 Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
 \item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
