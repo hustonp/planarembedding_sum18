@@ -501,13 +501,11 @@ A Markov sequence is said to have \emph{finite depth} if the principal graph is 
 \end{defn}
 
 
-It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and let $n\in \bbN$ be such that $Y_n=(0)$. 
-Note that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph, and the Bratteli diagram for $M_1\subseteq M_2$ is the Bratteli diagram for $M_0\subseteq M_1$ reflected upwards, along with some new edges between the vertices corresponding to $Y_1$ and $Y_2$. Therefore, there is a natural isomorphism between the Bratteli diagram for $M_1\subseteq M_2$ and the subgraph of the principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2$. Similarly, we can naturally identify the Bratteli diagram of $M_2\subseteq M_3$ with the subgraph of the principal graph given only by the inclusions $M_0\subseteq M_1\subseteq M_2\subseteq M_3$. Continuing on in this way, we see that we have a natural identification of the prinicapl graph with the Bratteli diagram of $M_n\subseteq M_{n+1}$, and for $k\geq n$, the Bratteli diagram of $M_{k}\subset M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subset M_{k}$ (possibly reflected). % This whole inductive argument should either be turned into a more rigorous proof of the following proposition, or drastically shortened into a sketch
-This gives the following proposition:
+It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and let $n\in \bbN$ be such that $Y_n=(0)$. Now notice that for $k<n$ the Bratelli diagram of $M_k\subseteq M_{k+1}$ is the Bratelli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratelli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov sequence $(A_n,tr_n)$.
 
-\begin{prop}\label{BratteliPrincipal}
+\begin{fact}\label{BratteliPrincipal}
 	If a Markov sequence $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
-\end{prop}
+\end{fact}
 
 \begin{ex}
 The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
