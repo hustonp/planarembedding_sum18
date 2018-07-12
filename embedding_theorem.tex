@@ -896,11 +896,13 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 \[
  \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\dagger
 \]
-where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\gamma^{+}_n$ preserves $\Phi(Q_{\bullet})$. Let $x \in Q_{n,+}$. We now pictorially manipulate $d^2\gamma^{+}_n(\Phi(x))$:
+where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\gamma^{+}_n$ preserves $\Phi(Q_{\bullet})$. For any $x \in Q_{n,+}$, we have 
 
 \centerline{
   \begin{minipage}{\linewidth}
-    \begin{align*}
+			\[
+				d^2\gamma^+_n(\Phi(x))
+				=
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
@@ -914,9 +916,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\node at (0,2.2) {\tiny{$2r+1$}};
 	\node at (-.15,0) {\tiny{$2r$}};
 \end{tikzpicture} 
-\quad
 =
-\qquad
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
@@ -933,7 +933,6 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\node at (-.15,0) {\tiny{$2r$}};
 \end{tikzpicture} 
 =
-\qquad
 \begin{tikzpicture}[baseline]
 	\draw[thick,red] (-0.3,-2.1) -- (-0.3,2.1);
 	\draw (0.6,1.95) arc(180:0:.3cm) -- (1.2,.15);
@@ -948,7 +947,6 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\node at (0.5,0) {\tiny{$1$}};
 \end{tikzpicture} 
 =
-\qquad
 \begin{tikzpicture}[baseline]
 	\draw[thick,red] (-0.3,-2.1) -- (-0.3,2.1);
 	\draw (0.3,0.7) arc(180:0:.15cm) -- (0.6,.15);
@@ -960,7 +958,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\node at (1.2,-2.3) {\tiny{$n-1$}};
 	\node at (0,-2.3) {\tiny{$2r$}};
 \end{tikzpicture}
- \end{align*}
+	\]
   \end{minipage}
 }
 Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$.
