@@ -892,13 +892,14 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 \end{align}
 
 	To prove the injectivity of $\Phi$, we can use the faithfullness of the traces and equation \eqref{eq3}.
-	In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to known functions. Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48  
+	In section \todo{Cover how the relative commutant algebra looks} we see that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to known functions. Thus we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48:
 \begin{enumerate}[(1)]
 \item By the construction of $P_{\bullet}$, we have that $\Phi(E_j)=F_j$. Thus, $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
 \item \begin{enumerate}[(i)]
-\item We have that $\Phi(E_n(x)) = E_{2r+n}(\Phi(x))$. This follows from the graphical calculi in both the domain and range. Note that $E_{2r+n | Q'_{2r}\cap Q_{2r+n}} = E_{P_{n,+}}$ because they are both faithful trace preserving conditional expectations on $P_{n,+}$.
-\item We have that $\Phi(\beta_n(x)) = \beta_{2r+n}(\Phi(x))$ due to graphical calculi in the domain and range. Also note that the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the incusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. 
-\item In the section \todo{Section with Rel com algebra} we showed that the left capping tangle $\gamma_n$ in the relative commutant planar algebra was algebraically described as:
+\item \label{condex} Clearly: $\Phi(E_n(x)) = E_{2r+n}(\Phi(x))$.
+\item Similarly to \ref{condex} it's clear that $\Phi(\beta_n(x)) = \beta_{2r+n}(\Phi(x))$ in fact the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the inclusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. 
+\item In the section 2 %cite whatever lemma this will be
+ we showed that the left capping tangle $\gamma_n$ in the canonical *-planar algebra is given by:
 \[
  \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\ast
 \]
@@ -967,7 +968,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\]
   \end{minipage}
 }
-Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$.
+Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$, in fact we have $\gamma^+_n(\Phi(x)) =\Phi(\gamma^+_n(x))$.
 \end{enumerate}
 \item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
 \[
@@ -1010,7 +1011,7 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$.
 \end{enumerate}
 \end{proof}
 
-We have checked that $\Phi(Q_{\bullet}) \subset P_{\bullet}$ is a $\ast$-planar algebra inclusion. Let $G_\bullet$ be the bipartite graph planar algebra on the principle graph of $(A_n)$. Then by Theorem 3.33 in \cite{penneys}
+We have checked that $\Phi(Q_{\bullet}) \subset P_{\bullet}$ is a $\ast$-planar algebra inclusion. Let $G_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{penneys}
 we have that $P_\bullet$ is $\ast$-planar algebra isomorphic to $G_\bullet$. Thus, we have successfully embedded $Q_\bullet$ into $G_\bullet$.
 
 \begin{cor}[The Embedding Theorem]
