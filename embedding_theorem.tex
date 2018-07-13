@@ -356,15 +356,16 @@ Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammati
 For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,UnitaryDualFunctors}. 
 When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
 
-\nn{add unitarity to below.}
-By a module over $Q_\bullet$, we mean a module category over the multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. By \cite{ostrik03}, % think more about who to cite maybe?
-there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$. 
-\nn{this algebra must be a Q-system, i.e., you need to make it unitary. 
-Cite \cite[Thm.~A.1]{1704.04729}}
+By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
+Since $\cM$ is indecomposable, we can take $m$ to be simple. 
+By \cite{ostrik03}, there is a $\ast$-algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+Since $m$ is simple, 
+$A$ is in fact a Q-system, % Q-system or $Q$-system?
+as described in \cite[Rmk.2.7]{1704.04729}.  
 Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
 Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
 We can therefore view $\cG$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and view $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-We can again obtain a $3\times 3$ multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which both $\cC$ and $\cM$ have naturally monoidal embeddings. 
+By \cite[Thm.4.1]{1704.04729}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which both $\cC$ and $\cM$ have naturally monoidal embeddings. 
 Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\time 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
 
 
