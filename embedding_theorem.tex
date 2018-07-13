@@ -470,7 +470,7 @@ $M_{n+1} e_n = M_n e_n$ and $e_nxe_n = E_n(x)e_n$ for all $x\in M_n$.
 
 \item
 
-$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition, as discussed in \eqref{pulldowniff}
+$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition, as was discussed in \eqref{pulldowniff}
 
 \item
 
@@ -514,7 +514,7 @@ A Markov sequence is said to have \emph{finite depth} if the principal graph is 
 \end{defn}
 
 
-It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards, along with additional edges which are part of the principal graph. Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph, we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov sequence $(A_n,\tr_n)$.
+It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and take the minima; integer $n\in \bbN$ such that $Y_n=(0)$. Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov sequence $(A_n,\tr_n)$.
 
 \begin{fact}\label{BratteliPrincipal}
 	If a Markov sequence $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
@@ -523,6 +523,20 @@ It follows that a Markov sequence has finite depth if and only if there is $n\in
 \begin{ex}
 The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
 \end{ex}
+
+\subsection{The Canonical *-Planar Algebra of a Strongly Markov Inclusion}
+Let $M_0\subseteq (M_1,\tr_1)$ be a strongly Markov inclusion of finite von Neumann algebras with faithful, normal, tracial states, with $[M_1:M_0]=d^2$, and with Jones projections $e_n\in M_{n+1}$. Let the finite von Neumann Algebra $(M_n,\tr_n)$ be obtained by iterating the basic construction on $M_0\subseteq (M_1,\tr_1)$. We will construct a planar algebra called the \textit{canonical *-planar algebra of a strongly Markov inclusion} corresponding to $M_0\subseteq (M_1,\tr_1)$. We refer the reader to \cite{MR2812459} for more details on this construction. We will need the following proposition:
+
+\begin{prop} \label{iso}
+For any $n$ the map:
+\begin{align*}
+\theta_n: \bigotimes_{M_0}^{n}M_1 &\rightarrow M_n\\
+\text{defined by: } x_1\otimes\cdots x_n &\mapsto x_1v_1x_2v_2\cdots x_nv_n\\
+\text{where } v_k&:=d^ne_ne_{n-1}\cdots e_1
+\end{align*}
+\end{prop}
+
+
 
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
