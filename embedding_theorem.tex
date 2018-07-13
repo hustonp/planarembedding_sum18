@@ -528,7 +528,7 @@ The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projection
 
 \section{Construction of the Planar Algebra Associated to a Module Category}
 \subsection{Construction of a Markov Sequence}
-Given a subfactor planar algebra $Q_{\bullet}$, let $\cC$ be the paragroup of $Q_{\bullet}$ and $\cM$ be an indecomposable module category for $\cC$. We know that there is a $3\times 3$ unitary multifusion category $\widetilde{\cC}$, with $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ and $\cC$ the  non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$, so that $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
+Given a subfactor planar algebra $Q_{\bullet}$, let $\widetilde{\cC}$, and $\cC$ be the multifusion categories  associated to $\cG$ and $\cM$ (the paragroup for $Q_{\bullet}$ and a module category for $Q_{\bullet}$) as described in section 2.1. Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$ and $\cC$ the  non-unital $2\times 2$ unitary multifusion subcategory with $1_\cC = 1_0\oplus 1_1$, so that $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
 $$
 \cM 
 =
@@ -558,21 +558,21 @@ Let $x\in \cC_{01}$ be the strand pictured below:
 $$x=
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (-.7,-.7);
-	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\fill[\RelativeCommutantShading] (0,-.7) rectangle (.7,.7);
 	\draw (0,-.7) -- (0,.7);
 
 \end{tikzpicture}
 \ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (.7,.7);
-	\fill[gray!25!white] (0,-.7) rectangle (-.7,.7);
+	\fill[\RelativeCommutantShading] (0,-.7) rectangle (-.7,.7);
 	\draw[fill] (0,-.7) -- (0,.7);
 
 \end{tikzpicture}
 \,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (-.7,.7);
-	\fill[gray!25!white] (0,-.7) rectangle (.7,.7);
+	\fill[\RelativeCommutantShading] (0,-.7) rectangle (.7,.7);
 	\draw (0,-.7) -- (0,.7);
 	\draw (.7,-.7) -- (.7,.7);
 
@@ -696,9 +696,8 @@ A_{n+1}.
 \end{equation}
 where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
 Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
-for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}id_{m \otimes \xalt}$. Finally, the pull 
-down condition % probably we should define the condition somewhere in the prelims, and then this becomes ``(some number)''; if not, then we should explicitly give the condition here, whatever it is. 
-holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
+for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
+down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
 two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov sequence.
  
 \begin{prop}
@@ -706,12 +705,11 @@ The Markov sequence of von Neumann Algebras $(A_n, tr_n)_{n\geq 0}$ is finite de
 \end{prop}
 
 \begin{proof}
-	Every object of $\cM$ is a subobject of $m\otimes \xalt$ for some $n$. Let $Y^l_1,\ldots Y^l_{r_il}$, be a collection of non-isomorphic simple objects spanning $\cC_{2l}$, for $l\in\{0,1\}$. Then 
-
-% warning: a lot of indices are undefined and text is missing in this block. 
-	\[\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j Y^l_j) \cong \bigoplus\limits_{j}M_{n_j}(\bbC)\]
-	At each level of the Bratteli diagram corresponding to $A_{n-1}\subseteq A_n$, 
-	there are at most $\max\{r_1,r_0\}$ vertices, so the principal graph must be finite. 
+	Let $Y_1,\ldots Y_{r}$, be a collection of non-isomorphic simple objects spanning $\cC_{20}$. Then when $n$ is even we have:
+	\[m\otimes \xalt \cong \bigoplus\limits_{j}n_jY_j \]
+ For some nonnegative integers $n_1,\ldots n_r$ so then we have:
+	\[\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j Y^l_j) \]
+	If there are $s$ ismorphism classes of simple objects in $\cC_{21}$ we obtain a similar result. So for any $n$ the Bratellia diagram for $A_n\subseteq A_{n+1}$ has at most $r+s$ vertices, so the principal graph must be finite. 
 \end{proof}
 
 \begin{thm}
@@ -731,7 +729,7 @@ $$Y_j\otimes x=\bigoplus\limits_{i}p_{i,j}Z_i$$
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
 
 Recall that:
-$$A_n=\End_{\cC}(m\otimes\xalt)\cong \End_{\cC}(\bigoplus\limits_{j}n_j Y_j)$$
+$$A_n=\End_{\cC}(m\otimes\xalt)\cong \bigoplus\limits_{j}\End_{\cC}(n_j Y_j)$$
 if we have that 
 $$m \otimes \xalt \cong \bigoplus\limits_{j}n_jY_j$$
 Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y_1\oplus\cdots \oplus Y_{r}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). 
@@ -741,7 +739,7 @@ $$\bigoplus\limits_{j}\phi_j$$
 where each $\phi_j \in \End_{\cC}(n_jY_j)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
 $$\bigoplus_{j}(\phi_j \otimes \id_{x})$$
 But then:
-$$\phi_j \otimes \id_{x} \in \End_{\cC}(n_j Y_j \otimes x)\cong \End_{\cC}(\bigoplus\limits_{i} p_{i,j} n_j Z_i)$$
+$$\phi_j \otimes \id_{x} \in \End_{\cC}(n_j Y_j \otimes x)\cong \bigoplus\limits_{i} \End_{\cC}( p_{i,j} n_j Z_i)$$
 Since all $n_j\neq 0$ and the inclusion is unital, it's clear that $p_{i,j}$ gives the coefficients for the Bratteli diagram.
 \end{proof}
 
