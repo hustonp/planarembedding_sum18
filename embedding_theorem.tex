@@ -47,10 +47,6 @@
    citecolor={medium-blue}, urlcolor={medium-blue}
 }
 
-\newcommand{\RelativeCommutantShading}{blue!15!white}
-\newcommand{\CTwoShading}{red!15!white}
-
-
 %\addtolength{\textwidth}{.5in}
 \usepackage{longtable}
 \usepackage{fullpage}
@@ -263,6 +259,8 @@
 \tikzstyle{mid>}=[decoration={markings, mark=at position 0.5 with {\arrow{>}}}, postaction={decorate}]
 \tikzstyle{mid<}=[decoration={markings, mark=at position 0.5 with {\arrow{<}}}, postaction={decorate}]
 \tikzstyle{over}=[double, draw=white, super thick, double=]
+\tikzstyle{relativecommutantshading}=[fill=blue!15!white]
+\tikzstyle{ctwoshading}=[fill=red!15!white]
 
 \newcommand{\roundNbox}[6]{
 	\draw[rounded corners=5pt, very thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
@@ -558,21 +556,21 @@ Let $x\in \cC_{01}$ be the strand pictured below:
 $$x=
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (-.7,-.7);
-	\fill[\RelativeCommutantShading] (0,-.7) rectangle (.7,.7);
+	\fill[relativecommutantshading] (0,-.7) rectangle (.7,.7);
 	\draw (0,-.7) -- (0,.7);
 
 \end{tikzpicture}
 \ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (.7,.7);
-	\fill[\RelativeCommutantShading] (0,-.7) rectangle (-.7,.7);
+	\fill[relativecommutantshading] (0,-.7) rectangle (-.7,.7);
 	\draw[fill] (0,-.7) -- (0,.7);
 
 \end{tikzpicture}
 \,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[white] (0,-.7) rectangle (-.7,.7);
-	\fill[\RelativeCommutantShading] (0,-.7) rectangle (.7,.7);
+	\fill[relativecommutantshading] (0,-.7) rectangle (.7,.7);
 	\draw (0,-.7) -- (0,.7);
 	\draw (.7,-.7) -- (.7,.7);
 
@@ -585,7 +583,7 @@ $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xba
 We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Set $A_n=\End_{\cC}(m\otimes \xalt)$. We can represent morphisms in $A_n$ as 
 $$
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.15,-.7) rectangle (-.5,.7);
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
 	\draw (.15,-.7) -- (.15,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
@@ -604,7 +602,7 @@ where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes
 \cdot
 \left(
 \begin{tikzpicture}[baseline=-.1cm, rotate=90]
-	\filldraw[thick, red, fill=\CTwoShading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
+	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
 	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
 %	\node at (-.7,-.35) {\scriptsize{$n$}};
@@ -623,7 +621,7 @@ Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. Thi
 We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 \begin{equation}\label{eq:Inclusion}
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.15,-.7) rectangle (-.5,.7);
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
 	\draw (.15,-.7) -- (.15,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
@@ -632,7 +630,7 @@ We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that t
 \end{tikzpicture}
 \mapsto
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.15,-.7) rectangle (-.5,.7);
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
 	\draw (.15,-.7) -- (.15,.7);
 	\draw (.45,-.7) -- (.45,.7);
@@ -645,7 +643,7 @@ We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that t
 and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, 
 \begin{equation}\label{eq:ConditionalExpectationAn}
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.15,-.7) rectangle (-.5,.7);
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
 	\draw (.15,-.7) -- (.15,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
@@ -657,7 +655,7 @@ and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$,
 \cdot
 \left(\,\,
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.15,-.7) rectangle (-.5,.7);
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
 	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
 	\draw (0,-.7) -- (0,.7);
 	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
@@ -680,7 +678,7 @@ e_n
 \frac1d\cdot
 \left(\,\,
 \begin{tikzpicture}[baseline=-.1cm]
-	\fill[\CTwoShading] (-.3,-.7) rectangle (-.6,.7);
+	\fill[ctwoshading] (-.3,-.7) rectangle (-.6,.7);
 	\draw[thick, red] (-.3,-.7) -- (-.3,.7);
 	\draw (-.1,-.7) -- (-.1,.7);
 	\draw (.1,-.7) -- (.1,-.4) arc (180:0:.15cm) -- (.4,-.7);
@@ -771,7 +769,7 @@ Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-.3,-.7) -- (-0.3,.7) -- (-.7,0.7) -- (-.7,-0.7) -- (-.3,-0.7);
+	\fill[ctwoshading] (-.3,-.7) -- (-0.3,.7) -- (-.7,0.7) -- (-.7,-0.7) -- (-.3,-0.7);
 	\draw[thick,red] (-0.3,-.7) -- (-0.3,0.7);
 	\draw (0.45,-.7) -- (0.45,.7);
 	\draw (0,-.7) -- (0,.7);
@@ -818,7 +816,7 @@ $
 $
 \item (Left Capping) $\gamma^{+}_n =
 \begin{tikzpicture}[baseline]
-	\fill[\RelativeCommutantShading] (0,-.7) -- (-.8,-.7) -- (-.8,.7) -- (0,.7) -- (0,-.7);
+	\fill[relativecommutantshading] (0,-.7) -- (-.8,-.7) -- (-.8,.7) -- (0,.7) -- (0,-.7);
 	\fill[unshaded] (-.15,.3) arc(0:180:.15cm) -- (-.45,-.3)arc(-180:0:0.15cm)--(-.15,.3);
 	\draw (0,-.7) -- (0,.7);
 	\draw (-.15,.3) arc (0:180:.15cm) -- (-.45,-.3) arc (-180:0:.15cm);
@@ -830,7 +828,7 @@ $
 \end{enumerate}
 \item (Left inclusion) $i^{-}_n =
 \begin{tikzpicture}[baseline]
-	\fill[\RelativeCommutantShading] (-0.45,.7) -- (0,.7) -- (0,-.7) -- (-0.45,-.7) -- (-0.45,.7);
+	\fill[relativecommutantshading] (-0.45,.7) -- (0,.7) -- (0,-.7) -- (-0.45,-.7) -- (-0.45,.7);
 	\draw (0,-.7) -- (0,0.7);
 	\draw (-0.45,-.7) -- (-0.45,.7);
 	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
@@ -878,7 +876,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 				=
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
+	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
 	\fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,-0.7) -- (0,-0.7) -- (0,-2.1) -- (0.6,-2.1) -- (0.6,2.1) -- (0,2.1);
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
 	\draw (0.6,-2.1) -- (0.6,2.1);
@@ -894,7 +892,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 =
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
+	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
 	\fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.8)arc(180:0:.3cm) -- (1.2,-1.8) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.7) -- (0,-.7) -- (0,-2.1) -- (1.5,-2.1) -- (1.5,2.1);
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
 	\draw (0.3,.7)--(0.3,0.25) arc (-180:0:.15cm)-- (0.6,1.8) arc(180:0:.3cm) -- (1.2,.15);
@@ -911,7 +909,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 \end{tikzpicture} 
 =
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
+	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
 	\fill[shaded] (0,2.1) -- (1.5,2.1) -- (1.5,-2.1) -- (0,-2.1) -- (0,2.1);
 	\fill[unshaded] (0.6,1.8) arc(180:0:.3cm) -- (1.2,-1.8)arc(0:-180:0.3cm) -- (0.6,1.8); 
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
@@ -928,7 +926,7 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 \end{tikzpicture} 
 =
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
+	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
 	\fill[shaded] (0,2.1) -- (.9,2.1) -- (.9,-2.1) -- (0,-2.1) -- (0,2.1);
 	\fill[unshaded] (0.3,0.7) arc(180:0:.15cm) -- (0.6,-0.7)arc(0:-180:0.15cm) -- (0.3,0.7); 
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
@@ -949,7 +947,7 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
 \item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
 \[
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
+	\fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
 	\fill[shaded] (-0.45,-0.7) -- (-0.45,0.7) -- (0.15,0.7) -- (0.15,-0.7) -- (-0.45,-0.7);
 	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
 	\draw (-0.45,-0.7) -- (-0.45,0.7);
@@ -963,7 +961,7 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
 =
 \quad
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
+	\fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
 	\fill[shaded] (-0.45,-0.7) -- (-0.45,0.7) -- (0.15,0.7) -- (0.15,-0.7) -- (-0.45,-0.7);
 	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
 	\draw (-0.45,-0.7) -- (-0.45,0.7);
@@ -977,7 +975,7 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
 =
 \quad
 \begin{tikzpicture}[baseline]
-	\fill[\CTwoShading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
+	\fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
 	\fill[shaded] (0.15,-0.7) -- (0.15,0.7) -- (0.6,0.7) -- (0.6,-0.7) -- (0.15,-0.7);
 	\draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
 	\draw (-0.45,-0.7) -- (-0.45,0.7);
