@@ -397,7 +397,7 @@ For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
 \end{defn}
 
 
-\begin{rem}
+\begin{rem}\label{pulldowniff}
 $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
 \end{rem}
 
@@ -452,13 +452,13 @@ If $Y_n =(0)$, then $Y_{k} = (0)$ for all $k\geq n$.
 \begin{proof} 
 
 \begin{enumerate}[(A)]
-\item
+\item\label{inj}
 
 We know that $d^2E_{n+1}(ye_n) = y $, so the proposed map has a left inverse.
 
 \item
 
-If $xe_n = ye_n$ for $y\in M_n$,  then $E_{n+1}(xe_n) = E_{n+1}(y e_n) = y E_{n+1}(e_n) = d^{-2} y$, and the map $M_n\ni z\mapsto ze_n\in M_{n+1}$ is injective.
+This follows directly from \eqref{inj}
 
 \item
 
@@ -470,7 +470,7 @@ $M_{n+1} e_n = M_n e_n$ and $e_nxe_n = E_n(x)e_n$ for all $x\in M_n$.
 
 \item
 
-$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition.
+$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition, as was discussed in \eqref{pulldowniff}
 
 \item
 
