@@ -86,6 +86,7 @@
 \newtheorem{construction}[thm]{Construction}
 \newtheorem{alg}[thm]{Algorithm}
 \newtheorem{assumption}[thm]{Assumption}
+
 \newtheorem{nota}[thm]{Notation}
 \newtheorem{nb}[thm]{Note}
 \newtheorem{note}[thm]{Note}
@@ -478,8 +479,8 @@ $M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition, as discu
 % It suffices to show the map is injective, which shows it is well-defined. % This was written here, but I can't make sense of it. 
 First, we check that the map $\phi:ae_nb\to ap_nb$ is injective. 
 Suppose $\sum a_i p_n b_i = 0$.
-Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, which implies $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective.
-Hence $0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$ for all $a,b\in M_n$, which implies $\sum a_i e_n b_i = 0$, showing that $\phi$ is injective. 
+Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, and therefore $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective.
+Hence $$0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$$ for all $a,b\in M_n$, and thus $\sum a_i e_n b_i = 0$, so $\phi$ is injective. 
 
 		To show that $\phi$ is well-defined, we may reverse the above argument, using \eqref{EP:Injective}. 
 		It is clear that $\phi$ is surjective. 
