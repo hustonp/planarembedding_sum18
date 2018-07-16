@@ -795,11 +795,11 @@ The Markov sequence of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ i
 \end{prop}
 
 \begin{proof}
-	Let $Y_1,\ldots Y_{r}$, be a collection of non-isomorphic simple objects spanning $\cC_{20}$. Then when $n$ is even we have:
-	\[m\otimes \xalt \cong \bigoplus\limits_{j}\left(n_jY_j\right) \]
+	Let $\cI$, be a collection of non-isomorphic simple objects spanning $\cC_{20}$. Then when $n$ is even we have:
+	\[m\otimes \xalt \cong \bigoplus\limits_{Y\in\Irr(\cC)}\left(n_YY\right) \]
  For some nonnegative integers $n_1,\ldots n_r$ so then we have:
-	\[\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{j}\End_{\widetilde{\cC}}\left(n_j Y^l_j\right) \]
-	If there are $s$ isomorphism classes of simple objects in $\cC_{21}$ we obtain a similar result. So for any $n$ the Bratteli diagram for $A_n\subseteq A_{n+1}$ has at most $r+s$ vertices, so the principal graph must be finite. 
+	\[\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{Y\in \Irr(\cC)}\End_{\widetilde{\cC}}\left(n_Y Y\right) \]
+	For $\cC_{21}$ we obtain a similar result. So if $\cJ$ is  for any $n$  a collection of non-isomorphic simple objects spanning $\cC_{21}$ the Bratteli diagram for $A_n\subseteq A_{n+1}$ has at most $|\cI|+|\cJ|$ vertices, so the principal graph must be finite. 
 \end{proof}
 
 \begin{thm}
@@ -811,26 +811,26 @@ We will proceed by noting that because $x$ generates $\cC$ and $\cM$ is cyclic t
 
 First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$ so without loss of generality we may assume that $n$ is even.
 
-Let $Y_1,\ldots Y_{r}$ be a collection of non-isomorphic simple objects in $\cC_{20}$ such that every object in $\cC_{20}$ is isomorphic to a direct sum of these elements, as in the previous proof. Let $Z_{1},\ldots Z_{s}$ be a similarly defined collection of simple objects for $\cC_{21}$. 
-	Let the non-negative integers $p_{i,j}$ be defined by the following equation:
+Let $\cI$ be a collection of non-isomorphic simple objects in $\cC_{20}$ such that every object in $\cC_{20}$ is isomorphic to a direct sum of these elements, as in the previous proof. Let $\cJ$ be a similarly defined collection of simple objects for $\cC_{21}$. 
+	Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
 
-$$Y_j\otimes x=\bigoplus\limits_{i}\left(p_{i,j}Z_i\right)$$
+$$Y\otimes x=\bigoplus\limits_{\cJ}\left(p_{Z,Y}Z\right)$$
 
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
 
 Recall that:
-$$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{j}\End_{\widetilde{\cC}}\left(n_j Y_j\right)$$
+$$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\cI}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
 if we have that 
-$$m \otimes \xalt \cong \bigoplus\limits_{j}\left(n_jY_j\right)$$
-Note that we may take $n$ such that all $n_j$ are strictly positive, as there is some $n$ such that $Y_1\oplus\cdots \oplus Y_{r}$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). 
+$$m \otimes \xalt \cong \bigoplus\limits_{\cI}\left(n_YY\right)$$
+Note that we may take $n$ such that all $n_Y$ are strictly positive, as there is some $n$ such that $\bigoplus\limits_{\cI}Y$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). 
 
 The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
-$$\bigoplus\limits_{j}\phi_j$$
-where each $\phi_j \in \End_{\widetilde{\cC}}\left(n_jY_j\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
-$$\bigoplus_{j}\left(\phi_j \otimes \id_{x}\right)$$
+$$\bigoplus\limits_{\cI}\phi_Y$$
+where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
+$$\bigoplus_{\cI}\left(\phi_Y \otimes \id_{x}\right)$$
 But then:
-$$\phi_j \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_j Y_j \otimes x\right)\cong \bigoplus\limits_{i} \End_{\widetilde{\cC}}\left( p_{i,j} n_j Z_i\right)$$
-Since all $n_j\neq 0$ and the inclusion is unital, it's clear that $p_{i,j}$ gives the coefficients for the Bratteli diagram.
+$$\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\cJ} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)$$
+Since all $n_j\neq 0$ and the inclusion is unital, it's clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
 \end{proof}
 
 
