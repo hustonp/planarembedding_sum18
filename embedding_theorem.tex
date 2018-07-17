@@ -806,30 +806,27 @@ The principal graph obtained from the Markov sequence $\left(A_n, tr_n\right)_{n
 \end{thm}
 
 \begin{proof}
-We will proceed by noting that because $x$ generates $\cC$ and $\cM$ is cyclic that we can assume there is some simple from every isomorphism class in $\cM$ appearing as a direct summand of $m\otimes \xalt $. Then our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$ so they are determined entirely by the fusion rules.
+Because $x$ generates $\cC$ and $\cM$ is cyclic, we can assume that every simple object in $\cM$ is a direct summand of $m\otimes \xalt $. Essentially, our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$, so they are determined entirely by the fusion rules.
 
-First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$ so without loss of generality we may assume that $n$ is even.
+First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
 
 Let $\cI$ be a collection of non-isomorphic simple objects in $\cC_{20}$ such that every object in $\cC_{20}$ is isomorphic to a direct sum of these elements, as in the previous proof. Let $\cJ$ be a similarly defined collection of simple objects for $\cC_{21}$. 
-	Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
-
-$$Y\otimes x=\bigoplus\limits_{\cJ}\left(p_{Z,Y}Z\right)$$
-
+Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
+	\[Y\otimes x\cong\bigoplus\limits_{\cJ}\left(p_{Z,Y}Z\right)\]
 These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
 
-Recall that:
+Recall that
 $$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\cI}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
-if we have that 
+where 
 $$m \otimes \xalt \cong \bigoplus\limits_{\cI}\left(n_YY\right)$$
-Note that we may take $n$ such that all $n_Y$ are strictly positive, as there is some $n$ such that $\bigoplus\limits_{\cI}Y$ is isomorphic to a direct summand of $m\otimes \xalt$ (in fact the first $n$ where this happens is exactly when the Markov sequence achieves depth). 
+	Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\cI}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov sequence achieves depth.) % Strictly speaking, this is not true, because the Markov sequence may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
 
-The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum 
-$$\bigoplus\limits_{\cI}\phi_Y$$
+The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum \[\bigoplus\limits_{\cI}\phi_Y\]
 where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
-$$\bigoplus_{\cI}\left(\phi_Y \otimes \id_{x}\right)$$
+	\[\bigoplus_{\cI}\left(\phi_Y \otimes \id_{x}\right)\]
 But then:
-$$\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\cJ} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)$$
-Since all $n_j\neq 0$ and the inclusion is unital, it's clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
+	\[\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\cJ} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)\]
+Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
 \end{proof}
 
 
