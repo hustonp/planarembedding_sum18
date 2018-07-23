@@ -1116,7 +1116,11 @@ $$
 \end{prop}
 
 \begin{proof}
-Without loss of generality we may assume that $s=r+1$.
+Without loss of generality we may assume that $s=r+1$. For each $n\in \{0,1,2,\ldots \}$ define $\psi_{n,+}:A_{2r}'\cap A_{2r+n}\rightarrow A_{2r+2}'\cap A_{2r+n+2}$ by:
+$$x\mapsto J_{2r+n+1}J_{2r+n} x J_{2r+n} J_{2r+n+1}$$
+and then define $\psi_{n,-}:A_{2r+1}'\cap A_{2r+n+1}\rightarrow A_{2r+3}'\cap A_{2r+n+3}$ by:
+$$x\mapsto J_{2r+n+2} J_{2r+n+1}xJ_{2r+n+1}J_{2r+n+2}$$
+These are exactly the canonical isomorphisms described in proposition 2.22 of \cite{penneys}. As found section in 3.2.2 of \cite{Burns} and section 5.3 of \cite{2015CMaPh.339..729J} we have that $J_{2r+n+2} J_{2r+n+1}e_{2r+k}J_{2r+n+1}J_{2r+n+2}=e_{2r+k_2}$.
 \end{proof}
 
 \bibliographystyle{amsalpha}
