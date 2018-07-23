@@ -611,7 +611,7 @@ The $\ast$-structure of the planar algebra is described in \cite{planaralg1}.
 
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{penneys}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
 
-\begin{thm}[Penneys, Jones, \cite{penneys}]
+\begin{thm}[Penneys, Jones, \cite{penneys}] \label{planaralgebraisomorphism}
 The canonical planar $\ast$-algebra associated the strongly Markov inclusion $M_0\subseteq (M_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $M_0\subseteq M_1$.
 \end{thm}
 
@@ -1094,7 +1094,29 @@ Let $Q_{\bullet}$ be a finite depth subfactor planar algebra then there is an em
 \end{cor}
 
 \subsection{Classification of Embeddings}
-As the observant reader may noted, for any $m\in \cM$ one may obtain a different embedding of the subfactor planar algebra $Q_\bullet$ into $G_{\bullet}$ the bipartite graph planar algebra for the fusion graph given by tensoring with the strand, $x$. We will show that differ only by automorphisms of $G_{\bullet}$. First we will show this for the special where we take a larger $r$ than,
+As the observant reader may noted, for any $m\in \cM$ one may obtain a different embedding of the subfactor planar algebra $Q_\bullet$ into $G_{\bullet}$ the bipartite graph planar algebra for the fusion graph given by tensoring with the strand, $x$. We will show that differ only by automorphisms of $G_{\bullet}$. Notice that show this it suffices to show that if $\R_{\bullet}$ and $S_{\bullet}$ are canonical planar algebras constructed through the process in section 4, and $\phi$ and $\phi'$ are the respective embeddings of $Q_{\bullet}$ into each then there is some isomorphism $\Psi:R_{\bullet}\rightarrow R{\bullet}$ such that the following triangle commutes:
+
+$$
+  \begin{tikzcd}
+    Q_{\bullet} \arrow{r}{\phi} \arrow[swap]{dr}{\phi'} & R_{\bullet} \arrow{d}{\Psi} \\
+     & S_{\bullet}
+  \end{tikzcd}
+$$  
+It suffices to show this because by \ref{planaralgebraisomorphism} we have that $R_{\bullet}$ and $S_{\bullet}$ are both isomorphic to $G_{\bullet}$ so $\phi$ lifts to an automorphism of $G_{\bullet}$. First we will show this for the special where we take two different values for $r$ such that the inclusion $A_{2r}\subseteq A_{2r+1}\subseteq A_{2r+2}$ is standard.
+
+\begin{prop}
+Let $R_{\bullet}$ and $S_{\bullet}$ be the canonical planar algebras given by the inclusions $A_{2r}\subseteq A_{2r+1}$ and $A_{2s}\subseteq A_{2s+1}$ where $A_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$ for some $m\in \cC_{20}$. Let $\phi$ and $\phi'$ be the embeddings of $Q_{\bullet}$ into $R_{\bullet}$ and $S_{\bullet}$ respectively. Then thereis some isomorphism $\Psi:R_{\bullet}\rightarrow R_{\bullet}$ such that the following triangle commutes:
+
+$$
+  \begin{tikzcd}
+    Q_{\bullet} \arrow{r}{\phi} \arrow[swap]{dr}{\phi'} & R_{\bullet} \arrow{d}{\Psi} \\
+     & S_{\bullet}
+  \end{tikzcd}
+$$  
+\end{prop}
+
+
+
 \bibliographystyle{amsalpha}
 {\footnotesize{
 \bibliography{embedding_theorem}
