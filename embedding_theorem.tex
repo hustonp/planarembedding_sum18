@@ -418,41 +418,41 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 	Both of these maps are well-defined, by \cite[Lem2.29]{MR2812459}.
 	\item The effect of passing upwards through the extrema of a strand is as follows: 
 \begin{align*}
-	&\begin{tikzpicture}[baseline]
+	&\begin{tikzpicture}[scale=0.6]
 		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[relativecommutantshading] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
 		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
 		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
 	: x\otimes y\mapsto xy \\
-	&\begin{tikzpicture}[baseline]
-		\fill[relativecommutantshading](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[relativecommutantshading](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[relativecommutantshading] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+		\fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
 		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
 	: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
-	&\begin{tikzpicture}[baseline]
+	&\begin{tikzpicture}[scale=0.6]
 		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[relativecommutantshading] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
 		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
 	: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
-	&\begin{tikzpicture}[baseline]
-		\fill[relativecommutantshading](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[relativecommutantshading](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[relativecommutantshading] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+		\fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
 		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
@@ -461,19 +461,21 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 \end{align*}
 	
 \end{itemize} 
-The $\ast$-structure of the planar algebra is described in \cite{math.QA/9909027}.
+The $\ast$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
 \end{defn}
 
-%We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
+We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
 
-%\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
-%The canonical planar $\ast$-algebra associated the strongly Markov inclusion $M_0\subseteq (M_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $M_0\subseteq M_1$.
-%\end{thm}
+\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
+The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
+\end{thm}
+
+The following two sections will describe two isomorphisms between planar algebras constructed in this manner both of which are well known to experts and will motivate constructions detailed in the later sections of this article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The shift isomorphism} 
 
-In this article, we will make extensive use of the following lemma adapted from \cite[Lem.~2.49]{MR2812459}, which provides sufficient conditions for a collection of maps to be a morphism of shaded planar $\dag$-algebras.
+In rest of this article we will make extensive use of the following lemma adapted from \cite[Lem.~2.49]{MR2812459}, which provides sufficient conditions for a collection of maps to be a morphism of shaded planar $\dag$-algebras.
 
 \begin{lem}[{\cite[Variation of Lem.~2.49]{MR2812459}}]
 \label{lem:SufficientConditionsForPlanarMap}
