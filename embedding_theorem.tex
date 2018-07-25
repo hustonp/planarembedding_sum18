@@ -347,7 +347,35 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strongly Markov inclusions} 
 
-\nn{define stronlgy Markov inclusion of finite von Neumann algebras}
+For the duration of this paper assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$ we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
+\begin{defn}
+Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
+
+\begin{itemize}
+	\item $1=\sum_{b\in B}be_1b*$.
+	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b*x)$.
+	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b*$.
+\end{itemize}
+
+
+\end{defn}
+Due to \cite{MR996807} we have the following:
+\begin{prop}
+The following are equivalent:
+
+\begin{itemize}
+\item There is a Pimsner=Popa basis for $A_1$ over $A_0$.
+\item $A_2=A_1e_1A_1$
+\end{itemize}
+\end{prop}
+We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
+\begin{defn}
+Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$. The inclusion is said to be \textit{strongly Markov} if:
+\begin{itemize}
+\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
+\item There is a Pimsner-Popa basis for $M_1$ over $M_0$.
+\end{itemize}
+\end{defn}
 
 Recall that if $M_0\subseteq (M_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[M_1:M_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras and there is a canonical planar algebra strucutre on this tower, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $M_0\subseteq (M_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $M_1$ over $M_0$. 
 We refer the reader to \cite{MR2812459} for more details on this construction. 
