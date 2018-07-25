@@ -1151,11 +1151,11 @@ Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gi
 A finite depth subfactor planar algebra can be embedded into the bipartite graph planar algebra of the fusion graph of the right action of the strand on a cyclic module.
 \end{claim*}
 As described in \cite{penneys}, one can define a canonical shaded planar $*$-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. % Now that this construction is summarized in a subsection of section 2, we may want to shorten this reference to there. 
-This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by theorem 3.28 of \cite{penneys}. We have shown that the Markov sequence $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by fact \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
+This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{penneys}. We have shown that the Markov sequence $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by fact \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
 If we denote the canonical $*$-planar algebra associated to $B_0\subseteq(B_1,tr_1)$ by $P_{\bullet}$, then by construction, we have the following:
 \begin{align*}
-	P_{n,+} &=  A'_{2r}\cap A_{2r+n} \\
-	P_{n,-}  &= A'_{2r+1}\cap A_{2r+n+1} 
+	P_{n,+} &=  B'_{0}\cap B_{n} \\
+	P_{n,-}  &= B'_{1}\cap B_{n+1} 
 \end{align*}
 
 Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
@@ -1180,71 +1180,9 @@ Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q
 	\node at (0.45,-.9) {\tiny{$n$}};
 	\node at (0,-0.9){\tiny{$2r$}};
 \end{tikzpicture} \]
-This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi(Q_{\bullet})$ is a planar $\ast$-subalgebra, we use lemma 2.48 in \cite{penneys}.
-We shall state it here for the reader's convenience:
-\begin{lem}[Preservation under action of tangles]
-Suppose that $P_\bullet$ is a planar $\ast$-algebra with modulus $d \neq 0$ and $Q_{n,\pm} \subset P_{n,\pm}$ are $\ast$-subalgebras which are preserved by the action of the following tangles:
+This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi$ is a planar-$\ast$ algebra map, we again use Lemma \ref{lem:SufficientConditionsForPlanarMap}.
 
-\begin{enumerate}[(1)]
-\item Multiplication by tangles of the form $E_n = 
-\begin{tikzpicture}[baseline]
-	\draw (-.1,-.7) -- (-.1,.7);
-	\draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
-	\draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
-%	\node at (-.1,-1) {\scriptsize{$n-1$}};
-	\node at (-.1,-.9) {\tiny{$n-1$}};
-\end{tikzpicture}
-$
-\item 
-\begin{enumerate}[(i)]
-\item (Right Capping) $\alpha_n = 
-\begin{tikzpicture}[baseline]
-	\draw (0,-.7) -- (0,.7);
-	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
-	\node at (0,-0.9) {\tiny{$n-1$}};
-\end{tikzpicture}
-: P_{n,+} \to P_{n-1,+}
-$
-\item (Inclusion) $\beta_n = 
-\begin{tikzpicture}[baseline]
-	\draw (0,-.7) -- (0,0.7);
-	\draw (0.45,-.7) -- (0.45,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
-	\node at (0,-.9) {\tiny{$n$}};
-	\node at (0.45,-.9) {\tiny{$1$}};
-\end{tikzpicture}
-: P_{n,+} \to P_{n+1,+}
-$
-\item (Left Capping) $\gamma^{+}_n =
-\begin{tikzpicture}[baseline]
-	\fill[relativecommutantshading] (0,-.7) -- (-.8,-.7) -- (-.8,.7) -- (0,.7) -- (0,-.7);
-	\fill[unshaded] (-.15,.3) arc(0:180:.15cm) -- (-.45,-.3)arc(-180:0:0.15cm)--(-.15,.3);
-	\draw (0,-.7) -- (0,.7);
-	\draw (-.15,.3) arc (0:180:.15cm) -- (-.45,-.3) arc (-180:0:.15cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
-	\node at (0,-0.9) {\tiny{$n-1$}};
-\end{tikzpicture}
-: P_{n,+} \to P_{n-1,-}
-$ 
-\end{enumerate}
-\item (Left inclusion) $i^{-}_n =
-\begin{tikzpicture}[baseline]
-	\fill[relativecommutantshading] (-0.45,.7) -- (0,.7) -- (0,-.7) -- (-0.45,-.7) -- (-0.45,.7);
-	\draw (0,-.7) -- (0,0.7);
-	\draw (-0.45,-.7) -- (-0.45,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
-	\node at (0,-.9) {\tiny{$n$}};
-	\node at (-0.45,-.9) {\tiny{$1$}};
-\end{tikzpicture}
-: P_{n,-} \to P_{n+1,+}
-$ 
-\end{enumerate}
-Then the $Q_{n,\pm}$ are preserved under every tangle and thus form a planar $\ast$-subalgebra $Q_\bullet \subset P_\bullet$
-\end{lem}
-
-We denote traces in $Q_{\bullet}$ by $\overline{\tr}$ and traces in $P_{\bullet}$ by $\tr$. We denote the Jones projections in $Q_{\bullet}$ by $E_{j}$ and the Jones projections in  $P_{\bullet}$ by $F_{j}$.
-
+We denote functions in $Q_{\bullet}$ by $\overline{f}$ and functions in $P_{\bullet}$ by $\tr$. We denote the Jones projections in $Q_{\bullet}$ by $e_{j}$ and the Jones projections in  $P_{\bullet}$ by $f_{j}$.
 
 \begin{thm}
 The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\ast$-planar subalgebra of $P_{\bullet}$.
@@ -1255,18 +1193,89 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 \begin{align}
 	\Phi(x^{*}) &= \Phi(x)^{\ast} \\
 	\Phi(xy) &= \Phi(x)\Phi(y) \\
-	\overline{\tr}_{n}(x) &= \frac{1}{\dim_\cC(x)^{2r}}\cdot\tr_{n}(\Phi(x)) \label{eq3}
+	E_n &= id_{m}\otimes \overline{E}_{2r+n} \\
+	i_n &= id_{m}\otimes \overline{i}_{2r+n} \\
+	f_n &= id_{m} \otimes e_{2r+n} 
 \end{align}
 
-	To prove the injectivity of $\Phi$, we can use the faithfulness of the traces and equation \eqref{eq3}.
-	In section \ref{ssec:canonical}, we see % do we? Perhaps enhance the section appropriately or add another subsection
-	that in the relative commutant planar algebra, the tangles described in Lemma 2.48 are associated to known functions. Thus, we can check that $\Phi(Q_\bullet)$ is preserved under the specified tangles by using both algebraic and pictorial relations. We now proceed to check the requirements of Lemma 2.48:
+	We now check that $\Phi$ is a planar algebra map:
+
 \begin{enumerate}[(1)]
-\item By the construction of $P_{\bullet}$, we know that $\Phi(E_j)=F_j$. Thus, $\Phi(Q_{n,\pm})$ is closed under multiplication by Jones projections. 
-\item \begin{enumerate}[(i)]
-\item \label{condex} Clearly, $\Phi(\alpha_n(x)) = \alpha_{2r+n}(\Phi(x))$.
-\item Similarly to \eqref{condex}, it is clear that $\Phi(\beta_n(x)) = \beta_{2r+n}(\Phi(x))$. In fact, the inclusion from $P_{n,+} \to P_{n+1,+}$ is just the restriction of the inclusion from $Q_{2r+n,+} \to Q_{2r+n+1,+}$. 
-\item In section \ref{ssec:canonical}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
+\item (Jones Projections)
+\[
+\begin{tikzpicture}[baseline]
+	\draw (-.1,-.7) -- (-.1,.7);
+	\draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
+	\draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
+%	\node at (-.1,-1) {\scriptsize{$n-1$}};
+	\node at (-.1,-.9) {\tiny{$n-1$}};
+\end{tikzpicture}
+\quad
+\mapsto
+\quad
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.85,-.7) -- (-1.15,-.7) -- (-1.15,.7) -- (-.85,.7) -- (-.85,-.7);
+	\draw[thick,red] (-.85,-.7) -- (-.85,.7);
+	\draw (-.55,-.7) -- (-.55,.7);
+	\draw (-.1,-.7) -- (-.1,.7);
+	\draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
+	\draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
+%	\node at (-.1,-1) {\scriptsize{$n-1$}};
+	\node at (-.1,-.9) {\tiny{$n-1$}};
+	\node at (-.55,.9) {\tiny{$2r$}};
+\end{tikzpicture}
+\]
+\item (Conditional Expectation) \label{condex} 
+\[
+\begin{tikzpicture}[baseline]
+	\draw (0,-.7) -- (0,.7);
+	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-0.9) {\tiny{$n-1$}};
+	\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+\mapsto
+\quad
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
+	\draw[thick,red] (-.9,-.7) -- (-.9,.7);
+	\draw (-.6,-.7) -- (-.6,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.15,.3) -- (.15,.7) arc (180:0:.15cm) -- (.45,-.7) arc (0:-180:.15cm) -- (.15,-.3);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (-.2,-.9) {\tiny{$n-1$}};
+	\node at (-.6,.9) {\tiny{$2r$}};
+	\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\]
+\item (Right Inclusion)
+\[
+\begin{tikzpicture}[baseline]
+	\draw (0,-.7) -- (0,0.7);
+	\draw (0.45,-.7) -- (0.45,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-.9) {\tiny{$n$}};
+	\node at (0.45,-.9) {\tiny{$1$}};
+	\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+\mapsto
+\quad
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
+	\draw[thick,red] (-.9,-.7) -- (-.9,.7);
+	\draw (-.6,-.7) -- (-.6,.7);
+	\draw (0,-.7) -- (0,0.7);
+	\draw (0.45,-.7) -- (0.45,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (0,-.9) {\tiny{$n$}};
+	\node at (-.6,.9) {\tiny{$2r$}};
+	\node at (0,0) {\scriptsize{$x$}};
+	\node at (0.45,-.9) {\tiny{$1$}};
+\end{tikzpicture}
+\]
+\item (Left Capping) In section \ref{ssec:canonical}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
  we showed that the left-capping tangle $\gamma_n$ in the canonical planar $\ast$-algebra is given by 
 \[
  \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\ast
@@ -1348,8 +1357,8 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
   \end{minipage}
 }
 Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $\gamma^+_n(\Phi(x)) =\Phi(\gamma^+_n(x))$.
-\end{enumerate}
-\item The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
+
+\item (Left Inclusion) The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
 \[
 \begin{tikzpicture}[baseline]
 	\fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
@@ -1431,7 +1440,6 @@ $$
   \end{tikzcd}
 $$  
 \end{prop}
-
 
 
 
