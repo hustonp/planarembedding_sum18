@@ -377,16 +377,16 @@ Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$. The 
 \end{itemize}
 \end{defn}
 
-Recall that if $M_0\subseteq (M_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[M_1:M_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras and there is a canonical planar algebra strucutre on this tower, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $M_0\subseteq (M_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $M_1$ over $M_0$. 
+Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras and there is a canonical planar algebra strucutre on this tower, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
 We refer the reader to \cite{MR2812459} for more details on this construction. 
 We will need the following:
 
 \begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
 For any $n$, the map:
 \[
-\theta_n: \bigotimes_{M_0}^{n}M_1 \rightarrow M_n
+\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
 \]
-defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $M_1-M_1$ bimodule isomorphism.
+defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
 \end{prop}
 
 For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
@@ -403,9 +403,9 @@ For the following definition, we will always assume shaded planar tangles are in
 
 
 \begin{defn} 
-The canonical planar $\ast$-algebra of a strongly Markov inclusion $M_0\subseteq (M_1,\tr_1)$ is defined as follows:
+The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
 
-	The box spaces are $P_{n,+}:=\theta_n^{-1}(M_0'\cap M_{n}) $ and $P_{n,-}:=\theta_n^{-1}(M_1'\cap M_{n+1})$. Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in M_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $M_i$-invariant element of $M_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $M_i$-invariant element $\eta_y\in \otimes^{n_y}M_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $M_1$ and the unshaded regions as representing $\otimes_{M_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
+	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and the unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
 	\begin{itemize}
 	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
 	\[
