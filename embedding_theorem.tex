@@ -341,9 +341,12 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 \section{Strongly Markov inclusions of von Neumann algebras} 
 \label{sec:StronglyMarkovInclusions}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strongly Markov inclusions} 
 
+\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov sequence?
+This could help alleviate some confusion!}
 For the duration of this paper assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$ we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
 \begin{defn}
 Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
@@ -561,6 +564,7 @@ $p(N'\cap M) = pN' \cap pMp$.
 Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
 The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
 \end{enumerate}
+\dave{this lemma may be more at home later, but it is a purely von Neumann algebraic fact}
 \end{lem}
 \begin{proof}
 \mbox{}
@@ -596,6 +600,22 @@ Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 In the event that $A_0 \subseteq (A_1, \tr_1)$ is an inclusion of tracial von Neumann algebras and $p\in P(A_0)$ is a non-zero projection, we get a canonical faithful trace on the compressed inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ given by $\tr^p_1(pxp):= \tr_1(pxp)/\tr_1(p)$.
 It is straightforward to verify that the unique trace-preserving conditional expectation $E^p_1 : pA_1p \to pA_0p$ is given by $E^p_1(pxp) := E_1(pxp) = pE_1(x)p$. 
 Notice that for all $pxp \in pA_1 p$, we have $e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1(pxp)e_1p$, so the conditional expectation is implemented by $e_1p$.
+
+We would like to show that $pA_2p$ is isomorphic to the basic construction of $pA_0p \subset (pA_1p, \tr_1^p)$, but we will need an extra assumption on $p$.
+Toward this goal, we recall the following recognition lemma based on \cite[Prop.~1.2]{MR965748}, \cite[Lem.~5.8]{MR1073519}, and \cite[Lem.~5.3.1]{MR1473221}.
+
+\begin{lem}[{\cite[Lem.~2.15]{MR2812459}}]
+Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $(B, \tr_B, p)$ is a tracial von Neumann algebra containing $A_1$ together with a projection $p\in P(B)$ such that
+\begin{enumerate}[(1)]
+\item
+$pxp = E_{A_0}^{A_1}(x)p$ for all $x\in A_1$,
+\item
+$E^{B}_{A_1}(p) = [A_1:A_0]^{-1}$, and
+\item
+$B$ is algebraically spanned by $A_1$ and $p$, i.e., $B = A_1pA_1 := \spann\set{apb}{a,b\in A_1}$.
+\end{enumerate}
+Then the map $A_2\to B$ given by $ae_1b \mapsto apb$ is a (normal) unital $*$-isomorphism of von Neumann algebras.
+\end{lem}
 
 \begin{lem}
 Under the additional assumption that $A_0pA_0 = A_0$,\footnote{The condition that $A_0pA_0$ implies that the central support of $p$ in $A_0$ is $1$.}
@@ -841,7 +861,7 @@ Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
 %%%%%%%%%%%%%Shifting%%%%%%%%%%%%%
 Suppose that $(A_n,\tr_n)$ is a strongly Markov sequence of von Neumann algebras. 
 We know from \cite{MR2812459} that the inclusion $A_0 \subseteq A_2 \subseteq \left(A_4, \tr_4,d^{-2}(e_1e_2)(e_3e_2)\right)$ is standard. 
-\nn{false; only true if $(A_n)$ is the Jones tower of a strongly markov inclusion.}
+\dave{false; only true if $(A_n)$ is the Jones tower of a strongly markov inclusion.}
 Thus we can find a Pimsner-Popa basis $B$ for $A_2$ over $A_0$.
 \begin{remark}
 The commutant conditonal expectation $E^{A'_0}_{A'_2}$ is given by:
@@ -929,7 +949,7 @@ is a planar $\ast$-algebra isomorphism.
 
 Suppose $A_0\subset A_1$ is a strongly Markov inclusion of tracial von Neumann algebras.
 Denote by $\cP_\bullet$ the canonical planar $\dag$-algebra whose box spaces are given by
-\nn{I'd like to suppress the maps $\theta$, since they are really annoying to keep track of -- Dave}
+\dave{I'd like to suppress the maps $\theta$, since they are really annoying to keep track of}
 $$
 \cP_{n,+}
 :=
@@ -1051,15 +1071,6 @@ and the result follows.
 %which shows capping on the left commutes with the map $X'\cap Y \ni x \mapsto px \in pX'\cap pYp$.
 %The proof for higher left caps is similar.
 \end{proof}
-
-
-
-\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
-Edit it to use here.}
-
-
-
-\nn{edit below here -- math taken from elsewhere, OK to use.}
 
 
 
