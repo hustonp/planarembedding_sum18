@@ -310,7 +310,7 @@
 
 % title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Module embedding via towers of algebras}
+\title{The module embedding theorem via towers of algebras}
 \author{Desmond Coles, Peter Huston, David Penneys, \& Srivatsa Srinivas}
 
 
@@ -359,12 +359,15 @@ Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_
 
 
 \end{defn}
-Due to \cite{MR996807} we have the following:
+Due to 
+\cite[Prop.~3(b)]{MR561983}
+(see also \cite{MR996807}) 
+we have the following:
 \begin{prop}
 The following are equivalent:
 
 \begin{itemize}
-\item There is a Pimsner=Popa basis for $A_1$ over $A_0$.
+\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
 \item $A_2=A_1e_1A_1$
 \end{itemize}
 \end{prop}
@@ -599,76 +602,115 @@ Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 
 In the event that $A_0 \subseteq (A_1, \tr_1)$ is an inclusion of tracial von Neumann algebras and $p\in P(A_0)$ is a non-zero projection, we get a canonical faithful trace on the compressed inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ given by $\tr^p_1(pxp):= \tr_1(pxp)/\tr_1(p)$.
 It is straightforward to verify that the unique trace-preserving conditional expectation $E^p_1 : pA_1p \to pA_0p$ is given by $E^p_1(pxp) := E_1(pxp) = pE_1(x)p$. 
-Notice that for all $pxp \in pA_1 p$, we have $e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1(pxp)e_1p$, so the conditional expectation is implemented by $e_1p$.
+Notice that for all $pxp \in pA_1 p$, we have 
+\begin{equation}
+\label{eq:CompressionImplementsConditionalExpectation}
+e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1^p(pxp)e_1p,
+\end{equation}
+so the conditional expectation is implemented by $e_1p$.
 
 We would like to show that $pA_2p$ is isomorphic to the basic construction of $pA_0p \subset (pA_1p, \tr_1^p)$, but we will need an extra assumption on $p$.
 Toward this goal, we recall the following recognition lemma based on \cite[Prop.~1.2]{MR965748}, \cite[Lem.~5.8]{MR1073519}, and \cite[Lem.~5.3.1]{MR1473221}.
 
 \begin{lem}[{\cite[Lem.~2.15]{MR2812459}}]
+\label{lem:BasicConstructionRecognition}
 Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $(B, \tr_B, p)$ is a tracial von Neumann algebra containing $A_1$ together with a projection $p\in P(B)$ such that
 \begin{enumerate}[(1)]
 \item
 $pxp = E_{A_0}^{A_1}(x)p$ for all $x\in A_1$,
 \item
-$E^{B}_{A_1}(p) = [A_1:A_0]^{-1}$, and
+$E^{B}_{A_1}(p) = [A_1:A_0]^{-1} 1_{A_1}$, and
 \item
 $B$ is algebraically spanned by $A_1$ and $p$, i.e., $B = A_1pA_1 := \spann\set{apb}{a,b\in A_1}$.
 \end{enumerate}
 Then the map $A_2\to B$ given by $ae_1b \mapsto apb$ is a (normal) unital $*$-isomorphism of von Neumann algebras.
 \end{lem}
 
-\begin{lem}
-Under the additional assumption that $A_0pA_0 = A_0$,\footnote{The condition that $A_0pA_0$ implies that the central support of $p$ in $A_0$ is $1$.}
-the inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
-%Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
-%The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
-\end{lem}
-\begin{proof}
-\nn{TODO:
-\\
-\\
-When $A_0pA_0 = A_0$,
-$$
-pA_1p (pe_1)pA_1p
-=
-pA_1A_0pe_1A_0A_1p
-=
-pA_1A_0pA_0e_1A_1p
-=
-pA_1A_0
-e_1
-A_1p
-=
-pA_1e_1A_1p
-=
-pA_2p.
-$$
-}
-%One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
-%The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
-\end{proof}
+We now prove that compression by well-behaved projections of $A_0$ preserves the strong Markov structure.
+Here, `well-behaved' is the condition 
+$A_0 = A_0 p A_0 := \spann\set{apb}{a,b\in A_0}$,
+which implies that the central support of $p$ in $A_0$ is $1$.
 
 \begin{prop}
 \label{prop:CompressingStronglyMarkovInclusion}
 Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
-Then $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov.
+\begin{enumerate}[(1)]
+\item
+Let $\{a\}\subset A_0$ be a finite set such that $\sum_{a} apa^* = 1_{A_0}$.\footnote{
+Such a finite set necessarily exists by the same trick used in \cite[Prop.~3(b)]{MR561983}.
+}
+Then for any Pimsner-Popa basis $\{b\}$ for $A_1$ over $A_0$, $\{pbap\}$ is a Pimsner-Popa basis for $pA_1p$ over $pA_0p$.
+\item
+The inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov with index $[pA_1p:pA_0p] = [A_1:A_0]$.
+\item
+The inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
+\end{enumerate}
+%Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
+%The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
 \end{prop}
 \begin{proof}
-\nn{TODO}
+\mbox{}
+\item[\underline{Proof of (1):}]
+For all $pxp \in pA_1p$, we have
+$$
+\sum_{pbap} 
+pbap
+E^p_1(pa^*b^*p \cdot pxp)
+=
+\sum_b
+\sum_a
+pbapa^* E_1(b^*px)p
+=
+\sum_b pbE_1(b^*px)p
+=
+pxp.
+$$
+
+\item[\underline{Proof of (2):}]
+\nn{TODO: prove Markov.}
+To see the indices agree, we now compute the Watatani index \nn{cite}
+$$
+\sum_{pbap} pbap(pbap)^*
+=
+\sum_b\sum_a pbapa^*b^*p
+=
+\sum_b pbb^*p
+=
+[A_1:A_0] p
+=
+[A_1:A_0] \id_{pA_1p}.
+$$
+
+\item[\underline{Proof of (3):}]
+We show the hypotheses of Lemma \ref{lem:BasicConstructionRecognition} hold.
+We already saw condition (1) from the lemma holds in \eqref{eq:CompressionImplementsConditionalExpectation}.
+To see condition (2) from the lemma holds, note that $E^{pA_2p}_{pA_1p}(pxp) = pE_2(x)p$ for all $x\in A_2$.
+Thus by part (2) of this proposition,
+$$
+E^{pA_2p}_{pA_1p}(pe_1) 
+= 
+pE_2(e_1) 
+= 
+[A_1:A_0]^{-1}p 
+= 
+[pA_1p:pA_0p]^{-1} 1_{pA_1p}.
+$$
+Finally, condition (3) follows immediately from the existence of a Pimsner-Popa basis for $pA_1p$ over $pA_0p$ by part (1) of this proposition.
+%One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
+%The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
 \end{proof}
 
+By iterating Lemma \ref{lem:BasicConstructionRecognition} and Proposition \ref{prop:CompressingStronglyMarkovInclusion}, we immediately obtain the following.
+
 \begin{cor}
-Assume the hypotheses of Lemma \ref{prop:CompressingStronglyMarkovInclusion}, and let $(A_n, \tr_n, e_n)$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
+Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusion}, and let $(A_n, \tr_n, e_n)$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
 Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
-\begin{proof}
-\nn{todo}
-\end{proof}
 
 
 \begin{cor}
 Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-Then $(pM_np, \tr_n(p\, \cdot\,)/\tr_n(p), pe_n)$ is a Markov sequence.
+Then $(pM_np, \tr_n^p, pe_n)$ is a Markov sequence.
 \end{cor}
 \begin{proof}
 \nn{todo: should be OK.}
