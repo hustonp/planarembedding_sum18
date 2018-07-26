@@ -335,14 +335,11 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 \section{Introduction}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The canonical planar algebra of a strongly Markov inclusion} 
-\label{sec:StronglyMarkovPA}
-
-
+\section{Strongly Markov inclusions of von Neumann algebras} 
+\label{sec:StronglyMarkovInclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strongly Markov inclusions} 
@@ -389,377 +386,7 @@ For any $n$, the map:
 defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
 \end{prop}
 
-For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
-\begin{itemize}
-\item All input/output disks are parallel rectangles.
-\item All strings are smooth, strings emanating from the input disks come from the top of the disk, and strings connected to the output disk connect to the top.
-\item The maxima and minima of any two strings occurs at different heights, and no extrema ever occurs at the same height as that of the top or bottom of a rectangle.
-\item The $\ast$ of a tangle is always on the left edge of the boundary rectangle.
-
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Defining the planar algebra} 
-
-
-\begin{defn} 
-The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
-
-	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and the unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
-	\begin{itemize}
-	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
-	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}
-	\]
-	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
-	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}=x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots x_{n_y}
-	\]
-	Both of these maps are well-defined, by \cite[Lem2.29]{MR2812459}.
-	\item The effect of passing upwards through the extrema of a strand is as follows: 
-\begin{align*}
-	&\begin{tikzpicture}[scale=0.6]
-		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	: x\otimes y\mapsto xy \\
-	&\begin{tikzpicture}[scale=0.6]
-		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
-	&\begin{tikzpicture}[scale=0.6]
-		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
-	&\begin{tikzpicture}[scale=0.6]
-		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	: x\otimes y \mapsto x\otimes 1 \otimes y 
-\end{align*}
-	
-\end{itemize} 
-The $\ast$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
-\end{defn}
-
-We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
-
-\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
-The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
-\end{thm}
-
-The following two sections will describe two isomorphisms between planar algebras constructed in this manner both of which are well known to experts and will motivate constructions detailed in the later sections of this article.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The shift isomorphism} 
-
-In rest of this article we will make extensive use of the following lemma adapted from \cite[Lem.~2.49]{MR2812459}, which provides sufficient conditions for a collection of maps to be a morphism of shaded planar $\dag$-algebras.
-
-\begin{lem}[{\cite[Variation of Lem.~2.49]{MR2812459}}]
-\label{lem:SufficientConditionsForPlanarMap}
-Suppose $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ is a collection of unital $\dag$-algebra maps such that
-\begin{enumerate}[(1)]
-\item
-$\Phi$ maps Jones projections in $\cP_{n,+}$ to Jones projections in $\cQ_{n,+}$,
-\item
-$\Phi$ commutes with the action of the following tangles:
-$$
-\underset{
-\substack{
-\text{right inclusion}
-\\ 
-\cP_{n,+} \to \cP_{n+1,+}
-}}
-{
-\begin{tikzpicture}
-	\draw (.4,-.5) -- (.4,.5);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.2,.45) {\scriptsize{$n$}};
-	\node at (-.2,-.45) {\scriptsize{$n$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
-\end{tikzpicture}
-}
-\qquad\qquad
-\underset{
-\substack{
-\text{left inclusion}
-\\ 
-\cP_{n,-} \to \cP_{n+1,+}
-}}
-{
-\begin{tikzpicture}[xscale=-1]
-	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
-	\draw (.4,-.5) -- (.4,.5);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.2,.45) {\scriptsize{$n$}};
-	\node at (-.2,-.45) {\scriptsize{$n$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
-\end{tikzpicture}
-}
-\qquad\qquad
-\underset{
-\substack{
-\text{right capping}
-\\ 
-\cP_{n,+} \to \cP_{n-1,+}
-}}
-{
-\begin{tikzpicture}
-	\draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
-\end{tikzpicture}
-}
-\qquad\qquad
-\underset{
-\substack{
-\text{left capping}
-\\ 
-\cP_{n,+} \to \cP_{n-1,-}
-}}
-{
-\begin{tikzpicture}[xscale=-1]
-	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
-	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
-\end{tikzpicture}
-}.
-$$
-\end{enumerate}
-Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
-\end{lem}
-
-\nn{TODO: the canonical planar algebra for $A_0 \subset A_1$ is canonically iso to the canonical planar algebra for $A_2\subset A_3$ when $A_0\subset A_1$ is a strongly Markov inclusion.}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The compression isomorphism} 
-
-The following lemma is well known to experts. 
-We provide a proof for convenience and completeness.
-
-\begin{lem}
-Suppose $N\subset M\subset B(H)$ is an inclusion of von Neumann algebras and $p\in P(N)$.
-\begin{enumerate}[(1)]
-\item
-$p(N'\cap M) = pN' \cap pMp$.
-\item
-Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
-The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
-\end{enumerate}
-\end{lem}
-\begin{proof}
-\mbox{}
-\item[\underline{Proof of (1):}]
-The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
-
-Clearly $(N'\cap M)p \subseteq (N'p) \cap pMp$.
-Suppose $u$ is a unitary in $(N'p) \cap pMp$.
-Let $K$ be the closure of $NpH$.
-Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
-Define $u_0$ in $B(K)$ by $u_0 (np\xi) := npu\xi$.
-One now verifies that $u_0$ is an isometry and thus is well-defined.
-Look at the operator $u_0q \in N' \cap B(H)$, and note that $u = u_0qp \in N'p$.
-We claim that $u_0q \in M$, so that $u = u_0qp \in (N' \cap M)p$.
-First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
-we have
-$mu_0np\xi  = mnup\xi = nupm\xi = u_0npm\xi = u_0mnp\xi$.
-Thus $u_0 \in qMq$.
-Since $q \in M$, for all $m \in M'$, we have $u_0qm\xi = u_0mq\xi = mu_0q\xi$.
-Hence $u_0q$ commutes with $M'$ on $H$, and $u_0q \in M$. 
-
-\item[\underline{Proof of (2):}]
-For $x\in N'\cap M$, we have $p(zx) = px$.
-Hence the map is surjective.
-We now show the map is injective.
-Suppose $x \in z(N'\cap M)$ such that $px = 0$.
-By (1), $z(N'\cap M) = zN' \cap zMz$.
-Then for all unitaries $u\in U(N)$, $upz = z(up) \in zN$, so 
-$0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
-Taking sup over $u \in U(N)$ yields $0 = xz = x$.
-\end{proof}
-
-\nn{edit below here -- math taken from elsewhere, OK to use.}
-
-
-
-
-\begin{thm}
-\label{thm:IsomorphicStandardInvariants}
-Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in M_0$ is a nonzero projection with central support $1$.
-Then 
-\begin{enumerate}
-\item
-The inclusion $pM_0p \subset pM_1p$ is strongly Markov.
-\item
-\nn{rephrase...}
-The map $x\mapsto px$ from $M_0'\cap M_n \to pM_0'\cap pM_np \cong p(M_0'\cap M_n)$ is planar $\dag$-algebra isomorphism.
-\end{enumerate}
-\end{thm}
-\begin{proof}
-We now proceed in two steps:
-\begin{enumerate}[(1)]
-\item
-First, we construct $*$-algebra isomorphisms $\Phi_{n,\pm}:\cP_{n,\pm} \to \cQ_{n,\pm}$.
-\item
-Second, we show they satisfy the conditions in Lemma \ref{lem:SufficientConditionsForPlanarMap}.
-\end{enumerate}
-These two steps immediately imply the theorem.
-\nn{TODO: edit below here!}
-
-\end{proof}
-
-\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
-Edit it to use here.}
-
-
-\begin{lem}
-Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
-The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
-\end{lem}
-\begin{proof}
-One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
-The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
-\end{proof}
-
-\begin{cor}
-\label{cor:CutDownJonesTower}
-Let $(X_n)_{n\geq 0}$ be the Jones tower for the finite index $\rm{II}_1$-subfactor $X_0=X \subset Y=X_1$ with Jones projections $(e_n)_{n\geq 1}$, and suppose $p\in X$ is a nonzero projection.
-Then $(pX_np)_{n\geq 0}$ is the Jones tower for $pXp\subset pYp$ with Jones projections $(pe_n)_{n\geq 1}$.
-\end{cor}
-
-\begin{defn}
-By Lemma \ref{lem:IsomorphicRelativeCommutant} and Corollary \ref{cor:CutDownJonesTower}, for all $n\geq 0$, we now define $*$-algebra isomorphisms $\Phi_{n,\pm} : \cP_{n,\pm} = X_0'\cap X_n \to pX_0'\cap pX_n p$ by $x\mapsto px$.
-Note that $\Phi_{n,\pm}(e_n) = pe_n$, so Jones projections in $\cP_\bullet$ map to Jones projections in $\cQ_\bullet$.
-\end{defn}
-
-We can now prove Theorem \ref{thm:IsomorphicStandardInvariants} by proving that the $\Phi_{n,\pm}$ satisfy the conditions in Lemma \ref{lem:SufficientConditionsForPlanarMap}.
-
-\begin{proof}[Proof of Theorem \ref{thm:IsomorphicStandardInvariants}]
-We must check that Condition (2) of Lemma \ref{lem:SufficientConditionsForPlanarMap} holds.
-The only interesting part is checking that left capping commutes with $\Phi_{n,\pm}$.
-First, by \cite[Equation (4.1.5) and Theorem 4.2.1]{math.QA/9909027}, the formula for capping on the left is given by
-$$
-\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
-	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
-	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-=
-[Y:X]^{-1/2} \sum_{\beta} \beta x\beta^*
-$$
-where $\{\beta\}$ is a (finite) Pimsner-Popa basis for $X\subset Y$, and this map is independent of the choice of basis.
-This means that picking Pimsner-Popa bases $\{\beta\}$ for $X\subset Y$ and $\{b\}$ for $pXp\subset pYp$, we must show that
-$$
-\Phi_{n-1,-}
-\left(
-\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
-	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
-	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-\right)
-=
-[Y:X]^{-1/2}p\sum_{\beta} \beta x\beta^* 
-= 
-[Y:X]^{-1/2}\sum_{b} bpxb^*
-=
-\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
-	\fill[shaded] (.85,-.5) -- (.85,.5) -- (0,.5) -- (0,-.5);
-	\filldraw[unshaded] (.4,-.25) arc (-180:0:.15cm) -- (.7,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{.35}{.35}{\scriptsize{$\Phi_{n,+}(x)$}}
-\end{tikzpicture}
-.
-$$
-
-Now the trick is to carefully choose a Pimsner-Popa basis for $X\subset Y$.
-Let $\{b\}$ be a Pimsner-Popa basis for $pXp\subset pYp$, and let $\{a\}$ be a Pimsner-Popa basis for $(1-p)X(1-p) \subset (1-p)Y(1-p)$.
-We claim $\{\beta\}=\{a\}\cup \{b\}$ is a Pimsner-Popa basis for $X\subset Y$.
-Indeed, we see
-$$
-\sum_{\beta} \beta e_X \beta^*
-=
-\sum_{a} ae_X a^* + \sum_{b} be_X b^* 
-=
-\sum_{a} a(1-p)e_X a^* + \sum_{b} bpe_X b^* 
-=
-(1-p) + p
-= 
-1_{\langle Y, e_X\rangle}.
-$$
-For this special choice of $\{b\}$ and $\{\beta\}$, we immediately see that for $x\in \cP_{n,+}$,
-$$
-p\sum_{\beta} \beta x\beta^* 
-= 
-p\left(\sum_{a} ae_X a^* + \sum_{b} be_X b^* \right)
-=
-\sum_{b} bpe_X b^*
-$$
-and the result follows.
-%
-%\nn{please check the following.}
-%We carefully choose a Pimsner-Popa basis for $X\subset Y$ as follows.
-%First, we pick finitely many partial isometries $v\in p\langle Y, e_X\rangle p$ such that $\sum vv^* = p$ and $v^*v \leq pe_X$.
-%Then using the Pimsner-Popa pull-down lemma \nn{}, for each $v$, we get a unique $a\in Y$ such that $ae_X = ve_X$.
-%Note that since each $v\in p\langle Y, e_X\rangle p$, the uniqueness of $a\in Y$ immediately implies that $a\in pYp$.
-%We now pick finitely many partial isometries $w\in (1-p) \langle Y, e_X\rangle (1-p)$ so that $\sum ww^* = (1-p)$ and $w^*w\leq e_X$.
-%Again, we use the pull-down lemma for each $w$ to get a $b\in Y$ with $we_X = be_X$, and we notice that
-%$$
-%\sum_a ae_X a^* + \sum_b be_X b^* = p + (1-p) = 1_{\langle Y, e_X\rangle},
-%$$
-%so $\{a\}$ is a Pimsner-Popa basis for $pXp\subset pYp$, and $\{a\}\cup\{b\}$ is a Pimsner-Popa basis for $X\subset Y$.
-%
-%Now we see that for every $x\in X'\cap Y$, we have
-%$$
-%p d^{-1}\left( \sum_a axa^* + \sum_b bxb^*\right) = d^{-1}\sum_a a xp a^*,
-%$$
-%which shows capping on the left commutes with the map $X'\cap Y \ni x \mapsto px \in pX'\cap pYp$.
-%The proof for higher left caps is similar.
-\end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The module embedding theorem via towers of algebras}
-
-
-
+\nn{towers of relative commutants}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -917,6 +544,397 @@ It follows that a Markov sequence has finite depth if and only if there is $n\in
 \begin{ex}
 The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
 \end{ex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Shifts and compressions} 
+
+\nn{prove shifting is an iso on relative commutants}
+
+The following lemma is well known to experts. 
+We provide a proof for convenience and completeness.
+
+\begin{lem}
+Suppose $N\subset M\subset B(H)$ is an inclusion of von Neumann algebras and $p\in P(N)$.
+\begin{enumerate}[(1)]
+\item
+$p(N'\cap M) = pN' \cap pMp$.
+\item
+Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
+The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+\mbox{}
+\item[\underline{Proof of (1):}]
+The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
+
+Clearly $(N'\cap M)p \subseteq (N'p) \cap pMp$.
+Suppose $u$ is a unitary in $(N'p) \cap pMp$.
+Let $K$ be the closure of $NpH$.
+Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
+Define $u_0$ in $B(K)$ by $u_0 (np\xi) := npu\xi$.
+One now verifies that $u_0$ is an isometry and thus is well-defined.
+Look at the operator $u_0q \in N' \cap B(H)$, and note that $u = u_0qp \in N'p$.
+We claim that $u_0q \in M$, so that $u = u_0qp \in (N' \cap M)p$.
+First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
+we have
+$mu_0np\xi  = mnup\xi = nupm\xi = u_0npm\xi = u_0mnp\xi$.
+Thus $u_0 \in qMq$.
+Since $q \in M$, for all $m \in M'$, we have $u_0qm\xi = u_0mq\xi = mu_0q\xi$.
+Hence $u_0q$ commutes with $M'$ on $H$, and $u_0q \in M$. 
+
+\item[\underline{Proof of (2):}]
+For $x\in N'\cap M$, we have $p(zx) = px$.
+Hence the map is surjective.
+We now show the map is injective.
+Suppose $x \in z(N'\cap M)$ such that $px = 0$.
+By (1), $z(N'\cap M) = zN' \cap zMz$.
+Then for all unitaries $u\in U(N)$, $upz = z(up) \in zN$, so 
+$0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
+Taking sup over $u \in U(N)$ yields $0 = xz = x$.
+\end{proof}
+
+
+\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
+Edit it to use here.}
+
+
+\begin{lem}
+Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
+The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
+\end{lem}
+\begin{proof}
+One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
+The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
+\end{proof}
+
+\begin{cor}
+\label{cor:CutDownJonesTower}
+Let $(X_n)_{n\geq 0}$ be the Jones tower for the finite index $\rm{II}_1$-subfactor $X_0=X \subset Y=X_1$ with Jones projections $(e_n)_{n\geq 1}$, and suppose $p\in X$ is a nonzero projection.
+Then $(pX_np)_{n\geq 0}$ is the Jones tower for $pXp\subset pYp$ with Jones projections $(pe_n)_{n\geq 1}$.
+\end{cor}
+
+
+\begin{thm}
+\label{thm:CompressionIsomorphism}
+Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+% with central support $1$.
+Then the inclusion $pM_0p \subset pM_1p$ is strongly Markov.
+\end{thm}
+\begin{proof}
+\nn{TODO}
+\end{proof}
+
+\begin{cor}
+Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+Then $(pM_np, \tr_n(p\, \cdot\,)/\tr_n(p), pe_n)$ is a Markov sequence.
+\end{cor}
+\begin{proof}
+\nn{todo: should be OK.}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The canonical planar algebra of a strongly Markov inclusion} 
+\label{sec:StronglyMarkovPA}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Planar algebras} 
+
+
+
+For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
+\begin{itemize}
+\item All input/output disks are parallel rectangles.
+\item All strings are smooth, strings emanating from the input disks come from the top of the disk, and strings connected to the output disk connect to the top.
+\item The maxima and minima of any two strings occurs at different heights, and no extrema ever occurs at the same height as that of the top or bottom of a rectangle.
+\item The $\ast$ of a tangle is always on the left edge of the boundary rectangle.
+\end{itemize}
+
+
+\begin{defn} 
+The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
+
+	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and the unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
+	\begin{itemize}
+	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
+	\[
+	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}
+	\]
+	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
+	\[
+	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}=x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots x_{n_y}
+	\]
+	Both of these maps are well-defined, by \cite[Lem2.29]{MR2812459}.
+	\item The effect of passing upwards through the extrema of a strand is as follows: 
+\begin{align*}
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+	\end{tikzpicture}
+	: x\otimes y\mapsto xy \\
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+	\end{tikzpicture}
+	: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+	\end{tikzpicture}
+	: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
+	&\begin{tikzpicture}[scale=0.6]
+		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+	\end{tikzpicture}
+	: x\otimes y \mapsto x\otimes 1 \otimes y 
+\end{align*}
+	
+\end{itemize} 
+The $\ast$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
+\end{defn}
+
+We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
+
+\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
+The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
+\end{thm}
+
+The following two sections will describe two isomorphisms between planar algebras constructed in this manner both of which are well known to experts and will motivate constructions detailed in the later sections of this article.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Shift and compression isomorphisms of planar algebras} 
+
+In rest of this article we will make extensive use of the following lemma adapted from \cite[Lem.~2.49]{MR2812459}, which provides sufficient conditions for a collection of maps to be a morphism of shaded planar $\dag$-algebras.
+
+\begin{lem}[{\cite[Variation of Lem.~2.49]{MR2812459}}]
+\label{lem:SufficientConditionsForPlanarMap}
+Suppose $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ is a collection of unital $\dag$-algebra maps such that
+\begin{enumerate}[(1)]
+\item
+$\Phi$ maps Jones projections in $\cP_{n,+}$ to Jones projections in $\cQ_{n,+}$,
+\item
+$\Phi$ commutes with the action of the following tangles:
+$$
+\underset{
+\substack{
+\text{right inclusion}
+\\ 
+\cP_{n,+} \to \cP_{n+1,+}
+}}
+{
+\begin{tikzpicture}
+	\draw (.4,-.5) -- (.4,.5);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.2,.45) {\scriptsize{$n$}};
+	\node at (-.2,-.45) {\scriptsize{$n$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
+\end{tikzpicture}
+}
+\qquad\qquad
+\underset{
+\substack{
+\text{left inclusion}
+\\ 
+\cP_{n,-} \to \cP_{n+1,+}
+}}
+{
+\begin{tikzpicture}[xscale=-1]
+	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
+	\draw (.4,-.5) -- (.4,.5);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.2,.45) {\scriptsize{$n$}};
+	\node at (-.2,-.45) {\scriptsize{$n$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
+\end{tikzpicture}
+}
+\qquad\qquad
+\underset{
+\substack{
+\text{right capping}
+\\ 
+\cP_{n,+} \to \cP_{n-1,+}
+}}
+{
+\begin{tikzpicture}
+	\draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
+\end{tikzpicture}
+}
+\qquad\qquad
+\underset{
+\substack{
+\text{left capping}
+\\ 
+\cP_{n,+} \to \cP_{n-1,-}
+}}
+{
+\begin{tikzpicture}[xscale=-1]
+	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
+	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{}
+\end{tikzpicture}
+}.
+$$
+\end{enumerate}
+Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
+\end{lem}
+
+\nn{TODO: the canonical planar algebra for $A_0 \subset A_1$ is canonically iso to the canonical planar algebra for $A_2\subset A_3$ when $A_0\subset A_1$ is a strongly Markov inclusion.}
+
+
+
+\nn{edit below here -- math taken from elsewhere, OK to use.}
+
+
+\begin{thm}
+\label{thm:IsomorphicStandardInvariants}
+Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection with central support $1$.
+Then 
+%\begin{enumerate}
+%\item
+%The inclusion $pM_0p \subset pM_1p$ is strongly Markov.
+%\item
+%\nn{rephrase...}
+the map $x\mapsto px$ from $M_0'\cap M_n \to pM_0'\cap pM_np \cong p(M_0'\cap M_n)$
+\nn{definition on $\cP_{n,-}$ too}
+is planar $\dag$-algebra isomorphism.
+%\end{enumerate}
+\end{thm}
+\begin{proof}
+We prove the maps $\Phi_{n,\pm}$ satisfy the conditions of Lemma \ref{lem:SufficientConditionsForPlanarMap}.
+
+First, note that $\Phi_{n,\pm}(e_n) = pe_n$, so Jones projections in $\cP_\bullet$ map to Jones projections in $\cQ_\bullet$ by \nn{earlier section}.
+\nn{TODO: edit below}
+
+We must check that Condition (2) of Lemma \ref{lem:SufficientConditionsForPlanarMap} holds.
+The only interesting part is checking that left capping commutes with $\Phi_{n,\pm}$.
+First, by \cite[Equation (4.1.5) and Theorem 4.2.1]{math.QA/9909027}, the formula for capping on the left is given by
+$$
+\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
+	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
+	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+[Y:X]^{-1/2} \sum_{\beta} \beta x\beta^*
+$$
+where $\{\beta\}$ is a (finite) Pimsner-Popa basis for $X\subset Y$, and this map is independent of the choice of basis.
+This means that picking Pimsner-Popa bases $\{\beta\}$ for $X\subset Y$ and $\{b\}$ for $pXp\subset pYp$, we must show that
+$$
+\Phi_{n-1,-}
+\left(
+\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
+	\fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
+	\filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+\right)
+=
+[Y:X]^{-1/2}p\sum_{\beta} \beta x\beta^* 
+= 
+[Y:X]^{-1/2}\sum_{b} bpxb^*
+=
+\begin{tikzpicture}[xscale=-1, baseline = -.1cm]
+	\fill[shaded] (.85,-.5) -- (.85,.5) -- (0,.5) -- (0,-.5);
+	\filldraw[unshaded] (.4,-.25) arc (-180:0:.15cm) -- (.7,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{.35}{.35}{\scriptsize{$\Phi_{n,+}(x)$}}
+\end{tikzpicture}
+.
+$$
+
+Now the trick is to carefully choose a Pimsner-Popa basis for $X\subset Y$.
+Let $\{b\}$ be a Pimsner-Popa basis for $pXp\subset pYp$, and let $\{a\}$ be a Pimsner-Popa basis for $(1-p)X(1-p) \subset (1-p)Y(1-p)$.
+We claim $\{\beta\}=\{a\}\cup \{b\}$ is a Pimsner-Popa basis for $X\subset Y$.
+Indeed, we see
+$$
+\sum_{\beta} \beta e_X \beta^*
+=
+\sum_{a} ae_X a^* + \sum_{b} be_X b^* 
+=
+\sum_{a} a(1-p)e_X a^* + \sum_{b} bpe_X b^* 
+=
+(1-p) + p
+= 
+1_{\langle Y, e_X\rangle}.
+$$
+For this special choice of $\{b\}$ and $\{\beta\}$, we immediately see that for $x\in \cP_{n,+}$,
+$$
+p\sum_{\beta} \beta x\beta^* 
+= 
+p\left(\sum_{a} ae_X a^* + \sum_{b} be_X b^* \right)
+=
+\sum_{b} bpe_X b^*
+$$
+and the result follows.
+%
+%\nn{please check the following.}
+%We carefully choose a Pimsner-Popa basis for $X\subset Y$ as follows.
+%First, we pick finitely many partial isometries $v\in p\langle Y, e_X\rangle p$ such that $\sum vv^* = p$ and $v^*v \leq pe_X$.
+%Then using the Pimsner-Popa pull-down lemma \nn{}, for each $v$, we get a unique $a\in Y$ such that $ae_X = ve_X$.
+%Note that since each $v\in p\langle Y, e_X\rangle p$, the uniqueness of $a\in Y$ immediately implies that $a\in pYp$.
+%We now pick finitely many partial isometries $w\in (1-p) \langle Y, e_X\rangle (1-p)$ so that $\sum ww^* = (1-p)$ and $w^*w\leq e_X$.
+%Again, we use the pull-down lemma for each $w$ to get a $b\in Y$ with $we_X = be_X$, and we notice that
+%$$
+%\sum_a ae_X a^* + \sum_b be_X b^* = p + (1-p) = 1_{\langle Y, e_X\rangle},
+%$$
+%so $\{a\}$ is a Pimsner-Popa basis for $pXp\subset pYp$, and $\{a\}\cup\{b\}$ is a Pimsner-Popa basis for $X\subset Y$.
+%
+%Now we see that for every $x\in X'\cap Y$, we have
+%$$
+%p d^{-1}\left( \sum_a axa^* + \sum_b bxb^*\right) = d^{-1}\sum_a a xp a^*,
+%$$
+%which shows capping on the left commutes with the map $X'\cap Y \ni x \mapsto px \in pX'\cap pYp$.
+%The proof for higher left caps is similar.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The module embedding theorem via towers of algebras}
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Planar algebras and the paragroup}  \label{cattheory}
