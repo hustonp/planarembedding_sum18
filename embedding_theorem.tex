@@ -916,60 +916,75 @@ Let $0\leq k \leq l \leq n $. Let $B$ be a Pimsner-Popa basis for $A_l$ over $A_
 
 \begin{cor}
 \label{cor:OntoCor}
-If $x$ belongs to $A'_k \cap A_{n+k}$ then we have that $x$ can represented in the following form as a string diagram in the box space $A'_0\cap A_{n+k}$ for the canonical planar $\ast$-algebra for $A_0\subseteq (A_1,\tr_1)$:
+If $x \in A'_k \cap A_{n+k}\subset A_0'\cap A_{n+k}$,
+then there is a unique $y\in A_0'\cap A_n$ such that
+% then we have that $x$ can represented in the following form as a string diagram in the box space $A'_0\cap A_{n+k}$ for the canonical planar $\ast$-algebra for $A_0\subseteq (A_1,\tr_1)$:
 \[
-\begin{tikzpicture}[baseline]
+x
+=
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (0.45,-.7) -- (0.45,.7);
 \draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$y$}
 \node at (0.45,-.9) {\tiny{$n$}};
 \node at (0,-0.9){\tiny{$k$}};
-\end{tikzpicture}
+\end{tikzpicture}\,.
 \]
+Hence adding $k$ strands to the left is a unital $*$-algebra isomorphism $A_0'\cap A_n \to A_k'\cap A_{n+k}$.
 %and we have a similar result for elements of $A_3'\cap A_{n+3}$ when represented in string diagrams in $A'_{1}\cap A_{n+3}$.%
 \end{cor}
 \begin{proof} 
-For $x\in A'_k\cap A_{n+k}$ we have:
-\[
-\begin{tikzpicture}[baseline]
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
-\node at (0,-.9) {\tiny{$n$}};
-\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}
-\quad
+Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
+For $x\in A'_k\cap A_{n+k}$, the element $y\in A_0'\cap A_n$ is uniquely determined by
+\begin{equation*}
+%\begin{tikzpicture}[baseline]
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+%\node at (0,-.9) {\tiny{$n$}};
+%\node at (0,0) {\scriptsize{$x$}};
+%\end{tikzpicture}
+x
 =
-\quad
-E_{A'_k}^{A'0}(x)
+E_{A'_k}^{A_0'}(x)
 =
 \quad
 d^{-2k} \sum_{b \in B} bxb^{\ast}
 =
-\quad
 d^{-k}
 \begin{tikzpicture}[baseline]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
 \draw (-.75,-.7) -- (-.75,.7);
 \draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (-.55,0) {\tiny{$k$}};
 \node at (-.85,0) {\tiny{$k$}};
-\node at (0,0) {\scriptsize{$x$}};
+%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-=\quad
+=
 \begin{tikzpicture}[baseline]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
 \draw (-1.5,-.7) -- (-1.5,.7);
 \draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
 \node at (-.55,0) {\tiny{$k$}};
 \node at (-1.6,0) {\tiny{$k$}};
-\node at (0,0) {\scriptsize{$x$}};
+%\node at (0,0) {\scriptsize{$x$}};
 \node at (0,-.9) {\tiny{$n$}};
 \node at (-1.05,0) {\tiny{$d^{-k}$}};
 \end{tikzpicture}
-\]
+=
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (0.45,-.7) -- (0.45,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$y$}
+\node at (0.45,-.9) {\tiny{$n$}};
+\node at (0,-0.9){\tiny{$k$}};
+\end{tikzpicture}
+\,.
+\qedhere
+\end{equation*}
+%\]
 %The proof is similar for elements1 of $A'_3\cap A_{n+3}$.%
 \end{proof}
 
