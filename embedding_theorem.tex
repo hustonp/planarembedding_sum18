@@ -812,7 +812,7 @@ We will proceed with the same general technique for defining the embedding of pl
 The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
 
-The following two sections will describe two isomorphisms between planar algebras constructed in this manner both of which are well known to experts and will motivate constructions detailed in the later sections of this article.
+The following two subsections will describe two isomorphisms between planar algebras constructed in this manner both of which are well known to experts and will motivate constructions detailed in the later sections of this article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The shift isomorphism} 
@@ -898,8 +898,78 @@ $$
 Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
 \end{lem}
 
-\nn{TODO: the canonical planar algebra for $A_0 \subset A_1$ is canonically iso to the canonical planar algebra for $A_2\subset A_3$ when $A_0\subset A_1$ is a strongly Markov inclusion.}
+Suppose that $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of von Neumann algebras and $(A_n,\tr_n)_{n\geq 0}$ is the tower obtained by iterating the basic construction. 
+We know from \cite[Cor.~2.18]{MR2812459} that for any $0\leq k \leq n$ the inclusion $A_k \subseteq (A_n,tr_n)$ is strongly markov. 
+Thus we can find a Pimsner-Popa basis $B$ for $A_n$ over $A_k$.
 
+\begin{prop}[{\cite[Prop.~2.24]{MR2812459}}]
+Let $0\leq k \leq l \leq n $. Let $B$ be a Pimsner-Popa basis for $A_l$ over $A_k$. The conditonal expectation $E_{A'_l}^{A'_k}: (A'_k\cap B(L^2(A_n,tr_n)),tr'_k)\rightarrow (A'_k\cap A'_l \cap B(L^2(A_n,tr_n)),tr'_l)$ is given by:
+\[
+ E^{A'_l}_{A'_k}(x)\quad=\quad d^{-2(l-k)} \sum_{b \in B} bxb^{\ast}
+\]
+\end{prop}
+
+\begin{cor}
+\label{cor:OntoCor}
+If $x$ belongs to $A'_2 \cap A_{n+2}$ then we have that $x$ can represented in the following form as a string diagram in the box space $A'_0\cap A_{n+2}$ for the canonical planar $\ast$-algebra for $A_0\subseteq (A_1,\tr_1)$:
+\[
+\begin{tikzpicture}[baseline]
+\draw (0.45,-.7) -- (0.45,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+\node at (0.45,-.9) {\tiny{$n$}};
+\node at (0,-0.9){\tiny{$2$}};
+\end{tikzpicture}
+\]
+and we have a similar result for elements of $A_3'\cap A_{n+3}$ when represented in string diagrams in $A'_{1}\cap A_{n+3}$.
+\end{cor}
+\begin{proof} 
+For $x\in A'_2\cap A_{n_2}$ we have:
+\[
+\begin{tikzpicture}[baseline]
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (0,-.9) {\tiny{$n$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+=
+\quad
+E_{A'_2}^{A'0}(x)
+=
+\quad
+d^{-4} \sum_{b \in B} bxb^{\ast}
+=
+\quad
+d^{-4}
+\begin{tikzpicture}[baseline]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (-.55,0) {\tiny{$2$}};
+\node at (-.85,0) {\tiny{$2$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+=\quad
+\begin{tikzpicture}[baseline]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-1.5,-.7) -- (-1.5,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
+\node at (-.55,0) {\tiny{$2$}};
+\node at (-1.6,0) {\tiny{$2$}};
+\node at (0,0) {\scriptsize{$x$}};
+\node at (0,-.9) {\tiny{$n$}};
+\node at (-1.05,0) {\tiny{$d^{-4}$}};
+\end{tikzpicture}
+\]
+The proof is similar for elements1 of $A'_3\cap A_{n+3}$.
+\end{proof}
+
+
+\nn{below are dave's collisions}
 %%%%%%%%%%%%%Shifting%%%%%%%%%%%%%
 Suppose that $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and let $(A_n, \tr_n, e_n)$ be its Jones tower.
 We know from \cite[Prop.~2.20]{MR2812459} that the inclusion $A_0 \subseteq A_2 \subseteq \left(A_4, \tr_4,d^{-2}(e_1e_2)(e_3e_2)\right)$ is standard. 
@@ -946,44 +1016,12 @@ Similarly, the `shift by 2' gives a unital $*$-algebra isomorphism $A_1'\cap A_{
 \nn{show maps is well-defined.}
 
 If $x$ belongs to $A'_2 \cap A_n$ then we have the following
-\[
-\begin{tikzpicture}[baseline]
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
-\node at (0,-.9) {\tiny{$n$}};
-\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}
-\quad
-=
-\quad
-d^{-2}
-\begin{tikzpicture}[baseline]
-\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-.75,-.7) -- (-.75,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
-\node at (-.55,0) {\tiny{$2$}};
-\node at (-.85,0) {\tiny{$2$}};
-\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}
-=\quad
-\begin{tikzpicture}[baseline]
-\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-1.5,-.7) -- (-1.5,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
-\draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
-\node at (-.55,0) {\tiny{$2$}};
-\node at (-1.6,0) {\tiny{$2$}};
-\node at (0,0) {\scriptsize{$x$}};
-\node at (0,-.9) {\tiny{$n-2$}};
-\node at (-1.05,0) {\tiny{$d^{-2}$}};
-\end{tikzpicture}
-\]
 \end{proof}
 
-Let us denote the relative commutant algebra on the inclusion $A_0 \subseteq A_1$ by $\mathcal{A}_{\bullet}$ and the relative commutant algebra on $A_2 \subset A_3$ by $\mathcal{B}_{\bullet}$.
-\begin{lem}[Shift by 2 Isomorphism]
+\nn{above are dave's collisions}
+
+Let us denote the canonical planar $\ast$-algebra for the inclusion $A_0 \subseteq A_1$ by $\mathcal{A}_{\bullet}$ and the canonical planar $\ast$-algebra for $A_2 \subset A_3$ by $\mathcal{B}_{\bullet}$.
+\begin{thm}[Shift by 2 Isomorphism]
 The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
 \[
 \begin{tikzpicture}[baseline]
@@ -1003,8 +1041,8 @@ The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by addi
 \node at (0,-0.9){\tiny{$2$}};
 \end{tikzpicture}
 \]
-is a planar $\ast$-algebra isomorphism.
-\end{lem}
+defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\bullet}$.
+\end{thm}
 \begin{proof}
 \nn{Have to provide surjectiveness for negative box spaces also}
 \end{proof}
