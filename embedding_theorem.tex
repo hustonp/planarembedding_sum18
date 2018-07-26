@@ -901,28 +901,50 @@ Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
 \nn{TODO: the canonical planar algebra for $A_0 \subset A_1$ is canonically iso to the canonical planar algebra for $A_2\subset A_3$ when $A_0\subset A_1$ is a strongly Markov inclusion.}
 
 %%%%%%%%%%%%%Shifting%%%%%%%%%%%%%
-Suppose that $(A_n,\tr_n)$ is a strongly Markov sequence of von Neumann algebras. 
-We know from \cite{MR2812459} that the inclusion $A_0 \subseteq A_2 \subseteq \left(A_4, \tr_4,d^{-2}(e_1e_2)(e_3e_2)\right)$ is standard. 
-\dave{false; only true if $(A_n)$ is the Jones tower of a strongly markov inclusion.}
-Thus we can find a Pimsner-Popa basis $B$ for $A_2$ over $A_0$.
-\begin{remark}
-The commutant conditonal expectation $E^{A'_0}_{A'_2}$ is given by:
+Suppose that $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and let $(A_n, \tr_n, e_n)$ be its Jones tower.
+We know from \cite[Prop.~2.20]{MR2812459} that the inclusion $A_0 \subseteq A_2 \subseteq \left(A_4, \tr_4,d^{-2}(e_1e_2)(e_3e_2)\right)$ is standard. 
+Moreover, by \cite[Prop.~2.24]{MR2812459}, the canonical commutant conditonal expectation $E^{A'_0}_{A'_2}$ is given by
 \[
- E^{A'_0}_{A'_2}(x)\quad=\quad d^{-4} \sum_{b \in B} bxb^{\ast} \quad=\quad 
-d^{-2}
-\begin{tikzpicture}[baseline]
-\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-.75,-.7) -- (-.75,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
-\node at (-.55,0) {\tiny{$2$}};
-\node at (-.85,0) {\tiny{$2$}};
-\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}
+ E^{A'_0}_{A'_2}(x)\quad=\quad d^{-4} \sum_{b \in B} bxb^{\ast} 
+%\quad
+%=
+%\quad 
+%d^{-2}
+%\begin{tikzpicture}[baseline]
+%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+%\draw (-.75,-.7) -- (-.75,.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+%\node at (-.55,0) {\tiny{$2$}};
+%\node at (-.85,0) {\tiny{$2$}};
+%\node at (0,0) {\scriptsize{$x$}};
+%\end{tikzpicture}
 \]
-\end{remark}
+where $B$ is a Pimsner-Popa basis for $A_2$ over $A_0$.
+\dave{don't get to draw a picture for elements of $A_k'$, only for $A_k'\cap A_n$}
+
 \begin{cor}
 \label{cor:OntoCor}
+For all $n\geq 0$, the relative commutant $A_2'\cap A_{n+2}\subset A_0'\cap A_{n+2}$ is equal to 
+$$
+\set{
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (0.45,-.7) -- (0.45,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+\node at (0.45,-.9) {\tiny{$n$}};
+\node at (0,-0.9){\tiny{$2$}};
+\end{tikzpicture}\,\,
+}{
+x \in A_0'\cap A_n
+}.
+$$
+That is, the `shift by 2' gives a unital $*$-algebra isomorphism $A_0'\cap A_n \to A_2'\cap A_{n+2}$.
+Similarly, the `shift by 2' gives a unital $*$-algebra isomorphism $A_1'\cap A_{n+1} \to A_3'\cap A_{n+3}$.
+\end{cor}
+\begin{proof}
+\nn{show maps is well-defined.}
+
 If $x$ belongs to $A'_2 \cap A_n$ then we have the following
 \[
 \begin{tikzpicture}[baseline]
@@ -958,7 +980,8 @@ d^{-2}
 \node at (-1.05,0) {\tiny{$d^{-2}$}};
 \end{tikzpicture}
 \]
-\end{cor}
+\end{proof}
+
 Let us denote the relative commutant algebra on the inclusion $A_0 \subseteq A_1$ by $\mathcal{A}_{\bullet}$ and the relative commutant algebra on $A_2 \subset A_3$ by $\mathcal{B}_{\bullet}$.
 \begin{lem}[Shift by 2 Isomorphism]
 The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
