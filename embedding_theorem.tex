@@ -549,8 +549,89 @@ The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projection
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Shifts and compressions} 
 
-\nn{prove shifting is an iso on relative commutants}
-
+\nn{prove shifting is an iso on relative commutants}\\
+%%%%%%%%%%%%%Shifting%%%%%%%%%%%%%
+Suppose that $(A_n,\tr_n)$ is a strongly Markov sequence of von Neumann algebras. We know from \cite{MR2812459} that the inclusion $A_0 \subseteq A_2 \subseteq \left(A_4, \tr_4,d^{-2}(e_1e_2)(e_3e_2)\right)$ is standard. Thus we can find a Pimsner-Popa basis $B$ for $A_2$ over $A_0$.
+\begin{remark}
+The commutant conditonal expectation $E^{A'_0}_{A'_2}$ is given by:
+\[
+ E^{A'_0}_{A'_2}(x)\quad=\quad d^{-4} \sum_{b \in B} bxb^{\ast} \quad=\quad 
+d^{-2}
+\begin{tikzpicture}[baseline]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (-.55,0) {\tiny{$2$}};
+\node at (-.85,0) {\tiny{$2$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\]
+\end{remark}
+\begin{cor}
+\label{cor:OntoCor}
+If $x$ belongs to $A'_2 \cap A_n$ then we have the following
+\[
+\begin{tikzpicture}[baseline]
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (0,-.9) {\tiny{$n$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+=
+\quad
+d^{-2}
+\begin{tikzpicture}[baseline]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (-.55,0) {\tiny{$2$}};
+\node at (-.85,0) {\tiny{$2$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+=\quad
+\begin{tikzpicture}[baseline]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-1.5,-.7) -- (-1.5,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
+\node at (-.55,0) {\tiny{$2$}};
+\node at (-1.6,0) {\tiny{$2$}};
+\node at (0,0) {\scriptsize{$x$}};
+\node at (0,-.9) {\tiny{$n-2$}};
+\node at (-1.05,0) {\tiny{$d^{-2}$}};
+\end{tikzpicture}
+\]
+\end{cor}
+Let us denote the relative commutant algebra on the inclusion $A_0 \subseteq A_1$ by $\mathcal{A}_{\bullet}$ and the relative commutant algebra on $A_2 \subset A_3$ by $\mathcal{B}_{\bullet}$.
+\begin{lem}[Shift by 2 Isomorphism]
+The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
+\[
+\begin{tikzpicture}[baseline]
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\node at (0,-.9) {\tiny{$n$}};
+\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+\mapsto
+\quad
+\begin{tikzpicture}[baseline]
+\draw (0.45,-.7) -- (0.45,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+\node at (0.45,-.9) {\tiny{$n$}};
+\node at (0,-0.9){\tiny{$2$}};
+\end{tikzpicture}
+\]
+is a planar $\ast$-algebra isomorphism.
+\end{lem}
+\begin{proof}
+\nn{Have to provide surjectiveness for negative box spaces also}
+\end{proof}
 The following lemma is well known to experts. 
 We provide a proof for convenience and completeness.
 
