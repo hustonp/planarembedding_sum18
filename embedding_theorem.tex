@@ -997,24 +997,46 @@ If $x$ belongs to $A'_2 \cap A_n$ then we have the following
 \nn{above are dave's collisions}
 
 Let us denote the canonical planar $\ast$-algebra for the inclusion $A_0 \subseteq A_1$ by $\mathcal{A}_{\bullet}$ and the canonical planar $\ast$-algebra for $A_2 \subset A_3$ by $\mathcal{B}_{\bullet}$.
-<<<<<<< Updated upstream
-\begin{thm}[Shift by 2 Isomorphism]\label{ShiftIso}
-The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
-=======
+
 \begin{thm}[Shift by 2 Isomorphism]
-The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ viewed as elements of $mathcal{A}_{n+1,+}$ 
->>>>>>> Stashed changes
+\label{ShiftIso}
+The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,\pm}$
+% and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
+%=======
+%\begin{thm}[Shift by 2 Isomorphism]
+%The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ viewed as elements of $mathcal{A}_{n+1,+}$ 
+%>>>>>>> Stashed changes
 \[
 \begin{tikzpicture}[baseline]
 \draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (0,-.9) {\tiny{$n$}};
-\node at (0,0) {\scriptsize{$x$}};
+%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 \quad
 \mapsto
 \quad
 \begin{tikzpicture}[baseline]
+\draw (0.45,-.7) -- (0.45,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+\node at (0.45,-.9) {\tiny{$n$}};
+\node at (0,-0.9){\tiny{$2$}};
+\end{tikzpicture}
+\qquad
+\qquad
+\begin{tikzpicture}[baseline]
+\fill[shaded] (-.5,-.7) rectangle (0,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\node at (0,-.9) {\tiny{$n$}};
+%\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+\quad
+\mapsto
+\quad
+\begin{tikzpicture}[baseline]
+\fill[shaded] (-.45,-.7) rectangle (.45,.7);
 \draw (0.45,-.7) -- (0.45,.7);
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
