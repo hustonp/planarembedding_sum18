@@ -1772,7 +1772,7 @@ $$
 It suffices to show this because by \ref{planaralgebraisomorphism} we have that $R_{\bullet}$ and $S_{\bullet}$ are both isomorphic to $G_{\bullet}$ so $\phi$ lifts to an automorphism of $G_{\bullet}$. First we will show this for the special where we take two different values for $r$ such that the inclusion $A_{2r}\subseteq A_{2r+1}\subseteq A_{2r+2}$ is standard. The following lemma is a direct consequence of the shift isomorphism discussed in section \ref{example}.
 
 \begin{prop}
-Let $R_{\bullet}$ and $S_{\bullet}$ be the canonical planar algebras given by the inclusions $A_{2r}\subseteq A_{2r+1}$ and $A_{2s}\subseteq A_{2s+1}$ where $A_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$ for some $m\in \cC_{20}$. Let $\phi$ and $\phi'$ be the embeddings of $Q_{\bullet}$ into $R_{\bullet}$ and $S_{\bullet}$ respectively. Then thereis some isomorphism $\Psi:R_{\bullet}\rightarrow R_{\bullet}$ such that the following triangle commutes:
+Let $\cR_{\bullet}$ and $\cS_{\bullet}$ be the canonical planar algebras given by the inclusions $A_{2r}\subseteq A_{2r+1}$ and $A_{2s}\subseteq A_{2s+1}$ where $A_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$ for some $m\in \cC_{20}$. Let $\phi$ and $\phi'$ be the embeddings of $\cQ_{\bullet}$ into $\cR_{\bullet}$ and $\cS_{\bullet}$ respectively. Then there is some isomorphism $\Psi:R_{\bullet}\rightarrow R_{\bullet}$ such that the following triangle commutes:
 
 $$
   \begin{tikzcd}
@@ -1782,7 +1782,9 @@ $$
 $$  
 \end{prop}
 
-
+\begin{proof}
+First notice that without loss of generality it suffices to show this for $s=r+1$. Then in this case we already have an isomorphism of planar algebras $\Psi:\cR_{\bullet}\rightarrow \cS_{\bullet}$ as described in \ref{ShiftIso}. So it remains to show $\Psi\circ \phi=\phi'$, but it's clear this is the case.
+\end{proof}
 
 \bibliographystyle{amsalpha}
 {\footnotesize{
