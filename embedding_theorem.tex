@@ -546,7 +546,7 @@ The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projection
 \end{ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Compressions of inclusions of von Neumann algebras} 
+\subsection{Compressing inclusions of von Neumann algebras} 
 
 
 The following lemma is well known to experts. 
@@ -595,57 +595,55 @@ Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 
 In the event that $A_0 \subseteq (A_1, \tr_1)$ is an inclusion of tracial von Neumann algebras and $p\in P(A_0)$ is a non-zero projection, we get a canonical faithful trace on the compressed inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ given by $\tr^p_1(pxp):= \tr_1(pxp)/\tr_1(p)$.
 It is straightforward to verify that the unique trace-preserving conditional expectation $E^p_1 : pA_1p \to pA_0p$ is given by $E^p_1(pxp) := E_1(pxp) = pE_1(x)p$. 
-
-
+Notice that for all $pxp \in pA_1 p$, we have $e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1(pxp)e_1p$, so the conditional expectation is implemented by $e_1p$.
 
 \begin{lem}
-Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
-The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
+Under the additional assumption that $A_0pA_0 = A_0$,\footnote{The condition that $A_0pA_0$ implies that the central support of $p$ in $A_0$ is $1$.}
+the inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
+%Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
+%The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
 \end{lem}
 \begin{proof}
-One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
-The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
-\end{proof}
-
-
-
-\begin{thm}
-\label{thm:CompressionIsomorphism}
-Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-% with central support $1$.
-Then the inclusion $pM_0p \subset pM_1p$ is strongly Markov.
-\end{thm}
-\begin{proof}
-\nn{TODO.
+\nn{TODO:
 \\
 \\
-Will also require that $M_0pM_0 = M_0$, which is stronger than central support $1$ so that
+When $A_0pA_0 = A_0$,
 $$
-pM_1p (pe_1)pM_1p
+pA_1p (pe_1)pA_1p
 =
-pM_1M_0pe_1M_0M_1p
+pA_1A_0pe_1A_0A_1p
 =
-pM_1M_0pM_0e_1M_1p
+pA_1A_0pA_0e_1A_1p
 =
-pM_1M_0
+pA_1A_0
 e_1
-M_1p
+A_1p
 =
-pM_1e_1M_1p
+pA_1e_1A_1p
 =
-pM_2p.
-$$}
+pA_2p.
+$$
+}
+%One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
+%The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
 \end{proof}
 
-
-
+\begin{prop}
+\label{prop:CompressingStronglyMarkovInclusion}
+Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
+Then $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov.
+\end{prop}
+\begin{proof}
+\nn{TODO}
+\end{proof}
 
 \begin{cor}
-\label{cor:CutDownJonesTower}
-Let $(X_n)_{n\geq 0}$ be the Jones tower for the finite index $\rm{II}_1$-subfactor $X_0=X \subset Y=X_1$ with Jones projections $(e_n)_{n\geq 1}$, and suppose $p\in X$ is a nonzero projection.
-Then $(pX_np)_{n\geq 0}$ is the Jones tower for $pXp\subset pYp$ with Jones projections $(pe_n)_{n\geq 1}$.
+Assume the hypotheses of Lemma \ref{prop:CompressingStronglyMarkovInclusion}, and let $(A_n, \tr_n, e_n)$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
+Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
-
+\begin{proof}
+\nn{todo}
+\end{proof}
 
 
 \begin{cor}
@@ -685,13 +683,19 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 	\begin{itemize}
 	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
 	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}
+	x_1\otimes\cdots \otimes x_{n_y} 
+	\mapsto 
+	x_1\otimes \cdots\otimes x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots\otimes x_{n_y}
 	\]
 	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
 	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}=x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots x_{n_y}
+	x_1\otimes\cdots \otimes x_{n_y} 
+	\mapsto 
+	x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
+	=
+	x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
 	\]
-	Both of these maps are well-defined, by \cite[Lem2.29]{MR2812459}.
+	Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
 	\item The effect of passing upwards through the extrema of a strand is as follows: 
 \begin{align*}
 	&\begin{tikzpicture}[scale=0.6]
@@ -742,7 +746,7 @@ The $\ast$-structure on tangles given by horizontal reflection of tangles, and t
 
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
 
-\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
+\begin{thm}[\cite{MR2812459}] \label{planaralgebraisomorphism}
 The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
 
@@ -923,28 +927,34 @@ is a planar $\ast$-algebra isomorphism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The compression isomorphism}
 
-
-\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
-Edit it to use here.}
-
-
-
-\nn{edit below here -- math taken from elsewhere, OK to use.}
-
+Suppose $A_0\subset A_1$ is a strongly Markov inclusion of tracial von Neumann algebras.
+Denote by $\cP_\bullet$ the canonical planar $\dag$-algebra whose box spaces are given by
+\nn{I'd like to suppress the maps $\theta$, since they are really annoying to keep track of -- Dave}
+$$
+\cP_{n,+}
+:=
+\theta_n^{-1}(A_0'\cap A_n)
+\qquad\qquad
+\cP_{n,-}
+:=
+\theta_{n+1}^{-1}(A_1'\cap A_{n+1}).
+$$
+Suppose $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
+By Corollary \nn{}, the Jones tower for $pA_0p \subset (pA_1p, \tr^p_1)$ is given by $(pA_np, \tr^p_n, e_np)$, and thus we get another canonical planar $\dag$-algebra $\cQ_\bullet$ whose box spaces are given by
+$$
+\cQ_{n,+}
+:=
+\theta_n^{-1}(pA_0'\cap pA_np)
+\qquad\qquad
+\cQ_{n,-}
+:=
+\theta_{n+1}^{-1}(pA_1'\cap pA_{n+1}p).
+$$
+By \nn{}, the map $\Phi_{n,\pm}:\theta^{-1}(x)\mapsto \theta^{-1}(xp)$ gives an isomorphism of von Neumann algebras $\Phi_{n,\pm}:\cP_{n,\pm}\to \cQ_{n,\pm}$ for each $n\geq 0$.
 
 \begin{thm}
 \label{thm:IsomorphicStandardInvariants}
-Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection with central support $1$.
-Then 
-%\begin{enumerate}
-%\item
-%The inclusion $pM_0p \subset pM_1p$ is strongly Markov.
-%\item
-%\nn{rephrase...}
-the map $x\mapsto px$ from $M_0'\cap M_n \to pM_0'\cap pM_np \cong p(M_0'\cap M_n)$
-\nn{definition on $\cP_{n,-}$ too}
-is planar $\dag$-algebra isomorphism.
-%\end{enumerate}
+The maps $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ constitute a planar $\dag$-algebra isomorphism.
 \end{thm}
 \begin{proof}
 We prove the maps $\Phi_{n,\pm}$ satisfy the conditions of Lemma \ref{lem:SufficientConditionsForPlanarMap}.
@@ -1041,6 +1051,17 @@ and the result follows.
 %which shows capping on the left commutes with the map $X'\cap Y \ni x \mapsto px \in pX'\cap pYp$.
 %The proof for higher left caps is similar.
 \end{proof}
+
+
+
+\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
+Edit it to use here.}
+
+
+
+\nn{edit below here -- math taken from elsewhere, OK to use.}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
