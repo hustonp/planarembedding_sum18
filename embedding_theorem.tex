@@ -310,7 +310,7 @@
 
 % title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Module embedding via towers of algebras}
+\title{The module embedding theorem via towers of algebras}
 \author{Desmond Coles, Peter Huston, David Penneys, \& Srivatsa Srinivas}
 
 
@@ -341,9 +341,12 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 \section{Strongly Markov inclusions of von Neumann algebras} 
 \label{sec:StronglyMarkovInclusions}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strongly Markov inclusions} 
 
+\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov sequence?
+This could help alleviate some confusion!}
 For the duration of this paper assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$ we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
 \begin{defn}
 Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
@@ -356,12 +359,15 @@ Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_
 
 
 \end{defn}
-Due to \cite{MR996807} we have the following:
+Due to 
+\cite[Prop.~3(b)]{MR561983}
+(see also \cite{MR996807}) 
+we have the following:
 \begin{prop}
 The following are equivalent:
 
 \begin{itemize}
-\item There is a Pimsner=Popa basis for $A_1$ over $A_0$.
+\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
 \item $A_2=A_1e_1A_1$
 \end{itemize}
 \end{prop}
@@ -545,6 +551,171 @@ It follows that a Markov sequence has finite depth if and only if there is $n\in
 The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
 \end{ex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Compressing inclusions of von Neumann algebras} 
+
+
+The following lemma is well known to experts. 
+We provide a proof for convenience and completeness.
+
+\begin{lem}
+Suppose $N\subset M\subset B(H)$ is an inclusion of von Neumann algebras and $p\in P(N)$.
+\begin{enumerate}[(1)]
+\item
+$p(N'\cap M) = pN' \cap pMp$.
+\item
+Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
+The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
+\end{enumerate}
+\dave{this lemma may be more at home later, but it is a purely von Neumann algebraic fact}
+\end{lem}
+\begin{proof}
+\mbox{}
+\item[\underline{Proof of (1):}]
+The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
+
+Clearly $(N'\cap M)p \subseteq (N'p) \cap pMp$.
+Suppose $u$ is a unitary in $(N'p) \cap pMp$.
+Let $K$ be the closure of $NpH$.
+Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
+Define $u_0$ in $B(K)$ by $u_0 (np\xi) := npu\xi$.
+One now verifies that $u_0$ is an isometry and thus is well-defined.
+Look at the operator $u_0q \in N' \cap B(H)$, and note that $u = u_0qp \in N'p$.
+We claim that $u_0q \in M$, so that $u = u_0qp \in (N' \cap M)p$.
+First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
+we have
+$mu_0np\xi  = mnup\xi = nupm\xi = u_0npm\xi = u_0mnp\xi$.
+Thus $u_0 \in qMq$.
+Since $q \in M$, for all $m \in M'$, we have $u_0qm\xi = u_0mq\xi = mu_0q\xi$.
+Hence $u_0q$ commutes with $M'$ on $H$, and $u_0q \in M$. 
+
+\item[\underline{Proof of (2):}]
+For $x\in N'\cap M$, we have $p(zx) = px$.
+Hence the map is surjective.
+We now show the map is injective.
+Suppose $x \in z(N'\cap M)$ such that $px = 0$.
+By (1), $z(N'\cap M) = zN' \cap zMz$.
+Then for all unitaries $u\in U(N)$, $upz = z(up) \in zN$, so 
+$0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
+Taking sup over $u \in U(N)$ yields $0 = xz = x$.
+\end{proof}
+
+In the event that $A_0 \subseteq (A_1, \tr_1)$ is an inclusion of tracial von Neumann algebras and $p\in P(A_0)$ is a non-zero projection, we get a canonical faithful trace on the compressed inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ given by $\tr^p_1(pxp):= \tr_1(pxp)/\tr_1(p)$.
+It is straightforward to verify that the unique trace-preserving conditional expectation $E^p_1 : pA_1p \to pA_0p$ is given by $E^p_1(pxp) := E_1(pxp) = pE_1(x)p$. 
+Notice that for all $pxp \in pA_1 p$, we have 
+\begin{equation}
+\label{eq:CompressionImplementsConditionalExpectation}
+e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1^p(pxp)e_1p,
+\end{equation}
+so the conditional expectation is implemented by $e_1p$.
+
+We would like to show that $pA_2p$ is isomorphic to the basic construction of $pA_0p \subset (pA_1p, \tr_1^p)$, but we will need an extra assumption on $p$.
+Toward this goal, we recall the following recognition lemma based on \cite[Prop.~1.2]{MR965748}, \cite[Lem.~5.8]{MR1073519}, and \cite[Lem.~5.3.1]{MR1473221}.
+
+\begin{lem}[{\cite[Lem.~2.15]{MR2812459}}]
+\label{lem:BasicConstructionRecognition}
+Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $(B, \tr_B, p)$ is a tracial von Neumann algebra containing $A_1$ together with a projection $p\in P(B)$ such that
+\begin{enumerate}[(1)]
+\item
+$pxp = E_{A_0}^{A_1}(x)p$ for all $x\in A_1$,
+\item
+$E^{B}_{A_1}(p) = [A_1:A_0]^{-1} 1_{A_1}$, and
+\item
+$B$ is algebraically spanned by $A_1$ and $p$, i.e., $B = A_1pA_1 := \spann\set{apb}{a,b\in A_1}$.
+\end{enumerate}
+Then the map $A_2\to B$ given by $ae_1b \mapsto apb$ is a (normal) unital $*$-isomorphism of von Neumann algebras.
+\end{lem}
+
+We now prove that compression by well-behaved projections of $A_0$ preserves the strong Markov structure.
+Here, `well-behaved' is the condition 
+$A_0 = A_0 p A_0 := \spann\set{apb}{a,b\in A_0}$,
+which implies that the central support of $p$ in $A_0$ is $1$.
+
+\begin{prop}
+\label{prop:CompressingStronglyMarkovInclusion}
+Suppose $A_0 \subset (A_1, \tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras, and $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
+\begin{enumerate}[(1)]
+\item
+Let $\{a\}\subset A_0$ be a finite set such that $\sum_{a} apa^* = 1_{A_0}$.\footnote{
+Such a finite set necessarily exists by the same trick used in \cite[Prop.~3(b)]{MR561983}.
+}
+Then for any Pimsner-Popa basis $\{b\}$ for $A_1$ over $A_0$, $\{pbap\}$ is a Pimsner-Popa basis for $pA_1p$ over $pA_0p$.
+\item
+The inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov with index $[pA_1p:pA_0p] = [A_1:A_0]$.
+\item
+The inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
+\end{enumerate}
+%Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
+%The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
+\end{prop}
+\begin{proof}
+\mbox{}
+\item[\underline{Proof of (1):}]
+For all $pxp \in pA_1p$, we have
+$$
+\sum_{pbap} 
+pbap
+E^p_1(pa^*b^*p \cdot pxp)
+=
+\sum_b
+\sum_a
+pbapa^* E_1(b^*px)p
+=
+\sum_b pbE_1(b^*px)p
+=
+pxp.
+$$
+
+\item[\underline{Proof of (2):}]
+\nn{TODO: prove Markov.}
+To see the indices agree, we now compute the Watatani index \nn{cite}
+$$
+\sum_{pbap} pbap(pbap)^*
+=
+\sum_b\sum_a pbapa^*b^*p
+=
+\sum_b pbb^*p
+=
+[A_1:A_0] p
+=
+[A_1:A_0] \id_{pA_1p}.
+$$
+
+\item[\underline{Proof of (3):}]
+We show the hypotheses of Lemma \ref{lem:BasicConstructionRecognition} hold.
+We already saw condition (1) from the lemma holds in \eqref{eq:CompressionImplementsConditionalExpectation}.
+To see condition (2) from the lemma holds, note that $E^{pA_2p}_{pA_1p}(pxp) = pE_2(x)p$ for all $x\in A_2$.
+Thus by part (2) of this proposition,
+$$
+E^{pA_2p}_{pA_1p}(pe_1) 
+= 
+pE_2(e_1) 
+= 
+[A_1:A_0]^{-1}p 
+= 
+[pA_1p:pA_0p]^{-1} 1_{pA_1p}.
+$$
+Finally, condition (3) follows immediately from the existence of a Pimsner-Popa basis for $pA_1p$ over $pA_0p$ by part (1) of this proposition.
+%One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
+%The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
+\end{proof}
+
+By iterating Lemma \ref{lem:BasicConstructionRecognition} and Proposition \ref{prop:CompressingStronglyMarkovInclusion}, we immediately obtain the following.
+
+\begin{cor}
+Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusion}, and let $(A_n, \tr_n, e_n)$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
+Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
+\end{cor}
+
+
+\begin{cor}
+Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+Then $(pM_np, \tr_n^p, pe_n)$ is a Markov sequence.
+\end{cor}
+\begin{proof}
+\nn{todo: should be OK.}
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -574,13 +745,19 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 	\begin{itemize}
 	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
 	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}
+	x_1\otimes\cdots \otimes x_{n_y} 
+	\mapsto 
+	x_1\otimes \cdots\otimes x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots\otimes x_{n_y}
 	\]
 	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
 	\[
-	x_1\otimes\cdots x_{n_y} \mapsto x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots x_{n_y}=x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots x_{n_y}
+	x_1\otimes\cdots \otimes x_{n_y} 
+	\mapsto 
+	x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
+	=
+	x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
 	\]
-	Both of these maps are well-defined, by \cite[Lem2.29]{MR2812459}.
+	Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
 	\item The effect of passing upwards through the extrema of a strand is as follows: 
 \begin{align*}
 	&\begin{tikzpicture}[scale=0.6]
@@ -631,7 +808,7 @@ The $\ast$-structure on tangles given by horizontal reflection of tangles, and t
 
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
 
-\begin{thm}[Penneys, Jones, \cite{MR2812459}] \label{planaralgebraisomorphism}
+\begin{thm}[\cite{MR2812459}] \label{planaralgebraisomorphism}
 The canonical planar $\ast$-algebra associated the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
 
@@ -724,6 +901,7 @@ Then $\Phi$ is a morphism of shaded planar $\dag$-algebras.
 Suppose that $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of von Neumann algebras and $(A_n,\tr_n)_{n\geq 0}$ is the tower obtained by iterating the basic construction. We know from corollary 2.18 of \cite{MR2812459} that for any $0\leq k \leq n$ the inclusion $A_k \subseteq (A_n,tr_n)$ is strongly markov. Thus we can find a Pimsner-Popa basis $B$ for $A_n$ over $A_k$.
 \begin{prop}[\cite{MR2812459} Prop2.24]
 Let $0\leq k \leq l \leq n $. Let $B$ be a Pimsner-Popa basis for $A_l$ over $A_k$. The conditonal expectation $E_{A'_l}^{A'_k}: (A'_k\cap B(L^2(A_n,tr_n)),tr'_k)\rightarrow (A'_k\cap A'_l \cap B(L^2(A_n,tr_n)),tr'_l)$ is given by:
+
 \[
  E^{A'_l}_{A'_k}(x)\quad=\quad d^{-2(l-k)} \sum_{b \in B} bxb^{\ast} \quad=\quad 
 d^{-2}
@@ -829,124 +1007,34 @@ defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The compression isomorphism}
 
-The following lemma is well known to experts. 
-We provide a proof for convenience and completeness.
-
-\begin{lem}
-Suppose $N\subset M\subset B(H)$ is an inclusion of von Neumann algebras and $p\in P(N)$.
-\begin{enumerate}[(1)]
-\item
-$p(N'\cap M) = pN' \cap pMp$.
-\item
-Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
-The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
-\end{enumerate}
-\end{lem}
-\begin{proof}
-\mbox{}
-\item[\underline{Proof of (1):}]
-The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
-
-Clearly $(N'\cap M)p \subseteq (N'p) \cap pMp$.
-Suppose $u$ is a unitary in $(N'p) \cap pMp$.
-Let $K$ be the closure of $NpH$.
-Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
-Define $u_0$ in $B(K)$ by $u_0 (np\xi) := npu\xi$.
-One now verifies that $u_0$ is an isometry and thus is well-defined.
-Look at the operator $u_0q \in N' \cap B(H)$, and note that $u = u_0qp \in N'p$.
-We claim that $u_0q \in M$, so that $u = u_0qp \in (N' \cap M)p$.
-First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
-we have
-$mu_0np\xi  = mnup\xi = nupm\xi = u_0npm\xi = u_0mnp\xi$.
-Thus $u_0 \in qMq$.
-Since $q \in M$, for all $m \in M'$, we have $u_0qm\xi = u_0mq\xi = mu_0q\xi$.
-Hence $u_0q$ commutes with $M'$ on $H$, and $u_0q \in M$. 
-
-\item[\underline{Proof of (2):}]
-For $x\in N'\cap M$, we have $p(zx) = px$.
-Hence the map is surjective.
-We now show the map is injective.
-Suppose $x \in z(N'\cap M)$ such that $px = 0$.
-By (1), $z(N'\cap M) = zN' \cap zMz$.
-Then for all unitaries $u\in U(N)$, $upz = z(up) \in zN$, so 
-$0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
-Taking sup over $u \in U(N)$ yields $0 = xz = x$.
-\end{proof}
-
-
-\nn{below is taken from the ghost of another project I had 3-4 years ago which died out.
-Edit it to use here.}
-
-
-\begin{lem}
-Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
-The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
-\end{lem}
-\begin{proof}
-One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
-The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
-\end{proof}
-
-\begin{cor}
-\label{cor:CutDownJonesTower}
-Let $(X_n)_{n\geq 0}$ be the Jones tower for the finite index $\rm{II}_1$-subfactor $X_0=X \subset Y=X_1$ with Jones projections $(e_n)_{n\geq 1}$, and suppose $p\in X$ is a nonzero projection.
-Then $(pX_np)_{n\geq 0}$ is the Jones tower for $pXp\subset pYp$ with Jones projections $(pe_n)_{n\geq 1}$.
-\end{cor}
-
-
-\begin{thm}
-\label{thm:CompressionIsomorphism}
-Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-% with central support $1$.
-Then the inclusion $pM_0p \subset pM_1p$ is strongly Markov.
-\end{thm}
-\begin{proof}
-\nn{TODO.
-\\
-\\
-Will also require that $M_0pM_0 = M_0$, which is stronger than central support $1$ so that
+Suppose $A_0\subset A_1$ is a strongly Markov inclusion of tracial von Neumann algebras.
+Denote by $\cP_\bullet$ the canonical planar $\dag$-algebra whose box spaces are given by
+\dave{I'd like to suppress the maps $\theta$, since they are really annoying to keep track of}
 $$
-pM_1p (pe_1)pM_1p
-=
-pM_1M_0pe_1M_0M_1p
-=
-pM_1M_0pM_0e_1M_1p
-=
-pM_1M_0
-e_1
-M_1p
-=
-pM_1e_1M_1p
-=
-pM_2p.
-$$}
-\end{proof}
-
-\begin{cor}
-Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-Then $(pM_np, \tr_n(p\, \cdot\,)/\tr_n(p), pe_n)$ is a Markov sequence.
-\end{cor}
-\begin{proof}
-\nn{todo: should be OK.}
-\end{proof}
-
-
-\nn{edit below here -- math taken from elsewhere, OK to use.}
-
+\cP_{n,+}
+:=
+\theta_n^{-1}(A_0'\cap A_n)
+\qquad\qquad
+\cP_{n,-}
+:=
+\theta_{n+1}^{-1}(A_1'\cap A_{n+1}).
+$$
+Suppose $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
+By Corollary \nn{}, the Jones tower for $pA_0p \subset (pA_1p, \tr^p_1)$ is given by $(pA_np, \tr^p_n, e_np)$, and thus we get another canonical planar $\dag$-algebra $\cQ_\bullet$ whose box spaces are given by
+$$
+\cQ_{n,+}
+:=
+\theta_n^{-1}(pA_0'\cap pA_np)
+\qquad\qquad
+\cQ_{n,-}
+:=
+\theta_{n+1}^{-1}(pA_1'\cap pA_{n+1}p).
+$$
+By \nn{}, the map $\Phi_{n,\pm}:\theta^{-1}(x)\mapsto \theta^{-1}(xp)$ gives an isomorphism of von Neumann algebras $\Phi_{n,\pm}:\cP_{n,\pm}\to \cQ_{n,\pm}$ for each $n\geq 0$.
 
 \begin{thm}
 \label{thm:IsomorphicStandardInvariants}
-Suppose $M_0\subset M_1$ is a strongly Markov inclusion of finite von Neumann algebras and $p\in P(M_0)$ is a nonzero projection with central support $1$.
-Then 
-%\begin{enumerate}
-%\item
-%The inclusion $pM_0p \subset pM_1p$ is strongly Markov.
-%\item
-%\nn{rephrase...}
-the map $x\mapsto px$ from $M_0'\cap M_n \to pM_0'\cap pM_np \cong p(M_0'\cap M_n)$
-\nn{definition on $\cP_{n,-}$ too}
-is planar $\dag$-algebra isomorphism.
-%\end{enumerate}
+The maps $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ constitute a planar $\dag$-algebra isomorphism.
 \end{thm}
 \begin{proof}
 We prove the maps $\Phi_{n,\pm}$ satisfy the conditions of Lemma \ref{lem:SufficientConditionsForPlanarMap}.
@@ -1043,6 +1131,8 @@ and the result follows.
 %which shows capping on the left commutes with the map $X'\cap Y \ni x \mapsto px \in pX'\cap pYp$.
 %The proof for higher left caps is similar.
 \end{proof}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
