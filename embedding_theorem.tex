@@ -708,13 +708,17 @@ Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusio
 Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
 
+Given a Markov sequence $(M_n,\tr_n, e_n)$, no additional assumptions on $p\in P(M_0)\setminus\{0\}$ are necessary to obtain another Markov sequence by compression.
 
-\begin{cor}
+\begin{prop}
 Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
 Then $(pM_np, \tr_n^p, pe_n)$ is a Markov sequence.
-\end{cor}
+\end{prop}
 \begin{proof}
-\nn{todo: should be OK.}
+First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations, since $[e_n,p]=0$ for all $n\geq 0$.
+That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ follows from \eqref{eq:CompressionImplementsConditionalExpectation}, which holds for an arbitrary inclusion of tracial von Neumann algebras.
+This immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$.
+Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have pull down.
 \end{proof}
 
 
