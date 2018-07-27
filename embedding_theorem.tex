@@ -220,7 +220,7 @@
 \newcommand{\Hilb}{{\sf Hilb}}
 \newcommand{\fdHilb}{{\sf Hilb_{fd}}}
 \newcommand{\ConAlg}{{\sf ConAlg}}
-\newcommand{\DisInc}{{\sf DisInc}}
+\newcommand{\Cstar}{\rm{C^*}}
 
 
 \newcommand{\jw}[1]{f^{(#1)}}
@@ -332,8 +332,139 @@
 \begin{abstract}
 Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra embeds in the bipartite graph planar algebra of its principal graph. By constructing a strongly Markov inclusion of finite von Neumann algebras from a given module, we extend their techniques to the case of cyclic modules over a subfactor planar algebra, relating the calculus of string diagrams in a module category and the canonical planar $*$-algebra structure on a Markov inclusion. We generalize their result, showing that a finite depth subfactor $*$-planar algebra embeds into the bipartite graph planar algebra of the fusion graph of any of its cyclic modules. 
 \end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
+\nn{TODO: more intro stuff here}
+
+
+Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra, and let $\cC$ be its associated $2\times 2$ unitary multifusion category of projections with generator $c$ corresponding to the unshaded-shaded strand in $\cQ_{1,+}$.
+Here, $1_\cC$ decomposes as an orthogonal direct sum $1_\cC = 1_0\oplus 1_1$, which decomposes $\cC= \bigoplus_{i,j=0}^1 \cC_{ij}$ where $\cC_{ij}:= 1_i \otimes \cC \otimes 1_j$.
+By a \emph{pivotal module category} for $\cQ_\bullet$, we mean a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category, together with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\End_\cM(m)$ which is compatible with the left $\cC$-action (see \nn{}).
+That is, for all $f\in \End_\cM(m \vartriangleleft c)$, 
+$$
+\Tr^\cM_{m\vartriangleleft c}(f)
+=
+\Tr^\cM_{m}(
+(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
+),
+$$
+where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \nn{}.
+%Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
+
+From the right pivotal $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$, we build a tower of finite dimensional von Neumann algebras 
+$$
+M_n := \End_\cM(m \vartriangleleft  \underbrace{c\otimes \overline{c} \otimes \cdots \otimes c^?}_{n \text{ tensorands}})
+$$
+where for our generator $c\in \cC$, $c^? = c$ if $n$ is even and $c^? = \overline{c}$ if $n$ is odd.
+The trace $\Tr^\cM$ endows each von Neumann algebra $M_n$ with a faithful tracial state $\tr_n := \Tr^\cM(\id_n)^{-1} \Tr^\cM$ together with canonical Jones projections $e_n \in M_{n+1}$ for all $n\geq 1$.
+Based on the parity of $n$, the $e_n$ are defined for $k\geq 0$ by
+\nn{diagrams?}
+\begin{align*}
+e_{2k+1}
+&=
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.3,-.5) rectangle (-.7,0.5);
+	\draw[thick,red] (-0.3,-.5) -- (-0.3,0.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.2,0){\tiny{$2k$}};
+\end{tikzpicture} 
+\hspace{.3cm}
+:=
+d^{-1}
+\big(
+\id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes k}} \otimes (\coev_c \circ \coev_c^\dag)
+\big)
+\in M_{2k+2}
+\\
+e_{2k+2}
+&=
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.3,-.5) rectangle (-.7,0.5);
+	\fill[shaded] (0,-.5) rectangle (1.2,.5);
+	\draw[thick,red] (-0.3,-.5) -- (-0.3,0.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[unshaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[unshaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture} 
+:=
+d^{-1}
+\big(
+\id_m \vartriangleleft \id_c \otimes \id_{(\overline{c}\otimes c)^{\otimes k}} \otimes (\ev_c^\dag \circ \ev_c)
+\big)
+\in M_{2k+3}.
+\end{align*}
+Here, we represent $m$ graphically by a red strand, and we shade the left hand side of the $m$ strand to denote the absence of a left $\cC$-action.
+We call the tower of algebras with Jones projections $(M_n,\tr_n, e_n)$ a \emph{Markov tower}, as it satisfies the following properties:
+\begin{enumerate}[(1)]
+\item
+The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with parameter $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
+\item
+For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
+\item
+For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
+\item
+For all $n\geq 1$, we have the Pimsner-Popa pull down property: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
+\end{enumerate}
+Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
+For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
+We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
+
+Now since $\cM$ is finitely semisimple, the Markov tower $(M_n, \tr_n, e_n)$ has \emph{finite depth}, meaning the principal graph is finite.
+This principal graph is exactly the \emph{fusion graph} of $(\cM,m)$ with respect to $c\in \cC$.
+This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
+We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
+
+By \cite[\S2.3]{MR2812459}, the inclusion $A_0:=M_{2r} \subset (M_{2r+1}, \tr_{2r+1}) =: (A_1, \tr_1)$ has a canonical associated planar $\dag$-algebra $\cP_\bullet$, which is built from the tower of higher relative commutants
+Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cP_\bullet$ is \emph{non-canonically} isomorphic to the bipartite graph planar algebra $\cG_\bullet$ of the Bratteli diagram $\Gamma$ of the inclusion $A_0 \subset A_1$. 
+(This isomorphism depends on the loop algebra representation for $A_0 \subset A_1$ from \cite[\S3.1]{MR2812459}, which amounts to choosing compatible bases for the algebras.)
+Notice that we may canonically identify $\Gamma$ with the principal graph of the Markov tower $(M_n, \tr_n, e_n)$ and the fusion graph for $(\cM,m)$ with respect to $c\in \cC$.
+
+We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra.
+
+\begin{thmalpha}
+The unital $*$-algebra maps $\Phi_{n,\pm} : \cQ_{n,\pm} \to \cP_{n,\pm}$ given by adding $\id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes r}}$ to the left
+$$
+\begin{tikzpicture}[baseline]
+	\draw (0,-.7) -- (0,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
+	\node at (0,-.9) {\tiny{$n$}};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline]
+	\clip (0.5,0.9) -- (-0.5,0.9) -- (-0.5,-0.9) -- (0.5,-0.9);
+	\draw [|->,thick] (-0.3,0)--(0.3,0);
+	\node at (0,0.25) {\scriptsize{$\Phi$}};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.3,-.7) -- (-0.3,.7) -- (-.7,0.7) -- (-.7,-0.7) -- (-.3,-0.7);
+	\draw[thick,red] (-0.3,-.7) -- (-0.3,0.7);
+	\draw (0.45,-.7) -- (0.45,.7);
+	\draw (0,-.7) -- (0,.7);
+	\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+	\node at (0.45,-.9) {\tiny{$n$}};
+	\node at (0,-0.9){\tiny{$2r$}};
+\end{tikzpicture} 
+$$
+give a planar $\dag$-algebra embedding $\cQ_\bullet \hookrightarrow \cP_\bullet$.
+\end{thmalpha}
+
+Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cQ_\bullet$ from \cite{MR2812459}.
+Similarly, we get an embedding into the graph planar algebra of the dual principal graph from choosing $\cM= \cC_{10} \oplus \cC_{11}$ and $m = 1_{\cC_{11}}$ corresponding to the shaded empty diagram.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Acknowledgements.}
+
+\nn{todo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -345,7 +476,7 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strongly Markov inclusions} 
 
-\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov sequence?
+\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
 This could help alleviate some confusion!}
 For the duration of this paper assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$ we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
 \begin{defn}
@@ -397,11 +528,11 @@ defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Markov sequences}
-
+\subsection{Markov towers}
+\label{sec:MarkovTowers}
 
 \begin{defn}
-A \emph{Markov sequence} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
+A \emph{Markov tower} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
 \begin{itemize}
 \item
 The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations:
@@ -432,7 +563,7 @@ $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if t
 
 
 
-\begin{prop}\label{prop:ElementaryMarkov} A Markov sequence satisfies the following elementary properties for $n\geq 1$.
+\begin{prop}\label{prop:ElementaryMarkov} A Markov tower satisfies the following elementary properties for $n\geq 1$.
 \begin{enumerate}[(A)]
 \item
 \label{EP:Injective}
@@ -536,20 +667,23 @@ Notice that by \eqref{EP:BasicContruction}, the Bratteli diagram for the inclusi
 
 
 \begin{defn}
-The \emph{principal graph} of the Markov sequence $(M_n,\tr_n)$ with Jones projections $(e_n)$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
+The \emph{principal graph} of the Markov tower $(M_n,\tr_n)$ with Jones projections $(e_n)$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
 
-A Markov sequence is said to have \emph{finite depth} if the principal graph is finite.
+A Markov tower is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
 
-It follows that a Markov sequence has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. Let $(M_n)$ be a Markov sequence with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov sequence $(A_n,\tr_n)$.
+It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{prop:ElementaryMarkov} \eqref{EP:FiniteDepth}. 
+Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
+Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. 
+Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(A_n,\tr_n)$.
 
 \begin{fact}\label{BratteliPrincipal}
-	If a Markov sequence $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
+	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
 \end{fact}
 
 \begin{ex}
-The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov sequence. Their principal graph is $A_{\infty}$.
+The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov tower. Their principal graph is $A_{\infty}$.
 \end{ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -710,11 +844,11 @@ Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusio
 Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
 
-Given a Markov sequence $(M_n,\tr_n, e_n)$, no additional assumptions on $p\in P(M_0)\setminus\{0\}$ are necessary to obtain another Markov sequence by compression.
+Given a Markov tower $(M_n,\tr_n, e_n)$, no additional assumptions on $p\in P(M_0)\setminus\{0\}$ are necessary to obtain another Markov tower by compression.
 
 \begin{prop}
-Suppose $(M_n,\tr_n, e_n)$ is a Markov sequence of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-Then $(pM_np, \tr_n^p, pe_n)$ is a Markov sequence.
+Suppose $(M_n,\tr_n, e_n)$ is a Markov tower of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+Then $(pM_np, \tr_n^p, pe_n)$ is a Markov tower.
 \end{prop}
 \begin{proof}
 First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations, since $[e_n,p]=0$ for all $n\geq 0$.
@@ -1242,7 +1376,7 @@ Taking the full subcategory of objects which are preserved by tensoring by the a
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Construction of the Planar Algebra Associated to a Module Category}
-\subsection{Constructing a Markov sequence}
+\subsection{Constructing a Markov tower}
 Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
 $$
 \cM 
@@ -1297,7 +1431,7 @@ By construction, $x$ is a generating object for $\cC$. If we pick a simple objec
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
 
-We will construct a finite depth Markov sequence of algebras from the action of $\cC$ on $\cM$ as follows. Set $A_n=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $A_n$ as 
+We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $A_n=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $A_n$ as 
 $$
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
@@ -1413,10 +1547,10 @@ where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the
 Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
 for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
 down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
-two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov sequence.
+two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower.
  
 \begin{prop}
-The Markov sequence of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
+The Markov tower of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
 \end{prop}
 
 \begin{proof}
@@ -1428,13 +1562,13 @@ The Markov sequence of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ i
 \end{proof}
 
 \begin{thm}
-The principal graph obtained from the Markov sequence $\left(A_n, tr_n\right)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for the action of $x$ on $\cM$.
+The principal graph obtained from the Markov tower $\left(A_n, tr_n\right)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for the action of $x$ on $\cM$.
 \end{thm}
 
 \begin{proof}
 Because $x$ generates $\cC$ and $\cM$ is cyclic, we can assume that every simple object in $\cM$ is a direct summand of $m\otimes \xalt $. Essentially, our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$, so they are determined entirely by the fusion rules.
 
-First, recall that for a finite depth Markov sequence, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
+First, recall that for a finite depth Markov tower, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
 
 Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
 	\[Y\otimes x\cong\bigoplus\limits_{\Irr(\cC_{21})}\left(p_{Z,Y}Z\right)\]
@@ -1444,7 +1578,7 @@ Recall that
 $$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
 where 
 $$m \otimes \xalt \cong \bigoplus\limits_{\Irr(\cC_{20})}\left(n_YY\right)$$
-	Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\Irr(\cC_{20})}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov sequence achieves depth.) % Strictly speaking, this is not true, because the Markov sequence may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
+	Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\Irr(\cC_{20})}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov tower achieves depth.) % Strictly speaking, this is not true, because the Markov tower may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
 
 The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum \[\bigoplus\limits_{\Irr(\cC_{20})}\phi_Y\]
 where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
@@ -1463,7 +1597,7 @@ Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gi
 A finite depth subfactor planar algebra can be embedded into the bipartite graph planar algebra of the fusion graph of the right action of the strand on a cyclic module.
 \end{claim*}
 As described in \cite{MR2812459}, one can define a canonical shaded planar $*$-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. % Now that this construction is summarized in a subsection of section 2, we may want to shorten this reference to there. 
-This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{MR2812459}. We have shown that the Markov sequence $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by fact \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
+This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{MR2812459}. We have shown that the Markov tower $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by fact \ref{BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
 If we denote the canonical $*$-planar algebra associated to $B_0\subseteq(B_1,tr_1)$ by $P_{\bullet}$, then by construction, we have the following:
 \begin{align*}
 	P_{n,+} &=  B'_{0}\cap B_{n} \\
