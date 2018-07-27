@@ -344,7 +344,7 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 
 Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra, and let $\cC$ be its associated $2\times 2$ unitary multifusion category of projections with generator $c$ corresponding to the unshaded-shaded strand in $\cQ_{1,+}$.
 Here, $1_\cC$ decomposes as an orthogonal direct sum $1_\cC = 1_0\oplus 1_1$, which decomposes $\cC= \bigoplus_{i,j=0}^1 \cC_{ij}$ where $\cC_{ij}:= 1_i \otimes \cC \otimes 1_j$.
-By a \emph{pivotal module category} for $\cQ_\bullet$, we mean a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category, together with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\End_\cM(m)$ which is compatible with the left $\cC$-action (see \nn{}).
+By a \emph{pivotal module category} for $\cQ_\bullet$, we mean a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category, together with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\End_\cM(m)$ which is compatible with the left $\cC$-action (see \cite{MR3019263,EH3}).
 That is, for all $f\in \End_\cM(m \vartriangleleft c)$, 
 $$
 \Tr^\cM_{m\vartriangleleft c}(f)
@@ -353,7 +353,7 @@ $$
 (\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
 ),
 $$
-where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \nn{}.
+where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,UnitaryDualFunctors}.
 %Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
 
 From the right pivotal $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$, we build a tower of finite dimensional von Neumann algebras 
@@ -363,7 +363,6 @@ $$
 where for our generator $c\in \cC$, $c^? = c$ if $n$ is even and $c^? = \overline{c}$ if $n$ is odd.
 The trace $\Tr^\cM$ endows each von Neumann algebra $M_n$ with a faithful tracial state $\tr_n := \Tr^\cM(\id_n)^{-1} \Tr^\cM$ together with canonical Jones projections $e_n \in M_{n+1}$ for all $n\geq 1$.
 Based on the parity of $n$, the $e_n$ are defined for $k\geq 0$ by
-\nn{diagrams?}
 \begin{align*}
 e_{2k+1}
 &=
@@ -430,7 +429,7 @@ Notice that we may canonically identify $\Gamma$ with the principal graph of the
 We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra.
 
 \begin{thmalpha}
-The unital $*$-algebra maps $\Phi_{n,\pm} : \cQ_{n,\pm} \to \cP_{n,\pm}$ given by adding $\id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes r}}$ to the left
+The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes r}}\vartriangleleft - : \cQ_{n,\pm} \to \cP_{n,\pm}$
 $$
 \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,.7);
@@ -460,6 +459,8 @@ give a planar $\dag$-algebra embedding $\cQ_\bullet \hookrightarrow \cP_\bullet$
 Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cQ_\bullet$ from \cite{MR2812459}.
 Similarly, we get an embedding into the graph planar algebra of the dual principal graph from choosing $\cM= \cC_{10} \oplus \cC_{11}$ and $m = 1_{\cC_{11}}$ corresponding to the shaded empty diagram.
 
+\nn{invariance of embedding. 
+explain conceptual origin of above embedding map from shift iso.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Acknowledgements.}
