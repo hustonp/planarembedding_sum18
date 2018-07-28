@@ -1444,9 +1444,29 @@ m\otimes
 \end{defn}
 
 \begin{ex}
-Any Markov tower with loop modulus $d$ is a planar module for $\cT\cL\cJ(\delta)_\bullet$ via the maps
-\nn{todo}
+Any Markov tower $M_\bullet = (M_n, \tr_n, f_n)$ with loop modulus $d$ is a right planar module for $\cT\cL\cJ(d)_\bullet$ where $\rho : M_\bullet \otimes \cT\cL\cJ(d)_\bullet \to M_\bullet$ is given by $\rho_{k,n+1}(e_n) := f_n$.
 \end{ex}
+
+\begin{ex}
+Given a subfactor planar algebra $\cQ_\bullet$, both $\pm$ parts of $\cQ_\bullet$ given by $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are right planar modules for $\cQ_\bullet$.
+\end{ex}
+
+\begin{ex}
+Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$.
+Then for any $\pm$ vertex $v$ of $\Gamma$, we get a right planar module $M(\Gamma, v)_\bullet$ for $\cQ_\bullet$ by defining $M(\Gamma, v)_{n}:= p_v \cG\cP\cA(\Gamma)_{n,\pm}$, $\tr_n := p_v \tr_{\cG_{n,\pm}}$ (notice that $\tr_{\cG_{n,\pm}}$ is $\cG_{0,\pm}$-valued, so compressing by the central projection $p_v$ gives a scalar-valued trace), and $f_n : = p_v g_{n,\pm}$ where $g_{n,\pm}$ is the Jones projection for $\cG\cP\cA(\Gamma)_\bullet$.
+\end{ex}
+
+
+
+\begin{lem}
+Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra and $M_\bullet$ is a right planar module for $\cQ_\bullet$.
+Then $M_\bullet$ has finite depth.
+\end{lem}
+\begin{proof}
+\nn{todo: is this true?}
+\end{proof}
+
+Now starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and a right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
 
 \nn{theorem stating equivalence between module categories and planar modules?}
 
