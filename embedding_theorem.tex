@@ -1452,8 +1452,24 @@ Given a subfactor planar algebra $\cQ_\bullet$, both $\pm$ parts of $\cQ_\bullet
 \end{ex}
 
 \begin{ex}
-Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$.
-Then for any $\pm$ vertex $v$ of $\Gamma$, we get a right planar module $M(\Gamma, v)_\bullet$ for $\cQ_\bullet$ by defining $M(\Gamma, v)_{n}:= p_v \cG\cP\cA(\Gamma)_{n,\pm}$, $\tr_n := p_v \tr_{\cG_{n,\pm}}$ (notice that $\tr_{\cG_{n,\pm}}$ is $\cG_{0,\pm}$-valued, so compressing by the central projection $p_v$ gives a scalar-valued trace), and $f_n : = p_v g_{n,\pm}$ where $g_{n,\pm}$ is the Jones projection for $\cG\cP\cA(\Gamma)_\bullet$.
+Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
+Then for any $\pm$ vertex $v$ of $\Gamma$, we get a Markov tower $M_\bullet = M(\Gamma,v)_\bullet$ by defining $M(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$, $\tr_n := p_v \tr_{\cG_{n,\pm}}$ (notice that $\tr_{\cG_{n,\pm}}$ is $\cG_{0,\pm}$-valued, so compressing by the central projection $p_v$ gives a scalar-valued trace), and $f_n : = p_v g_{n,\pm}$.
+
+Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $M_\bullet$ with the structure of a right planar $\cQ_\bullet$ module by defining 
+$$
+\rho_{k,n}(p_v m \otimes x) 
+:=
+\begin{tikzpicture}[baseline]
+\draw (0,-.7) -- (0,.7);
+\draw (1,-.7) -- (1,.7);
+\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
+\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
+\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
+\node at (0,-.9) {\tiny{$k$}};
+\node at (1,-.9) {\tiny{$n$}};
+\end{tikzpicture}
+\,.
+$$ 
 \end{ex}
 
 
