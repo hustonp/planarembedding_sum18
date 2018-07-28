@@ -1377,10 +1377,12 @@ Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammati
 For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,UnitaryDualFunctors}. 
 When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
 
-\nn{theorem stating equivalence between these categories and planar algebras?}
+\nn{theorem stating equivalence between these categories and planar algebras.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Planar modules and Module categories} 
+
+\nn{this section does the previous section for modules.}
 
 Suppose $\cQ_\bullet$ is a subfactor planar algebra.
 We denote the Jones projections of $\cQ_\bullet$ by $e_{n,\pm}$. 
@@ -1441,21 +1443,23 @@ m\otimes
 %\item
 %For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have
 %$\tr_{k+n}(\rho_{k,n}(x)) = \tr_
+
+A right planar module $M_\bullet$ for $\cQ_\bullet$ is called \emph{cyclic} if $\dim(M_0) = 1$.
 \end{defn}
 
 \begin{ex}
-Any Markov tower $M_\bullet = (M_n, \tr_n, f_n)$ with loop modulus $d$ is a right planar module for $\cT\cL\cJ(d)_\bullet$ where $\rho : M_\bullet \otimes \cT\cL\cJ(d)_\bullet \to M_\bullet$ is given by $\rho_{k,n+1}(e_n) := f_n$.
+Any Markov tower $M_\bullet = (M_n, \tr_n, f_n)$ with loop modulus $d$ is a cyclic right planar module for $\cT\cL\cJ(d)_\bullet$ where $\rho : M_\bullet \otimes \cT\cL\cJ(d)_\bullet \to M_\bullet$ is given by $\rho_{k,n+1}(e_n) := f_n$.
 \end{ex}
 
 \begin{ex}
-Given a subfactor planar algebra $\cQ_\bullet$, both $\pm$ parts of $\cQ_\bullet$ given by $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are right planar modules for $\cQ_\bullet$.
+Given a subfactor planar algebra $\cQ_\bullet$, both $\pm$ parts of $\cQ_\bullet$ given by $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are cyclic right planar modules for $\cQ_\bullet$.
 \end{ex}
 
 \begin{ex}
 Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
 Then for any $\pm$ vertex $v$ of $\Gamma$, we get a Markov tower $M_\bullet = M(\Gamma,v)_\bullet$ by defining $M(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$, $\tr_n := p_v \tr_{\cG_{n,\pm}}$ (notice that $\tr_{\cG_{n,\pm}}$ is $\cG_{0,\pm}$-valued, so compressing by the central projection $p_v$ gives a scalar-valued trace), and $f_n : = p_v g_{n,\pm}$.
 
-Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $M_\bullet$ with the structure of a right planar $\cQ_\bullet$ module by defining 
+Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $M_\bullet$ with the structure of a cyclic right planar $\cQ_\bullet$ module by defining 
 $$
 \rho_{k,n}(p_v m \otimes x) 
 :=
@@ -1482,42 +1486,33 @@ Then $M_\bullet$ has finite depth.
 \nn{todo: is this true?}
 \end{proof}
 
-Now starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and a right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
 
-\nn{theorem stating equivalence between module categories and planar modules?}
+\nn{theorem stating equivalence between module categories and planar modules.}
 
 
-\nn{edit below?}
+\begin{defn}
+Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
 
-By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
-Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-By \cite{ostrik03}, there is a $\ast$-algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+%By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
+%Since $\cM$ is indecomposable, we can take $m$ to be simple. 
+By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
 Since $m$ is simple, 
 $A$ is in fact a Q-system, % Q-system or $Q$-system?
-as described in \cite[Rmk.2.7]{ny17}.  
+as described in \cite[Rmk.~2.7]{ny17}.  
 Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
 Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
-We can therefore view $\cG$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and view $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-By \cite[Thm.4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which both $\cC$ and $\cM$ have naturally monoidal embeddings. 
-Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\time 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The module embedding theorem via towers of algebras}
-
-
-
-
-
-
+We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
+By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
+$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
+Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Construction of the Planar Algebra Associated to a Module Category}
-\subsection{Constructing a Markov tower}
-Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
+%\subsection{Constructing a Markov tower}
+
+%Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
+
+Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
 $$
 \cM 
 =
@@ -1571,7 +1566,7 @@ By construction, $x$ is a generating object for $\cC$. If we pick a simple objec
 x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
 $$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
 
-We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $A_n=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $A_n$ as 
+We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
 $$
 \begin{tikzpicture}[baseline=-.1cm]
 	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
@@ -1582,7 +1577,7 @@ $$
 	\node at (.3,-.5) {\scriptsize{$n$}};
 \end{tikzpicture}
 $$
-where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:A_n\to \C$ given by
+where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
 \begin{equation}\label{eq:TraceAn}
 \tr_n(f) 
 \,:=\, 
@@ -1603,7 +1598,10 @@ where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes
 \end{tikzpicture}
 \right)
 \end{equation}
-Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. This makes each $A_n$ a finite dimensional von Neumann algebra.
+Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
+This makes each $M_n$ a finite dimensional von Neumann algebra.
+
+\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
 
 \begin{rem}
 	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
@@ -1687,7 +1685,9 @@ where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the
 Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
 for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
 down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
-two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower.
+two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower. 
+\end{defn}
+ 
  
 \begin{prop}
 The Markov tower of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
@@ -1728,6 +1728,15 @@ But then:
 Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
 \end{proof}
 
+\nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
+
+\nn{converse construction of module from a right planar module.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The module embedding theorem via towers of algebras}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
