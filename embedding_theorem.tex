@@ -531,21 +531,11 @@ The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
 \end{itemize}
 \end{defn}
 
-Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras and there is a canonical planar algebra structure on this tower, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
-We refer the reader to \cite{MR2812459} for more details on this construction. 
-We will need the following:
+Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras 
 
-\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
-For any $n$, the map:
-\[
-\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
-\]
-defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
-\end{prop}
 
 \nn{towers of relative commutants}
 
-\des{Do we really want the discussion of the planar algebra and this lemma here? It seems out of place given that we don't define the PA for strongly Markov Inclusion until the next section.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Markov towers}
 \label{sec:MarkovTowers}
@@ -887,8 +877,23 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Planar algebras}
 \label{ssec:canonical}
-\nn{todo: maybe make clear what left-capping is going to do. We could also just add that explanation to the next section when needed.}
 
+\nn{from earlier. find me a home:
+\\
+\\
+and there is a canonical planar algebra structure on this tower, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
+We refer the reader to \cite{MR2812459} for more details on this construction. 
+We will need the following:
+\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
+For any $n$, the map:
+\[
+\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
+\]
+defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
+\end{prop}
+}
+
+\nn{todo: maybe make clear what left-capping is going to do. We could also just add that explanation to the next section when needed.}
 
 
 For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
