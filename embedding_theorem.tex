@@ -675,6 +675,9 @@ This follows immediately from the previous fact.
 Notice that by \eqref{EP:BasicContruction}, the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. By \eqref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
 
 
+\dave{decide whether Markov tower should be finite dimensional.
+Principal graph only makes sense for finite dimensional; or rather, there may be some *measure theoretic* principal graph where the `vertices' corresponds to a measure space corresponding to $Z(M_n)$.
+This is interesting, but probably belongs in a separate place as it is not relevant.}
 \begin{defn}
 The \emph{principal graph} of the Markov tower $(M_n,\tr_n)$ with Jones projections $(e_n)$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
 
@@ -694,6 +697,51 @@ Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is
 \begin{ex}
 The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov tower. Their principal graph is $A_{\infty}$.
 \end{ex}
+
+\begin{ex}
+Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})$ is a Markov tower.
+\nn{decide whether Markov tower should mean finite dimensional.}
+
+Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite dimensional} von Neumann algebras $(A_0'\cap A_n , \tr_n|_{A_0'\cap A_n} , e_{n+1})$.
+Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a Markov tower of finite dimensional von Neumann algebras.
+\end{ex}
+
+\begin{ex}[Shifting a Markov tower]
+Suppose $(M_n, \tr_n, e_{n+1})$ is a Markov tower.
+For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
+\end{ex}
+
+Given a Markov tower $(M_n,\tr_n, e_{n+1})$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
+First, for all $n\geq 0$, we define a faithful trace $\tr_n^p$ on $pM_n p$ by
+\begin{equation}
+\label{eq:CompressedTrace}
+\tr^p_n(x) := \tr_n(p)^{-1}\tr_n(pxp).
+\end{equation}
+It is straightforward to verify that the unique trace-preserving conditional expectation is given by 
+\begin{equation}
+\label{eq:CompressedConditionalExpectation}
+E^p_n : pM_np \to pM_{n-1}p
+\qquad
+\qquad
+E^p_n(pxp) := E_n(pxp) = pE_n(x)p
+\end{equation}
+Notice that since $[e_n,p] = 0$ for all $n\in \bbN$, we have for all $pxp \in pM_n p$, we have 
+\begin{equation}
+\label{eq:CompressionImplementsConditionalExpectation}
+e_np (pxp) e_np = p e_nxe_np = pE_n(x)e_np = E_n^p(pxp)e_np,
+\end{equation}
+so the conditional expectation is implemented by $e_np$.
+
+\begin{prop}
+Suppose $(M_n,\tr_n, e_{n+1})$ is a Markov tower of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+Then $(pM_np, \tr_n^p, pe_{n+1})$ is a Markov tower, where $\tr_n^p$ is defined as in \eqref{eq:CompressedTrace}.
+\end{prop}
+\begin{proof}
+First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations, since $[e_n,p]=0$ for all $n\geq 0$.
+That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ was shown above in \eqref{eq:CompressionImplementsConditionalExpectation}.
+Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$.
+Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have pull down.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Compressing inclusions of von Neumann algebras} 
@@ -745,15 +793,6 @@ $0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
 Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 \end{proof}
 
-In the event that $A_0 \subseteq (A_1, \tr_1)$ is an inclusion of tracial von Neumann algebras and $p\in P(A_0)$ is a non-zero projection, we get a canonical faithful trace on the compressed inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ given by $\tr^p_1(pxp):= \tr_1(pxp)/\tr_1(p)$.
-It is straightforward to verify that the unique trace-preserving conditional expectation $E^p_1 : pA_1p \to pA_0p$ is given by $E^p_1(pxp) := E_1(pxp) = pE_1(x)p$. 
-Notice that for all $pxp \in pA_1 p$, we have 
-\begin{equation}
-\label{eq:CompressionImplementsConditionalExpectation}
-e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1^p(pxp)e_1p,
-\end{equation}
-so the conditional expectation is implemented by $e_1p$.
-
 We would like to show that $pA_2p$ is isomorphic to the basic construction of $pA_0p \subset (pA_1p, \tr_1^p)$, but we will need an extra assumption on $p$.
 Toward this goal, we recall the following recognition lemma based on \cite[Prop.~1.2]{MR965748}, \cite[Lem.~5.8]{MR1073519}, and \cite[Lem.~5.3.1]{MR1473221}.
 
@@ -790,6 +829,7 @@ The inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov with index $[p
 \item
 The inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
 \end{enumerate}
+Here, we use the definition of $\tr^p_n$ from \eqref{eq:CompressedTrace}
 %Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
 %The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
 \end{prop}
@@ -829,10 +869,10 @@ $$
 \item[\underline{Proof of (3):}]
 We show the hypotheses of Lemma \ref{lem:BasicConstructionRecognition} hold.
 We already saw condition (1) from the lemma holds in \eqref{eq:CompressionImplementsConditionalExpectation}.
-To see condition (2) from the lemma holds, note that $E^{pA_2p}_{pA_1p}(pxp) = pE_2(x)p$ for all $x\in A_2$.
+To see condition (2) from the lemma holds, note that $E^p_2(pxp) = pE_2(x)p$ for all $x\in A_2$ as in  \eqref{eq:CompressedConditionalExpectation}.
 Thus by part (2) of this proposition,
 $$
-E^{pA_2p}_{pA_1p}(pe_1) 
+E^{p}_{2}(pe_1) 
 = 
 pE_2(e_1) 
 = 
@@ -853,18 +893,7 @@ Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusio
 Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
 
-Given a Markov tower $(M_n,\tr_n, e_n)$, no additional assumptions on $p\in P(M_0)\setminus\{0\}$ are necessary to obtain another Markov tower by compression.
 
-\begin{prop}
-Suppose $(M_n,\tr_n, e_n)$ is a Markov tower of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-Then $(pM_np, \tr_n^p, pe_n)$ is a Markov tower.
-\end{prop}
-\begin{proof}
-First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations, since $[e_n,p]=0$ for all $n\geq 0$.
-That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ follows from \eqref{eq:CompressionImplementsConditionalExpectation}, which holds for an arbitrary inclusion of tracial von Neumann algebras.
-This immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$.
-Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have pull down.
-\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
