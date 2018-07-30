@@ -1625,11 +1625,21 @@ cyclic right planar modules for $\cQ_\bullet$
 \]
 \end{thm}
 
-\begin{cor}
-\nn{pivotal Tempreley-Lieb-Jones modules classified by graphs with \emph{vertex} weighting rather than edge weighting following DeCommer-Yamashita.}
-\end{cor}
+As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$.
+This result should be compared with \nn{DeCommer-Yamashita} 
 
-\nn{I expect the above theorem extends to an equivalence of categories.
+\begin{cor}
+Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)_\bullet$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
+$$
+\sum_{w\sim v} \dim(w) = d \dim(v),
+$$
+where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+\end{cor}
+\begin{proof}
+\nn{TLJ module categories are just Markov towers, which are just graphs with a dimension function to give us the Markov trace.}
+\end{proof}
+
+\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
 What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
 
 \begin{thm}
