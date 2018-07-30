@@ -1237,14 +1237,14 @@ We begin with the notion of a \emph{Markov tower}...}
 \label{sec:MarkovTowers}
 
 The towers of algebras analog of a module category is played by the role of a \emph{Markov tower}.
-One should think of the following definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
 
 \begin{defn}
 A \emph{Markov tower} consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
-\begin{itemize}
+\begin{enumerate}[label={\rm(M\arabic*)}]
 \item
+\label{eq:MarkovJonesProjections}
 The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations:
-\begin{enumerate}[label={\rm(\arabic*)}]
+\begin{enumerate}[label={\rm(\alph*)}]
 \item
 $e_i^2 = e_i = e_i^*$ for all $i$,
 \item
@@ -1253,15 +1253,23 @@ $e_i e_j = e_j e_i$ for $|i-j|>1$, and
 there is a fixed constant $d>0$ such that $e_{i} e_{i\pm 1} e_i = d^{-2} e_i$ for all $i$.
 \end{enumerate}
 \item
+\label{eq:MarkovImplement}
 For all $x\in M_n$, $e_n x e_n = E_n(x)e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical faithful trace-preserving conditional expectation.
 \item
+\label{eq:MarkovIndex}
 For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \item
+\label{eq:MarkovPullDown}
 (pull down)
 For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
 
-\end{itemize}
+\end{enumerate}
 \end{defn}
+
+\begin{rem}
+One should think of the following definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
+Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2), and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.)
+\end{rem}
 
 
 \begin{rem}\label{pulldowniff}
@@ -1272,7 +1280,7 @@ $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if t
 
 
 \begin{prop}\label{prop:ElementaryMarkov} A Markov tower satisfies the following elementary properties for $n\geq 1$.
-\begin{enumerate}[label={\rm(M\arabic*)}]
+\begin{enumerate}[label={\rm(EP\arabic*)}]
 \item
 \label{EP:Injective}
 The map $M_{n}\ni y\mapsto ye_n \in M_{n+1}$ is injective.
@@ -1318,7 +1326,7 @@ If $Y_n =(0)$, then $Y_{k} = (0)$ for all $k\geq n$.
 
 \begin{proof} 
 \mbox{}
-\begin{enumerate}[label={\rm(M\arabic*)}]
+\begin{enumerate}[label={\rm(EP\arabic*)}]
 \item
 We know that $d^2E_{n+1}(ye_n) = y $, so the proposed map has a left inverse.
 
