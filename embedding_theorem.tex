@@ -1903,6 +1903,52 @@ Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{From planar modules to pivotal module categories}
 
+Now starting with a Markov tower, we can take its category of projections, defined as follows.
+
+
+\begin{defn}
+Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
+Let $\cM$ be the category defined as follows.
+\begin{itemize}
+\item
+The objects of $\cM$ are the orthogonal projections in $M_n$ for $n\geq 0$.
+\item
+Given projections $p\in M_n$ and $q\in M_{n+2k}$, we define
+\begin{align*}
+\cM(p \to q)
+&:=
+%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%=
+q
+M_{n+k}
+f^{n+k}_n
+p
+\subset
+M_{n+2k}
+\\
+\cM(q \to p)
+&:=
+%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%=
+p
+f^{n+k}_n
+M_{n+k}
+q
+\subset
+M_{n+2k}
+\end{align*}
+where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
+We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
+\item
+For $x\in \cM(p \to q)$ and $y \in \cM(q \to r)$, we define $y \circ x:=$\nn{???}
+\end{itemize}
+\end{defn}
+
+
+Starting with a cyclic right planar module $M_\bullet$ for the subfactor planar algebra $\cQ_\bullet$, we take its category of projections.
+
+
+
 \nn{converse construction of module from a right planar module.}
 
 
