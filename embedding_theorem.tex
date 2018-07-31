@@ -1908,40 +1908,79 @@ Now starting with a Markov tower, we can take its category of projections, defin
 
 \begin{defn}
 Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
-Let $\cM$ be the category defined as follows.
+Let $\cM_0$ be the category defined as follows.
 \begin{itemize}
 \item
-The objects of $\cM$ are the orthogonal projections in $M_n$ for $n\geq 0$.
+The objects of $\cM_0$ are the symbols $[n]$ for $n\geq 0$.
 \item
-Given projections $p\in M_n$ and $q\in M_{n+2k}$, we define
-\begin{align*}
-\cM(p \to q)
-&:=
-%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%=
-q
-M_{n+k}
-f^{n+k}_n
-p
-\subset
-M_{n+2k}
-\\
-\cM(q \to p)
-&:=
-%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%=
-p
-f^{n+k}_n
-M_{n+k}
-q
-\subset
-M_{n+2k}
-\end{align*}
-where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
-We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
+Given $n,k \geq 0$, we define 
+$\cM_0([n] \to [n+2k]):= M_{n+k}$
+and
+$\cM_0([n+2k] \to [n]) := M_{n+k}$.
 \item
+For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\dag := x^* \in M_{n+k}$.
+%
+%\begin{align*}
+%\cM([n] \to n+2k])
+%&:=
+%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%%=
+%M_{n+k}.
+%q
+%M_{n+k}
+%f^{n+k}_n
+%p
+%\subset
+%M_{n+2k}
+%\\
+%\cM(q \to p)
+%&:=
+%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%%=
+%p
+%f^{n+k}_n
+%M_{n+k}
+%q
+%\subset
+%M_{n+2k}
+%\end{align*}
+%where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
+%We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
+\item
+We define composition in three cases.
+\begin{enumerate}[label={\rm(\alph*)}]
+\item
+If $x\in \cM_0([n] \to [n+2j])$ and $y\in \cM_0([n+2j] \to [n+2j+2k])$, we define 
+$$
+y\circ x
+:=
+E^{n+2j+k}_{n+j+k}
+\left(
+\raisebox{.3cm}{$
+\underbrace{
+y\cdot x \cdot
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+}_{\in M_{n+2j+k}}
+$}
+\right)
+\in M_{n+j+k}
+$$
+\item
+\item
+\end{enumerate}
+
 For $x\in \cM(p \to q)$ and $y \in \cM(q \to r)$, we define $y \circ x:=$\nn{???}
 \end{itemize}
+Finally, we let $\cM$ be the Karoubi completion of $\cM$.
 \end{defn}
 
 
