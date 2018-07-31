@@ -1918,6 +1918,8 @@ $\cM_0([n] \to [n+2k]):= M_{n+k}$
 and
 $\cM_0([n+2k] \to [n]) := M_{n+k}$.
 \item
+The identity morphism in $\cM_0([n] \to [n])$ is $1_{M_n}$.
+\item
 For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\dag := x^* \in M_{n+k}$.
 %
 %\begin{align*}
@@ -1959,6 +1961,7 @@ E^{n+2j+k}_{n+j+k}
 \raisebox{.3cm}{$
 \underbrace{
 y\cdot x \cdot
+d^{-j}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
 	\draw (.2,0) -- (.2,.8);
@@ -1967,19 +1970,87 @@ y\cdot x \cdot
 	\draw (.8,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
 	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$k$}};
 	\node at (.8,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
 }_{\in M_{n+2j+k}}
 $}
 \right)
 \in M_{n+j+k}
+=
+\cM_0([n] \to [n+2j+2k]).
 $$
-\item
-\item
-\end{enumerate}
+We define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition 
+$\cM_0([n+2j+2k] \to [n+2j]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([n+2j+2k] \to [n])$.
+Notice that if $j=k=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since $E^{n+2j+k}_{n+j+k}$ preserves the adjoint and the Temperley-Lieb-Jones element above is the identity.
 
-For $x\in \cM(p \to q)$ and $y \in \cM(q \to r)$, we define $y \circ x:=$\nn{???}
+\item
+If $x\in \cM_0([n] \to [n+2j])$ and $y \in \cM_0([m+2k] \to [m])$
+with $n+2j = m+2k$, $m= n + 2\ell$, and $j = k+\ell$,
+we define
+$$
+y\circ x
+:=
+E^{n+2\ell + k}_{n+\ell}
+\left(
+\raisebox{.3cm}{$
+\underbrace{
+y\cdot x\cdot
+d^{-\ell}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$k$}};
+	\node at (.8,1) {\scriptsize{$\ell$}};
+	\node at (.5,-.2) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+}_{\in M_{n+2\ell +k}}
+$}
+\right)
+\in
+M_{n+\ell}
+=
+\cM_0([n] \to [m]).
+$$
+As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
+$\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n])$.
+Notice that if $\ell=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since $E^{n+2\ell + k}_{n+\ell}$ preserves the adjoint and the Temperley-Lieb-Jones element above is the identity.
+
+\item
+If $x\in \cM_0([n+2j] \to [n])$ and $y\in \cM_0([n] \to [n+2k])$ with $k=j+\ell$, we define
+$$
+y\circ x 
+:=
+y\cdot
+d^{-j}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$\ell$}};
+	\node at (.8,1) {\scriptsize{$j$}};
+	\node at (.5,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\cdot x
+\in
+M_{n+2j+\ell}
+=
+\cM_0([n+2j] \to [n+2k]).
+$$
+As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
+$\cM_0([n+2k] \to [n]) \otimes \cM_0([n] \to [n+2j]) \to \cM_0([n+2k] \to [n+2j])$.
+Notice that if $\ell=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since the Temperley-Lieb-Jones element above is the identity.
+\end{enumerate}
 \end{itemize}
+\nn{show composition is associative.}
+
 Finally, we let $\cM$ be the Karoubi completion of $\cM$.
 \end{defn}
 
