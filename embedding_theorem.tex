@@ -1446,7 +1446,50 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The projection category of a Markov tower}
 
-Now starting with a Markov tower, we can take its category of projections, defined as follows.
+We now define the category of projections of a Markov tower. 
+
+\begin{nota}
+We will make heavy use of the string diagrammatic representation of Temperley-Lieb-Jones diagrams.
+Ordinarily, for subfactors and planar algebras, Kauffman diagrams are drawn with strings going from \emph{bottom to top}. We put the number $k$ next to a strand to denote a bundle of $k$ parallel strands, and the label is omitted for single strands.
+
+\nn{where we do the associativity calculations:
+\\
+In this section, we rotate the diagrams by $\pi/2$ in the \emph{counterclockwise} direction, so that diagrams are read going from \emph{right to left}.
+This has the advantage that we read the diagram as an element in a von Neumann algebra with multiplication written as usual, and it helps us save space.
+For example, the generator $E_i$ in $\cT\cL\cJ_{n,\pm}$ for $1\leq i\leq n-1$ is depicted by:
+$$
+E_i
+=
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (1,0) -- (1,.8);
+	\draw (.4,.8) arc (-180:0:.2cm);
+	\draw (.4,0) arc (180:0:.2cm);
+%	\node at (.4,1) {\scriptsize{$1$}};
+%	\node at (.4,-.2) {\scriptsize{$1$}};
+	\node at (.35,.4) {\scriptsize{$i$}};
+	\node at (1.5,.4) {\scriptsize{$n{-}i{-}2$}};
+\end{tikzpicture}
+\qquad
+\leadsto
+\qquad
+E_i
+:=
+\begin{tikzpicture}[baseline = .6cm, rotate=90]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,1);
+	\draw (.2,0) -- (.2,1);
+	\draw (1,0) -- (1,1);
+	\draw (.4,1) arc (-180:0:.2cm);
+	\draw (.4,0) arc (180:0:.2cm);
+%	\node at (.4,1.2) {\scriptsize{$1$}};
+%	\node at (.4,-.2) {\scriptsize{$1$}};
+	\node at (.35,.5) {\scriptsize{$i$}};
+	\node at (1.2,.5) {\scriptsize{$n{-}i{-}2$}};
+\end{tikzpicture}
+$$
+}
+\end{nota}
 
 
 \begin{defn}
@@ -1700,16 +1743,61 @@ p & 0
 $$
 by defining
 $$
+\pi
 \begin{pmatrix}
 a & b
 \\
 c  & d
 \end{pmatrix}
-\overset{\pi}{\mapsto}
+:=
 \begin{pmatrix}
-pap & pb
+\begin{tikzpicture}[baseline = .3cm]
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.2,-.6) arc (180:0:.2cm);
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{$a$}
+	\node at (0,-.8) {\scriptsize{$n$}};
+	\node at (0,.8) {\scriptsize{$n$}};
+	\node at (.2,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$k$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+& 
+\begin{tikzpicture}[baseline = .3cm]
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
+	\draw (0,-.6) -- (0,.6);
+	\draw (.2,-.6) -- (.2,0);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{$b$}
+	\node at (0,-.8) {\scriptsize{$n$}};
+	\node at (0,.8) {\scriptsize{$n$}};
+	\node at (.2,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$k$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
 \\
-cp  & d
+\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
+	\draw (0,-.6) -- (0,.6);
+	\draw (.2,-.6) -- (.2,0);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{$c$}
+	\node at (0,-.8) {\scriptsize{$n$}};
+	\node at (0,.8) {\scriptsize{$n$}};
+	\node at (.2,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$k$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{$d$}
+	\node at (0,-.8) {\scriptsize{$n+2k$}};
+	\node at (0,.8) {\scriptsize{$n+2k$}};
+\end{tikzpicture}
 \end{pmatrix}.
 $$
 We immediately have:
