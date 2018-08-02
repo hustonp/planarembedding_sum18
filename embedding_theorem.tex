@@ -1444,6 +1444,369 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The projection category of a Markov tower}
+
+Now starting with a Markov tower, we can take its category of projections, defined as follows.
+
+
+\begin{defn}
+\label{def:MarkovProjections}
+Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
+We define the category $\cM$ to be the unitary Karoubi completion (formally adding orthogonal direct sums, and then taking the orthogonal projection completion) of the $\Cstar$ category $\cM_0$ with finite dimensional hom spaces defined as follows.
+\begin{itemize}
+\item
+The objects of $\cM_0$ are the symbols $[n]$ for $n\geq 0$.
+\item
+Given $n,k \geq 0$, we define 
+$\cM_0([n] \to [n+2k]):= M_{n+k}$
+and
+$\cM_0([n+2k] \to [n]) := M_{n+k}$.
+\item
+The identity morphism in $\cM_0([n] \to [n])$ is $1_{M_n}$.
+\item
+For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\dag := x^* \in M_{n+k}$.
+%
+%\begin{align*}
+%\cM([n] \to n+2k])
+%&:=
+%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%%=
+%M_{n+k}.
+%q
+%M_{n+k}
+%f^{n+k}_n
+%p
+%\subset
+%M_{n+2k}
+%\\
+%\cM(q \to p)
+%&:=
+%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
+%%=
+%p
+%f^{n+k}_n
+%M_{n+k}
+%q
+%\subset
+%M_{n+2k}
+%\end{align*}
+%where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
+%We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
+\item
+We define composition in three cases.
+\begin{enumerate}[label={\rm(\alph*)}]
+\item
+If $x\in \cM_0([n] \to [n+2j])$ and $y\in \cM_0([n+2j] \to [n+2j+2k])$, we define 
+$$
+y\circ x
+:=
+E^{n+2j+k}_{n+j+k}
+\left(
+\raisebox{.3cm}{$
+\underbrace{
+y\cdot x \cdot
+d^{-j}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$k$}};
+	\node at (.8,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+}_{\in M_{n+2j+k}}
+$}
+\right)
+\in M_{n+j+k}
+=
+\cM_0([n] \to [n+2j+2k]).
+$$
+We define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition 
+$\cM_0([n+2j+2k] \to [n+2j]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([n+2j+2k] \to [n])$.
+To show $x^\dag \circ y^\dag$ is well-defined, we check that when $j=k=0$,
+\begin{equation}
+\label{eq:n to n to n}
+x^\dag\circ y^\dag= x^* y^* = (y x)^* = (y\circ x)^\dag.
+\end{equation}
+
+\item
+If $x\in \cM_0([n] \to [n+2j])$ and $y \in \cM_0([m+2k] \to [m])$
+with $n+2j = m+2k$, $m= n + 2\ell$, and $j = k+\ell$,
+we define
+$$
+y\circ x
+:=
+E^{n+2\ell + k}_{n+\ell}
+\left(
+\raisebox{.3cm}{$
+\underbrace{
+y\cdot x\cdot
+d^{-\ell}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$k$}};
+	\node at (.8,1) {\scriptsize{$\ell$}};
+	\node at (.5,-.2) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+}_{\in M_{n+2\ell +k}}
+$}
+\right)
+\in
+M_{n+\ell}
+=
+\cM_0([n] \to [m]).
+$$
+As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
+$\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n])$.
+To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $\ell=0$ so that $n=m$, 
+\begin{equation}
+\label{eq:n to n+2k to n}
+x^\dag \circ y^\dag 
+=
+E^{n+k}_{n}(x^* y^*)
+=
+E^{n+k}_{n}((yx)^*) 
+=
+E^{n+k}_{n}(y x)^*
+=
+(y\circ x)^\dag.
+\end{equation}
+
+\item
+If $x\in \cM_0([n+2j] \to [n])$ and $y\in \cM_0([n] \to [n+2k])$ with $k=j+\ell$, we define
+$$
+y\circ x 
+:=
+y\cdot
+d^{-j}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$\ell$}};
+	\node at (.8,1) {\scriptsize{$j$}};
+	\node at (.5,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\cdot x
+\in
+M_{n+2j+\ell}
+=
+\cM_0([n+2j] \to [n+2k]).
+$$
+As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
+$\cM_0([n+2k] \to [n]) \otimes \cM_0([n] \to [n+2j]) \to \cM_0([n+2k] \to [n+2j])$.
+To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $\ell=0$ so that $j=k$, 
+\begin{equation}
+\label{eq:n+2j to n to n+2j}
+x^\dag \circ y^\dag 
+=
+x^* \cdot
+d^{-j}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (.5,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\cdot y^*
+=
+\left(
+y \cdot
+d^{-j}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (.5,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\cdot x
+\right)^*
+=
+(y\circ x)^\dag.
+\end{equation}
+\end{enumerate}
+\end{itemize}
+In Proposition \ref{prop:MarkovAssociative} below, we verify that composition is associative.
+It follows immediately from the definition of composition that $\dag$ is a well-defined dagger structure on $\cM_0$.
+In Proposition \ref{prop:MarkovCstar} below, we verify $\cM_0$ is a $\Cstar$ category under this dagger structure.\footnote{
+Just as being a $\Cstar$ algebra is a property of a complex $*$-algebra, being a $\Cstar$ category is a property of a $\bbC$-linear dagger category.
+}
+\end{defn}
+
+\begin{prop}
+\label{prop:MarkovAssociative}
+The composition from Definition \ref{def:MarkovProjections} is associative.
+\end{prop}
+\begin{proof}
+\nn{TODO}
+\end{proof}
+
+\begin{prop}
+\label{prop:MarkovCstar}
+The dagger structure from Definition \ref{def:MarkovProjections} endows $\cM_0$ with the structure of a $\Cstar$ category.
+\end{prop}
+\begin{proof}
+Notice that by \eqref{eq:n to n to n}, the $\dag$-algebra $\cM_0([n] \to [n])$ is $\dag/*$-isomorphic to the von Neumann algebra $M_n$.
+Now defining
+$$
+p:=
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$k$}};
+	\node at (.5,-.2) {\scriptsize{$k$}};
+\end{tikzpicture}\,,
+$$
+for $k>0$, combining \eqref{eq:n to n to n}, \eqref{eq:n to n+2k to n}, and \eqref{eq:n+2j to n to n+2j}, we get a $\dag/*$-algebra isomorphism 
+$$
+\pi:
+\begin{pmatrix}
+\cM_0([n] \to [n]) & \cM_0([n+2k] \to [n])
+\\
+\cM_0([n+2k] \to [n]) & \cM_0([n+2k] \to [n+2k])
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+p & 0
+\\
+0  & 1_{n+2k}
+\end{pmatrix}
+M_2(M_{n+2k})
+\begin{pmatrix}
+p & 0
+\\
+0  &1_{n+2k}
+\end{pmatrix}
+$$
+by defining
+$$
+\begin{pmatrix}
+a & b
+\\
+c  & d
+\end{pmatrix}
+\overset{\pi}{\mapsto}
+\begin{pmatrix}
+pap & pb
+\\
+cp  & d
+\end{pmatrix}.
+$$
+We immediately have:
+\begin{itemize}
+\item
+for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2k]\to [n+2k])$ such that 
+$f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
+\item
+there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2j])$ and $\cM_0([n+2k] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
+Notice that in a $\Cstar$ category, these norm can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
+Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
+}
+(To prove sub-multiplicativity, one forms an appropriate $3\times 3$ matrix algebra over an appropriate von Neumann algebra from $M_\bullet$.
+\nn{Submultiplicativity is actually the interesting part due to the interesting nature of composition, and perhaps should be spelled out.})
+\end{itemize}
+%
+%
+%First, note that when $k=0$, by \eqref{eq:n to n to n}, $f^\dag \circ f = f^*f$ and $f\circ f^\dag = ff^*$, so we may assume $k>0$.
+%By \eqref{eq:n to n+2k to n}, $f^\dag \circ f = E^{n+k}_n(f^*f) \geq 0$ in $M_n$.
+%Hence by \eqref{eq:n to n to n}, we may take $g :=  E^{n+k}_n(f^*f)^{1/2}$.
+%Next, by \eqref{eq:n+2j to n to n+2j}, 
+%$$
+%f\circ f^\dag = 
+%f \cdot
+%d^{-k}\,
+%\begin{tikzpicture}[baseline = .3cm]
+%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+%	\draw (.2,0) -- (.2,.8);
+%	\draw (.5,.8) arc (-180:0:.2cm);
+%	\draw (.5,0) arc (180:0:.2cm);
+%	\node at (.2,1) {\scriptsize{$n$}};
+%	\node at (.5,1) {\scriptsize{$k$}};
+%	\node at (.5,-.2) {\scriptsize{$k$}};
+%\end{tikzpicture}
+%\cdot f^*
+%=
+%\left(
+%\underbrace{
+%f \cdot
+%d^{-k}\,
+%\begin{tikzpicture}[baseline = .3cm]
+%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+%	\draw (.2,0) -- (.2,.8);
+%	\draw (.5,.8) arc (-180:0:.2cm);
+%	\draw (.5,0) arc (180:0:.2cm);
+%	\node at (.2,1) {\scriptsize{$n$}};
+%	\node at (.5,1) {\scriptsize{$k$}};
+%	\node at (.5,-.2) {\scriptsize{$k$}};
+%\end{tikzpicture}
+%}_{:=h \in M_{n+2k}}
+%\right)
+%\left(
+%\underbrace{
+%d^{-k}\,
+%\begin{tikzpicture}[baseline = .3cm]
+%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+%	\draw (.2,0) -- (.2,.8);
+%	\draw (.5,.8) arc (-180:0:.2cm);
+%	\draw (.5,0) arc (180:0:.2cm);
+%	\node at (.2,1) {\scriptsize{$n$}};
+%	\node at (.5,1) {\scriptsize{$k$}};
+%	\node at (.5,-.2) {\scriptsize{$k$}};
+%\end{tikzpicture}
+%\cdot f^*
+%}_{=h^\dag}
+%\right),
+%$$
+%so taking $h$ as above works.
+%
+%Second, for every $n\geq 0$, we provide a norm oFirst, we notice that the map 
+%given by
+%$$
+%$$
+%is a $*$-algebra isomorphism.
+%
+%
+%
+%For $f\in \cM_0([n] \to [n+2k])$, we define $\|f\|$ by taking the operator norm of the following element in the following $\Cstar$ algebra:
+%$$
+%\|f\|
+%:=
+%\left\|
+%\pi
+%\begin{pmatrix}
+%0 & f
+%\\
+%0  & 0
+%\end{pmatrix}
+%\right\|
+%$$
+%
+%\nn{TODO}
+%
+This completes the proof.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Planar modules and pivotal module categories} 
 
 \nn{this section does the previous section for modules.}
@@ -1900,157 +2263,10 @@ Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gi
 
 \nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{From planar modules to pivotal module categories}
 
-Now starting with a Markov tower, we can take its category of projections, defined as follows.
-
-
-\begin{defn}
-Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
-We define the category $\cM$ to be the unitary Karoubi completion (formally adding orthogonal direct sums, and then taking the orthogonal projection completion) of the $\Cstar$ category $\cM_0$ with finite dimensional hom spaces defined as follows.
-\begin{itemize}
-\item
-The objects of $\cM_0$ are the symbols $[n]$ for $n\geq 0$.
-\item
-Given $n,k \geq 0$, we define 
-$\cM_0([n] \to [n+2k]):= M_{n+k}$
-and
-$\cM_0([n+2k] \to [n]) := M_{n+k}$.
-\item
-The identity morphism in $\cM_0([n] \to [n])$ is $1_{M_n}$.
-\item
-For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\dag := x^* \in M_{n+k}$.
-%
-%\begin{align*}
-%\cM([n] \to n+2k])
-%&:=
-%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%%=
-%M_{n+k}.
-%q
-%M_{n+k}
-%f^{n+k}_n
-%p
-%\subset
-%M_{n+2k}
-%\\
-%\cM(q \to p)
-%&:=
-%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%%=
-%p
-%f^{n+k}_n
-%M_{n+k}
-%q
-%\subset
-%M_{n+2k}
-%\end{align*}
-%where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
-%We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
-\item
-We define composition in three cases.
-\begin{enumerate}[label={\rm(\alph*)}]
-\item
-If $x\in \cM_0([n] \to [n+2j])$ and $y\in \cM_0([n+2j] \to [n+2j+2k])$, we define 
-$$
-y\circ x
-:=
-E^{n+2j+k}_{n+j+k}
-\left(
-\raisebox{.3cm}{$
-\underbrace{
-y\cdot x \cdot
-d^{-j}\,
-\begin{tikzpicture}[baseline = .3cm]
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
-	\draw (.2,0) -- (.2,.8);
-	\draw (.5,.8) arc (-180:0:.2cm);
-	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
-	\draw (.8,0) arc (180:0:.2cm);
-	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$j$}};
-	\node at (1.2,1) {\scriptsize{$k$}};
-	\node at (.8,-.2) {\scriptsize{$j$}};
-\end{tikzpicture}
-}_{\in M_{n+2j+k}}
-$}
-\right)
-\in M_{n+j+k}
-=
-\cM_0([n] \to [n+2j+2k]).
-$$
-We define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition 
-$\cM_0([n+2j+2k] \to [n+2j]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([n+2j+2k] \to [n])$.
-Notice that if $j=k=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since $E^{n+2j+k}_{n+j+k}$ preserves the adjoint and the Temperley-Lieb-Jones element above is the identity.
-
-\item
-If $x\in \cM_0([n] \to [n+2j])$ and $y \in \cM_0([m+2k] \to [m])$
-with $n+2j = m+2k$, $m= n + 2\ell$, and $j = k+\ell$,
-we define
-$$
-y\circ x
-:=
-E^{n+2\ell + k}_{n+\ell}
-\left(
-\raisebox{.3cm}{$
-\underbrace{
-y\cdot x\cdot
-d^{-\ell}\,
-\begin{tikzpicture}[baseline = .3cm]
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
-	\draw (.2,0) -- (.2,.8);
-	\draw (.8,.8) arc (-180:0:.2cm);
-	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
-	\draw (.5,0) arc (180:0:.2cm);
-	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$k$}};
-	\node at (.8,1) {\scriptsize{$\ell$}};
-	\node at (.5,-.2) {\scriptsize{$\ell$}};
-\end{tikzpicture}
-}_{\in M_{n+2\ell +k}}
-$}
-\right)
-\in
-M_{n+\ell}
-=
-\cM_0([n] \to [m]).
-$$
-As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
-$\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n])$.
-Notice that if $\ell=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since $E^{n+2\ell + k}_{n+\ell}$ preserves the adjoint and the Temperley-Lieb-Jones element above is the identity.
-
-\item
-If $x\in \cM_0([n+2j] \to [n])$ and $y\in \cM_0([n] \to [n+2k])$ with $k=j+\ell$, we define
-$$
-y\circ x 
-:=
-y\cdot
-d^{-j}\,
-\begin{tikzpicture}[baseline = .3cm]
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
-	\draw (.2,0) -- (.2,.8);
-	\draw (.8,.8) arc (-180:0:.2cm);
-	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
-	\draw (.5,0) arc (180:0:.2cm);
-	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$\ell$}};
-	\node at (.8,1) {\scriptsize{$j$}};
-	\node at (.5,-.2) {\scriptsize{$j$}};
-\end{tikzpicture}
-\cdot x
-\in
-M_{n+2j+\ell}
-=
-\cM_0([n+2j] \to [n+2k]).
-$$
-As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
-$\cM_0([n+2k] \to [n]) \otimes \cM_0([n] \to [n+2j]) \to \cM_0([n+2k] \to [n+2j])$.
-Notice that if $\ell=0$, then this definition of $x^\dag \circ y^\dag$ agrees with the above definition of the composite, since the Temperley-Lieb-Jones element above is the identity.
-\end{enumerate}
-\end{itemize}
-\nn{show composition is associative.}
-\end{defn}
 
 
 
