@@ -1450,13 +1450,8 @@ We now define the category of projections of a Markov tower.
 
 \begin{nota}
 We will make heavy use of the string diagrammatic representation of Temperley-Lieb-Jones diagrams.
-Ordinarily, for subfactors and planar algebras, Kauffman diagrams are drawn with strings going from \emph{bottom to top}. We put the number $k$ next to a strand to denote a bundle of $k$ parallel strands, and the label is omitted for single strands.
-
-\nn{where we do the associativity calculations:
-\\
-In this section, we rotate the diagrams by $\pi/2$ in the \emph{counterclockwise} direction, so that diagrams are read going from \emph{right to left}.
-This has the advantage that we read the diagram as an element in a von Neumann algebra with multiplication written as usual, and it helps us save space.
-For example, the generator $E_i$ in $\cT\cL\cJ_{n,\pm}$ for $1\leq i\leq n-1$ is depicted by:
+Ordinarily, for subfactors and planar algebras, Kauffman diagrams are drawn with strings going from \emph{bottom to top}. We put the number $k$ above or next to a strand to denote a bundle of $k$ parallel strands, and the label is omitted for single strands.
+For example, the generators $E_i = de_i$ are represented by
 $$
 E_i
 =
@@ -1470,27 +1465,50 @@ E_i
 %	\node at (.4,-.2) {\scriptsize{$1$}};
 	\node at (.35,.4) {\scriptsize{$i$}};
 	\node at (1.5,.4) {\scriptsize{$n{-}i{-}2$}};
-\end{tikzpicture}
-\qquad
-\leadsto
-\qquad
-E_i
-:=
-\begin{tikzpicture}[baseline = .6cm, rotate=90]
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,1);
-	\draw (.2,0) -- (.2,1);
-	\draw (1,0) -- (1,1);
-	\draw (.4,1) arc (-180:0:.2cm);
-	\draw (.4,0) arc (180:0:.2cm);
-%	\node at (.4,1.2) {\scriptsize{$1$}};
-%	\node at (.4,-.2) {\scriptsize{$1$}};
-	\node at (.35,.5) {\scriptsize{$i$}};
-	\node at (1.2,.5) {\scriptsize{$n{-}i{-}2$}};
-\end{tikzpicture}
+\end{tikzpicture}\,.
 $$
-}
+Of particular importance will be the \emph{cabled/multi-step} Jones projections from \cite{MR965748} which were of importance in \cite{MR1424954,MR2812459}:
+\begin{align*}
+f^{n+k}_n
+&:=
+d^{k(k-1)}(e_{n+k}e_{n+k-1}\cdots e_{n+1})(e_{n+k+1}e_{n+k}\cdots e_{n+2})\cdots(e_{n+2k-1}e_{n+2k-2}\cdots e_{n+k})
+\\
+F^{n+k}_n
+&:=
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.4,.8) arc (-180:0:.2cm);
+	\draw (.4,0) arc (180:0:.2cm);
+	\node at (.4,1) {\scriptsize{$k$}};
+	\node at (.4,-.2) {\scriptsize{$k$}};
+	\node at (.2,1) {\scriptsize{$n$}};
+\end{tikzpicture}
+=
+d^k f^{n+k}_n.
+\end{align*}
 \end{nota}
 
+The following lemma follows from simple induction arguments.
+
+\begin{lem}
+\label{lem:MultistepJonesProjections}
+Fix $n\geq 0$ and $k\geq 1$.
+For $i\in \bbN$, define the $k$-cabled Jones projections
+$
+g_i := f^{n+ik}_{n+(i-1)k}
+$.
+The projections $(g_i)_{i\in \bbN}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections} with $d^{-2}$ replaced with $d^{-2k}$.
+Moreover, if $M_\bullet$ is a Markov tower, $g_i \in M_{n+(i+1)k}$, and the $(g_i)_{i\in \bbN}$ satisfy properties
+\ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} with respect to the multi-step tower $(M_{n+ik}, \tr_{n+ik}, e_{n+(i+1)k})_{i\geq 0}$, i.e.,
+\begin{itemize}
+\item
+For all $x\in M_{n+ik}$, $g_i x g_i = E^{n+ik}_{n+(i-1)k}(x) g_i$, where $E^{n+ik}_{n+(i-1)k}: M_{n+ik} \to M_{n+(i-1)k}$ is the canonical faithful trace-preserving conditional expectation.
+\item
+$E^{n+(i+1)k}_{n+ik}(g_i) = d^{-2k}$.
+\end{itemize}
+\nn{Does \ref{eq:MarkovPullDown} hold?}
+\end{lem}
 
 \begin{defn}
 \label{def:MarkovProjections}
@@ -1694,7 +1712,8 @@ is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algeb
 $\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2j, n+2j+2k, n+2j+2k+2\ell\}$
 is $\dag/*$-isomorphic to a (associative!) von Neumann algebra.
 Notice we have an equality of sets
-$$
+\begin{equation}
+\label{eq:LinkingAlgebra}
 \cL=
 \left(
 \begin{array}{llll}
@@ -1707,9 +1726,10 @@ M_{n{+}j{+}k} & M_{n{+}2j{+}k} & M_{n{+}2j{+}2k} & M_{n{+}2j{+}2k{+}\ell}
 M_{n{+}j{+}k{+}\ell} & M_{n{+}2j{+}k{+}\ell} & M_{n{+}2j{+}2k{+}\ell} & M_{n{+}2j{+}2k{+}2\ell}
 \end{array}
 \right).
-$$
+\end{equation}
 We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2j+2k+2\ell})p$
-$$
+\begin{equation}
+\label{eq:4x4Map}
 \begin{pmatrix}
 \begin{tikzpicture}
 	\draw (.2,.6) arc (-180:0:.2cm);
@@ -2027,7 +2047,7 @@ $$
 	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
 \end{tikzpicture}
 \end{pmatrix}
-$$
+\end{equation}
 where $p\in M_4(M_{n+2j+2k+2\ell})$ is the following projection:
 $$
 p:=
@@ -2089,16 +2109,12 @@ p:=
 1_{n+2j+2k+2\ell}
 \right).
 $$
-
-
-
-%In Proposition \ref{prop:MarkovAssociative} below, we verify that composition is associative.
-%It follows immediately from the definition of composition that $\dag$ is a well-defined dagger structure on $\cM_0$.
-%In Proposition \ref{prop:MarkovCstar} below, we verify $\cM_0$ is a $\Cstar$ category under this dagger structure.
-
-By looking at the $2\times 2$ and $3\times 3$ corners of \nn{finish!}, 
-
+Using Lemma \ref{lem:MultistepJonesProjections}, one checks the map $\pi$ is an injective algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
+By looking at the $2\times 2$ and $3\times 3$ corners of the linking algebra $\cL$ and \eqref{eq:4x4Map},
+we immediately see: 
 \begin{itemize}
+\item
+$\dag$ is a dagger structure on $\cM_0$,
 \item
 for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2k]\to [n+2k])$ such that 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
@@ -2108,7 +2124,10 @@ Notice that in a $\Cstar$ category, these norm can be recovered from spectral ra
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
 \end{itemize}
-
+Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
+%In Proposition \ref{prop:MarkovAssociative} below, we verify that composition is associative.
+%It follows immediately from the definition of composition that $\dag$ is a well-defined dagger structure on $\cM_0$.
+%In Proposition \ref{prop:MarkovCstar} below, we verify $\cM_0$ is a $\Cstar$ category under this dagger structure.
 \end{defn}
 
 %\begin{prop}
