@@ -1407,6 +1407,7 @@ Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a M
 \end{ex}
 
 \begin{ex}[Shifting a Markov tower]
+\label{ex:ShiftMarkovTower}
 Suppose $(M_n, \tr_n, e_{n+1})$ is a Markov tower.
 For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
 \end{ex}
@@ -1443,14 +1444,11 @@ Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that
 Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have pull down.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The projection category of a Markov tower}
-
-We now define the category of projections of a Markov tower. 
-
 \begin{nota}
+\label{nota:TLJK Diagrams}
 We will make heavy use of the string diagrammatic representation of Temperley-Lieb-Jones diagrams.
-Ordinarily, for subfactors and planar algebras, Kauffman diagrams are drawn with strings going from \emph{bottom to top}. We put the number $k$ above or next to a strand to denote a bundle of $k$ parallel strands, and the label is omitted for single strands.
+Ordinarily, for subfactors and planar algebras, Kauffman diagrams \cite{MR899057} are drawn with strings going from \emph{bottom to top}. 
+We put the number $k$ above or next to a strand to denote a bundle of $k$ parallel strands, and the label is omitted for single strands.
 For example, the generators $E_i = de_i$ are represented by
 $$
 E_i
@@ -1487,28 +1485,39 @@ F^{n+k}_n
 =
 d^k f^{n+k}_n.
 \end{align*}
+
+Now suppose we fix $j\geq 0$ and $k\geq 1$.
+For $n\in \bbN$, define the $k$-cabled Jones projections
+$
+g_n := f^{j+nk}_{j+(n-1)k}
+$.
+It is straightforward to verify using Kauffman's diagrammatic calculus for Temperley-Lieb-Jones algebras that the projections $(g_n)_{n\in \bbN}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections} with $d^{-2}$ replaced with $d^{-2k}$.
 \end{nota}
 
-The following lemma follows from simple induction arguments.
+We now show that taking every $k$-th algebra in a Markov tower gives us another Markov tower.
 
 \begin{lem}
 \label{lem:MultistepJonesProjections}
-Fix $n\geq 0$ and $k\geq 1$.
-For $i\in \bbN$, define the $k$-cabled Jones projections
-$
-g_i := f^{n+ik}_{n+(i-1)k}
-$.
-The projections $(g_i)_{i\in \bbN}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections} with $d^{-2}$ replaced with $d^{-2k}$.
-Moreover, if $M_\bullet$ is a Markov tower, $g_i \in M_{n+(i+1)k}$, and the $(g_i)_{i\in \bbN}$ satisfy properties
-\ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} with respect to the multi-step tower $(M_{n+ik}, \tr_{n+ik}, e_{n+(i+1)k})_{i\geq 0}$, i.e.,
-\begin{itemize}
-\item
-For all $x\in M_{n+ik}$, $g_i x g_i = E^{n+ik}_{n+(i-1)k}(x) g_i$, where $E^{n+ik}_{n+(i-1)k}: M_{n+ik} \to M_{n+(i-1)k}$ is the canonical faithful trace-preserving conditional expectation.
-\item
-$E^{n+(i+1)k}_{n+ik}(g_i) = d^{-2k}$.
-\end{itemize}
-\nn{Does \ref{eq:MarkovPullDown} hold?}
+Suppose $(M_n, \tr_, e_{n+1})$ is a Markov tower, and let $j\geq 0$ and $k\geq 1$.
+Define $g_n \in M_{j+(n+1)k}$ as in Notation \ref{nota:TLJK Diagrams}.
+Then $(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
 \end{lem}
+\begin{proof}
+We saw Condition \ref{eq:MarkovJonesProjections} holds from the diagrammatic calculus, and Conditions \ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} are straightforward induction arguments.
+We prove \ref{eq:MarkovPullDown}.
+By Example \ref{ex:ShiftMarkovTower}, we may assume $n=0$.
+
+\nn{todo}
+
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The projection category of a Markov tower}
+
+We now define the category of projections of a Markov tower. 
+
 
 \begin{defn}
 \label{def:MarkovProjections}
@@ -1730,8 +1739,11 @@ M_{n{+}j{+}k{+}\ell} & M_{n{+}2j{+}k{+}\ell} & M_{n{+}2j{+}2k{+}\ell} & M_{n{+}2
 We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2j+2k+2\ell})p$
 \begin{equation}
 \label{eq:4x4Map}
+\resizebox{.92\hsize}{!}{
+$
 \begin{pmatrix}
-\begin{tikzpicture}
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) arc (180:0:.2cm);
 	\draw (.8,.6) arc (-180:0:.2cm);
@@ -1756,7 +1768,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 & 
-\begin{tikzpicture}
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
 	\draw (.8,.6) arc (-180:0:.2cm);
@@ -1781,7 +1794,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
 	\draw (.2,.6) arc (-180:0:.2cm);
@@ -1806,7 +1820,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.15cm) and ++(90:.15cm) ..  (1,0) -- (1,-.6);
@@ -1831,7 +1846,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[yscale = -1]
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.8,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
@@ -1856,7 +1872,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[yscale =-1]
+d^{{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) arc (180:0:.2cm);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1875,7 +1892,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1894,7 +1912,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
 	\draw (.6,.6) arc (-180:0:.2cm);
@@ -1913,7 +1932,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.6,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[yscale = -1]
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
 	\draw (.2,.6) arc (-180:0:.2cm);
@@ -1938,7 +1958,9 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[yscale =-1]
+d^{-k-\ell}
+\,
+\begin{tikzpicture}[baseline=-.1cm, yscale =-1]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1957,7 +1979,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{-\ell}
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (0,-.6) -- (0,.6);
 	\draw (.8,.6) arc (-180:0:.2cm);
 	\draw (.8,-.6) arc (180:0:.2cm);
@@ -1970,7 +1993,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.2,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}
+d^{-\ell}\,
+\begin{tikzpicture}[baseline=-.1cm]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
@@ -1983,7 +2007,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.4,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[yscale = -1]
+d^{{-}j{-}k{-}\ell}\,
+\begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.15cm) and ++(90:.15cm) ..  (1,0) -- (1,-.6);
@@ -2008,7 +2033,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.8,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[yscale = -1]
+d^{-k-\ell}
+\begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
 	\draw (.6,.6) arc (-180:0:.2cm);
@@ -2027,7 +2053,8 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.6,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[yscale = -1]
+d^{-\ell}
+\begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
@@ -2040,19 +2067,20 @@ We define the following map entry-wise; that is, for an element $x \in \cL$, we 
 	\node at (1.4,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[yscale =-1]
+\begin{tikzpicture}[baseline=-.1cm, yscale =-1]
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
 	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
 	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
 \end{tikzpicture}
 \end{pmatrix}
+$}
 \end{equation}
 where $p\in M_4(M_{n+2j+2k+2\ell})$ is the following projection:
 $$
 p:=
 \operatorname{diag}\left(
-d^{-j-k-\ell}\,
+d^{{-}j{-}k{-}\ell}\,
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (2,.3);
 	\draw (.2,.3) arc (-180:0:.2cm);
@@ -2113,7 +2141,7 @@ d^{-\ell}
 \end{tikzpicture}
 \,,
 1_{n+2j+2k+2\ell}
-\right).
+\right)
 $$
 Using Lemma \ref{lem:MultistepJonesProjections}, one checks the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
 Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2j+2k+2\ell})p$, which meanss $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
