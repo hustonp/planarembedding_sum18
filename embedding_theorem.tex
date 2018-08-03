@@ -1714,12 +1714,13 @@ d^{-j}\,
 \end{enumerate}
 \end{itemize}
 Showing that composition is associative directly from the definitions above is a highly non-trivial exercise using the axioms \ref{eq:MarkovJonesProjections} -- \ref{eq:MarkovPullDown} of a Markov tower.
-A better way to prove associativity, which also simultaneously proves $\cM_0$ is $\Cstar$,\footnote{
+A better way to prove associativity is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite{MR808930} 
+$\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2j, n+2j+2k, n+2j+2k+2\ell\}$
+is $\dag/*$-isomorphic to a von Neumann algebra, which is necessarily associative!
+This technique also offers the advantage that it, simultaneously proves $\cM_0$ is $\Cstar$.\footnote{
 Just as being a $\Cstar$ algebra is a property of a complex $*$-algebra, being a $\Cstar$ category is a property of a $\bbC$-linear dagger category.
 }
-is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite{MR808930} 
-$\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2j, n+2j+2k, n+2j+2k+2\ell\}$
-is $\dag/*$-isomorphic to a (associative!) von Neumann algebra.
+
 Notice we have an equality of sets
 \begin{equation}
 \label{eq:LinkingAlgebra}
@@ -2141,9 +2142,9 @@ d^{-\ell}
 \end{tikzpicture}
 \,,
 1_{n+2j+2k+2\ell}
-\right)
+\right).
 $$
-Using Lemma \ref{lem:MultistepJonesProjections}, one checks the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
+In Proposition \ref{prop:InjectiveAlgebraMap} below, we verify the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
 Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2j+2k+2\ell})p$, which meanss $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
 By looking at the $2\times 2$ and $3\times 3$ corners of the linking algebra $\cL$ and \eqref{eq:4x4Map},
 we immediately see: 
@@ -2164,6 +2165,15 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 %It follows immediately from the definition of composition that $\dag$ is a well-defined dagger structure on $\cM_0$.
 %In Proposition \ref{prop:MarkovCstar} below, we verify $\cM_0$ is a $\Cstar$ category under this dagger structure.
 \end{defn}
+
+
+\begin{prop}
+\label{prop:InjectiveAlgebraMap}
+The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
+\end{prop}
+\begin{proof}
+\nn{Use Lemma \ref{lem:MultistepJonesProjections}}
+\end{proof}
 
 %\begin{prop}
 %\label{prop:MarkovAssociative}
