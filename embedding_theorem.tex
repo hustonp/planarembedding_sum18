@@ -1812,40 +1812,61 @@ Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
 (To prove sub-multiplicativity, one forms an appropriate $3\times 3$ matrix algebra over an appropriate von Neumann algebra from $M_\bullet$.
 \nn{Submultiplicativity is actually the interesting part due to the interesting nature of composition, and perhaps should be spelled out.})
-$$
+\begin{align*}
+&
+\begin{pmatrix}
+\cM_0([n] \to [n]) 
+& 
+\cM_0([n+2j] \to [n])
+&
+\cM_0([n+2j+2k] \to [n])
+\\
+\cM_0([n] \to [n+2j]) 
+& 
+\cM_0([n+2j] \to [n+2j])
+&
+\cM_0([n+2j+2k] \to [n+2j])
+\\
+\cM_0([n] \to [n+2j+2k]) 
+& 
+\cM_0([n+2j] \to [n+2j+2k])
+&
+\cM_0([n+2j+2k] \to [n+2j+2k])
+\end{pmatrix}
+\\&\hspace{4cm}\cong
 \begin{pmatrix}
 \begin{tikzpicture}[baseline = .3cm]
-	\draw (.2,.6) arc (-180:0:.3cm);
-	\draw (.2,-.6) arc (180:0:.3cm);
-	\draw (.4,.6) arc (-180:0:.1cm);
-	\draw (.4,-.6) arc (180:0:.1cm);
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.2,-.6) arc (180:0:.2cm);
+	\draw (.8,.6) arc (-180:0:.2cm);
+	\draw (.8,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
 	\node at (.2,.8) {\scriptsize{$j$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
 	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.4,.8) {\scriptsize{$k$}};
-	\node at (.4,-.8) {\scriptsize{$k$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (.8,.8) {\scriptsize{$j$}};
-	\node at (.8,-.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (.8,-.8) {\scriptsize{$k$}};
+	\node at (1.2,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 & 
 \begin{tikzpicture}[baseline = .3cm]
-	\draw (.2,.6) arc (-180:0:.3cm);
-	\draw (.4,.6) arc (-180:0:.1cm);
-	\draw (.2,-.6) -- (.2,0) arc (180:0:.2cm) -- (.6,-.6);
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.8,.6) arc (-180:0:.2cm);
+	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
 	\draw (.8,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
-	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.2}{}
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
 	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.4,.8) {\scriptsize{$k$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
 	\node at (.2,-.8) {\scriptsize{$j$}};
 	\node at (.6,-.8) {\scriptsize{$j$}};
 	\node at (.8,-.8) {\scriptsize{$k$}};
@@ -1853,8 +1874,8 @@ $$
 \end{tikzpicture}
 &
 \begin{tikzpicture}[baseline = .3cm]
-	\draw (.2,.6) arc (-180:0:.3cm);
-	\draw (.4,.6) arc (-180:0:.1cm);
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.8,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,-.1) arc (180:0:.3cm) -- (.8,-.6);
 	\draw (.4,-.6) -- (.4,-.1) arc (180:0:.1cm) -- (.6,-.6);
 	\draw (0,-.6) -- (0,.6);
@@ -1862,31 +1883,91 @@ $$
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
 	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.4,.8) {\scriptsize{$k$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
 	\node at (.2,-.8) {\scriptsize{$j$}};
 	\node at (.4,-.8) {\scriptsize{$k$}};
 	\node at (.6,-.8) {\scriptsize{$k$}};
 	\node at (.8,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 \\
-&&
-\\
-\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+\begin{tikzpicture}[baseline = .3cm, yscale = -1]
 	\draw (.2,.6) arc (-180:0:.2cm);
-	\draw (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
+	\draw (.8,.6) arc (-180:0:.2cm);
+	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
+	\draw (.8,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
-	\draw (.2,-.6) -- (.2,0);
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$k$}};
-	\node at (.2,-.8) {\scriptsize{$k$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (.2,.8) {\scriptsize{$j$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (.8,-.8) {\scriptsize{$k$}};
+	\node at (1.2,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
+\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+	\draw (.6,.6) arc (-180:0:.2cm);
+	\draw (.6,-.6) arc (180:0:.2cm);
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
+	\node at (0,-.8) {\scriptsize{$n+2j$}};
+	\node at (0,.8) {\scriptsize{$n+2j$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (1,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[baseline = .3cm]
+	\draw (.6,.6) arc (-180:0:.2cm);
+	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.6}{}
+	\node at (0,-.8) {\scriptsize{$n+2j$}};
+	\node at (0,.8) {\scriptsize{$n+2j$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (1,.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+\\
+\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+	\draw (.2,.6) arc (-180:0:.2cm);
+	\draw (.8,.6) arc (-180:0:.2cm);
+	\draw (.2,-.6) -- (.2,-.1) arc (180:0:.3cm) -- (.8,-.6);
+	\draw (.4,-.6) -- (.4,-.1) arc (180:0:.1cm) -- (.6,-.6);
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,-.3)}{.2}{0}{.3}{}
+	\node at (0,-.8) {\scriptsize{$n$}};
+	\node at (0,.8) {\scriptsize{$n$}};
+	\node at (.2,.8) {\scriptsize{$j$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$j$}};
+	\node at (.4,-.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (.8,-.8) {\scriptsize{$j$}};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+	\draw (.6,.6) arc (-180:0:.2cm);
+	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
+	\draw (0,-.6) -- (0,.6);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.6}{}
+	\node at (0,-.8) {\scriptsize{$n+2j$}};
+	\node at (0,.8) {\scriptsize{$n+2j$}};
+	\node at (.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (1,.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
 &
 \begin{tikzpicture}[baseline = .3cm, yscale =-1]
 	\draw (0,-.6) -- (0,.6);
@@ -1895,8 +1976,7 @@ $$
 	\node at (0,.8) {\scriptsize{$n+2j+2k$}};
 \end{tikzpicture}
 \end{pmatrix}
-\nn{\text{todo: thinking about submultiplicativity of the norm}}
-$$
+\end{align*}
 \end{itemize}
 %
 %
