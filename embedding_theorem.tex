@@ -1711,7 +1711,7 @@ $$
 We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2j+2k+2\ell})p$
 $$
 \begin{pmatrix}
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) arc (180:0:.2cm);
 	\draw (.8,.6) arc (-180:0:.2cm);
@@ -1736,7 +1736,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 & 
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
 	\draw (.8,.6) arc (-180:0:.2cm);
@@ -1761,7 +1761,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
 	\draw (.2,.6) arc (-180:0:.2cm);
@@ -1786,7 +1786,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.15cm) and ++(90:.15cm) ..  (1,0) -- (1,-.6);
@@ -1811,7 +1811,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+\begin{tikzpicture}[yscale = -1]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.8,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
@@ -1836,7 +1836,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+\begin{tikzpicture}[yscale =-1]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) arc (180:0:.2cm);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1855,7 +1855,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1874,7 +1874,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
 	\draw (.6,.6) arc (-180:0:.2cm);
@@ -1893,7 +1893,7 @@ $$
 	\node at (1.6,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+\begin{tikzpicture}[yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
 	\draw (.2,.6) arc (-180:0:.2cm);
@@ -1918,7 +1918,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+\begin{tikzpicture}[yscale =-1]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
 	\draw (1.4,.6) arc (-180:0:.2cm);
@@ -1937,20 +1937,20 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (0,-.6) -- (0,.6);
-	\draw (1,.6) arc (-180:0:.2cm);
-	\draw (1,-.6) arc (180:0:.2cm);
+	\draw (.8,.6) arc (-180:0:.2cm);
+	\draw (.8,-.6) arc (180:0:.2cm);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
 	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
 	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (1,.8) {\scriptsize{$\ell$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1,-.8) {\scriptsize{$\ell$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
+	\node at (.8,.8) {\scriptsize{$\ell$}};
+	\node at (1.2,.8) {\scriptsize{$\ell$}};
+	\node at (.8,-.8) {\scriptsize{$\ell$}};
+	\node at (1.2,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm]
+\begin{tikzpicture}
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
@@ -1963,7 +1963,7 @@ $$
 	\node at (1.4,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+\begin{tikzpicture}[yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.15cm) and ++(90:.15cm) ..  (1,0) -- (1,-.6);
@@ -1988,7 +1988,7 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+\begin{tikzpicture}[yscale = -1]
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
 	\draw (.6,.6) arc (-180:0:.2cm);
@@ -2007,7 +2007,7 @@ $$
 	\node at (1.6,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+\begin{tikzpicture}[yscale = -1]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
@@ -2020,7 +2020,7 @@ $$
 	\node at (1.4,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+\begin{tikzpicture}[yscale =-1]
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
 	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
@@ -2031,7 +2031,63 @@ $$
 where $p\in M_4(M_{n+2j+2k+2\ell})$ is the following projection:
 $$
 p:=
-\nn{todo}
+\operatorname{diag}\left(
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.2,.3) arc (-180:0:.2cm);
+	\draw (.2,-.3) arc (180:0:.2cm);
+	\draw (.8,.3) arc (-180:0:.2cm);
+	\draw (.8,-.3) arc (180:0:.2cm);
+	\draw (1.4,.3) arc (-180:0:.2cm);
+	\draw (1.4,-.3) arc (180:0:.2cm);
+	\draw (0,-.3) -- (0,.3);
+	\node at (0,-.5) {\scriptsize{$n$}};
+	\node at (0,.5) {\scriptsize{$n$}};
+	\node at (.2,.5) {\scriptsize{$j$}};
+	\node at (.6,.5) {\scriptsize{$j$}};
+	\node at (.8,.5) {\scriptsize{$k$}};
+	\node at (1.2,.5) {\scriptsize{$k$}};
+	\node at (1.4,.5) {\scriptsize{$\ell$}};
+	\node at (1.8,.5) {\scriptsize{$\ell$}};
+	\node at (.2,-.5) {\scriptsize{$j$}};
+	\node at (.6,-.5) {\scriptsize{$j$}};
+	\node at (.8,-.5) {\scriptsize{$k$}};
+	\node at (1.2,-.5) {\scriptsize{$k$}};
+	\node at (1.4,-.5) {\scriptsize{$\ell$}};
+	\node at (1.8,-.5) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.6,.3) arc (-180:0:.2cm);
+	\draw (.6,-.3) arc (180:0:.2cm);
+	\draw (1.2,.3) arc (-180:0:.2cm);
+	\draw (1.2,-.3) arc (180:0:.2cm);
+	\draw (0,-.3) -- (0,.3);
+	\node at (0,-.5) {\scriptsize{$n{+}2j$}};
+	\node at (0,.5) {\scriptsize{$n{+}2j$}};
+	\node at (.6,.5) {\scriptsize{$k$}};
+	\node at (1,.5) {\scriptsize{$k$}};
+	\node at (1.2,.5) {\scriptsize{$\ell$}};
+	\node at (1.6,.5) {\scriptsize{$\ell$}};
+	\node at (.6,-.5) {\scriptsize{$k$}};
+	\node at (1,-.5) {\scriptsize{$k$}};
+	\node at (1.2,-.5) {\scriptsize{$\ell$}};
+	\node at (1.6,-.5) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.8,.3) arc (-180:0:.2cm);
+	\draw (.8,-.3) arc (180:0:.2cm);
+	\draw (0,-.3) -- (0,.3);
+	\node at (0,-.5) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (0,.5) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (.8,.5) {\scriptsize{$\ell$}};
+	\node at (1.2,.5) {\scriptsize{$\ell$}};
+	\node at (.8,-.5) {\scriptsize{$\ell$}};
+	\node at (1.2,-.5) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+,
+1_{n+2j+2k+2\ell}
+\right).
 $$
 
 
