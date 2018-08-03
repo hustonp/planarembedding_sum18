@@ -2052,7 +2052,9 @@ where $p\in M_4(M_{n+2j+2k+2\ell})$ is the following projection:
 $$
 p:=
 \operatorname{diag}\left(
+d^{-j-k-\ell}\,
 \begin{tikzpicture}[baseline = -.1cm]
+	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (2,.3);
 	\draw (.2,.3) arc (-180:0:.2cm);
 	\draw (.2,-.3) arc (180:0:.2cm);
 	\draw (.8,.3) arc (-180:0:.2cm);
@@ -2075,8 +2077,10 @@ p:=
 	\node at (1.4,-.5) {\scriptsize{$\ell$}};
 	\node at (1.8,-.5) {\scriptsize{$\ell$}};
 \end{tikzpicture}
-,
+\,,
+d^{-k-\ell}
 \begin{tikzpicture}[baseline = -.1cm]
+	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (1.8,.3);
 	\draw (.6,.3) arc (-180:0:.2cm);
 	\draw (.6,-.3) arc (180:0:.2cm);
 	\draw (1.2,.3) arc (-180:0:.2cm);
@@ -2093,8 +2097,10 @@ p:=
 	\node at (1.2,-.5) {\scriptsize{$\ell$}};
 	\node at (1.6,-.5) {\scriptsize{$\ell$}};
 \end{tikzpicture}
-,
+\,,
+d^{-\ell}
 \begin{tikzpicture}[baseline = -.1cm]
+	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (1.4,.3);
 	\draw (.8,.3) arc (-180:0:.2cm);
 	\draw (.8,-.3) arc (180:0:.2cm);
 	\draw (0,-.3) -- (0,.3);
@@ -2105,11 +2111,12 @@ p:=
 	\node at (.8,-.5) {\scriptsize{$\ell$}};
 	\node at (1.2,-.5) {\scriptsize{$\ell$}};
 \end{tikzpicture}
-,
+\,,
 1_{n+2j+2k+2\ell}
 \right).
 $$
-Using Lemma \ref{lem:MultistepJonesProjections}, one checks the map $\pi$ is an injective algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
+Using Lemma \ref{lem:MultistepJonesProjections}, one checks the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
+Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2j+2k+2\ell})p$, which meanss $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
 By looking at the $2\times 2$ and $3\times 3$ corners of the linking algebra $\cL$ and \eqref{eq:4x4Map},
 we immediately see: 
 \begin{itemize}
@@ -2355,9 +2362,22 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 %\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Planar modules and pivotal module categories} 
+\subsection{Modules for pivotal categories, planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices} 
 
-\nn{this section does the previous section for modules.}
+We now define the various notions of module for 
+\begin{itemize}
+\item
+a unitary multitensor category $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ together with a generator $X\in \cC_{01}$ with its canonical unitary spherical structure,
+\item
+a subfactor planar algebra $\cQ_\bullet$, and
+\item
+a $\lambda$-lattice $(A_{n,\pm})$.\footnote{
+\nn{fix:
+We will actually have a $\lambda$-sequence, which is equivalent to a $\lambda$-lattice.}
+}
+\end{itemize}
+
+\nn{fix below here.}
 
 Suppose $\cQ_\bullet$ is a subfactor planar algebra.
 We denote the Jones projections of $\cQ_\bullet$ by $e_{n,\pm}$. 
