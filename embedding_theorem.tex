@@ -1937,11 +1937,24 @@ $$
 	\node at (1.8,-.8) {\scriptsize{$\ell$}};
 \end{tikzpicture}
 &
-\begin{tikzpicture}[baseline = .3cm, yscale =-1]
+\begin{tikzpicture}[baseline = .3cm]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) arc (180:0:.2cm);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
+	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (1,.8) {\scriptsize{$\ell$}};
+	\node at (1.4,.8) {\scriptsize{$\ell$}};
+	\node at (1,-.8) {\scriptsize{$\ell$}};
+	\node at (1.4,-.8) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[baseline = .3cm]
+	\draw (0,-.6) -- (0,.6);
+	\draw (1,.6) arc (-180:0:.2cm);
+	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{1}{}
 	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
 	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
 	\node at (1,.8) {\scriptsize{$\ell$}};
@@ -1993,7 +2006,20 @@ $$
 	\node at (1.2,-.8) {\scriptsize{$\ell$}};
 	\node at (1.6,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
-&&
+&
+\begin{tikzpicture}[baseline = .3cm, yscale = -1]
+	\draw (0,-.6) -- (0,.6);
+	\draw (1,.6) arc (-180:0:.2cm);
+	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
+	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{1}{}
+	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
+	\node at (1,.8) {\scriptsize{$\ell$}};
+	\node at (1.4,.8) {\scriptsize{$\ell$}};
+	\node at (1,-.8) {\scriptsize{$\ell$}};
+	\node at (1.4,-.8) {\scriptsize{$\ell$}};
+\end{tikzpicture}
+&
 \begin{tikzpicture}[baseline = .3cm, yscale =-1]
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
