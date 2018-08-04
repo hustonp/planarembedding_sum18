@@ -593,7 +593,7 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 	Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
 	\item The effect of passing upwards through the extrema of a strand is as follows: 
 \begin{align*}
-	&\begin{tikzpicture}[scale=0.6]
+	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
 		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
@@ -602,8 +602,8 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
-	: x\otimes y\mapsto xy \\
-	&\begin{tikzpicture}[scale=0.6]
+	\,: x\otimes y\mapsto xy \\
+	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
 		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
@@ -612,8 +612,8 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
-	: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
-	&\begin{tikzpicture}[scale=0.6]
+	\,: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
+	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
 		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
@@ -622,8 +622,8 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
-	: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
-	&\begin{tikzpicture}[scale=0.6]
+	\,: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
+	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
 		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
 		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
 		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
@@ -632,7 +632,7 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
 		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
 	\end{tikzpicture}
-	: x\otimes y \mapsto x\otimes 1 \otimes y 
+	\,: x\otimes y \mapsto x\otimes 1 \otimes y 
 \end{align*}
 	
 \end{itemize} 
@@ -1203,7 +1203,8 @@ Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 
 \nn{expand this section}
 
-From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
+From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
+We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
 
 \begin{defn}\textnormal{
 		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
@@ -1397,14 +1398,14 @@ A Markov tower is said to have \emph{finite depth} if the principal graph is fin
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
 Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. 
-Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(A_n,\tr_n)$.
+Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
 
 \begin{fact}\label{BratteliPrincipal}
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subset M_{k+1}$.
 \end{fact}
 
 \begin{ex}
-The Temperley-Lieb algebras of modulus $d\geq 2$ with the usual Jones projections form a Markov tower. Their principal graph is $A_{\infty}$.
+The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$.
 \end{ex}
 
 \begin{ex}
@@ -1512,9 +1513,9 @@ Define $g_n \in M_{j+(n+1)k}$ as in Notation \ref{nota:TLJK Diagrams}.
 Then $(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
 \end{lem}
 \begin{proof}
+By Example \ref{ex:ShiftMarkovTower}, we may assume $n=0$.
 We saw Condition \ref{eq:MarkovJonesProjections} holds from the diagrammatic calculus, and Conditions \ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} are straightforward induction arguments.
 We prove \ref{eq:MarkovPullDown}.
-By Example \ref{ex:ShiftMarkovTower}, we may assume $n=0$.
 
 \nn{todo}
 
