@@ -1477,11 +1477,11 @@ E_i
 $$
 Of particular importance will be the \emph{cabled/multi-step} Jones projections from \cite{MR965748} which were of importance in \cite{MR1424954,MR2812459}:
 \begin{align*}
-f^{n+k}_n
+f^{j+k}_j
 &:=
-d^{k(k-1)}(e_{n+k}e_{n+k-1}\cdots e_{n+1})(e_{n+k+1}e_{n+k}\cdots e_{n+2})\cdots(e_{n+2k-1}e_{n+2k-2}\cdots e_{n+k})
+d^{k(k-1)}(e_{j+k}e_{j+k-1}\cdots e_{j+1})(e_{j+k+1}e_{j+k}\cdots e_{j+2})\cdots(e_{j+2k-1}e_{j+2k-2}\cdots e_{j+k})
 \\
-F^{n+k}_n
+F^{j+k}_j
 &:=
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
@@ -1490,11 +1490,34 @@ F^{n+k}_n
 	\draw (.4,0) arc (180:0:.2cm);
 	\node at (.4,1) {\scriptsize{$k$}};
 	\node at (.4,-.2) {\scriptsize{$k$}};
-	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.2,1) {\scriptsize{$j$}};
 \end{tikzpicture}
 =
-d^k f^{n+k}_n.
+d^k f^{j+k}_j.
 \end{align*}
+We record the following relation for later use:
+\begin{equation}
+\label{eq:MultistepRelation}
+f^{j+k}_j
+=
+d^{k(k-1)}(e_{j+k}e_{j+k+1}\cdots e_{j+2k-2}e_{j+2k-1})
+\cdot\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (1.8,0) -- (1.8,.8);
+	\draw (.6,.8) arc (-180:0:.25cm);
+%	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
+	\draw (1,0) arc (180:0:.25cm);
+%	\node at (.7,-.2) {\scriptsize{$1$}};
+%	\node at (1.8,1) {\scriptsize{$1$}};
+%	\node at (2,-.2) {\scriptsize{$1$}};
+	\node at (.6,1) {\scriptsize{$k{-}1$}};
+	\node at (1,-.2) {\scriptsize{$k{-}1$}};
+	\node at (.2,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\end{equation}
 
 Now suppose we fix $j\geq 0$ and $k\geq 1$.
 For $n\in \bbN$, define the $k$-cabled Jones projections
@@ -1513,12 +1536,154 @@ Define $g_n \in M_{j+(n+1)k}$ as in Notation \ref{nota:TLJK Diagrams}.
 Then $(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
 \end{lem}
 \begin{proof}
-By Example \ref{ex:ShiftMarkovTower}, we may assume $n=0$.
 We saw Condition \ref{eq:MarkovJonesProjections} holds from the diagrammatic calculus, and Conditions \ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} are straightforward induction arguments.
-We prove \ref{eq:MarkovPullDown}.
 
-\nn{todo}
-
+We prove \ref{eq:MarkovPullDown} by strong induction on $k$.
+The base case $k=1$ is exactly \ref{eq:MarkovPullDown} for the original Markov tower.
+Now suppose that \ref{eq:MarkovPullDown} holds for any multi-step towers with increment less than $k$.
+Consider the multi-step tower of algebras $(M_{j+nk})_{n\geq 0}$, which has increment $k$.
+By Example \ref{ex:ShiftMarkovTower}, we may assume $j=0$.
+Using \eqref{eq:MultistepRelation} and \ref{eq:MarkovPullDown} for the original Markov tower, we have 
+\begin{align*}
+M_{(n+1)k} g_n 
+&= 
+M_{(n+1)k} f^{(n-1)k+k}_{(n-1)k} 
+= 
+M_{(n+1)k}
+(e_{nk}e_{nk+1}\cdots e_{(n+1)k-2}e_{(n+1)k-1})
+\cdot\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (1.8,0) -- (1.8,.8);
+	\draw (.6,.8) arc (-180:0:.25cm);
+%	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
+	\draw (1,0) arc (180:0:.25cm);
+%	\node at (.7,-.2) {\scriptsize{$1$}};
+%	\node at (1.8,1) {\scriptsize{$1$}};
+%	\node at (2,-.2) {\scriptsize{$1$}};
+	\node at (.6,1) {\scriptsize{$k{-}1$}};
+	\node at (1,-.2) {\scriptsize{$k{-}1$}};
+	\node at (0,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+\\&=
+M_{(n+1)k-1} 
+e_{(n+1)k-1}
+\cdot \,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (1.8,0) -- (1.8,.8);
+	\draw (.6,.8) arc (-180:0:.25cm);
+%	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
+	\draw (1,0) arc (180:0:.25cm);
+%	\node at (.7,-.2) {\scriptsize{$1$}};
+%	\node at (1.8,1) {\scriptsize{$1$}};
+%	\node at (2,-.2) {\scriptsize{$1$}};
+	\node at (.6,1) {\scriptsize{$k{-}1$}};
+	\node at (1,-.2) {\scriptsize{$k{-}1$}};
+	\node at (0,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+=
+M_{(n+1)k-1} 
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.25cm);
+	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (1,0) arc (180:0:.3cm);
+	\node at (.8,1) {\scriptsize{$k{-}1$}};
+	\node at (1.6,-.2) {\scriptsize{$k$}};
+	\node at (.4,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+\,.
+\end{align*}
+Since we may perform isotopy in the Temerley-Lieb-Jones subalgebra of $M_{(n+1)k}$, we may decompose the diagram on the right hand side as follows:
+$$
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.25cm);
+	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (1,0) arc (180:0:.3cm);
+	\node at (.8,1) {\scriptsize{$k{-}1$}};
+	\node at (1.6,-.2) {\scriptsize{$k$}};
+	\node at (.4,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+=
+d^{k-2}
+\begin{tikzpicture}[baseline = 1.4cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,3);
+	\draw (.2,0) -- (.2,3);
+	\draw (.6,3) arc (-180:0:.2cm);
+	\draw (.4,3) .. controls ++(270:.35cm) and ++(90:.35cm) .. (1,2) arc (-180:0:.3cm) -- (1.6,3);
+	\draw (1.8,3) -- (1.8,2) arc (0:-180:.5cm) arc (0:180:.2cm) -- (.4,1) arc (-180:0:.2cm) arc (180:0:.4cm) arc (-180:0:.2cm) -- (2,3);
+	\draw (1.2,1) circle (.2cm);
+	\draw (.8,0) arc (180:0:.4cm);
+	\draw[dashed] (0,1) -- (2.2,1);
+	\draw[dashed] (0,2) -- (2.2,2);
+	\node at (1.2,.7) {\scriptsize{$k{-}2$}};
+	\node at (1.2,2.5) {\scriptsize{$k{-}2$}};
+	\node at (1.75,.2) {\scriptsize{$k$}};
+	\node at (.2,-.2) {\scriptsize{$(n{-}1)k$}};
+%
+	\node at (4.2,1.5) {$\leftarrow d\cdot f^{(n-1)k+1+(k-1)}_{(n-1)k+1}$};
+\end{tikzpicture}
+$$
+By the induction hypothesis, we have
+%\dave{used induction hypothesis for arbitrary $j$, which I set to zero earlier. 
+%This isn't the biggest deal, but it's not technically correct.}
+$$
+M_{(n+1)k-1}
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.8,.8) arc (-180:0:.25cm);
+	\draw (1.5,.8) arc (-180:0:.15cm);
+	\draw (1,0) arc (180:0:.3cm);
+	\node at (.8,1) {\scriptsize{$k{-}1$}};
+	\node at (1.6,-.2) {\scriptsize{$k$}};
+	\node at (.4,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+=
+M_{nk+(k-1)}
+\begin{tikzpicture}[baseline = 1.4cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,3);
+	\draw (.2,0) -- (.2,3);
+	\draw (.6,3) arc (-180:0:.2cm);
+	\draw (.4,3) .. controls ++(270:.35cm) and ++(90:.35cm) .. (1,2) arc (-180:0:.3cm) -- (1.6,3);
+	\draw (1.8,3) -- (1.8,2) arc (0:-180:.5cm) arc (0:180:.2cm) -- (.4,1) arc (-180:0:.2cm) arc (180:0:.4cm) arc (-180:0:.2cm) -- (2,3);
+	\draw (1.2,1) circle (.2cm);
+	\draw (.8,0) arc (180:0:.4cm);
+	\draw[dashed] (0,1) -- (2.2,1);
+	\draw[dashed] (0,2) -- (2.2,2);
+	\node at (1.2,.7) {\scriptsize{$k{-}2$}};
+	\node at (1.2,2.5) {\scriptsize{$k{-}2$}};
+	\node at (1.75,.2) {\scriptsize{$k$}};
+	\node at (.2,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+=
+M_{nk}\,
+\begin{tikzpicture}[baseline = .9cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,2);
+	\draw (.2,0) -- (.2,2);
+	\draw (1,2) arc (-180:0:.3cm);
+	\draw (1.8,2) arc (0:-180:.5cm); 
+	\draw (.4,2) -- (.4,1) arc (-180:0:.2cm) arc (180:0:.4cm) arc (-180:0:.2cm) -- (2,2);
+	\draw (1.2,1) circle (.2cm);
+	\draw (.8,0) arc (180:0:.4cm);
+	\draw[dashed] (0,1) -- (2.2,1);
+	\node at (1.2,.7) {\scriptsize{$k{-}2$}};
+	\node at (1.2,2.2) {\scriptsize{$k{-}2$}};
+	\node at (1.75,.2) {\scriptsize{$k$}};
+	\node at (.2,-.2) {\scriptsize{$(n{-}1)k$}};
+\end{tikzpicture}
+=
+M_{nk} g_n.
+$$
+This completes the proof.
 \end{proof}
 
 
