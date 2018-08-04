@@ -1331,38 +1331,44 @@ If $Y_n =(0)$, then $Y_{k} = (0)$ for all $k\geq n$.
 \mbox{}
 \begin{enumerate}[label={\rm(EP\arabic*)}]
 \item
-We know that $d^2E_{n+1}(ye_n) = y $, so the proposed map has a left inverse.
+By \ref{eq:MarkovIndex}, $d^2E_{n+1}(ye_n) = y $, so the proposed map has a left inverse.
 
 \item
-This follows directly from \ref{EP:Injective}.
+This follows directly from \ref{eq:MarkovPullDown} and \ref{EP:Injective}.
 
 \item
-For $x\in M_n$, we have $\tr_{n+1}(xe_n) = \tr_n(E_{n+1}(xe_n)) = \tr_n(x E_{n+1}(e_n)) = d^{-2} \tr_n(x)$, since $E_{n+1}(e_n) = d^{-2}$.
+By \ref{eq:MarkovIndex}, for $x\in M_n$, we have $\tr_{n+1}(xe_n) = \tr_n(E_{n+1}(xe_n)) = \tr_n(x E_{n+1}(e_n)) = d^{-2} \tr_n(x)$.
+%, since $E_{n+1}(e_n) = d^{-2}$.
 
 \item
-$M_{n+1} e_n = M_n e_n$ and $e_nxe_n = E_n(x)e_n$ for all $x\in M_n$.
+By \ref{eq:MarkovPullDown}, $e_n M_{n+1} e_n= e_nM_n e_n$.
+By \ref{eq:MarkovImplement}, $e_n M_n e_n = M_{n-1}e_n$.
 
 \item
-$M_ne_nM_n$ is a 2-sided ideal of $M_{n+1}$ by the pull down condition, as discussed in Remark \ref{pulldowniff}.
+That $M_ne_nM_n$ is a 2-sided ideal is equivalent to \ref{eq:MarkovPullDown} as in Remark \ref{pulldowniff}.
 
 \item
 It suffices to show the map is injective, which also shows it is well-defined. % This was written here, but I can't make sense of it. 
 %First, we check that the map $\phi:ae_nb\to ap_nb$ is injective. 
 Suppose $\sum a_i p_n b_i = 0$.
-Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, and therefore $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective.
-Hence $$0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n$$ for all $a,b\in M_n$, and thus $\sum a_i e_n b_i = 0$, so the map is injective. 
+Then for all $a,b\in M_n$, we have $0=p_na\left(\sum a_i p_n b_i\right) bp_n = \sum E_{n}(aa_i)E_n(b_ib)p_n$, and therefore $\sum E_{n}(aa_i)E_n(b_ib) = 0$ as $M_n \ni x\mapsto xp_n \in \langle M_n, p_n\rangle$ is injective by \ref{EP:Injective} applied to the Jones tower for $M_{n-1} \subset (M_n,\tr_n)$, which is a Markov tower.
+Hence 
+$$
+0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n
+$$ 
+for all $a,b\in M_n$, and thus $\sum a_i e_n b_i = 0$, so the map is injective. 
 
 %To show that $\phi$ is well-defined, we may reverse the above argument, using \ref{EP:Injective}. 
 %		It is clear that $\phi$ is surjective. 
 
 \item
-For $a,b\in M_n$, we have 
+For $a,b\in M_n$, by \ref{EP:MarkovTraces}, 
 $\Tr_{n+1}(ap_n b) = \tr_n(ab) = \tr_n(ba) = d^2\tr_{n+1}(bae_n) = d^2 \tr_{n+1}(ae_n b)$.
 
 \item
 Since $X_0 = (0)$ and $X_1 = (0)$ by definition, we may assume $n\geq 2$.
 As in the proof of \cite[Thm.~4.6.3.vi]{MR999799}, we may assume $y$ is a central projection in $M_{n+1}$ such that $y e_{n} = 0$.
-Then for all $ae_{n-1} b \in X_n$, $y ae_{n-1} b = d^2 yae_{n-1} e_{n}e_{n-1} b = d^2 ae_{n-1} ye_{n} e_{n-1} b = 0$.
+Then for all $ae_{n-1} b \in X_n$, by \ref{eq:MarkovJonesProjections}, $y ae_{n-1} b = d^2 yae_{n-1} e_{n}e_{n-1} b = d^2 ae_{n-1} ye_{n} e_{n-1} b = 0$.
 The final claim follows from $z_{n}E_{n+1}(y) = E_{n+1}(z_n y)= 0$ where $z_n$ is the central support of $e_{n-1}$ in $M_n$.
 
 \item
