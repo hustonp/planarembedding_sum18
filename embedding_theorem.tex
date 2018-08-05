@@ -1196,48 +1196,16 @@ $$
 Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 \end{proof}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}  
-\label{cattheory}
-
-\nn{expand this section}
-
-From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
-We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
-
-\begin{defn}\textnormal{
-		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
-\begin{itemize}
-\item The 0-morphisms of $\cG$ are the two objects
-$\uscircle$ and $\scircle$.
-\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
-\begin{itemize}
-	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
-	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
-\end{itemize}
-Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
-\item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
-\end{itemize}}
-\end{defn}
-
-For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,1808.00323}. 
-When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
-
-\nn{theorem stating equivalence between these categories and planar algebras.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modules for planar algebras and pivotal module categories}
+\section{Markov towers and their projection categories}
 
 \nn{in this section, we give a towers of algebras approach to pivotal module categories.
 We begin with the notion of a \emph{Markov tower}...}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Markov towers}
+\subsection{Markov towers and their elementary properties}
 \label{sec:MarkovTowers}
 
 The towers of algebras analog of a module category is played by the role of a \emph{Markov tower}.
@@ -1416,11 +1384,22 @@ Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite 
 Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a Markov tower of finite dimensional von Neumann algebras.
 \end{ex}
 
-\begin{ex}[Shifting a Markov tower]
-\label{ex:ShiftMarkovTower}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operations on Markov towers to produce new Markov towers}
+
+In this section, we describe various operations on a Markov tower $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ which yield new Markov towers.
+We begin with shifting and compressing the tower.
+We then study the multistep tower.
+For each of these operations, we discuss how the principal graph changes. 
+\nn{TODO!}
+
+We omit the proof of the following straightforward proposition.
+
+\begin{prop}[Shifting a Markov tower]
+\label{prop:ShiftMarkovTower}
 Suppose $(M_n, \tr_n, e_{n+1})$ is a Markov tower.
 For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
-\end{ex}
+\end{prop}
 
 Similar to the discussion in \S\ref{sec:CompressionIso}, given a Markov tower $(M_n,\tr_n, e_{n+1})$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
 First, for all $n\geq 0$, we define a faithful trace $\tr_n^p$ on $pM_n p$ by
@@ -1448,10 +1427,10 @@ Suppose $(M_n,\tr_n, e_{n+1})$ is a Markov tower of finite dimensional von Neuma
 Then $(pM_np, \tr_n^p, pe_{n+1})$ is a Markov tower, where $\tr_n^p$ is defined as in \eqref{eq:CompressedTrace}.
 \end{prop}
 \begin{proof}
-First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations, since $[e_n,p]=0$ for all $n\geq 0$.
-That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ was shown above in \eqref{eq:CompressionImplementsConditionalExpectation}.
-Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$.
-Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have pull down.
+First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections}, since $[e_n,p]=0$ for all $n\geq 0$.
+That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ as in \ref{eq:MarkovImplement} was shown above in \eqref{eq:CompressionImplementsConditionalExpectation}.
+Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$, so \ref{eq:MarkovIndex} holds.
+Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have \ref{eq:MarkovPullDown}.
 \end{proof}
 
 \begin{nota}
@@ -1529,12 +1508,12 @@ It is straightforward to verify using Kauffman's diagrammatic calculus for Tempe
 
 We now show that taking every $k$-th algebra in a Markov tower gives us another Markov tower.
 
-\begin{lem}
-\label{lem:MultistepJonesProjections}
+\begin{prop}
+\label{prop:MultistepJonesProjections}
 Suppose $(M_n, \tr_, e_{n+1})$ is a Markov tower, and let $j\geq 0$ and $k\geq 1$.
 Define $g_n \in M_{j+(n+1)k}$ as in Notation \ref{nota:TLJK Diagrams}.
 Then $(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
-\end{lem}
+\end{prop}
 \begin{proof}
 We saw Condition \ref{eq:MarkovJonesProjections} holds from the diagrammatic calculus, and Conditions \ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} are straightforward induction arguments.
 
@@ -1542,7 +1521,7 @@ We prove \ref{eq:MarkovPullDown} by strong induction on $k$.
 The base case $k=1$ is exactly \ref{eq:MarkovPullDown} for the original Markov tower.
 Now suppose that \ref{eq:MarkovPullDown} holds for any multi-step towers with increment less than $k$.
 Consider the multi-step tower of algebras $(M_{j+nk})_{n\geq 0}$, which has increment $k$.
-By Example \ref{ex:ShiftMarkovTower}, we may assume $j=0$.
+By Proposition \ref{prop:ShiftMarkovTower}, we may assume $j=0$.
 Using \eqref{eq:MultistepRelation} and \ref{eq:MarkovPullDown} for the original Markov tower, we have 
 \begin{align*}
 M_{(n+1)k} g_n 
@@ -2347,7 +2326,7 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
 \end{prop}
 \begin{proof}
-\nn{Use Lemma \ref{lem:MultistepJonesProjections}}
+\nn{Use Proposition \ref{prop:MultistepJonesProjections}}
 \end{proof}
 
 \begin{cor}
@@ -2358,6 +2337,8 @@ Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in c
 \begin{proof}
 \nn{TODO}
 \end{proof}
+
+\nn{TODO: How does the category change under the operations in the previous section?}
 
 %\begin{prop}
 %\label{prop:MarkovAssociative}
@@ -2582,6 +2563,45 @@ Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in c
 %
 %This completes the proof.
 %\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Unitary multitensor categories, subfactor planar algebras, \texorpdfstring{$\lambda$}{lambda}-lattices, and their modules} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}  
+\label{cattheory}
+
+\nn{expand this section}
+
+From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
+We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
+
+\begin{defn}\textnormal{
+		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
+\begin{itemize}
+\item The 0-morphisms of $\cG$ are the two objects
+$\uscircle$ and $\scircle$.
+\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
+\begin{itemize}
+	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
+	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
+\end{itemize}
+Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
+\item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
+\end{itemize}}
+\end{defn}
+
+For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,1808.00323}. 
+When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
+
+\nn{theorem stating equivalence between these categories and planar algebras.}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modules for pivotal categories, planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices} 
