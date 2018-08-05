@@ -2572,7 +2572,7 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Unitary multitensor categories, subfactor planar algebras, \texorpdfstring{$\lambda$}{lambda}-lattices, and their modules} 
+\section{Modules for unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices} 
 
 
 
@@ -2670,6 +2670,8 @@ $$
 for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, the (non Karoubi complete!) full subcategory of $\cC$ whose objects are of the form $ X^{ \text{alt}\otimes k}$ for $k\geq 0$.
 \end{defn}
 
+
+\dave{move all of planar modules into one definition environment}
 The following definition of planar module is more general than the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar possess additional structure. \nn{Add a citation for details.}
 \begin{defn}
 	An \textit{annular tangle} is a tangle of the planar operad with a choice of distinguished internal disk. This notion first appears in \cite{MR1929335}. % clumsy parallelism
@@ -2689,7 +2691,7 @@ The definitions of stationary tangles and right planar module are motivated by t
 \nn{todo: add an example of a this diagrammatic transformation}
 
 \begin{ex}
-Given a subfactor planar algebra $\cQ_\bullet$, both $\pm$ parts of $\cQ_\bullet$ given by $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are cyclic right planar modules for $\cQ_\bullet$.
+Given a subfactor planar algebra $\cQ_\bullet$, the even parts $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are each separately cyclic right planar modules for $\cQ_\bullet$.
 \end{ex}
 
 \begin{ex}
@@ -2720,24 +2722,24 @@ We denote the Jones projections of $\cQ_\bullet/Q_\bullet$ by $e_{n,\pm}$.
 \begin{defn}
 A right \emph{lattice module} for 
 the $\lambda$-lattice $Q_\bullet$ 
-is a Markov tower $M_\bullet = (M_n, \tr_n, p_{n+1})$
-together with for every $n\geq 0$,
-a family of unital $*$-algebra homomorphisms $\rho^n_\bullet : Q_\bullet \to M_\bullet$ where
-\begin{align*}
-\rho^n_{2k} : Q_{n,+} \to M_n'\cap M_{2k+n}
+is a Markov tower $M_\bullet = (M_k, \tr_k, p_{k+1})_{k\geq 0}$
+together with for every $k\geq 0$,
+a family of unital $*$-algebra homomorphisms $\rho^k_\bullet : Q_\bullet \to M_\bullet$ where
+\begin{equation}
+\label{eq:ParityOfRightAction}
+\rho^{2k}_{n} : Q_{n,+} \to M_{2k}'\cap M_{2k+n}
 \qquad
 \qquad
-\rho^n_{2k+1} : Q_{n,-} \to M_n'\cap M_{2k+n+1}
-\end{align*}
-satisfying the following compatibility axioms \nn{fix below here}:
+\rho^{2k+1}_{n} : Q_{n,-} \to M_{2k+1}'\cap M_{(2k+1)+n}
+\end{equation}
+satisfying the following compatibility axioms, where $\pm$ below depends on the parity of $k$ as in \eqref{eq:ParityOfRightAction}:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-For all $n\geq 1$, $\rho_{k,n+1}(e_{n}) = f_{n+k}$, where $e_n = e_{n,+}$ if $k$ is even and $e_n = e_{n,-}$ if $k$ is odd.
-(Notice this implies that the Jones projections $(e_{n,\pm})$ and $(f_n)$ have the same loop modulus $d$.)
+For all $n\geq 1$, $\rho^{k}_{n+1}(e_{n}) = p_{n+k}$, where $e_n = e_{n,+}$ if $k$ is even and $e_n = e_{n,-}$ if $k$ is odd.
+(Notice this implies that the Jones projections $(e_{n,\pm})$ and $(p_n)$ have the same loop modulus $d$.)
 \item
-For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have 
-$\rho_{k, n+1}\left(
-m\otimes
+For all $x\in \cP_{n,\pm}$, we have
+$\rho^{k}_{n+1}\left(
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw (.4,-.5) -- (.4,.5);
 	\draw (0,-.5) -- (0,.5);
@@ -2746,24 +2748,12 @@ m\otimes
 	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
 \end{tikzpicture}
 \,\,\,
-\right) = \rho_{k+1,n}(m\otimes x)$
-\item
-For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have 
-$\rho_{k, n+1}\left(
-m\otimes
-\begin{tikzpicture}[xscale=-1, baseline=-.1cm]
-%	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
-	\draw (.4,-.5) -- (.4,.5);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.2,.45) {\scriptsize{$n$}};
-	\node at (-.2,-.45) {\scriptsize{$n$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-\right) = \rho_{k+1,n}(m\otimes x)$
+\right) 
+= 
+\rho^k_{n}(x)$.
 \item
 For all $x\in \cP_{n,\pm}$ for $n\geq 1$, we have 
-$\rho_{k, n-1}\left(
-m\otimes
+$\rho^k_{n-1}\left(
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
 	\draw (0,-.5) -- (0,.5);
@@ -2772,8 +2762,25 @@ m\otimes
 	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
 \end{tikzpicture}
 \,\,
-\right) = d\cdot E^{M_{k+n}}_{M_{k+n-1}}(\rho_{k,n}(m\otimes x))$.
+\right) 
+= 
+d\cdot E^{M_{k+n}}_{M_{k+n-1}}(\rho^k_{n}(x))$.
+\item
+For all $x\in \cP_{n,\pm}$, we have 
+$\rho^k_{n+1}\left(
+\begin{tikzpicture}[xscale=-1, baseline=-.1cm]
+%	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
+	\draw (.4,-.5) -- (.4,.5);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.2,.45) {\scriptsize{$n$}};
+	\node at (-.2,-.45) {\scriptsize{$n$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+\right) 
+= 
+\rho^{k+1}_{n}(x)$
 \end{enumerate}
+Notice that (1) -- (3) above concern only the family of $*$-algebra homomorphisms $\rho^k_\bullet$ for fixed $k$, whereas condition (4) is compatibility condition amongst the $\rho^k_\bullet$.
 %\item
 %For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have
 %$\tr_{k+n}(\rho_{k,n}(x)) = \tr_
@@ -2790,50 +2797,29 @@ Given a $\lambda$-lattice $Q_\bullet$, both $\pm$ parts of $Q_\bullet$ given by 
 \end{ex}
 
 
-\begin{ex}
-Building on Example \nn{fix this to be for lattices.}
-
-Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
-Then for any $\pm$ vertex $v$ of $\Gamma$, we get a Markov tower $M_\bullet = M(\Gamma,v)_\bullet$ by defining $M(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$, $\tr_n := p_v \tr_{\cG_{n,\pm}}$ (notice that $\tr_{\cG_{n,\pm}}$ is $\cG_{0,\pm}$-valued, so compressing by the central projection $p_v$ gives a scalar-valued trace), and $f_n : = p_v g_{n,\pm}$.
-
-Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $M_\bullet$ with the structure of a cyclic right planar $\cQ_\bullet$ module by defining 
-$$
-\rho_{k,n}(p_v m \otimes x) 
-:=
-\begin{tikzpicture}[baseline]
-\draw (0,-.7) -- (0,.7);
-\draw (1,-.7) -- (1,.7);
-\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
-\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
-\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
-\node at (0,-.9) {\tiny{$k$}};
-\node at (1,-.9) {\tiny{$n$}};
-\end{tikzpicture}
-\,.
-$$ 
-\end{ex}
-
 
 
 \begin{lem}
-Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra and $M_\bullet$ is a right planar module for $\cQ_\bullet$.
+Suppose $Q_\bullet$ is a finite depth $\lambda$-lattice and $(M_\bullet,\rho^\bullet_\bullet)$ is a right planar module for $Q_\bullet$.
 Then $M_\bullet$ has finite depth.
 \end{lem}
 \begin{proof}
-Let $r$ be minimal such that $\cQ_{r+1,+} = \cQ_{r,+} e_{r,+}\cQ_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $\cQ_{r+1,+}$ over $\cQ_{r,+}$ so that $\sum_b b (e_{r,+}) b^* = 1_{\cQ_{r+1,+}}$.
+\dave{$p_r$ and $\rho_r$ look too similar.}
+Let $r$ be minimal such that $Q_{r+1,+} = Q_{r,+} e_{r,+}Q_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $Q_{r+1,+}$ over $Q_{r,+}$ so that $\sum_b b (e_{r,+}) b^* = 1_{Q_{r+1,+}}$.
 Then 
 \begin{align*}
 1_{M_{r+1}}
 &=
-\rho_{0,r+1}(1_{M_0} \otimes 1_{\cQ_{r+1,+}})
+\rho^0_{r+1}(1_{Q_{r+1,+}})
 =
 \sum_b
-\rho_{0,r+1}(1_{M_0}\otimes b(e_{r,+})b^*)
-\\&=
+\rho^0_{r+1}(b(e_{r,+})b^*)
+%\\&=
+=
 \sum_b
-\rho_{0,r+1}(1_{M_0}\otimes b)
-\rho_{0,r+1}(1_{M_0}\otimes e_{r,+})
-\rho_{0,r+1}(1_{M_0}\otimes b^*)
+\rho^{0}_{r+1}(b)
+\rho^{0}_{r+1}(e_{r,+})
+\rho^{0}_{r+1}(b^*)
 %d^{-1}
 %\sum_b
 %\rho_{0,r+1}\left(
@@ -2850,13 +2836,15 @@ Then
 %\end{tikzpicture}
 %\,\,\,
 %\right)
-\\&=
+%\\&=
+=
 \sum_b
-\rho_{0,r}(1_{M_0}\otimes b)
-(f_r)
-\rho_{0,r}(1_{M_0}\otimes b^*).
+\rho^{0}_{r}(b)
+p_r
+\rho^{0}_{r}(b^*).
 \end{align*}
-Hence $\{\rho_{0,r}(1_{M_0} \otimes b)\}$ is a Pimsner-Popa basis for $M_{r+1}$ over $M_r$.
+Hence $\{\rho^{0}_{r}(b)\}$ is a Pimsner-Popa basis for $M_{r+1}$ over $M_r$.
+Hence $M_\bullet$ has finite depth by \ref{EP:FiniteDepth}.
 \end{proof}
 
 
