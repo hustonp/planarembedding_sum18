@@ -279,18 +279,18 @@
 	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
 }
 
-\newcommand{\ncircle}[4]{
+\newcommand{\ncircle}[5]{
 	\draw[very thick, #1] #2 circle (#3);
-	\node at #2 {#4};
+	\node at #2 {#5};
 %	\filldraw[red] ($#2+(#4:#3cm)$) circle (.05cm);
-%	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
+	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
 }
 
   \newcommand{\tikzmath}[2][]
      {\vcenter{\hbox{\begin{tikzpicture}[#1]#2
                      \end{tikzpicture}}}
      }
-
+ 
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\uscircle}{
 \begin{tikzpicture}
@@ -2671,16 +2671,17 @@ for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, th
 \end{defn}
 
 
-\dave{move all of planar modules into one definition environment}
 The following definition of planar module is more general than the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar possess additional structure. \nn{Add a citation for details.}
 \begin{defn}
 	An \textit{annular tangle} is a tangle of the planar operad with a choice of distinguished internal disk. This notion first appears in \cite{MR1929335}. % clumsy parallelism
-\end{defn}
-\begin{defn}
+%\end{defn}
+%\begin{defn}
+
 	A \textit{stationary tangle} \nn{as opposed to rotating. Bikeshed this.}
 	is an annular tangle for which the * for the distinguished internal disk and the * on the output disk are on the same region, i.e. they are not separated by any strands. 
-\end{defn}
-\begin{defn}
+
+%\end{defn}
+%\begin{defn}
 	\nn{In our cyclic planar modules, the box spaces that are (un)shaded on the left are simply $0$, depending on the choice of strand. Maybe mention this, perhaps in the example?}
 	Suppose $\cA_\bullet$ is a planar algebra. A \textit{right planar module} $\cM_\bullet$ over $\cA_\bullet$ is a collection of vectorspaces $(M_{n})_{n=0}^\infty$ endowed with an action of $\cA_\bullet$:
 	for every stationary tangle $T$ of type in the shaded planar operad, we have an action $\alpha_T:\cM_{k_0,\pm_0}\otimes(\otimes_{i=1}^r\cA_{k_i,\pm_i})\to\cM_{n,\pm}$, where $(k_0,\pm_0)$ is the type of the distinguished disk, $(n,\pm)$ is the type of the output disk, and $(k_i,\pm_i)_{i=1}^r$ are the types of the remaining input disks. The several $\alpha_T$ are required to be compatible with the operadic composition of tangles, as in the definition of a planar algebra. 
