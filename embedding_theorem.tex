@@ -1718,8 +1718,9 @@ For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\d
 %We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
 \item
 We define composition in three cases.
-\begin{enumerate}[label={\rm(\alph*)}]
+\begin{enumerate}[label={\rm(C\arabic*)}]
 \item
+\label{compose:upup}
 If $x\in \cM_0([n] \to [n+2j])$ and $y\in \cM_0([n+2j] \to [n+2j+2k])$, we define 
 $$
 y\circ x
@@ -1757,6 +1758,7 @@ x^\dag\circ y^\dag= x^* y^* = (y x)^* = (y\circ x)^\dag.
 \end{equation}
 
 \item
+\label{compose:updown}
 If $x\in \cM_0([n] \to [n+2j])$ and $y \in \cM_0([m+2k] \to [m])$
 with $n+2j = m+2k$, $m= n + 2\ell$, and $j = k+\ell$,
 we define
@@ -1805,6 +1807,7 @@ E^{n+k}_{n}(y x)^*
 \end{equation}
 
 \item
+\label{compose:downup}
 If $x\in \cM_0([n+2j] \to [n])$ and $y\in \cM_0([n] \to [n+2k])$ with $k=j+\ell$, we define
 $$
 y\circ x 
@@ -2335,7 +2338,9 @@ Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitarliy Karoubi comp
 Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in canonical bijection with the vertices of the principal graph.
 \end{cor}
 \begin{proof}
-\nn{TODO}
+All endomorphism algebras of $\cM$ are finite dimensional $\Cstar$ algebras which are semisimple, and thus $\cM$ is semisimple. By \ref{EP:BasicContruction}, every minimal projection in $X_{n+2}$ for $n\geq 0$ is equivalent to a minimal projection in $M_{n}$ via a parial isometry in $\cM_0([n] \to [n+2])$. 
+Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism $p\in M_{n+1} = \cM_0([n] \to [n+2])$, which is a partial isometry using the definition of composition \ref{compose:updown} and \ref{compose:downup} in $\cM_0$, and this exhausts all equivalence classes of minimal projections in $X_{n+2}$.
+By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
 
 \nn{TODO: How does the category change under the operations in the previous section?}
