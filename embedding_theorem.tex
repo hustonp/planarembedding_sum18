@@ -779,17 +779,11 @@ for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, th
 \end{defn}
 
 
-The following definition of planar module is more general than the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar possess additional structure. \nn{Add a citation for details.}
+We next give an appropriate definition of planar modules over a planar algebra as algebras over another operad.
+\footnote{Our definition of a planar module over a planar algebra differs significantly from the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar modules correspond to algebra objects in the Drinfel'd center of such a category. \nn{Add a citation for details.}}
 \begin{defn}
-	An \textit{annular tangle} is a tangle of the planar operad with a choice of distinguished internal disk. This notion first appears in \cite{MR1929335}. % clumsy parallelism
-%\end{defn}
-%\begin{defn}
-
-	A \textit{stationary tangle} \nn{as opposed to rotating. Bikeshed this.}
-	is an annular tangle for which the * for the distinguished internal disk and the * on the output disk are on the same region, i.e. they are not separated by any strands. 
-
-\dave{here's a labelled representative tangle (without strings or shadings) from the operad i want to use.
-Perhaps this is in \cite{MR1718089}? The name is right...}
+	The \textit{Roquefort-cheese operad} is a variant of the shaded planar operad, akin to a shaded, stranded version of the Swiss-cheese operad introduced in \cite{MR1718089}. In this operad, the starred region of the boundary of the output disk of a tangle is replaced by a vertical line on the left side of a tangle, and the adjacent region inside the tangle must be unshaded. In addition to the usual input disks, tangles may also have input semidisks, whose boundaries intersect the left wall. The operadic composition comes from plugging tangles into semidisks. A representative tangle appears below. \nn{make a figure-oid environment}
+\end{defn}
 $$
 \begin{tikzpicture}[baseline = -.1cm]
 	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
@@ -818,17 +812,7 @@ $$
 \,:
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
-%\end{defn}
-%\begin{defn}
-	\nn{In our cyclic planar modules, the box spaces that are (un)shaded on the left are simply $0$, depending on the choice of strand. Maybe mention this, perhaps in the example?}
-	Suppose $\cA_\bullet$ is a planar algebra. A \textit{right planar module} $\cM_\bullet$ over $\cA_\bullet$ is a collection of vectorspaces $(M_{n})_{n=0}^\infty$ endowed with an action of $\cA_\bullet$:
-	for every stationary tangle $T$ of type in the shaded planar operad, we have an action $\alpha_T:\cM_{k_0,\pm_0}\otimes(\otimes_{i=1}^r\cA_{k_i,\pm_i})\to\cM_{n,\pm}$, where $(k_0,\pm_0)$ is the type of the distinguished disk, $(n,\pm)$ is the type of the output disk, and $(k_i,\pm_i)_{i=1}^r$ are the types of the remaining input disks. The several $\alpha_T$ are required to be compatible with the operadic composition of tangles, as in the definition of a planar algebra. 
-\end{defn}
-Note that plugging a stationary tangle into the distinguished input disk of a stationary tangle yields a stationary tangle, as does plugging an arbitrary tangle into a non-distinguished input disk. 
-
-The definitions of stationary tangles and right planar module are motivated by the diagrammatic calculus of the paragroup. We may represent depict a stationary tangle by placing the tangle in standard form with the distinguished disk at the bottom, and expanding the boundaries of the distinguished input disk and output disk to parallel lines, in effect sending a curve connecting the * of the distinguished disk and the * on the output disk to infinity. Because the tangle is stationary, the distinguished disk need not cross any strands to reach the bottom of the standard form, and the curve sent to infinity can also avoid crossing strands or input disks. In this diagrammatic form, a stationary tangle looks just like a morphism between $1_{\cM_{k_0,\pm_0}}$ and $1_{\cM_{n,\pm}}$ in the paragroup, and indeed, the action $\alpha_T$ gives a map $\otimes_{i=1}^r\cA_{k_i,\pm_i}\to\Hom(\cM_{k_0,\pm_0},\cM_{n,\pm})$, where the latter $\Hom$-space is $\Hom$ in a module category over the paragroup. % extremely awk 
-\nn{todo: add an example of a this diagrammatic transformation}
-
+Tangles of the Roquefort-cheese operad can also be composed with shaded planar tangles, by plugging a shaded planar tangle into an input disk. One should think of the box spaces for semidisks as being endomrphisms of objects in a module category, while the involvement of full disks implements the action of a planar algebra on the module. 
 \begin{ex}
 Given a subfactor planar algebra $\cQ_\bullet$, the even parts $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are each separately cyclic right planar modules for $\cQ_\bullet$.
 \end{ex}
