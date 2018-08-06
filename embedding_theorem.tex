@@ -392,19 +392,20 @@ indecomposable finitely semisimple left $\cC$-module $\Cstar$ categories $\cM$ w
 The proof in \cite{EH3} is mostly in the language of tensor categories and their modules.
 In this article, we provide an independent proof in the original towers of algebras approach to subfactor theory \cite{MR936086,MR999799,MR1278111} and the graph planar algebra embedding theorem \cite{MR2812459}.
 
-After some initial background sections, in \S\nn{}, we summarize the well-known correspondence between:
+Our starting point is the well-known correspondence between:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $c = 1_0 \otimes c \otimes 1_1$ with its canonical \emph{balanced} unitary dual functor
+unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$ with its canonical \emph{balanced} unitary dual functor
 (see \cite{1808.00323}),\footnote{
 \nn{define generator}
 } 
 \item
 Jones' subfactor planar algebras $\cP_\bullet$ \cite{math.QA/9909027}, and
 \item
-Popa's standard $\lambda$-lattices $A_{\bullet,\bullet}$ \cite{MR1334479}.
+Popa's standard $\lambda$-lattices $A_{\bullet,\bullet}$ of commuting squares \cite{MR1334479}.
 \end{enumerate}
-We then study right modules for these algebraic objects; we briefly describe these notions here, and we refer the reader to \S\nn{} for more details.
+In \S\ref{sec:Modules}, we build on this correspondence by defining analogous notions of \emph{right modules} for these algebraic objects.
+We briefly describe these objects here, and we refer the reader to \S\ref{sec:3TypesOfModules} for more details.
 
 A \emph{pivotal} module category for $\cC$ is a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category equipped with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\cM(m\to m)$ which is compatible with the right $\cC$-action \cite{MR3019263,EH3}.
 That is, for all $m\in \cM$, $c\in \cC$, and $f\in \End_\cM(m \vartriangleleft c)$, 
@@ -423,7 +424,7 @@ The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
 together with an action of the 
 shaded planar module operad, 
 which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
-We refer the reader to \S\ref{ssec:moduledefs} for the definition, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:\,\footnote{ 
+We refer the reader to Definition \ref{def:PlanarModule} for the details, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:\,\footnote{ 
 We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic as the category of finite dimensional $\bbC$-vector spaces is symmetric.
 }
 $$
@@ -454,8 +455,8 @@ $$
 \,:
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
-\nn{sentence about operations one can do; which tangles glue where}
-The tower of algebras $(M_k)_{k \geq 0}$ must satisfy that multiplication in the von Neumann algebra $M_k$ is given by the tangle
+Here, one can glue shaded planar module tangles into the module input semidisks, and one can glue circular shaded planar tangles into the circular input disks.
+In addition, the tower of algebras $(\cM_k)_{k \geq 0}$ must satisfy that multiplication in the von Neumann algebra $\cM_k$ is given by the tangle
 $$
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw (.25,-1) -- (.25,1);
@@ -469,10 +470,10 @@ $$
 	\node at (.4,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 :
-M_k \otimes M_k \to M_k,
+\cM_k \otimes \cM_k \to \cM_k,
 $$
-and the $*$-structure on $M_k$ is compatible with the reflection of tangles about a horizontal axis.
-Notice this canonically identifies $M_0 = \bbC$ as a von Neumann algebra.
+and the $*$-structure on $\cM_k$ is compatible with the reflection of tangles about a horizontal axis.
+Notice this canonically identifies $\cM_0 = \bbC$ as a von Neumann algebra.
 Under this identification, we require that the linear functionals
 $$
 \tr_k:=
@@ -488,14 +489,14 @@ d^{-k}\cdot\,
 %	\node at (.4,-.8) {\scriptsize{$n$}};
 \end{tikzpicture}
 :
-M_k \to M_0 = \bbC
+\cM_k \to \cM_0 = \bbC
 $$
 are faithful positive normalized traces, where $d$ is the loop parameter of $\cP_\bullet$.
 
-In order to define a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers} we define the notion of a \emph{Markov tower} $M_\bullet$, which is a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:
-\begin{enumerate}[label={\rm(\arabic*)}]
+Prior to defining a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers}, we define the notion of a \emph{Markov tower} $M_\bullet$, which is a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:
+\begin{enumerate}[label={\rm(M\arabic*)}]
 \item
-The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with parameter $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
+The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with \emph{modulus} $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
 \item
 For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
 \item
@@ -503,30 +504,24 @@ For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \item
 For all $n\geq 1$, we have the Pimsner-Popa pull down property \cite{MR860811}: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
 \end{enumerate}
-One should view a Markov tower as an analog of Popa's \emph{$\lambda$-sequence/lattice} \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
+One should view a Markov tower as an analog of Popa's $\lambda$-lattices \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
+Indeed, one should compare \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2) and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.
+
 Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
 For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
 The tower is called \emph{finite depth} if the principal graph is finite.
 
-
-A \emph{cyclic right lattice module} for a $\lambda$-lattice $A_{\bullet, \bullet}$ with $\lambda=d^{-2} $ is a Markov tower $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ together with
-\todo{} 
-
-
-We then develop the notion of a module for subfactor planar algebras and $\lambda$-lattices in \S\nn{}, and we show the three notions of module for the above structures are equivalent in Theorem \nn{}.
-\nn{cyclic/connected case.}
-
-
-
+A \emph{cyclic right lattice module} for a $\lambda$-lattice $A_{\bullet, \bullet}$ with $\lambda=d^{-2} $ is a Markov tower $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ together with a family of $*$-algebra homomorphisms $\rho^k_n : A_{n,\pm } \to M_k'\cap M_{k+n}$ for $k,n\geq 0$ that map Jones projections to shifted Jones projections, and which are compatible with the inclusions $A_{n,+}\subset A_{n+1,}$ and $A_{n,-} \subset A_{n+1,-}$ and with the conditional expectations.
+We refer the reader to Definition \ref{defn:LatticeModule} for precise statements.
 
 The following theorem generalizes the correspondence between
-unitary $2\times 2$ multitensor categories $\cC$ with $1_\cC =1_0\oplus 1_1$ and generator $c = 1_0\otimes c \otimes 1_1$, 
+unitary $2\times 2$ multitensor categories $\cC$ with $1_\cC =1_0\oplus 1_1$ and generator $X = 1_0\otimes X \otimes 1_1$, 
 subfactor planar algebras $\cP_\bullet$,
 and $\lambda$-lattices $\cA_{\bullet, \bullet}$.
 
 \begin{thmalpha}
 \label{thm:ModuleEquivalence}
-Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, c)$ and $\cA_{\bullet, \bullet}$ as above.
+Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ and $\cA_{\bullet, \bullet}$ as above.
 There is an equivalence between:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
@@ -538,8 +533,9 @@ cyclic right lattice modules $M_\bullet$ for $\cA_{\bullet, \bullet}$.
 \end{enumerate}
 \end{thmalpha}
 
-Notice that any Markov tower of modulus $d$ is automatically equipped with the structure of a cyclic right $d^{-2}$-lattice module for $TLJ(d)_\bullet$.
-Moreover, any pointed bipartite graph $(\Gamma,v)$ with a quantum dimension function on vertices $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying
+In fact, any Markov tower of modulus $d$ is automatically equipped with the structure of a cyclic right lattice module for 
+the Temerley-Lieb-Jones $d^{-2}$-lattice $TLJ(d)_\bullet$.
+Moreover, any pointed bipartite graph $(\Gamma,v)$ with a \emph{quantum dimension function} on vertices $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying
 $$
 d\cdot \dim(v) = \sum_{w\sim v} \dim(w)
 $$
@@ -553,7 +549,7 @@ pivotal $\cT\cL\cJ(d)$-module $\Cstar$ categories with basepoint and
 pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
 \end{coralpha}
 
-One passes from (2) or (3) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ or $\cA_{\bullet,\bullet}$ and $(\cC, X)$.
+One passes from (2) or (3) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ or $A_{\bullet,\bullet}$ and $(\cC, X)$.
 One passes from (1) to (2) using the diagrammatic calculus, similar to how one gets a subfactor planar algebra from $(\cC, X)$ \cite{MR2811311,1808.00323}.
 We rapidly sketch how to pass from (3) to (1), as it will be useful for our proof of the module embdedding theorem.
 
@@ -562,11 +558,11 @@ We rapidly sketch how to pass from (3) to (1), as it will be useful for our proo
 %Here, $1_\cC$ decomposes as an orthogonal direct sum $1_\cC = 1_0\oplus 1_1$, which decomposes $\cC= \bigoplus_{i,j=0}^1 \cC_{ij}$ where $\cC_{ij}:= 1_i \otimes \cC \otimes 1_j$.
 %By a %Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
 
-From the right pivotal $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a Markov tower $M_\bullet$ by setting
+From the pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a Markov tower $M_\bullet$ by setting
 $$
-M_n := \End_\cM(m \vartriangleleft  \underbrace{c\otimes \overline{c} \otimes \cdots \otimes c^?}_{n \text{ tensorands}})
+M_n := \End_\cM(m \vartriangleleft  \underbrace{X\otimes \overline{X} \otimes \cdots \otimes X^?}_{n \text{ tensorands}})
 $$
-where for our generator $c\in \cC$, $c^? = c$ if $n$ is even and $c^? = \overline{c}$ if $n$ is odd.
+where for our generator $X\in \cC$, $X^? = X$ if $n$ is even and $X^? = \overline{X}$ if $n$ is odd.
 The trace $\Tr^\cM$ endows each von Neumann algebra $M_n$ with a faithful tracial state $\tr_n := \Tr^\cM(\id_n)^{-1} \Tr^\cM$ together with canonical Jones projections $e_n \in M_{n+1}$ for all $n\geq 1$.
 Based on the parity of $n$, the $e_n$ are defined for $k\geq 0$ by
 \begin{align*}
@@ -584,7 +580,7 @@ e_{2k+1}
 :=
 d^{-1}
 \big(
-\id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes k}} \otimes (\coev_c \circ \coev_c^\dag)
+\id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes k}} \otimes (\coev_X \circ \coev_X^\dag)
 \big)
 \in M_{2k+2}
 \\
@@ -602,11 +598,11 @@ e_{2k+2}
 :=
 d^{-1}
 \big(
-\id_m \vartriangleleft \id_c \otimes \id_{(\overline{c}\otimes c)^{\otimes k}} \otimes (\ev_c^\dag \circ \ev_c)
+\id_m \vartriangleleft \id_X \otimes \id_{(\overline{X}\otimes X)^{\otimes k}} \otimes (\ev_X^\dag \circ \ev_X)
 \big)
 \in M_{2k+3}.
 \end{align*}
-Here, we represent $m$ graphically by a red strand, and we shade the left hand side of the $m$ strand to denote the absence of a left $\cC$-action.
+Here, $(\overline{X}, \ev_X, \coev_X)$ is the balanced dual of $X$, $m$ is graphically represented by a red strand, and the left hand side of $m$ is shaded to denote the absence of a left $\cC$-action.
 It is straightforward to verify $M_\bullet := (M_n,\tr_n, e_{n+1})_{n\in \bbN}$ is a Markov tower.
 %We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
 %\begin{enumerate}[label={\rm(\arabic*)}]
@@ -625,7 +621,7 @@ It is straightforward to verify $M_\bullet := (M_n,\tr_n, e_{n+1})_{n\in \bbN}$ 
 %We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
 
 We now specialize to the hypotheses of the module embedding theorem, i.e., $\cP_\bullet$ is a finite depth subfactor planar algebra and $\cM$ is finitely semisimple.
-In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $c\in \cC$.
+In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
 This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
 We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
 
@@ -637,7 +633,7 @@ Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cQ_\bullet$ is \em
 %We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra $\cP_\bullet$.
 
 \begin{thmalpha}
-The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(c\otimes \overline{c})^{\otimes r}}\vartriangleleft - : \cP_{n,\pm} \to \cQ_{n,\pm}$
+The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cP_{n,\pm} \to \cQ_{n,\pm}$
 $$
 \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,.7);
@@ -680,6 +676,7 @@ explain conceptual origin of above embedding map from shift iso.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Markov towers and their projection categories} 
+\label{sec:MarkovTowers}
 
 We begin the article by defining the notion of a \emph{Markov tower} of finite dimensional tracial von Neumann algebras and studying its elementary properties.
 One should think of the definition of a Markov tower as obtained from the definition of Popa's $\lambda$-\emph{sequences of commuting squares} from \cite{MR1334479} and forgetting one of the towers.
@@ -688,7 +685,7 @@ In \S\nn{} below, we will see that Markov towers are exactly a $\lambda$-lattice
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Markov towers and their elementary properties}
-\label{sec:MarkovTowers}
+\label{sec:MarkovTowersAndElementaryProperties}
 
 The towers of algebras analog of a module category is played by the role of a \emph{Markov tower}.
 
@@ -704,7 +701,7 @@ $e_i^2 = e_i = e_i^*$ for all $i$,
 \item
 $e_i e_j = e_j e_i$ for $|i-j|>1$, and
 \item
-there is a fixed constant $d>0$ such that $e_{i} e_{i\pm 1} e_i = d^{-2} e_i$ for all $i$.
+there is a fixed constant $d>0$ called the \emph{modulus} such that $e_{i} e_{i\pm 1} e_i = d^{-2} e_i$ for all $i$.
 \end{enumerate}
 \item
 \label{eq:MarkovImplement}
@@ -2062,6 +2059,7 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modules for standard invariants of subfactors} 
+\label{sec:Modules}
 
 \nn{the standard invariant of a finite index subfactor}
 
@@ -2099,7 +2097,7 @@ When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modules for unitary multitensor categories and subfactor planar algebras}\label{ssec:moduledefs}
-
+\label{sec:3TypesOfModules}
 
 
 We now define the various notions of module for 
@@ -2164,7 +2162,9 @@ for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, th
 
 We next give an appropriate definition of planar modules over a planar algebra as algebras over another operad.
 \footnote{Our definition of a planar module over a planar algebra differs significantly from the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar modules correspond to algebra objects in the Drinfel'd center of such a category. \nn{Add a citation for details.}}
+
 \begin{defn}
+\label{def:PlanarModule}
 	The \textit{shaded planar module operad} is a variant of the shaded planar operad, akin to a shaded, stranded version of the Swiss-cheese operad introduced in \cite{MR1718089}. In this operad, the starred region of the boundary of the output disk of a tangle is replaced by a vertical line on the left side of a tangle, and the adjacent region inside the tangle must be unshaded. In addition to the usual input disks, tangles may also have input semidisks, whose boundaries intersect the left wall. The operadic composition comes from plugging tangles into semidisks. A representative tangle appears below. 
 \end{defn}
 $$
@@ -2312,6 +2312,7 @@ Suppose $\cQ_\bullet$ is a subfactor planar algebra, and let $Q_\bullet$ be the 
 We denote the Jones projections of $\cQ_\bullet/Q_\bullet$ by $e_{n,\pm}$. 
 
 \begin{defn}
+\label{defn:LatticeModule}
 A right \emph{lattice module} for 
 the $\lambda$-lattice $Q_\bullet$ 
 is a Markov tower $M_\bullet = (M_k, \tr_k, p_{k+1})_{k\geq 0}$
