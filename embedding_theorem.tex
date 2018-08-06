@@ -423,8 +423,9 @@ The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
 together with an action of the 
 shaded planar module operad, 
 which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
-We refer the reader to \S\ref{ssec:moduledefs} for the definition, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:
-\dave{convention we always read inputs bottom to top for $\cM_\bullet$?}
+We refer the reader to \S\ref{ssec:moduledefs} for the definition, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:\,\footnote{ 
+We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic as the category of finite dimensional $\bbC$-vector spaces is symmetric.
+}
 $$
 \begin{tikzpicture}[baseline = -.1cm]
 	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
@@ -444,11 +445,11 @@ $$
 %
 	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$5$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$4$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$3$}}
 \end{tikzpicture}
 \,:
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
@@ -461,8 +462,8 @@ $$
 %
 	\halfcircle{}{(0,0)}{1}{.3}{}
 %
-	\openhalfcircle{}{(0,.4)}{.25}{.25}{\scriptsize{$2^{\cM_\bullet}$}}
-	\openhalfcircle{}{(0,-.4)}{.25}{.25}{\scriptsize{$1^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,.4)}{.25}{.25}{\scriptsize{$2$}}
+	\openhalfcircle{}{(0,-.4)}{.25}{.25}{\scriptsize{$1$}}
 	\node at (.4,0) {\scriptsize{$k$}};
 	\node at (.4,.8) {\scriptsize{$k$}};
 	\node at (.4,-.8) {\scriptsize{$k$}};
@@ -2182,16 +2183,19 @@ $$
 %
 	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$5$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$4$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$3$}}
 \end{tikzpicture}
 \,:
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
-Tangles of the shaded planar module operad can also be composed with shaded planar tangles, by plugging a shaded planar tangle into an input disk. One should think of the box spaces for semidisks as being endomrphisms of objects in a module category, while the involvement of full disks implements the action of a planar algebra on the module. 
+Tangles of the shaded planar module operad can also be composed with shaded planar tangles, by plugging a shaded planar tangle into an input disk. 
+One should think of the box spaces for semidisks as being endomrphisms of objects in a module category, while the involvement of full disks implements the action of a planar algebra on the module. 
+\nn{numbering convention.
+tensor product of vector spaces is symmetric, so it doesn't really matter.}
 
 \begin{defn}
 A \emph{right planar module} $\cM_\bullet$ for the subfactor planar algebra $\cP_\bullet$ consists of a sequence of $\bbC$-vector spaces $(M_k)_{k\geq 0}$
@@ -2217,13 +2221,13 @@ Z_{\cM_\bullet}(\cT)
 \underbrace{x_1\otimes \cdots\otimes x_s}_{\in \cP_\bullet}
 \right)
 :=
-Z_{\cG_\bullet}(\widetilde{\cT})(m_1\otimes \cdots \otimes m_r \otimes \Phi(x_1)\otimes \cdots\otimes \Phi(x_s))
+Z_{\cG_\bullet}(\widetilde{\cT})(p_v\otimes m_1\otimes \cdots \otimes m_r \otimes \Phi(x_1)\otimes \cdots\otimes \Phi(x_s))
 $$
 where $\widetilde{\cT}$ is obtained from $\cT$ by 
 first turning each half-open input semidisk into a closed input disk in the interior of the output disk with its $\star$ on the left, 
 rounding out the $90^\circ$ angles on the left boundary into a smooth curve,
 putting the external $\star$ on the left hand side,
-and inserting one copy of $p_v$ in the left-most region of the new tangle.
+and inserting one $(0,+)$-type input disk in the left-most region of the new tangle which is numbered first.
 We illustrate this procedure on the tangle from \nn{above}:
 $$
 \cT=
@@ -2245,11 +2249,11 @@ $$
 %
 	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$5$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$4$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$3$}}
 \end{tikzpicture}
 \longmapsto
 \widetilde{\cT}:=
@@ -2272,12 +2276,12 @@ $$
 	\draw[very thick] (-1,0) arc (180:90:2cm) -- (2,2) arc (90:-90:2cm) -- (1,-2) arc (-90:-180:2cm);
 %	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\ncircle{unshaded}{(-.2,0)}{.25}{180}{\scriptsize{$p_v$}}
-	\ncircle{unshaded}{(.3,1)}{.4}{180}{\scriptsize{$2^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(.4,-1)}{.4}{180}{\scriptsize{$1^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(-.2,0)}{.25}{180}{\scriptsize{$1$}}
+	\ncircle{unshaded}{(.3,1)}{.4}{180}{\scriptsize{$3$}}
+	\ncircle{unshaded}{(.4,-1)}{.4}{180}{\scriptsize{$2$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$6$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$5$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$4$}}
 	\node at (-.85,0) {\scriptsize{$\star$}};
 \end{tikzpicture}
 $$
