@@ -417,7 +417,7 @@ $$
 $$
 where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
 
-A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$\footnote{
+A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$\,\footnote{
 The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
 }
 together with an action of the 
@@ -478,12 +478,12 @@ $$
 \tr_k:=
 d^{-k}\cdot\,
 \begin{tikzpicture}[baseline = -.1cm]
-	\draw (.25,.25) arc (180:0:.25cm) -- (.75,-.25) arc (0:-180:.25cm);
+	\draw (.25,.25) arc (180:0:.2cm) -- (.65,-.25) arc (0:-180:.2cm);
 %
 	\halfcircle{}{(0,0)}{.8}{.3}{}
 %
 	\openhalfcircle{}{(0,0)}{.25}{0}{}
-	\node at (.9,0) {\scriptsize{$k$}};
+	\node at (.8,0) {\scriptsize{$k$}};
 %	\node at (.4,.8) {\scriptsize{$n$}};
 %	\node at (.4,-.8) {\scriptsize{$n$}};
 \end{tikzpicture}
@@ -492,7 +492,7 @@ M_k \to M_0 = \bbC
 $$
 are faithful positive normalized traces, where $d$ is the loop parameter of $\cP_\bullet$.
 
-In order to define a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers} we define the notion of a \emph{Markov tower}, which is a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:
+In order to define a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers} we define the notion of a \emph{Markov tower} $M_\bullet$, which is a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
 The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with parameter $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
@@ -501,7 +501,7 @@ For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the
 \item
 For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \item
-For all $n\geq 1$, we have the Pimsner-Popa pull down property: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
+For all $n\geq 1$, we have the Pimsner-Popa pull down property \cite{MR860811}: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
 \end{enumerate}
 One should view a Markov tower as an analog of Popa's \emph{$\lambda$-sequence/lattice} \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
 Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
