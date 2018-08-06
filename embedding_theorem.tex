@@ -678,182 +678,9 @@ explain conceptual origin of above embedding map from shift iso.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modules for standard invariants of subfactors} 
+\section{Markov towers and their projection categories} 
 
-\nn{the standard invariant of a finite index subfactor}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}  
-\label{cattheory}
-
-\nn{expand this section}
-
-From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
-We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
-
-\begin{defn}\textnormal{
-		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
-\begin{itemize}
-\item The 0-morphisms of $\cG$ are the two objects
-$\uscircle$ and $\scircle$.
-\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
-\begin{itemize}
-	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
-	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
-\end{itemize}
-Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
-\item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
-\end{itemize}}
-\end{defn}
-
-For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,1808.00323}. 
-When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
-
-\nn{theorem stating equivalence between these categories and planar algebras.}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modules for unitary multitensor categories and subfactor planar algebras} 
-
-
-
-We now define the various notions of module for 
-\begin{itemize}
-\item
-a unitary multitensor category $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ together with a generator $X\in \cC_{01}$ with its canonical unitary spherical structure,
-\item
-a subfactor planar algebra $\cQ_\bullet$, and
-\item
-a $\lambda$-lattice $Q_\bullet = (Q_{n,\pm})$.\footnote{
-\label{footnote:DefinitionOfLambdaLattice}
-We use the non-standard definition of a $\lambda$-lattice as a planar algebra where we only remember the following structure:
-the $\dag$-algebra structure of all $Q_{n,\pm}$, 
-the sequence of Jones projections, 
-all left and right inclusions, 
-and all left and right conditional expectations.
-As detailed in the proof of \cite[Thm.~4.3.1]{math.QA/9909027}, this data forms a \emph{$\lambda$-sequence} \cite{MR1334479}, from which one recovers the $\lambda$-lattice.
-\nn{move as earlier definition!}
-}
-\end{itemize}
-
-\begin{defn}
-Let $\cC$ be a unitary $2\times 2$ multitensor category
-with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$.
-A \emph{pivotal right $\cC$-module $\Cstar$ category} is a pair $(\cM,\Tr^\cM)$ where
-$\cM$ is a semisimple right $\cC$-module $\Cstar$ category, and $\Tr^\cM$ is a family of positive traces $\Tr^\cM_n:\cM(n \to n)\to \bbC$ on each endomorphism space for $n\in \cM$ satisfying the following axioms:
-\begin{itemize}
-\item
-(tracial)
-$\Tr^\cM_m(g \circ f) = \Tr^\cM_n(f\circ g)$ for all $f\in \cM(m\to n)$ and $g\in \cM(n \to m)$.
-\item
-(positive)
-$\Tr^\cM_m(f^\dag \circ f) \geq 0$ for all $f\in \cM(m \to n)$, and $\Tr^\cM_m(f^\dag \circ f) =0$ if and only if $f = 0$.
-%\item
-%(normalized)
-%$\Tr^\cM_m( \id_m) = 1_\bbC$.
-\item
-(compatible with $\cC$)
-For all $m\in \cM$ and $c\in \cC$,
-$
-\Tr^\cM_{m\vartriangleleft c}(f)
-=
-\Tr^\cM_{m}(
-(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
-)
-$
-\end{itemize}
-Notice that $\cM = \cM_0 \oplus \cM_1$ where $\cM_0 = \cM \vartriangleleft 1_0$ and $\cM_1 = \cM\vartriangleleft 1_1$.
-
-A pivotal right module category is called \emph{pointed} if it is indecomposable, we have a chosen simple object $m\in \cM$, and $\Tr^\cM$ is normalized so that $\Tr^\cM_m(\id_m) = 1_\bbC$.
-Generally, we choose $m\in \cM_0$, but this choice is not essential.
-
-When $\cC$ is generated by a single $X\in \cC_{01}$ and $(\cM,\Tr^\cM,m)$ is a pointed pivotal right module category with $m\in \cM_0$, we define the \emph{cyclic pivotal right module category} $\cM_{m,X}$ to be the (non Karoubi complete!) full subcategory of $\cM$ whose objects are of the form 
-$$
-m \vartriangleleft X^{ \text{alt}\otimes k}
-:=
-m \vartriangleleft \underbrace{X \otimes X^\vee \otimes X \otimes \cdots \otimes X^?}_{k\text{ tensorands}}
-$$ 
-for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, the (non Karoubi complete!) full subcategory of $\cC$ whose objects are of the form $ X^{ \text{alt}\otimes k}$ for $k\geq 0$.
-\end{defn}
-
-
-The following definition of planar module is more general than the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar possess additional structure. \nn{Add a citation for details.}
-\begin{defn}
-	An \textit{annular tangle} is a tangle of the planar operad with a choice of distinguished internal disk. This notion first appears in \cite{MR1929335}. % clumsy parallelism
-%\end{defn}
-%\begin{defn}
-
-	A \textit{stationary tangle} \nn{as opposed to rotating. Bikeshed this.}
-	is an annular tangle for which the * for the distinguished internal disk and the * on the output disk are on the same region, i.e. they are not separated by any strands. 
-
-\dave{here's a labelled representative tangle (without strings or shadings) from the operad i want to use.
-Perhaps this is in \cite{MR1718089}? The name is right...}
-$$
-\begin{tikzpicture}[baseline = -.1cm]
-	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
-		(1.8,2) .. controls ++(270:.3cm) and ++(90:.3cm) .. (2.5,1.4) --
-		(2.5,1) .. controls ++(270:1cm) and ++(-30:1cm) .. (.85,-1.25) --
-		(.85,-.75) .. controls ++(30:.3cm) and ++(270:.3cm) .. (1.5,-.4) -- 
-		(1.5,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (.3,.7);
-	\filldraw[unshaded] (2,1) circle (.3cm);
-	\filldraw[shaded] (.2,-.7) -- (.2,-.4) arc (180:0:.15cm) -- (.5,-.7);
-	\filldraw[shaded]  (.2,-1.3) .. controls ++(270:.3cm) and ++(90:.3cm) .. (.8,-2) -- (1.8,-2)
-		(1.8,-2) .. controls ++(90:.3cm) and ++(-30:1.2cm) .. (2.5,-1)
-		.. controls ++(-135:1cm) and ++(-45:1cm) .. (.5,-1.3) -- (.2,-1.3);
-	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
-		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
-		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
-	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
-%
-	\halfcircle{}{(0,0)}{2}{2}{}
-%
-	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
-\end{tikzpicture}
-\,:
-(\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
-$$
-%\end{defn}
-%\begin{defn}
-	\nn{In our cyclic planar modules, the box spaces that are (un)shaded on the left are simply $0$, depending on the choice of strand. Maybe mention this, perhaps in the example?}
-	Suppose $\cA_\bullet$ is a planar algebra. A \textit{right planar module} $\cM_\bullet$ over $\cA_\bullet$ is a collection of vectorspaces $(M_{n})_{n=0}^\infty$ endowed with an action of $\cA_\bullet$:
-	for every stationary tangle $T$ of type in the shaded planar operad, we have an action $\alpha_T:\cM_{k_0,\pm_0}\otimes(\otimes_{i=1}^r\cA_{k_i,\pm_i})\to\cM_{n,\pm}$, where $(k_0,\pm_0)$ is the type of the distinguished disk, $(n,\pm)$ is the type of the output disk, and $(k_i,\pm_i)_{i=1}^r$ are the types of the remaining input disks. The several $\alpha_T$ are required to be compatible with the operadic composition of tangles, as in the definition of a planar algebra. 
-\end{defn}
-Note that plugging a stationary tangle into the distinguished input disk of a stationary tangle yields a stationary tangle, as does plugging an arbitrary tangle into a non-distinguished input disk. 
-
-The definitions of stationary tangles and right planar module are motivated by the diagrammatic calculus of the paragroup. We may represent depict a stationary tangle by placing the tangle in standard form with the distinguished disk at the bottom, and expanding the boundaries of the distinguished input disk and output disk to parallel lines, in effect sending a curve connecting the * of the distinguished disk and the * on the output disk to infinity. Because the tangle is stationary, the distinguished disk need not cross any strands to reach the bottom of the standard form, and the curve sent to infinity can also avoid crossing strands or input disks. In this diagrammatic form, a stationary tangle looks just like a morphism between $1_{\cM_{k_0,\pm_0}}$ and $1_{\cM_{n,\pm}}$ in the paragroup, and indeed, the action $\alpha_T$ gives a map $\otimes_{i=1}^r\cA_{k_i,\pm_i}\to\Hom(\cM_{k_0,\pm_0},\cM_{n,\pm})$, where the latter $\Hom$-space is $\Hom$ in a module category over the paragroup. % extremely awk 
-\nn{todo: add an example of a this diagrammatic transformation}
-
-\begin{ex}
-Given a subfactor planar algebra $\cQ_\bullet$, the even parts $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are each separately cyclic right planar modules for $\cQ_\bullet$.
-\end{ex}
-
-\begin{ex}
-Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
-Then for any $\pm$ vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$ and action of the planar module operad by
-\nn{todo}
-
-Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a cyclic right planar $\cQ_\bullet$ module by defining 
-$$
-\rho_{k,n}(p_v m \otimes x) 
-:=
-\begin{tikzpicture}[baseline]
-\draw (0,-.7) -- (0,.7);
-\draw (1,-.7) -- (1,.7);
-\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
-\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
-\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
-\node at (0,-.9) {\tiny{$k$}};
-\node at (1,-.9) {\tiny{$n$}};
-\end{tikzpicture}
-\,.
-$$ 
-\end{ex}
+\nn{lead in}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Markov towers and their elementary properties}
@@ -1315,442 +1142,6 @@ M_{nk} g_n.
 $$
 This completes the proof.
 \end{proof}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modules for \texorpdfstring{$\lambda$}{lambda}-lattices} 
-
-\nn{in this section, we give a towers of algebras approach to pivotal module categories.
-We begin with the notion of a \emph{Markov tower}...}
-
-
-Suppose $\cQ_\bullet$ is a subfactor planar algebra, and let $Q_\bullet$ be the induced $\lambda$-lattice from Footnote \ref{footnote:DefinitionOfLambdaLattice} \nn{make earlier definition}.
-We denote the Jones projections of $\cQ_\bullet/Q_\bullet$ by $e_{n,\pm}$. 
-
-\begin{defn}
-A right \emph{lattice module} for 
-the $\lambda$-lattice $Q_\bullet$ 
-is a Markov tower $M_\bullet = (M_k, \tr_k, p_{k+1})_{k\geq 0}$
-together with for every $k\geq 0$,
-a family of unital $*$-algebra homomorphisms $\rho^k_\bullet : Q_\bullet \to M_\bullet$ where
-\begin{equation}
-\label{eq:ParityOfRightAction}
-\rho^{2k}_{n} : Q_{n,+} \to M_{2k}'\cap M_{2k+n}
-\qquad
-\qquad
-\rho^{2k+1}_{n} : Q_{n,-} \to M_{2k+1}'\cap M_{(2k+1)+n}
-\end{equation}
-satisfying the following compatibility axioms, where $\pm$ below depends on the parity of $k$ as in \eqref{eq:ParityOfRightAction}:
-\begin{enumerate}[label={\rm(\arabic*)}]
-\item
-For all $n\geq 1$, $\rho^{k}_{n+1}(e_{n}) = p_{n+k}$, where $e_n = e_{n,+}$ if $k$ is even and $e_n = e_{n,-}$ if $k$ is odd.
-(Notice this implies that the Jones projections $(e_{n,\pm})$ and $(p_n)$ have the same loop modulus $d$.)
-\item
-For all $x\in \cP_{n,\pm}$, we have
-$\rho^{k}_{n+1}\left(
-\begin{tikzpicture}[baseline = -.1cm]
-	\draw (.4,-.5) -- (.4,.5);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.2,.45) {\scriptsize{$n$}};
-	\node at (-.2,-.45) {\scriptsize{$n$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-\,\,\,
-\right) 
-= 
-\rho^k_{n}(x)$.
-\item
-For all $x\in \cP_{n,\pm}$ for $n\geq 1$, we have 
-$\rho^k_{n-1}\left(
-\begin{tikzpicture}[baseline = -.1cm]
-	\draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.4,.45) {\scriptsize{$n-1$}};
-	\node at (-.4,-.45) {\scriptsize{$n-1$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-\,\,
-\right) 
-= 
-d\cdot E^{M_{k+n}}_{M_{k+n-1}}(\rho^k_{n}(x))$.
-\item
-For all $x\in \cP_{n,\pm}$, we have 
-$\rho^k_{n+1}\left(
-\begin{tikzpicture}[xscale=-1, baseline=-.1cm]
-%	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
-	\draw (.4,-.5) -- (.4,.5);
-	\draw (0,-.5) -- (0,.5);
-	\node at (-.2,.45) {\scriptsize{$n$}};
-	\node at (-.2,-.45) {\scriptsize{$n$}};
-	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
-\end{tikzpicture}
-\right) 
-= 
-\rho^{k+1}_{n}(x)$
-\end{enumerate}
-Notice that (1) -- (3) above concern only the family of $*$-algebra homomorphisms $\rho^k_\bullet$ for fixed $k$, whereas condition (4) is compatibility condition amongst the $\rho^k_\bullet$.
-%\item
-%For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have
-%$\tr_{k+n}(\rho_{k,n}(x)) = \tr_
-
-A right planar module $M_\bullet$ for $\cQ_\bullet$ is called \emph{cyclic} if $\dim(M_0) = 1$.
-\end{defn}
-
-\begin{ex}
-Any Markov tower $M_\bullet = (M_n, \tr_n, p_{n+1})$ with loop modulus $d$ is a cyclic right lattive module for $TLJ(d)_\bullet$ where $\rho^\bullet_\bullet : TLJ(d)_\bullet \to M_\bullet$ is given by $\rho^{n+1}_{k}(e_n) := p_{k+n}$.
-\end{ex}
-
-\begin{ex}
-Given a $\lambda$-lattice $Q_\bullet$, both $\pm$ parts of $Q_\bullet$ given by $Q_\pm :=( Q_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are cyclic right cyclic modules for $Q_\bullet$.
-\end{ex}
-
-
-
-
-\begin{lem}
-Suppose $Q_\bullet$ is a finite depth $\lambda$-lattice and $(M_\bullet,\rho^\bullet_\bullet)$ is a right planar module for $Q_\bullet$.
-Then $M_\bullet$ has finite depth.
-\end{lem}
-\begin{proof}
-\dave{$p_r$ and $\rho_r$ look too similar.}
-Let $r$ be minimal such that $Q_{r+1,+} = Q_{r,+} e_{r,+}Q_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $Q_{r+1,+}$ over $Q_{r,+}$ so that $\sum_b b (e_{r,+}) b^* = 1_{Q_{r+1,+}}$.
-Then 
-\begin{align*}
-1_{M_{r+1}}
-&=
-\rho^0_{r+1}(1_{Q_{r+1,+}})
-=
-\sum_b
-\rho^0_{r+1}(b(e_{r,+})b^*)
-%\\&=
-=
-\sum_b
-\rho^{0}_{r+1}(b)
-\rho^{0}_{r+1}(e_{r,+})
-\rho^{0}_{r+1}(b^*)
-%d^{-1}
-%\sum_b
-%\rho_{0,r+1}\left(
-%1_{M_0}\otimes
-%\begin{tikzpicture}[baseline=-.1cm]
-%	\draw (-.2,-1) -- (-.2,1);
-%	\draw (.2,1) -- (.2,.25) arc (-180:0:.2cm) -- (.6,1);
-%	\draw (.2,-1) -- (.2,-.25) arc (180:0:.2cm) -- (.6,-1);
-%	\roundNbox{unshaded}{(0,.5)}{.25}{.1}{.1}{$b$}
-%	\roundNbox{unshaded}{(0,-.5)}{.25}{.1}{.1}{$b^*$}
-%	\node at (-.35,-.9) {\scriptsize{$r$}};
-%	\node at (-.35,0) {\scriptsize{$r$}};
-%	\node at (-.35,.9) {\scriptsize{$r$}};
-%\end{tikzpicture}
-%\,\,\,
-%\right)
-%\\&=
-=
-\sum_b
-\rho^{0}_{r}(b)
-p_r
-\rho^{0}_{r}(b^*).
-\end{align*}
-Hence $\{\rho^{0}_{r}(b)\}$ is a Pimsner-Popa basis for $M_{r+1}$ over $M_r$.
-Hence $M_\bullet$ has finite depth by \ref{EP:FiniteDepth}.
-\end{proof}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Equivalences}
-
-
-In the next two sections, we sketch the proof of the following theorem.
-
-\begin{thm}
-%\label{thm:ModuleEquivalence}
-Let $\cQ_\bullet$ be a subfactor planar algebra,
-let $\cC$ be its $2\times 2$ unitary multitensor category of projections,
-and let $X \in \cQ_{1,+}$ be the unshaded-shaded strand (so that we may also view $X\in \cC_{01}$).
-There is a bijective correspondence between equivalence classes
-\[
-\left\{\,
-\parbox{7.7cm}{\rm 
-cyclic pivotal right module $\Cstar$ categories for $\cC$}
-\,\right\}
-\,\,\cong\,\,
-\left\{\,\parbox{5.7cm}{\rm 
-cyclic right planar modules for $\cQ_\bullet$
-}\,\right\}.
-\]
-\end{thm}
-
-As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$.
-This result should be compared with \cite{MR3420332} 
-
-\begin{cor}
-Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)_\bullet$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
-$$
-\sum_{w\sim v} \dim(w) = d \dim(v),
-$$
-where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
-\end{cor}
-\begin{proof}
-\nn{TLJ module categories are just Markov towers, which are just graphs with a dimension function to give us the Markov trace.}
-\end{proof}
-
-\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
-What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
-
-\begin{thm}
-Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
-We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
-\end{thm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{From pivotal module categories to planar modules}
-
-Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
-
-%By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
-%Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
-Since $m$ is simple, 
-$A$ is in fact a Q-system, % Q-system or $Q$-system?
-as described in \cite[Rmk.~2.7]{ny17}.  
-Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
-Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
-We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
-$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
-Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Construction of the Planar Algebra Associated to a Module Category}
-%\subsection{Constructing a Markov tower}
-
-%Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
-
-Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
-$$
-\cM 
-=
-\begin{pmatrix}
-\cC_{20} & \cC_{21} 
-\end{pmatrix}
-\qquad\qquad
-\cC
-=
-\begin{pmatrix}
-\cC_{00} & \cC_{01} 
-\\
-\cC_{10} & \cC_{11}
-\end{pmatrix}
-\subset
-\begin{pmatrix}
-\cC_{00} & \cC_{01} & \cC_{02}
-\\
-\cC_{10} & \cC_{11} & \cC_{12}
-\\
-\cC_{20} & \cC_{21} & \cC_{22}
-\end{pmatrix}
-=
-\widetilde{\cC}
-$$
-Let $x\in \cC_{01}$ be the strand pictured below:
-$$x=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,-.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (.7,.7);
-	\fill[shaded] (0,-.7) rectangle (-.7,.7);
-	\draw[fill] (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-	\draw (.7,-.7) -- (.7,.7);
-
-\end{tikzpicture}
-$$
-By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
-x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
-
-We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
-$$
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.3,.5) {\scriptsize{$n$}};
-	\node at (.3,-.5) {\scriptsize{$n$}};
-\end{tikzpicture}
-$$
-where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
-\begin{equation}\label{eq:TraceAn}
-\tr_n(f) 
-\,:=\, 
-\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
-\,=\,
-\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
-\frac{1}{d^n}
-\cdot
-\left(
-\begin{tikzpicture}[baseline=-.1cm, rotate=90]
-	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
-	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-%	\node at (-.7,-.35) {\scriptsize{$n$}};
-	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
-	\node at (0,.75) {\scriptsize{$\overline{m}$}};
-%	\node at (.7,.35) {\scriptsize{$m$}};
-\end{tikzpicture}
-\right)
-\end{equation}
-Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
-This makes each $M_n$ a finite dimensional von Neumann algebra.
-
-\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
-
-\begin{rem}
-	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
-\end{rem}
-
-We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
-\begin{equation}\label{eq:Inclusion}
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.3,.5) {\scriptsize{$n$}};
-	\node at (.3,-.5) {\scriptsize{$n$}};
-\end{tikzpicture}
-\mapsto
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\draw (.45,-.7) -- (.45,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.15,.9) {\scriptsize{$n$}};
-	\node at (.15,-.9) {\scriptsize{$n$}};
-	\node at (.6,0) {\scriptsize{$1$}};
-\end{tikzpicture}
-\end{equation}
-and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, 
-\begin{equation}\label{eq:ConditionalExpectationAn}
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.3,.5) {\scriptsize{$n$}};
-	\node at (.3,-.5) {\scriptsize{$n$}};
-\end{tikzpicture}
-\mapsto\,
-\frac{1}{d}
-\cdot
-\left(\,\,
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (0,-.7) -- (0,.7);
-	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.4,.6) {\scriptsize{$n-1$}};
-	\node at (.4,-.6) {\scriptsize{$n-1$}};
-	\node at (.6,0) {\scriptsize{$1$}};
-\end{tikzpicture}
-\right)
-\end{equation}
-left inverse to the inclusion.
-
-Here, $d:=\dim_{\widetilde{\cC}}(x)=\dim_{\widetilde{\cC}}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal? In response: Emily peter's uses the term closed circles (on page 7 of her thesis), if that's the woridng you mean, and the equality follows from sphericality, maybe we should this should probably be in the preliminary discussion of the paragroup and the constructed multifusion category
-Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
-
-Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
-\begin{equation}\label{eq:JonesProjections}
-e_n
-:=
-\frac1d\cdot
-\left(\,\,
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.3,-.7) rectangle (-.6,.7);
-	\draw[thick, red] (-.3,-.7) -- (-.3,.7);
-	\draw (-.1,-.7) -- (-.1,.7);
-	\draw (.1,-.7) -- (.1,-.4) arc (180:0:.15cm) -- (.4,-.7);
-	\draw (.1,.7) -- (.1,.4) arc (-180:0:.15cm) -- (.4,.7);
-%	\node at (-.1,-1) {\scriptsize{$n-1$}};
-	\node at (.3,0) {\scriptsize{$n-1$}};
-	\node at (.6,.5) {\scriptsize{$1$}};
-	\node at (.6,-.5) {\scriptsize{$1$}};
-\end{tikzpicture}
-\right)
-\in
-A_{n+1}.
-\end{equation}
-where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
-Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
-for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
-down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
-two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower. 
- 
- 
-\begin{prop}
-The Markov tower of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
-\end{prop}
-
-\begin{proof}
-	When $n$ is even, we have:
-	\[m\otimes \xalt \cong \bigoplus\limits_{Y\in\Irr(\cC_{20})}\left(n_YY\right) \]
- For some nonnegative integers $n_Y$. Therefore, 
-	\[\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{Y\in \Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right) \]
-	The case when $n$ is odd is similar. This means that the Bratteli diagram for $A_n\subseteq A_{n+1}$ has at most $|\Irr(\cC_{20})|+|\Irr(\cC_{21})|$ vertices, so the principal graph must be finite. 
-\end{proof}
-
-\begin{thm}
-The principal graph obtained from the Markov tower $\left(A_n, tr_n\right)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for the action of $x$ on $\cM$.
-\end{thm}
-
-\begin{proof}
-Because $x$ generates $\cC$ and $\cM$ is cyclic, we can assume that every simple object in $\cM$ is a direct summand of $m\otimes \xalt $. Essentially, our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$, so they are determined entirely by the fusion rules.
-
-First, recall that for a finite depth Markov tower, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
-
-Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
-	\[Y\otimes x\cong\bigoplus\limits_{\Irr(\cC_{21})}\left(p_{Z,Y}Z\right)\]
-These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
-
-Recall that
-$$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
-where 
-$$m \otimes \xalt \cong \bigoplus\limits_{\Irr(\cC_{20})}\left(n_YY\right)$$
-	Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\Irr(\cC_{20})}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov tower achieves depth.) % Strictly speaking, this is not true, because the Markov tower may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
-
-The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum \[\bigoplus\limits_{\Irr(\cC_{20})}\phi_Y\]
-where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
-	\[\bigoplus_{\Irr(\cC_{20})}\left(\phi_Y \otimes \id_{x}\right)\]
-But then:
-	\[\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\Irr({\cC}_{21})} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)\]
-Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
-\end{proof}
-
-\nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Markov towers and their projection categories}
-
-
 
 
 
@@ -2655,6 +2046,626 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 %
 %This completes the proof.
 %\end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modules for standard invariants of subfactors} 
+
+\nn{the standard invariant of a finite index subfactor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}  
+\label{cattheory}
+
+\nn{expand this section}
+
+From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
+We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
+
+\begin{defn}\textnormal{
+		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
+\begin{itemize}
+\item The 0-morphisms of $\cG$ are the two objects
+$\uscircle$ and $\scircle$.
+\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
+\begin{itemize}
+	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
+	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
+	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
+\end{itemize}
+Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
+\item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
+\end{itemize}}
+\end{defn}
+
+For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,1808.00323}. 
+When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
+
+\nn{theorem stating equivalence between these categories and planar algebras.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modules for unitary multitensor categories and subfactor planar algebras} 
+
+
+
+We now define the various notions of module for 
+\begin{itemize}
+\item
+a unitary multitensor category $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ together with a generator $X\in \cC_{01}$ with its canonical unitary spherical structure,
+\item
+a subfactor planar algebra $\cQ_\bullet$, and
+\item
+a $\lambda$-lattice $Q_\bullet = (Q_{n,\pm})$.\footnote{
+\label{footnote:DefinitionOfLambdaLattice}
+We use the non-standard definition of a $\lambda$-lattice as a planar algebra where we only remember the following structure:
+the $\dag$-algebra structure of all $Q_{n,\pm}$, 
+the sequence of Jones projections, 
+all left and right inclusions, 
+and all left and right conditional expectations.
+As detailed in the proof of \cite[Thm.~4.3.1]{math.QA/9909027}, this data forms a \emph{$\lambda$-sequence} \cite{MR1334479}, from which one recovers the $\lambda$-lattice.
+\nn{move as earlier definition!}
+}
+\end{itemize}
+
+\begin{defn}
+Let $\cC$ be a unitary $2\times 2$ multitensor category
+with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$.
+A \emph{pivotal right $\cC$-module $\Cstar$ category} is a pair $(\cM,\Tr^\cM)$ where
+$\cM$ is a semisimple right $\cC$-module $\Cstar$ category, and $\Tr^\cM$ is a family of positive traces $\Tr^\cM_n:\cM(n \to n)\to \bbC$ on each endomorphism space for $n\in \cM$ satisfying the following axioms:
+\begin{itemize}
+\item
+(tracial)
+$\Tr^\cM_m(g \circ f) = \Tr^\cM_n(f\circ g)$ for all $f\in \cM(m\to n)$ and $g\in \cM(n \to m)$.
+\item
+(positive)
+$\Tr^\cM_m(f^\dag \circ f) \geq 0$ for all $f\in \cM(m \to n)$, and $\Tr^\cM_m(f^\dag \circ f) =0$ if and only if $f = 0$.
+%\item
+%(normalized)
+%$\Tr^\cM_m( \id_m) = 1_\bbC$.
+\item
+(compatible with $\cC$)
+For all $m\in \cM$ and $c\in \cC$,
+$
+\Tr^\cM_{m\vartriangleleft c}(f)
+=
+\Tr^\cM_{m}(
+(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
+)
+$
+\end{itemize}
+Notice that $\cM = \cM_0 \oplus \cM_1$ where $\cM_0 = \cM \vartriangleleft 1_0$ and $\cM_1 = \cM\vartriangleleft 1_1$.
+
+A pivotal right module category is called \emph{pointed} if it is indecomposable, we have a chosen simple object $m\in \cM$, and $\Tr^\cM$ is normalized so that $\Tr^\cM_m(\id_m) = 1_\bbC$.
+Generally, we choose $m\in \cM_0$, but this choice is not essential.
+
+When $\cC$ is generated by a single $X\in \cC_{01}$ and $(\cM,\Tr^\cM,m)$ is a pointed pivotal right module category with $m\in \cM_0$, we define the \emph{cyclic pivotal right module category} $\cM_{m,X}$ to be the (non Karoubi complete!) full subcategory of $\cM$ whose objects are of the form 
+$$
+m \vartriangleleft X^{ \text{alt}\otimes k}
+:=
+m \vartriangleleft \underbrace{X \otimes X^\vee \otimes X \otimes \cdots \otimes X^?}_{k\text{ tensorands}}
+$$ 
+for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, the (non Karoubi complete!) full subcategory of $\cC$ whose objects are of the form $ X^{ \text{alt}\otimes k}$ for $k\geq 0$.
+\end{defn}
+
+
+The following definition of planar module is more general than the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar possess additional structure. \nn{Add a citation for details.}
+\begin{defn}
+	An \textit{annular tangle} is a tangle of the planar operad with a choice of distinguished internal disk. This notion first appears in \cite{MR1929335}. % clumsy parallelism
+%\end{defn}
+%\begin{defn}
+
+	A \textit{stationary tangle} \nn{as opposed to rotating. Bikeshed this.}
+	is an annular tangle for which the * for the distinguished internal disk and the * on the output disk are on the same region, i.e. they are not separated by any strands. 
+
+\dave{here's a labelled representative tangle (without strings or shadings) from the operad i want to use.
+Perhaps this is in \cite{MR1718089}? The name is right...}
+$$
+\begin{tikzpicture}[baseline = -.1cm]
+	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
+		(1.8,2) .. controls ++(270:.3cm) and ++(90:.3cm) .. (2.5,1.4) --
+		(2.5,1) .. controls ++(270:1cm) and ++(-30:1cm) .. (.85,-1.25) --
+		(.85,-.75) .. controls ++(30:.3cm) and ++(270:.3cm) .. (1.5,-.4) -- 
+		(1.5,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (.3,.7);
+	\filldraw[unshaded] (2,1) circle (.3cm);
+	\filldraw[shaded] (.2,-.7) -- (.2,-.4) arc (180:0:.15cm) -- (.5,-.7);
+	\filldraw[shaded]  (.2,-1.3) .. controls ++(270:.3cm) and ++(90:.3cm) .. (.8,-2) -- (1.8,-2)
+		(1.8,-2) .. controls ++(90:.3cm) and ++(-30:1.2cm) .. (2.5,-1)
+		.. controls ++(-135:1cm) and ++(-45:1cm) .. (.5,-1.3) -- (.2,-1.3);
+	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
+		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
+		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
+	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
+%
+	\halfcircle{}{(0,0)}{2}{2}{}
+%
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+\end{tikzpicture}
+\,:
+(\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
+$$
+%\end{defn}
+%\begin{defn}
+	\nn{In our cyclic planar modules, the box spaces that are (un)shaded on the left are simply $0$, depending on the choice of strand. Maybe mention this, perhaps in the example?}
+	Suppose $\cA_\bullet$ is a planar algebra. A \textit{right planar module} $\cM_\bullet$ over $\cA_\bullet$ is a collection of vectorspaces $(M_{n})_{n=0}^\infty$ endowed with an action of $\cA_\bullet$:
+	for every stationary tangle $T$ of type in the shaded planar operad, we have an action $\alpha_T:\cM_{k_0,\pm_0}\otimes(\otimes_{i=1}^r\cA_{k_i,\pm_i})\to\cM_{n,\pm}$, where $(k_0,\pm_0)$ is the type of the distinguished disk, $(n,\pm)$ is the type of the output disk, and $(k_i,\pm_i)_{i=1}^r$ are the types of the remaining input disks. The several $\alpha_T$ are required to be compatible with the operadic composition of tangles, as in the definition of a planar algebra. 
+\end{defn}
+Note that plugging a stationary tangle into the distinguished input disk of a stationary tangle yields a stationary tangle, as does plugging an arbitrary tangle into a non-distinguished input disk. 
+
+The definitions of stationary tangles and right planar module are motivated by the diagrammatic calculus of the paragroup. We may represent depict a stationary tangle by placing the tangle in standard form with the distinguished disk at the bottom, and expanding the boundaries of the distinguished input disk and output disk to parallel lines, in effect sending a curve connecting the * of the distinguished disk and the * on the output disk to infinity. Because the tangle is stationary, the distinguished disk need not cross any strands to reach the bottom of the standard form, and the curve sent to infinity can also avoid crossing strands or input disks. In this diagrammatic form, a stationary tangle looks just like a morphism between $1_{\cM_{k_0,\pm_0}}$ and $1_{\cM_{n,\pm}}$ in the paragroup, and indeed, the action $\alpha_T$ gives a map $\otimes_{i=1}^r\cA_{k_i,\pm_i}\to\Hom(\cM_{k_0,\pm_0},\cM_{n,\pm})$, where the latter $\Hom$-space is $\Hom$ in a module category over the paragroup. % extremely awk 
+\nn{todo: add an example of a this diagrammatic transformation}
+
+\begin{ex}
+Given a subfactor planar algebra $\cQ_\bullet$, the even parts $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are each separately cyclic right planar modules for $\cQ_\bullet$.
+\end{ex}
+
+\begin{ex}
+Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
+Then for any $\pm$ vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$ and action of the planar module operad by
+\nn{todo}
+
+Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a cyclic right planar $\cQ_\bullet$ module by defining 
+$$
+\rho_{k,n}(p_v m \otimes x) 
+:=
+\begin{tikzpicture}[baseline]
+\draw (0,-.7) -- (0,.7);
+\draw (1,-.7) -- (1,.7);
+\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
+\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
+\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
+\node at (0,-.9) {\tiny{$k$}};
+\node at (1,-.9) {\tiny{$n$}};
+\end{tikzpicture}
+\,.
+$$ 
+\end{ex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modules for \texorpdfstring{$\lambda$}{lambda}-lattices} 
+
+\nn{in this section, we give a towers of algebras approach to pivotal module categories.
+We begin with the notion of a \emph{Markov tower}...}
+
+
+Suppose $\cQ_\bullet$ is a subfactor planar algebra, and let $Q_\bullet$ be the induced $\lambda$-lattice from Footnote \ref{footnote:DefinitionOfLambdaLattice} \nn{make earlier definition}.
+We denote the Jones projections of $\cQ_\bullet/Q_\bullet$ by $e_{n,\pm}$. 
+
+\begin{defn}
+A right \emph{lattice module} for 
+the $\lambda$-lattice $Q_\bullet$ 
+is a Markov tower $M_\bullet = (M_k, \tr_k, p_{k+1})_{k\geq 0}$
+together with for every $k\geq 0$,
+a family of unital $*$-algebra homomorphisms $\rho^k_\bullet : Q_\bullet \to M_\bullet$ where
+\begin{equation}
+\label{eq:ParityOfRightAction}
+\rho^{2k}_{n} : Q_{n,+} \to M_{2k}'\cap M_{2k+n}
+\qquad
+\qquad
+\rho^{2k+1}_{n} : Q_{n,-} \to M_{2k+1}'\cap M_{(2k+1)+n}
+\end{equation}
+satisfying the following compatibility axioms, where $\pm$ below depends on the parity of $k$ as in \eqref{eq:ParityOfRightAction}:
+\begin{enumerate}[label={\rm(\arabic*)}]
+\item
+For all $n\geq 1$, $\rho^{k}_{n+1}(e_{n}) = p_{n+k}$, where $e_n = e_{n,+}$ if $k$ is even and $e_n = e_{n,-}$ if $k$ is odd.
+(Notice this implies that the Jones projections $(e_{n,\pm})$ and $(p_n)$ have the same loop modulus $d$.)
+\item
+For all $x\in \cP_{n,\pm}$, we have
+$\rho^{k}_{n+1}\left(
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.4,-.5) -- (.4,.5);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.2,.45) {\scriptsize{$n$}};
+	\node at (-.2,-.45) {\scriptsize{$n$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+\,\,\,
+\right) 
+= 
+\rho^k_{n}(x)$.
+\item
+For all $x\in \cP_{n,\pm}$ for $n\geq 1$, we have 
+$\rho^k_{n-1}\left(
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.4,.45) {\scriptsize{$n-1$}};
+	\node at (-.4,-.45) {\scriptsize{$n-1$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+\,\,
+\right) 
+= 
+d\cdot E^{M_{k+n}}_{M_{k+n-1}}(\rho^k_{n}(x))$.
+\item
+For all $x\in \cP_{n,\pm}$, we have 
+$\rho^k_{n+1}\left(
+\begin{tikzpicture}[xscale=-1, baseline=-.1cm]
+%	\fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
+	\draw (.4,-.5) -- (.4,.5);
+	\draw (0,-.5) -- (0,.5);
+	\node at (-.2,.45) {\scriptsize{$n$}};
+	\node at (-.2,-.45) {\scriptsize{$n$}};
+	\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+\right) 
+= 
+\rho^{k+1}_{n}(x)$
+\end{enumerate}
+Notice that (1) -- (3) above concern only the family of $*$-algebra homomorphisms $\rho^k_\bullet$ for fixed $k$, whereas condition (4) is compatibility condition amongst the $\rho^k_\bullet$.
+%\item
+%For all $x\in \cP_{n,\pm}$ and $m\in M_k$, we have
+%$\tr_{k+n}(\rho_{k,n}(x)) = \tr_
+
+A right planar module $M_\bullet$ for $\cQ_\bullet$ is called \emph{cyclic} if $\dim(M_0) = 1$.
+\end{defn}
+
+\begin{ex}
+Any Markov tower $M_\bullet = (M_n, \tr_n, p_{n+1})$ with loop modulus $d$ is a cyclic right lattive module for $TLJ(d)_\bullet$ where $\rho^\bullet_\bullet : TLJ(d)_\bullet \to M_\bullet$ is given by $\rho^{n+1}_{k}(e_n) := p_{k+n}$.
+\end{ex}
+
+\begin{ex}
+Given a $\lambda$-lattice $Q_\bullet$, both $\pm$ parts of $Q_\bullet$ given by $Q_\pm :=( Q_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are cyclic right cyclic modules for $Q_\bullet$.
+\end{ex}
+
+
+
+
+\begin{lem}
+Suppose $Q_\bullet$ is a finite depth $\lambda$-lattice and $(M_\bullet,\rho^\bullet_\bullet)$ is a right planar module for $Q_\bullet$.
+Then $M_\bullet$ has finite depth.
+\end{lem}
+\begin{proof}
+\dave{$p_r$ and $\rho_r$ look too similar.}
+Let $r$ be minimal such that $Q_{r+1,+} = Q_{r,+} e_{r,+}Q_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $Q_{r+1,+}$ over $Q_{r,+}$ so that $\sum_b b (e_{r,+}) b^* = 1_{Q_{r+1,+}}$.
+Then 
+\begin{align*}
+1_{M_{r+1}}
+&=
+\rho^0_{r+1}(1_{Q_{r+1,+}})
+=
+\sum_b
+\rho^0_{r+1}(b(e_{r,+})b^*)
+%\\&=
+=
+\sum_b
+\rho^{0}_{r+1}(b)
+\rho^{0}_{r+1}(e_{r,+})
+\rho^{0}_{r+1}(b^*)
+%d^{-1}
+%\sum_b
+%\rho_{0,r+1}\left(
+%1_{M_0}\otimes
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\draw (-.2,-1) -- (-.2,1);
+%	\draw (.2,1) -- (.2,.25) arc (-180:0:.2cm) -- (.6,1);
+%	\draw (.2,-1) -- (.2,-.25) arc (180:0:.2cm) -- (.6,-1);
+%	\roundNbox{unshaded}{(0,.5)}{.25}{.1}{.1}{$b$}
+%	\roundNbox{unshaded}{(0,-.5)}{.25}{.1}{.1}{$b^*$}
+%	\node at (-.35,-.9) {\scriptsize{$r$}};
+%	\node at (-.35,0) {\scriptsize{$r$}};
+%	\node at (-.35,.9) {\scriptsize{$r$}};
+%\end{tikzpicture}
+%\,\,\,
+%\right)
+%\\&=
+=
+\sum_b
+\rho^{0}_{r}(b)
+p_r
+\rho^{0}_{r}(b^*).
+\end{align*}
+Hence $\{\rho^{0}_{r}(b)\}$ is a Pimsner-Popa basis for $M_{r+1}$ over $M_r$.
+Hence $M_\bullet$ has finite depth by \ref{EP:FiniteDepth}.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Equivalences}
+
+
+In the next two sections, we sketch the proof of the following theorem.
+
+\begin{thm}
+%\label{thm:ModuleEquivalence}
+Let $\cQ_\bullet$ be a subfactor planar algebra,
+let $\cC$ be its $2\times 2$ unitary multitensor category of projections,
+and let $X \in \cQ_{1,+}$ be the unshaded-shaded strand (so that we may also view $X\in \cC_{01}$).
+There is a bijective correspondence between equivalence classes
+\[
+\left\{\,
+\parbox{7.7cm}{\rm 
+cyclic pivotal right module $\Cstar$ categories for $\cC$}
+\,\right\}
+\,\,\cong\,\,
+\left\{\,\parbox{5.7cm}{\rm 
+cyclic right planar modules for $\cQ_\bullet$
+}\,\right\}.
+\]
+\end{thm}
+
+As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$.
+This result should be compared with \cite{MR3420332} 
+
+\begin{cor}
+Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)_\bullet$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
+$$
+\sum_{w\sim v} \dim(w) = d \dim(v),
+$$
+where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+\end{cor}
+\begin{proof}
+\nn{TLJ module categories are just Markov towers, which are just graphs with a dimension function to give us the Markov trace.}
+\end{proof}
+
+\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
+What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
+
+\begin{thm}
+Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
+We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
+\end{thm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{From pivotal module categories to planar modules}
+
+Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
+
+%By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
+%Since $\cM$ is indecomposable, we can take $m$ to be simple. 
+By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+Since $m$ is simple, 
+$A$ is in fact a Q-system, % Q-system or $Q$-system?
+as described in \cite[Rmk.~2.7]{ny17}.  
+Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
+Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
+We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
+By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
+$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
+Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Construction of the Planar Algebra Associated to a Module Category}
+%\subsection{Constructing a Markov tower}
+
+%Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
+
+Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
+$$
+\cM 
+=
+\begin{pmatrix}
+\cC_{20} & \cC_{21} 
+\end{pmatrix}
+\qquad\qquad
+\cC
+=
+\begin{pmatrix}
+\cC_{00} & \cC_{01} 
+\\
+\cC_{10} & \cC_{11}
+\end{pmatrix}
+\subset
+\begin{pmatrix}
+\cC_{00} & \cC_{01} & \cC_{02}
+\\
+\cC_{10} & \cC_{11} & \cC_{12}
+\\
+\cC_{20} & \cC_{21} & \cC_{22}
+\end{pmatrix}
+=
+\widetilde{\cC}
+$$
+Let $x\in \cC_{01}$ be the strand pictured below:
+$$x=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,-.7);
+	\fill[shaded] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (.7,.7);
+	\fill[shaded] (0,-.7) rectangle (-.7,.7);
+	\draw[fill] (0,-.7) -- (0,.7);
+
+\end{tikzpicture}
+\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[white] (0,-.7) rectangle (-.7,.7);
+	\fill[shaded] (0,-.7) rectangle (.7,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.7,-.7) -- (.7,.7);
+
+\end{tikzpicture}
+$$
+By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
+$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
+
+We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
+$$
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.3,.5) {\scriptsize{$n$}};
+	\node at (.3,-.5) {\scriptsize{$n$}};
+\end{tikzpicture}
+$$
+where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
+\begin{equation}\label{eq:TraceAn}
+\tr_n(f) 
+\,:=\, 
+\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
+\,=\,
+\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
+\frac{1}{d^n}
+\cdot
+\left(
+\begin{tikzpicture}[baseline=-.1cm, rotate=90]
+	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
+	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%	\node at (-.7,-.35) {\scriptsize{$n$}};
+	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
+	\node at (0,.75) {\scriptsize{$\overline{m}$}};
+%	\node at (.7,.35) {\scriptsize{$m$}};
+\end{tikzpicture}
+\right)
+\end{equation}
+Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
+This makes each $M_n$ a finite dimensional von Neumann algebra.
+
+\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
+
+\begin{rem}
+	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
+\end{rem}
+
+We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
+\begin{equation}\label{eq:Inclusion}
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.3,.5) {\scriptsize{$n$}};
+	\node at (.3,-.5) {\scriptsize{$n$}};
+\end{tikzpicture}
+\mapsto
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	\draw (.45,-.7) -- (.45,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.15,.9) {\scriptsize{$n$}};
+	\node at (.15,-.9) {\scriptsize{$n$}};
+	\node at (.6,0) {\scriptsize{$1$}};
+\end{tikzpicture}
+\end{equation}
+and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, 
+\begin{equation}\label{eq:ConditionalExpectationAn}
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (.15,-.7) -- (.15,.7);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.3,.5) {\scriptsize{$n$}};
+	\node at (.3,-.5) {\scriptsize{$n$}};
+\end{tikzpicture}
+\mapsto\,
+\frac{1}{d}
+\cdot
+\left(\,\,
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+	\draw (0,-.7) -- (0,.7);
+	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+	\node at (.4,.6) {\scriptsize{$n-1$}};
+	\node at (.4,-.6) {\scriptsize{$n-1$}};
+	\node at (.6,0) {\scriptsize{$1$}};
+\end{tikzpicture}
+\right)
+\end{equation}
+left inverse to the inclusion.
+
+Here, $d:=\dim_{\widetilde{\cC}}(x)=\dim_{\widetilde{\cC}}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal? In response: Emily peter's uses the term closed circles (on page 7 of her thesis), if that's the woridng you mean, and the equality follows from sphericality, maybe we should this should probably be in the preliminary discussion of the paragroup and the constructed multifusion category
+Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
+
+Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
+\begin{equation}\label{eq:JonesProjections}
+e_n
+:=
+\frac1d\cdot
+\left(\,\,
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[ctwoshading] (-.3,-.7) rectangle (-.6,.7);
+	\draw[thick, red] (-.3,-.7) -- (-.3,.7);
+	\draw (-.1,-.7) -- (-.1,.7);
+	\draw (.1,-.7) -- (.1,-.4) arc (180:0:.15cm) -- (.4,-.7);
+	\draw (.1,.7) -- (.1,.4) arc (-180:0:.15cm) -- (.4,.7);
+%	\node at (-.1,-1) {\scriptsize{$n-1$}};
+	\node at (.3,0) {\scriptsize{$n-1$}};
+	\node at (.6,.5) {\scriptsize{$1$}};
+	\node at (.6,-.5) {\scriptsize{$1$}};
+\end{tikzpicture}
+\right)
+\in
+A_{n+1}.
+\end{equation}
+where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
+Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
+for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
+down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
+two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower. 
+ 
+ 
+\begin{prop}
+The Markov tower of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
+\end{prop}
+
+\begin{proof}
+	When $n$ is even, we have:
+	\[m\otimes \xalt \cong \bigoplus\limits_{Y\in\Irr(\cC_{20})}\left(n_YY\right) \]
+ For some nonnegative integers $n_Y$. Therefore, 
+	\[\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{Y\in \Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right) \]
+	The case when $n$ is odd is similar. This means that the Bratteli diagram for $A_n\subseteq A_{n+1}$ has at most $|\Irr(\cC_{20})|+|\Irr(\cC_{21})|$ vertices, so the principal graph must be finite. 
+\end{proof}
+
+\begin{thm}
+The principal graph obtained from the Markov tower $\left(A_n, tr_n\right)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for the action of $x$ on $\cM$.
+\end{thm}
+
+\begin{proof}
+Because $x$ generates $\cC$ and $\cM$ is cyclic, we can assume that every simple object in $\cM$ is a direct summand of $m\otimes \xalt $. Essentially, our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$, so they are determined entirely by the fusion rules.
+
+First, recall that for a finite depth Markov tower, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
+
+Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
+	\[Y\otimes x\cong\bigoplus\limits_{\Irr(\cC_{21})}\left(p_{Z,Y}Z\right)\]
+These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
+
+Recall that
+$$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
+where 
+$$m \otimes \xalt \cong \bigoplus\limits_{\Irr(\cC_{20})}\left(n_YY\right)$$
+	Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\Irr(\cC_{20})}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov tower achieves depth.) % Strictly speaking, this is not true, because the Markov tower may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
+
+The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum \[\bigoplus\limits_{\Irr(\cC_{20})}\phi_Y\]
+where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
+	\[\bigoplus_{\Irr(\cC_{20})}\left(\phi_Y \otimes \id_{x}\right)\]
+But then:
+	\[\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\Irr({\cC}_{21})} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)\]
+Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
+\end{proof}
+
+\nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Markov towers and their projection categories}
+
+
+
 
 
 
