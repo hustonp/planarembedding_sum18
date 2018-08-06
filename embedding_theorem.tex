@@ -546,6 +546,7 @@ gives us a Markov tower of modulus $d$, where we write $w\sim v$ to mean $w$ is 
 We thus get the following corollary, which should be compared with the non-pivotal case in \cite{MR3420332}.
 
 \begin{coralpha}
+\label{cor:TLJPivotalModuleClassification}
 There is a bijective correspondence between
 pivotal $\cT\cL\cJ(d)$-module $\Cstar$ categories with basepoint and 
 pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
@@ -854,6 +855,7 @@ Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is
 The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$.
 \end{ex}
 
+\nn{move later:}
 \begin{ex}
 Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})$ is a Markov tower.
 \nn{decide whether Markov tower should mean finite dimensional.}
@@ -864,6 +866,7 @@ Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a M
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Operations on Markov towers to produce new Markov towers}
+\label{sec:OperationsOnMarkovTowers}
 
 In this section, we describe various operations on a Markov tower $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ which yield new Markov towers.
 We begin with shifting and compressing the tower.
@@ -879,7 +882,8 @@ Suppose $(M_n, \tr_n, e_{n+1})$ is a Markov tower.
 For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
 \end{prop}
 
-Similar to the discussion in \S\ref{sec:CompressionIso}, given a Markov tower $(M_n,\tr_n, e_{n+1})$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
+%Similar to the discussion in \S\ref{sec:CompressionIso}, 
+Given a Markov tower $(M_n,\tr_n, e_{n+1})$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
 First, for all $n\geq 0$, we define a faithful trace $\tr_n^p$ on $pM_n p$ by
 \begin{equation}
 \label{eq:CompressedTrace}
@@ -2189,18 +2193,35 @@ $$
 $$
 Tangles of the shaded planar module operad can also be composed with shaded planar tangles, by plugging a shaded planar tangle into an input disk. One should think of the box spaces for semidisks as being endomrphisms of objects in a module category, while the involvement of full disks implements the action of a planar algebra on the module. 
 
+\begin{defn}
+A \emph{right planar module} $\cM_\bullet$ for the subfactor planar algebra $\cP_\bullet$ consists of a sequence of $\bbC$-vector spaces $(M_k)_{k\geq 0}$
+together with an action of the shaded planar module operad
+such that
+\nn{todo}
+\end{defn}
 
+\nn{edit below here.}
 
 \begin{ex}
-Given a subfactor planar algebra $\cQ_\bullet$, the even parts $\cQ_\pm :=( \cQ_{n,\pm}, \tr_{n,\pm}, e_{n,\pm})$ are each separately cyclic right planar modules for $\cQ_\bullet$.
+Given a subfactor planar algebra $\cP_\bullet$, the even parts $\cP_\pm :=( \cP_{k,\pm})_{k\geq 0}$ are each separately cyclic right planar modules for $\cP_\bullet$.
 \end{ex}
 
 \begin{ex}
 Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$, and denote its Jones projections by $g_{n,\pm}$.
-Then for any $\pm$ vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{n}:= p_v \cG_{n,\pm}$ and action of the planar module operad by
-\nn{todo}
+Then for any $\pm$ vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{k}:= p_v \cG_{k,\pm}$ and action of the planar module operad by
+$$
+Z_{\cM_\bullet}(\cT)
+\left(
+\underbrace{m_1\otimes \cdots \otimes m_r}_{\in \cM_\bullet} 
+\otimes 
+\underbrace{x_1\otimes \cdots\otimes x_s}_{\in \cP_\bullet}
+\right)
+:=
+Z_{\cG_\bullet}(\widetilde{\cT})(m_1\otimes \cdots \otimes m_r \otimes \Phi(x_1)\otimes \cdots\otimes \Phi(x_s))
+$$
+\nn{todo: define $\widetilde{\cT}$ from $\cT$.}
 
-Now if $\cQ_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cQ_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a cyclic right planar $\cQ_\bullet$ module by defining 
+Now if $\cP_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cP_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a connected right planar $\cP_\bullet$-module by defining 
 $$
 \rho_{k,n}(p_v m \otimes x) 
 :=
@@ -2363,34 +2384,30 @@ Hence $M_\bullet$ has finite depth by \ref{EP:FiniteDepth}.
 
 In the next two sections, we sketch the proof of the following theorem.
 
-\begin{thm}
+\begin{thm*}[Theorem \ref{thm:ModuleEquivalence}]
 %\label{thm:ModuleEquivalence}
-Let $\cQ_\bullet$ be a subfactor planar algebra,
-let $\cC$ be its $2\times 2$ unitary multitensor category of projections,
-and let $X \in \cQ_{1,+}$ be the unshaded-shaded strand (so that we may also view $X\in \cC_{01}$).
-There is a bijective correspondence between equivalence classes
-\[
-\left\{\,
-\parbox{7.7cm}{\rm 
-cyclic pivotal right module $\Cstar$ categories for $\cC$}
-\,\right\}
-\,\,\cong\,\,
-\left\{\,\parbox{5.7cm}{\rm 
-cyclic right planar modules for $\cQ_\bullet$
-}\,\right\}.
-\]
-\end{thm}
+Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, c)$ and $\cA_{\bullet, \bullet}$ as above.
+There is an equivalence between:
+\begin{enumerate}[label={\rm(\arabic*)}]
+\item
+pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with choice of simple basepoint $m = m\vartriangleleft 1_0$
+\item
+connected right planar modules $\cM_\bullet$ for $\cP_\bullet$
+\item
+cyclic right lattice modules $M_\bullet$ for $\cA_{\bullet, \bullet}$.
+\end{enumerate}
+\end{thm*}
 
 As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$.
 This result should be compared with \cite{MR3420332} 
 
-\begin{cor}
+\begin{cor*}[Corollary \ref{cor:TLJPivotalModuleClassification}]
 Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)_\bullet$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
 $$
 \sum_{w\sim v} \dim(w) = d \dim(v),
 $$
 where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
-\end{cor}
+\end{cor*}
 \begin{proof}
 \nn{TLJ module categories are just Markov towers, which are just graphs with a dimension function to give us the Markov trace.}
 \end{proof}
@@ -2647,9 +2664,7 @@ Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Markov towers and their projection categories}
+\subsection{From planar modules to pivotal module categories}
 
 
 
@@ -2714,7 +2729,7 @@ Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of fini
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The canonical planar algebra of a strongly Markov inclusion} 
+\subsection{The canonical relative commutant planar algebra}% of a strongly Markov inclusion} 
 \label{sec:StronglyMarkovPA}
 %\subsection{Planar algebras}
 \label{ssec:canonical}
@@ -3136,8 +3151,8 @@ Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 
 
 
-
-Given an inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, we obtain another inclusion of tracial von Neumann algebras by compression by a non-zero projection $p\in P(M_0)$.
+Similar to the discussion in \S\ref{sec:OperationsOnMarkovTowers}, 
+given an inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, we obtain another inclusion of tracial von Neumann algebras by compression by a non-zero projection $p\in P(M_0)$.
 We define a faithful trace $\tr_1^p$ on $pA_1 p$ by
 \begin{equation}
 \label{eq:CompressedTrace1}
