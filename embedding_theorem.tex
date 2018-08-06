@@ -351,21 +351,98 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-\nn{\begin{itemize}
+Jones' planar algebras \cite{math.QA/9909027} are a powerful method to construct \cite{MR2979509,EH3} and classify \cite{MR3166042,MR3345186,1509.00038} finite index ${\rm II}_1$ subfactors.
+Many exotic examples have been constructed via \emph{graph planar algebra embedding}, i.e., by finding \emph{evaluable} planar subalgebras of graph planar algebras.
+By \cite{MR2812459}, and finite depth subfactor planar algebra embeds in the graph planar algebra of its principal graph.
+This result also extends to infinite depth subfactor planar algebras by \cite{gpa}.
+
+To date, graph planar algebra embedding has been used for:
+\begin{itemize}
 \item
-Examples constructed via graph planar algebra embedding
-\cite{MR1929335,MR2511128,MR2679382,MR2979509,MR2822034,MR3314808,MR3394622,MR3402358,MR3306607,EH3}. 
+the $E_6$ and $E_8$ subfactor planar algebras \cite{MR1929335}
 \item
-Can always do by GPA embedding theorem.
+group planar algebras \cite{MR2511128}
 \item
-A couple are not into the principal graph
+Haagerup-Izumi quadratic subfactors \cite{MR2679382,MR2822034,MR3314808,MR3394622,MR3402358}
 \item
-Can also embed into fusion graph for a module
+quantum group planar algebras \cite{MR3306607}, and
 \item
-if and only if from \cite{EH3}.
+the extended Haagerup fusion categories \cite{MR2979509,EH3}.
+\end{itemize}
+While none of the constructions above rely on the embedding theorem from \cite{MR2812459},
+this theorem gives us the motivation to do the hard work of looking for the embedding.
+However, the theorem is necessary for Liu's important classification theorem for composites of $A_3$ and $A_4$ subfactor planar algebras \cite{MR3345186}, which shows that higher quotients do not exist as the possible generator does not embed in the appropriate graph planar algebra.
+
+As noted in \cite{MR2812459}, it was rather surprising that the dual principal graph made no appearance in the embedding theorem.
+Adding to this mystery, certain examples above could be constructed by embedding into planar algebras of bipartite graphs which are completely different from the principal and dual principal graphs \cite{MR2679382,MR3402358,EH3}.
+The answer to why this occurs is the following theorem:
+
+\begin{thm}[\cite{EH3}]
+Let $\cP_\bullet$ be a finite depth subfactor planar algebra and $\cC$ its unitary $2\times 2$ multifusion category of projections with generator $X \in \cP_{1,+}$ the unshaded-shaded strand.
+Endow $\cC$ with the canonical spherical structure inherited from $\cP_\bullet$.
+There is a bijective correspondence between:
+\begin{itemize}
 \item
-old school towers of algebras approach \cite{MR936086,MR999799,MR1278111}
-\end{itemize}}
+planar $\dag$-algebra embeddings $\cP_\bullet \to \cG\cP\cA(\Gamma)_\bullet$ where $\Gamma$ is a finite connected bipartite graph, and 
+\item
+indecomposable finitely semisimple left $\cC$-module $\Cstar$ categories $\cM$ whose fusion graph with respect to $X$ is $\Gamma$.
+\end{itemize}
+\end{thm}
+
+The proof in \cite{EH3} is mostly in the language of tensor categories and their modules.
+In this article, we provide an independent proof in the original towers of algebras approach to subfactor theory \cite{MR936086,MR999799,MR1278111} and the graph planar algebra embedding theorem \cite{MR2812459}.
+
+After some initial background sections, in \S\nn{}, we summarize the well-known correspondence between:
+\begin{enumerate}[label={\rm(\arabic*)}]
+\item
+unitary $2\times 2$ multitensor categories with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$
+(see also \cite{1808.00323}),\footnote{
+\nn{define generator}
+} 
+\item
+Jones' subfactor planar algebras \cite{math.QA/9909027}, and
+\item
+Popa's standard $\lambda$-lattices \cite{MR1334479}.
+\end{enumerate}
+We then develop the notion of a module for subfactor planar algebras and $\lambda$-lattices in \S\nn{}, and we show the three notions of module for the above structures are equivalent in Theorem \nn{}.
+\nn{cyclic/connected case.}
+
+A \emph{right planar module} for a subfactor planar algebra $\cP_\bullet$ is a tower of finite dimensional $\dag$-algebras $(M_k)_{k\geq 0}$ with $\dim(M_0) = \bbC$ together with an action of the 
+\dave{marble Swiss cheese operad?}
+\emph{shaded Swiss cheese tangle operad}, 
+which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
+We refer the reader to \S\nn{} for the precise definition, but we include a representative tangle below which acts amongst the algebras $M_k$ and the box spaces $\cP_{n,\pm}$:
+$$
+\begin{tikzpicture}[baseline = -.1cm]
+	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
+		(1.8,2) .. controls ++(270:.3cm) and ++(90:.3cm) .. (2.5,1.4) --
+		(2.5,1) .. controls ++(270:1cm) and ++(-30:1cm) .. (.85,-1.25) --
+		(.85,-.75) .. controls ++(30:.3cm) and ++(270:.3cm) .. (1.5,-.4) -- 
+		(1.5,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (.3,.7);
+	\filldraw[unshaded] (2,1) circle (.3cm);
+	\filldraw[shaded] (.2,-.7) -- (.2,-.4) arc (180:0:.15cm) -- (.5,-.7);
+	\filldraw[shaded]  (.2,-1.3) .. controls ++(270:.3cm) and ++(90:.3cm) .. (.8,-2) -- (1.8,-2)
+		(1.8,-2) .. controls ++(90:.3cm) and ++(-30:1.2cm) .. (2.5,-1)
+		.. controls ++(-135:1cm) and ++(-45:1cm) .. (.5,-1.3) -- (.2,-1.3);
+	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
+		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
+		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
+	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
+%
+	\halfcircle{}{(0,0)}{2}{}
+%
+	\openhalfcircle{}{(0,1)}{.3}{0}{$b$}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{$a$}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{$3$}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{$2$}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{$1$}
+\end{tikzpicture}
+\,:
+(M_3 \otimes M_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to M_{4}
+$$
+\nn{sentence about operations one can do; which tangles glue where}
+
+
 
 
 \nn{TODO: more intro stuff here}
