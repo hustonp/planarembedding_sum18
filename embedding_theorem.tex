@@ -286,9 +286,9 @@
 	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
 }
 
-\newcommand{\halfcircle}[4]{
-	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (#3,#3) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) + (0,.0211) $); 
-	\node at ($ #2 + .75*(#3,0) $) {#4};
+\newcommand{\halfcircle}[5]{
+	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (0,#3) + (#4,0) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) + (0,.0211) $); 
+	\node at ($ #2 + .75*(#3,0) $) {#5};
 }
 
 \newcommand{\openhalfcircle}[5]{
@@ -395,23 +395,37 @@ In this article, we provide an independent proof in the original towers of algeb
 After some initial background sections, in \S\nn{}, we summarize the well-known correspondence between:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-unitary $2\times 2$ multitensor categories with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$
-(see also \cite{1808.00323}),\footnote{
+unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$ with its canonical \emph{balanced} unitary dual functor
+(see \cite{1808.00323}),\footnote{
 \nn{define generator}
 } 
 \item
-Jones' subfactor planar algebras \cite{math.QA/9909027}, and
+Jones' subfactor planar algebras $\cP_\bullet$ \cite{math.QA/9909027}, and
 \item
-Popa's standard $\lambda$-lattices \cite{MR1334479}.
+Popa's standard $\lambda$-lattices $A_{\bullet,\bullet}$ \cite{MR1334479}.
 \end{enumerate}
-We then develop the notion of a module for subfactor planar algebras and $\lambda$-lattices in \S\nn{}, and we show the three notions of module for the above structures are equivalent in Theorem \nn{}.
-\nn{cyclic/connected case.}
+We then study right modules for these algebraic objects; we briefly describe these notions here, and we refer the reader to \S\nn{} for more details.
 
-A \emph{right planar module} for a subfactor planar algebra $\cP_\bullet$ is a tower of finite dimensional $\dag$-algebras $(M_k)_{k\geq 0}$ with $\dim(M_0) = \bbC$ together with an action of the 
+A \emph{pivotal} module category for $\cC$ is a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category equipped with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\cM(m\to m)$ which is compatible with the right $\cC$-action \cite{MR3019263,EH3}.
+That is, for all $f\in \End_\cM(m \vartriangleleft c)$, 
+$$
+\Tr^\cM_{m\vartriangleleft c}(f)
+=
+\Tr^\cM_{m}(
+(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
+),
+$$
+where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
+
+A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$\footnote{
+The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
+}
+together with an action of the 
 \dave{marble Swiss cheese operad?}
 \emph{shaded Swiss cheese tangle operad}, 
 which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
-We refer the reader to \S\nn{} for the precise definition, but we include a representative tangle below which acts amongst the algebras $M_k$ and the box spaces $\cP_{n,\pm}$:
+We refer the reader to \S\nn{} for the precise definition, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:
+\dave{convention we always read inputs bottom to top for $\cM_\bullet$?}
 $$
 \begin{tikzpicture}[baseline = -.1cm]
 	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
@@ -429,18 +443,80 @@ $$
 		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
 	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
 %
-	\halfcircle{}{(0,0)}{2}{}
+	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\openhalfcircle{}{(0,1)}{.3}{0}{$b$}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{$a$}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{$3$}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{$2$}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{$1$}
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
 \end{tikzpicture}
 \,:
-(M_3 \otimes M_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to M_{4}
+(\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
 \nn{sentence about operations one can do; which tangles glue where}
+The tower of algebras $(M_k)_{k \geq 0}$ must satisfy that multiplication in the von Neumann algebra $M_k$ is given by the tangle
+$$
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-1) -- (.25,1);
+%
+	\halfcircle{}{(0,0)}{1}{.3}{}
+%
+	\openhalfcircle{}{(0,.4)}{.25}{.25}{\scriptsize{$2^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,-.4)}{.25}{.25}{\scriptsize{$1^{\cM_\bullet}$}}
+	\node at (.4,0) {\scriptsize{$k$}};
+	\node at (.4,.8) {\scriptsize{$k$}};
+	\node at (.4,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+:
+M_k \otimes M_k \to M_k,
+$$
+and the $*$-structure on $M_k$ is compatible with the reflection of tangles about a horizontal axis.
+Notice this canonically identifies $M_0 = \bbC$ as a von Neumann algebra.
+Under this identification, we require that the linear functionals
+$$
+\tr_k:=
+d^{-k}\cdot\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,.25) arc (180:0:.25cm) -- (.75,-.25) arc (0:-180:.25cm);
+%
+	\halfcircle{}{(0,0)}{.8}{.3}{}
+%
+	\openhalfcircle{}{(0,0)}{.25}{0}{}
+	\node at (.9,0) {\scriptsize{$k$}};
+%	\node at (.4,.8) {\scriptsize{$n$}};
+%	\node at (.4,-.8) {\scriptsize{$n$}};
+\end{tikzpicture}
+:
+M_k \to M_0 = \bbC
+$$
+are faithful positive normalized traces, where $d$ is the loop parameter of $\cP_\bullet$.
+
+In order to define a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers} we define the notion of a \emph{Markov tower}, which is a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:
+\begin{enumerate}[label={\rm(\arabic*)}]
+\item
+The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with parameter $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
+\item
+For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
+\item
+For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
+\item
+For all $n\geq 1$, we have the Pimsner-Popa pull down property: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
+\end{enumerate}
+One should view a Markov tower as an analog of Popa's \emph{$\lambda$-sequence/lattice} \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
+Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
+For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
+The tower is called \emph{finite depth} if the principal graph is finite.
+
+
+A \emph{cyclic right lattice module} for a $\lambda$-lattice $A_{\bullet, \bullet}$ with $\lambda=d^{-2} $ is a Markov tower $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ together with
+\todo{} 
+
+
+We then develop the notion of a module for subfactor planar algebras and $\lambda$-lattices in \S\nn{}, and we show the three notions of module for the above structures are equivalent in Theorem \nn{}.
+\nn{cyclic/connected case.}
+
+
 
 
 
@@ -450,17 +526,7 @@ $$
 
 Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra, and let $\cC$ be its associated $2\times 2$ unitary multifusion category of projections with generator $c$ corresponding to the unshaded-shaded strand in $\cQ_{1,+}$.
 Here, $1_\cC$ decomposes as an orthogonal direct sum $1_\cC = 1_0\oplus 1_1$, which decomposes $\cC= \bigoplus_{i,j=0}^1 \cC_{ij}$ where $\cC_{ij}:= 1_i \otimes \cC \otimes 1_j$.
-By a \emph{pivotal module category} for $\cQ_\bullet$, we mean a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category, together with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\End_\cM(m)$ which is compatible with the left $\cC$-action (see \cite{MR3019263,EH3}).
-That is, for all $f\in \End_\cM(m \vartriangleleft c)$, 
-$$
-\Tr^\cM_{m\vartriangleleft c}(f)
-=
-\Tr^\cM_{m}(
-(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
-),
-$$
-where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
-%Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
+By a %Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
 
 From the right pivotal $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$, we build a tower of finite dimensional von Neumann algebras 
 $$
@@ -2787,16 +2853,16 @@ $$
 		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
 	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
 %
-	\halfcircle{}{(0,0)}{2}{}
+	\halfcircle{}{(0,0)}{2}{2}{}
 %
-	\openhalfcircle{}{(0,1)}{.3}{0}{$b$}
-	\openhalfcircle{}{(0,-1)}{.3}{.4}{$a$}
-	\ncircle{unshaded}{(2.5,1)}{.4}{180}{$3$}
-	\ncircle{unshaded}{(1.5,0)}{.4}{0}{$2$}
-	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{$1$}
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
 \end{tikzpicture}
 \,:
-(M_3 \otimes M_1) \otimes (Q_{2,+}\otimes Q_{1,-} \otimes Q_{3,+}) \to M_{4}
+(\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
 %\end{defn}
 %\begin{defn}
