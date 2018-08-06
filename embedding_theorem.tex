@@ -283,7 +283,7 @@
 	\draw[very thick, #1] #2 circle (#3);
 	\node at #2 {#5};
 %	\filldraw[red] ($#2+(#4:#3cm)$) circle (.05cm);
-	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
+	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {\scriptsize{$\star$}};
 }
 
 \newcommand{\halfcircle}[5]{
@@ -2219,23 +2219,87 @@ Z_{\cM_\bullet}(\cT)
 :=
 Z_{\cG_\bullet}(\widetilde{\cT})(m_1\otimes \cdots \otimes m_r \otimes \Phi(x_1)\otimes \cdots\otimes \Phi(x_s))
 $$
-\nn{todo: define $\widetilde{\cT}$ from $\cT$.}
-
-Now if $\cP_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cP_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a connected right planar $\cP_\bullet$-module by defining 
+where $\widetilde{\cT}$ is obtained from $\cT$ by 
+first turning each half-open input semidisk into a closed input disk in the interior of the output disk with its $\star$ on the left, 
+rounding out the $90^\circ$ angles on the left boundary into a smooth curve,
+putting the external $\star$ on the left hand side,
+and inserting one copy of $p_v$ in the left-most region of the new tangle.
+We illustrate this procedure on the tangle from \nn{above}:
 $$
-\rho_{k,n}(p_v m \otimes x) 
-:=
-\begin{tikzpicture}[baseline]
-\draw (0,-.7) -- (0,.7);
-\draw (1,-.7) -- (1,.7);
-\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
-\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
-\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
-\node at (0,-.9) {\tiny{$k$}};
-\node at (1,-.9) {\tiny{$n$}};
+\cT=
+\begin{tikzpicture}[baseline = -.1cm]
+	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
+		(1.8,2) .. controls ++(270:.3cm) and ++(90:.3cm) .. (2.5,1.4) --
+		(2.5,1) .. controls ++(270:1cm) and ++(-30:1cm) .. (.85,-1.25) --
+		(.85,-.75) .. controls ++(30:.3cm) and ++(270:.3cm) .. (1.5,-.4) -- 
+		(1.5,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (.3,.7);
+	\filldraw[unshaded] (2,1) circle (.3cm);
+	\filldraw[shaded] (.2,-.7) -- (.2,-.4) arc (180:0:.15cm) -- (.5,-.7);
+	\filldraw[shaded]  (.2,-1.3) .. controls ++(270:.3cm) and ++(90:.3cm) .. (.8,-2) -- (1.8,-2)
+		(1.8,-2) .. controls ++(90:.3cm) and ++(-30:1.2cm) .. (2.5,-1)
+		.. controls ++(-135:1cm) and ++(-45:1cm) .. (.5,-1.3) -- (.2,-1.3);
+	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
+		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
+		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
+	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
+%
+	\halfcircle{}{(0,0)}{2}{2}{}
+%
+	\openhalfcircle{}{(0,1)}{.3}{.4}{\scriptsize{$2^{\cM_\bullet}$}}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{\scriptsize{$1^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
 \end{tikzpicture}
-\,.
-$$ 
+\longmapsto
+\widetilde{\cT}:=
+\begin{tikzpicture}[baseline = -.1cm]
+	\filldraw[shaded] (.3,1.3) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,2) -- 
+		(1.8,2) .. controls ++(270:.3cm) and ++(90:.3cm) .. (2.5,1.4) --
+		(2.5,1) .. controls ++(270:1cm) and ++(-30:1cm) .. (.7,-1.25) --
+		(.7,-.75) .. controls ++(30:.3cm) and ++(270:.3cm) .. (1.5,-.4) -- 
+		(1.5,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (.3,.7);
+	\filldraw[unshaded] (2,1) circle (.3cm);
+	\filldraw[shaded] (.2,-.7) -- (.2,-.4) arc (180:0:.15cm) -- (.5,-.7);
+	\filldraw[shaded]  (.2,-1.3) .. controls ++(270:.3cm) and ++(90:.3cm) .. (.8,-2) -- (1.8,-2)
+		(1.8,-2) .. controls ++(90:.3cm) and ++(-30:1.2cm) .. (2.5,-1)
+		.. controls ++(-135:1cm) and ++(-45:1cm) .. (.5,-1.3) -- (.2,-1.3);
+	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
+		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
+		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
+	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
+%
+	\draw[very thick] (-1,0) arc (180:90:2cm) -- (2,2) arc (90:-90:2cm) -- (1,-2) arc (-90:-180:2cm);
+%	\halfcircle{}{(0,0)}{2}{2}{}
+%
+	\ncircle{unshaded}{(-.2,0)}{.25}{180}{\scriptsize{$p_v$}}
+	\ncircle{unshaded}{(.3,1)}{.4}{180}{\scriptsize{$2^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(.4,-1)}{.4}{180}{\scriptsize{$1^{\cM_\bullet}$}}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{\scriptsize{$2^{\cP_\bullet}$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1^{\cP_\bullet}$}}
+	\node at (-.85,0) {\scriptsize{$\star$}};
+\end{tikzpicture}
+$$
+%
+%
+%\nn{todo: define $\widetilde{\cT}$ from $\cT$.}
+%
+%Now if $\cP_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cP_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a connected right planar $\cP_\bullet$-module by defining 
+%$$
+%\rho_{k,n}(p_v m \otimes x) 
+%:=
+%\begin{tikzpicture}[baseline]
+%\draw (0,-.7) -- (0,.7);
+%\draw (1,-.7) -- (1,.7);
+%\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
+%\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
+%\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
+%\node at (0,-.9) {\tiny{$k$}};
+%\node at (1,-.9) {\tiny{$n$}};
+%\end{tikzpicture}
+%\,.
+%$$ 
 \end{ex}
 
 
