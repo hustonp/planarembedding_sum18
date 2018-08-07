@@ -2066,7 +2066,47 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}  
-\label{cattheory}
+\label{sec:CategoriesPlanarAlgberasLattices}
+
+In this section, we rapidly recall the definition of a subfactor planar algebra \cite{math.QA/9909027}, its unitary $2\times 2$ multitensor category of projections \cite{MR2811311,1808.00323}, and the associated standard $\lambda$-lattice \cite{MR1334479}.
+
+\begin{warn}
+We warn the reader that our definition of a $\lambda$-lattice is non-standard; we merely take a subfactor planar algebra and forget some of the structure.
+As all standard $\lambda$-lattices in the sense of \cite{MR1334479} arise in this way, we lose no examples.
+\end{warn}
+
+\begin{defn}
+The \emph{shaded planar operad} consists of shaded planar tangles with the operation of composition.
+Shaded planar tangles have $r\geq 0$ input disks each with $2k_i$ boundary points, and an output disk with $2k_0$ boundary points.
+Internal to the output disk are non-intersecting strings, which either attach 2 distinct boundary points, or are closed loops.
+There is also a checkerboard shading, and a distinguished interval marked $\star$ for each input disk and the output disk.
+If the $\star$ for the $i$-th disk is on an interval which meets an unshaded region, that disk has \emph{type} $(k_i, +)$, and if it meets a shaded region, the disk has type $(k_i,-)$.
+There is a natural definition of the composite tangle $T \circ_i S$ when the output disk of a tangle $T$ has the same type as the $i$-th input disk of a tangle $T$.
+We give a representative example below, and we refer the reader to \cite{MR2679382,MR2972458} for a more precise definition.
+$$
+\nn{\text{tangle composition example}}
+$$
+
+A \emph{shaded planar algebra} $\cP_\bullet$ consists of a family $\cP_{n,\pm}$ of $\bbC$-vector spaces together with an action of the shaded planar operad.
+That is, each shaded planar tangle $T$ with input disks of type $(k_i, \pm_i)$ for $1\leq i\leq r$ and output disk of type $(k_0,\pm_0)$ defines a multilinear map $Z(T) : \prod_{i=1}^r \cP_{k_i, \pm_i} \to \cP_{k_0, \pm_0}$, and tangle composition corresponds to composition of multilinear maps.
+
+A shaded planar algebra is called a \emph{subfactor planar algebra} if moreover
+\begin{enumerate}[label={\rm(PA\arabic*)}]
+\item
+(finite dimensional) $\dim(\cP_{n,\pm}) <\infty$ for all $n\geq 0$.
+\item
+(evaluable/connected) $\dim(\cP_{0,\pm}) = 1$.
+\item
+(positive)
+$\langle x, y\rangle_{n,\pm} := $\nn{}
+defines a positive-definite inner product on each $\cP_{n,\pm}$.
+\item
+(spherical)
+for all $x\in \cP_{1,+}$, \nn{}
+\end{enumerate}
+\end{defn}
+
+
 
 \nn{expand this section}
 
@@ -2810,7 +2850,7 @@ Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of fini
 %\subsection{Planar algebras}
 \label{ssec:canonical}
 
-Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{planaralg2}. The reader is referred to these references for further information on planar algebras. 
+Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
 There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
 We refer the reader to \cite{MR2812459} for more details on this construction. 
