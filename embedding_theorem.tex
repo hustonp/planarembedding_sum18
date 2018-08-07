@@ -2098,19 +2098,39 @@ A shaded planar algebra is called a \emph{subfactor planar algebra} if moreover
 (evaluable/connected) $\dim(\cP_{0,\pm}) = 1$.
 \item
 (positive)
-$\langle x, y\rangle_{n,\pm} := $\nn{}
+$\langle x, y\rangle_{n,\pm} := $\nn{todo}
 defines a positive-definite inner product on each $\cP_{n,\pm}$.
 \item
 (spherical)
-for all $x\in \cP_{1,+}$, \nn{}
+for all $x\in \cP_{1,+}$, \nn{todo}
 \end{enumerate}
+In a subfactor planar algebra, closed contractible loops can be traded for a multiplicative scalar $d>0$.
+By Jones' index rigidity theorem \cite{MR0696688}, $d\in \set{2\cos(\pi/k)}{k\geq 3}\cup [2,\infty)$.
 \end{defn}
 
+\begin{rem}
+Given a subfactor planar algebra $\cP_\bullet$, we get two Markov towers $\cP_\pm= (\cP_{n,\pm})_{n\geq 0}$ with traces
+$$
+\tr_{n,\pm}:= d^{-n}
+\nn{todo}
+$$
+and Jones projections
+$$
+e_{n,+}:=
+\nn{todo}
+\qquad
+\qquad
+e_{n,-}:=
+\nn{todo}
+$$
+The principal graph of $\cP_+$ is finite if and only if the principal graph of $\cP_-$ is finite; in this case, $\cP_\bullet$ is said to have \emph{finite depth}.
+\end{rem}
 
+From a subfactor planar algebra, one may form its unitary $2\times 2$ multitensor category of projections $\cC$ \cite{MR2811311,MR2559686,MR3405915}, which comes with a canonical generator corresponding to the unshaded-shaded strand in $\cP_{1,+}$, and the canonical spherical unitary dual functor \cite{1808.00323}
 
 \nn{expand this section}
 
-From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{paragroup2} for more details. 
+From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{MR2559686} for more details. 
 We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
 
 \begin{defn}\textnormal{
