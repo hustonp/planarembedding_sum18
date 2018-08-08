@@ -2082,7 +2082,7 @@ $$
 \begin{tikzpicture}[baseline = -.1cm]
 	\filldraw[shaded]  
 		(1.8,-2) .. controls ++(90:.3cm) and ++(-90:.3cm) .. (2.5,-1.4) -- (2.4,-1) -- 
-		(1,0) -- (1,.4) .. controls ++(90:.8cm) and ++(270:.8cm) .. (2.5,.6) -- 
+		(1,0) .. controls ++(40:.5cm) and ++(270:.5cm) .. (2.5,.6) -- 
 		(2.4,1.4) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.8,2) arc (96:264:2cm) ;
 	\filldraw[unshaded] (2,1) circle (.3cm);
 	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
@@ -2093,7 +2093,7 @@ $$
 	\ncircle{}{(2,0)}{2}{180}{}
 %
 	\ncircle{unshaded}{(2.5,1)}{.4}{180}{\scriptsize{$3$}}
-	\ncircle{unshaded}{(1,0)}{.4}{270}{\scriptsize{$2$}}
+	\ncircle{unshaded}{(1,0)}{.4}{180}{\scriptsize{$2$}}
 	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1$}}
 \end{tikzpicture}
 \circ_{3}
@@ -2108,7 +2108,24 @@ $$
 	\ncircle{unshaded}{(0,0)}{.4}{180}{\scriptsize{$1$}}
 \end{tikzpicture}
 =
-\nn{edit}
+\nn{edit...}
+\begin{tikzpicture}[baseline = -.1cm]
+	\filldraw[shaded]  
+		(1.8,-2) .. controls ++(90:.3cm) and ++(-90:.3cm) .. (2.5,-1.4) -- (2.4,-1) -- 
+		(1,0) .. controls ++(40:.5cm) and ++(270:.5cm) .. (2.5,.6) -- 
+		(2.4,1.4) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.8,2) arc (96:264:2cm) ;
+	\filldraw[unshaded] (1,1) circle (.3cm);
+	\filldraw[shaded] (2.5,1) .. controls ++(30:.3cm) and ++(-135:.3cm) .. (3.3,1.5)
+		arc (49:-49:2cm)  .. controls ++(135:.3cm) and ++(0:.8cm) ..  (2.5,-1)
+		.. controls ++(30:1cm) and ++(-30:1cm) .. (2.5,1);
+	\filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
+%
+	\ncircle{}{(2,0)}{2}{180}{}
+%
+	\ncircle{unshaded}{(2,1)}{.4}{180}{\scriptsize{$3$}}
+	\ncircle{unshaded}{(1,0)}{.4}{180}{\scriptsize{$2$}}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{90}{\scriptsize{$1$}}
+\end{tikzpicture}
 $$
 
 A \emph{shaded planar algebra} $\cP_\bullet$ consists of a family $\cP_{n,\pm}$ of $\bbC$-vector spaces together with an action of the shaded planar operad.
