@@ -386,7 +386,7 @@ There is a bijective correspondence between:
 \item
 planar $\dag$-algebra embeddings $\cP_\bullet \to \cG\cP\cA(\Gamma)_\bullet$, where $\Gamma$ is a finite connected bipartite graph, and 
 \item
-indecomposable finitely semisimple left $\cC$-module $\Cstar$ categories $\cM$ whose fusion graph with respect to $X$ is $\Gamma$.
+indecomposable finitely semisimple pivotal left $\cC$-module $\Cstar$ categories $\cM$ whose fusion graph with respect to $X$ is $\Gamma$.
 \end{itemize}
 \end{thm}
 
@@ -2084,7 +2084,17 @@ $$
 
 A \emph{shaded planar algebra} $\cP_\bullet$ consists of a family $\cP_{n,\pm}$ of $\bbC$-vector spaces together with an action of the shaded planar operad.
 That is, each shaded planar tangle $T$ with input disks of type $(k_i, \pm_i)$ for $1\leq i\leq r$ and output disk of type $(k_0,\pm_0)$ defines a multilinear map $Z(T) : \prod_{i=1}^r \cP_{k_i, \pm_i} \to \cP_{k_0, \pm_0}$, and tangle composition corresponds to composition of multilinear maps.
+\end{defn}
 
+\begin{nota}
+We will try to shade our diagrams as much as possible for a shaded planar algebra.
+However, sometimes shading our diagrams requires us to split into many cases.
+In order to avoid this, we sometimes suppress the shading when it can be inferred from the indices.
+We also tend to suppress the external boundary disk of a shaded planar tangle; when we do so, the $\star$ is always on the left.
+For explicit examples, compare \ref{PA:Positive} and \ref{PA:Spherical} in the following definition.
+\end{nota}
+
+\begin{defn}
 A shaded planar algebra is called a \emph{subfactor planar algebra} if moreover
 \begin{enumerate}[label={\rm(PA\arabic*)}]
 \item
@@ -2092,34 +2102,94 @@ A shaded planar algebra is called a \emph{subfactor planar algebra} if moreover
 \item
 (evaluable/connected) $\dim(\cP_{0,\pm}) = 1$.
 \item
+\label{PA:Positive}
 (positive)
-$\langle x, y\rangle_{n,\pm} := $\nn{todo}
+$\langle x, y\rangle_{n,\pm} := 
+\begin{tikzpicture}[baseline=-.1cm]
+	\draw (0,0) -- (.8,0);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
+	\roundNbox{unshaded}{(1,0)}{.3}{0}{0}{$y^\dag$}
+	\node at (.5,.2){\tiny{$n$}};
+	\node at (-.45,0){\scriptsize{$\star$}};
+	\node at (1.45,0){\scriptsize{$\star$}};
+\end{tikzpicture}
+$
 defines a positive-definite inner product on each $\cP_{n,\pm}$.
 \item
+\label{PA:Spherical}
 (spherical)
-for all $x\in \cP_{1,+}$, \nn{todo}
+for all $x\in \cP_{1,+}$, 
+$
+\begin{tikzpicture}[baseline=-.1cm]
+	\filldraw[shaded] (0,.3) arc (180:0:.3cm) -- (.6,-.3) arc (0:-180:.3cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
+	\node at (-.45,0){\scriptsize{$\star$}};
+\end{tikzpicture}
+=
+\begin{tikzpicture}[baseline=-.1cm]
+	\fill[shaded, rounded corners = 5pt] (-.8,-.8) rectangle (.5,.8);
+	\filldraw[unshaded] (0,.3) arc (0:180:.3cm) -- (-.6,-.3) arc (-180:0:.3cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
+	\node at (-.45,0){\scriptsize{$\star$}};
+\end{tikzpicture}
+$.
 \end{enumerate}
 In a subfactor planar algebra, closed contractible loops can be traded for a multiplicative scalar $d>0$.
 By Jones' index rigidity theorem \cite{MR0696688}, $d\in \set{2\cos(\pi/k)}{k\geq 3}\cup [2,\infty)$.
-\end{defn}
 
-\begin{rem}
-Given a subfactor planar algebra $\cP_\bullet$, we get two Markov towers $\cP_\pm= (\cP_{n,\pm})_{n\geq 0}$ with traces
-$$
-\tr_{n,\pm}:= d^{-n}
-\nn{todo}
-$$
-and Jones projections
-$$
-e_{n,+}:=
-\nn{todo}
+Given a subfactor planar algebra $\cP_\bullet$, we get two Markov towers $\cP_\pm= (\cP_{n,\pm})_{n\geq 0}$ 
+with Jones projections for $k\geq 0$ given by
+\begin{equation}
+\label{eq:JonesProjectionsForPlanarAlgebra}
+e_{2k+1,+}
+:=
+\begin{tikzpicture}[baseline]
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.2,0){\tiny{$2k$}};
+\end{tikzpicture} 
 \qquad
+e_{2k+2,+}
+:=
+\begin{tikzpicture}[baseline]
+	\fill[shaded] (0,-.5) rectangle (1.2,.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[unshaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[unshaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture} 
 \qquad
-e_{n,-}:=
-\nn{todo}
-$$
+e_{2k+1,-}:=
+\begin{tikzpicture}[baseline]
+	\fill[shaded] (-.2,-.5) rectangle (1.2,.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[unshaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[unshaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.2,0){\tiny{$2k$}};
+\end{tikzpicture} 
+\qquad
+e_{2k+2,-}:=
+\begin{tikzpicture}[baseline]
+	\fill[shaded] (-.2,-.5) rectangle (0,.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture}
+\end{equation}
+and traces for $n\geq 0$ given by
+\begin{equation}
+\label{eq:TracesForPlanarAlgebra}
+\tr_{n,\pm}:= d^{-n}\,
+\begin{tikzpicture}[baseline=-.1cm]
+	\draw (0,.3) arc (180:0:.3cm) -- (.6,-.3) arc (0:-180:.3cm);
+	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+	\node at (.8,0){\tiny{$n$}};
+\end{tikzpicture} \,.
+\end{equation}
 The principal graph of $\cP_+$ is finite if and only if the principal graph of $\cP_-$ is finite; in this case, $\cP_\bullet$ is said to have \emph{finite depth}.
-\end{rem}
+\end{defn}
 
 
 \begin{defn}
