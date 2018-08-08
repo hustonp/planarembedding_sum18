@@ -2070,11 +2070,6 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 
 In this section, we rapidly recall the definition of a subfactor planar algebra \cite{math.QA/9909027}, its unitary $2\times 2$ multitensor category of projections \cite{MR2811311,1808.00323}, and the associated standard $\lambda$-lattice \cite{MR1334479}.
 
-\begin{warn}
-We warn the reader that our definition of a $\lambda$-lattice is non-standard; we merely take a subfactor planar algebra and forget some of the structure.
-As all standard $\lambda$-lattices in the sense of \cite{MR1334479} arise in this way, we lose no examples.
-\end{warn}
-
 \begin{defn}
 The \emph{shaded planar operad} consists of shaded planar tangles with the operation of composition.
 Shaded planar tangles have $r\geq 0$ input disks each with $2k_i$ boundary points, and an output disk with $2k_0$ boundary points.
@@ -2126,41 +2121,70 @@ $$
 The principal graph of $\cP_+$ is finite if and only if the principal graph of $\cP_-$ is finite; in this case, $\cP_\bullet$ is said to have \emph{finite depth}.
 \end{rem}
 
-From a subfactor planar algebra, one may form its unitary $2\times 2$ multitensor category of projections $\cC$ \cite{MR2811311,MR2559686,MR3405915}, which comes with a canonical generator corresponding to the unshaded-shaded strand in $\cP_{1,+}$, and the canonical spherical unitary dual functor \cite{1808.00323}
 
 \begin{defn}
-A unitary $2\times 2$ multitensor category is an indecomposable rigid $\Cstar$ tensor category which is Karoubi complete such that $1_\cC$ has an orthogonal decomposition into simple objects as $1_\cC = 1_0 \oplus 1_1$.
+A \emph{unitary $2\times 2$ multitensor category} $\cC$ is an indecomposable rigid $\Cstar$ tensor category which is Karoubi complete such that $1_\cC$ has an orthogonal decomposition into simple objects as $1_\cC = 1_0 \oplus 1_1$.
 We write $\cC_{ij} := 1_i \otimes \cC \otimes 1_j$ for $i,j \in \{0,1\}$.
-\nn{expand.}
+By \cite{MR1444286}, such a $\cC$ is automatically semisimple.
+When $\cC$ is finitely semisimple, it is called a unitary $2\times 2$ \emph{multifusion} category \cite{egno}.
+
+We say $X\in \cC_{01}$ \emph{generates} $\cC$ if every object of $\cC$ is isomorphic to a direct summand of an alternating tensor power of $X$ and $\overline{X}$
+$$
+X^{\otimes \text{alt}n}
+:=
+\underbrace{X\otimes \overline{X} \otimes \cdots \otimes X^?}_{n\text{ tensorands}}
+\qquad
+\qquad
+\overline{X}^{\otimes \text{alt}n}
+:=
+\underbrace{\overline{X} \otimes X\otimes \cdots \otimes \overline{X}^?}_{n\text{ tensorands}}
+$$
+where $X^? = X$ if $n$ is odd and $\overline{X}$ when $n$ is even, and $\overline{X}^? = \overline{X}$ when $n$ is odd and $X$ when $n$ is even.
+Here, $(\overline{X}, \ev_X, \coev_X)$ is the canonical \emph{balanced} dual of $X$ \cite{MR3342166,1805.09234,1808.00323} which satisfies the zig-zag axioms and the balancing equation
+$$
+\psi(\ev_X \circ (\id_{\overline{X}} \otimes f) \circ \ev_X^\dag)
+=
+\psi(\coev_X^\dag \circ (f\otimes \id_{\overline{X}}) \circ \coev_X)
+\qquad
+\forall f\in \cC(X\to X)
+$$
+where $\psi : \cC(1_\cC\to 1_\cC) \to \bbC$ is the linear functional such that $\psi(\id_{1_0}) = \psi(\id_{1_1}) = 1$.
 \end{defn}
 
-\nn{expand this section}
+The following theorem is well-known to experts.
 
-From any subfactor planar algebra, one may construct a 2-category. We refer the reader to \cite{paragroup} and \cite{MR2559686} for more details. 
-We adopt the definitions used in \cite{paragroup}, since we wish to work with shaded planar algebras.
+\begin{thm}
+There is an equivalence of categories\,\footnote{We suppress the subtlety about the right hand side of this equivalence being a contractible 2-category. 
+We refer the reader to \cite{1607.06041,1808.00323} for more details.}
+\[
+\left\{\, 
+\parbox{4.8cm}{\rm Subfactor planar algebras $\cP_\bullet$}\,\left\}
+\,\,\,\,\cong\,\,
+\left\{\,\parbox{7.5cm}{\rm Pairs $(\cC, X)$ with $\cC$ a unitary $2\times 2$ multitensor category together with a generator $X\in \cC_{01}$}\,\right\}.
+\right.\right.
+\]
+\end{thm}
 
-\begin{defn}\textnormal{
-		Let $Q_{\bullet}$ be a subfactor planar algebra. The \textit{paragroup} of $Q_\bullet$ is a 2-category $\cG$: 
-\begin{itemize}
-\item The 0-morphisms of $\cG$ are the two objects
-$\uscircle$ and $\scircle$.
-\item The 1-morphisms are projections in the box spaces of $Q_{\bullet}$, as follows:
-\begin{itemize}
-	\item $\Hom_{\cG}(\uscircle\rightarrow\uscircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is even}\}$
-	\item $\Hom_{\cG}(\uscircle\rightarrow\scircle)=\{p\in Q_{i,+}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\uscircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is odd}\}$
-	\item $\Hom_{\cG}(\scircle\rightarrow\scircle)=\{p\in Q_{i,-}|\text{$p$ is projection and $i$ is even}\}$
-\end{itemize}
-Composition of $1$-morphisms is denoted by $\otimes$ and represented diagrammatically by horizontal concatenation of diagrams.
-\item The 2-morphisms of $\cG$ are defined as follows: for $p\in P_{i,\pm}$ and $q\in P_{i,\pm}$, we set $\Hom_{\cG}(p\rightarrow q)=qP_{j\rightarrow i}p$. The space $P_{j\rightarrow i}$ is just $P_{i+j}$, except that tangles are depicted with $j$ with strings emanating from the top and $i$ from the bottom. Note that by construction, $i+j$ is always even. 
-\end{itemize}}
-\end{defn}
+Starting with a subfactor planar algebra $\cP_\bullet$, one may form its unitary $2\times 2$ multitensor category of projections $\cC$ \cite{MR2559686,MR3405915,1808.00323}, which comes with a canonical generator corresponding to the unshaded-shaded strand in $\cP_{1,+}$, and the canonical spherical unitary dual functor \cite{MR3342166,1805.09234,1808.00323}.
+This unitary $2\times 2$ multitensor category can also be thought of as a unitary 2-category called the \emph{paragroup}; we refer the reader to \cite{MR3157990} for more details.
 
-For a general subfactor planar algebra $Q_{\bullet}$, the $2$-category $\cG$ can be interpreted as a unitary multitensor category $\cC$ with the canonical spherical unitary dual functor following \cite{egno,1808.00323}. 
-When $Q_{\bullet}$ is finite depth, $\cC$ is a $2\times 2$ unitary multifusion category. 
+Starting with a pair $(\cC, X)$, we get a subfactor planar algebra by defining
+$$
+\cP_{n,+} := \End_\cC(X^{\otimes \text{alt} n})
+\qquad\qquad
+\cP_{n,-} := \End_\cC(\overline{X}^{\otimes \text{alt} n}),
+$$
+and we define the action of the shaded planar operad via the diagrammatic calculus for pivotal tensor categories.
+We refer the reader to \cite{MR2811311,1808.00323} for more details.
 
-\nn{theorem stating equivalence between these categories and planar algebras.}
 
+
+\nn{lambda lattices.}
+
+\begin{warn}
+We warn the reader that our definition of a $\lambda$-lattice is non-standard; we merely take a subfactor planar algebra and forget some of the structure.
+As all standard $\lambda$-lattices in the sense of \cite{MR1334479} arise in this way, we lose no examples.
+\end{warn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modules for unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}\label{ssec:moduledefs}
