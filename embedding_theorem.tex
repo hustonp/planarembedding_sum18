@@ -2293,14 +2293,50 @@ $$
 and we define the action of the shaded planar operad via the diagrammatic calculus for pivotal tensor categories.
 We refer the reader to \cite{MR2811311,1808.00323} for more details.
 
+\begin{defn}
+A \emph{Markov-Popa lattice} $A_\bullet$ of \emph{modulus $d$}
+is a standard $d^{-2}$-sequence/ladder \cite[Def.~1.3]{MR1334479}. 
+We give two non-standard equivalent definitions below which emphasize the connection with subfactor planar algebras and Markov towers respectively.
 
+One equivalent definition of a Markov-Popa lattice is that it is the structure obtained from a subfactor planar algebra $\cP_\bullet$ by forgetting the action of most of the shaded planar operad, except:
+\begin{itemize}
+\item
+the tracial von Neumann algebra structure on each $\cP_{n,\pm}$,
+\item
+the distinguished Jones projections,
+\item
+the left and right inclusions, and
+\item
+the left and right conditional expectations.
+\end{itemize}
+
+A second equivalent definition of a Markov-Popa lattice $A_\bullet$ is a pair of Markov sequences $(A_{n,\pm}, \tr_{n,\pm}, e_{n+1,\pm})_{n\geq 0}$ of modulus $d$ satisfying the following compatibility axioms:
+\begin{enumerate}[label={\rm(L\arabic*)}]
+\item
+%(cross inclusions)
+$A_{n,-} \subset A_{n+1,+}$ for all $n\geq 0$,
+with $\tr_{n+1,+}|_{A_{n,-}} = \tr_{n,-}$, 
+and these inclusions map $e_{n+1,-}$ to $e_{n+2,+}$,
+\item
+(commuting square)
+$E^{A^{n+1,-}_{A_{n,-}}} \circ E^{A_{n+2,+}}_{A_{n+1,-}} = E^{A_{n+1,+}}_{A_{n,-}} \circ E^{A_{n+2,+}}_{A_{n+1,+}} = E^{A_{n+2,+}}_{A_{n,-}}$,
+\item
+$E^{A^{n+1,+}}_{A_{n,-}}(e_{n}) = d^{-2}$ for all $n\geq 1$,
+\item
+$A_{n+1,+} e_{1,+} = A_{n,-} e_{1,+}$
+\nn{correct?}
+\item (standard)
+\end{enumerate}
+\end{defn}
+
+Notice that given a subfactor planar algebra $\cP_\bullet$ with loop modulus $d$, we get a Markov-Popa $d^{-2}$ lattice of
 
 \nn{lambda lattices.}
 
-\begin{warn}
+\begin{rem}
 We warn the reader that our definition of a $\lambda$-lattice is non-standard; we merely take a subfactor planar algebra and forget some of the structure.
 As all standard $\lambda$-lattices in the sense of \cite{MR1334479} arise in this way, we lose no examples.
-\end{warn}
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modules for unitary multitensor categories, subfactor planar algebras, and \texorpdfstring{$\lambda$}{lambda}-lattices}\label{ssec:moduledefs}
