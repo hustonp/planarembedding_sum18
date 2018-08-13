@@ -1008,6 +1008,7 @@ One should think of the box spaces for semidisks as being endomrphisms of object
 The input disks and semidiscs are also numbered, with the numbering determining the order of the tensor factors in the domain of the action map as depicted above. Like the shaded planar operad, the shaded planar module operad is a symmetric operad, and vectorspaces form a symmetric monoidal category, so we often supress the numbering. 
 
 \begin{defn}
+\label{def:RightPlanarModule}
 A \emph{right planar module} $\cM_\bullet$ for the subfactor planar algebra $\cP_\bullet$ consists of a sequence of finite dimensional $\bbC$-vector spaces $(\cM_k)_{k\geq 0}$
 and a conjugate-linear map $\dag: \cM_k \to \cM_k$ for all $k\geq 0$,
 together with an action of the shaded planar module operad on the box spaces $\cM_\bullet$ and $\cP_\bullet$ compatible with the composition of tangles and the shaded planar algebra structure on $\cP_\bullet$, and the $\dag$ operation. 
@@ -1044,13 +1045,13 @@ $$
 %	\node at (.4,-.8) {\scriptsize{$n$}};
 \end{tikzpicture}
 :
-\cM_k \to \cM_0 = \bbC
+\cM_k \to \cM_0
 $$
 
 We call $\cM_\bullet$ \emph{connected} if $\dim(\cM_0) = 1$.
-In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_n$ is a scalar-valued.
-We define $\tr_n := d^{-n} \Tr_n$, where $d$ is the loop parameter of $\cP_\bullet$.
-Notice that the $\tr_n$ are faithful tracial states.
+In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_k$ is a scalar-valued.
+We define $\tr_n := d^{-k} \Tr_k$, where $d$ is the loop parameter of $\cP_\bullet$.
+Notice that the $\tr_k$ are faithful tracial states.
 \end{defn}
 
 \begin{ex}
@@ -1647,6 +1648,7 @@ The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones proj
 
 
 \begin{ex}
+\label{ex:MarkovTowerFromRightModule}
 Suppose $(\cM,m, \Tr^\cM)$ is a cyclic pivotal $\cT\cL\cJ(d)$-module $\Cstar$ category.
 Let $X\in \cT\cL\cJ(d)$ be the generating object corresponding to the unshaded-shaded strand.
 As described in the introduction, we get a Markov tower by defining  
@@ -1692,8 +1694,33 @@ The principal graph of $M_\bullet$ is precisely the fusion graph of $\cM$ with r
 \end{ex}
 
 \begin{ex}
-By Theorem \ref{thm:ModuleEquivalence}, we can also obtain an equivalent connected right planar module for the subfactor planar algebra $\cT\cL\cJ(d)_\bullet$.
-We define $M_n : = \cM_n$ with its $\dag$-algebra structure, and we define $\tr_n : = $ \nn{todo}
+We obtain the equivalent connected right planar module for the subfactor planar algebra $\cT\cL\cJ(d)_\bullet$ to Example \ref{ex:MarkovTowerFromRightModule} under Theorem \ref{thm:ModuleEquivalence} as follows.
+We define $M_k : = \cM_k$ with its $\dag$-algebra structure and faithful tracial state $\tr_k$ from Definition \ref{def:RightPlanarModule}.
+Jones projections are defined depending on parity by
+$$
+e_{2k+1}
+:=
+\begin{tikzpicture}[baseline]
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.2,0){\tiny{$2k$}};
+%
+	\halfcircle{}{(-.2,0)}{.5}{1.1}{}
+\end{tikzpicture} 
+\qquad
+e_{2k+2,+}
+:=
+\begin{tikzpicture}[baseline]
+	\halfcircle{shaded}{(-.2,0)}{.5}{1.1}{}
+%
+	\fill[unshaded] (-.18,-.48) rectangle (-.005,.48);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[unshaded] (.3,.48) arc (-180:0:.3cm);
+	\filldraw[unshaded] (.3,-.48) arc (180:0:.3cm);
+	\node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture} 
+$$
 \end{ex}
 
 
