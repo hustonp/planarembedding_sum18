@@ -1674,6 +1674,29 @@ Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite 
 Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a Markov tower of finite dimensional von Neumann algebras.
 \end{ex}
 
+\nn{classification in terms of graphs and a Frobenius-Perron weighting on the vertices.}
+
+\begin{prop}
+\label{prop:ClassificationOfMarkovTowers}
+Connected Markov towers $M_\bullet$ are classified by triples $(\Gamma,v_0, \dim)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
+$$
+\sum_{w\sim v} \dim(w) = d \dim(v),
+$$
+where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+\end{prop}
+\begin{proof}
+Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
+We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
+
+Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
+One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
+
+One then checks these two processes are mutually inverse.
+We leave the straightforward details to the reader.
+\nn{better to have some citations, or to supply a bit more detail here...}
+\end{proof}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Operations on Markov towers to produce new Markov towers}
 \label{sec:OperationsOnMarkovTowers}
@@ -2636,6 +2659,8 @@ Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism
 By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
 
+\nn{describe the trace on $\cM$ from the tower.}
+
 \nn{TODO: How does the category change under the operations in the previous section?}
 
 %\begin{prop}
@@ -2867,23 +2892,38 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 \subsection{Temperley-Lieb-Jones module categories} 
 \label{sec:TLJmodules}
 
-
-\nn{Markov tower gives module for TLJ.}
-
-This result should be compared with \cite{MR3420332} 
+We now show that the category of projections of a connected Markov tower of modulus $d$ can be canonically endowed with the structure of a cyclic pivotal right Temperley-Lieb-Jones ($\cT\cL\cJ(d)$) module $\Cstar$ category.
+Moreover, all cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ categories arise in this way.
+Combined with the classification of connected Markov towers of modulus $d$ from Proposition \ref{prop:ClassificationOfMarkovTowers}, we get the following result, which should be compared with \cite{MR3420332} in the non-pivotal setting.
 
 \begin{cor*}[Corollary \ref{cor:TLJPivotalModuleClassification}]
-Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)_\bullet$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
+Cyclic pivotal right module $\Cstar$ categories for $\cT\cL\cJ(d)$ are classified by triples $(\Gamma, \dim, v_0)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
 $$
 \sum_{w\sim v} \dim(w) = d \dim(v),
 $$
 where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
 \end{cor*}
-\begin{proof}
-	We will show that any Markov tower can be endowed with the structure of a right planar module over $TLJ(d)_\bullet$. By Theorem \ref{thm:ModuleEquivalence}, cyclic right pivotal module $\Cstar$ categories ovr $\cT\cL\cJ(d)_\bullet$ are then just connected Markov towers. The principal graph of a connected Markov tower may be any bipartite graph with a choice of distinguished vertex. Conversely, the principal graph uniquely determines the Bratteli diagram, and hence the algebras of a connected Markov tower. The choice of trace for the Markov tower is determined by a choice of dimension function satisfying the above hypotheses. \nn{Should we: cite somebody for all these basic facts about Bratteli diagrams? show why our dimension function has this property? This paper is already getting long.}
 
-	\nn{The rest of this should write itself once we have defined a standard form for tangles of the shaded planar module operad and so on, relating Markov data to diagrams, since the point is that we just plug in basis elements of TL and reduce to that stuff. But, that doesn't belong here...?}
+\begin{defn}
+\label{def:ModuleFromMarkovTower}
+\nn{$\cT\cL\cJ(d)$-module from Markov tower}
+\end{defn}
+
+\begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
+We saw in Definition \ref{def:ModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
+We saw in Example \nn{} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
+defining $M_n := \End(m \vartriangleleft X^{\text{alt}\otimes n})$ and $\tr_n := \Tr^\cM_{m \vartriangleleft X^{\text{alt}\otimes n}}$ defines a connected Markov tower.
+One now shows these two processes are mutually inverse up to equivalence.
+\nn{todo}
 \end{proof}
+
+
+\nn{edit below.}
+
+
+
+
+
 
 
 
