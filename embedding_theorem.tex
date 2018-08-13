@@ -164,6 +164,7 @@
 % some math commands specific to this document %%%%%%%%%%%%
 \newcommand{\alttens}[1][n]{{\text{alt}\otimes #1}}
 \newcommand{\xalt}{x^{\alttens}}
+\newcommand{\Xalt}{X^{\alttens}}
 \newcommand{\xbaralt}{\overline{x}^{\alttens}}
 \newcommand{\act}{\overline{x}^{?}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,7 +173,7 @@
 \newcommand{\corey}[1]{\marginpar{\tiny \textcolor{green}{CJ: #1}}}
 \newcommand{\des}[1]{\marginpar{\tiny \textcolor{purple}{DJC: #1}}}
 \newcommand{\Af}{\mathcal{A}\Lambda_{F}}
-\newcommand{\WStar}{\bfW\text{*}}
+%\newcommand{\WStar}{\bfW\text{*}}
 %\newcommand{\Irr}{\text{Irr}(\mathcal{C})}
 
 % tricky way to iterate macros over a list
@@ -223,7 +224,7 @@
 \newcommand{\fdHilb}{{\sf Hilb_{fd}}}
 \newcommand{\ConAlg}{{\sf ConAlg}}
 \newcommand{\Cstar}{\rm{C^*}}
-
+\newcommand{\Wstar}{\rm{W^*}}
 
 \newcommand{\jw}[1]{f^{(#1)}}
 \newcommand{\todo}[1]{\textcolor{blue}{\textbf{TODO: #1}}}
@@ -750,6 +751,8 @@ $$
 
 A \emph{shaded planar algebra} $\cP_\bullet$ consists of a family $\cP_{n,\pm}$ of $\bbC$-vector spaces together with an action of the shaded planar operad.
 That is, each shaded planar tangle $T$ with input disks of type $(k_i, \pm_i)$ for $1\leq i\leq r$ and output disk of type $(k_0,\pm_0)$ defines a multilinear map $Z(T) : \prod_{i=1}^r \cP_{k_i, \pm_i} \to \cP_{k_0, \pm_0}$, and tangle composition corresponds to composition of multilinear maps.
+
+\nn{dagger!}
 \end{defn}
 
 \begin{nota}
@@ -1005,8 +1008,49 @@ One should think of the box spaces for semidisks as being endomrphisms of object
 The input disks and semidiscs are also numbered, with the numbering determining the order of the tensor factors in the domain of the action map as depicted above. Like the shaded planar operad, the shaded planar module operad is a symmetric operad, and vectorspaces form a symmetric monoidal category, so we often supress the numbering. 
 
 \begin{defn}
-A \emph{right planar module} $\cM_\bullet$ for the subfactor planar algebra $\cP_\bullet$ consists of a sequence of $\bbC$-vector spaces $(M_k)_{k\geq 0}$
-together with an action of the shaded planar module operad on the box spaces $\cM_\bullet$ and $\cP_\bullet$ compatible with the composition of tangles and the shaded planar algebra structure on $\cP_\bullet$. In other words, the box spaces $\cM_\bullet$ and $\cP_\bullet$ together must have the structure of an algebra over the shaded planar module operad, which must extend the original shaded planar operad algebra structure on $\cP_\bullet$. 
+A \emph{right planar module} $\cM_\bullet$ for the subfactor planar algebra $\cP_\bullet$ consists of a sequence of finite dimensional $\bbC$-vector spaces $(\cM_k)_{k\geq 0}$
+and a conjugate-linear map $\dag: \cM_k \to \cM_k$ for all $k\geq 0$,
+together with an action of the shaded planar module operad on the box spaces $\cM_\bullet$ and $\cP_\bullet$ compatible with the composition of tangles and the shaded planar algebra structure on $\cP_\bullet$, and the $\dag$ operation. 
+In other words, the box spaces $\cM_\bullet$ and $\cP_\bullet$ together must have the structure of an algebra over the shaded planar module operad, which must extend the original shaded planar operad algebra structure on $\cP_\bullet$. 
+
+Notice that each of the $\cM_k$ has a $\dag$-algebra structure with multiplication given by the tangle
+$$
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-1) -- (.25,1);
+%
+	\halfcircle{}{(0,0)}{1}{.3}{}
+%
+	\openhalfcircle{}{(0,.4)}{.25}{.25}{\scriptsize{$2$}}
+	\openhalfcircle{}{(0,-.4)}{.25}{.25}{\scriptsize{$1$}}
+	\node at (.4,0) {\scriptsize{$k$}};
+	\node at (.4,.8) {\scriptsize{$k$}};
+	\node at (.4,-.8) {\scriptsize{$k$}};
+\end{tikzpicture}
+:
+\cM_k \otimes \cM_k \to \cM_k.
+$$
+We require that each $\dag$-algebra $\cM_k$ is a finite dimensional $\Cstar/\Wstar$ algebra.
+Moreover, we require that for each $k$, the following map $\cM_k \to \cM_0$ is positive, faithful, and tracial:
+$$
+\Tr_k:=
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,.25) arc (180:0:.2cm) -- (.65,-.25) arc (0:-180:.2cm);
+%
+	\halfcircle{}{(0,0)}{.8}{.3}{}
+%
+	\openhalfcircle{}{(0,0)}{.25}{0}{}
+	\node at (.8,0) {\scriptsize{$k$}};
+%	\node at (.4,.8) {\scriptsize{$n$}};
+%	\node at (.4,-.8) {\scriptsize{$n$}};
+\end{tikzpicture}
+:
+\cM_k \to \cM_0 = \bbC
+$$
+
+We call $\cM_\bullet$ \emph{connected} if $\dim(\cM_0) = 1$.
+In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_n$ is a scalar-valued.
+We define $\tr_n := d^{-n} \Tr_n$, where $d$ is the loop parameter of $\cP_\bullet$.
+Notice that the $\tr_n$ are faithful tracial states.
 \end{defn}
 
 \begin{ex}
@@ -1603,13 +1647,55 @@ The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones proj
 
 
 \begin{ex}
-\nn{take a $\cC$-module and get a markov tower.
-This is the same as taking a planar module and getting a markov tower.}
+Suppose $(\cM,m, \Tr^\cM)$ is a cyclic pivotal $\cT\cL\cJ(d)$-module $\Cstar$ category.
+Let $X\in \cT\cL\cJ(d)$ be the generating object corresponding to the unshaded-shaded strand.
+As described in the introduction, we get a Markov tower by defining  
+$M_n:=\End_{\cC}(m\vartriangleleft \Xalt)$, $\tr_n := \Tr^\cM_{m\vartriangleleft \Xalt}(\id_{m\vartriangleleft \Xalt})^{-1} \Tr^\cM_{m\vartriangleleft \Xalt}$, and Jones projections depending on parity by 
+\begin{align*}
+e_{2k+1}
+&=
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.3,-.5) rectangle (-.7,0.5);
+	\draw[thick,red] (-0.3,-.5) -- (-0.3,0.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.2,0){\tiny{$2k$}};
+\end{tikzpicture} 
+\hspace{.3cm}
+:=
+d^{-1}
+\big(
+\id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes k}} \otimes (\coev_X \circ \coev_X^\dag)
+\big)
+\in M_{2k+2}
+\\
+e_{2k+2}
+&=
+\begin{tikzpicture}[baseline]
+	\fill[ctwoshading] (-.3,-.5) rectangle (-.7,0.5);
+	\fill[shaded] (0,-.5) rectangle (1.2,.5);
+	\draw[thick,red] (-0.3,-.5) -- (-0.3,0.5);
+	\draw (0,-.5) -- (0,.5);
+	\filldraw[unshaded] (.3,.5) arc (-180:0:.3cm);
+	\filldraw[unshaded] (.3,-.5) arc (180:0:.3cm);
+	\node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture} 
+:=
+d^{-1}
+\big(
+\id_m \vartriangleleft \id_X \otimes \id_{(\overline{X}\otimes X)^{\otimes k}} \otimes (\ev_X^\dag \circ \ev_X)
+\big)
+\in M_{2k+3}.
+\end{align*}
+The principal graph of $M_\bullet$ is precisely the fusion graph of $\cM$ with respect to $X$.
 \end{ex}
 
-\nn{edit:}
+\begin{ex}
+By Theorem \ref{thm:ModuleEquivalence}, we can also obtain an equivalent connected right planar module for the subfactor planar algebra $\cT\cL\cJ(d)_\bullet$.
+We define $M_n : = \cM_n$ with its $\dag$-algebra structure, and we define $\tr_n : = $ \nn{todo}
+\end{ex}
 
-\nn{adapt for planar modules.}
 
 \begin{lem}
 Suppose $\cP_\bullet$ is a finite depth subfactor planar algebra and $\cM_\bullet$ is a right planar module for $\cP_\bullet$.
