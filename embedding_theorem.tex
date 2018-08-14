@@ -2922,6 +2922,20 @@ $$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
 \des{I'm not being careful about the factor of d at all right now I need to fix that later.}
 
 \begin{proof}
+	\begin{align}
+		 \eta {}^nh^i_j{}^n r^{i+j} &=E_{n+2i+j}(F^{n+2i+j}_{n+i+j}) \eta {}^nh^i_j{}^n r^{i+j} \\
+									&=E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_j) {}^n r^{i+j} \\
+									&= E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}) {}^nr^{i+j} \\
+									&= E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} \\
+									&= E_{n+2i+j}(E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} \\
+									&=E_{n+i+j}( \eta {}^nh^i_j F^{n+j+i}_{n+j})E_{n+2i+j}(F^{n+j+2i}_{n+j+i})F^{n+j+i}_{n+j} {}^nr^{i+j} \\
+									&= E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+i}_{n+j}{}^n r^{i+j} \\
+									&= E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j}){}^nr^{i+j} \\
+									&= E_{n+i+j}( \eta {}^nh^i_j){}^nr^{i+j} \
+	\end{align}
+\end{proof}
+\des{I think I was actually correct about all factors of d for this proof}
+\begin{proof}[Proof of \label{prop:InjectiveAlgebraMap}]
 Recall that we need only verify $\pi$ respects three types of composition:
 	\begin{enumerate}
 		\item\label{upup}  $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
