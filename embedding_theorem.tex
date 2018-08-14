@@ -1288,8 +1288,11 @@ We leave the straightforward verification that $\cM$ is a right $\cC$-module $\C
 \nn{Karoubi completion...}
 
 The distinguished simple basepoint of $\cM$ is given by the identity projection $1_{\cM_0} \in \cM_0$.
-The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$.
-\nn{verification that it's a module trace!}
+The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$. 
+By definition, we have assumed $\Tr_k$ to be tracial and positive on endomorphisms. The trace is also compatible with the action of $\C$, which can be seen by composing the trace tangle with the action tangles. % draw?
+To see that the $\Tr_k$ give a positive module trace, we reduce the general case to the case of endomorphisms as follows: suppose $f\in\cM([n]\to[n+2k])$. Obtain $g\in\C(1\to(X^?)^{\alttens[2k]})$ from $1\in\cP_{k,\pm}$. Then \[\Tr_n(f^\dag\circ f)=\Tr_{n+2k}((f\lhd g)^\dag\circ(f\lhd g))\Tr_{2k}(g^\dag\circ g)^{-1}=d^k\Tr_{n+2k}((f\lhd g)^\dag\circ(f\lhd g))\]
+\nn{make a picture instead of this, probably}
+Therefore, it suffices to show that if $f\neq0$, then $f\lhd g\neq0$. We know that $g\neq 0$, since $g$ is the image of the identity of a non-zero algebra under the action of an invertible tangle. Since $\cC$ has all duals, by Frobenius reciprocity, the action of a non-zero morphism of the appropriate shading is faithful, completing the proof. 
 \end{defn}
 
 %By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
@@ -1582,7 +1585,7 @@ We call a Markov tower \emph{connected} if $\dim(M_0) = 1$.
 \end{defn}
 
 \begin{rem}
-One should think of the following definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
+One should think of the preceding definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
 Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2), and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.)
 \end{rem}
 
@@ -1692,8 +1695,7 @@ This follows immediately from \ref{EP:NewStuff}.
 
 \begin{rem}
 \label{rem:InfiniteDimensionalMarkovTower}
-\nn{we stick to finite dimensions, but what came above in this section works if the $(M_n,\tr_n)$ are arbitrary tracial von Neumann algebras.
-We stick to finite dimensions because we want a principal graph; this notion would need to be generalized to an infinite setting...}
+	The foregoing observations all hold in the case where the $M_n$ are arbitrary tracial von Neumann algebras. In this paper, we restrict our attention to the finite dimensional case because of the following, in which we obtain a principal graph for a Markov tower. To generalize to the infinite case, a measure-theoretic replacement for the principal graph would need to be introduced. 
 \end{rem}
 
 
@@ -1706,11 +1708,10 @@ The \emph{principal graph} of the Markov tower $(M_n,\tr_n, e_{n+1})$ consists o
 A Markov tower is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
-
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
-Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. 
-Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
+Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ contains the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, along with additional vertices and edges which are part of the principal graph. 
+At the base, all of Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. We can therefore ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
 
 \begin{fact}\label{BratteliPrincipal}
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
@@ -1887,7 +1888,7 @@ By \cite[Prop.~2.7.3]{MR996807}, the relative commutants $A_i' \cap A_j$ for $i\
 \end{defn}
 
 \begin{nota}
-From this point on, we reserve the notation $(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
+From this point on, we reserve the notation $A_\bullet=(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
 \end{nota}
 
 \begin{ex}
@@ -1905,7 +1906,7 @@ We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and 
 We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
 
 It is straightforward to check that $M_\bullet$ has principal graph $\Gamma$ with basepoint $v$ corresponding to $1_{M_0}$.
-Moreover, by construction the quantum dimension function of $M_\bullet$ is exactly $\dim$.
+Moreover, by construction, the quantum dimension function of $M_\bullet$ is exactly $\dim$.
 \end{ex}
 
 Indeed, the above example can be easily generalized to the following result.
@@ -2858,7 +2859,7 @@ for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
 \item
 there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2j])$ and $\cM_0([n+2k] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
-Notice that in a $\Cstar$ category, these norm can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
+Notice that in a $\Cstar$ category, these norms can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
 \end{itemize}
@@ -2873,8 +2874,48 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 \label{prop:InjectiveAlgebraMap}
 The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
 \end{prop}
+
+	From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty in seeing that $\pi$ is an algebra homomorphism is in seeing that it respects multiplication. Notice however that because $\pi$ respects $\dag$ we only need to check 3 types of composition:
+	\begin{enumerate}
+		\item $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
+		\item $[n+2i]\rightarrow [n] \rightarrow [n+2i+2j] $
+		\item $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
+	\end{enumerate}
+To prove this we need to introduce some notation for specific elements of Temperley-Lieb and a lemma.
+
+\begin{nota}
+Let the following elements of Temeperley-Lieb be denoted as follows:
+	\begin{itemize}
+		\item $ {}^nh^j_k= d^{-j}\,
+	\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$k$}};
+	\node at (.8,-.2) {\scriptsize{$j$}};
+	\end{tikzpicture}$ and let ${}^n g^j_k = {{}^n h^j_k}^{\ast}$.
+	\item ${}^n r^{i+j}=d^{-(i+j)}\begin{tikzpicture}[baseline=0, yscale = -1]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1.5);
+	\draw (.2,0) -- (.2,1.5);
+	\draw (0.4,0) arc (180:0:.7);
+    \draw (0.7,0) arc (180:0:.4);
+    \draw (0.4,1.5) arc (-180:0:.3);
+      \draw (1.2,1.5) arc (-180:0:.3);
+      \node at (.2,-.2) {\scriptsize{$n$}};
+      \node at (1.65,-.2) {\scriptsize{$i+j$}};
+     \node at (.4,1.7) {\scriptsize{$i$}};
+      \node at (1.2,1.7) {\scriptsize{$j$}};
+	\end{tikzpicture}$ and let ${}^n r_{i+j}= {{}^n r^{i+j}}^{\ast}$
+	\end{itemize}
+\end{nota}	
+
+
 \begin{proof}
-	From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
+	
 \nn{Use Proposition \ref{prop:MultistepJonesProjections}}
 \end{proof}
 
