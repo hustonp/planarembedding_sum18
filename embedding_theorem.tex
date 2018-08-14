@@ -2898,8 +2898,48 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 \label{prop:InjectiveAlgebraMap}
 The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
 \end{prop}
+
+	From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty in seeing that $\pi$ is an algebra homomorphism is in seeing that it respects multiplication. Notice however that because $\pi$ respects $\dag$ we only need to check 3 types of composition:
+	\begin{enumerate}
+		\item $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
+		\item $[n+2i]\rightarrow [n] \rightarrow [n+2i+2j] $
+		\item $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
+	\end{enumerate}
+To prove this we need to introduce some notation for specific elements of Temperley-Lieb and a lemma.
+
+\begin{nota}
+Let the following elements of Temeperley-Lieb be denoted as follows:
+	\begin{itemize}
+		\item $ {}^nh^j_k= d^{-j}\,
+	\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$k$}};
+	\node at (.8,-.2) {\scriptsize{$j$}};
+	\end{tikzpicture}$ and let ${}^n g^j_k = {{}^n h^j_k}^{\ast}$.
+	\item ${}^n r^{i+j}=d^{-(i+j)}\begin{tikzpicture}[baseline=0, yscale = -1]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1.5);
+	\draw (.2,0) -- (.2,1.5);
+	\draw (0.4,0) arc (180:0:.7);
+    \draw (0.7,0) arc (180:0:.4);
+    \draw (0.4,1.5) arc (-180:0:.3);
+      \draw (1.2,1.5) arc (-180:0:.3);
+      \node at (.2,-.2) {\scriptsize{$n$}};
+      \node at (1.65,-.2) {\scriptsize{$i+j$}};
+     \node at (.4,1.7) {\scriptsize{$i$}};
+      \node at (1.2,1.7) {\scriptsize{$j$}};
+	\end{tikzpicture}$ and let ${}^n r_{i+j}= {{}^n r^{i+j}}^{\ast}$
+	\end{itemize}
+\end{nota}	
+
+
 \begin{proof}
-	From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
+	
 \nn{Use Proposition \ref{prop:MultistepJonesProjections}}
 \end{proof}
 
