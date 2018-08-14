@@ -290,13 +290,13 @@
 
 \newcommand{\halfcircle}[5]{
 	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (0,#3) + (#4,0) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) + (0,.0211) $); 
-	\node at ($ #2 + .75*(#3,0) $) {#5};
+	\node at ($ #2 + .5*(#3,0) +.5*(#4,0) $) {#5};
 }
 
 \newcommand{\openhalfcircle}[5]{
 	\draw[very thick, fill=white, #1] ($ #2 + (0,#3) $) -- ($ #2 + (#4,0) + (#3,#3) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) $); 
 	\draw[super thick, white] ($ #2 + (0,#3) - (0,.0211) $) -- ($ #2 - (0,#3) + (0,.0211) $);
-	\node at ($ #2 + .75*(#3,0) +.5*(#4,0) $) {#5};
+	\node at ($ #2 + .5*(#3,0) +.5*(#4,0) $) {#5};
 }
 
   \newcommand{\tikzmath}[2][]
@@ -1027,7 +1027,8 @@ $$
 $$
 We require that each $\dag$-algebra $\cM_k$ is a finite dimensional $\Cstar/\Wstar$ algebra.
 Moreover, we require that for each $k$, the following map $\cM_k \to \cM_0$ is positive, faithful, and tracial:
-$$
+\begin{equation}
+\label{eq:NonnormalizedPlanarModuleTrace}
 \Tr_k:=
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw (.25,.25) arc (180:0:.2cm) -- (.65,-.25) arc (0:-180:.2cm);
@@ -1041,7 +1042,7 @@ $$
 \end{tikzpicture}
 :
 \cM_k \to \cM_0
-$$
+\end{equation}
 
 We call $\cM_\bullet$ \emph{connected} if $\dim(\cM_0) = 1$.
 In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_k$ is a scalar-valued.
@@ -1152,50 +1153,158 @@ $$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Equivalence}
+\subsection{Equivalence of modules}
 
-
-In this section, we sketch the proof of the following theorem.
+In this section, $\cP_\bullet$ will denore a subfactor planar algebra, and $(\cC, X)$ will denote its unitary $2\times 2$ multitensor category of projections, where $X = 1_0 \otimes X \otimes 1_1$ is the generating unshaded-shaded strand.
+We now sketch the proof of the following theorem.
 
 \begin{thm*}[Theorem \ref{thm:ModuleEquivalence}]
 %\label{thm:ModuleEquivalence}
-Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ as above.
-There is an equivalence between:
+%Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ as above.
+There is a canonical bijection between equivalence classes of
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with choice of simple basepoint $m = m\vartriangleleft 1_0$, and
+indecomposable pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with simple basepoint $m = m\vartriangleleft 1_0$, and
 \item
 connected right planar modules $\cM_\bullet$ for $\cP_\bullet$.
 \end{enumerate}
 \end{thm*}
 
-As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$ in \S\ref{sec:TLJmodules}.
+As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$ in Corollary \ref{cor:TLJPivotalModuleClassification}, whose proof appears in \S\ref{sec:TLJmodules}.
 
-\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
-What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
-
-\begin{thm}
-Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
-We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
-\end{thm}
+%\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
+%What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
+%
+%\begin{thm}
+%Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
+%We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
+%\end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{From pivotal module categories to planar modules}
+%\subsection{From pivotal module categories to planar modules}
 
-Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
+\begin{defn}
+Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
+We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$.
+\nn{describe how to do this.}
+\end{defn}
+
+\begin{defn}
+Given a connected right planar $\cP_\bullet$-module $\cM_\bullet$, we let $\cM$ be its \emph{category of projections}.
+The objects of $\cM$ are the orthogonal projections in $\cM_k$ for $k\geq 0$.
+The hom space $\cM(p \to q)$ for $p\in \cM_j$ and $q\in \cM_k$ is only nonzero if $j \equiv k \mod 2$; in this case, we define
+$$
+\cM(p \to q)
+:=
+\set{x\in \cM_{(j+k)/2}}{
+\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{.4}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$x$}
+	\node at (.4,.4) {\scriptsize{$k$}};
+	\node at (.4,-.4) {\scriptsize{$j$}};
+\end{tikzpicture}
+=
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.4,-1.5) -- (.4,1.5);
+%
+	\halfcircle{}{(0,0)}{1.5}{.4}{}
+%
+	\halfcircle{unshaded}{(0,.85)}{.25}{.5}{$q$}
+	\halfcircle{unshaded}{(0,0)}{.25}{.5}{$x$}
+	\halfcircle{unshaded}{(0,-.85)}{.25}{.5}{$p$}
+	\node at (.6,1.3) {\scriptsize{$k$}};
+	\node at (.6,.4) {\scriptsize{$k$}};
+	\node at (.6,-.4) {\scriptsize{$j$}};
+	\node at (.6,-1.3) {\scriptsize{$j$}};
+\end{tikzpicture}
+}.
+$$
+Composition is given by a suitable version of the usual multiplication tangle, and the $\dag$-structure is given by $\dag$ in $\cM_\bullet$.
+Given a projection $p \in \cM_{k}$ and projections $q\in \cP_{n,+}$ and $r\in \cP_{n,-}$, we define depending on parity
+$$
+p \vartriangleleft q
+\underset{\,\,k=2j}{:=}\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$p$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$q$}
+	\node at (.5,.4) {\scriptsize{$2j$}};
+	\node at (.5,-.4) {\scriptsize{$2j$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$n$}};
+\end{tikzpicture}
+\qquad
+\qquad
+p \vartriangleleft r
+\underset{\,\,k=2j+1}{:=}\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\fill[shaded] (.25,-.6) rectangle (1.2,.6);
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$p$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$q$}
+	\node at (.7,.4) {\scriptsize{$2j+1$}};
+	\node at (.7,-.4) {\scriptsize{$2j+1$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$n$}};
+\end{tikzpicture}\,.
+$$
+For morphisms $f\in \cM(p \to q)$ 
+with $p\in \cM_j$ and $q\in \cM_k$
+and $g\in \cC(r \to s)$ 
+with $r \in \cP_{m,\pm}$ and $s\in \cP_{n,\pm}$
+such that $p\vartriangleleft r$ and $q\vartriangleleft s$ are well-defined,
+we define
+$$
+f\vartriangleleft g
+:=
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$f$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$g$}
+	\node at (.4,.4) {\scriptsize{$k$}};
+	\node at (.4,-.4) {\scriptsize{$j$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$m$}};
+\end{tikzpicture}\,.
+$$
+where shading depends on the parity of $j$ and $k$.
+We leave the straightforward verification that $\cM$ is a right $\cC$-module $\Cstar$ category to the reader.
+\nn{Karoubi completion...}
+
+The distinguished simple basepoint of $\cM$ is given by the identity projection $1_{\cM_0} \in \cM_0$.
+The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$.
+\nn{verification that it's a module trace!}
+\end{defn}
 
 %By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
 %Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
-Since $m$ is simple, 
-$A$ is in fact a Q-system, % Q-system or $Q$-system?
-as described in \cite[Rmk.~2.7]{ny17}.  
-Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
-Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
-We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
-$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
-Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
+
+%By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+%Since $m$ is simple, 
+%$A$ is in fact a Q-system, % Q-system or $Q$-system?
+%as described in \cite[Rmk.~2.7]{ny17}.  
+%Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
+%Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
+%We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
+%By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
+%$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
+%Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Construction of the Planar Algebra Associated to a Module Category}
@@ -1203,105 +1312,105 @@ Taking the full subcategory of objects which are preserved by tensoring by the a
 
 %Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
 
-Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
-$$
-\cM 
-=
-\begin{pmatrix}
-\cC_{20} & \cC_{21} 
-\end{pmatrix}
-\qquad\qquad
-\cC
-=
-\begin{pmatrix}
-\cC_{00} & \cC_{01} 
-\\
-\cC_{10} & \cC_{11}
-\end{pmatrix}
-\subset
-\begin{pmatrix}
-\cC_{00} & \cC_{01} & \cC_{02}
-\\
-\cC_{10} & \cC_{11} & \cC_{12}
-\\
-\cC_{20} & \cC_{21} & \cC_{22}
-\end{pmatrix}
-=
-\widetilde{\cC}
-$$
-
-
-\nn{redo below here -- get planar module from module category.}
-
-
-Let $x\in \cC_{01}$ be the strand pictured below:
-$$x=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,-.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (.7,.7);
-	\fill[shaded] (0,-.7) rectangle (-.7,.7);
-	\draw[fill] (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-	\draw (.7,-.7) -- (.7,.7);
-
-\end{tikzpicture}
-$$
-By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
-x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
-
-We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
-$$
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.3,.5) {\scriptsize{$n$}};
-	\node at (.3,-.5) {\scriptsize{$n$}};
-\end{tikzpicture}
-$$
-where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
-\begin{equation}\label{eq:TraceAn}
-\tr_n(f) 
-\,:=\, 
-\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
-\,=\,
-\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
-\frac{1}{d^n}
-\cdot
-\left(
-\begin{tikzpicture}[baseline=-.1cm, rotate=90]
-	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
-	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
+%$$
+%\cM 
+%=
+%\begin{pmatrix}
+%\cC_{20} & \cC_{21} 
+%\end{pmatrix}
+%\qquad\qquad
+%\cC
+%=
+%\begin{pmatrix}
+%\cC_{00} & \cC_{01} 
+%\\
+%\cC_{10} & \cC_{11}
+%\end{pmatrix}
+%\subset
+%\begin{pmatrix}
+%\cC_{00} & \cC_{01} & \cC_{02}
+%\\
+%\cC_{10} & \cC_{11} & \cC_{12}
+%\\
+%\cC_{20} & \cC_{21} & \cC_{22}
+%\end{pmatrix}
+%=
+%\widetilde{\cC}
+%$$
+%\end{defn}
+%
+%\nn{redo below here -- get planar module from module category.}
+%
+%
+%Let $x\in \cC_{01}$ be the strand pictured below:
+%$$x=
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (-.7,-.7);
+%	\fill[shaded] (0,-.7) rectangle (.7,.7);
+%	\draw (0,-.7) -- (0,.7);
+%
+%\end{tikzpicture}
+%\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (.7,.7);
+%	\fill[shaded] (0,-.7) rectangle (-.7,.7);
+%	\draw[fill] (0,-.7) -- (0,.7);
+%
+%\end{tikzpicture}
+%\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (-.7,.7);
+%	\fill[shaded] (0,-.7) rectangle (.7,.7);
+%	\draw (0,-.7) -- (0,.7);
+%	\draw (.7,-.7) -- (.7,.7);
+%
+%\end{tikzpicture}
+%$$
+%By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+%x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
+%$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
+%
+%We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
+%$$
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+%	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+%	\draw (.15,-.7) -- (.15,.7);
+%	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%	\node at (.3,.5) {\scriptsize{$n$}};
+%	\node at (.3,-.5) {\scriptsize{$n$}};
+%\end{tikzpicture}
+%$$
+%where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
+%\begin{equation}\label{eq:TraceAn}
+%\tr_n(f) 
+%\,:=\, 
+%\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
+%\,=\,
+%\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
+%\frac{1}{d^n}
+%\cdot
+%\left(
+%\begin{tikzpicture}[baseline=-.1cm, rotate=90]
+%	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
+%	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
+%	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
 %	\node at (-.7,-.35) {\scriptsize{$n$}};
-	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
-	\node at (0,.75) {\scriptsize{$\overline{m}$}};
+%	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
+%	\node at (0,.75) {\scriptsize{$\overline{m}$}};
 %	\node at (.7,.35) {\scriptsize{$m$}};
-\end{tikzpicture}
-\right)
-\end{equation}
-Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
-This makes each $M_n$ a finite dimensional von Neumann algebra.
-
-\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
-
-\begin{rem}
-	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
-\end{rem}
+%\end{tikzpicture}
+%\right)
+%\end{equation}
+%Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
+%This makes each $M_n$ a finite dimensional von Neumann algebra.
+%
+%\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
+%
+%\begin{rem}
+%	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
+%\end{rem}
 
 %We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 %\begin{equation}\label{eq:Inclusion}
@@ -1428,26 +1537,26 @@ This makes each $M_n$ a finite dimensional von Neumann algebra.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{From planar modules to pivotal module categories}
-
-\nn{
-First define action of $\cC_0$, whose objects are alternating tensor powers of $X$ and $\overline{X}$ and whose morphisms are the box spaces.
-Define action on $\cM_0$.
-Then idempotent complete to get action of $\cC$ on $\cM$.
-\\
-\\
-Define $[2n] \vartriangleleft X^{\otimes \text{alt}k} := [2n+k]$.
-\\
-\\
-Define $f \vartriangleleft g$ similar to tensor product in projection category $\cC$, which has 4 distinct definitions based on source and target of $f$ and $g$ (which is larger).
-Taking daggers reduces to 2 cases.
-}
-
-
-
-
-
-\nn{TODO: When $M_\bullet$ is a cyclic right planar module for $\cQ_\bullet$ with projection categories $\cM$ and $\cC$ respectively, endow $\cM$ with the structure of a cyclic right $\cC$-module $\Cstar$ category.}
+%\subsection{From planar modules to pivotal module categories}
+%
+%\nn{
+%First define action of $\cC_0$, whose objects are alternating tensor powers of $X$ and $\overline{X}$ and whose morphisms are the box spaces.
+%Define action on $\cM_0$.
+%Then idempotent complete to get action of $\cC$ on $\cM$.
+%\\
+%\\
+%Define $[2n] \vartriangleleft X^{\otimes \text{alt}k} := [2n+k]$.
+%\\
+%\\
+%Define $f \vartriangleleft g$ similar to tensor product in projection category $\cC$, which has 4 distinct definitions based on source and target of $f$ and $g$ (which is larger).
+%Taking daggers reduces to 2 cases.
+%}
+%
+%
+%
+%
+%
+%\nn{TODO: When $M_\bullet$ is a cyclic right planar module for $\cQ_\bullet$ with projection categories $\cM$ and $\cC$ respectively, endow $\cM$ with the structure of a cyclic right $\cC$-module $\Cstar$ category.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
