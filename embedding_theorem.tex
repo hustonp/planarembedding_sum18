@@ -893,6 +893,7 @@ where $\psi : \cC(1_\cC\to 1_\cC) \to \bbC$ is the linear functional such that $
 The following theorem is well-known to experts.
 
 \begin{thm}
+\label{thm:SubfactorTensorCategoryEquivalence}
 There is an equivalence of categories\,\footnote{We suppress the subtlety about the right hand side of this equivalence being a contractible 2-category. 
 We refer the reader to \cite{1607.06041,1808.00323} for more details.}
 \[
@@ -3030,9 +3031,67 @@ One now shows these two processes are mutually inverse up to equivalence.
 \nn{todo}
 \end{proof}
 
-
-\nn{edit below.}
-
+\begin{rem}
+Given a $\lambda$-lattice $A_{\bullet\bullet}$ with $\lambda = d^{-2}$, we expect that a Markov tower $M_\bullet$ of modulus $d$ such that $M_n \supset A_{0n}$ for all $n\geq 0$ satisfying certain compatibility conditions is the equivalent notion of a right module for $A_{\bullet\bullet}$ in the spirit of Theorems \ref{thm:SubfactorTensorCategoryEquivalence} and \ref{thm:ModuleEquivalence}.
+$$
+\begin{tikzpicture}
+	\node at (0,1) {$M_{0}$};
+	\node at (.5,1) {$\subset$};
+	\node at (1,1) {$M_{1}$};
+	\node at (1.5,1) {$\subset$};
+	\node at (2,1) {$M_{2}$};
+	\node at (2.5,1) {$\subset$};
+	\node at (3,1) {$M_{3}$};
+	\node at (3.5,1) {$\subset$};
+	\node at (4,1) {$\cdots$};
+%
+	\node at (0,.5) {$\cup$};
+	\node at (1,.5) {$\cup$};
+	\node at (2,.5) {$\cup$};
+	\node at (3,.5) {$\cup$};
+%
+	\node at (0,0) {$A_{00}$};
+	\node at (.5,0) {$\subset$};
+	\node at (1,0) {$A_{01}$};
+	\node at (1.5,0) {$\subset$};
+	\node at (2,0) {$A_{02}$};
+	\node at (2.5,0) {$\subset$};
+	\node at (3,0) {$A_{03}$};
+	\node at (3.5,0) {$\subset$};
+	\node at (4,0) {$\cdots$};
+%
+	\node at (1,-.5) {$\cup$};
+	\node at (2,-.5) {$\cup$};
+	\node at (3,-.5) {$\cup$};
+%
+	\node at (1,-1) {$A_{11}$};
+	\node at (1.5,-1) {$\subset$};
+	\node at (2,-1) {$A_{12}$};
+	\node at (2.5,-1) {$\subset$};
+	\node at (3,-1) {$A_{13}$};
+	\node at (3.5,-1) {$\subset$};
+	\node at (4,-1) {$\cdots$};
+%
+	\node at (2,-1.5) {$\cup$};
+	\node at (3,-1.5) {$\cup$};
+%
+	\node at (2,-2) {$A_{22}$};
+	\node at (2.5,-2) {$\subset$};
+	\node at (3,-2) {$A_{23}$};
+	\node at (3.5,-2) {$\subset$};
+	\node at (4,-2) {$\cdots$};
+%
+	\node at (3,-2.5) {$\cup$};
+%
+	\node at (3,-3) {$A_{33}$};
+	\node at (3.5,-3) {$\subset$};
+	\node at (4,-3) {$\cdots$};
+%
+	\node at (4,-3.5) {$\ddots$};
+\end{tikzpicture}
+$$
+We leave this exploration to a future joint article, as it would take us too far afield.
+\end{rem}
 
 
 
