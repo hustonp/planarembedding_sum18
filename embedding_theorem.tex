@@ -598,6 +598,8 @@ are in bijection with
 pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
 \end{coralpha}
 
+We expect that the notion of Markov tower with some compatibility axioms is the correct notion of a right module for Popa's $\lambda$-lattices (see Remark \ref{rem:LambdaLatticeModule}).
+We leave this exploration to a future article as it would take us too far afield.
 
 %We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
 %\begin{enumerate}[label={\rm(\arabic*)}]
@@ -1491,8 +1493,8 @@ For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \label{eq:MarkovPullDown}
 (pull down)
 For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
-
 \end{enumerate}
+We call a Markov tower \emph{connected} if $\dim(M_0) = 1$.
 \end{defn}
 
 \begin{rem}
@@ -1605,6 +1607,7 @@ This follows immediately from \ref{EP:NewStuff}.
 \end{proof}
 
 \begin{rem}
+\label{rem:InfiniteDimensionalMarkovTower}
 \nn{we stick to finite dimensions, but what came above in this section works if the $(M_n,\tr_n)$ are arbitrary tracial von Neumann algebras.
 We stick to finite dimensions because we want a principal graph; this notion would need to be generalized to an infinite setting...}
 \end{rem}
@@ -1629,11 +1632,25 @@ Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
 \end{fact}
 
+\begin{defn}
+The principal graph $\Gamma$ of a Markov tower $M_\bullet$ has a \emph{quantum dimension function} $\dim : V(\Gamma) \to \bbR_{>0}$ given as follows.
+Let $v \in V(\Gamma)$, and let $p\in M_k$ be a minimal projection corresponding to the vertex $v$.
+We define $\dim(v) := \tr_k(p)$, and we note this dimension is independent of the choice of $p \in M_k$ and $k\geq 0$.
+Moreover, the quantum dimension function $\dim$ satisfies the Frobenius-Perron property
+\begin{equation}
+\label{eq:QuantumDimension}
+d\cdot \dim(v) 
+=
+\sum_{w\sim v}
+\dim(w)
+\end{equation}
+where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+\end{defn}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Examples of Markov towers}
 
-\nn{talk about planar modules here.}
-
+We discuss various examples of Markov towers in great detail.
 
 \begin{ex}
 The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$.
@@ -1769,38 +1786,61 @@ The last claim follows immediately.
 \end{proof}
 
 
-\nn{move later:}
+\begin{defn}
+\label{def:StronglyMarkovInclusion}
+Recall from \cite{MR1278111} that an inclusion of finite von Neumann algebras $A_0\subset A_1$ with a faithful normal tracial state $\tr_1$ on $A_1$ is called a \emph{Markov inclusion} 
+if
+the canonical faithful normal semifinite trace on the Jones basic construction $A_2 = JA_0'J = \langle A_1, e_1\rangle \subset B(L^2(A_1, \tr_1))$ given by the extension of $xe_1y \mapsto \tr_1(xy)$ is finite and $\Tr_2(1)^{-1}\Tr_2|_{A_1}=\tr_1$.
+
+Following \cite{MR2812459}, we call such an inclusion \emph{strongly Markov} if moreover there is a \emph{Pimsner-Popa basis} for $A_1$ over $A_0$, which is a finite subset $\{b\}\subset A_1$ such that $1_{A_2} = \sum_b b e_1b^*$.
+This is equivalent to $x = \sum_b b E_{A_0}(b^*x)$ for all $x\in A_1$, and also to $A_2 = A_1e_1A_1$ by \cite[Prop.~3(b)]{MR561983}
+(see also \cite{MR996807}).
+
+Given a strongly Markov inclusion $A_0\subset (A_1, \tr_1)$, 
+its \emph{Watatani index} \cite{MR996807} is the scalar $[A_1:A_0]:=\Tr_2(1) = \sum_b bb^* $ (see also \cite[1.1.4(c)]{MR1278111}).
+We may iterate the Jones basic construction to get a tower of von Neumann algebras $(A_n ,\tr_n, e_{n+1})_{n\geq 0}$ with faithful tracial states such that each inclusion $A_{n}\subset (A_{n+1}, \tr_{n+1})$ is strongly Markov with index $[A_{n+1}: A_n] = [A_1:A_0]$ \cite{MR2812459}.
+By \cite[Prop.~2.7.3]{MR996807}, the relative commutants $A_i' \cap A_j$ for $i\leq j$ are always finite dimensional von Neumann algebras.
+\end{defn}
+
+\begin{nota}
+From this point on, we reserve the notation $(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
+\end{nota}
+
 \begin{ex}
-\nn{define strongly markov inclusion.}
+Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})_{n\geq 0}$ is a possibly infinite dimensional Markov tower as in Remark \ref{rem:InfiniteDimensionalMarkovTower}.
 
-Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})$ is a Markov tower.
-\nn{decide whether Markov tower should mean finite dimensional.}
-
-Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite dimensional} von Neumann algebras $(A_0'\cap A_n , \tr_n|_{A_0'\cap A_n} , e_{n+1})$.
-Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a Markov tower of finite dimensional von Neumann algebras.
+Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite dimensional} von Neumann algebras $(A_0'\cap A_n , \tr_n|_{A_0'\cap A_n} , e_{n+1})_{n\geq 0}$.
+Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})_{n\geq 0}$ is a Markov tower of finite dimensional von Neumann algebras.
 \end{ex}
 
-\nn{classification in terms of graphs and a Frobenius-Perron weighting on the vertices.}
+We now classify all connected Markov towers in terms of pointed bipartite graphs and quantum dimension functions.
+
+\begin{ex}
+Suppose $(\Gamma, v)$ is a pointed bipartite graph with countably many vertices and edges, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
+We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \nn{citation?}.
+We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
+
+It is straightforward to check that $M_\bullet$ has principal graph $\Gamma$ with basepoint $v$ corresponding to $1_{M_0}$.
+Moreover, by construction the quantum dimension function of $M_\bullet$ is exactly $\dim$.
+\end{ex}
+
+Indeed, the above example can be easily generalized to the following result.
 
 \begin{prop}
 \label{prop:ClassificationOfMarkovTowers}
-Connected Markov towers $M_\bullet$ are classified by triples $(\Gamma,v_0, \dim)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
-$$
-\sum_{w\sim v} \dim(w) = d \dim(v),
-$$
-where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+Connected Markov towers $M_\bullet$ are classified up to $*$-isomorphism by pointed bipartite graphs $(\Gamma,v)$ with a quantum dimension function $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying \eqref{eq:QuantumDimension}.
 \end{prop}
-\begin{proof}
-Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
-We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
-
-Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
-One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
-
-One then checks these two processes are mutually inverse.
-We leave the straightforward details to the reader.
-\nn{better to have some citations, or to supply a bit more detail here...}
-\end{proof}
+%\begin{proof}
+%Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
+%We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
+%
+%Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
+%One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
+%
+%One then checks these two processes are mutually inverse.
+%We leave the straightforward details to the reader.
+%\nn{better to have some citations, or to supply a bit more detail here...}
+%\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3024,6 +3064,7 @@ One now shows these two processes are mutually inverse up to equivalence.
 \end{proof}
 
 \begin{rem}
+\label{rem:LambdaLatticeModule}
 Given a $\lambda$-lattice $A_{\bullet\bullet}$ with $\lambda = d^{-2}$, we expect that a Markov tower $M_\bullet$ of modulus $d$ such that $M_n \supset A_{0n}$ for all $n\geq 0$ satisfying certain compatibility conditions is the equivalent notion of a right module for $A_{\bullet\bullet}$ in the spirit of Theorems \ref{thm:SubfactorTensorCategoryEquivalence} and \ref{thm:ModuleEquivalence}.
 $$
 \begin{tikzpicture}
@@ -3096,52 +3137,54 @@ We leave this exploration to a future joint article, as it would take us too far
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The canonical planar algebra from a strongly Markov inclusion} 
 
-\nn{some lead in here, where background comes from}
+\nn{some lead in here, where background comes from.
+\\
+Refer reader to Definition \ref{def:StronglyMarkovInclusion} to recall the definition of a strongly Markov inclusion.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strongly Markov inclusions} 
-\label{sec:StronglyMarkovInclusions}
-
-\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
-This could help alleviate some confusion!}
-For the duration of this paper, assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$, we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the Jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
-\begin{defn}
-Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
-
-\begin{itemize}
-	\item $1=\sum_{b\in B}be_1b^*$.
-	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b^*x)$.
-	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b^*$.
-\end{itemize}
-
-
-\end{defn}
-Due to 
-\cite[Prop.~3(b)]{MR561983}
-(see also \cite{MR996807}),
-we have the following:
-\begin{prop}
-The following are equivalent:
-
-\begin{itemize}
-\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-\item $A_2=A_1e_1A_1$
-\end{itemize}
-\end{prop}
-We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
-\begin{defn}
-Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$ given by the extension of $xe_1y \mapsto \tr_1(xy)$.
-The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
-\begin{itemize}
-\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
-\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-\end{itemize}
-\end{defn}
-
-Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras.
-
-\nn{towers of relative commutants}
-
+%\subsection{Strongly Markov inclusions} 
+%\label{sec:StronglyMarkovInclusions}
+%
+%\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
+%This could help alleviate some confusion!}
+%For the duration of this paper, assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$, we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the Jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
+%\begin{defn}
+%Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
+%
+%\begin{itemize}
+%	\item $1=\sum_{b\in B}be_1b^*$.
+%	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b^*x)$.
+%	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b^*$.
+%\end{itemize}
+%
+%
+%\end{defn}
+%Due to 
+%\cite[Prop.~3(b)]{MR561983}
+%(see also \cite{MR996807}),
+%we have the following:
+%\begin{prop}
+%The following are equivalent:
+%
+%\begin{itemize}
+%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
+%\item $A_2=A_1e_1A_1$
+%\end{itemize}
+%\end{prop}
+%We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
+%\begin{defn}
+%Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$ given by the extension of $xe_1y \mapsto \tr_1(xy)$.
+%The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
+%\begin{itemize}
+%\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
+%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
+%\end{itemize}
+%\end{defn}
+%
+%Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras.
+%
+%\nn{towers of relative commutants}
+%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
