@@ -414,7 +414,7 @@ $$
 \Tr^\cM_{m\vartriangleleft c}(f)
 =
 \Tr^\cM_{m}(
-(\id_m \otimes \coev_c^\dag) \circ (f\otimes \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
+(\id_m \lhd\coev_c^\dag) \circ (f\lhd\id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
 ),
 $$
 where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
@@ -1288,8 +1288,11 @@ We leave the straightforward verification that $\cM$ is a right $\cC$-module $\C
 \nn{Karoubi completion...}
 
 The distinguished simple basepoint of $\cM$ is given by the identity projection $1_{\cM_0} \in \cM_0$.
-The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$.
-\nn{verification that it's a module trace!}
+The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$. 
+By definition, we have assumed $\Tr_k$ to be tracial and positive on endomorphisms. The trace is also compatible with the action of $\C$, which can be seen by composing the trace tangle with the action tangles. % draw?
+To see that the $\Tr_k$ give a positive module trace, we reduce the general case to the case of endomorphisms as follows: suppose $f\in\cM([n]\to[n+2k])$. Obtain $g\in\C(1\to(X^?)^{\alttens[2k]})$ from $1\in\cP_{k,\pm}$. Then \[\Tr_n(f^\dag\circ f)=\Tr_{n+2k}((f\lhd g)^\dag\circ(f\lhd g))\Tr_{2k}(g^\dag\circ g)^{-1}=d^k\Tr_{n+2k}((f\lhd g)^\dag\circ(f\lhd g))\]
+\nn{make a picture instead of this, probably}
+Therefore, it suffices to show that if $f\neq0$, then $f\lhd g\neq0$. We know that $g\neq 0$, since $g$ is the image of the identity of a non-zero algebra under the action of an invertible tangle. Since $\cC$ has all duals, by Frobenius reciprocity, the action of a non-zero morphism of the appropriate shading is faithful, completing the proof. 
 \end{defn}
 
 %By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
@@ -1535,31 +1538,6 @@ The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \
 %\nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{From planar modules to pivotal module categories}
-%
-%\nn{
-%First define action of $\cC_0$, whose objects are alternating tensor powers of $X$ and $\overline{X}$ and whose morphisms are the box spaces.
-%Define action on $\cM_0$.
-%Then idempotent complete to get action of $\cC$ on $\cM$.
-%\\
-%\\
-%Define $[2n] \vartriangleleft X^{\otimes \text{alt}k} := [2n+k]$.
-%\\
-%\\
-%Define $f \vartriangleleft g$ similar to tensor product in projection category $\cC$, which has 4 distinct definitions based on source and target of $f$ and $g$ (which is larger).
-%Taking daggers reduces to 2 cases.
-%}
-%
-%
-%
-%
-%
-%\nn{TODO: When $M_\bullet$ is a cyclic right planar module for $\cQ_\bullet$ with projection categories $\cM$ and $\cC$ respectively, endow $\cM$ with the structure of a cyclic right $\cC$-module $\Cstar$ category.}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Markov towers and their projection categories} 
@@ -1607,7 +1585,7 @@ We call a Markov tower \emph{connected} if $\dim(M_0) = 1$.
 \end{defn}
 
 \begin{rem}
-One should think of the following definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
+One should think of the preceding definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
 Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2), and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.)
 \end{rem}
 
@@ -1717,8 +1695,7 @@ This follows immediately from \ref{EP:NewStuff}.
 
 \begin{rem}
 \label{rem:InfiniteDimensionalMarkovTower}
-\nn{we stick to finite dimensions, but what came above in this section works if the $(M_n,\tr_n)$ are arbitrary tracial von Neumann algebras.
-We stick to finite dimensions because we want a principal graph; this notion would need to be generalized to an infinite setting...}
+	The foregoing observations all hold in the case where the $M_n$ are arbitrary tracial von Neumann algebras. In this paper, we restrict our attention to the finite dimensional case because of the following, in which we obtain a principal graph for a Markov tower. To generalize to the infinite case, a measure-theoretic replacement for the principal graph would need to be introduced. 
 \end{rem}
 
 
@@ -1731,11 +1708,10 @@ The \emph{principal graph} of the Markov tower $(M_n,\tr_n, e_{n+1})$ consists o
 A Markov tower is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
-
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
-Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. 
-Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
+Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ contains the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, along with additional vertices and edges which are part of the principal graph. 
+At the base, all of Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. We can therefore ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
 
 \begin{fact}\label{BratteliPrincipal}
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
@@ -1912,7 +1888,7 @@ By \cite[Prop.~2.7.3]{MR996807}, the relative commutants $A_i' \cap A_j$ for $i\
 \end{defn}
 
 \begin{nota}
-From this point on, we reserve the notation $(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
+From this point on, we reserve the notation $A_\bullet=(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
 \end{nota}
 
 \begin{ex}
@@ -1930,7 +1906,7 @@ We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and 
 We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
 
 It is straightforward to check that $M_\bullet$ has principal graph $\Gamma$ with basepoint $v$ corresponding to $1_{M_0}$.
-Moreover, by construction the quantum dimension function of $M_\bullet$ is exactly $\dim$.
+Moreover, by construction, the quantum dimension function of $M_\bullet$ is exactly $\dim$.
 \end{ex}
 
 Indeed, the above example can be easily generalized to the following result.
@@ -2883,7 +2859,7 @@ for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
 \item
 there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2j])$ and $\cM_0([n+2k] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
-Notice that in a $\Cstar$ category, these norm can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
+Notice that in a $\Cstar$ category, these norms can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
 \end{itemize}
@@ -2937,16 +2913,10 @@ Let the following elements of Temeperley-Lieb be denoted as follows:
 	\end{itemize}
 \end{nota}	
 
-We also need the following lemma:
-
-\begin{lem}\label{LeftKink}
-Let $\eta \in M_{n+2i+j}$ then we have:
-$$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
-\end{lem}
-\des{I'm not being careful about the factor of d at all right now I need to fix that later.}
 
 \begin{proof}
 	
+\nn{Use Proposition \ref{prop:MultistepJonesProjections}}
 \end{proof}
 
 \begin{cor}
