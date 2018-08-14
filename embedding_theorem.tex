@@ -2946,7 +2946,33 @@ $$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
 \des{I'm not being careful about the factor of d at all right now I need to fix that later.}
 
 \begin{proof}
-	
+Recall that we need only verify $\pi$ respects three types of composition:
+	\begin{enumerate}
+		\item\label{upup}  $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
+		\item\label{UPdown} $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i] $
+		\item\label{downUP} $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
+	\end{enumerate}
+\eqref{upup} Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. Then $\pi(y\circ x)=E_{n+i+j}(yx{}^nh^i_j){}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}$. Applying \ref{LeftKink} and noting that: 
+$${}^nh^i_j{}^n r^{i+j}=F^{n+i}_{n}F^{n+2i+j}_{n+2i}$$ 
+We see that: $$\pi(y\circ x)=yx{}^nh^i_j{}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}= yxF^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=\pi(y)\circ \pi(x)$$
+ 
+\eqref{UPdown} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. Then $\pi(y\circ x)=E_{n+i}(yx){}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}$. Applying \ref{LeftKink} and noting that $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we see that:
+$$\pi(y\circ x)= E_{n+2i}(yx{}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=E_{n+2i}(yx{}^ng^i_j)F^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}$$
+And by proposition \ref{prop:MultistepJonesProjections} we know that $F^{n+2i+j}_{n+2i}$ implements $E_{n+2i}^{n+2i+j}$ so
+$$\pi(y\circ x)= F^{n+2i+j}_{n+2i}(yx{}^ng^i_jF^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}=d^i \pi(y) \circ \pi(x)$$
+
+\eqref{downUP} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
+Then:
+$$\pi(y\circ x)=y{}^nh^i_jx F^{n+2i+j}_{n+2i} F^{n+2i+2j+k}_{n+2i+2j} $$
+and
+$$\pi(y)\circ \pi(x)= d^{i+j}y {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}$$
+but these are equal as:
+$${}^nh^i_jx F^{n+2i+j}_{n+2i} F^{n+2i+2j+k}_{n+2i+2j}= {}^nh^i_j F^{n+2i+j}_{n+2i} x F^{n+2i+2j+k}_{n+2i+2j}= {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}$$
+
+\end{proof}
+
+\begin{proof}[Proof of theorem \ref{prop:InjectiveAlgebraMap}]
+
 \end{proof}
 
 \begin{cor}
