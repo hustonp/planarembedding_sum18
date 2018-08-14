@@ -290,13 +290,13 @@
 
 \newcommand{\halfcircle}[5]{
 	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (0,#3) + (#4,0) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) + (0,.0211) $); 
-	\node at ($ #2 + .75*(#3,0) $) {#5};
+	\node at ($ #2 + .5*(#3,0) +.5*(#4,0) $) {#5};
 }
 
 \newcommand{\openhalfcircle}[5]{
 	\draw[very thick, fill=white, #1] ($ #2 + (0,#3) $) -- ($ #2 + (#4,0) + (#3,#3) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) $); 
 	\draw[super thick, white] ($ #2 + (0,#3) - (0,.0211) $) -- ($ #2 - (0,#3) + (0,.0211) $);
-	\node at ($ #2 + .75*(#3,0) +.5*(#4,0) $) {#5};
+	\node at ($ #2 + .5*(#3,0) +.5*(#4,0) $) {#5};
 }
 
   \newcommand{\tikzmath}[2][]
@@ -494,26 +494,6 @@ d^{-k}\cdot\,
 $$
 are faithful positive normalized traces, where $d$ is the loop parameter of $\cP_\bullet$.
 
-\nn{edit:
-Prior to defining a module for a $\lambda$-lattice, in \S\ref{sec:MarkovTowers}, we define the notion of a \emph{Markov tower} $M_\bullet$, which is
-a sequence of finite dimensional von Neumann algebras with faithful tracial states $(M_n, \tr_n)_{n\geq 0}$ together with a representation of Jones projections $e_n \in M_{n+1}$ for $n\geq 1$ satisfying the following properties:}
-\begin{enumerate}[label={\rm(M\arabic*)}]
-\item
-The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with \emph{modulus} $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
-\item
-For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
-\item
-For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
-\item
-For all $n\geq 1$, we have the Pimsner-Popa pull down property \cite{MR860811}: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
-\end{enumerate}
-One should view a Markov tower as an analog of Popa's $\lambda$-lattices \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
-Indeed, one should compare \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2) and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.
-
-Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
-For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
-The tower is called \emph{finite depth} if the principal graph is finite.
-
 The following theorem generalizes the correspondence between
 unitary $2\times 2$ multitensor categories $\cC$ with $1_\cC =1_0\oplus 1_1$ and generator $X = 1_0\otimes X \otimes 1_1$ 
 and
@@ -533,35 +513,11 @@ connected right planar modules $\cM_\bullet$ for $\cP_\bullet$
 \end{enumerate}
 \end{thmalpha}
 
-\nn{edit:
-In fact, any Markov tower of modulus $d$
- is automatically equipped with the structure of a cyclic right lattice module for 
-the Temerley-Lieb-Jones $d^{-2}$-lattice $TLJ(d)_\bullet$.
-Moreover, any pointed bipartite graph $(\Gamma,v)$ with a \emph{quantum dimension function} on vertices $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying
-$$
-d\cdot \dim(v) = \sum_{w\sim v} \dim(w)
-$$
-gives us a Markov tower of modulus $d$, where we write $w\sim v$ to mean $w$ is connected to $v$, and the sum is taken with multiplicity.
-We thus get the following corollary, which should be compared with the non-pivotal case in \cite{MR3420332}.
-}
-
-\begin{coralpha}
-\label{cor:TLJPivotalModuleClassification}
-There is a bijective correspondence between
-pivotal $\cT\cL\cJ(d)$-module $\Cstar$ categories with basepoint and 
-pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
-\end{coralpha}
-
-One passes from (2) or (3) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ or $A_{\bullet,\bullet}$ and $(\cC, X)$.
+One passes from (2) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ and $(\cC, X)$.
 One passes from (1) to (2) using the diagrammatic calculus, similar to how one gets a subfactor planar algebra from $(\cC, X)$ \cite{MR2811311,1808.00323}.
-We rapidly sketch how to pass from (3) to (1), as it will be useful for our proof of the module embdedding theorem.
 
-
-%Suppose $\cQ_\bullet$ is a finite depth subfactor planar algebra, and let $\cC$ be its associated $2\times 2$ unitary multifusion category of projections with generator $c$ corresponding to the unshaded-shaded strand in $\cQ_{1,+}$.
-%Here, $1_\cC$ decomposes as an orthogonal direct sum $1_\cC = 1_0\oplus 1_1$, which decomposes $\cC= \bigoplus_{i,j=0}^1 \cC_{ij}$ where $\cC_{ij}:= 1_i \otimes \cC \otimes 1_j$.
-%By a %Here, we use the graphical notation of \nn{}, where coupons in $\cM$ have no boundary on the left to indicate the absence of a left $\cC$-action.
-
-From the pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple object $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a Markov tower $M_\bullet$ by setting
+From the pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple basepoint $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a 
+tower of finite dimensional von Neumann algebras by setting
 $$
 M_n := \End_\cM(m \vartriangleleft  \underbrace{X\otimes \overline{X} \otimes \cdots \otimes X^?}_{n \text{ tensorands}})
 $$
@@ -606,7 +562,45 @@ d^{-1}
 \in M_{2k+3}.
 \end{align*}
 Here, $(\overline{X}, \ev_X, \coev_X)$ is the balanced dual of $X$, $m$ is graphically represented by a red strand, and the left hand side of $m$ is shaded to denote the absence of a left $\cC$-action.
-It is straightforward to verify $M_\bullet := (M_n,\tr_n, e_{n+1})_{n\in \bbN}$ is a Markov tower.
+
+We call $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ 
+a \emph{Markov tower} as it satisfies the following axioms:
+\begin{enumerate}[label={\rm(M\arabic*)}]
+\item
+The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with \emph{modulus} $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
+\item
+For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
+\item
+For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
+\item
+For all $n\geq 1$, we have the Pimsner-Popa pull down property \cite{MR860811}: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
+\end{enumerate}
+One should view a Markov tower as an analog of Popa's $\lambda$-lattices \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
+Indeed, one should compare \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2) and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.
+
+Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}; we mention a few here, and we refer the reader to \S\ref{sec:MarkovTowers} for more details.
+The traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
+The tower is called \emph{finite depth} if the principal graph is finite.
+
+From a Markov tower, we can form a semisimple $\Cstar$ \emph{projection category} $\cM$, whose simple objects are in canonical bijection with the vertices of the principal graph.
+Moreover, the traces and Jones projections canonically equip $\cM$ with the structure of a pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
+Now any pointed bipartite graph $(\Gamma,v)$ with a \emph{quantum dimension function} on vertices $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying
+$$
+d\cdot \dim(v) = \sum_{w\sim v} \dim(w)
+$$
+gives us a Markov tower of modulus $d$, where we write $w\sim v$ to mean $w$ is connected to $v$, and the sum is taken with multiplicity.
+We thus get the following corollary, which should be compared with the non-pivotal case in \cite{MR3420332}.
+
+\begin{coralpha}
+\label{cor:TLJPivotalModuleClassification}
+Equivalence classes of pivotal $\cT\cL\cJ(d)$-module $\Cstar$ categories with simple basepoint
+are in bijection with 
+pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
+\end{coralpha}
+
+We expect that the notion of Markov tower with some compatibility axioms is the correct notion of a right module for Popa's $\lambda$-lattices (see Remark \ref{rem:LambdaLatticeModule}).
+We leave this exploration to a future article as it would take us too far afield.
+
 %We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
 %\begin{enumerate}[label={\rm(\arabic*)}]
 %\item
@@ -623,7 +617,7 @@ It is straightforward to verify $M_\bullet := (M_n,\tr_n, e_{n+1})_{n\in \bbN}$ 
 %For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
 %We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
 
-We now specialize to the hypotheses of the module embedding theorem, i.e., $\cP_\bullet$ is a finite depth subfactor planar algebra and $\cM$ is finitely semisimple.
+We now specialize to the hypotheses of the module embedding theorem, i.e., $\cP_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding projection category with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
 In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
 This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
 We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
@@ -893,6 +887,7 @@ where $\psi : \cC(1_\cC\to 1_\cC) \to \bbC$ is the linear functional such that $
 The following theorem is well-known to experts.
 
 \begin{thm}
+\label{thm:SubfactorTensorCategoryEquivalence}
 There is an equivalence of categories\,\footnote{We suppress the subtlety about the right hand side of this equivalence being a contractible 2-category. 
 We refer the reader to \cite{1607.06041,1808.00323} for more details.}
 \[
@@ -1032,7 +1027,8 @@ $$
 $$
 We require that each $\dag$-algebra $\cM_k$ is a finite dimensional $\Cstar/\Wstar$ algebra.
 Moreover, we require that for each $k$, the following map $\cM_k \to \cM_0$ is positive, faithful, and tracial:
-$$
+\begin{equation}
+\label{eq:NonnormalizedPlanarModuleTrace}
 \Tr_k:=
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw (.25,.25) arc (180:0:.2cm) -- (.65,-.25) arc (0:-180:.2cm);
@@ -1046,7 +1042,7 @@ $$
 \end{tikzpicture}
 :
 \cM_k \to \cM_0
-$$
+\end{equation}
 
 We call $\cM_\bullet$ \emph{connected} if $\dim(\cM_0) = 1$.
 In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_k$ is a scalar-valued.
@@ -1157,50 +1153,158 @@ $$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Equivalence}
+\subsection{Equivalence of modules}
 
-
-In this section, we sketch the proof of the following theorem.
+In this section, $\cP_\bullet$ will denore a subfactor planar algebra, and $(\cC, X)$ will denote its unitary $2\times 2$ multitensor category of projections, where $X = 1_0 \otimes X \otimes 1_1$ is the generating unshaded-shaded strand.
+We now sketch the proof of the following theorem.
 
 \begin{thm*}[Theorem \ref{thm:ModuleEquivalence}]
 %\label{thm:ModuleEquivalence}
-Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ as above.
-There is an equivalence between:
+%Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ as above.
+There is a canonical bijection between equivalence classes of
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with choice of simple basepoint $m = m\vartriangleleft 1_0$, and
+indecomposable pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with simple basepoint $m = m\vartriangleleft 1_0$, and
 \item
 connected right planar modules $\cM_\bullet$ for $\cP_\bullet$.
 \end{enumerate}
 \end{thm*}
 
-As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$ in \S\ref{sec:TLJmodules}.
+As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$ in Corollary \ref{cor:TLJPivotalModuleClassification}, whose proof appears in \S\ref{sec:TLJmodules}.
 
-\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
-What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
-
-\begin{thm}
-Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
-We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
-\end{thm}
+%\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
+%What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
+%
+%\begin{thm}
+%Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
+%We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
+%\end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{From pivotal module categories to planar modules}
+%\subsection{From pivotal module categories to planar modules}
 
-Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
+\begin{defn}
+Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
+We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$.
+\nn{describe how to do this.}
+\end{defn}
+
+\begin{defn}
+Given a connected right planar $\cP_\bullet$-module $\cM_\bullet$, we let $\cM$ be its \emph{category of projections}.
+The objects of $\cM$ are the orthogonal projections in $\cM_k$ for $k\geq 0$.
+The hom space $\cM(p \to q)$ for $p\in \cM_j$ and $q\in \cM_k$ is only nonzero if $j \equiv k \mod 2$; in this case, we define
+$$
+\cM(p \to q)
+:=
+\set{x\in \cM_{(j+k)/2}}{
+\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{.4}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$x$}
+	\node at (.4,.4) {\scriptsize{$k$}};
+	\node at (.4,-.4) {\scriptsize{$j$}};
+\end{tikzpicture}
+=
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.4,-1.5) -- (.4,1.5);
+%
+	\halfcircle{}{(0,0)}{1.5}{.4}{}
+%
+	\halfcircle{unshaded}{(0,.85)}{.25}{.5}{$q$}
+	\halfcircle{unshaded}{(0,0)}{.25}{.5}{$x$}
+	\halfcircle{unshaded}{(0,-.85)}{.25}{.5}{$p$}
+	\node at (.6,1.3) {\scriptsize{$k$}};
+	\node at (.6,.4) {\scriptsize{$k$}};
+	\node at (.6,-.4) {\scriptsize{$j$}};
+	\node at (.6,-1.3) {\scriptsize{$j$}};
+\end{tikzpicture}
+}.
+$$
+Composition is given by a suitable version of the usual multiplication tangle, and the $\dag$-structure is given by $\dag$ in $\cM_\bullet$.
+Given a projection $p \in \cM_{k}$ and projections $q\in \cP_{n,+}$ and $r\in \cP_{n,-}$, we define depending on parity
+$$
+p \vartriangleleft q
+\underset{\,\,k=2j}{:=}\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$p$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$q$}
+	\node at (.5,.4) {\scriptsize{$2j$}};
+	\node at (.5,-.4) {\scriptsize{$2j$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$n$}};
+\end{tikzpicture}
+\qquad
+\qquad
+p \vartriangleleft r
+\underset{\,\,k=2j+1}{:=}\,\,
+\begin{tikzpicture}[baseline = -.1cm]
+	\fill[shaded] (.25,-.6) rectangle (1.2,.6);
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$p$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$q$}
+	\node at (.7,.4) {\scriptsize{$2j+1$}};
+	\node at (.7,-.4) {\scriptsize{$2j+1$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$n$}};
+\end{tikzpicture}\,.
+$$
+For morphisms $f\in \cM(p \to q)$ 
+with $p\in \cM_j$ and $q\in \cM_k$
+and $g\in \cC(r \to s)$ 
+with $r \in \cP_{m,\pm}$ and $s\in \cP_{n,\pm}$
+such that $p\vartriangleleft r$ and $q\vartriangleleft s$ are well-defined,
+we define
+$$
+f\vartriangleleft g
+:=
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw (.25,-.6) -- (.25,.6);
+	\draw (1.2,-.6) -- (1.2,.6);
+%
+	\halfcircle{}{(0,0)}{.6}{1.3}{}
+%
+	\halfcircle{unshaded}{(0,0)}{.25}{.25}{$f$}
+	\ncircle{unshaded}{(1.2,0)}{.25}{180}{$g$}
+	\node at (.4,.4) {\scriptsize{$k$}};
+	\node at (.4,-.4) {\scriptsize{$j$}};
+	\node at (1.4,.4) {\scriptsize{$n$}};
+	\node at (1.4,-.4) {\scriptsize{$m$}};
+\end{tikzpicture}\,.
+$$
+where shading depends on the parity of $j$ and $k$.
+We leave the straightforward verification that $\cM$ is a right $\cC$-module $\Cstar$ category to the reader.
+\nn{Karoubi completion...}
+
+The distinguished simple basepoint of $\cM$ is given by the identity projection $1_{\cM_0} \in \cM_0$.
+The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$.
+\nn{verification that it's a module trace!}
+\end{defn}
 
 %By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
 %Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
-Since $m$ is simple, 
-$A$ is in fact a Q-system, % Q-system or $Q$-system?
-as described in \cite[Rmk.~2.7]{ny17}.  
-Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
-Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
-We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
-$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
-Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
+
+%By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+%Since $m$ is simple, 
+%$A$ is in fact a Q-system, % Q-system or $Q$-system?
+%as described in \cite[Rmk.~2.7]{ny17}.  
+%Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
+%Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
+%We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
+%By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
+%$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
+%Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Construction of the Planar Algebra Associated to a Module Category}
@@ -1208,105 +1312,105 @@ Taking the full subcategory of objects which are preserved by tensoring by the a
 
 %Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
 
-Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
-$$
-\cM 
-=
-\begin{pmatrix}
-\cC_{20} & \cC_{21} 
-\end{pmatrix}
-\qquad\qquad
-\cC
-=
-\begin{pmatrix}
-\cC_{00} & \cC_{01} 
-\\
-\cC_{10} & \cC_{11}
-\end{pmatrix}
-\subset
-\begin{pmatrix}
-\cC_{00} & \cC_{01} & \cC_{02}
-\\
-\cC_{10} & \cC_{11} & \cC_{12}
-\\
-\cC_{20} & \cC_{21} & \cC_{22}
-\end{pmatrix}
-=
-\widetilde{\cC}
-$$
-
-
-\nn{redo below here -- get planar module from module category.}
-
-
-Let $x\in \cC_{01}$ be the strand pictured below:
-$$x=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,-.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (.7,.7);
-	\fill[shaded] (0,-.7) rectangle (-.7,.7);
-	\draw[fill] (0,-.7) -- (0,.7);
-
-\end{tikzpicture}
-\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[white] (0,-.7) rectangle (-.7,.7);
-	\fill[shaded] (0,-.7) rectangle (.7,.7);
-	\draw (0,-.7) -- (0,.7);
-	\draw (.7,-.7) -- (.7,.7);
-
-\end{tikzpicture}
-$$
-By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
-x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
-
-We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
-$$
-\begin{tikzpicture}[baseline=-.1cm]
-	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
-	\draw (.15,-.7) -- (.15,.7);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-	\node at (.3,.5) {\scriptsize{$n$}};
-	\node at (.3,-.5) {\scriptsize{$n$}};
-\end{tikzpicture}
-$$
-where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
-\begin{equation}\label{eq:TraceAn}
-\tr_n(f) 
-\,:=\, 
-\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
-\,=\,
-\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
-\frac{1}{d^n}
-\cdot
-\left(
-\begin{tikzpicture}[baseline=-.1cm, rotate=90]
-	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
-	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
-	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
+%$$
+%\cM 
+%=
+%\begin{pmatrix}
+%\cC_{20} & \cC_{21} 
+%\end{pmatrix}
+%\qquad\qquad
+%\cC
+%=
+%\begin{pmatrix}
+%\cC_{00} & \cC_{01} 
+%\\
+%\cC_{10} & \cC_{11}
+%\end{pmatrix}
+%\subset
+%\begin{pmatrix}
+%\cC_{00} & \cC_{01} & \cC_{02}
+%\\
+%\cC_{10} & \cC_{11} & \cC_{12}
+%\\
+%\cC_{20} & \cC_{21} & \cC_{22}
+%\end{pmatrix}
+%=
+%\widetilde{\cC}
+%$$
+%\end{defn}
+%
+%\nn{redo below here -- get planar module from module category.}
+%
+%
+%Let $x\in \cC_{01}$ be the strand pictured below:
+%$$x=
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (-.7,-.7);
+%	\fill[shaded] (0,-.7) rectangle (.7,.7);
+%	\draw (0,-.7) -- (0,.7);
+%
+%\end{tikzpicture}
+%\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (.7,.7);
+%	\fill[shaded] (0,-.7) rectangle (-.7,.7);
+%	\draw[fill] (0,-.7) -- (0,.7);
+%
+%\end{tikzpicture}
+%\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[white] (0,-.7) rectangle (-.7,.7);
+%	\fill[shaded] (0,-.7) rectangle (.7,.7);
+%	\draw (0,-.7) -- (0,.7);
+%	\draw (.7,-.7) -- (.7,.7);
+%
+%\end{tikzpicture}
+%$$
+%By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
+%x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
+%$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
+%
+%We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
+%$$
+%\begin{tikzpicture}[baseline=-.1cm]
+%	\fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
+%	\draw[thick, red] (-.15,-.7) -- (-.15,.7);
+%	\draw (.15,-.7) -- (.15,.7);
+%	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
+%	\node at (.3,.5) {\scriptsize{$n$}};
+%	\node at (.3,-.5) {\scriptsize{$n$}};
+%\end{tikzpicture}
+%$$
+%where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
+%\begin{equation}\label{eq:TraceAn}
+%\tr_n(f) 
+%\,:=\, 
+%\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
+%\,=\,
+%\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
+%\frac{1}{d^n}
+%\cdot
+%\left(
+%\begin{tikzpicture}[baseline=-.1cm, rotate=90]
+%	\filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
+%	\draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
+%	\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
 %	\node at (-.7,-.35) {\scriptsize{$n$}};
-	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
-	\node at (0,.75) {\scriptsize{$\overline{m}$}};
+%	\node at (0,-.7) {\scriptsize{$\overline{n}$}};
+%	\node at (0,.75) {\scriptsize{$\overline{m}$}};
 %	\node at (.7,.35) {\scriptsize{$m$}};
-\end{tikzpicture}
-\right)
-\end{equation}
-Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
-This makes each $M_n$ a finite dimensional von Neumann algebra.
-
-\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
-
-\begin{rem}
-	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
-\end{rem}
+%\end{tikzpicture}
+%\right)
+%\end{equation}
+%Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
+%This makes each $M_n$ a finite dimensional von Neumann algebra.
+%
+%\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
+%
+%\begin{rem}
+%	The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
+%\end{rem}
 
 %We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
 %\begin{equation}\label{eq:Inclusion}
@@ -1464,7 +1568,6 @@ Taking daggers reduces to 2 cases.
 
 \nn{TODO: When $M_\bullet$ is a cyclic right planar module for $\cQ_\bullet$ with projection categories $\cM$ and $\cC$ respectively, endow $\cM$ with the structure of a cyclic right $\cC$-module $\Cstar$ category.}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1508,8 +1611,8 @@ For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
 \label{eq:MarkovPullDown}
 (pull down)
 For all $n\geq 1$, $M_{n+1}e_n = M_n e_n$.
-
 \end{enumerate}
+We call a Markov tower \emph{connected} if $\dim(M_0) = 1$.
 \end{defn}
 
 \begin{rem}
@@ -1622,6 +1725,7 @@ This follows immediately from \ref{EP:NewStuff}.
 \end{proof}
 
 \begin{rem}
+\label{rem:InfiniteDimensionalMarkovTower}
 \nn{we stick to finite dimensions, but what came above in this section works if the $(M_n,\tr_n)$ are arbitrary tracial von Neumann algebras.
 We stick to finite dimensions because we want a principal graph; this notion would need to be generalized to an infinite setting...}
 \end{rem}
@@ -1646,11 +1750,25 @@ Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
 \end{fact}
 
+\begin{defn}
+The principal graph $\Gamma$ of a Markov tower $M_\bullet$ has a \emph{quantum dimension function} $\dim : V(\Gamma) \to \bbR_{>0}$ given as follows.
+Let $v \in V(\Gamma)$, and let $p\in M_k$ be a minimal projection corresponding to the vertex $v$.
+We define $\dim(v) := \tr_k(p)$, and we note this dimension is independent of the choice of $p \in M_k$ and $k\geq 0$.
+Moreover, the quantum dimension function $\dim$ satisfies the Frobenius-Perron property
+\begin{equation}
+\label{eq:QuantumDimension}
+d\cdot \dim(v) 
+=
+\sum_{w\sim v}
+\dim(w)
+\end{equation}
+where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+\end{defn}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Examples of Markov towers}
 
-\nn{talk about planar modules here.}
-
+We discuss various examples of Markov towers in great detail.
 
 \begin{ex}
 The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$.
@@ -1786,38 +1904,61 @@ The last claim follows immediately.
 \end{proof}
 
 
-\nn{move later:}
+\begin{defn}
+\label{def:StronglyMarkovInclusion}
+Recall from \cite{MR1278111} that an inclusion of finite von Neumann algebras $A_0\subset A_1$ with a faithful normal tracial state $\tr_1$ on $A_1$ is called a \emph{Markov inclusion} 
+if
+the canonical faithful normal semifinite trace on the Jones basic construction $A_2 = JA_0'J = \langle A_1, e_1\rangle \subset B(L^2(A_1, \tr_1))$ given by the extension of $xe_1y \mapsto \tr_1(xy)$ is finite and $\Tr_2(1)^{-1}\Tr_2|_{A_1}=\tr_1$.
+
+Following \cite{MR2812459}, we call such an inclusion \emph{strongly Markov} if moreover there is a \emph{Pimsner-Popa basis} for $A_1$ over $A_0$, which is a finite subset $\{b\}\subset A_1$ such that $1_{A_2} = \sum_b b e_1b^*$.
+This is equivalent to $x = \sum_b b E_{A_0}(b^*x)$ for all $x\in A_1$, and also to $A_2 = A_1e_1A_1$ by \cite[Prop.~3(b)]{MR561983}
+(see also \cite{MR996807}).
+
+Given a strongly Markov inclusion $A_0\subset (A_1, \tr_1)$, 
+its \emph{Watatani index} \cite{MR996807} is the scalar $[A_1:A_0]:=\Tr_2(1) = \sum_b bb^* $ (see also \cite[1.1.4(c)]{MR1278111}).
+We may iterate the Jones basic construction to get a tower of von Neumann algebras $(A_n ,\tr_n, e_{n+1})_{n\geq 0}$ with faithful tracial states such that each inclusion $A_{n}\subset (A_{n+1}, \tr_{n+1})$ is strongly Markov with index $[A_{n+1}: A_n] = [A_1:A_0]$ \cite{MR2812459}.
+By \cite[Prop.~2.7.3]{MR996807}, the relative commutants $A_i' \cap A_j$ for $i\leq j$ are always finite dimensional von Neumann algebras.
+\end{defn}
+
+\begin{nota}
+From this point on, we reserve the notation $(A_n,\tr_n, e_{n+1})_{n\geq 0}$ for the Jones tower of a strongly Markov inclusion of tracial von Neumann algebras and $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ for a Markov tower.
+\end{nota}
+
 \begin{ex}
-\nn{define strongly markov inclusion.}
+Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})_{n\geq 0}$ is a possibly infinite dimensional Markov tower as in Remark \ref{rem:InfiniteDimensionalMarkovTower}.
 
-Given a strongly Markov inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, its Jones tower $(A_n, \tr_n, e_{n+1})$ is a Markov tower.
-\nn{decide whether Markov tower should mean finite dimensional.}
-
-Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite dimensional} von Neumann algebras $(A_0'\cap A_n , \tr_n|_{A_0'\cap A_n} , e_{n+1})$.
-Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})$ is a Markov tower of finite dimensional von Neumann algebras.
+Taking the relative commutant with $A_0$, we get a Markov tower of \emph{finite dimensional} von Neumann algebras $(A_0'\cap A_n , \tr_n|_{A_0'\cap A_n} , e_{n+1})_{n\geq 0}$.
+Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})_{n\geq 0}$ is a Markov tower of finite dimensional von Neumann algebras.
 \end{ex}
 
-\nn{classification in terms of graphs and a Frobenius-Perron weighting on the vertices.}
+We now classify all connected Markov towers in terms of pointed bipartite graphs and quantum dimension functions.
+
+\begin{ex}
+Suppose $(\Gamma, v)$ is a pointed bipartite graph with countably many vertices and edges, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
+We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \nn{citation?}.
+We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
+
+It is straightforward to check that $M_\bullet$ has principal graph $\Gamma$ with basepoint $v$ corresponding to $1_{M_0}$.
+Moreover, by construction the quantum dimension function of $M_\bullet$ is exactly $\dim$.
+\end{ex}
+
+Indeed, the above example can be easily generalized to the following result.
 
 \begin{prop}
 \label{prop:ClassificationOfMarkovTowers}
-Connected Markov towers $M_\bullet$ are classified by triples $(\Gamma,v_0, \dim)$ where $\Gamma=(V_+, V_- , E)$ is a bipartite graph, $v_0$ is a distinguished vertex, and $\dim : V_+\amalg V_- \to \bbR_{>0}$ is a function satisfying $\dim(v_0) = 1$ and
-$$
-\sum_{w\sim v} \dim(w) = d \dim(v),
-$$
-where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is taken with multiplicity.
+Connected Markov towers $M_\bullet$ are classified up to $*$-isomorphism by pointed bipartite graphs $(\Gamma,v)$ with a quantum dimension function $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying \eqref{eq:QuantumDimension}.
 \end{prop}
-\begin{proof}
-Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
-We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
-
-Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
-One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
-
-One then checks these two processes are mutually inverse.
-We leave the straightforward details to the reader.
-\nn{better to have some citations, or to supply a bit more detail here...}
-\end{proof}
+%\begin{proof}
+%Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
+%We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
+%
+%Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
+%One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
+%
+%One then checks these two processes are mutually inverse.
+%We leave the straightforward details to the reader.
+%\nn{better to have some citations, or to supply a bit more detail here...}
+%\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3040,9 +3181,68 @@ One now shows these two processes are mutually inverse up to equivalence.
 \nn{todo}
 \end{proof}
 
-
-\nn{edit below.}
-
+\begin{rem}
+\label{rem:LambdaLatticeModule}
+Given a $\lambda$-lattice $A_{\bullet\bullet}$ with $\lambda = d^{-2}$, we expect that a Markov tower $M_\bullet$ of modulus $d$ such that $M_n \supset A_{0n}$ for all $n\geq 0$ satisfying certain compatibility conditions is the equivalent notion of a right module for $A_{\bullet\bullet}$ in the spirit of Theorems \ref{thm:SubfactorTensorCategoryEquivalence} and \ref{thm:ModuleEquivalence}.
+$$
+\begin{tikzpicture}
+	\node at (0,1) {$M_{0}$};
+	\node at (.5,1) {$\subset$};
+	\node at (1,1) {$M_{1}$};
+	\node at (1.5,1) {$\subset$};
+	\node at (2,1) {$M_{2}$};
+	\node at (2.5,1) {$\subset$};
+	\node at (3,1) {$M_{3}$};
+	\node at (3.5,1) {$\subset$};
+	\node at (4,1) {$\cdots$};
+%
+	\node at (0,.5) {$\cup$};
+	\node at (1,.5) {$\cup$};
+	\node at (2,.5) {$\cup$};
+	\node at (3,.5) {$\cup$};
+%
+	\node at (0,0) {$A_{00}$};
+	\node at (.5,0) {$\subset$};
+	\node at (1,0) {$A_{01}$};
+	\node at (1.5,0) {$\subset$};
+	\node at (2,0) {$A_{02}$};
+	\node at (2.5,0) {$\subset$};
+	\node at (3,0) {$A_{03}$};
+	\node at (3.5,0) {$\subset$};
+	\node at (4,0) {$\cdots$};
+%
+	\node at (1,-.5) {$\cup$};
+	\node at (2,-.5) {$\cup$};
+	\node at (3,-.5) {$\cup$};
+%
+	\node at (1,-1) {$A_{11}$};
+	\node at (1.5,-1) {$\subset$};
+	\node at (2,-1) {$A_{12}$};
+	\node at (2.5,-1) {$\subset$};
+	\node at (3,-1) {$A_{13}$};
+	\node at (3.5,-1) {$\subset$};
+	\node at (4,-1) {$\cdots$};
+%
+	\node at (2,-1.5) {$\cup$};
+	\node at (3,-1.5) {$\cup$};
+%
+	\node at (2,-2) {$A_{22}$};
+	\node at (2.5,-2) {$\subset$};
+	\node at (3,-2) {$A_{23}$};
+	\node at (3.5,-2) {$\subset$};
+	\node at (4,-2) {$\cdots$};
+%
+	\node at (3,-2.5) {$\cup$};
+%
+	\node at (3,-3) {$A_{33}$};
+	\node at (3.5,-3) {$\subset$};
+	\node at (4,-3) {$\cdots$};
+%
+	\node at (4,-3.5) {$\ddots$};
+\end{tikzpicture}
+$$
+We leave this exploration to a future joint article, as it would take us too far afield.
+\end{rem}
 
 
 
@@ -3055,52 +3255,54 @@ One now shows these two processes are mutually inverse up to equivalence.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The canonical planar algebra from a strongly Markov inclusion} 
 
-\nn{some lead in here, where background comes from}
+\nn{some lead in here, where background comes from.
+\\
+Refer reader to Definition \ref{def:StronglyMarkovInclusion} to recall the definition of a strongly Markov inclusion.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strongly Markov inclusions} 
-\label{sec:StronglyMarkovInclusions}
-
-\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
-This could help alleviate some confusion!}
-For the duration of this paper, assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$, we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the Jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
-\begin{defn}
-Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
-
-\begin{itemize}
-	\item $1=\sum_{b\in B}be_1b^*$.
-	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b^*x)$.
-	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b^*$.
-\end{itemize}
-
-
-\end{defn}
-Due to 
-\cite[Prop.~3(b)]{MR561983}
-(see also \cite{MR996807}),
-we have the following:
-\begin{prop}
-The following are equivalent:
-
-\begin{itemize}
-\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-\item $A_2=A_1e_1A_1$
-\end{itemize}
-\end{prop}
-We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
-\begin{defn}
-Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$ given by the extension of $xe_1y \mapsto \tr_1(xy)$.
-The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
-\begin{itemize}
-\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
-\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-\end{itemize}
-\end{defn}
-
-Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras.
-
-\nn{towers of relative commutants}
-
+%\subsection{Strongly Markov inclusions} 
+%\label{sec:StronglyMarkovInclusions}
+%
+%\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
+%This could help alleviate some confusion!}
+%For the duration of this paper, assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$, we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the Jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
+%\begin{defn}
+%Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
+%
+%\begin{itemize}
+%	\item $1=\sum_{b\in B}be_1b^*$.
+%	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b^*x)$.
+%	\item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b^*$.
+%\end{itemize}
+%
+%
+%\end{defn}
+%Due to 
+%\cite[Prop.~3(b)]{MR561983}
+%(see also \cite{MR996807}),
+%we have the following:
+%\begin{prop}
+%The following are equivalent:
+%
+%\begin{itemize}
+%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
+%\item $A_2=A_1e_1A_1$
+%\end{itemize}
+%\end{prop}
+%We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
+%\begin{defn}
+%Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$ given by the extension of $xe_1y \mapsto \tr_1(xy)$.
+%The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
+%\begin{itemize}
+%\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
+%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
+%\end{itemize}
+%\end{defn}
+%
+%Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras.
+%
+%\nn{towers of relative commutants}
+%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
