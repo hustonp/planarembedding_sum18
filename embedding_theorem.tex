@@ -1708,11 +1708,10 @@ The \emph{principal graph} of the Markov tower $(M_n,\tr_n, e_{n+1})$ consists o
 A Markov tower is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
-
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
-Now notice that for $k<n$ the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the Bratteli diagram of $M_{k-1}\subseteq M_{k}$ reflected upwards along with additional edges which are part of the principal graph. 
-Because of this and the fact that the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph we can ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
+Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ contains the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, along with additional vertices and edges which are part of the principal graph. 
+At the base, all of Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. We can therefore ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
 
 \begin{fact}\label{BratteliPrincipal}
 	If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
