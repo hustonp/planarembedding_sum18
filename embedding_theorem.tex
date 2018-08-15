@@ -375,13 +375,16 @@
 
 % a set of commands to support easily describing projections
 % example: 
-% % TODO add one
+% \[\TLProjStart\TLProjThrough{n}\TLProjCapcup{i}\TLProjThrough{k}\TLProjCapcup{\ell}\TLProjEnd\]
+% If anyone wants, they can probably generalize this more slickly into a system to support dashed vertical concatenation, etc., and/or recast the above 4 commands in similar language. 
 \newcommand{\TLProjEnd}{
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLPlead) + (.4,.8) $);
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLPlead) + (0,.8) $);
+ \end{tikzpicture}
 }
 
 \newcommand{\TLProjStart}{
-	\coordinate (TLPlead) at (0,.2);
+ \begin{tikzpicture}[baseline=.3cm]
+	\coordinate (TLPlead) at (.2,0);
 }
  
 % #1 - label
@@ -396,7 +399,7 @@
 	\draw (TLPlead) arc (180:0:.2);
 	\draw ($ (TLPlead) + (0,.8) $) arc (-180:0:.2);
 	\node at ($ (TLPlead) + (0,1) $) {\scriptsize{$#1$}};
-	\coordinate (TLPlead) at ($ (TLPlead) + (.4,0) $);
+	\coordinate (TLPlead) at ($ (TLPlead) + (.6,0) $);
 }
  
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
