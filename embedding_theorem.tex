@@ -1542,19 +1542,14 @@ By definition, we have assumed $\Tr_k$ to be tracial and positive on endomorphis
 \section{Markov towers and their projection categories} 
 \label{sec:MarkovTowers}
 
-\nn{edit now.}
-
-We begin the article by defining the notion of a \emph{Markov tower} of finite dimensional tracial von Neumann algebras and studying its elementary properties.
-One should think of the definition of a Markov tower as obtained from the definition of Popa's $\lambda$-\emph{sequences of commuting squares} from \cite{MR1334479} and forgetting one of the towers.
-This is analogous to the way one defines a module for an algebraic object by replacing one argument of the algebraic operation with an element from the module.
-In \S\ref{sec:TLJmodules} below, we will see that Markov towers are exactly a $\lambda$-lattice approach to pivotal Temperley-Lieb-Jones module categories.
+So far, we have presented two versions of the concept of a module over a subfactor planar algebra. The algebraic data of each shares a common structure: that of a \emph{Markov tower} of finite dimensional tracial von Neumann algebras. Studying elementary properties of Markov towers will therefore allow us to state many important results about planar modules in single, common language.  
+The definition of a Markov tower can obtained from the definition of Popa's $\lambda$-\emph{sequences of commuting squares} from \cite{MR1334479} by forgetting one of the towers, 
+analogous to the way one defines a module for an algebraic object by replacing one argument of the algebraic operation with an element from the module. In short, Markov towers are the towers-of-algebras analog of a module category. 
+In \S\ref{sec:TLJmodules} below, we will see that Markov towers are exactly a $\lambda$-lattice approach to pivotal Temperley-Lieb-Jones module categories; this motivates the view of subfactor planar modules as simply Markov towers with an additional structure. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Markov towers and their elementary properties}
 \label{sec:MarkovTowersAndElementaryProperties}
-
-The towers of algebras analog of a module category is played by the role of a \emph{Markov tower}.
-
 \begin{defn}
 A \emph{Markov tower} $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
 \begin{enumerate}[label={\rm(M\arabic*)}]
