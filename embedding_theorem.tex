@@ -2121,7 +2121,7 @@ M_{(n+1)k-1}
 	\draw (1,0) arc (180:0:.3cm);
 	\node at (.8,1) {\scriptsize{$k{-}1$}};
 	\node at (1.6,-.2) {\scriptsize{$k$}};
-	\node at (.4,-.2) {\scriptsize{$(n{-}1)k$}};
+	\node at (.2,-.2) {\scriptsize{$(n{-}1)k$}};
 \end{tikzpicture}
 \,.
 \end{align*}
@@ -2881,47 +2881,106 @@ The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovP
 		\item $[n+2i]\rightarrow [n] \rightarrow [n+2i+2j] $
 		\item $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
 	\end{enumerate}
-To prove this we need to introduce some notation for specific elements of Temperley-Lieb and a lemma.
+%To prove this we need to introduce some notation for specific elements of Temperley-Lieb and a lemma.
+%
+%\begin{nota}
+%Let the following elements of Temeperley-Lieb be denoted as follows:
+%\begin{itemize}
+%\item 
+%$ {}^nh^j_k= d^{-j}\,
+%\begin{tikzpicture}[baseline = .3cm]
+%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+%	\draw (.2,0) -- (.2,.8);
+%	\draw (.5,.8) arc (-180:0:.2cm);
+%	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+%	\draw (.8,0) arc (180:0:.2cm);
+%	\node at (.2,1) {\scriptsize{$n$}};
+%	\node at (.5,1) {\scriptsize{$j$}};
+%	\node at (1.2,1) {\scriptsize{$k$}};
+%	\node at (.8,-.2) {\scriptsize{$j$}};
+%\end{tikzpicture}
+%$ 
+%
+%and let ${}^n g^j_k = {{}^n h^j_k}^{\ast}$.
+%\item 
+%${}^n r^{i+j}=d^{-(i+j)}
+%\begin{tikzpicture}[baseline=0, yscale = -1]
+%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1.5);
+%	\draw (.2,0) -- (.2,1.5);
+%	\draw (0.4,0) arc (180:0:.7);
+%    \draw (0.7,0) arc (180:0:.4);
+%    \draw (0.4,1.5) arc (-180:0:.3);
+%      \draw (1.2,1.5) arc (-180:0:.3);
+%      \node at (.2,-.2) {\scriptsize{$n$}};
+%      \node at (1.65,-.2) {\scriptsize{$i+j$}};
+%     \node at (.4,1.7) {\scriptsize{$i$}};
+%      \node at (1.2,1.7) {\scriptsize{$j$}};
+%	\end{tikzpicture}$ and let ${}^n r_{i+j}= {{}^n r^{i+j}}^{\ast}$
+%	\end{itemize}
+%\end{nota}	
 
-\begin{nota}
-Let the following elements of Temeperley-Lieb be denoted as follows:
-	\begin{itemize}
-		\item $ {}^nh^j_k= d^{-j}\,
-	\begin{tikzpicture}[baseline = .3cm]
+We begin with the following lemma.
+
+ \begin{lem}
+ \label{lem:LeftKink}
+For all $x \in M_{n+2i+j}$,
+$
+E^{n+2i+j}_{n+i+j}
+\left(
+x
+\cdot
+\begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
 	\draw (.2,0) -- (.2,.8);
 	\draw (.5,.8) arc (-180:0:.2cm);
 	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
 	\draw (.8,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$j$}};
-	\node at (1.2,1) {\scriptsize{$k$}};
-	\node at (.8,-.2) {\scriptsize{$j$}};
-	\end{tikzpicture}$ and let ${}^n g^j_k = {{}^n h^j_k}^{\ast}$.
-	\item ${}^n r^{i+j}=d^{-(i+j)}\begin{tikzpicture}[baseline=0, yscale = -1]
-	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1.5);
-	\draw (.2,0) -- (.2,1.5);
-	\draw (0.4,0) arc (180:0:.7);
-    \draw (0.7,0) arc (180:0:.4);
-    \draw (0.4,1.5) arc (-180:0:.3);
-      \draw (1.2,1.5) arc (-180:0:.3);
-      \node at (.2,-.2) {\scriptsize{$n$}};
-      \node at (1.65,-.2) {\scriptsize{$i+j$}};
-     \node at (.4,1.7) {\scriptsize{$i$}};
-      \node at (1.2,1.7) {\scriptsize{$j$}};
-	\end{tikzpicture}$ and let ${}^n r_{i+j}= {{}^n r^{i+j}}^{\ast}$
-	\end{itemize}
-\end{nota}	
-
- We also need the following lemma:
-
- \begin{lem}\label{LeftKink}
-Let $\eta \in M_{n+2i+j}$ then we have:
-$$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,.8) arc (-180:0:.5);
+	\draw (0.6,.8) arc (-180:0:.3);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,1) {\scriptsize{$j$}};
+	\node at (.6,1) {\scriptsize{$i$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+=
+x\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\draw (0.4,.8) arc (-180:0:.2);
+	\draw (1,.8) arc (-180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+	\node at (.4,1) {\scriptsize{$i$}};
+	\node at (1,1) {\scriptsize{$j$}};
+\end{tikzpicture}
+$
+%$$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
 \end{lem}
-\des{I'm not being careful about the factor of d at all right now I need to fix that later.}
+%\des{I'm not being careful about the factor of d at all right now I need to fix that later.}
 
 \begin{proof}
+\nn{Desmond, I can't understand these proofs whatsoever. 
+Please make them look nice using diagrams.
+I changed the statement of the lemma to help get the ball going.
+-D}
+
 	\begin{align}
 		 \eta {}^nh^i_j{}^n r^{i+j} &=E_{n+2i+j}(F^{n+2i+j}_{n+i+j}) \eta {}^nh^i_j{}^n r^{i+j} \\
 									&=E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_j) {}^n r^{i+j} \\
@@ -2935,18 +2994,20 @@ $$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
 	\end{align}
 \end{proof}
 \des{I think I was actually correct about all factors of d for this proof}
-\begin{proof}[Proof of \ref{prop:InjectiveAlgebraMap}]
+
+\begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
 Recall that we need only verify $\pi$ respects three types of composition:
 	\begin{enumerate}
 		\item\label{upup}  $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
 		\item\label{UPdown} $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i] $
 		\item\label{downUP} $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
 	\end{enumerate}
-\eqref{upup} Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. Then $\pi(y\circ x)=E_{n+i+j}(yx{}^nh^i_j){}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}$. Applying \ref{LeftKink} and noting that: 
+\eqref{upup} Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. Then $\pi(y\circ x)=E_{n+i+j}(yx{}^nh^i_j){}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}$. Applying Lemma \ref{lem:LeftKink} and noting that: 
 $${}^nh^i_j{}^n r^{i+j}=F^{n+i}_{n}F^{n+2i+j}_{n+2i}$$ 
 We see that: $$\pi(y\circ x)=yx{}^nh^i_j{}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}= yxF^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=\pi(y)\circ \pi(x)$$
  
-\eqref{UPdown} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. Then $\pi(y\circ x)=E_{n+i}(yx){}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}$. Applying \ref{LeftKink} and noting that $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we see that:
+\eqref{UPdown} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. Then $\pi(y\circ x)=E_{n+i}(yx){}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}$. 
+Applying Lemma \ref{lem:LeftKink} and noting that $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we see that:
 $$\pi(y\circ x)= E_{n+2i}(yx{}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=E_{n+2i}(yx{}^ng^i_j)F^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}$$
 And by proposition \ref{prop:MultistepJonesProjections} we know that $F^{n+2i+j}_{n+2i}$ implements $E_{n+2i}^{n+2i+j}$ so
 $$\pi(y\circ x)= F^{n+2i+j}_{n+2i}(yx{}^ng^i_jF^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}=d^i \pi(y) \circ \pi(x)$$
@@ -2958,10 +3019,6 @@ and
 $$\pi(y)\circ \pi(x)= d^{i+j}y {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}$$
 but these are equal as:
 $${}^nh^i_jx F^{n+2i+j}_{n+2i} F^{n+2i+2j+k}_{n+2i+2j}= {}^nh^i_j F^{n+2i+j}_{n+2i} x F^{n+2i+2j+k}_{n+2i+2j}= {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}$$
-
-\end{proof}
-
-\begin{proof}[Proof of theorem \ref{prop:InjectiveAlgebraMap}]
 
 \end{proof}
 
