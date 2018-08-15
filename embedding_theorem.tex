@@ -405,7 +405,33 @@
 	\end{scope}
 	\coordinate (TLTlead) at ($ (TLTlead) + (.6,0) $);
 }
+
+% a partial iso of #2 through strings moving right past #1 cups 
+\newcommand{\TLTSnakeR}[2]{
+	\begin{scope}[shift=(TLTlead)]
+		\draw (.1,.8) arc (-180:0:.2cm);
+		\draw (.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,.8);
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.1,1) {\scriptsize{$#1$}};
+		\node at (.8,1) {\scriptsize{$#2$}};
+		\node at (.4,-.2) {\scriptsize{$#1$}};
+	\end{scope}
+	\coordinate (TLTlead) at ($ (TLTlead) + (1,0) $);
+}
  
+% a partial iso of #2 through strings moving left past #1 cups 
+\newcommand{\TLTSnakeL}[2]{
+	\begin{scope}[shift=(TLTlead)]
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.1,.8);
+		\draw (.1,0) arc (180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$#1$}};
+		\node at (.1,1) {\scriptsize{$#2$}};
+		\node at (.1,-.2) {\scriptsize{$#1$}};
+	\end{scope}
+	\coordinate (TLTlead) at ($ (TLTlead) + (1,0) $);
+}
+
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\uscircle}{
 \begin{tikzpicture}
