@@ -305,6 +305,39 @@
      {\vcenter{\hbox{\begin{tikzpicture}[#1]#2
                      \end{tikzpicture}}}
      }
+
+% TIKZ boxes for commonly used TLJ elements %%%%%
+
+% produces partial iso with #1 through strands on the left, #2 cups and caps, and #3 through strings snaking right between them
+\newcommand{\TLPlusPIso}[3]{
+	\begin{tikzpicture}[baseline = .3cm]
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+		\draw (.2,0) -- (.2,.8);
+		\draw (.5,.8) arc (-180:0:.2cm);
+		\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.2,1) {\scriptsize{$#1$}};
+		\node at (.5,1) {\scriptsize{$#2$}};
+		\node at (1.2,1) {\scriptsize{$#3$}};
+		\node at (.8,-.2) {\scriptsize{$#2$}};
+	\end{tikzpicture}
+}
+
+% same as above, but the #3 through strings head the other way 
+\newcommand{\TLMinusPIso}[3]{
+	\begin{tikzpicture}[baseline = .3cm]
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+		\draw (.2,0) -- (.2,.8);
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+		\draw (.5,0) arc (180:0:.2cm);
+		\node at (.2,1) {\scriptsize{$#1$}};
+		\node at (.8,1) {\scriptsize{$#2$}};
+		\node at (.5,1) {\scriptsize{$#3$}};
+		\node at (.5,-.2) {\scriptsize{$#2$}};
+	\end{tikzpicture}
+}
+
  
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\uscircle}{
