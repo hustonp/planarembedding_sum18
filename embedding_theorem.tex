@@ -2920,7 +2920,8 @@ We begin with the following lemma.
  \label{lem:LeftKink}
 For all $x \in M_{n+2i+j}$,
 $
-E^{n+2i+j}_{n+i+j}
+d^i
+E^{n+j+2i}_{n+j+i}
 \left(
 x
 \cdot
@@ -2971,11 +2972,11 @@ $
 %\des{I'm not being careful about the factor of d at all right now I need to fix that later.}
 
 \begin{proof}
-\nn{Desmond, I can't understand these proofs whatsoever. 
-Please make them look nice using diagrams.
-I changed the statement of the lemma to help get the ball going.
--D}
-
+%\nn{Desmond, I can't understand these proofs whatsoever. 
+%Please make them look nice using diagrams.
+%I changed the statement of the lemma to help get the ball going.
+%-D}
+We calculate
 \begin{align*}
 x\cdot
 \begin{tikzpicture}[baseline=.3cm]
@@ -3130,6 +3131,178 @@ x\cdot
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
+\\&=
+E^{n+j+3i}_{n+j+2i}\left(
+d^i\,
+E^{n+j+2i}_{n+j+i}\left(
+x\cdot
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw[thick, rounded corners = 5pt] (0,.8) rectangle (1.8,-.8);
+	\draw[dashed] (0,0) -- (1.8,0);
+	\draw (.2,-.8) -- (.2,.8);
+	\draw (1.6,.8) -- (1.6,0) arc (0:-180:.2cm) arc (0:180:.2cm) -- (.8,-.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (.5,-.8) -- (.5,.8);
+	\draw (1.2,-.8) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$i$}};
+	\node at (1.6,1) {\scriptsize{$i$}};
+	\node at (1.6,-1) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,.8) arc (-180:0:.5);
+	\draw (0.6,.8) arc (-180:0:.3);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,1) {\scriptsize{$j$}};
+	\node at (.6,1) {\scriptsize{$i$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\\&=
+d^i
+E^{n+j+2i}_{n+j+i}\left(
+x\cdot
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+E^{n+j+3i}_{n+j+2i}\left(
+\begin{tikzpicture}[baseline = -.1cm]
+	\draw[thick, rounded corners = 5pt] (0,.8) rectangle (1.8,-.8);
+	\draw[dashed] (0,0) -- (1.8,0);
+	\draw (.2,-.8) -- (.2,.8);
+	\draw (1.6,.8) -- (1.6,0) arc (0:-180:.2cm) arc (0:180:.2cm) -- (.8,-.8);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (.5,-.8) -- (.5,.8);
+	\draw (1.2,-.8) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$i$}};
+	\node at (1.6,1) {\scriptsize{$i$}};
+	\node at (1.6,-1) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,.8) arc (-180:0:.5);
+	\draw (0.6,.8) arc (-180:0:.3);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,1) {\scriptsize{$j$}};
+	\node at (.6,1) {\scriptsize{$i$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\\&=
+d^i
+E^{n+j+2i}_{n+j+i}\left(
+x\cdot
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+d^{-i}\,
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,.8) rectangle (1.8,0);
+	\draw (.2,0) -- (.2,.8);
+	\draw (1.5,.8) -- (1.5,0);
+	\draw (.8,.8) arc (-180:0:.2cm);
+	\draw (.5,0) -- (.5,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (1.2,1) {\scriptsize{$i$}};
+	\node at (1.5,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,.8) arc (-180:0:.5);
+	\draw (0.6,.8) arc (-180:0:.3);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,1) {\scriptsize{$j$}};
+	\node at (.6,1) {\scriptsize{$i$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\\&=
+d^i
+E^{n+j+2i}_{n+j+i}
+\left(
+x
+\cdot
+\begin{tikzpicture}[baseline = .3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (.5,.8) arc (-180:0:.2cm);
+	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+	\draw (.8,0) arc (180:0:.2cm);
+	\node at (.2,1) {\scriptsize{$n$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
+\end{tikzpicture}
+\right)
+\cdot
+\begin{tikzpicture}[baseline=.3cm]
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\draw (.2,0) -- (.2,.8);
+	\draw (0.4,.8) arc (-180:0:.5);
+	\draw (0.6,.8) arc (-180:0:.3);
+	\draw (0.4,0) arc (180:0:.2);
+	\draw (1,0) arc (180:0:.2);
+	\node at (.2,-.2) {\scriptsize{$n$}};
+	\node at (.4,1) {\scriptsize{$j$}};
+	\node at (.6,1) {\scriptsize{$i$}};
+	\node at (.4,-.2) {\scriptsize{$i$}};
+	\node at (1,-.2) {\scriptsize{$j$}};
+\end{tikzpicture}
+\qedhere
 %
 %
 %		 \eta {}^nh^i_j{}^n r^{i+j} &=E_{n+2i+j}(F^{n+2i+j}_{n+i+j}) \eta {}^nh^i_j{}^n r^{i+j} \\
@@ -3139,18 +3312,18 @@ x\cdot
 %E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}) {}^nr^{i+j} 
 %\\&= 
 %E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} 
-\\&= 
-E_{n+2i+j}(E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} 
-\\&=
-E_{n+i+j}( \eta {}^nh^i_j F^{n+j+i}_{n+j})E_{n+2i+j}(F^{n+j+2i}_{n+j+i})F^{n+j+i}_{n+j} {}^nr^{i+j} 
-\\&= 
-E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+i}_{n+j}{}^n r^{i+j} 
-\\&= 
-E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j}){}^nr^{i+j} 
-\\&= E_{n+i+j}( \eta {}^nh^i_j){}^nr^{i+j} 
+%\\&= 
+%E_{n+2i+j}(E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} 
+%\\&=
+%E_{n+i+j}( \eta {}^nh^i_j F^{n+j+i}_{n+j})E_{n+2i+j}(F^{n+j+2i}_{n+j+i})F^{n+j+i}_{n+j} {}^nr^{i+j} 
+%\\&= 
+%E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+i}_{n+j}{}^n r^{i+j} 
+%\\&= 
+%E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j}){}^nr^{i+j} 
+%\\&= E_{n+i+j}( \eta {}^nh^i_j){}^nr^{i+j} 
 \end{align*}
 \end{proof}
-\des{I think I was actually correct about all factors of d for this proof}
+%\des{I think I was actually correct about all factors of d for this proof}
 
 \begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
 From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
