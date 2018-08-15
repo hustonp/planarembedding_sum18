@@ -341,10 +341,11 @@
 	\TLTEnd
 }
 
-% a set of commands to support easily describing projections
-% example: 
-% \[\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTThrough{k}\TLTCapcup{\ell}\TLTEnd\]
-% If anyone wants, they can probably generalize this more slickly into a system to support dashed vertical concatenation, etc., and/or recast the above 4 commands in similar language. 
+% a set of commands for generating tickets with TL diagrams inside
+% an example which uses pretty much everything:
+% \[\TLPlusPIso{n}{i}{j}\cdot\TLCapJoin{n}{i}{j}{j}{i}=\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTThrough{j}\TLTThrough{j}\TLTEnd\cdot\TLTStart\TLTThrough{n}\TLTThrough{i}\TLTSnakeR{m}{x}\TLTThrough{i}\TLTSnakeL{w}{u}\TLTCapJoin{i}{j}{j}{I}\TLTCapSplit{k}{x}{x}{k}\TLTCapcup{j}\TLTEnd\]
+% one can also include manually crafted stuff in the middle, no problem. Just remember to increment TLTlead
+
 \newcommand{\TLTEnd}{
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLTlead) + (0,.8) $);
  \end{tikzpicture}
