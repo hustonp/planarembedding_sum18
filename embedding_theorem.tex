@@ -373,6 +373,31 @@
 	\end{tikzpicture}
 }
 
+% a set of commands to support easily describing projections
+% example: 
+% % TODO add one
+\newcommand{\TLProjEnd}{
+	\draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLPlead) + (.4,.8) $);
+}
+
+\newcommand{\TLProjStart}{
+	\coordinate (TLPlead) at (0,.2);
+}
+ 
+% #1 - label
+\newcommand{\TLProjThrough}[1]{
+	\draw (TLPlead) -- ($ (TLPlead) + (0,.8) $);
+	\node at ($ (TLPlead) + (0,1) $) {\scriptsize{$#1$}};
+	\coordinate (TLPlead) at ($ (TLPlead) + (.2,0) $);
+}
+
+% #1 - label
+\newcommand{\TLProjCapcup}[1]{
+	\draw (TLPlead) arc (180:0:.2);
+	\draw ($ (TLPlead) + (0,.8) $) arc (-180:0:.2);
+	\node at ($ (TLPlead) + (0,1) $) {\scriptsize{$#1$}};
+	\coordinate (TLPlead) at ($ (TLPlead) + (.4,0) $);
+}
  
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\uscircle}{
