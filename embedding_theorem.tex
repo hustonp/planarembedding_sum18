@@ -327,36 +327,18 @@
 
 % with #1 through strings left, join #2 caps (left) and #3 caps (right) into #4(inside)+#5(outside) caps
 \newcommand{\TLCapJoin}[5]{
-	\begin{tikzpicture}[baseline=.3cm]
-		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
-		\draw (.2,0) -- (.2,.8);
-		\draw (0.4,.8) arc (-180:0:.5);
-		\draw (0.6,.8) arc (-180:0:.3);
-		\draw (0.4,0) arc (180:0:.2);
-		\draw (1,0) arc (180:0:.2);
-		\node at (.2,1) {\scriptsize{$#1$}};
-		\node at (.4,1) {\scriptsize{$#5$}};
-		\node at (.6,1) {\scriptsize{$#4$}};
-		\node at (.4,-.2) {\scriptsize{$#2$}};
-		\node at (1,-.2) {\scriptsize{$#3$}};
-	\end{tikzpicture}
+	\TLTStart
+	\TLTThrough{#1}
+	\TLTCapJoin{#2}{#3}{#4}{#5}
+	\TLTEnd
 }
 
 % again, dagger of above 
 \newcommand{\TLCapSplit}[5]{
-	\begin{tikzpicture}[baseline=.3cm]
-		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
-		\draw (.2,0) -- (.2,.8);
-		\draw (0.4,0) arc (180:0:.5);
-		\draw (0.6,0) arc (180:0:.3);
-		\draw (0.4,.8) arc (-180:0:.2);
-		\draw (1,.8) arc (-180:0:.2);
-		\node at (.2,1) {\scriptsize{$#1$}};
-		\node at (.4,-.2) {\scriptsize{$#5$}};
-		\node at (.6,-.2) {\scriptsize{$#4$}};
-		\node at (.4,1) {\scriptsize{$#2$}};
-		\node at (1,1) {\scriptsize{$#3$}};
-	\end{tikzpicture}
+	\TLTStart
+	\TLTThrough{#1}
+	\TLTCapSplit{#2}{#3}{#4}{#5}
+	\TLTEnd
 }
 
 % a set of commands to support easily describing projections
@@ -416,6 +398,36 @@
 		\node at (.1,-.2) {\scriptsize{$#1$}};
 	\end{scope}
 	\coordinate (TLTlead) at ($ (TLTlead) + (1,0) $);
+}
+
+% join a bottom of #2 caps (left) and #3 caps (right) into #4(inside)+#5(outside) caps together on top
+\newcommand{\TLTCapJoin}[4]{
+ \begin{scope}[shift=(TLTlead)]
+		\draw (0,.8) arc (-180:0:.5);
+		\draw (0.2,.8) arc (-180:0:.3);
+		\draw (0,0) arc (180:0:.2);
+		\draw (.6,0) arc (180:0:.2);
+		\node at (0,1) {\scriptsize{$#4$}};
+		\node at (.2,1) {\scriptsize{$#3$}};
+		\node at (0,-.2) {\scriptsize{$#1$}};
+		\node at (.6,-.2) {\scriptsize{$#2$}};
+	\end{scope}
+	\coordinate (TLTlead) at ($ (TLTlead) + (1.2,0) $);
+}
+
+% dagger of the above
+\newcommand{\TLTCapSplit}[4]{
+ \begin{scope}[shift=(TLTlead)]
+		\draw (0,0) arc (180:0:.5);
+		\draw (0.2,0) arc (180:0:.3);
+		\draw (0,.8) arc (-180:0:.2);
+		\draw (.6,.8) arc (-180:0:.2);
+		\node at (0,-.2) {\scriptsize{$#4$}};
+		\node at (.2,-.2) {\scriptsize{$#3$}};
+		\node at (0,1) {\scriptsize{$#1$}};
+		\node at (.6,1) {\scriptsize{$#2$}};
+	\end{scope}
+	\coordinate (TLTlead) at ($ (TLTlead) + (1.2,0) $);
 }
 
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
