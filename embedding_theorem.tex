@@ -3956,7 +3956,7 @@ For the following definition, we will always assume shaded planar tangles are in
 The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
 
 	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. 
-	In the sequel, we will frequently supress the isomorphisms $\theta_n$ and $\theta_n^{-1}$ to ease the notation. 
+	In the sequel, we will supress the isomorphisms $\theta_n$ and $\theta_n^{-1}$ to ease the notation. 
 
 	Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
 	\begin{itemize}
@@ -4636,13 +4636,13 @@ By Corollary \ref{cor:CompressJonesTower}, the Jones tower for $pA_0p \subset (p
 $$
 \cQ_{n,+}
 :=
-\theta_n^{-1}(pA_0'\cap pA_np)
+pA_0'\cap pA_np
 \qquad\qquad
 \cQ_{n,-}
 :=
-\theta_{n+1}^{-1}(pA_1'\cap pA_{n+1}p).
+pA_1'\cap pA_{n+1}p.
 $$
-By Lemma \ref{lem:CompressRelativeCommutant}, the map $\Phi_{n,\pm}:\theta^{-1}(x)\mapsto \theta^{-1}(xp)$ gives an isomorphism of von Neumann algebras $\Phi_{n,\pm}:\cP_{n,\pm}\to \cQ_{n,\pm}$ for each $n\geq 0$.
+By Lemma \ref{lem:CompressRelativeCommutant}, the map $\Phi_{n,\pm}:x\mapsto xp$ gives an isomorphism of von Neumann algebras $\Phi_{n,\pm}:\cP_{n,\pm}\to \cQ_{n,\pm}$ for each $n\geq 0$.
 
 \begin{thm}
 \label{thm:IsomorphicStandardInvariants}
@@ -4650,7 +4650,6 @@ The maps $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ constitute a planar $\dag$
 \end{thm}
 \begin{proof}
 We prove the unital $*$-algebra isomorphisms $\Phi_{n,\pm}$ satisfy the conditions of Lemma \ref{lem:SufficientConditionsForPlanarMap}.
-Below, we suppress the isomorphisms $\theta_n^{-1}$ to ease the notation.
 
 First, note that $\Phi_{n,\pm}(e_n) = pe_n$, so Jones projections in $\cP_\bullet$ map to Jones projections in $\cQ_\bullet$ by Corollary \ref{cor:CompressJonesTower}.
 Hence Condition (1) of Lemma \ref{lem:SufficientConditionsForPlanarMap} is satisfied.
