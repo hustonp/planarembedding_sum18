@@ -3790,7 +3790,12 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 	
 	We set $[n]\vartriangleleft\TLJ_m=[n+m]$. As for morphisms, we first consider the case where one morphism is the identity. 
 	If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
-	If $f\in M_{n\to m}$, we obtain $f\vartriangleleft 1_{\TLJ_a}$ by applying the inclusion map $M_{n\to m}\to M_{n+a\to m+a}$. 
+	The case of $f\vartriangleleft 1$ is more complicated. If $f\in M_{n\to n+2k}=M_{n+k}$, then we define 
+	\[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
+	while for $j<k$, we set 
+	\[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
+	For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
+
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
 	\nn{Check something.}
