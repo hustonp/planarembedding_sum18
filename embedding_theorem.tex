@@ -1946,7 +1946,22 @@ Then the associated Markov tower $M_\bullet$ has finite depth, with $\operatorna
 \end{lem}
 \begin{proof}
 Let $r$ be minimal such that $\cP_{r+1,+} = \cP_{r,+} e_{r,+}\cP_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $\cP_{r+1,+}$ over $\cP_{r,+}$ so that $\sum_b b e_{r,+} b^* = 1_{\cP_{r+1,+}}$.
-Since $1_{M_{r+1}} = 1_{\cP_{r+1,+}}$ \nn{picture for this?}, we have that
+Since 
+	\[1_{M_{r+1}}=
+	\begin{tikzpicture}[baseline]
+		\halfcircle{}{(0,0)}{.5}{.5}{}
+		\draw (.35,-.5) -- (.35,.5);
+		\node at (.7,0) {\tiny{$r+1$}};
+	\end{tikzpicture}
+	=
+	\begin{tikzpicture}[baseline]
+		\halfcircle{}{(0,0)}{.5}{1}{}
+		\ncircle{}{(.5,-.1)}{.25}{180}{}
+		\draw (.5,-.5) -- (.5,.5);
+		\node at (.8,.27) {\tiny{$r+1$}};
+	\end{tikzpicture}
+	=1_{\cP_{r+1,+}}\text{,}\]
+	we have that
 %Then 
 %\nn{pictures below?}
 %\begin{align*}
