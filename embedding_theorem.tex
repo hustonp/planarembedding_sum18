@@ -3786,7 +3786,20 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 
 \begin{defn}
 \label{def:ModuleFromMarkovTower}
-\nn{$\cT\cL\cJ(d)$-module from Markov tower}
+	If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $\TLJ_m$ on $1_{[n]}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
+	
+	We set $[n]\vartriangleleft\TLJ_m=[n+m]$. As for morphisms, we first consider the case where one morphism is the identity. 
+	If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
+	If $f\in M_{n\to m}$, we obtain $f\vartriangleleft 1_{\TLJ_a}$ by applying the inclusion map $M_{n\to m}\to M_{n+a\to m+a}$. 
+	
+	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
+	\nn{Check something.}
+
+	From here, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
+	Finally, we check that the action is associative.
+	\nn{Check that too. Or wave it off, if similar to the previous stuff.}
+
+	It is straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
 \end{defn}
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
