@@ -3463,10 +3463,6 @@ x
 %\des{I think I was actually correct about all factors of d for this proof}
 
 \begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
-\nn{Desmond, I can't understand these proofs whatsoever. 
-Please make them look nice using diagrams.
-I changed the lemma to help get the ball going.
--D}
 
 From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
 Notice however that because $\pi$ respects $\dag$ we only need to check 3 types of composition:
@@ -3484,44 +3480,51 @@ Notice however that because $\pi$ respects $\dag$ we only need to check 3 types 
 
 \eqref{upup}
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
-Then 
+So 
 $$
-\pi(y\circ x)=E_{n+i+j}(yx{}^nh^i_j){}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}.
+\pi(y\circ x)=E_{n+i+j}(yx \cdot \TLPlusPIso{n}{i}{j}) \cdot \TLCapJoin{n}{i}{j}{j}{i} \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
 $$ 
-Applying Lemma \ref{lem:LeftKink} and noting that: 
+But then Lemma \ref{lem:LeftKink} immediately gives that:
 $$
-{}^nh^i_j{}^n r^{i+j}=F^{n+i}_{n}F^{n+2i+j}_{n+2i}
-$$ 
-We see that: 
+\pi(y\circ x)= yx \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
 $$
-\pi(y\circ x)=yx{}^nh^i_j{}^n r^{i+j}F^{n+2i+2j+k}_{n+2i+2j}= yxF^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=\pi(y)\circ \pi(x)
-$$
+Which is $\pi(y) \circ \pi(x)$.
  
 \eqref{UPdown} 
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
 $$
-\pi(y\circ x)=E_{n+i}(yx){}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}.
+\pi(y\circ x)=E_{n+i}(yx \TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$ 
-Applying Lemma \ref{lem:LeftKink} and noting that $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we see that:
+First observe that using lemma \ref{lem:LeftKink} we have:
 $$
-\pi(y\circ x)= E_{n+2i}(yx{}^ng^i_j)F^{n+i}_{n}F^{n+2i+j}_{n+2i}F^{n+2i+2j+k}_{n+2i+2j}=E_{n+2i}(yx{}^ng^i_j)F^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}
+E_{n+i}(E_{n+2i}(yx\TLMinusPIso{n}{i}{j}))\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
 $$
-And by proposition \ref{prop:MultistepJonesProjections} we know that $F^{n+2i+j}_{n+2i}$ implements $E_{n+2i}^{n+2i+j}$ so
+And since $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we have that:
+
 $$
-\pi(y\circ x)= F^{n+2i+j}_{n+2i}(yx{}^ng^i_jF^{n+2i+j}_{n+2i}F^{n+i}_{n}F^{n+2i+2j+k}_{n+2i+2j}=d^i \pi(y) \circ \pi(x)
+\pi(y\circ x)= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+$$
+Now observe that $yx\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $d^{-j}\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
+
+$$
+\pi(y\circ x)=\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot yx \cdot \TLMinusPIso{n}{i}{j} \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd = \pi(y) \circ \pi(x)
 $$
 
 \eqref{downUP} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
 Then:
 $$
-\pi(y\circ x)=y{}^nh^i_jx F^{n+2i+j}_{n+2i} F^{n+2i+2j+k}_{n+2i+2j} 
+\pi(y\circ x)=y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$
 and
 $$
-\pi(y)\circ \pi(x)= d^{i+j}y {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}
+\pi(y)\circ \pi(x)= y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
 $$
 but these are equal as:
+$$
+y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd= y\cdot \TLPlusPIso{n}{i}{j} \cdot\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd \cdot x \cdot  \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = \pi(y)\circ \pi(x)  
+$$
+
 $$
 {}^nh^i_jx F^{n+2i+j}_{n+2i} F^{n+2i+2j+k}_{n+2i+2j}= {}^nh^i_j F^{n+2i+j}_{n+2i} x F^{n+2i+2j+k}_{n+2i+2j}= {}^n r^{i+j} x F^{n+2i+2j+k}_{n+2i+2j}
 $$
