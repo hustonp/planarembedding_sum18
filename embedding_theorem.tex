@@ -281,6 +281,8 @@
 	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
 }
 
+% \nircle{fill}{center}{radius}{starangle}{label}
+% makes an input-disk-like circle with above characteristics.
 \newcommand{\ncircle}[5]{
 	\draw[very thick, #1] #2 circle (#3);
 	\node at #2 {#5};
