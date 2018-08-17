@@ -3439,47 +3439,46 @@ Notice however that because $\pi$ respects $\dag$ we only need to check 3 types 
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
 So 
 $$
-\pi(y\circ x)=E_{n+i+j}(yx \cdot \TLPlusPIso{n}{i}{j}) \cdot \TLCapJoin{n}{i}{j}{j}{i} \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)=d^{-2i-j-k}E_{n+i+j}(yx \cdot \TLPlusPIso{n}{i}{j}) \cdot \TLCapJoin{n}{i}{j}{j}{i} \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
 $$ 
 But then Lemma \ref{lem:LeftKink} immediately gives that:
 $$
-\pi(y\circ x)= yx \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
+\pi(y\circ x)=d^{-i-j-k} yx \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
 $$
-Which is $\pi(y) \circ \pi(x)$.
  
 \eqref{UPdown} 
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
 $$
-\pi(y\circ x)=E_{n+i}(yx \TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)=d^{-2i-j-k}E_{n+i}(yx \TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$ 
 First observe that using lemma \ref{lem:LeftKink} we have:
 $$
-E_{n+i}(E_{n+2i}(yx\TLMinusPIso{n}{i}{j}))\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
+d^{-i}E_{n+i}(E_{n+2i}(yx\TLMinusPIso{n}{i}{j}))\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
 $$
 And since $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we have that:
 
 $$
-\pi(y\circ x)= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)= d^{-i-j-k}E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$
-Now observe that $yx\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $d^{-j}\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
+Now observe that $yx\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
 
 $$
-\pi(y\circ x)=\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot yx \cdot \TLMinusPIso{n}{i}{j} \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd = \pi(y) \circ \pi(x)
+\pi(y\circ x)=d^{-i-j-k}\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot yx \cdot \TLMinusPIso{n}{i}{j} \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
 $$
 
 \eqref{downUP} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
 Then:
 $$
-\pi(y\circ x)=y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)=d^{-i-j-k}y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$
 and
 $$
-\pi(y)\circ \pi(x)= y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
+\pi(y)\cdot \pi(x)= d^{-i-j-k}y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
 $$
 but these are equal as:
 $$
-y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd= y\cdot \TLPlusPIso{n}{i}{j} \cdot\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd \cdot x \cdot  \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = \pi(y)\circ \pi(x)  
+y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd= y\cdot \TLPlusPIso{n}{i}{j} \cdot\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd \cdot x \cdot  \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
 $$
 
 \end{proof}
