@@ -2404,16 +2404,16 @@ We define composition in three cases. In each, we make use of Temperley-Lieb dia
 \begin{enumerate}[label={\rm(C\arabic*)}]
 \item
 \label{compose:upup}
-If $x\in \cM_0([n] \to [n+2j])$ and $y\in \cM_0([n+2j] \to [n+2j+2k])$, we define 
+If $x\in \cM_0([n] \to [n+2i])$ and $y\in \cM_0([n+2i] \to [n+2i+2j])$, we define 
 $$
 y\circ x
 :=
-E^{n+2j+k}_{n+j+k}
+E^{n+2i+j}_{n+i+j}
 \left(
 \raisebox{.3cm}{$
 \underbrace{
 y\cdot x \cdot
-d^{-j}\,
+d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
 	\draw (.2,0) -- (.2,.8);
@@ -2421,20 +2421,20 @@ d^{-j}\,
 	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
 	\draw (.8,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$j$}};
-	\node at (1.2,1) {\scriptsize{$k$}};
-	\node at (.8,-.2) {\scriptsize{$j$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (1.2,1) {\scriptsize{$j$}};
+	\node at (.8,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
-}_{\in M_{n+2j+k}}
+}_{\in M_{n+2i+j}}
 $}
 \right)
-\in M_{n+j+k}
+\in M_{n+i+j}
 =
-\cM_0([n] \to [n+2j+2k]).
+\cM_0([n] \to [n+2i+2j]).
 $$
 We define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition 
-$\cM_0([n+2j+2k] \to [n+2j]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([n+2j+2k] \to [n])$.
-To show $x^\dag \circ y^\dag$ is well-defined, we check that when $j=k=0$,
+$\cM_0([n+2i+2j] \to [n+2i]) \otimes \cM_0([n+2i] \to [n]) \to \cM_0([n+2i+2j] \to [n])$.
+To show $x^\dag \circ y^\dag$ is well-defined, we check that when $i=j=0$,
 \begin{equation}
 \label{eq:n to n to n}
 x^\dag\circ y^\dag= x^* y^* = (y x)^* = (y\circ x)^\dag.
@@ -2442,18 +2442,17 @@ x^\dag\circ y^\dag= x^* y^* = (y x)^* = (y\circ x)^\dag.
 
 \item
 \label{compose:updown}
-If $x\in \cM_0([n] \to [n+2j])$ and $y \in \cM_0([m+2k] \to [m])$
-with $n+2j = m+2k$, $m= n + 2\ell$, and $j = k+\ell$,
+If $x\in \cM_0([n] \to [n+2i+2j])$ and $y \in \cM_0([n+2i+2j] \to [n+2i])$
 we define
 $$
 y\circ x
 :=
-E^{n+2\ell + k}_{n+\ell}
+E^{n+2i + j}_{n+i}
 \left(
 \raisebox{.3cm}{$
 \underbrace{
 y\cdot x\cdot
-d^{-\ell}\,
+d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
 	\draw (.2,0) -- (.2,.8);
@@ -2461,42 +2460,42 @@ d^{-\ell}\,
 	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
 	\draw (.5,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$k$}};
-	\node at (.8,1) {\scriptsize{$\ell$}};
-	\node at (.5,-.2) {\scriptsize{$\ell$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (.8,1) {\scriptsize{$i$}};
+	\node at (.5,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
-}_{\in M_{n+2\ell +k}}
+}_{\in M_{n+2i +j}}
 $}
 \right)
 \in
-M_{n+\ell}
+M_{n+i}
 =
-\cM_0([n] \to [m]).
+\cM_0([n] \to [n+2i]).
 $$
 As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
 $\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n])$.
-To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $\ell=0$ so that $n=m$, 
+To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $i=0$, 
 \begin{equation}
 \label{eq:n to n+2k to n}
 x^\dag \circ y^\dag 
 =
-E^{n+k}_{n}(x^* y^*)
+E^{n+j}_{n}(x^* y^*)
 =
-E^{n+k}_{n}((yx)^*) 
+E^{n+j}_{n}((yx)^*) 
 =
-E^{n+k}_{n}(y x)^*
+E^{n+j}_{n}(y x)^*
 =
 (y\circ x)^\dag.
 \end{equation}
 
 \item
 \label{compose:downup}
-If $x\in \cM_0([n+2j] \to [n])$ and $y\in \cM_0([n] \to [n+2k])$ with $k=j+\ell$, we define
+If $x\in \cM_0([n+2i] \to [n])$ and $y\in \cM_0([n] \to [n+2i+2j])$, we define
 $$
 y\circ x 
 :=
 y\cdot
-d^{-j}\,
+d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
 	\draw (.2,0) -- (.2,.8);
@@ -2504,47 +2503,47 @@ d^{-j}\,
 	\draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
 	\draw (.5,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$\ell$}};
-	\node at (.8,1) {\scriptsize{$j$}};
-	\node at (.5,-.2) {\scriptsize{$j$}};
+	\node at (.5,1) {\scriptsize{$j$}};
+	\node at (.8,1) {\scriptsize{$i$}};
+	\node at (.5,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
 \cdot x
 \in
-M_{n+2j+\ell}
+M_{n+2i+j}
 =
-\cM_0([n+2j] \to [n+2k]).
+\cM_0([n+2i] \to [n+2i+2j]).
 $$
 As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
-$\cM_0([n+2k] \to [n]) \otimes \cM_0([n] \to [n+2j]) \to \cM_0([n+2k] \to [n+2j])$.
-To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $\ell=0$ so that $j=k$, 
+$\cM_0([n+2i+2j] \to [n]) \otimes \cM_0([n] \to [n+2i]) \to \cM_0([n+2i+2j] \to [n+2i])$.
+To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $j=0$, 
 \begin{equation}
 \label{eq:n+2j to n to n+2j}
 x^\dag \circ y^\dag 
 =
 x^* \cdot
-d^{-j}\,
+d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\draw (.2,0) -- (.2,.8);
 	\draw (.5,.8) arc (-180:0:.2cm);
 	\draw (.5,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$j$}};
-	\node at (.5,-.2) {\scriptsize{$j$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (.5,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
 \cdot y^*
 =
 \left(
 y \cdot
-d^{-j}\,
+d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\draw (.2,0) -- (.2,.8);
 	\draw (.5,.8) arc (-180:0:.2cm);
 	\draw (.5,0) arc (180:0:.2cm);
 	\node at (.2,1) {\scriptsize{$n$}};
-	\node at (.5,1) {\scriptsize{$j$}};
-	\node at (.5,-.2) {\scriptsize{$j$}};
+	\node at (.5,1) {\scriptsize{$i$}};
+	\node at (.5,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
 \cdot x
 \right)^*
@@ -2555,7 +2554,7 @@ d^{-j}\,
 \end{itemize}
 Showing that composition is associative directly from the definitions above is a highly non-trivial exercise using the axioms \ref{eq:MarkovJonesProjections} -- \ref{eq:MarkovPullDown} of a Markov tower.
 A better way to prove associativity is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite{MR808930} 
-$\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2j, n+2j+2k, n+2j+2k+2\ell\}$
+$\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2i, n+2i+2j, n+2i+2j+2k \}$
 is $\dag/*$-isomorphic to a von Neumann algebra, which is necessarily associative!
 This technique also offers the advantage that it, simultaneously proves $\cM_0$ is $\Cstar$.\footnote{
 Just as being a $\Cstar$ algebra is a property of a complex $*$-algebra, being a $\Cstar$ category is a property of a $\bbC$-linear dagger category.
@@ -2567,23 +2566,23 @@ Notice we have an equality of sets
 \cL=
 \left(
 \begin{array}{llll}
-M_n & M_{n{+}j} & M_{n{+}j{+}k} & M_{n{+}j{+}k{+}\ell}
+M_n & M_{n{+}i} & M_{n{+}i{+}j} & M_{n{+}i{+}j{+}k}
 \\
-M_{n{+}j} & M_{n{+}2j} & M_{n{+}2j{+}k} & M_{n{+}2j{+}k{+}\ell}
+M_{n{+}i} & M_{n{+}2i} & M_{n{+}2i{+}j} & M_{n{+}2i{+}j{+}k}
 \\
-M_{n{+}j{+}k} & M_{n{+}2j{+}k} & M_{n{+}2j{+}2k} & M_{n{+}2j{+}2k{+}\ell}
+M_{n{+}i{+}j} & M_{n{+}2i{+}j} & M_{n{+}2i{+}2j} & M_{n{+}2i{+}2j{+}k}
 \\
-M_{n{+}j{+}k{+}\ell} & M_{n{+}2j{+}k{+}\ell} & M_{n{+}2j{+}2k{+}\ell} & M_{n{+}2j{+}2k{+}2\ell}
+M_{n{+}i{+}j{+}k} & M_{n{+}2i{+}j{+}k} & M_{n{+}2i{+}2j{+}k} & M_{n{+}2i{+}2j{+}2k}
 \end{array}
 \right).
 \end{equation}
-We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2j+2k+2\ell})p$
+We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2i+2j+2k})p$
 \begin{equation}
 \label{eq:4x4Map}
 \resizebox{.92\hsize}{!}{
 $
 \begin{pmatrix}
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) arc (180:0:.2cm);
@@ -2595,21 +2594,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.6,-.8) {\scriptsize{$j$}};
-	\node at (.8,-.8) {\scriptsize{$k$}};
-	\node at (1.2,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.6,-.8) {\scriptsize{$i$}};
+	\node at (.8,-.8) {\scriptsize{$j$}};
+	\node at (1.2,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 & 
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.2,-.6) -- (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
@@ -2621,21 +2620,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.6,-.8) {\scriptsize{$j$}};
-	\node at (.8,-.8) {\scriptsize{$k$}};
-	\node at (1.2,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.6,-.8) {\scriptsize{$i$}};
+	\node at (.8,-.8) {\scriptsize{$j$}};
+	\node at (1.2,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
@@ -2647,21 +2646,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.4}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.4,-.8) {\scriptsize{$k$}};
-	\node at (1,-.8) {\scriptsize{$k$}};
-	\node at (1.2,-.8) {\scriptsize{$j$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.4,-.8) {\scriptsize{$j$}};
+	\node at (1,-.8) {\scriptsize{$j$}};
+	\node at (1.2,-.8) {\scriptsize{$i$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
@@ -2673,21 +2672,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.6}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.4,-.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$\ell$}};
-	\node at (1,-.8) {\scriptsize{$\ell$}};
-	\node at (1.4,-.8) {\scriptsize{$k$}};
-	\node at (1.8,-.8) {\scriptsize{$j$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.4,-.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+	\node at (1.4,-.8) {\scriptsize{$j$}};
+	\node at (1.8,-.8) {\scriptsize{$i$}};
 \end{tikzpicture}
 \\
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,.6) arc (-180:0:.2cm);
 	\draw (.8,.6) arc (-180:0:.2cm);
@@ -2699,21 +2698,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.6,-.8) {\scriptsize{$j$}};
-	\node at (.8,-.8) {\scriptsize{$k$}};
-	\node at (1.2,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.6,-.8) {\scriptsize{$i$}};
+	\node at (.8,-.8) {\scriptsize{$j$}};
+	\node at (1.2,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{{-}k{-}\ell}\,
+d^{{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) arc (180:0:.2cm);
@@ -2721,19 +2720,19 @@ d^{{-}k{-}\ell}\,
 	\draw (1.4,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (1,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (1,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (1,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (1,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{{-}k{-}\ell}\,
+d^{{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,.6) arc (-180:0:.2cm);
 	\draw (.6,-.6) -- (.6,.1) arc (180:0:.2cm) -- (1,-.6);
@@ -2741,19 +2740,19 @@ d^{{-}k{-}\ell}\,
 	\draw (1.4,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.6}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (1,.8) {\scriptsize{$k$}};
-	\node at (1,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (1,.8) {\scriptsize{$j$}};
+	\node at (1,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{{-}k{-}\ell}\,
+d^{{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
@@ -2761,19 +2760,19 @@ d^{{-}k{-}\ell}\,
 	\draw (1.2,.6) arc (-180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.8}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (1,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$\ell$}};
-	\node at (1.6,.8) {\scriptsize{$\ell$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (.8,-.8) {\scriptsize{$\ell$}};
-	\node at (1.2,-.8) {\scriptsize{$\ell$}};
-	\node at (1.6,-.8) {\scriptsize{$k$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (1,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
+	\node at (1.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (.8,-.8) {\scriptsize{$k$}};
+	\node at (1.2,-.8) {\scriptsize{$k$}};
+	\node at (1.6,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 \\
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.2,0) -- (1.2,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.2cm) and ++(90:.2cm) ..  (1,0) -- (1,-.6);
@@ -2785,21 +2784,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.4}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.4,-.8) {\scriptsize{$k$}};
-	\node at (1,-.8) {\scriptsize{$k$}};
-	\node at (1.2,-.8) {\scriptsize{$j$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.4,-.8) {\scriptsize{$j$}};
+	\node at (1,-.8) {\scriptsize{$j$}};
+	\node at (1.2,-.8) {\scriptsize{$i$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{-k-\ell}
+d^{-j-k}
 \,
 \begin{tikzpicture}[baseline=-.1cm, yscale =-1]
 	\draw (.6,.6) arc (-180:0:.2cm);
@@ -2808,47 +2807,47 @@ d^{-k-\ell}
 	\draw (1.4,-.6) arc (180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{.6}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (1,.8) {\scriptsize{$k$}};
-	\node at (1,-.8) {\scriptsize{$k$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
-	\node at (1.8,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (1,.8) {\scriptsize{$j$}};
+	\node at (1,-.8) {\scriptsize{$j$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
+	\node at (1.8,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{-\ell}
+d^{-k}
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (0,-.6) -- (0,.6);
 	\draw (.8,.6) arc (-180:0:.2cm);
 	\draw (.8,-.6) arc (180:0:.2cm);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (.8,.8) {\scriptsize{$\ell$}};
-	\node at (1.2,.8) {\scriptsize{$\ell$}};
-	\node at (.8,-.8) {\scriptsize{$\ell$}};
-	\node at (1.2,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (.8,.8) {\scriptsize{$k$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
+	\node at (.8,-.8) {\scriptsize{$k$}};
+	\node at (1.2,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
-d^{-\ell}\,
+d^{-k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{1}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (1,.8) {\scriptsize{$\ell$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1,-.8) {\scriptsize{$\ell$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (1,.8) {\scriptsize{$k$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 \\
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.2,-.6) -- (.2,0) .. controls ++(90:.45cm) and ++(90:.45cm) .. (1.8,0) -- (1.8,-.6);
 	\draw (.4,-.6) -- (.4,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.4,0) -- (1.4,-.6);
@@ -2860,21 +2859,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.6}{}
 	\node at (0,-.8) {\scriptsize{$n$}};
 	\node at (0,.8) {\scriptsize{$n$}};
-	\node at (.2,.8) {\scriptsize{$j$}};
-	\node at (.6,.8) {\scriptsize{$j$}};
-	\node at (.8,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$k$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1.8,.8) {\scriptsize{$\ell$}};
-	\node at (.2,-.8) {\scriptsize{$j$}};
-	\node at (.4,-.8) {\scriptsize{$k$}};
-	\node at (.6,-.8) {\scriptsize{$\ell$}};
-	\node at (1,-.8) {\scriptsize{$\ell$}};
-	\node at (1.4,-.8) {\scriptsize{$k$}};
-	\node at (1.8,-.8) {\scriptsize{$j$}};
+	\node at (.2,.8) {\scriptsize{$i$}};
+	\node at (.6,.8) {\scriptsize{$i$}};
+	\node at (.8,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$j$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1.8,.8) {\scriptsize{$k$}};
+	\node at (.2,-.8) {\scriptsize{$i$}};
+	\node at (.4,-.8) {\scriptsize{$j$}};
+	\node at (.6,-.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+	\node at (1.4,-.8) {\scriptsize{$j$}};
+	\node at (1.8,-.8) {\scriptsize{$i$}};
 \end{tikzpicture}
 &
-d^{-k-\ell}
+d^{-j-k}
 \begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (.6,-.6) -- (.6,0) .. controls ++(90:.45cm) and ++(90:.45cm) ..  (1.6,0) -- (1.6,-.6);
 	\draw (.8,-.6) -- (.8,0) .. controls ++(90:.3cm) and ++(90:.3cm) ..  (1.2,0) -- (1.2,-.6);
@@ -2882,46 +2881,46 @@ d^{-k-\ell}
 	\draw (1.2,.6) arc (-180:0:.2cm);
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,-.2)}{.2}{0}{.8}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.8) {\scriptsize{$k$}};
-	\node at (1,.8) {\scriptsize{$k$}};
-	\node at (1.2,.8) {\scriptsize{$\ell$}};
-	\node at (1.6,.8) {\scriptsize{$\ell$}};
-	\node at (.6,-.8) {\scriptsize{$k$}};
-	\node at (.8,-.8) {\scriptsize{$\ell$}};
-	\node at (1.2,-.8) {\scriptsize{$\ell$}};
-	\node at (1.6,-.8) {\scriptsize{$k$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.8) {\scriptsize{$j$}};
+	\node at (1,.8) {\scriptsize{$j$}};
+	\node at (1.2,.8) {\scriptsize{$k$}};
+	\node at (1.6,.8) {\scriptsize{$k$}};
+	\node at (.6,-.8) {\scriptsize{$j$}};
+	\node at (.8,-.8) {\scriptsize{$k$}};
+	\node at (1.2,-.8) {\scriptsize{$k$}};
+	\node at (1.6,-.8) {\scriptsize{$j$}};
 \end{tikzpicture}
 &
-d^{-\ell}
+d^{-k}
 \begin{tikzpicture}[baseline=-.1cm, yscale = -1]
 	\draw (0,-.6) -- (0,.6);
 	\draw (1,.6) arc (-180:0:.2cm);
 	\draw (1,-.6) -- (1,.1) arc (180:0:.2cm) -- (1.4,-.6);
 	\roundNbox{unshaded}{(0,-.1)}{.2}{0}{1}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (1,.8) {\scriptsize{$\ell$}};
-	\node at (1.4,.8) {\scriptsize{$\ell$}};
-	\node at (1,-.8) {\scriptsize{$\ell$}};
-	\node at (1.4,-.8) {\scriptsize{$\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (1,.8) {\scriptsize{$k$}};
+	\node at (1.4,.8) {\scriptsize{$k$}};
+	\node at (1,-.8) {\scriptsize{$k$}};
+	\node at (1.4,-.8) {\scriptsize{$k$}};
 \end{tikzpicture}
 &
 \begin{tikzpicture}[baseline=-.1cm, yscale =-1]
 	\draw (0,-.6) -- (0,.6);
 	\roundNbox{unshaded}{(0,0)}{.2}{0}{0}{}
-	\node at (0,-.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
-	\node at (0,.8) {\scriptsize{$n{+}2j{+}2k{+}2\ell$}};
+	\node at (0,-.8) {\scriptsize{$n{+}2i{+}2j{+}2k$}};
+	\node at (0,.8) {\scriptsize{$n{+}2i{+}2j{+}2k$}};
 \end{tikzpicture}
 \end{pmatrix}
 $}
 \end{equation}
-where $p\in M_4(M_{n+2j+2k+2\ell})$ is the following projection:
+where $p\in M_4(M_{n+2i+2j+2k})$ is the following projection:
 $$
 p:=
 \operatorname{diag}\left(
-d^{{-}j{-}k{-}\ell}\,
+d^{{-}i{-}j{-}k}\,
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (2,.3);
 	\draw (.2,.3) arc (-180:0:.2cm);
@@ -2933,21 +2932,21 @@ d^{{-}j{-}k{-}\ell}\,
 	\draw (0,-.3) -- (0,.3);
 	\node at (0,-.5) {\scriptsize{$n$}};
 	\node at (0,.5) {\scriptsize{$n$}};
-	\node at (.2,.5) {\scriptsize{$j$}};
-	\node at (.6,.5) {\scriptsize{$j$}};
-	\node at (.8,.5) {\scriptsize{$k$}};
-	\node at (1.2,.5) {\scriptsize{$k$}};
-	\node at (1.4,.5) {\scriptsize{$\ell$}};
-	\node at (1.8,.5) {\scriptsize{$\ell$}};
-	\node at (.2,-.5) {\scriptsize{$j$}};
-	\node at (.6,-.5) {\scriptsize{$j$}};
-	\node at (.8,-.5) {\scriptsize{$k$}};
-	\node at (1.2,-.5) {\scriptsize{$k$}};
-	\node at (1.4,-.5) {\scriptsize{$\ell$}};
-	\node at (1.8,-.5) {\scriptsize{$\ell$}};
+	\node at (.2,.5) {\scriptsize{$i$}};
+	\node at (.6,.5) {\scriptsize{$i$}};
+	\node at (.8,.5) {\scriptsize{$j$}};
+	\node at (1.2,.5) {\scriptsize{$j$}};
+	\node at (1.4,.5) {\scriptsize{$k$}};
+	\node at (1.8,.5) {\scriptsize{$k$}};
+	\node at (.2,-.5) {\scriptsize{$i$}};
+	\node at (.6,-.5) {\scriptsize{$i$}};
+	\node at (.8,-.5) {\scriptsize{$j$}};
+	\node at (1.2,-.5) {\scriptsize{$j$}};
+	\node at (1.4,-.5) {\scriptsize{$k$}};
+	\node at (1.8,-.5) {\scriptsize{$k$}};
 \end{tikzpicture}
 \,,
-d^{-k-\ell}
+d^{-j-k}
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (1.8,.3);
 	\draw (.6,.3) arc (-180:0:.2cm);
@@ -2955,47 +2954,47 @@ d^{-k-\ell}
 	\draw (1.2,.3) arc (-180:0:.2cm);
 	\draw (1.2,-.3) arc (180:0:.2cm);
 	\draw (0,-.3) -- (0,.3);
-	\node at (0,-.5) {\scriptsize{$n{+}2j$}};
-	\node at (0,.5) {\scriptsize{$n{+}2j$}};
-	\node at (.6,.5) {\scriptsize{$k$}};
-	\node at (1,.5) {\scriptsize{$k$}};
-	\node at (1.2,.5) {\scriptsize{$\ell$}};
-	\node at (1.6,.5) {\scriptsize{$\ell$}};
-	\node at (.6,-.5) {\scriptsize{$k$}};
-	\node at (1,-.5) {\scriptsize{$k$}};
-	\node at (1.2,-.5) {\scriptsize{$\ell$}};
-	\node at (1.6,-.5) {\scriptsize{$\ell$}};
+	\node at (0,-.5) {\scriptsize{$n{+}2i$}};
+	\node at (0,.5) {\scriptsize{$n{+}2i$}};
+	\node at (.6,.5) {\scriptsize{$j$}};
+	\node at (1,.5) {\scriptsize{$j$}};
+	\node at (1.2,.5) {\scriptsize{$k$}};
+	\node at (1.6,.5) {\scriptsize{$k$}};
+	\node at (.6,-.5) {\scriptsize{$j$}};
+	\node at (1,-.5) {\scriptsize{$j$}};
+	\node at (1.2,-.5) {\scriptsize{$k$}};
+	\node at (1.6,-.5) {\scriptsize{$k$}};
 \end{tikzpicture}
 \,,
-d^{-\ell}
+d^{-k}
 \begin{tikzpicture}[baseline = -.1cm]
 	\draw[thick, rounded corners = 5pt] (-.2,-.3) rectangle (1.4,.3);
 	\draw (.8,.3) arc (-180:0:.2cm);
 	\draw (.8,-.3) arc (180:0:.2cm);
 	\draw (0,-.3) -- (0,.3);
-	\node at (0,-.5) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (0,.5) {\scriptsize{$n{+}2j{+}2k$}};
-	\node at (.8,.5) {\scriptsize{$\ell$}};
-	\node at (1.2,.5) {\scriptsize{$\ell$}};
-	\node at (.8,-.5) {\scriptsize{$\ell$}};
-	\node at (1.2,-.5) {\scriptsize{$\ell$}};
+	\node at (0,-.5) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (0,.5) {\scriptsize{$n{+}2i{+}2j$}};
+	\node at (.8,.5) {\scriptsize{$k$}};
+	\node at (1.2,.5) {\scriptsize{$k$}};
+	\node at (.8,-.5) {\scriptsize{$k$}};
+	\node at (1.2,-.5) {\scriptsize{$k$}};
 \end{tikzpicture}
 \,,
-1_{n+2j+2k+2\ell}
+1_{n+2i+2j+2k}
 \right).
 $$
 In Proposition \ref{prop:InjectiveAlgebraMap} below, we verify the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
-Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2j+2k+2\ell})p$, which meanss $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
+Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2i+2j+2k})p$, which means $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
 By looking at the $2\times 2$ and $3\times 3$ corners of the linking algebra $\cL$ and \eqref{eq:4x4Map},
 we immediately see: 
 \begin{itemize}
 \item
 $\dag$ is a dagger structure on $\cM_0$,
 \item
-for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2k]\to [n+2k])$ such that 
+for every $f\in \cM_0([n]\to [n+2j])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2j]\to [n+2j])$ such that 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
 \item
-there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2j])$ and $\cM_0([n+2k] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
+there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2i])$ and $\cM_0([n+2j] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
 Notice that in a $\Cstar$ category, these norms can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
@@ -3009,47 +3008,9 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 
 \begin{prop}
 \label{prop:InjectiveAlgebraMap}
-The map $\pi: \cL \to pM_4(M_{n+2j+2k+2\ell})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
+The map $\pi: \cL \to pM_4(M_{n+2i+2j+2k})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
 \end{prop}
 
-
-%To prove this we need to introduce some notation for specific elements of Temperley-Lieb and a lemma.
-%
-%\begin{nota}
-%Let the following elements of Temeperley-Lieb be denoted as follows:
-%\begin{itemize}
-%\item 
-%$ {}^nh^j_k= d^{-j}\,
-%\begin{tikzpicture}[baseline = .3cm]
-%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
-%	\draw (.2,0) -- (.2,.8);
-%	\draw (.5,.8) arc (-180:0:.2cm);
-%	\draw (.5,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
-%	\draw (.8,0) arc (180:0:.2cm);
-%	\node at (.2,1) {\scriptsize{$n$}};
-%	\node at (.5,1) {\scriptsize{$j$}};
-%	\node at (1.2,1) {\scriptsize{$k$}};
-%	\node at (.8,-.2) {\scriptsize{$j$}};
-%\end{tikzpicture}
-%$ 
-%
-%and let ${}^n g^j_k = {{}^n h^j_k}^{\ast}$.
-%\item 
-%${}^n r^{i+j}=d^{-(i+j)}
-%\begin{tikzpicture}[baseline=0, yscale = -1]
-%	\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1.5);
-%	\draw (.2,0) -- (.2,1.5);
-%	\draw (0.4,0) arc (180:0:.7);
-%    \draw (0.7,0) arc (180:0:.4);
-%    \draw (0.4,1.5) arc (-180:0:.3);
-%      \draw (1.2,1.5) arc (-180:0:.3);
-%      \node at (.2,-.2) {\scriptsize{$n$}};
-%      \node at (1.65,-.2) {\scriptsize{$i+j$}};
-%     \node at (.4,1.7) {\scriptsize{$i$}};
-%      \node at (1.2,1.7) {\scriptsize{$j$}};
-%	\end{tikzpicture}$ and let ${}^n r_{i+j}= {{}^n r^{i+j}}^{\ast}$
-%	\end{itemize}
-%\end{nota}	
 
 We begin with the following lemma.
 
@@ -3103,16 +3064,13 @@ x\cdot
 	\node at (.4,1) {\scriptsize{$i$}};
 	\node at (1,1) {\scriptsize{$j$}};
 \end{tikzpicture}
-$
-%$$E_{n+i+j}(\eta {}^nh^i_j){}^n r^{i+j}= \eta {}^nh^i_j{}^n r^{i+j}$$
+$ 
+
 \end{lem}
-%\des{I'm not being careful about the factor of d at all right now I need to fix that later.}
+
 
 \begin{proof}
-%\nn{Desmond, I can't understand these proofs whatsoever. 
-%Please make them look nice using diagrams.
-%I changed the statement of the lemma to help get the ball going.
-%-D}
+
 We calculate
 \begin{align*}
 x\cdot
@@ -3460,7 +3418,6 @@ x
 %\\&= E_{n+i+j}( \eta {}^nh^i_j){}^nr^{i+j} 
 \end{align*}
 \end{proof}
-%\des{I think I was actually correct about all factors of d for this proof}
 
 \begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
 
