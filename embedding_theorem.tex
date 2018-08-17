@@ -348,6 +348,13 @@
 % an example which uses pretty much everything:
 % \[\TLPlusPIso{n}{i}{j}\cdot\TLCapJoin{n}{i}{j}{j}{i}=\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTThrough{j}\TLTThrough{j}\TLTEnd\cdot\TLTStart\TLTThrough{n}\TLTThrough{i}\TLTSnakeR{m}{x}\TLTThrough{i}\TLTSnakeL{w}{u}\TLTCapJoin{i}{j}{j}{I}\TLTCapSplit{k}{x}{x}{k}\TLTCapcup{j}\TLTEnd\]
 % one can also include manually crafted stuff in the middle, no problem. Just remember to increment TLTlead
+\usepackage{calc}
+
+\newcommand{\TLTCalcLabelOffset}[3][0cm]{
+	\settowidth{#2}{\scriptsize{$#3$}}
+	\setlength{#2}{.5#2}
+	\setlength{#2}{\maxof{#2}{#1}}
+}
 
 \newcommand{\TLTEnd}{
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLTlead) + (0,.8) $);
@@ -356,82 +363,134 @@
 
 \newcommand{\TLTStart}{
  \begin{tikzpicture}[baseline=.3cm]
-	\coordinate (TLTlead) at (.2,0);
+	\coordinate (TLTlead) at (.2,0); % remove or drastically reduce this 
+	\let\TLTlabelwidth\relax
+	\newlength{\TLTlabelwidth}
 }
  
 % #1 - label
 \newcommand{\TLTThrough}[1]{
+	\TLTCalcLabelOffset[.2cm]{\TLTlabelwidth}{#1}
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 	\begin{scope}[shift=(TLTlead)]
 		\draw (0,0) -- (0,.8);
 		\node at (0,1) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (.2,0) $);
+		\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 }
 
 % #1 - label
 \newcommand{\TLTCapcup}[1]{
+	\TLTCalcLabelOffset[.6cm]{\TLTlabelwidth}{#1}
+		\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 	\begin{scope}[shift=(TLTlead)]
 		\draw (0,0) arc (180:0:.2);
 		\draw (0,.8) arc (-180:0:.2);
 		\node at (0,1) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (.6,0) $);
+		\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0)$);
 }
 
 % a partial iso of #2 through strings moving right past #1 cups 
 \newcommand{\TLTSnakeR}[2]{
+	\let\TLTscwidth\relax
+	\newlength{\TLTscwidth}
+	\let\TLTsswidth\relax
+	\newlength{\TLTsswidth}
+	\TLTCalcLabelOffset[.7cm]{\TLTscwidth}{#1}
+	\TLTCalcLabelOffset[.3cm]{\TLTsswidth}{#2}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTscwidth}{\TLTsswidth}}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % because of optional value to first offset above, noop
 	\begin{scope}[shift=(TLTlead)]
 		\draw (.1,.8) arc (-180:0:.2cm);
-		\draw (.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.8,.8);
-		\draw (.4,0) arc (180:0:.2cm);
+		\draw (.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. ($ (.1,.8) + ({\TLTlabelwidth},0) $);
+		\draw ($ (.1,0) + ({\TLTsswidth},0) $) arc (180:0:.2cm);
 		\node at (.1,1) {\scriptsize{$#1$}};
-		\node at (.8,1) {\scriptsize{$#2$}};
-		\node at (.4,-.2) {\scriptsize{$#1$}};
+		\node at ($ (.1,1) + ({\TLTlabelwidth},0) $) {\scriptsize{$#2$}};
+		\node at ($ (.1,-.2) + ({\TLTsswidth},0) $) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (1,0) $);
+	\coordinate (TLTlead) at ($ (TLTlead) + ({2\TLTlabelwidth},0) $);
 }
  
 % a partial iso of #2 through strings moving left past #1 cups 
 \newcommand{\TLTSnakeL}[2]{
+	\let\TLTscwidth\relax
+	\newlength{\TLTscwidth}
+	\let\TLTsswidth\relax
+	\newlength{\TLTsswidth}
+	\TLTCalcLabelOffset[.7cm]{\TLTscwidth}{#1}
+	\TLTCalcLabelOffset[.3cm]{\TLTsswidth}{#2}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTscwidth}{\TLTsswidth}}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % because of optional value to first offset above, noop
 	\begin{scope}[shift=(TLTlead)]
-		\draw (.4,.8) arc (-180:0:.2cm);
-		\draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.1,.8);
+		\draw ($ (.1,.8) + ({\TLTsswidth},0) $) arc (-180:0:.2cm);
+		\draw ($ (.1,0) + ({\TLTlabelwidth},0) $) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.1,.8);
 		\draw (.1,0) arc (180:0:.2cm);
-		\node at (.4,1) {\scriptsize{$#1$}};
+		\node at ($ (.1,1) + ({\TLTsswidth},0) $) {\scriptsize{$#1$}};
 		\node at (.1,1) {\scriptsize{$#2$}};
 		\node at (.1,-.2) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (1,0) $);
+	\coordinate (TLTlead) at ($ (TLTlead) + ({2\TLTlabelwidth},0) $);
 }
 
 % join a bottom of #1 caps (left) and #2 caps (right) into #3(inside)+#4(outside) caps together on top
 \newcommand{\TLTCapJoin}[4]{
+	\let\TLTjoinlwidth\relax
+	\newlength{\TLTjoinlwidth}
+	\let\TLTjoinrwidth\relax
+	\newlength{\TLTjoinrwidth}
+	\let\TLTsplitlwidth\relax
+	\newlength{\TLTsplitlwidth}
+	\let\TLTsplitrwidth\relax
+	\newlength{\TLTsplitrwidth}
+	\TLTCalcLabelOffset[.8cm]{\TLTjoinrwidth}{#4} % guess good is default + .2cm
+	\TLTCalcLabelOffset[.15cm]{\TLTjoinlwidth}{#3} % make lots of space
+	\TLTCalcLabelOffset[.6cm]{\TLTsplitlwidth}{#1}
+	\TLTCalcLabelOffset[.6cm]{\TLTsplitrwidth}{#2}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTjoinlwidth}{\TLTsplitlwidth}}
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
+	\setlength{\TLTlabelwidth}{\maxof{\TLTjoinrwidth}{\TLTsplitrwidth}} % maybe more suggestive to move this
  \begin{scope}[shift=(TLTlead)]
 		\draw (0,.8) arc (-180:0:.5);
 		\draw (0.2,.8) arc (-180:0:.3);
 		\draw (0,0) arc (180:0:.2);
-		\draw (.6,0) arc (180:0:.2);
+		\draw ({\TLTsplitlwidth},0) arc (180:0:.2);
 		\node at (0,1) {\scriptsize{$#4$}};
-		\node at (.2,1) {\scriptsize{$#3$}};
+		\node at ({\TLTjoinlwidth},1) {\scriptsize{$#3$}};
 		\node at (0,-.2) {\scriptsize{$#1$}};
-		\node at (.6,-.2) {\scriptsize{$#2$}};
+		\node at ({\TLTsplitlwidth},-.2) {\scriptsize{$#2$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (1.2,0) $);
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 }
 
 % dagger of the above
 \newcommand{\TLTCapSplit}[4]{
+	\let\TLTjoinlwidth\relax
+	\newlength{\TLTjoinlwidth}
+	\let\TLTjoinrwidth\relax
+	\newlength{\TLTjoinrwidth}
+	\let\TLTsplitlwidth\relax
+	\newlength{\TLTsplitlwidth}
+	\let\TLTsplitrwidth\relax
+	\newlength{\TLTsplitrwidth}
+	\TLTCalcLabelOffset[.8cm]{\TLTjoinrwidth}{#4} % guess good is default + .2cm
+	\TLTCalcLabelOffset[.15cm]{\TLTjoinlwidth}{#3} % make lots of space
+	\TLTCalcLabelOffset[.6cm]{\TLTsplitlwidth}{#1}
+	\TLTCalcLabelOffset[.6cm]{\TLTsplitrwidth}{#2}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTjoinlwidth}{\TLTsplitlwidth}}
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
+	\setlength{\TLTlabelwidth}{\maxof{\TLTjoinrwidth}{\TLTsplitrwidth}} % maybe more suggestive to move this
  \begin{scope}[shift=(TLTlead)]
-		\draw (0,0) arc (180:0:.5);
-		\draw (0.2,0) arc (180:0:.3);
-		\draw (0,.8) arc (-180:0:.2);
-		\draw (.6,.8) arc (-180:0:.2);
+		\draw (0,0) arc (-180:0:.5);
+		\draw (0.2,0) arc (-180:0:.3);
+		\draw (0,.8) arc (180:0:.2);
+		\draw ({\TLTsplitlwidth},.8) arc (180:0:.2);
 		\node at (0,-.2) {\scriptsize{$#4$}};
-		\node at (.2,-.2) {\scriptsize{$#3$}};
+		\node at ({\TLTjoinlwidth},-.2) {\scriptsize{$#3$}};
 		\node at (0,1) {\scriptsize{$#1$}};
-		\node at (.6,1) {\scriptsize{$#2$}};
+		\node at ({\TLTsplitlwidth},1) {\scriptsize{$#2$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + (1.2,0) $);
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 }
 
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
