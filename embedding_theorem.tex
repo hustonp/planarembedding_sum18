@@ -3812,7 +3812,16 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
-	\nn{Check something.}
+	We show the case where $f:[n]\to[n+2k]$ and $g:\TLJ_m\to\TLJ_{m+2\ell}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in\TLJ_{(k+j)\to(k+j)+2(k+i)}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
+	Let $1\cdot g$ be the morphism obtained from letting $g$ act on one, this time considering $g$ as an element of $\TLJ_{2k+j+i}$. By definition, we have 
+	\begin{align*}
+		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(f\circ\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
+		&= f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
+		\intertext{But $g$ is a morphism in Temperley-Lieb, and hence so is $1\cdot g$, allowing us to pull $1\cdot g$ through the partial isometry: }
+		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
+		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\TLPlusPIso{n}{k}{j}\circ\TLPlusPIso{n+j+k}{k}{i+k}\right)\\
+		&=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
+	\end{align*}
 
 	From here, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
 	Finally, we check that the action is associative.
