@@ -397,10 +397,11 @@
 	\newlength{\TLTscwidth}
 	\let\TLTsswidth\relax
 	\newlength{\TLTsswidth}
-	\TLTCalcLabelOffset[.7cm]{\TLTscwidth}{#1}
-	\TLTCalcLabelOffset[.3cm]{\TLTsswidth}{#2}
-	\setlength{\TLTlabelwidth}{\maxof{\TLTscwidth}{\TLTsswidth}}
-	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % because of optional value to first offset above, noop
+	\TLTCalcLabelOffset[.2cm]{\TLTscwidth}{#1}
+	\TLTCalcLabelOffset[.5cm]{\TLTsswidth}{#2}
+	\setlength{\TLTlabelwidth}{\TLTscwidth+\TLTsswidth}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % should be noop
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTscwidth},0) $);
 	\begin{scope}[shift=(TLTlead)]
 		\draw (.1,.8) arc (-180:0:.2cm);
 		\draw (.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. ($ (.1,.8) + ({\TLTlabelwidth},0) $);
@@ -409,7 +410,7 @@
 		\node at ($ (.1,1) + ({\TLTlabelwidth},0) $) {\scriptsize{$#2$}};
 		\node at ($ (.1,-.2) + ({\TLTsswidth},0) $) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + ({2\TLTlabelwidth},0) $);
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth+\TLTsswidth},0) $);
 }
  
 % a partial iso of #2 through strings moving left past #1 cups 
@@ -418,19 +419,21 @@
 	\newlength{\TLTscwidth}
 	\let\TLTsswidth\relax
 	\newlength{\TLTsswidth}
-	\TLTCalcLabelOffset[.7cm]{\TLTscwidth}{#1}
-	\TLTCalcLabelOffset[.3cm]{\TLTsswidth}{#2}
-	\setlength{\TLTlabelwidth}{\maxof{\TLTscwidth}{\TLTsswidth}}
-	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % because of optional value to first offset above, noop
+	\TLTCalcLabelOffset[.2cm]{\TLTscwidth}{#1}
+	\TLTCalcLabelOffset[.1cm]{\TLTsswidth}{#2}
+	\setlength{\TLTlabelwidth}{\TLTscwidth+\TLTsswidth}
+	\setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.5cm}} % now does something
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTsswidth},0) $);
 	\begin{scope}[shift=(TLTlead)]
-		\draw ($ (.1,.8) + ({\TLTsswidth},0) $) arc (-180:0:.2cm);
+		\draw ($ (.1,.8) + ({\TLTsswidth+\TLTscwidth},0) $) arc (-180:0:.2cm);
 		\draw ($ (.1,0) + ({\TLTlabelwidth},0) $) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.1,.8);
 		\draw (.1,0) arc (180:0:.2cm);
-		\node at ($ (.1,1) + ({\TLTsswidth},0) $) {\scriptsize{$#1$}};
+		\node at ($ (.1,1) + ({\TLTsswidth+\TLTscwidth},0) $) {\scriptsize{$#1$}};
 		\node at (.1,1) {\scriptsize{$#2$}};
 		\node at (.1,-.2) {\scriptsize{$#1$}};
 	\end{scope}
-	\coordinate (TLTlead) at ($ (TLTlead) + ({2\TLTlabelwidth},0) $);
+	\setlength{\TLTscwidth}{\maxof{\TLTscwidth}{.5cm}} % if cap is longer than label
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth+\TLTscwidth},0) $);
 }
 
 % join a bottom of #1 caps (left) and #2 caps (right) into #3(inside)+#4(outside) caps together on top
