@@ -381,14 +381,15 @@
 
 % #1 - label
 \newcommand{\TLTCapcup}[1]{
-	\TLTCalcLabelOffset[.6cm]{\TLTlabelwidth}{#1}
+	\TLTCalcLabelOffset[.2cm]{\TLTlabelwidth}{#1}
 		\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
 	\begin{scope}[shift=(TLTlead)]
 		\draw (0,0) arc (180:0:.2);
 		\draw (0,.8) arc (-180:0:.2);
 		\node at (0,1) {\scriptsize{$#1$}};
 	\end{scope}
-		\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0)$);
+	\TLTCalcLabelOffset[.5cm]{\TLTlabelwidth}{#1}
+	\coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0)$);
 }
 
 % a partial iso of #2 through strings moving right past #1 cups 
