@@ -1378,8 +1378,23 @@ As an application, we get a classification of pivotal module $\Cstar$ categories
 
 \begin{defn}
 Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
-We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$.
-\nn{describe how to do this.}
+	We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$. The process is similar to that in \cite[Def.~3.2]{MR2812459}: we first define a standard form for tanges of the shaded planar module operad, such that every tangle is isotopic to one in standard form. We say a tangle is in \textit{standard form} if 
+	\begin{enumerate}
+		\item Each disk and semidisc, including the output semidisc, is rectangular in shape, with an equal number of strings emerging from the top and bottom,
+		\item in the case of a disc, the starred boundary interval includes the left side, and 
+		\item a horizontal line through the tangle passes through a disc, semidisc, or extremum of a strand at most once. 
+	\end{enumerate}
+	
+	Suppose $T$ is a tangle in standard form with input semidiscs of types $(n_i)_{i=1}^r$, input discs of types $((m_j,\pm_j))_{j=1}^s$, and output type $n$. Choose endomorphisms $\xi_i\in\cM_{n_i}$ and $\eta_j\in\End((x^{?_j})^{\alttens{m_j}}$. 
+	As in \cite{MR2812459}, we intend to build up $T((\xi_i),(\eta_j))$ by sliding a horizontal line from the bottom of $T$ to the top. 
+	For each $h\in[0,1]$, we will choose a $\tau_h$ in some $\cM_\bullet$, imagining $\tau_h$ as the value corresponding to a horizontal line through $T$ at height $h$, where $0$ represents the bottom of $T$ and $1$ represents the top. When the line at $h$ does not touch extrema of strands, $\tau_h\in\cM_{w(h)}$, where $w(h)$ is the sum of the number of strands and the index of the box space of the input (semi)disc (if any) at height $h$. 
+	While the line of height $h$ does not pass through extrema or the top of an input (semi)disc, $\tau_h$ remains constant. 
+	The very bottom of $T$ looks the same as the identity tangle, so we set $\tau_0=1\in\End(mx^{\alttens{n}})$; by the top, we hope to define $T((\xi_i),(\eta_j))=\tau_1$. 
+	\nn{Add a representative tangle-in-process around here.}
+
+	It remains to describe what happens when the horizontal line passes an etremum or the top of an input (semi)disc. If $\tau_h\in\cM_k$ and between $h$ and $h'$, the horizontal line passes only the top of the $i$-th input semidisc, we simply set $\tau_{h'}=\xi_i\circ\tau_h$. Of course, in general $n_i<w(h)$; then we right-include $\xi_i$ into $\cM_{w(h)}$ by $\xi_i\to\xi_i\otimes1_{x^{\alttens{w(h)-n_i}}}$. Simiarly, when passing through the top of an input disc, we include $\eta_j$ on the right and the left before compsing, where left inclusion sends $\eta_j\to 1_{mx^{\alttens{?}}}\otimes\eta_j$. Passing through the maximum of a string becomes compsing with the coevalutation $\coev_{x}$ or $\coev_{\overline{x}}$, depending on the shading, inlucded on the left and right in the same way; similarly, passing through the minimum of a string becomes composing with a suitable evaluation. 
+	
+	Since composition in $\cM$ is associative, tensor is functorial, and composition of tangles preserves being in standard form, the above action of tangles gives $\cM_\bullet$ the structure of an algebra over the shaded planar module operad, as desired. This algebra is a module over $\cP_\bullet$, since we mimicked the recovery of the planar algebra $\cP_\bullet$ from the multitensor category $\cC$ in defining the operad action. \nn{Did we? And if we did, has someone written this up (except for the module bit) before, for us to cite? And if not, should we have explained the algebra case first?}
 \end{defn}
 
 \begin{defn}
