@@ -860,17 +860,21 @@ explain conceptual origin of above embedding map from shift iso.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Acknowledgements.}
 
-\nn{todo}
-
+This article is the undergraduate research project by Desmond Coles and Srivatsa Srinivas which was supervised by Peter Huston and David Penneys during Summer 2018, supported by Penneys' NSF DMS grant 1654159.
+The authors would like to thank Corey Jones for many helpful conversations.
+Additionally, David Penneys would like to thank Emily Peters and Noah Snyder for helpful conversations.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modules for standard invariants of subfactors} 
+\section{Modules for subfactor planar algebras} 
 \label{sec:Modules}
 
-\nn{the standard invariant of a finite index subfactor}
+The standard invariant of a finite index ${\rm II}_1$ subfactor has many axiomatizations, including Popa's $\lambda$-lattices \cite{MR1334479} and Jones' subfactor planar algebras \cite{math.QA/9909027}.
+Here, we use the language of subfactor planar algebras.
+We discuss the well-known correspondence between subfactor planar algebras and their projection unitary multitensor categories.
+We then introduce the notion of a planar module for a subfactor planar algebra, and we show it corresponds to a module category for the projection unitary multitensor category.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Unitary multitensor categories and subfactor planar algebras}  
@@ -1052,7 +1056,7 @@ The principal graph of $\cP_+$ is finite if and only if the principal graph of $
 A \emph{unitary $2\times 2$ multitensor category} $\cC$ is an indecomposable rigid $\Cstar$ tensor category which is Karoubi complete such that $1_\cC$ has an orthogonal decomposition into simple objects as $1_\cC = 1_0 \oplus 1_1$.
 We write $\cC_{ij} := 1_i \otimes \cC \otimes 1_j$ for $i,j \in \{0,1\}$.
 By \cite{MR1444286}, such a $\cC$ is automatically semisimple.
-When $\cC$ is finitely semisimple, it is called a unitary $2\times 2$ \emph{multifusion} category \cite{egno}.
+When $\cC$ is finitely semisimple, it is called a unitary $2\times 2$ \emph{multifusion} category \cite{MR3242743}.
 
 We say $X\in \cC_{01}$ \emph{generates} $\cC$ if every object of $\cC$ is isomorphic to a direct summand of an alternating tensor power of $X$ and $\overline{X}$
 $$
@@ -1157,7 +1161,12 @@ for $k\geq 0$, which is a pointed pivotal right module category over $\cC_X$, th
 
 
 We next give an appropriate definition of planar modules over a planar algebra as algebras over another operad.
-\footnote{Our definition of a planar module over a planar algebra differs significantly from the annular planar modules introduced in \cite{MR1929335}. Our planar modules will correspond to the above notion of module over a multitensor category, whereas annular planar modules correspond to algebra objects in the Drinfel'd center of such a category. \nn{Add a citation for details.}}
+\footnote{
+Our definition of a planar module over a planar algebra differs significantly from the annular planar modules introduced in \cite{MR1929335}. 
+Our planar modules will correspond to the above notion of module over a multitensor category, 
+whereas annular planar modules 
+are more closely related with representations of the tube algebra/affine annular category, which correspond to objects in the Drinfeld center of the multitensor category \cite{MR3447719}.
+}
 
 \begin{defn}
 \label{def:PlanarModule}
@@ -1378,23 +1387,34 @@ As an application, we get a classification of pivotal module $\Cstar$ categories
 
 \begin{defn}
 Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
-	We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$. The process is similar to that in \cite[Def.~3.2]{MR2812459}: we first define a standard form for tanges of the shaded planar module operad, such that every tangle is isotopic to one in standard form. We say a tangle is in \textit{standard form} if 
-	\begin{enumerate}
-		\item Each disk and semidisc, including the output semidisc, is rectangular in shape, with an equal number of strings emerging from the top and bottom,
-		\item in the case of a disc, the starred boundary interval includes the left side, and 
-		\item a horizontal line through the tangle passes through a disc, semidisc, or extremum of a strand at most once. 
-	\end{enumerate}
+	We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$. The process is similar to that in \cite[Def.~3.2]{MR2812459}:.
 	
-	Suppose $T$ is a tangle in standard form with input semidiscs of types $(n_i)_{i=1}^r$, input discs of types $((m_j,\pm_j))_{j=1}^s$, and output type $n$. Choose endomorphisms $\xi_i\in\cM_{n_i}$ and $\eta_j\in\End((x^{?_j})^{\alttens{m_j}}$. 
-	As in \cite{MR2812459}, we intend to build up $T((\xi_i),(\eta_j))$ by sliding a horizontal line from the bottom of $T$ to the top. 
-	For each $h\in[0,1]$, we will choose a $\tau_h$ in some $\cM_\bullet$, imagining $\tau_h$ as the value corresponding to a horizontal line through $T$ at height $h$, where $0$ represents the bottom of $T$ and $1$ represents the top. When the line at $h$ does not touch extrema of strands, $\tau_h\in\cM_{w(h)}$, where $w(h)$ is the sum of the number of strands and the index of the box space of the input (semi)disc (if any) at height $h$. 
-	While the line of height $h$ does not pass through extrema or the top of an input (semi)disc, $\tau_h$ remains constant. 
-	The very bottom of $T$ looks the same as the identity tangle, so we set $\tau_0=1\in\End(mx^{\alttens{n}})$; by the top, we hope to define $T((\xi_i),(\eta_j))=\tau_1$. 
-	\nn{Add a representative tangle-in-process around here.}
+We first define a standard form for tanges of the shaded planar module operad, such that every tangle is isotopic to one in standard form. We say a tangle is in \textit{standard form} if 
+\begin{enumerate}[label={\rm(SF\arabic*)}]
+	\item Each disk and semidisc, including the output semidisc, is rectangular in shape, with an equal number of strings emerging from the top and bottom,
+	\item in the case of a disc, the starred boundary interval includes the left side, and 
+	\item a horizontal line through the tangle passes through a disc, semidisc, or extremum of a strand at most once. 
+\end{enumerate}
 
-	It remains to describe what happens when the horizontal line passes an etremum or the top of an input (semi)disc. If $\tau_h\in\cM_k$ and between $h$ and $h'$, the horizontal line passes only the top of the $i$-th input semidisc, we simply set $\tau_{h'}=\xi_i\circ\tau_h$. Of course, in general $n_i<w(h)$; then we right-include $\xi_i$ into $\cM_{w(h)}$ by $\xi_i\to\xi_i\otimes1_{x^{\alttens{w(h)-n_i}}}$. Simiarly, when passing through the top of an input disc, we include $\eta_j$ on the right and the left before compsing, where left inclusion sends $\eta_j\to 1_{mx^{\alttens{?}}}\otimes\eta_j$. Passing through the maximum of a string becomes compsing with the coevalutation $\coev_{x}$ or $\coev_{\overline{x}}$, depending on the shading, inlucded on the left and right in the same way; similarly, passing through the minimum of a string becomes composing with a suitable evaluation. 
-	
-	Since composition in $\cM$ is associative, tensor is functorial, and composition of tangles preserves being in standard form, the above action of tangles gives $\cM_\bullet$ the structure of an algebra over the shaded planar module operad, as desired. This algebra is a module over $\cP_\bullet$, since we mimicked the recovery of the planar algebra $\cP_\bullet$ from the multitensor category $\cC$ in defining the operad action. \nn{Did we? And if we did, has someone written this up (except for the module bit) before, for us to cite? And if not, should we have explained the algebra case first?}
+\nn{
+first, provide a tangle in standard form.
+Then supply what happens for inserting an $\cM$-morphism, inserting a $\cC$-morphism, and cups and caps.
+Then do an explicit example using our tangle in standard form.}
+
+%Suppose $T$ is a tangle in standard form with input semidiscs of types $(k_i)_{i=1}^r$, input discs of types $((\ell_j,\pm_j))_{j=1}^s$, and output type $k_0$. 
+%Choose endomorphisms $\xi_i\in\cM_{k_i}$ and $\eta_j\in\End((X^{\pm_j})^{\text{alt}\otimes{\ell_j}}$. 
+%As in \cite{MR2812459}, we intend to build $T((\xi_i),(\eta_j))$ by sliding a horizontal line from the bottom of $T$ to the top. 
+%For each $h\in[0,1]$, we define a $\tau_h$ in some $\cM_{n_h}$, imagining $\tau_h$ as the value corresponding to a horizontal line through $T$ at height $h$, where $0$ represents the bottom of $T$ and $1$ represents the top. 
+%When the line at $h$ does not touch extrema of strands, $\tau_h\in\cM_{n_h}$, where $n_h$ is the sum of the number of strands and the index of the box space of the input (semi)disc (if any) at height $h$. 
+%While the line of height $h$ does not pass through extrema or the top of an input (semi)disc, $\tau_h$ remains constant. 
+%The very bottom of $T$ looks the same as the identity tangle, so we set $\tau_0=1\in\cM_{k_0}$; 
+%by the top, we hope to define $T((\xi_i),(\eta_j))=\tau_1 \in \cM_{k_0}$. 
+%	\nn{Add a representative tangle-in-process around here.}
+%
+%Now suppose the horizontal line passes an extremum or the top of an input (semi)disc. 
+%If $\tau_h\in\cM_{n_h}$ and between $h$ and $h'$, the horizontal line passes only the top of the $i$-th input semidisc, we simply set $\tau_{h'}=\xi_i\circ\tau_h$. Of course, in general $n_i<w(h)$; then we right-include $\xi_i$ into $\cM_{w(h)}$ by $\xi_i\to\xi_i\otimes1_{x^{\alttens{w(h)-n_i}}}$. Simiarly, when passing through the top of an input disc, we include $\eta_j$ on the right and the left before compsing, where left inclusion sends $\eta_j\to 1_{mx^{\alttens{?}}}\otimes\eta_j$. Passing through the maximum of a string becomes compsing with the coevalutation $\coev_{x}$ or $\coev_{\overline{x}}$, depending on the shading, inlucded on the left and right in the same way; similarly, passing through the minimum of a string becomes composing with a suitable evaluation. 
+%	
+%	Since composition in $\cM$ is associative, tensor is functorial, and composition of tangles preserves being in standard form, the above action of tangles gives $\cM_\bullet$ the structure of an algebra over the shaded planar module operad, as desired. This algebra is a module over $\cP_\bullet$, since we mimicked the recovery of the planar algebra $\cP_\bullet$ from the multitensor category $\cC$ in defining the operad action. \nn{Did we? And if we did, has someone written this up (except for the module bit) before, for us to cite? And if not, should we have explained the algebra case first?}
 \end{defn}
 
 \begin{defn}
@@ -1493,7 +1513,7 @@ f\vartriangleleft g
 $$
 where shading depends on the parity of $j$ and $k$.
 We leave the straightforward verification that $\cM$ is a right $\cC$-module $\Cstar$ category to the reader.
-\nn{Karoubi completion...}
+Finally, we replace $\cM$ with its unitary Karoubi completion, which formally adds orthogonal direct sums and then takes the orthogonal projection completion.
 
 The distinguished simple basepoint of $\cM$ is given by the identity projection $1_{\cM_0} \in \cM_0$.
 The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$. 
@@ -2117,7 +2137,7 @@ We now classify all connected Markov towers in terms of pointed bipartite graphs
 
 \begin{ex}
 Suppose $(\Gamma, v)$ is a pointed bipartite graph with countably many vertices and edges, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
-We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \nn{citation?}.
+We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \cite{MR999799,MR1473221}.
 We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
 
 It is straightforward to check that $M_\bullet$ has principal graph $\Gamma$ with basepoint $v$ corresponding to $1_{M_0}$.
@@ -3212,7 +3232,7 @@ d^{-i}\,
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 E^{n+j+3i}_{n+j+2i}\left(
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
@@ -3257,7 +3277,7 @@ x\cdot
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 E^{n+j+3i}_{n+j+2i}\left(
 \begin{tikzpicture}[baseline = .3cm]
 	\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
@@ -3304,7 +3324,7 @@ x\cdot
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 E^{n+j+3i}_{n+j+2i}\left(
 d^i\,
 E^{n+j+2i}_{n+j+i}\left(
@@ -3351,7 +3371,7 @@ x\cdot
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 d^i
 E^{n+j+2i}_{n+j+i}\left(
 x\cdot
@@ -3398,7 +3418,7 @@ E^{n+j+3i}_{n+j+2i}\left(
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 d^i
 E^{n+j+2i}_{n+j+i}\left(
 x\cdot
@@ -3443,7 +3463,7 @@ d^{-i}\,
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}
-\\&=
+\displaybreak[1]\\&=
 d^i
 E^{n+j+2i}_{n+j+i}
 \left(
@@ -3474,7 +3494,7 @@ x
 	\node at (.6,1) {\scriptsize{$i$}};
 	\node at (.4,-.2) {\scriptsize{$i$}};
 	\node at (1,-.2) {\scriptsize{$j$}};
-\end{tikzpicture}
+\end{tikzpicture}\,.
 \qedhere
 %
 %
@@ -3501,51 +3521,64 @@ x
 
 From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
 Notice however that because $\pi$ respects $\dag$ we only need to check 3 types of composition:
-\begin{enumerate}
+\begin{enumerate}[label={\rm(\arabic*)}]
 	\item
-		\label{upup}  
+		\label{eq:upup}  
 		$[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
 	\item
-		\label{UPdown} 
+		\label{eq:UPdown} 
 		$[n]\rightarrow [n+2i+2j] \rightarrow [n+2i] $
 	\item
-		\label{downUP} 
+		\label{eq:downUP} 
 		$[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
 \end{enumerate}
-
-\eqref{upup}
+\item[\underline{\ref{eq:upup}:}]
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
 So 
 $$
-\pi(y\circ x)=d^{-2i-j-k}E_{n+i+j}(yx \cdot \TLPlusPIso{n}{i}{j}) \cdot \TLCapJoin{n}{i}{j}{j}{i} \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)
+=
+d^{-2i-j-k}E_{n+i+j}
+\left(yx \cdot \TLPlusPIso{n}{i}{j}\right) 
+\cdot 
+\TLCapJoin{n}{i}{j}{j}{i} 
+\cdot 
+\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
 $$ 
 But then Lemma \ref{lem:LeftKink} immediately gives that:
 $$
 \pi(y\circ x)=d^{-i-j-k} yx \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
 $$
- 
-\eqref{UPdown} 
+
+\item[\underline{\ref{eq:UPdown}:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
 $$
-\pi(y\circ x)=d^{-2i-j-k}E_{n+i}(yx \TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)
+=
+d^{-2i-j-k}E_{n+i}\left(yx\cdot \TLMinusPIso{n}{i}{j}\right)
+\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$ 
 First observe that using lemma \ref{lem:LeftKink} we have:
 $$
-d^{-i}E_{n+i}(E_{n+2i}(yx\TLMinusPIso{n}{i}{j}))\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd= (E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
+d^{-i}E_{n+i}\left(E_{n+2i}\left(yx\cdot\TLMinusPIso{n}{i}{j}\right)\right)
+\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
+=
+E_{n+2i}\left(yx\cdot\TLMinusPIso{n}{i}{j}\right)\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
 $$
 And since $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we have that:
-
 $$
-\pi(y\circ x)= d^{-i-j-k}E_{n+2i}(yx\TLMinusPIso{n}{i}{j})\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+\pi(y\circ x)
+= 
+d^{-i-j-k}E_{n+2i}\left(yx\cdot \TLMinusPIso{n}{i}{j}\right)\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 $$
-Now observe that $yx\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
-
+Now observe that $yx\cdot\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
 $$
 \pi(y\circ x)=d^{-i-j-k}\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot yx \cdot \TLMinusPIso{n}{i}{j} \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
 $$
 
-\eqref{downUP} Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
+\item[\underline{\ref{eq:downUP}:}]
+Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
 Then:
 $$
 \pi(y\circ x)=d^{-i-j-k}y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
@@ -3817,22 +3850,24 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 
 \begin{defn}
 \label{def:ModuleFromMarkovTower}
-	If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $\TLJ_m$ on $1_{[n]}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
+	If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
 	
-	We set $[n]\vartriangleleft\TLJ_m=[n+m]$. As for morphisms, we first consider the case where one morphism is the identity. 
-	If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
-	The case of $f\vartriangleleft 1$ is more complicated. If $f\in M_{n\to n+2k}=M_{n+k}$, then we define 
-	\[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
-	while for $j<k$, we set 
-	\[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
-	For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
+We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$. 
+\nn{fix...}
+As for morphisms, we first consider the case where one morphism is the identity. 
+If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
+The case of $f\vartriangleleft 1$ is more complicated. If $f\in M_{n\to n+2k}=M_{n+k}$, then we define 
+\[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
+while for $j<k$, we set 
+\[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
+For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
 
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
 	We show the case where $f:[n]\to[n+2k]$ and $g:\TLJ_m\to\TLJ_{m+2\ell}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in\TLJ_{(k+j)\to(k+j)+2(k+i)}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
 	Let $1\cdot g$ be the morphism obtained from letting $g$ act on one, this time considering $g$ as an element of $\TLJ_{2k+j+i}$. By definition, we have 
 	\begin{align*}
-		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(f\circ\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
+		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(f\circ\TLPlusPIso{n}{k}{j{+}2k{+}i}\circ (1\cdot g)\circ\TLPlusPIso{n{+}j{+}k}{k{+}i}{k}\right)\\
 		&= f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
 		\intertext{But $g$ is a morphism in Temperley-Lieb, and hence so is $1\cdot g$, allowing us to pull $1\cdot g$ through the partial isometry: }
 		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
@@ -3929,9 +3964,9 @@ We leave this exploration to a future joint article, as it would take us too far
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The canonical planar algebra from a strongly Markov inclusion} 
 
-\nn{some lead in here, where background comes from.
-\\
-Refer reader to Definition \ref{def:StronglyMarkovInclusion} to recall the definition of a strongly Markov inclusion.}
+We begin this section by recalling the construction of the canonical planar $\dag$-algebra from a strongly Markov inclusion.
+The reader is advised to review the definition of a strongly Markov inclusion from Definition \ref{def:StronglyMarkovInclusion} before proceeding.
+We then discuss various operations on the inclusion, and how such operations affect (or do not affect!) the planar algebra.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Strongly Markov inclusions} 
@@ -3985,7 +4020,7 @@ Refer reader to Definition \ref{def:StronglyMarkovInclusion} to recall the defin
 %\subsection{Planar algebras}
 \label{ssec:canonical}
 
-Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
+%Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
 There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
 We refer the reader to \cite{MR2812459} for more details on this construction. 
@@ -4075,13 +4110,13 @@ The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq
 \end{align*}
 	
 \end{itemize} 
-The $\ast$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
+The $\dag$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
 \end{defn}
 
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
 
 \begin{thm}[{\cite[Theorem 3.28]{MR2812459}}] \label{planaralgebraisomorphism}
-The canonical planar $\ast$-algebra associated to the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\ast$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
+The canonical planar $\dag$-algebra associated to the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\dag$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
 
 The following two subsections will describe two isomorphisms between canonical $\dag$-planar algebras of related strongly Markov inclusions. Both are well known to experts, and will motivate constructions detailed in the later sections of this article.
@@ -4175,20 +4210,23 @@ Suppose that $A_0\subset A_1 \subset \left(A_2,\tr_2,e_1\right)$ is a strongly M
 We know from \cite[Cor.~2.18]{MR2812459} that for any $0\leq k \leq n$, the inclusion $A_k \subset A_n$ is strongly Markov. 
 Thus, we can find a Pimsner-Popa basis $B$ for $A_n$ over $A_k$.
 
+By \cite[Prop.~2.20]{MR2812459}, for $0\leq j\leq 2n$, we can represent $A_j$ on $L^2(A_n, \tr_n)$ via the multistep basic construction, and $J_n A_{2n-j} J_n = A_j'\cap B(L^2(A_n, \tr_n))$ where $J_n$ is the modular conjugation.
+We get a canonical trace on $A_j'$ by $\tr_j'(x):=\tr_{2n-j}(J_n x^*J_n)$ as discussed in Remark \cite[Rem.~2.21]{MR2812459}.
+
+
 \begin{prop}[{\cite[Prop.~2.24]{MR2812459}}]
 \label{prop:LeftCapping}
 Let $0\leq j \leq k \leq n $. 
-Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_j$.
-\dave{what is $\tr'$?} 
+Let $\{b\}$ be a Pimsner-Popa basis for $A_k$ over $A_j$.
 The conditional expectation $E_{A'_k}^{A'_j}: (A'_j\cap B(L^2(A_n,\tr_n)),\tr'_j)\rightarrow (A'_k \cap B(L^2(A_n,\tr_n)),\tr'_k)$ is given by:
 \[
 E^{A'_j}_{A'_k}(x)
 =
-d^{-2(k-j)} \sum_{b \in B} bxb^{\ast}
+d^{-2(k-j)} \sum_{b } bxb^{\ast}
 \]
 and is independent of the choice of basis.
 \end{prop}
-From the definition of the canonical $\ast$-planar algebra, one can work out that (in the language of Lemma \ref{lem:SufficientConditionsForPlanarMap}) right capping is simply the conditional expectation in the Markov tower $A_\bullet$, while left capping is the expectation on relative commutants described in the previous proposition. Thus, left capping is how the Pimsner-Popa basis makes shows itself graphically. The full details can be found in \cite[Prop.~2.47]{penneys}. 
+From the definition of the canonical $\ast$-planar algebra, one can work out that (in the language of Lemma \ref{lem:SufficientConditionsForPlanarMap}) right capping is simply the conditional expectation in the Markov tower $A_\bullet$, while left capping is the expectation on relative commutants described in the previous proposition. Thus, left capping is how the Pimsner-Popa basis makes shows itself graphically. The full details can be found in \cite[Prop.~2.47]{MR2812459}. 
 
 \begin{cor}
 \label{cor:OntoCor}
@@ -4509,7 +4547,6 @@ $p(N'\cap M) = pN' \cap pMp$.
 Suppose the central support of $p$ in $N$ is $z\in Z(N)$.
 The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
 \end{enumerate}
-\dave{this lemma may be more at home later, but it is a purely von Neumann algebraic fact}
 \end{lem}
 \begin{proof}
 \mbox{}
@@ -4832,19 +4869,19 @@ The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\ast$-planar subal
 
 \begin{proof}
 Observe that for all $x,y \in Q_{\bullet}$, we have that 
-\begin{align}
+\begin{align*}
 	\Phi(x^{*}) &= \Phi(x)^{\ast} \\
 	\Phi(xy) &= \Phi(x)\Phi(y) \\
 	E_n &= id_{m}\otimes \overline{E}_{2r+n} \\
-	i_n &= id_{m}\otimes \overline{i}_{2r+n} \\
-	f_n &= id_{m} \otimes e_{2r+n} 
-\end{align}
+	i_n &= \id_{m}\otimes \overline{i}_{2r+n} \\
+	f_n &= \id_{m} \otimes e_{2r+n} 
+\end{align*}
 
 	We now check that $\Phi$ is a planar algebra map:
 
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Jones Projections)
-\[
+$
 \begin{tikzpicture}[baseline]
 	\draw (-.1,-.7) -- (-.1,.7);
 	\draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
@@ -4878,9 +4915,9 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 %	\node at (-.1,-1) {\scriptsize{$n-1$}};
 	\node at (.55,0) {\tiny{$2r+n-1$}};
 \end{tikzpicture}
-\]
+$
 \item (Conditional Expectation) \label{condex} 
-\[
+$
 \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,.7);
 	\draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
@@ -4916,9 +4953,9 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 	\node at (-.6,.9) {\tiny{$2r$}};
 	\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\]
+$
 \item (Right Inclusion)
-\[
+$
 \begin{tikzpicture}[baseline]
 	\draw (0,-.7) -- (0,0.7);
 	\draw (0.45,-.7) -- (0.45,.7);
@@ -4958,19 +4995,20 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 	\node at (0,0) {\scriptsize{$x$}};
 	\node at (0.6,-.9) {\tiny{$1$}};
 \end{tikzpicture}
-\]
-\item (Left Capping) In section \ref{ssec:canonical}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
- we showed that the left-capping tangle $\gamma_n$ in the canonical planar $\ast$-algebra is given by 
+$
+\item (Left Capping) In \S\ref{ssec:canonical}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
+we discussed that the left-capping tangle in the canonical planar $\ast$-algebra is given for $n\geq 1$ by 
 \[
- \gamma^{+}_n(x) = \frac{1}{d^2}\sum_{b \in B}bxb^\ast
+E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
 \]
-where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\gamma^{+}_n$ preserves $\Phi(Q_{\bullet})$. 
+where $\{b\}$ is a Pimnser Popa basis of $B_1$ over $B_0$. 
+We will now check that left capping preserves $\Phi(Q_{\bullet})$. 
 		For any $x \in Q_{n,+}$, we have 
 
 \centerline{
   \begin{minipage}{\linewidth}
 			\[
-				d^2\gamma^+_n(\Phi(x))
+				d^2E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x))
 				=
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
@@ -4991,10 +5029,10 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 \sum_{b\in B}
 \begin{tikzpicture}[baseline]
 	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
-	\fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.8)arc(180:0:.3cm) -- (1.2,-1.8) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.7) -- (0,-.7) -- (0,-2.1) -- (1.5,-2.1) -- (1.5,2.1);
+	\fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.5)arc(180:0:.3cm) -- (1.2,-1.5) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.7) -- (0,-.7) -- (0,-2.1) -- (1.5,-2.1) -- (1.5,2.1);
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
-	\draw (0.3,.7)--(0.3,0.25) arc (-180:0:.15cm)-- (0.6,1.8) arc(180:0:.3cm) -- (1.2,.15);
-	\draw (0.3,-.7)--(0.3,-0.25) arc (180:0:.15cm)-- (0.6,-1.8) arc(-180:0:.3cm) -- (1.2,-.15);
+	\draw (0.3,.7)--(0.3,0.25) arc (-180:0:.15cm)-- (0.6,1.5) arc(180:0:.3cm) -- (1.2,.15);
+	\draw (0.3,-.7)--(0.3,-0.25) arc (180:0:.15cm)-- (0.6,-1.5) arc(-180:0:.3cm) -- (1.2,-.15);
 	\draw (0,-2.1) -- (0,2.1);
 	\draw (1.5,-2.1) -- (1.5,2.1);
 	\draw[dashed] (-1,1.5) --  (-1,-1.5) --  (0.8,-1.5) --  (0.8,1.5) -- (-1,1.5);
@@ -5009,11 +5047,8 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 \begin{tikzpicture}[baseline]
 	\fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
 	\fill[shaded] (0,2.1) -- (1.5,2.1) -- (1.5,-2.1) -- (0,-2.1) -- (0,2.1);
-	\fill[unshaded] (0.6,1.8) arc(180:0:.3cm) -- (1.2,-1.8)arc(0:-180:0.3cm) -- (0.6,1.8); 
+	\filldraw[unshaded] (0.6,1.5) arc(180:0:.3cm) -- (1.2,-1.5)arc(0:-180:0.3cm) -- (0.6,1.5); 
 	\draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
-	\draw (0.6,1.8) arc(180:0:.3cm) -- (1.2,.15);
-	\draw (0.6,-1.8) arc(-180:0:.3cm) -- (1.2,-.15);
-	\draw (0.6,1.8) -- (0.6,-1.8);
 	\draw (0,-2.1) -- (0,2.1);
 	\draw (1.5,-2.1) -- (1.5,2.1);
 	\draw[dashed] (-1,1.5) --  (-1,-1.5) --  (0.8,-1.5) --  (0.8,1.5) -- (-1,1.5);
@@ -5037,10 +5072,11 @@ where $B$ is a Pimnser Popa basis of $B_1$ over $B_0$. We will now check that $\
 	\node at (0.9,-2.3) {\tiny{$n-1$}};
 	\node at (0,2.2) {\tiny{$2r+1$}};
 \end{tikzpicture}
+\,.
 	\]
   \end{minipage}
 }
-Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $\gamma^+_n(\Phi(x)) =\Phi(\gamma^+_n(x))$.
+Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x)) =\Phi(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x))$.
 
 \item (Left Inclusion) The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
 \[
