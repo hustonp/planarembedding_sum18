@@ -3865,21 +3865,182 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
 	We show the case where $f:[n]\to[n+2k]$ and $g:\TLJ_m\to\TLJ_{m+2\ell}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in\TLJ_{(k+j)\to(k+j)+2(k+i)}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
-	Let $1\cdot g$ be the morphism obtained from letting $g$ act on one, this time considering $g$ as an element of $\TLJ_{2k+j+i}$. By definition, we have 
+	Let $\iota$ denote the inclusions in $M_\bullet$, and let $\lambda$ and $\rho$ denote the left and right inclusions in $\TLJ$. 
+	By definition, we have 
 	\begin{align*}
-		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(f\circ\TLPlusPIso{n}{k}{j{+}2k{+}i}\circ (1\cdot g)\circ\TLPlusPIso{n{+}j{+}k}{k{+}i}{k}\right)\\
-		&= f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
-		\intertext{But $g$ is a morphism in Temperley-Lieb, and hence so is $1\cdot g$, allowing us to pull $1\cdot g$ through the partial isometry: }
-		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
-		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j}\circ\TLPlusPIso{n+j+k}{k}{i+k}\right)\\
+		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\circ
+		% \TLPlusPIso{n}{k}{j{+}2k{+}i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+		% \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		&= \iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j+2k+i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ\rho\lambda(g)\circ
+		% \TLPlusPIso{n+j+k}{k+i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		\intertext{But $g$ is a morphism in Temperley-Lieb, allowing us to pull $g$ through the partial isometry: }
+		&= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j+2k+i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ
+		% \TLPlusPIso{n+j+k}{k+i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		&= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j}
+		\begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+			\node at (.1,1) {\scriptsize{$n$}};
+			\draw (.3,.8) arc (-180:0:.2cm);
+			\node at (.3,1) {\scriptsize{$k$}};
+			\draw (.3,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\node at (.9,1) {\scriptsize{$j$}};
+			\draw (.5,0) arc (180:0:.2cm);
+			\node at (.5,-.2) {\scriptsize{$k$}};
+			\draw (1.1,0) -- (1.1,.8);
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\draw (1.3,0) -- (1.3,.8);
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\draw (1.5,0) -- (1.5,.8);
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+		\end{tikzpicture}
+		\circ
+		% \TLPlusPIso{n+j+k}{k}{i+k}
+		\begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+			\node at (.1,1) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,.8);
+			\node at (.3,1) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,.8);
+			\node at (.5,1) {\scriptsize{$k$}};
+			\draw (.7,.8) arc (-180:0:.2cm);
+			\node at (.7,1) {\scriptsize{$k$}};
+			\draw (.7,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\draw (.9,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\draw (1.1,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+		\end{tikzpicture}
+		\right)\\
 		&=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
 	\end{align*}
-
-	From here, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
-	Finally, we check that the action is associative.
-	\nn{Check that too. Or wave it off, if similar to the previous stuff.}
-
-	It is straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
+	It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
+	It is even easier to check that the action is associative. It is also straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
 \end{defn}
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
