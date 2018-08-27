@@ -3532,13 +3532,14 @@ Because $\pi$ respects $\dag$, as in the definition above, we only need to consi
 		\label{eq:downUP} 
 		$[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
 \end{enumerate}
+	In the following, we supress the rightmost $2k$ strings of entries of \ref{eq:4x4map}, as well as resulting factors of $d$, since they are essentially inert when only three objects are considered. 
 \item[\underline{\ref{eq:upup}:}]
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
 Then 
 \begin{align*}
 \pi(y\circ x)
 		&=
-d^{-2i-j-k}E_{n+i+j}
+d^{-2i-j}E_{n+i+j}
 \left(yx \cdot 
 	% \TLPlusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
@@ -3569,7 +3570,7 @@ d^{-2i-j-k}E_{n+i+j}
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture}
 	\intertext{But then Lemma \ref{lem:LeftKink} immediately gives that:}
-	\pi(y\circ x) &= d^{-i-j-k} yx \cdot 
+	\pi(y\circ x) &= d^{-i-j} yx \cdot 
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd 
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3591,7 +3592,7 @@ Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$.
 Then 
 \begin{align*}
 	\pi(y\circ x)
-	&=d^{-2i-j-k}E_{n+i}\left(yx\cdot 
+	&=d^{-2i-j}E_{n+i}\left(yx\cdot 
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3672,7 +3673,7 @@ Then
 	And since $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we have that: }
 	\pi(y\circ x)
 	&= 
-	d^{-i-j-k}E_{n+2i}\left(yx\cdot
+	d^{-i-j}E_{n+2i}\left(yx\cdot
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3729,7 +3730,7 @@ Then
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}
 	$ implements $E^{n+2i+j}_{n+2i}$ so: }
-	\pi(y\circ x)&=d^{-i-j-k}
+	\pi(y\circ x)&=d^{-i-j}
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3778,7 +3779,7 @@ Then
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
 Then:
 \begin{align*}
-	\pi(y\circ x) &= d^{-i-j-k}y\cdot
+	\pi(y\circ x) &= d^{-i-j}y\cdot
 	% \TLPlusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3807,7 +3808,7 @@ Then:
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}\\
 	\intertext{ and }
-	\pi(y)\cdot \pi(x) &= d^{-i-j-k}y\cdot
+	\pi(y)\cdot \pi(x) &= d^{-i-j}y\cdot
 	% \TLCapJoin{n}{i}{j}{j}{i}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
