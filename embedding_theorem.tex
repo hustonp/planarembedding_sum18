@@ -4168,9 +4168,35 @@ We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$.
 As for morphisms, we first consider the case where one morphism is the identity. 
 	If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
 	The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
-\[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
+\[f\vartriangleleft 1_{j+k}=f\circ
+	% \TLPlusPIso{n}{k}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$k$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$k$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\text{,}\]
 while for $j<k$, we set 
-\[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
+\[f\vartriangleleft 1_j=f\circ
+	% \TLMinusPIso{n}{j}{k}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$k$}};
+		\draw (1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.4,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.6,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$k$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\text{.}\]
 For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
 
 	
