@@ -1814,9 +1814,7 @@ Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \
 $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
 \end{rem}
 
-\begin{rem}\label{BratelliTower}
-Just as one may describe may describe a unital inclusion of finite dimensional von Neumann algebras with a bipartite graph one may describe a Markov sequence $\left( M_{n}, \tr_{n}, e_{n} \right )$ with an infinite graph which we will call the \textit{Bratelli Tower}. We construct this graph by gluing together the Bratelli diagrams for the inclusions $M_{n}\subseteq M_{n+1}$ and $M_{n+1}\subseteq M_{n+2}$ along the vertices corresponding to the minimal central projections of $M_{n+1}$.
-\end{rem}
+
 
 
 \begin{prop}\label{prop:ElementaryMarkov} A Markov tower satisfies the following elementary properties for $n\geq 1$.
@@ -1921,7 +1919,7 @@ This follows immediately from \ref{EP:NewStuff}.
 \end{rem}
 
 
-Notice that by \ref{EP:BasicContruction}, the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$.
+Notice that by \ref{EP:BasicContruction}, the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. 
 By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
 
 \begin{defn}
@@ -2448,10 +2446,6 @@ $$
 This completes the proof.
 \end{proof}
 
-\begin{remark}
-If $\left( M_n, \tr_n, e_{n} \right )$ is a Markov tower then we know from proposition \ref{prop:MultistepJonesProjections} that 
-$\left( M_{kn}, \tr_{kn}, e_{kn} \right )$ is also a Markov tower. Let $\Gamma$ be the principal graph of  $\left( M_n, \tr_n, e_{n} \right )$ and $\Gamma '$ be the principal graph of  $\left( M_{kn}, \tr_{kn}, e_{kn} \right )$. Then
-\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3526,7 +3520,7 @@ x
 \begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
 
 From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
-Notice however that because $\pi$ respects $\dag$ we only need to check 3 types of composition:
+Because $\pi$ respects $\dag$, as in the definition above, we only need to consider 3 cases of composition:
 \begin{enumerate}[label={\rm(\arabic*)}]
 	\item
 		\label{eq:upup}  
@@ -3538,65 +3532,377 @@ Notice however that because $\pi$ respects $\dag$ we only need to check 3 types 
 		\label{eq:downUP} 
 		$[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
 \end{enumerate}
+	In the following, we supress the rightmost $2k$ strings of entries of \ref{eq:4x4Map}, as well as resulting factors of $d$, since they are essentially inert when only three objects are considered. 
 \item[\underline{\ref{eq:upup}:}]
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
-So 
-$$
+	\nn{Need to standardize punctuation policy. Consider also \ref{lem:LeftKink}.}
+Then 
+\begin{align*}
 \pi(y\circ x)
-=
-d^{-2i-j-k}E_{n+i+j}
-\left(yx \cdot \TLPlusPIso{n}{i}{j}\right) 
+		&=
+d^{-2i-j}E_{n+i+j}
+\left(yx \cdot 
+	% \TLPlusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+	 \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\right) 
 \cdot 
-\TLCapJoin{n}{i}{j}{j}{i} 
-\cdot 
-\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
-$$ 
-But then Lemma \ref{lem:LeftKink} immediately gives that:
-$$
-\pi(y\circ x)=d^{-i-j-k} yx \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
-$$
-
+% \TLCapJoin{n}{i}{j}{j}{i} 
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.5cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,.8) arc (-180:0:.3cm);
+		\node at (.6,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}
+	\intertext{Lemma \ref{lem:LeftKink} gives }
+	\pi(y\circ x) &= d^{-i-j} yx \cdot 
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd 
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (1,.8) arc (-180:0:.2cm);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}
+	= \pi(y) \cdot \pi(x)
+\end{align*}
 \item[\underline{\ref{eq:UPdown}:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
-$$
-\pi(y\circ x)
-=
-d^{-2i-j-k}E_{n+i}\left(yx\cdot \TLMinusPIso{n}{i}{j}\right)
-\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
-$$ 
-First observe that using lemma \ref{lem:LeftKink} we have:
-$$
-d^{-i}E_{n+i}\left(E_{n+2i}\left(yx\cdot\TLMinusPIso{n}{i}{j}\right)\right)
-\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
-=
-E_{n+2i}\left(yx\cdot\TLMinusPIso{n}{i}{j}\right)\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
-$$
-And since $E_{n+i}=E_{n+i}\circ E_{n+2i}$ we have that:
-$$
-\pi(y\circ x)
-= 
-d^{-i-j-k}E_{n+2i}\left(yx\cdot \TLMinusPIso{n}{i}{j}\right)\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
-$$
-Now observe that $yx\cdot\TLMinusPIso{n}{i}{j}\in M_{n+2i+j}$ and we know from proposition \ref{prop:MultistepJonesProjections} we know that $\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd$ implements $E^{n+2i+j}_{n+2i}$ so:
-$$
-\pi(y\circ x)=d^{-i-j-k}\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd \cdot yx \cdot \TLMinusPIso{n}{i}{j} \cdot \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd = \pi(y) \cdot \pi(x)
-$$
-
+\begin{align*}
+	\pi(y\circ x)
+	&=d^{-2i-j}E_{n+i}\left(yx\cdot 
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\right)
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (1,.8) arc (-180:0:.2cm);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}\\
+	\intertext{Using lemma \ref{lem:LeftKink}, we have 
+	\[d^{-i}E_{n+i}\left(E_{n+2i}\left(yx\cdot
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\right)\right)
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+	\end{tikzpicture}
+	=
+	E_{n+2i}\left(yx\cdot
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\right)
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+	\end{tikzpicture}\]
+	Since $E_{n+i}=E_{n+i}\circ E_{n+2i}$, we have }
+	\pi(y\circ x)
+	&= 
+	d^{-i-j}E_{n+2i}\left(yx\cdot
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\right)
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (1,.8) arc (-180:0:.2cm);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}\\
+	\intertext{Because $yx\cdot
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\in M_{n+2i+j}$ and, by proposition \ref{prop:MultistepJonesProjections}, we know that $
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) -- (.4,.8);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,0) -- (.6,.8);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.8,-.2) {\scriptsize{$j$}};
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\node at (.8,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+	\end{tikzpicture}
+	$ implements $E^{n+2i+j}_{n+2i}$, so }
+	\pi(y\circ x)&=d^{-i-j}
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) -- (.4,.8);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,0) -- (.6,.8);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.8,-.2) {\scriptsize{$j$}};
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\node at (.8,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+	\end{tikzpicture}
+	\cdot yx \cdot 
+	% \TLMinusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\cdot
+	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (1,.8) arc (-180:0:.2cm);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture} % \\ % but remember to restore the &= below
+	= \pi(y) \cdot \pi(x)
+\end{align*}
 \item[\underline{\ref{eq:downUP}:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
-Then:
-$$
-\pi(y\circ x)=d^{-i-j-k}y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
-$$
-and
-$$
-\pi(y)\cdot \pi(x)= d^{-i-j-k}y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd
-$$
-but these are equal as:
-$$
-y\cdot \TLPlusPIso{n}{i}{j} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd= y\cdot \TLPlusPIso{n}{i}{j} \cdot\TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd \cdot x \cdot  \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd = y\cdot  \TLCapJoin{n}{i}{j}{j}{i} \cdot x \cdot \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
-$$
+Then 
+\begin{align*}
+	\pi(y\circ x) &= d^{-i-j}y\cdot
+	% \TLPlusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\cdot x \cdot
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) -- (.4,.8);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,0) -- (.6,.8);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.8,-.2) {\scriptsize{$j$}};
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\node at (.8,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+	\end{tikzpicture}\\
+	\intertext{ and }
+	\pi(y)\cdot \pi(x) &= d^{-i-j}y\cdot
+	% \TLCapJoin{n}{i}{j}{j}{i}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.5cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,.8) arc (-180:0:.3cm);
+		\node at (.6,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}
+	\cdot x
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
+	\intertext{but these are equal, as }
+ y\cdot
+	% \TLPlusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\cdot x \cdot
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) -- (.4,.8);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,0) -- (.6,.8);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.8,-.2) {\scriptsize{$j$}};
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\node at (.8,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+	\end{tikzpicture}
+	&= y\cdot
+	% \TLPlusPIso{n}{i}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$i$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\cdot
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) -- (.4,.8);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,0) -- (.6,.8);
+		\node at (.6,1) {\scriptsize{$i$}};
+		\draw (.8,0) arc (180:0:.2cm);
+		\node at (.8,-.2) {\scriptsize{$j$}};
+		\draw (.8,.8) arc (-180:0:.2cm);
+		\node at (.8,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+	\end{tikzpicture}
+	\cdot x\\ % \cdot
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
+	&= y\cdot 
+	% \TLCapJoin{n}{i}{j}{j}{i}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$i$}};
+		\draw (1,0) arc (180:0:.2cm);
+		\node at (1,-.2) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.5cm);
+		\node at (.4,1) {\scriptsize{$i$}};
+		\draw (.6,.8) arc (-180:0:.3cm);
+		\node at (.6,1) {\scriptsize{$j$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+	\end{tikzpicture}
+	\cdot x % \cdot
+	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
+\end{align*}
 
 \end{proof}
 
@@ -3859,33 +4165,219 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 	If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
 	
 We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$. 
-\nn{fix...}
 As for morphisms, we first consider the case where one morphism is the identity. 
-If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
-The case of $f\vartriangleleft 1$ is more complicated. If $f\in M_{n\to n+2k}=M_{n+k}$, then we define 
-\[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
+	If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
+	The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
+\[f\vartriangleleft 1_{j+k}=f\circ
+	% \TLPlusPIso{n}{k}{j}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.6,0) arc (180:0:.2cm);
+		\node at (.6,-.2) {\scriptsize{$k$}};
+		\draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.4,.8) arc (-180:0:.2cm);
+		\node at (.4,1) {\scriptsize{$k$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\text{,}\]
 while for $j<k$, we set 
-\[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
+\[f\vartriangleleft 1_j=f\circ
+	% \TLMinusPIso{n}{j}{k}
+	\begin{tikzpicture}[baseline=.3cm]
+		\draw (.2,0) -- (.2,.8);
+		\node at (.2,1) {\scriptsize{$n$}};
+		\draw (.4,0) arc (180:0:.2cm);
+		\node at (.4,-.2) {\scriptsize{$k$}};
+		\draw (1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.4,.8);
+		\node at (1,1) {\scriptsize{$j$}};
+		\draw (.6,.8) arc (-180:0:.2cm);
+		\node at (.6,1) {\scriptsize{$k$}};
+		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+	\end{tikzpicture}
+	\text{.}\]
 For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
 
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
-	We show the case where $f:[n]\to[n+2k]$ and $g:\TLJ_m\to\TLJ_{m+2\ell}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in\TLJ_{(k+j)\to(k+j)+2(k+i)}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
-	Let $1\cdot g$ be the morphism obtained from letting $g$ act on one, this time considering $g$ as an element of $\TLJ_{2k+j+i}$. By definition, we have 
+	We show the case where $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to{m+2\ell}_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in{(k+j)}_{\TLJ}\to(k+j)+2(k+i)_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
+	Let $\iota$ denote the inclusions in $M_\bullet$, and let $\lambda$ and $\rho$ denote the left and right inclusions in $\TLJ$. 
+	By definition, we have 
 	\begin{align*}
-		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(f\circ\TLPlusPIso{n}{k}{j{+}2k{+}i}\circ (1\cdot g)\circ\TLPlusPIso{n{+}j{+}k}{k{+}i}{k}\right)\\
-		&= f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ (1\cdot g)\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
-		\intertext{But $g$ is a morphism in Temperley-Lieb, and hence so is $1\cdot g$, allowing us to pull $1\cdot g$ through the partial isometry: }
-		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j+2k+i}\circ\TLPlusPIso{n+j+k}{k+i}{k}\right)\\
-		&= (1\cdot g)\circ f\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(\TLPlusPIso{n}{k}{j}\circ\TLPlusPIso{n+j+k}{k}{i+k}\right)\\
+		(f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\circ
+		% \TLPlusPIso{n}{k}{j{+}2k{+}i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+		% \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		&= \iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j+2k+i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ\rho\lambda(g)\circ
+		% \TLPlusPIso{n+j+k}{k+i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		\intertext{But $g$ is a morphism in Temperley-Lieb, allowing us to pull $g$ through the partial isometry: }
+		&= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j+2k+i}
+  \begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+		 \draw (.3,.8) arc (-180:0:.2cm);
+			\draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+			\draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+		 \draw (1.3,0) arc (180:0:.2cm);
+			\node at (.1,1) {\scriptsize{$n$}};
+		 \node at (.3,1) {\scriptsize{$k$}};
+			\node at (.9,1) {\scriptsize{$j$}};
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\node at (1.7,1) {\scriptsize{$i$}};
+		 \node at (1.3,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+		\end{tikzpicture}
+		\circ
+		% \TLPlusPIso{n+j+k}{k+i}{k}
+		\begin{tikzpicture}[baseline=.4cm]
+			\draw (.1,0) -- (.1,1);
+			\node at (.1,1.2) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,1);
+			\node at (.3,1.2) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,1);
+			\node at (.5,1.2) {\scriptsize{$k$}};
+			\draw (.7,1) arc (-180:0:.4cm);
+			\node at (.7,1.2) {\scriptsize{$k$}};
+			\draw (.9,1) arc (-180:0:.2cm);
+			\node at (.9,1.2) {\scriptsize{$i$}};
+			\draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
+			\node at (1.7,1.2) {\scriptsize{$k$}};
+			\draw (1.3,0) arc (180:0:.4cm);
+			\node at (1.3,-.2) {\scriptsize{$i$}};
+			\draw (1.5,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
+		\end{tikzpicture}
+		\right)\\
+		&= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+		% \TLPlusPIso{n}{k}{j}
+		\begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+			\node at (.1,1) {\scriptsize{$n$}};
+			\draw (.3,.8) arc (-180:0:.2cm);
+			\node at (.3,1) {\scriptsize{$k$}};
+			\draw (.3,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+			\node at (.9,1) {\scriptsize{$j$}};
+			\draw (.5,0) arc (180:0:.2cm);
+			\node at (.5,-.2) {\scriptsize{$k$}};
+			\draw (1.1,0) -- (1.1,.8);
+			\node at (1.1,1) {\scriptsize{$k$}};
+			\draw (1.3,0) -- (1.3,.8);
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\draw (1.5,0) -- (1.5,.8);
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+		\end{tikzpicture}
+		\circ
+		% \TLPlusPIso{n+j+k}{k}{i+k}
+		\begin{tikzpicture}[baseline=.3cm]
+			\draw (.1,0) -- (.1,.8);
+			\node at (.1,1) {\scriptsize{$n$}};
+			\draw (.3,0) -- (.3,.8);
+			\node at (.3,1) {\scriptsize{$j$}};
+			\draw (.5,0) -- (.5,.8);
+			\node at (.5,1) {\scriptsize{$k$}};
+			\draw (.7,.8) arc (-180:0:.2cm);
+			\node at (.7,1) {\scriptsize{$k$}};
+			\draw (.7,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+			\node at (1.3,1) {\scriptsize{$i$}};
+			\draw (.9,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+			\node at (1.5,1) {\scriptsize{$k$}};
+			\draw (1.1,0) arc (180:0:.2cm);
+			\node at (1.5,-.2) {\scriptsize{$k$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+		\end{tikzpicture}
+		\right)\\
 		&=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
 	\end{align*}
-
-	From here, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
-	Finally, we check that the action is associative.
-	\nn{Check that too. Or wave it off, if similar to the previous stuff.}
-
-	It is straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
+	It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, it is routine to verify that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor. 
+	It is even easier to check that the action is associative. It is also straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
 \end{defn}
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
