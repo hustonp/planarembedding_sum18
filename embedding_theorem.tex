@@ -4165,10 +4165,9 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 	If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
 	
 We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$. 
-\nn{fix...}
 As for morphisms, we first consider the case where one morphism is the identity. 
-If $g\in\TLJ_{a\to b}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in\TLJ_{n+a\to n+b}\subseteq M_{n+a\to n+b}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
-The case of $f\vartriangleleft 1$ is more complicated. If $f\in M_{n\to n+2k}=M_{n+k}$, then we define 
+	If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
+	The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
 \[f\vartriangleleft 1_{j+k}=f\circ\TLPlusPIso{n}{k}{j}\text{,}\]
 while for $j<k$, we set 
 \[f\vartriangleleft 1_j=f\circ\TLMinusPIso{n}{j}{k}\text{.}\]
@@ -4176,7 +4175,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 
 	
 	Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
-	We show the case where $f:[n]\to[n+2k]$ and $g:\TLJ_m\to\TLJ_{m+2\ell}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in\TLJ_{(k+j)\to(k+j)+2(k+i)}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
+	We show the case where $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to{m+2\ell}_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in{(k+j)}_{\TLJ}\to(k+j)+2(k+i)_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
 	Let $\iota$ denote the inclusions in $M_\bullet$, and let $\lambda$ and $\rho$ denote the left and right inclusions in $\TLJ$. 
 	By definition, we have 
 	\begin{align*}
