@@ -4176,6 +4176,8 @@ The category $\cM$ obtains a trace $\Tr$ from the Markov tower $(M_\bullet,\tr_\
 %\end{proof}
 
 
+\nn{TODO: How does the category change under the operations in the previous section?}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Temperley-Lieb-Jones module categories} 
 \label{sec:TLJmodules}
@@ -4566,102 +4568,118 @@ We then discuss various operations on the inclusion, and how such operations aff
 
 %Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
-There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
-We refer the reader to \cite{MR2812459} for more details on this construction. 
-We will need the following:
-\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
-For any $n$, the map:
-\[
-\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
-\]
-defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
-\end{prop}
+There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. 
+Denote by $(A_n,\tr_n)_{n\geq 0}$ the Jones tower for inclusion $A_0\subset (A_1,\tr_1)$.
+The box spaces are defined by the relative commutants
+$$
+\cP_{n,+}:=A_0'\cap A_{n} 
+\qquad\qquad
+\cP_{n,-}:=A_1'\cap A_{n+1},
+$$
+which are finite dimensional by \cite[Prop.~2.7.3]{MR996807}.
+We refer the reader to \cite[\S2.3]{MR2812459} for the action of tangles.
+The $\dag$-structure is given by $*$ in the relative commutants. 
+We remark that one important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$, but not on a choice of basis. 
+%We refer the reader to \cite{MR2812459} for more details on this construction. 
 
-For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
-\begin{itemize}
-\item All input/output disks are parallel rectangles.
-\item All strings are smooth, strings emanating from the input disks come from the top of the disk, and strings connected to the output disk connect to the top.
-\item The maxima and minima of any two strings occurs at different heights, and no extrema ever occurs at the same height as that of the top or bottom of a rectangle.
-\item The $\ast$ of a tangle is always on the left edge of the boundary rectangle.
-\end{itemize}
+\nn{Insert the theorem which says it exists and says it is uniquely characterized by certain tangles.}
 
+%We will need the following:
+%\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
+%For any $n$, the map:
+%\[
+%\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
+%\]
+%defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
+%\end{prop}
+%
+%For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
+%\begin{itemize}
+%\item All input/output disks are parallel rectangles.
+%\item All strings are smooth, strings emanating from the input disks come from the top of the disk, and strings connected to the output disk connect to the top.
+%\item The maxima and minima of any two strings occurs at different heights, and no extrema ever occurs at the same height as that of the top or bottom of a rectangle.
+%\item The $\ast$ of a tangle is always on the left edge of the boundary rectangle.
+%\end{itemize}
+%
+%
+%\begin{defn} 
+%The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
+%
+%	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. 
+%	In the sequel, we will supress the isomorphisms $\theta_n$ and $\theta_n^{-1}$ to ease the notation. 
+%
+%	Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
+%	\begin{itemize}
+%	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
+%	\[
+%	x_1\otimes\cdots \otimes x_{n_y} 
+%	\mapsto 
+%	x_1\otimes \cdots\otimes x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots\otimes x_{n_y}
+%	\]
+%	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
+%	\[
+%	x_1\otimes\cdots \otimes x_{n_y} 
+%	\mapsto 
+%	x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
+%	=
+%	x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
+%	\]
+%	Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
+%	\item The effect of passing upwards through the extrema of a strand is as follows: 
+%\begin{align*}
+%	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
+%		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+%		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+%		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+%		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+%		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+%	\end{tikzpicture}
+%	\,: x\otimes y\mapsto xy \\
+%	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
+%		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+%		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+%		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+%		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
+%		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+%	\end{tikzpicture}
+%	\,: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
+%	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
+%		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+%		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+%		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+%		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+%		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+%	\end{tikzpicture}
+%	\,: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
+%	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
+%		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
+%		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
+%		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+%		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
+%		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
+%		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
+%	\end{tikzpicture}
+%	\,: x\otimes y \mapsto x\otimes 1 \otimes y 
+%\end{align*}
+%	
+%\end{itemize} 
+%The $\dag$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
+%\end{defn}
 
-\begin{defn} 
-The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
-
-	The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. 
-	In the sequel, we will supress the isomorphisms $\theta_n$ and $\theta_n^{-1}$ to ease the notation. 
-
-	Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
-	\begin{itemize}
-	\item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
-	\[
-	x_1\otimes\cdots \otimes x_{n_y} 
-	\mapsto 
-	x_1\otimes \cdots\otimes x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots\otimes x_{n_y}
-	\]
-	 If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into	$\eta_y$ in the following way:
-	\[
-	x_1\otimes\cdots \otimes x_{n_y} 
-	\mapsto 
-	x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
-	=
-	x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
-	\]
-	Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
-	\item The effect of passing upwards through the extrema of a strand is as follows: 
-\begin{align*}
-	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	\,: x\otimes y\mapsto xy \\
-	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	\,: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
-	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-		\fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	\,: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
-	&\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-		\fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-		\fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-		\fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-		\draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-		\draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-	\end{tikzpicture}
-	\,: x\otimes y \mapsto x\otimes 1 \otimes y 
-\end{align*}
-	
-\end{itemize} 
-The $\dag$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
-\end{defn}
-
-We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\ast$-planar algebra, and then make use of the following theorem:
+We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\dag$-planar algebra, and then make use of the following theorem:
 
 \begin{thm}[{\cite[Theorem 3.28]{MR2812459}}] \label{planaralgebraisomorphism}
 The canonical planar $\dag$-algebra associated to the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\dag$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
+
+
 
 The following two subsections will describe two isomorphisms between canonical $\dag$-planar algebras of related strongly Markov inclusions. Both are well known to experts, and will motivate constructions detailed in the later sections of this article.
 
@@ -5358,7 +5376,6 @@ p\left(\sum_{a} a(px)a^* + \sum_{b} (1-p)bx b^*(1-p) \right)
 $$
 Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 \end{proof}
-\nn{TODO: How does the category change under the operations in the previous section?}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
