@@ -1814,8 +1814,8 @@ Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \
 $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
 \end{rem}
 
-\begin{rem}\label{Rem:BratelliTower}
-Just as one may describe may describe a unital inclusion of finite dimensional von Neumann algebras with a bipartite graph one may describe a Markov sequence $\left( M_{n}, \tr_{n}, e_{n} \right )$ with an infinite graph which we will call the \textit{Bratelli Tower}. We construct this graph by gluing together the Bratelli diagrams for the inclusions $M_{n}\subseteq M_{n+1}$ and $M_{n+1}\subseteq M_{n+2}$ along the vertices corresponding to the minimal central projections of $M_{n+1}$.
+\begin{rem}\label{Rem:BratelliDiagram}
+Just as one may describe may describe a unital inclusion of finite dimensional von Neumann algebras with a bipartite graph one may describe a Markov sequence $\left( M_{n}, \tr_{n}, e_{n} \right )$ with an infinite graph, the \textit{Bratelli diagram}. We construct this graph by gluing together the Bratelli diagrams for the inclusions $M_{n}\subseteq M_{n+1}$ and $M_{n+1}\subseteq M_{n+2}$ along the vertices corresponding to the minimal central projections of $M_{n+1}$.
 \end{rem}
 
 \begin{prop}\label{prop:ElementaryMarkov} A Markov tower satisfies the following elementary properties for $n\geq 1$.
@@ -2181,7 +2181,7 @@ For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
 \end{prop}
 
 \begin{remark}
-Notice that shifting a Markov tower simply truncates the Bratelli diagram (as defined in \ref{Rem:BratelliTower}), and by a similar argument to the one used to show fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
+Notice that shifting a Markov tower simply truncates the Bratelli diagram (as defined in \ref{Rem:BratelliDiagram}), and by a similar argument to the one used to show fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
 \end{remark}
 
 %Similar to the discussion in \S\ref{sec:CompressionIso}, 
@@ -4412,7 +4412,40 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 \right)\\
 &=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
 	\end{align*}
-	It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
+	It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. 
+	The latter is essentially trivial. As for the former, we describe a representative case. Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+4i+2j]_{\cM}\to[n+2i]_{\cM}$, where $j=i+\ell$, and suppose $m=k+i+j$. Then 
+	\begin{align*}
+		(g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) &= 
+		\begin{tikzpicture}[baseline=3cm]
+			\draw (.2,0) -- (.2,.8);
+			\node at (.2,1) {\scriptsize{$n$}};
+			\draw (.4,0) -- (.4,.8);
+			\node at (.4,1) {\scriptsize{$i$}};
+			\draw (.6,0) -- (.6,.8);
+			\node at (.6,1) {\scriptsize{$i$}};
+			\draw (.8,0) arc (180:0:.2cm);
+			\node at (.8,-.2) {\scriptsize{$j$}};
+			\draw (.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.4,0);
+			\node at (.8,1) {\scriptsize{$k$}};
+			\draw (1,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.6,0);
+			\node at (1,1) {\scriptsize{$i$}};
+			\draw (1.2,.8) arc (-180:0:.4cm);
+			\node at (1.2,1) {\scriptsize{$\ell$}};
+			\draw (1.4,.8) arc (-180:0:.2cm);
+			\node at (1.4,1) {\scriptsize{$i$}};
+			\draw[thick, rounded corners = 5pt] (0,0) rectangle (2.3,.8);
+		\end{tikzpicture}
+		\circ\rho(g)\circ\rho(f)\circ\rho\left(
+		\begin{tikzpicture}[baseline=3cm]
+			\draw (.2,0) -- (.2,.8);
+			\node at (.2,1) {\scriptsize{$n$}};
+
+		\end{tikzpicture}\right)\circ
+		\begin{tikzpicture}[baseline=3cm]
+
+		\end{tikzpicture} % todo add E
+	\end{align*}
+	From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
 	It is even easier to check that the action is associative. It is also straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
 \end{defn}
 
