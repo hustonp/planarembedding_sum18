@@ -2461,12 +2461,10 @@ This completes the proof.
 \begin{remark}
 If $\left( M_n, \tr_n, e_{n+1} \right )_{n \geq 0}$ is a Markov tower, then we know from proposition \ref{prop:MultistepJonesProjections} that 
 $\left( M_{kn}, \tr_{kn}, g_{n+1} \right )_{n\geq 0}$ is also a Markov tower. 
-	The Bratteli diagram for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the Bratelli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new tower is the number of upward paths between those vertices in the old tower. 
-	Taking the $k$-step basic construction therefore collapses the vertices of each $k$ levels of the principal graph into one level. 
-	\textcolor{blue}{I liked the previous distinction about even and odd $k$. -Dave}
-\nn{	Since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph. 
-In general, there seems to be no obivious procedure for calculating numbers of edges in the multistep principal graph simpler than computing the Bratteli diagram.}
+	The Bratteli diagram for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the Bratelli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new diagram is the number of upward paths between those vertices in the old diagram. In the case where $k$ is odd, taking the $k$-step basic construction therefore collapses the vertices of each $k$ levels of the principal graph into one level. 
+\nn{	Since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph. In general, there seems to be no obvious procedure for calculating numbers of edges in the multistep principal graph simpler than computing the Bratteli diagram.}
 \textcolor{blue}{The number of paths of length $j$ between two vertices is the entry of the adjacency matrix taken to the $j$-th power. -Dave}
+	When $k$ is even, we lose the odd part of the principal graph entirely; aside from this, the situation is the same. 
 %	\nn{So, say less? Such a claim of difficulty seems fraught.}
 \end{remark}
 
