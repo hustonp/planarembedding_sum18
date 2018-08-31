@@ -2455,7 +2455,7 @@ This completes the proof.
 
 
 \begin{remark}
-If $\left( M_n, \tr_n, e_{n+1} \right )_{n \geq 0}$ is a Markov tower, then we know from proposition \ref{prop:MultistepJonesProjections} that 
+If $\left( M_n, \tr_n, e_{n+1} \right )_{n \geq 0}$ is a Markov tower, then we know from Proposition \ref{prop:MultistepJonesProjections} that 
 $\left( M_{kn}, \tr_{kn}, g_{n+1} \right )_{n\geq 0}$ is also a Markov tower. 
 The Bratteli diagram for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the original Bratteli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new diagram is the number of upward paths between those vertices in the old diagram.
 Note that, since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph.
@@ -3553,9 +3553,9 @@ Because $\pi$ respects $\dag$, as in the definition above, we only need to consi
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
 	\nn{Need to standardize punctuation policy. Consider also \ref{lem:LeftKink}.}
 Then 
-\begin{align*}
+$$
 \pi(y\circ x)
-		&=
+=
 d^{-2i-j}E_{n+i+j}
 \left(yx \cdot 
 	% \TLPlusPIso{n}{i}{j}
@@ -3586,8 +3586,10 @@ d^{-2i-j}E_{n+i+j}
 		\node at (.6,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture}
-	\intertext{Lemma \ref{lem:LeftKink} gives }
-	\pi(y\circ x) &= d^{-i-j} yx \cdot 
+$$
+Lemma \ref{lem:LeftKink} gives 
+$$
+	\pi(y\circ x) = d^{-i-j} yx \cdot 
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd 
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3603,13 +3605,13 @@ d^{-2i-j}E_{n+i+j}
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture}
 	= \pi(y) \cdot \pi(x)
-\end{align*}
+$$
 \item[\underline{\ref{eq:UPdown}:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
-\begin{align*}
-	\pi(y\circ x)
-	&=d^{-2i-j}E_{n+i}\left(yx\cdot 
+$$
+\pi(y\circ x)
+=d^{-2i-j}E_{n+i}\left(yx\cdot 
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3622,7 +3624,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\right)
+\right)
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3636,9 +3638,11 @@ Then
 		\draw (1,.8) arc (-180:0:.2cm);
 		\node at (1,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
-	\end{tikzpicture}\\
-	\intertext{Using lemma \ref{lem:LeftKink}, we have 
-	\[d^{-i}E_{n+i}\left(E_{n+2i}\left(yx\cdot
+	\end{tikzpicture}
+$$
+Using Lemma \ref{lem:LeftKink}, we have 
+$$
+d^{-i}E_{n+i}\left(E_{n+2i}\left(yx\cdot
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3651,7 +3655,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\right)\right)
+\right)\right)
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3662,8 +3666,8 @@ Then
 		\node at (.4,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
 	\end{tikzpicture}
-	=
-	E_{n+2i}\left(yx\cdot
+=
+E_{n+2i}\left(yx\cdot
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3676,7 +3680,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\right)
+\right)
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3686,11 +3690,13 @@ Then
 		\draw (.4,.8) arc (-180:0:.2cm);
 		\node at (.4,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
-	\end{tikzpicture}\]
-	Since $E_{n+i}=E_{n+i}\circ E_{n+2i}$, we have }
-	\pi(y\circ x)
-	&= 
-	d^{-i-j}E_{n+2i}\left(yx\cdot
+	\end{tikzpicture}
+$$
+Since $E_{n+i}=E_{n+i}\circ E_{n+2i}$, we have 
+$$
+\pi(y\circ x)
+= 
+d^{-i-j}E_{n+2i}\left(yx\cdot
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3703,7 +3709,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\right)
+\right)
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3717,8 +3723,10 @@ Then
 		\draw (1,.8) arc (-180:0:.2cm);
 		\node at (1,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
-	\end{tikzpicture}\\
-	\intertext{Because $yx\cdot
+	\end{tikzpicture}
+$$
+Because 
+$yx\cdot
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3731,7 +3739,9 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\in M_{n+2i+j}$ and, by proposition \ref{prop:MultistepJonesProjections}, we know that $
+\in M_{n+2i+j}$ 
+and, by Proposition \ref{prop:MultistepJonesProjections}, we know that 
+$
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3746,8 +3756,10 @@ Then
 		\node at (.8,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}
-	$ implements $E^{n+2i+j}_{n+2i}$, so }
-	\pi(y\circ x)&=d^{-i-j}
+$ 
+implements $E^{n+2i+j}_{n+2i}$, so
+$$
+\pi(y\circ x)=d^{-i-j}
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3762,7 +3774,7 @@ Then
 		\node at (.8,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}
-	\cdot yx \cdot 
+\cdot yx \cdot 
 	% \TLMinusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3775,7 +3787,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\cdot
+\cdot
 	% \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3791,12 +3803,12 @@ Then
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture} % \\ % but remember to restore the &= below
 	= \pi(y) \cdot \pi(x)
-\end{align*}
+$$
 \item[\underline{\ref{eq:downUP}:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
 Then 
-\begin{align*}
-	\pi(y\circ x) &= d^{-i-j}y\cdot
+$$
+	\pi(y\circ x) = d^{-i-j}y\cdot
 	% \TLPlusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3823,9 +3835,11 @@ Then
 		\draw (.8,.8) arc (-180:0:.2cm);
 		\node at (.8,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
-	\end{tikzpicture}\\
-	\intertext{ and }
-	\pi(y)\cdot \pi(x) &= d^{-i-j}y\cdot
+	\end{tikzpicture}
+$$
+and
+$$
+\pi(y)\cdot \pi(x) = d^{-i-j}y\cdot
 	% \TLCapJoin{n}{i}{j}{j}{i}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3840,9 +3854,11 @@ Then
 		\node at (.6,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture}
-	\cdot x
+\cdot x
+$$
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
-	\intertext{but these are equal, as }
+but these are equal, as
+\begin{equation*}
  y\cdot
 	% \TLPlusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
@@ -3856,7 +3872,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\cdot x \cdot
+\cdot x \cdot
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3871,7 +3887,7 @@ Then
 		\node at (.8,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}
-	&= y\cdot
+= y\cdot
 	% \TLPlusPIso{n}{i}{j}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3884,7 +3900,7 @@ Then
 		\node at (.6,1) {\scriptsize{$i$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
 	\end{tikzpicture}
-	\cdot
+\cdot
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3899,9 +3915,9 @@ Then
 		\node at (.8,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
 	\end{tikzpicture}
-	\cdot x\\ % \cdot
+\cdot x % \cdot
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
-	&= y\cdot 
+= y\cdot 
 	% \TLCapJoin{n}{i}{j}{j}{i}
 	\begin{tikzpicture}[baseline=.3cm]
 		\draw (.2,0) -- (.2,.8);
@@ -3916,10 +3932,10 @@ Then
 		\node at (.6,1) {\scriptsize{$j$}};
 		\draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
 	\end{tikzpicture}
-	\cdot x % \cdot
+\cdot x % \cdot
 	% \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
-\end{align*}
-
+\qedhere
+\end{equation*}
 \end{proof}
 
 \begin{cor}
