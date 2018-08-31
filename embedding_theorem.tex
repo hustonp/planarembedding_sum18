@@ -2181,7 +2181,7 @@ For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
 \end{prop}
 
 \begin{remark}
-Notice that shifting a Markov tower simply truncates the Bratelli tower (as defined in \ref{Rem:BratelliTower}), and by a similar argument to the one used to show fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
+Notice that shifting a Markov tower simply truncates the Bratelli diagram (as defined in \ref{Rem:BratelliTower}), and by a similar argument to the one used to show fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
 \end{remark}
 
 %Similar to the discussion in \S\ref{sec:CompressionIso}, 
@@ -2218,7 +2218,10 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 \end{proof}
 
 \begin{remark}
-We can determine the Bratelli tower and principal graph for $(pM_np, \tr_n^p, pe_{n+1})$, as follows. If $p$ has central support $1$, then the Bratelli tower is unchanged. In general, any vertices on the bottom row corresponding to simple summands of $M_0$ where $p$ does not have support disappear, as well as those edges no longer supported from below. By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtatin the Bratelli tower for $(pM_np, \tr_n^p, pe_{n+1})$.
+We can determine the Bratelli diagram and principal graph for $(pM_np, \tr_n^p, pe_{n+1})$, as follows. 
+If $p$ has central support $1$, then the Bratelli diagram is unchanged. 
+In general, any vertices on the bottom row corresponding to simple summands of $M_0$ where $p$ does not have support disappear, as well as those edges no longer supported from below. 
+By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtatin the Bratelli diagram for $(pM_np, \tr_n^p, pe_{n+1})$.
 \end{remark}
 
 \begin{nota}
@@ -2458,9 +2461,13 @@ This completes the proof.
 \begin{remark}
 If $\left( M_n, \tr_n, e_{n+1} \right )_{n \geq 0}$ is a Markov tower, then we know from proposition \ref{prop:MultistepJonesProjections} that 
 $\left( M_{kn}, \tr_{kn}, g_{n+1} \right )_{n\geq 0}$ is also a Markov tower. 
-	The Bratteli tower for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the Bratelli tower quite easily: the vertices of the level of the Bratteli tower corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new tower is the number of upward paths between those vertices in the old tower. Taking the $k$-step basic construction therefore collapses the vertices of each $k$ levels of the principal graph into one level. 
-	Since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli tower, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph. In general, there seems to be no obivious procedure for calculating numbers of edges in the multistep principal graph simpler than computing the Bratteli tower. 
-	\nn{So, say less? Such a claim of difficulty seems fraught.}
+	The Bratteli diagram for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the Bratelli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new tower is the number of upward paths between those vertices in the old tower. 
+	Taking the $k$-step basic construction therefore collapses the vertices of each $k$ levels of the principal graph into one level. 
+	\textcolor{blue}{I liked the previous distinction about even and odd $k$. -Dave}
+\nn{	Since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph. 
+In general, there seems to be no obivious procedure for calculating numbers of edges in the multistep principal graph simpler than computing the Bratteli diagram.}
+\textcolor{blue}{The number of paths of length $j$ between two vertices is the entry of the adjacency matrix taken to the $j$-th power. -Dave}
+%	\nn{So, say less? Such a claim of difficulty seems fraught.}
 \end{remark}
 
 
