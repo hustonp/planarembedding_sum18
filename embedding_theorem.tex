@@ -3953,10 +3953,8 @@ Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism
 By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
 
-The category $\cM$ obtains a trace $\Tr$ from the Markov tower $(M_\bullet,\tr_\bullet)$, by renormalizing so that isomorphic projections have the same trace: set $\Tr_n=\delta^n\tr_n$. The initial functor $\TLJ\to\cM$ is then tracial, giving $\cM$ the structure of a cyclic pivotal $\TLJ$ module with generator $1_{M_0}$. 
-\nn{trace preserving does not imply pivotal functor. 
-See my unitary dual paper. 
-Must show compatibility condtion.}
+
+
 
 %\begin{prop}
 %\label{prop:MarkovAssociative}
@@ -4435,11 +4433,47 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 &=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
  \end{align*}
  It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
- It is even easier to check that the action is associative. It is also straightforward to verify that the trace on $M_\bullet$ \nn{normalized?} makes $M_\bullet$ a pivotal right module. 
+ It is even easier to check that the action is associative. 
+\end{defn}
+
+\begin{defn}[Pivotal module structure] 
+\label{def:PivotalModuleFromMarkovTower}
+The category $\cM$ obtains a unitary trace $\Tr^\cM$ from the Markov tower $(M_\bullet,\tr_\bullet)$, by renormalizing so that isomorphic projections have the same trace.
+For $[n] \in \cM$, we define $\Tr^\cM_{[n]} : \cM([n] \to [n]) = M_n \to \bbC$ by $d^n \tr_n$.
+It is clear that $\Tr^\cM_{[n]}$ is positive definite for all $n\geq 0$.
+Now if $x \in \cM([n] \to [n+ 2k])= M_{n+k}$ and $y\in \cM ([n+ 2k] \to [n]) = M_{n+ k}$, observe that 
+\begin{align*}
+\Tr^\cM_{[n]}(y\circ x)
+&\underset{\ref{compose:updown}}{:=}
+d^n\tr_n(E^{n+k}_n(yx))
+=
+d^n \tr_{n+k}(yx)
+=
+d^{n+k}
+\cdot
+\tr_{n+k}
+\left(
+x \cdot
+d^{-k}\,
+\begin{tikzpicture}[baseline = .3cm]
+ \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
+ \draw (.2,0) -- (.2,.8);
+ \draw (.5,.8) arc (-180:0:.2cm);
+ \draw (.5,0) arc (180:0:.2cm);
+ \node at (.2,1) {\scriptsize{$n$}};
+ \node at (.5,1) {\scriptsize{$k$}};
+ \node at (.5,-.2) {\scriptsize{$k$}};
+\end{tikzpicture}\,
+\cdot y
+\right)
+\\&\underset{\ref{compose:downup}}{=:}
+\Tr^\cM_{[n+2k]}(x\circ y).
+\end{align*}
+\todo{$\cT\cL\cJ$-compatibility.}
 \end{defn}
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
-We saw in Definition \ref{def:ModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
+We saw in Definitions \ref{def:ModuleFromMarkovTower} and \ref{def:PivotalModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
 We saw in Example \nn{} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
 defining $M_n := \End(m \vartriangleleft X^{\text{alt}\otimes n})$ and $\tr_n := \Tr^\cM_{m \vartriangleleft X^{\text{alt}\otimes n}}$ defines a connected Markov tower.
 One now shows these two processes are mutually inverse up to equivalence.
