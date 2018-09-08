@@ -823,6 +823,7 @@ Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cQ_\bullet$ is \em
 %We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra $\cP_\bullet$.
 
 \begin{thmalpha}
+\label{thm:ModulePAEmbedding}
 The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cP_{n,\pm} \to \cQ_{n,\pm}$
 $$
 \begin{tikzpicture}[baseline]
@@ -854,8 +855,9 @@ give a planar $\dag$-algebra embedding $\cP_\bullet \hookrightarrow \cQ_\bullet$
 Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cP_\bullet$ from \cite{MR2812459}.
 Similarly, we get an embedding into the graph planar algebra of the dual principal graph from choosing $\cM= \cC_{10} \oplus \cC_{11}$ and $m \in \cC_{10}$ is an arbitrary choice of simple object.
 
-\nn{invariance of embedding. 
-explain conceptual origin of above embedding map from shift iso.}
+Notice we made two choices in our proof of the module embedding theorem; we picked a simple object $m\in \cM$, and we picked $r\geq 0$ such that $M_{2r}\subset (M_{2r+1},\tr_{2r+1})$ is strongly Markov.
+In our final Section \ref{sec:InvarianceOfEmbedding}, we explain that picking a different simple $m'\in \cM$ or a different $r'\geq 0$, we get an equivalent planar $\dag$-algebra embedding $\cP_\bullet \to \cG\cP\cA(\Gamma)_\bullet$.
+Indeed, we show that the two strongly Markov inclusions are related by a shift and a compression by a projection with central support 1, and these processes yield planar $\dag$-isomorphisms on the associated canonical relative commutant planar algebras.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Acknowledgements.}
@@ -4626,7 +4628,123 @@ The $\dag$-structure is given by $*$ in the relative commutants.
 We remark that one important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$, but not on a choice of basis. 
 %We refer the reader to \cite{MR2812459} for more details on this construction. 
 
-\nn{Insert the theorem which says it exists and says it is uniquely characterized by certain tangles.}
+The following theorem uniquely characterizes the canonical relative commutant planar $\dag$-algebra.
+
+\begin{thm}[{\cite[Thm.~2.50]{MR2812459}}]
+Given a strongly Markov inclusion $A_0 \subset (A_1, \tr_1)$, there is a unique planar $\dag$-algebra $\cP_\bullet$ of modulus $d = [A_1: A_0]^{1/2}$ whose box spaces are given by
+$$
+\cP_{n,+}:=A_0'\cap A_{n} 
+\qquad\qquad
+\cP_{n,-}:=A_1'\cap A_{n+1},
+$$
+such that
+\begin{enumerate}[label={\rm(PA\arabic*)}]
+\item
+The $\dag$-structure of $\cP_{n,\pm}$ is given by $x^\dag = x^*$ in the relative commutant, and stacking corresponds to multiplication in the relative commutant:
+$$
+\begin{tikzpicture}[baseline=.35cm]
+ \draw (0,-.5) -- (0,1.4);
+ \node at (-.2,1.35) {\scriptsize{$n$}};
+ \node at (-.2,.45) {\scriptsize{$n$}};
+ \node at (-.2,-.45) {\scriptsize{$n$}};
+ \roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$y$}
+ \roundNbox{unshaded}{(0,.9)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+xy \in \cP_{n,\pm}.
+$$
+\item
+The Jones projection $e_{n} \in A_0'\cap A_n$ for the strongly Markov inclusion $A_{n-1}\subset A_n$ is given by the following tangles depending on parity for $k\geq 0$:
+$$
+e_{2k+1,+}
+:=
+\begin{tikzpicture}[baseline]
+ \draw (0,-.5) -- (0,.5);
+ \filldraw[shaded] (.3,.5) arc (-180:0:.3cm);
+ \filldraw[shaded] (.3,-.5) arc (180:0:.3cm);
+ \node at (.2,0){\tiny{$2k$}};
+\end{tikzpicture} 
+\qquad
+e_{2k+2,+}
+:=
+\begin{tikzpicture}[baseline]
+ \fill[shaded] (0,-.5) rectangle (1.2,.5);
+ \draw (0,-.5) -- (0,.5);
+ \filldraw[unshaded] (.3,.5) arc (-180:0:.3cm);
+ \filldraw[unshaded] (.3,-.5) arc (180:0:.3cm);
+ \node at (.4,0){\tiny{$2k+1$}};
+\end{tikzpicture} \,.
+$$
+
+\item
+For $x\in \cP_{n,+} = A_0'\cap A_n$ and $\{b\}$ a Pimsner-Popa basis for $A_1$ over $A_0$,
+\begin{itemize}
+\item
+$
+\begin{tikzpicture}[baseline=-.1cm]
+ \draw (.4,-.5) -- (.4,.5);
+ \draw (0,-.5) -- (0,.5);
+ \node at (-.2,.45) {\scriptsize{$n$}};
+ \node at (-.2,-.45) {\scriptsize{$n$}};
+ \roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+x\in \cP_{n+1,+}=A_0'\cap A_{n+1}
+$,
+%i.e., the image of $x$ under the inclusion $A_0'\cap A_n \hookrightarrow A_0'\cap A_{n+1}$.
+
+\item
+$
+\begin{tikzpicture}[baseline=-.1cm]
+ \draw (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+ \draw (0,-.5) -- (0,.5);
+ \node at (-.4,.45) {\scriptsize{$n-1$}};
+ \node at (-.4,-.45) {\scriptsize{$n-1$}};
+ \roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+dE^{A_n}_{A_{n-1}}(x) 
+\in 
+\cP_{n-1,+}=A_0'\cap A_{n-1}
+$, and
+
+\item
+$
+\begin{tikzpicture}[baseline=-.1cm, xscale=-1]
+ \fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
+ \filldraw[unshaded] (.15,-.25) arc (-180:0:.15cm) -- (.45,.25) arc (0:180:.15cm);
+ \draw (0,-.5) -- (0,.5);
+ \node at (-.4,.45) {\scriptsize{$n-1$}};
+ \node at (-.4,-.45) {\scriptsize{$n-1$}};
+ \roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+d E^{A_0'}_{A_1'}(x)
+=
+d^{-1}\sum_b bxb^*
+\in 
+\cP_{n,-}
+=
+A_1'\cap A_n
+$.
+\end{itemize}
+
+\item
+For $x\in \cP_{n,-} = A_1'\cap A_{n+1}$, 
+$
+\begin{tikzpicture}[baseline=-.1cm, xscale=-1]
+ \fill[shaded] (.4,-.5) -- (.4,.5) -- (0,.5) -- (0,-.5);
+ \draw (.4,-.5) -- (.4,.5);
+ \draw (0,-.5) -- (0,.5);
+ \node at (-.2,.45) {\scriptsize{$n$}};
+ \node at (-.2,-.45) {\scriptsize{$n$}};
+ \roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$x$}
+\end{tikzpicture}
+=
+x\in \cP_{n+1,+}= A_0'\cap A_{n+1}
+$.
+\end{enumerate}
+\end{thm}
 
 %We will need the following:
 %\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
@@ -5745,6 +5863,8 @@ Let $Q_{\bullet}$ be a finite depth subfactor planar algebra then there is an em
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Invariance of the embedding}
+\label{sec:InvarianceOfEmbedding}
+
 As the observant reader may have noted, for any $m\in \cM$ one may obtain a different embedding of the subfactor planar algebra $Q_\bullet$ into $G_{\bullet}$ the bipartite graph planar algebra for the fusion graph given by tensoring with the strand, $x$. We will show that differ only by automorphisms of $G_{\bullet}$. Notice that show this it suffices to show that if $\R_{\bullet}$ and $S_{\bullet}$ are canonical planar algebras constructed through the process in section 4, and $\phi$ and $\phi'$ are the respective embeddings of $Q_{\bullet}$ into each then there is some isomorphism $\Psi:R_{\bullet}\rightarrow R{\bullet}$ such that the following triangle commutes:
 
 $$
