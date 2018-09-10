@@ -4473,10 +4473,10 @@ d^{-k}\,
 \Tr^\cM_{[n+2k]}(x\circ y).
 \end{align*}
  The $\TLJ$ action on $\cM$ comes from the fact that $TLJ$ is the initial Markov tower for a given parameter. % say more?
- To see that $\Tr^\cM$ is compatible with the $\TLJ$ action, as required by Definition \ref{def:PivotalModule}, it helps to structure the category $\TLJ$ similarly to $\cM$. To that end, note that the category of projections of the Markov tower $TLJ_\bullet$ is equivalent to the tensor category $\TLJ$, with the internal tensor product given by an action of $\TLJ$ on itself. That this in fact makes $\TLJ$ a tensor category as well as a pivotal $\TLJ$ module is easy to see, since in $\TLJ$, plenty of isotopy is available, unlike the category $\cM$, which is not a-priori a planar algebra or module. Then the morphism $\coev_{[n]}\in\TLJ([0]\to[2n])$ is just $1\in TLJ_n$. % This may be a dumb way to make this argument, although it is true.
+ To see that $\Tr^\cM$ is compatible with the $\TLJ$ action, as required by Definition \ref{def:PivotalModule}, it helps to structure the category $\TLJ$ similarly to $\cM$. To that end, note that the category of projections of the Markov tower $TLJ_\bullet$ is equivalent to the tensor category $\TLJ$, with the internal tensor product given by an action of $\TLJ$ on itself. That the above definition of the action defines a tensor category in the special case of $\TLJ$ is easier to see; in $\TLJ$, plenty of isotopy is available, wheras the category $\cM$, is not a-priori a planar algebra or module. Then the morphism $\coev_{[n]}\in\TLJ([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition.
  Writing out the demand that for all $n$, $k$, and $f\in\TLJ([n]\to[n])$,
  \[\Tr^\cM_{[n]\vartriangleleft[k]}(f)=\Tr^\cM_{[n]}\left((1\vartriangleleft\coev_{[k]}^\dag)\circ(f\vartriangleleft1_{[k]})\circ(1\vartriangleleft\coev_{[k]})\right)\]
- we obtain the trivial requirement
+ and using the fact that the conditional expectation is tracial, we obtain the trivial requirement
   \[\Tr(f)=\Tr\left(E^{n+2k}_n\left(\rho(f)\cdot d^{-k}
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
