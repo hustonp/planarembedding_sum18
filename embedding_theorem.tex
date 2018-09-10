@@ -5569,8 +5569,10 @@ Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 \begin{claim*}
 A finite depth subfactor planar algebra can be embedded into the bipartite graph planar algebra of the fusion graph of the right action of the strand on a cyclic module.
 \end{claim*}
+Let $Q_\bullet$ be a finite depth subfactor planar algebra. \nn{Need to decide on $Q_\bullet$ or $\mathcal{Q}_\bullet$.}
+
 As described in \cite{MR2812459}, one can define a canonical shaded planar $*$-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. % Now that this construction is summarized in a subsection of section 2, we may want to shorten this reference to there. 
-This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{MR2812459}. We have shown that the Markov tower $(A_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $A_{2r} \subset A_{2r+1} \subset A_{2r+2}$ is standard, and let $B_n=A_{2r+n}$. Then the canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(A_{n}\right)$; indeed, by fact \ref{Fact:BratteliPrincipal}, the principle graph of $(A_{n},tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
+This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{MR2812459}. We have shown that the Markov tower $(Q_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be the minimal integer such that the inclusion $Q_{2r} \subset Q_{2r+1} \subset Q_{2r+2}$ is standard, and let $B_n=Q_{2r+n}$. Then $(B_n,\tr_{2r+n})$ is a Markov tower or strongly Markov inclusions. The canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(Q_{n}\right)$, because, by Fact \ref{Fact:BratteliPrincipal}, the principle graph of $(Q_n,\tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
 If we denote the canonical $*$-planar algebra associated to $B_0\subseteq(B_1,tr_1)$ by $P_{\bullet}$, then by construction, we have the following:
 \begin{align*}
  P_{n,+} &=  B'_{0}\cap B_{n} \\
@@ -5601,10 +5603,11 @@ Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q
 \end{tikzpicture} \]
 This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi$ is a planar-$\ast$ algebra map, we again use Lemma \ref{lem:SufficientConditionsForPlanarMap}.
 
-We denote functions in $Q_{\bullet}$ by $\overline{f}$ and functions in $P_{\bullet}$ by $\tr$. We denote the Jones projections in $Q_{\bullet}$ by $e_{j}$ and the Jones projections in  $P_{\bullet}$ by $f_{j}$.
+We denote the inclusion, conditional expecation, and trace in $Q_{\bullet}$ by $\overline{i}$, $\overline{E}$, and $\overline{\tr}$, reserving the plain symbols for the corresponding maps in $P_{\bullet}$.
+We denote the Jones projections in $Q_{\bullet}$ by $e_{j}$ and the Jones projections in $P_{\bullet}$ by $f_{j}$.
 
 \begin{thm}
-The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\ast$-planar subalgebra of $P_{\bullet}$.
+The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\dag$-planar subalgebra of $P_{\bullet}$.
 \end{thm} 
 
 \begin{proof}
@@ -5612,7 +5615,7 @@ Observe that for all $x,y \in Q_{\bullet}$, we have that
 \begin{align*}
  \Phi(x^{*}) &= \Phi(x)^{\ast} \\
  \Phi(xy) &= \Phi(x)\Phi(y) \\
- E_n &= id_{m}\otimes \overline{E}_{2r+n} \\
+ E_n &= \id_{m}\otimes \overline{E}_{2r+n} \\
  i_n &= \id_{m}\otimes \overline{i}_{2r+n} \\
  f_n &= \id_{m} \otimes e_{2r+n} 
 \end{align*}
@@ -5742,8 +5745,7 @@ we discussed that the left-capping tangle in the canonical planar $\ast$-algebra
 E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
 \]
 where $\{b\}$ is a Pimnser Popa basis of $B_1$ over $B_0$. 
-We will now check that left capping preserves $\Phi(Q_{\bullet})$. 
-  For any $x \in Q_{n,+}$, we have 
+This means that, for any $x \in Q_{n,+}$, we have 
 
 \centerline{
   \begin{minipage}{\linewidth}
@@ -5816,9 +5818,10 @@ We will now check that left capping preserves $\Phi(Q_{\bullet})$.
  \]
   \end{minipage}
 }
-Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x)) =\Phi(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x))$.
+Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x)) =\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)$.
 
-\item (Left Inclusion) The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra. Let $\overline{i^{-}_{n}}$ be the negative inclusion in $Q_{n,\pm}$. Graphically, this is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
+\item (Left Inclusion) The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra.
+ Graphically, $\overline{i}$ is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
 \[
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
@@ -5830,20 +5833,6 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
  \node at (0.15,0.8){\tiny{$n$}};
  \node at (-0.45, -0.9){\tiny{$2r+1$}};
  \node at (-0.30,-1.6){\scriptsize{$i_n(\Phi(x))$}};
-\end{tikzpicture}
-\quad
-=
-\quad
-\begin{tikzpicture}[baseline]
- \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
- \fill[shaded] (-0.45,-0.7) -- (-0.45,0.7) -- (0.15,0.7) -- (0.15,-0.7) -- (-0.45,-0.7);
- \draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
- \draw (-0.45,-0.7) -- (-0.45,0.7);
- \draw (0.15,-0.7) -- (0.15,0.7);
- \roundNbox{unshaded}{(0.15,0)}{.3}{0}{0}{$x$};
- \node at (0.15,0.8){\tiny{$n$}};
- \node at (-0.45, -0.9){\tiny{$2r+1$}};
- \node at (-0.30,-1.6){\scriptsize{$\Phi(x)$}};
 \end{tikzpicture}
 \quad
 =
@@ -5865,10 +5854,11 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
 \end{enumerate}
 \end{proof}
 
-We have checked that $\Phi(Q_{\bullet}) \subset P_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $G_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
-we know that $P_\bullet$ is a planar $\ast$-algebra isomorphic to $G_\bullet$. Thus, we have an embedding $Q_\bullet$ into $G_\bullet$.
+We have checked that $\Phi:Q_{\bullet}\to P_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $G_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
+we know that $P_\bullet$ is a planar $\ast$-algebra isomorphic to $G_\bullet$. Thus, we have an embedding of $Q_\bullet$ into $G_\bullet$.
 
 \begin{cor}[The Embedding Theorem]
+ \label{cor:EmbeddingTheorem} % remember to switch the label when changing type of thm later
  A subfactor planar algebra $Q_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a cyclic $Q_\bullet$-module.
 \end{cor}
 
