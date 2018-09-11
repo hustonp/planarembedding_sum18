@@ -2010,6 +2010,7 @@ The principal graph of $M_\bullet$ is precisely the fusion graph of $\cM$ with r
 \end{ex}
 
 \begin{ex}
+\label{example:MarkovTowerFromPlanarModule}
 We obtain the equivalent connected right planar module for the subfactor planar algebra $\cT\cL\cJ(d)_\bullet$ to Example \ref{ex:MarkovTowerFromRightModule} under Theorem \ref{thm:ModuleEquivalence} as follows.
 We define $M_k : = \cM_k$ with its $\dag$-algebra structure and faithful tracial state $\tr_k$ from Definition \ref{def:RightPlanarModule}.
 Jones projections are defined depending on parity by
@@ -4493,7 +4494,7 @@ d^{-k}\,
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
 We saw in Definitions \ref{def:ModuleFromMarkovTower} and \ref{def:PivotalModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
-We saw in Example \nn{} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
+We saw in Example \ref{ex:MarkovTowerFromRightModule} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
 defining $M_n := \End(m \vartriangleleft X^{\text{alt}\otimes n})$ and $\tr_n := \Tr^\cM_{m \vartriangleleft X^{\text{alt}\otimes n}}$ defines a connected Markov tower.
 One now shows these two processes are mutually inverse up to equivalence.
 \nn{todo}
@@ -5366,7 +5367,7 @@ $B$ is algebraically spanned by $A_1$ and $p$, i.e., $B = A_1pA_1 := \spann\set{
 \end{enumerate}
 Then the map $A_2\to B$ given by $ae_1b \mapsto apb$ is a (normal) unital $*$-isomorphism of von Neumann algebras.
 \end{lem}
-In this case, where $B$ is isomorphic to the basic construction $A_2$ of $A_0\subseteq A_1$, we call the inclusion $A_0\subseteq A_1\subseteq B$ \textit{standard}, after \cite{MR2812459}. 
+In this case, where $(B,\tr_B,p)$ is isomorphic to the basic construction $A_2$ of $A_0\subseteq (A_1,\tr_1)$, we call the inclusion $A_0\subseteq (A_1,\tr_1)\subseteq (B,\tr_B,p)$ \textit{standard}, after \cite{MR2812459}. 
 
 We now prove that compression by well-behaved projections of $A_0$ preserves the strong Markov structure.
 Here, `well-behaved' is the condition 
@@ -5478,7 +5479,7 @@ $$
 By Lemma \ref{lem:CompressRelativeCommutant}, the map $\Phi_{n,\pm}:x\mapsto xp$ gives an isomorphism of von Neumann algebras $\Phi_{n,\pm}:\cP_{n,\pm}\to \cQ_{n,\pm}$ for each $n\geq 0$.
 
 \begin{thm}
-\label{thm:IsomorphicStandardInvariants}
+\label{thm:CompresionIsomorphsim}
 The maps $\Phi_{n,\pm} : \cP_{n,\pm} \to \cQ_{n,\pm}$ constitute a planar $\dag$-algebra isomorphism.
 \end{thm}
 \begin{proof}
@@ -5872,30 +5873,57 @@ Let $Q_{\bullet}$ be a finite depth subfactor planar algebra then there is an em
 \subsection{Invariance of the embedding}
 \label{sec:InvarianceOfEmbedding}
 
-As the observant reader may have noted, for any $m\in \cM$ one may obtain a different embedding of the subfactor planar algebra $Q_\bullet$ into $G_{\bullet}$ the bipartite graph planar algebra for the fusion graph given by tensoring with the strand, $x$. We will show that differ only by automorphisms of $G_{\bullet}$. Notice that show this it suffices to show that if $\R_{\bullet}$ and $S_{\bullet}$ are canonical planar algebras constructed through the process in section 4, and $\phi$ and $\phi'$ are the respective embeddings of $Q_{\bullet}$ into each then there is some isomorphism $\Psi:R_{\bullet}\rightarrow R{\bullet}$ such that the following triangle commutes:
+As the observant reader may have noted, we made \emph{three} choices in defining the embedding map from $\cQ_\bullet \hookrightarrow\cG\cP\cA(\Gamma)_\bullet$.
+First, we chose a simple object $m\in \cM$ to get our Markov tower $M_n := \End_\cM(m \vartriangleleft X^{\text{alt}\otimes n})$, and second, we chose $r\geq 0$ such that the inclusion $M_{2r}\subseteq (M_{2r+1}, \tr_{2r+1})\subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
+Third, we chose a basis for the strongly Markov inclusion $M_{2r}\subseteq (M_{2r+1}, \tr_{2r+1})$ to obtain a planar $\dag$-algebra isomorphism from the canonical relative commutant planar algebra $\cP_\bullet$ of the inclusion to the graph planar algebra $\cG\cP\cA(\Gamma)_\bullet$ of the fusion graph $\Gamma$.
+In this section, we show that the embedding does not depend on these choices up to a $\dag$-automorphism of $\cG\cP\cA(\Gamma)_\bullet$.
 
+\begin{defn}
+Suppose $\cQ_\bullet$ is a subfactor planar algebra and $\cP_\bullet, \cP_\bullet'$ are two unitary shaded planar algebras together with planar algebra embeddings $\Phi: \cQ_\bullet \hookrightarrow \cP_\bullet$ and $\Phi': \cQ_\bullet \hookrightarrow \cP_\bullet'$.
+We say the embeddings $\Phi$ and $\Phi'$ are \emph{equivalent} if there is a planar $\dag$-algebra isomorphism $\Psi: \cP_\bullet \to \cP_\bullet'$ such that the following diagram commutes:
 $$
   \begin{tikzcd}
-    Q_{\bullet} \arrow{r}{\phi} \arrow[swap]{dr}{\phi'} & R_{\bullet} \arrow{d}{\Psi} \\
-     & S_{\bullet}
+    Q_{\bullet} \arrow[hook]{r}{\Phi} \arrow[swap, hook]{dr}{\Phi'} & P_{\bullet} \arrow{d}{\Psi} 
+    \\
+     & P_{\bullet}'
   \end{tikzcd}
 $$  
-It suffices to show this because by \ref{planaralgebraisomorphism} we have that $R_{\bullet}$ and $S_{\bullet}$ are both isomorphic to $G_{\bullet}$ so $\phi$ lifts to an automorphism of $G_{\bullet}$. First we will show this for the special where we take two different values for $r$ such that the inclusion $A_{2r}\subseteq A_{2r+1}\subseteq A_{2r+2}$ is standard. The following lemma is a direct consequence of the shift isomorphism discussed in section \ref{ssec:shift}.
+\end{defn}
+
+
+We now treat our three choices for our embedding in reverse order.
+First, note that choosing a different basis for the inclusion just alters the isomorphism $\cP_\bullet \cong \cG\cP\cA(\Gamma)_\bullet$ by a $\dag$-automorphism of $\cG\cP\cA(\Gamma)_\bullet$, resulting in equivalent embeddings.
+
+Second, suppose we chose a different $r'\geq 0$ such that the inclusion $M_{2r'}\subseteq (M_{2r'+1}, \tr_{2r'+1})\subseteq (M_{2r'+2}, \tr_{2r'+2}, e_{2r'+1})$ is standard.
+Without loss of generality, we may assume $r' = r+k$ for $k\in \bbN$.
+Denoting the canonical relative commutant planar algebra for the strongly Markov inclusion $M_{2r+2k}\subseteq (M_{2r+2k+1}, \tr_{2r+2k+1})$ by $\cP_\bullet'$, we see that $\cP_\bullet'\cong \cP_\bullet$ by iteratively applying the shift-by-2 planar algebra isomorphism from Theorem \ref{ShiftIso}. 
+Hence replacing $r$ with $r'$ results in equivalent embeddings.
+
+Third, suppose we chose the simple object $n\in \cM_0 \subset \cM$ instead of $m$, where $\cM_0 = \cM\vartriangleleft 1_0$.
+For $i\geq 0$, define $N_i := \End_\cM(n \vartriangleleft X^{\text{alt}\otimes i})$.
+Since $\cM$ is indecomposable as a right $\cC$-module category, there is an $j>0$ such that $n$ is a subobject of $m \vartriangleleft X^{\text{alt}\otimes 2j}$.
+Fix an orthogonal projection $p \in M_{2j} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2j})$ with image isomorphic to $n$.
+Notice that the compressed shifted Markov tower $(pM_{2j+k}p, \tr_{2j+k}^p, pe_{2j+k+1})_{k\geq 0}$ is $*$-isomorphic to the Markov tower $(N_{k}, \tr_k, f_{k+1})_{k\geq 0}$, where we denote by $e_i$ the Jones projections in $M_\bullet $ and by $f_i$ the Jones projections in $N_\bullet$.
+Again since $\cM$ is indecomposable, we may fix $k>0$ sufficiently large such that the following three conditions hold:
+\nn{verify this is accurate.}
+\begin{enumerate}[label={\rm(\arabic*)}]
+\item
+The projection $p\vartriangleleft \id_{X^{\text{alt}\otimes 2k}}$ has central support 1 in the finite dimensional von Neumann algebra $M_{2(j+k)} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2k})$, which is equivalent to $M_{2(k+n)} = M_{2(k+n)}p M_{2(k+n)}$ by finite dimensionality.
+\item
+Setting $r:= 2(j+k)$, the inclusion $M_{2r} \subseteq (M_{2r+1}, \tr_{2r+1}) \subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
+\item
+The inclusion $N_{2k} \subseteq (N_{2k+1}, \tr_{2k+1}) \subseteq (N_{2k+2}, \tr_{2k+2}, e_{2k+1})$ is standard.
+\end{enumerate}
+Now by Theorem \ref{thm:CompresionIsomorphsim}, compressing $M_\bullet$ by $p\vartriangleleft \id_{X^{\text{alt}\otimes 2n}} \in M_{2r}$ gives a planar $\dag$-algebra isomorphism from the canonical relative commutant planar algebra $\cP_\bullet$ of the strongly Markov inclusion $M_{2r} \subseteq (M_{2r+1}, \tr_{2r+1})$ to the 
+canonical relative commutant planar algebra $\cP^p_\bullet$ of the strongly Markov inclusion $pM_{2r}p \subseteq (pM_{2r+1}p, \tr^p_{2r+1})$, where $\tr^p_{2r+1}$ is defined analogously to \eqref{eq:CompressedTrace1}, which, in turn, is $\dag$-isomorphic to the canonical relative commutant planar algebra $\cR_\bullet$ of the strongly Markov inclusion $N_{2k} \subseteq (N_{2k+1}, \tr_{2k+1})$.
+Hence replacing $m$ with $n$ results in equivalent embeddings. 
+
+We have just proved the following.
 
 \begin{prop}
-Let $\cR_{\bullet}$ and $\cS_{\bullet}$ be the canonical planar algebras given by the inclusions $A_{2r}\subseteq A_{2r+1}$ and $A_{2s}\subseteq A_{2s+1}$ where $A_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$ for some $m\in \cC_{20}$. Let $\phi$ and $\phi'$ be the embeddings of $\cQ_{\bullet}$ into $\cR_{\bullet}$ and $\cS_{\bullet}$ respectively. Then there is some isomorphism $\Psi:R_{\bullet}\rightarrow R_{\bullet}$ such that the following triangle commutes:
-
-$$
-  \begin{tikzcd}
-    Q_{\bullet} \arrow{r}{\phi} \arrow[swap]{dr}{\phi'} & R_{\bullet} \arrow{d}{\Psi} \\
-     & S_{\bullet}
-  \end{tikzcd}
-$$  
+The embedding $\cQ_\bullet \hookrightarrow \cG\cP\cA(\Gamma)_\bullet$ is invariant under our choices, up to equivalence.
 \end{prop}
 
-\begin{proof}
-By induction, we need only consider the case $s=r+1$. In this case, we already have an isomorphism of planar algebras $\Psi:\cR_{\bullet}\rightarrow \cS_{\bullet}$ by lemma \ref{ShiftIso}. It is clear that $\Psi\circ \phi=\phi'$.
-\end{proof}
 
 \bibliographystyle{amsalpha}
 {\footnotesize{
