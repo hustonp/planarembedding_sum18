@@ -2042,6 +2042,7 @@ $$
 
 
 \begin{lem}
+ \label{lem:FiniteDepthAlgebraHasFiniteDepthModule}
 Suppose $\cP_\bullet$ is a finite depth subfactor planar algebra and $\cM_\bullet$ is a right planar module for $\cP_\bullet$.
 Then the associated Markov tower $M_\bullet$ has finite depth, with $\operatorname{depth}(M_\bullet) \leq \operatorname{depth}(\cP_\bullet)$.
 \end{lem}
@@ -5567,20 +5568,34 @@ Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Embedding Theorem}
 
-\begin{claim*}
-A finite depth subfactor planar algebra can be embedded into the bipartite graph planar algebra of the fusion graph of the right action of the strand on a cyclic module.
-\end{claim*}
-Let $Q_\bullet$ be a finite depth subfactor planar algebra. \nn{Need to decide on $Q_\bullet$ or $\mathcal{Q}_\bullet$.}
-
-As described in \cite{MR2812459}, one can define a canonical shaded planar $*$-algebra structure on the tower of relative commutants of the base of a strongly Markov tower of algebras. % Now that this construction is summarized in a subsection of section 2, we may want to shorten this reference to there. 
-This planar algebra is isomorphic to the bipartite graph planar algebra of the Bratteli diagram of the first inclusion in the tower, by Theorem 3.28 of \cite{MR2812459}. We have shown that the Markov tower $(Q_n,\tr_n)$ defined in the previous section is finite depth. Let $r$ be an integer such that the inclusion $Q_{2r} \subset Q_{2r+1} \subset Q_{2r+2}$ is standard, and let $B_n=Q_{2r+n}$. Then $(B_n,\tr_{2r+n})$ is a Markov tower or strongly Markov inclusions. The canonical planar $*$-algebra $P_\bullet$ associated to $B_0\subseteq (B_1,tr_1)$ is isomorphic to the bipartite graph planar algebra of the principle graph of the tower $\left(Q_{n}\right)$, because, by Fact \ref{Fact:BratteliPrincipal}, the principle graph of $(Q_n,\tr_n)$ is isomorphic to the Bratteli diagram of $B_0\subseteq B_1$.
-If we denote the canonical $*$-planar algebra associated to $B_0\subseteq(B_1,tr_1)$ by $P_{\bullet}$, then by construction, we have the following:
+Suppose $M_\bullet$ is a a connected right planar module over $Q_\bullet$. 
+Since $Q_\bullet$ has finite depth, so does $M_\bullet$, by Lemma \ref{lem:FiniteDepthAlgebraHasFiniteDepthModule}. The tangle 
+ \[\begin{tikzpicture}[baseline]
+  \halfcircle{}{(0,0)}{.5}{.5}{}
+  \draw (.5,-.5) -- (.5,-.25);
+  \draw (.5,.25) -- (.5,.5);
+  \node at (.4,.32) {\tiny{$n$}}; % replace with \bullet?
+  \ncircle{}{(.5,0)}{.25}{180}{}
+ \end{tikzpicture}\]
+gives a map $Q_\bullet\to M_\bullet$, which is injective since $M$ is non-zero and cyclic. % Is this enough?
+If we choose $r$ so that the inclusion $M_{2r}\subseteq M_{2r+1}$ is strongly Markov and set $B_n=M_{2r+n}$, then as described in section \ref{ssec:shift}, the tower $(B_n,\tr_{2r+n})$ is a strongly Markov tower. By Theorem 3.28 of \cite{MR2812459}, % it may be possible to shorten this reference, to the summary earlier in the paper. 
+the relative commutants of this tower are isomorphic to the box spaces of the canonical shaded $*$-planar algebra $P_\bullet$ of the Bratteli diagram of $B_0\subseteq B_1$. Explicitly, 
 \begin{align*}
- P_{n,+} &=  B'_{0}\cap B_{n} \\
- P_{n,-}  &= B'_{1}\cap B_{n+1} 
+ P_{n,+} &=  B'_{0}\cap B_{n}\text{ and } \\
+ P_{n,-}  &= B'_{1}\cap B_{n+1}\text{.}
 \end{align*}
-
-Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
+Therefore, the tangle 
+ \[\begin{tikzpicture}[baseline]
+  \halfcircle{}{(0,0)}{.5}{1}{}
+  \draw (.2,-.5) -- (.2,.5);
+  \node at (.35,.32) {\tiny{$2r$}};
+  \draw (.9,-.5) -- (.9,-.25);
+  \draw (.9,.25) -- (.9,.5);
+  \node at (.8,.32) {\tiny{$n$}}; % replace with \bullet?
+  \ncircle{}{(.9,0)}{.25}{180}{}
+ \end{tikzpicture}\]
+gives an embedding $\Phi:Q_n\to P_n$ on the level of Markov towers.
+In terms of the string calculus of pivotal modules over tensor categories, $\Phi$ places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
 \[ \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,.7);
  \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
@@ -5602,13 +5617,11 @@ Consider the map $\Phi$, which places $2r$ strings to the left of elements in $Q
  \node at (0.45,-.9) {\tiny{$n$}};
  \node at (0,-0.9){\tiny{$2r$}};
 \end{tikzpicture} \]
-This map sends $Q_{n , +}$ to $P_{n,+}$ and $Q_{n , -}$ to $P_{n,-}$. In order to check that $\Phi$ is a planar-$\ast$ algebra map, we again use Lemma \ref{lem:SufficientConditionsForPlanarMap}.
+Here, the unshaded-shaded strand is a simple generator of the category of projection $\cC$ of $Q_\bullet$, while the shaded-unshaded red strand is a generator of a cyclic pivotal right module category over $\cC$. 
 
-We denote the inclusion, conditional expecation, and trace in $Q_{\bullet}$ by $\overline{i}$, $\overline{E}$, and $\overline{\tr}$, reserving the plain symbols for the corresponding maps in $P_{\bullet}$.
-We denote the Jones projections in $Q_{\bullet}$ by $e_{j}$ and the Jones projections in $P_{\bullet}$ by $f_{j}$.
-
+It remains to use Lemma \ref{lem:SufficientConditionsForPlanarMap} to show that this embedding is a morphism of planar $\dag$-algebras.
 \begin{thm}
-The image of the map $\Phi:Q_{\bullet} \to P_{\bullet}$ is a $\dag$-planar subalgebra of $P_{\bullet}$.
+ The map $\Phi$ is a $\dag$-planar algebra embedding. 
 \end{thm} 
 
 \begin{proof}
@@ -5863,11 +5876,7 @@ we know that $P_\bullet$ is a planar $\ast$-algebra isomorphic to $G_\bullet$. T
  A subfactor planar algebra $Q_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a cyclic $Q_\bullet$-module.
 \end{cor}
 
-In particular, by considering $(Q_\bullet,1)$ as a cyclic right module over itself, we recover the main result of \cite{MR2812459} as a corollary, and by instead considering $Q_\bullet$ as a left module, we obtain an embedding into the graph planar algebra of the dual principle graph: 
-
-\begin{cor}
-Let $Q_{\bullet}$ be a finite depth subfactor planar algebra then there is an embedding of $Q_{\bullet}$ into the bipartite graph planar algebra of the principal graph of $Q_{\bullet}$, and the bipartite graph planar algebra of the dual principal graph of $Q_{\bullet}$.
-\end{cor}
+In particular, by considering $(Q_\bullet,1)$ as a cyclic right module over itself, we recover the main result of \cite{MR2812459}, and by instead considering $Q_\bullet$ as a left module, we obtain an embedding into the graph planar algebra of the dual principle graph. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Invariance of the embedding}
