@@ -810,6 +810,9 @@ We leave this exploration to a future article as it would take us too far afield
 %For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
 %We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
 
+
+\nn{switch P and Q below here.}
+
 We now specialize to the hypotheses of the module embedding theorem, i.e., $\cP_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding projection category with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
 In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
 This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
@@ -1129,18 +1132,18 @@ a subfactor planar algebra $\cQ_\bullet$.
 Let $\cC$ be a unitary $2\times 2$ multitensor category.
 A \emph{pivotal right $\cC$-module $\Cstar$ category} is a pair $(\cM,\Tr^\cM)$ where
 $\cM$ is a semisimple right $\cC$-module $\Cstar$ category, and $\Tr^\cM$ is a family of positive traces $\Tr^\cM_n:\cM(n \to n)\to \bbC$ on each endomorphism space for $n\in \cM$ satisfying the following axioms:
-\begin{itemize}
+\begin{enumerate}[label={\rm(Tr\arabic*)}]
 \item
-(tracial)
+\label{PivotalModule:tracial}
 $\Tr^\cM_m(g \circ f) = \Tr^\cM_n(f\circ g)$ for all $f\in \cM(m\to n)$ and $g\in \cM(n \to m)$.
 \item
-(positive)
+\label{PivotalModule:positive}
 $\Tr^\cM_m(f^\dag \circ f) \geq 0$ for all $f\in \cM(m \to n)$, and $\Tr^\cM_m(f^\dag \circ f) =0$ if and only if $f = 0$.
 %\item
 %(normalized)
 %$\Tr^\cM_m( \id_m) = 1_\bbC$.
 \item
-(compatible with $\cC$)
+\label{PivotalModule:compatible}
 For all $m\in \cM$ and $c\in \cC$,
 $
 \Tr^\cM_{m\vartriangleleft c}(f)
@@ -1149,7 +1152,7 @@ $
 (\id_m \vartriangleleft \coev_c^\dag) \circ (f\vartriangleleft \id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
 )
 $
-\end{itemize}
+\end{enumerate}
 Notice that $\cM = \cM_0 \oplus \cM_1$ where $\cM_0 = \cM \vartriangleleft 1_0$ and $\cM_1 = \cM\vartriangleleft 1_1$.
 
 A pivotal right module category is called \emph{pointed} if it is indecomposable, we have a chosen simple object $m\in \cM$, and $\Tr^\cM$ is normalized so that $\Tr^\cM_m(\id_m) = 1_\bbC$.
@@ -3542,23 +3545,12 @@ x
 \end{align*}
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{prop:InjectiveAlgebraMap}]
-
-From equation \ref{eq:LinkingAlgebra}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
-Because $\pi$ respects $\dag$, as in the definition above, we only need to consider 3 cases of composition:
-\begin{enumerate}[label={\rm(\arabic*)}]
- \item
-  \label{eq:upup}  
-  $[n]\rightarrow [n+2i]\rightarrow [n+2i+2j] $
- \item
-  \label{eq:UPdown} 
-  $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i] $
- \item
-  \label{eq:downUP} 
-  $[n]\rightarrow [n+2i+2j] \rightarrow [n+2i]$
-\end{enumerate}
- In the following, we supress the rightmost $2k$ strings of entries of \ref{eq:4x4Map}, as well as resulting factors of $d$, since they are essentially inert when only three objects are considered. 
-\item[\underline{\ref{eq:upup}:}]
+\begin{proof}[Proof of Proposition \ref{prop:InjectiveAlgebraMap}]
+By inspection of the definition of $\pi$ from \eqref{eq:4x4Map}, it is clear that $\pi$ is injective, unital, $\bbC$-linear, and respects the $\dag$-structure. 
+The difficulty is in seeing that $\pi$ is an algebra homomorphism. 
+In the following, we suppress the rightmost $2k$ strings of entries of \eqref{eq:4x4Map}, as well as the factor $d^{-k}$, since they are essentially inert when only three objects are considered. 
+Because $\pi$ respects $\dag$, as in Definition \ref{def:MarkovProjections}, we only need to consider 3 cases of composition.
+\item[\underline{Case 1:}]
 Let $x:[n]\rightarrow [n+2i]$ and $y:[n+2i]\rightarrow [n+2i+2j]$. 
  \nn{Need to standardize punctuation policy. Consider also \ref{lem:LeftKink}.}
 Then 
@@ -3595,10 +3587,8 @@ d^{-2i-j}E_{n+i+j}
   \node at (.6,1) {\scriptsize{$j$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
  \end{tikzpicture}
-$$
-Lemma \ref{lem:LeftKink} gives 
-$$
- \pi(y\circ x) = d^{-i-j} yx \cdot 
+\underset{\text{(Lem.~\ref{lem:LeftKink})}}{=} 
+d^{-i-j} yx \cdot 
  % \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd 
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3613,9 +3603,10 @@ $$
   \node at (1,1) {\scriptsize{$j$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
  \end{tikzpicture}
- = \pi(y) \cdot \pi(x)
+ = \pi(y) \cdot \pi(x).
 $$
-\item[\underline{\ref{eq:UPdown}:}]
+
+\item[\underline{Case 2:}]
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
 $$
@@ -3813,11 +3804,15 @@ $$
  \end{tikzpicture} % \\ % but remember to restore the &= below
  = \pi(y) \cdot \pi(x)
 $$
-\item[\underline{\ref{eq:downUP}:}]
-Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$
+
+\item[\underline{Case 3:}]
+Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$.
 Then 
-$$
- \pi(y\circ x) = d^{-i-j}y\cdot
+\begin{align*}
+ \pi(y\circ x) 
+ &= 
+ d^{-i-j}
+ y\cdot\,
  % \TLPlusPIso{n}{i}{j}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3830,7 +3825,7 @@ $$
   \node at (.6,1) {\scriptsize{$i$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
  \end{tikzpicture}
- \cdot x \cdot
+ \,\cdot x \cdot\,
  % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3845,29 +3840,8 @@ $$
   \node at (.8,1) {\scriptsize{$j$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
  \end{tikzpicture}
-$$
-and
-$$
-\pi(y)\cdot \pi(x) = d^{-i-j}y\cdot
- % \TLCapJoin{n}{i}{j}{j}{i}
- \begin{tikzpicture}[baseline=.3cm]
-  \draw (.2,0) -- (.2,.8);
-  \node at (.2,1) {\scriptsize{$n$}};
-  \draw (.4,0) arc (180:0:.2cm);
-  \node at (.4,-.2) {\scriptsize{$i$}};
-  \draw (1,0) arc (180:0:.2cm);
-  \node at (1,-.2) {\scriptsize{$j$}};
-  \draw (.4,.8) arc (-180:0:.5cm);
-  \node at (.4,1) {\scriptsize{$i$}};
-  \draw (.6,.8) arc (-180:0:.3cm);
-  \node at (.6,1) {\scriptsize{$j$}};
-  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
- \end{tikzpicture}
-\cdot x
-$$
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
-but these are equal, as
-\begin{equation*}
+ =
+ d^{-i-j}
  y\cdot
  % \TLPlusPIso{n}{i}{j}
  \begin{tikzpicture}[baseline=.3cm]
@@ -3881,35 +3855,7 @@ but these are equal, as
   \node at (.6,1) {\scriptsize{$i$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
  \end{tikzpicture}
-\cdot x \cdot
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd
- \begin{tikzpicture}[baseline=.3cm]
-  \draw (.2,0) -- (.2,.8);
-  \node at (.2,1) {\scriptsize{$n$}};
-  \draw (.4,0) -- (.4,.8);
-  \node at (.4,1) {\scriptsize{$i$}};
-  \draw (.6,0) -- (.6,.8);
-  \node at (.6,1) {\scriptsize{$i$}};
-  \draw (.8,0) arc (180:0:.2cm);
-  \node at (.8,-.2) {\scriptsize{$j$}};
-  \draw (.8,.8) arc (-180:0:.2cm);
-  \node at (.8,1) {\scriptsize{$j$}};
-  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
- \end{tikzpicture}
-= y\cdot
- % \TLPlusPIso{n}{i}{j}
- \begin{tikzpicture}[baseline=.3cm]
-  \draw (.2,0) -- (.2,.8);
-  \node at (.2,1) {\scriptsize{$n$}};
-  \draw (.6,0) arc (180:0:.2cm);
-  \node at (.6,-.2) {\scriptsize{$i$}};
-  \draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
-  \node at (1,1) {\scriptsize{$j$}};
-  \draw (.4,.8) arc (-180:0:.2cm);
-  \node at (.6,1) {\scriptsize{$i$}};
-  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
- \end{tikzpicture}
-\cdot
+\,\cdot\,
  % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3926,7 +3872,9 @@ but these are equal, as
  \end{tikzpicture}
 \cdot x % \cdot
  % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
-= y\cdot 
+\\&= 
+d^{-i-j}
+y\cdot\, 
  % \TLCapJoin{n}{i}{j}{j}{i}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3941,10 +3889,11 @@ but these are equal, as
   \node at (.6,1) {\scriptsize{$j$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
  \end{tikzpicture}
-\cdot x % \cdot
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd 
+\,\cdot x
+=
+\pi(y)\cdot \pi(x).
 \qedhere
-\end{equation*}
+\end{align*}
 \end{proof}
 
 \begin{cor}
@@ -4187,8 +4136,6 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 
 \begin{rem}
 By Remark \ref{Rem:ShiftTowerEffects}, the category of projections of a Markov tower is invariant (up to equivalence) under applying shifts. By Remark \ref{Rem:CompressionTowerEffects}, the category of projections of the compression $pM_\bullet p$ is the subcategory of the category of projections of $M_\bullet$ generated by minimal projections under $p$. In particular, if $p\neq 0$ and the Bratteli diagram of $M_\bullet$ is connected, then the two categories of projections are again equivalent. Finally, in the case of the multistep tower, we see by Remark \ref{Rem:MultistepTowerEffects} that the category of projections of $M_{k\bullet}$ is equivalent to the category of projections for $M_\bullet$ when $k$ is odd, and to the subcategory generated by the even part when $k$ is even.
-
-In Example \nn{Where? Perhaps \ref{ex:MarkovTowerFromRightModule}? That area seems unfinished without this observation. Or, maybe last subsection of section 3.}, we saw that the Markov tower can be recovered from the category of projections $\cC$ by a choice of a generating object $X$ in $\cC$, the unshaded-shaded strand, as well as a choice of a non-zero object $m$ \nn{probably change this to match backreference.} in the even part. Shifting and compressing the tower correspond to changing the choice of $m$, while taking the multistep tower corresponds to replacing $X$ with $X^{\text{alt}\otimes{k}}$. The principal graph of the Markov tower appears as the fusion graph of $X$, explaining why the former two operations largely respect the principal graph, while forming the multistep tower changes the number of edges.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4209,7 +4156,9 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 
 \begin{defn}
 \label{def:ModuleFromMarkovTower}
- If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in definition \ref{def:MarkovProjections}. By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
+ If $M_\bullet$ is a Markov tower with modulus $d$, the corresponding $\cT\cL\cJ(d)$-module is just the category $\cM$ of projections of $M_\bullet$, as in Definition \ref{def:MarkovProjections}.  
+The $\TLJ$ action on $\cM$ comes from the fact that $TLJ_\bullet$ is the initial Markov tower for a given parameter. % say more?
+By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
  
 We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$. 
 As for morphisms, we first consider the case where one morphism is the identity. 
@@ -4251,6 +4200,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  We show the case where $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to{m+2\ell}_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in{(k+j)}_{\TLJ}\to(k+j)+2(k+i)_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
  Let $\iota$ denote the inclusions in $M_\bullet$, and let $\lambda$ and $\rho$ denote the left and right inclusions in $\TLJ$. 
  By definition, we have 
+ \nn{can use string diagrams for $g$, which is in $\cT\cL\cJ$!}
  \begin{align*}
   (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\circ
   % \TLPlusPIso{n}{k}{j{+}2k{+}i}
@@ -4298,8 +4248,9 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
   \end{tikzpicture}
-  \right)\\
-  &= \iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+  \right)
+  \\&= 
+  \iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
   % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4343,9 +4294,10 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
     \draw (1.5,0) arc (180:0:.2cm);
     \node at (1.5,-.2) {\scriptsize{$k$}};
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,1);
-  \end{tikzpicture}\right)\\
-  &= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+  \end{tikzpicture}\right)
+ \\&= 
+ \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
   % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4391,8 +4343,9 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
   \end{tikzpicture}
-  \right)\\
-  &= \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+  \right)
+  \\&= 
+  \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
   % \TLPlusPIso{n}{k}{j}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4441,11 +4394,18 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  It is even easier to check that the action is associative. 
 \end{defn}
 
+\begin{rem}
+\nn{edit this remark to explain that the $\cT\cL\cJ$-action on itself is dagger tensor equivalent to the usual tensor category structure of $\cT\cL\cJ$.}
+To that end, note that the category of projections of the Markov tower $TLJ_\bullet$ is equivalent to the tensor category $\TLJ$, with the internal tensor product given by an action of $\TLJ$ on itself. 
+That the above definition of the action defines a tensor category in the special case of $\TLJ$ is easier to see; in $\TLJ$, plenty of isotopy is available, wheras the category $\cM$, is not a-priori a planar algebra or module. 
+Then the morphism $\coev_{[n]}\in\TLJ([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition.
+\end{rem}
+
 \begin{defn}[Pivotal module structure] 
 \label{def:PivotalModuleFromMarkovTower}
 The category $\cM$ obtains a unitary trace $\Tr^\cM$ from the Markov tower $(M_\bullet,\tr_\bullet)$, by renormalizing so that isomorphic projections have the same trace.
 For $[n] \in \cM$, we define $\Tr^\cM_{[n]} : \cM([n] \to [n]) = M_n \to \bbC$ by $d^n \tr_n$.
-It is clear that $\Tr^\cM_{[n]}$ is positive definite for all $n\geq 0$.
+It is clear that $\Tr^\cM_{[n]}$ satisfies \ref{PivotalModule:positive} for all $n\geq 0$.
 Now if $x \in \cM([n] \to [n+ 2k])= M_{n+k}$ and $y\in \cM ([n+ 2k] \to [n]) = M_{n+ k}$, observe that 
 \begin{align*}
 \Tr^\cM_{[n]}(y\circ x)
@@ -4472,14 +4432,17 @@ d^{-k}\,
 \cdot y
 \right)
 \\&\underset{\ref{compose:downup}}{=:}
-\Tr^\cM_{[n+2k]}(x\circ y).
+\Tr^\cM_{[n+2k]}(x\circ y),
 \end{align*}
- The $\TLJ$ action on $\cM$ comes from the fact that $TLJ$ is the initial Markov tower for a given parameter. % say more?
- To see that $\Tr^\cM$ is compatible with the $\TLJ$ action, as required by Definition \ref{def:PivotalModule}, it helps to structure the category $\TLJ$ similarly to $\cM$. To that end, note that the category of projections of the Markov tower $TLJ_\bullet$ is equivalent to the tensor category $\TLJ$, with the internal tensor product given by an action of $\TLJ$ on itself. That the above definition of the action defines a tensor category in the special case of $\TLJ$ is easier to see; in $\TLJ$, plenty of isotopy is available, wheras the category $\cM$, is not a-priori a planar algebra or module. Then the morphism $\coev_{[n]}\in\TLJ([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition.
- Writing out the demand that for all $n$, $k$, and $f\in\TLJ([n]\to[n])$,
- \[\Tr^\cM_{[n]\vartriangleleft[k]}(f)=\Tr^\cM_{[n]}\left((1\vartriangleleft\coev_{[k]}^\dag)\circ(f\vartriangleleft1_{[k]})\circ(1\vartriangleleft\coev_{[k]})\right)\]
- and using the fact that the conditional expectation is tracial, we obtain the trivial requirement
-  \[\Tr(f)=\Tr\left(E^{n+2k}_n\left(\rho(f)\cdot d^{-k}
+and thus $\Tr^\cM$ satisfies \ref{PivotalModule:tracial}.
+To see that $\Tr^\cM$ satisfies \ref{PivotalModule:compatible}, we must show that for all $n$, $k$, and $f\in\cM([n]\to[n])$,
+ \[\Tr^\cM_{[n]\vartriangleleft[k]}(f)=\Tr^\cM_{[n]}\left((1\vartriangleleft\coev_{[k]}^\dag)\circ(f\vartriangleleft1_{[k]})\circ(1\vartriangleleft\coev_{[k]})\right).
+ \]
+ Now by Remark \nn{above}, it is straightforward to show the left and right sides of the above equation are respectively equal to the left and right sides of the following equation, which trivially holds:
+  \[
+  \Tr(f)
+  =
+  \Tr\left(f\cdot E^{n+2k}_n\left(d^{-k}\,
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4489,17 +4452,33 @@ d^{-k}\,
    \node at (.4,-.2) {\scriptsize{$k$}};
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
   \end{tikzpicture}
- \right)\right)\text{,}\]
- verifying that $\Tr^\cM$ is indeed compatible.
+ \right)\right)
+ =
+ \Tr\left(E^{n+2k}_n\left(\iota(f)\cdot d^{-k}\,
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,.8) arc (-180:0:.2cm);
+   \node at (.4,1) {\scriptsize{$k$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$k$}};
+   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+  \end{tikzpicture}
+ \right)\right)
+ \text{.}
+ \]
 \end{defn}
 
 \begin{proof}[Proof of Corollary \ref{cor:TLJPivotalModuleClassification}]
 We saw in Definitions \ref{def:ModuleFromMarkovTower} and \ref{def:PivotalModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
 We saw in Example \ref{ex:MarkovTowerFromRightModule} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
 defining $M_n := \End(m \vartriangleleft X^{\text{alt}\otimes n})$ and $\tr_n := \Tr^\cM_{m \vartriangleleft X^{\text{alt}\otimes n}}$ defines a connected Markov tower.
-One now shows these two processes are mutually inverse up to equivalence.
-\nn{todo}
+One now shows these two processes are mutually inverse up to dagger equivalence.
 \end{proof}
+
+\begin{rem}
+In Example \nn{Where? Perhaps \ref{ex:MarkovTowerFromRightModule}? That area seems unfinished without this observation. Or, maybe last subsection of section 3.}, we saw that the Markov tower can be recovered from the category of projections $\cC$ by a choice of a generating object $X$ in $\cC$, the unshaded-shaded strand, as well as a choice of a non-zero object $m$ \nn{probably change this to match backreference.} in the even part. Shifting and compressing the tower correspond to changing the choice of $m$, while taking the multistep tower corresponds to replacing $X$ with $X^{\text{alt}\otimes{k}}$. The principal graph of the Markov tower appears as the fusion graph of $X$, explaining why the former two operations largely respect the principal graph, while forming the multistep tower changes the number of edges.
+\end{rem}
 
 \begin{rem}
 \label{rem:LambdaLatticeModule}
@@ -4629,11 +4608,11 @@ We then discuss various operations on the inclusion, and how such operations aff
 \subsection{The canonical relative commutant planar algebra}% of a strongly Markov inclusion} 
 \label{sec:StronglyMarkovPA}
 %\subsection{Planar algebras}
-\label{ssec:canonical}
+%\label{ssec:canonical}
 
 %Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
-There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. 
+There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\dag$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. 
 Denote by $(A_n,\tr_n)_{n\geq 0}$ the Jones tower for inclusion $A_0\subset (A_1,\tr_1)$.
 The box spaces are defined by the relative commutants
 $$
@@ -5142,7 +5121,7 @@ defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\b
 \end{thm}
 \begin{proof}
 The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satistfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in red in order to increase clarity.
-\begin{enumerate}
+\begin{enumerate}[label={\rm(\arabic*)}]
 \item (Right Inclusion)
 \[
 \begin{tikzpicture}[baseline=-0.1]
@@ -5564,35 +5543,43 @@ Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The module embedding theorem via towers of algebras}
 
+\nn{lead in.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Embedding Theorem}
 
-Suppose $M_\bullet$ is a a connected right planar module over $Q_\bullet$. 
-Since $Q_\bullet$ has finite depth, so does $M_\bullet$, by Lemma \ref{lem:FiniteDepthAlgebraHasFiniteDepthModule}. The tangle 
+Suppose $\cM_\bullet$ is a a connected right planar module over $\cQ_\bullet$. 
+Since $\cQ_\bullet$ has finite depth, so does $\cM_\bullet$, by Lemma \ref{lem:FiniteDepthAlgebraHasFiniteDepthModule}. 
+The tangle 
  \[\begin{tikzpicture}[baseline]
   \halfcircle{}{(0,0)}{.5}{.5}{}
-  \draw (.5,-.5) -- (.5,-.25);
-  \draw (.5,.25) -- (.5,.5);
+  \draw (.5,-.5) -- (.5,.5);
   \node at (.4,.32) {\tiny{$n$}}; % replace with \bullet?
-  \ncircle{}{(.5,0)}{.25}{180}{}
+  \ncircle{unshaded}{(.5,0)}{.2}{180}{}
  \end{tikzpicture}\]
-gives a map $Q_\bullet\to M_\bullet$, which is injective since $M$ is non-zero and cyclic. % Is this enough?
-If we choose $r$ so that the inclusion $M_{2r}\subseteq M_{2r+1}$ is strongly Markov and set $B_n=M_{2r+n}$, then as described in section \ref{ssec:shift}, the tower $(B_n,\tr_{2r+n})$ is a strongly Markov tower. By Theorem 3.28 of \cite{MR2812459}, % it may be possible to shorten this reference, to the summary earlier in the paper. 
-the relative commutants of this tower are isomorphic to the box spaces of the canonical shaded $*$-planar algebra $P_\bullet$ of the Bratteli diagram of $B_0\subseteq B_1$. Explicitly, 
-\begin{align*}
- P_{n,+} &=  B'_{0}\cap B_{n}\text{ and } \\
- P_{n,-}  &= B'_{1}\cap B_{n+1}\text{.}
-\end{align*}
+gives a map $\cQ_\bullet\to \cM_\bullet$, which is injective since $\cM_\bullet$ is non-zero and connected. 
+Let $M_\bullet$ be the Markov tower obtained from $\cM_\bullet$ from Example \ref{example:MarkovTowerFromPlanarModule}.
+% Is this enough?
+Choose $r\geq 0$ such that the inclusion $M_{2r}\subseteq (M_{2r+1},\tr_{2r+1})\subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
+Then setting $(A_n, \tr_n):=(M_{2r+n},\tr_{2r+n})$ for $n\geq 0$ as described in \S\ref{ssec:shift}, $A_0\subseteq (A_1, \tr_1)$ is a strongly Markov inclusion, and the tower $(A_n,\tr_{2r+n})$ is a strongly Markov tower. 
+Let $\cP_\bullet$ be the canonical relative commutant planar $\dag$-algebra of the inclusion $A_0\subseteq (A_1, \tr_1)$ described in \S\ref{sec:StronglyMarkovPA}.
+\nn{B to A below here. Also fix math fonts.}
+%By \cite[Thm.~3.28]{MR2812459}, % it may be possible to shorten this reference, to the summary earlier in the paper. 
+%the relative commutants of this tower are isomorphic to the box spaces of the canonical shaded $*$-planar algebra $\cP_\bullet$ of the Bratteli diagram of $B_0\subseteq B_1$. 
+%Explicitly, 
+%$$
+% \cP_{n,+} =  B'_{0}\cap B_{n}
+% \qquad\qquad
+% \cP_{n,-}  = B'_{1}\cap B_{n+1}.
+%$$
 Therefore, the tangle 
  \[\begin{tikzpicture}[baseline]
   \halfcircle{}{(0,0)}{.5}{1}{}
   \draw (.2,-.5) -- (.2,.5);
   \node at (.35,.32) {\tiny{$2r$}};
-  \draw (.9,-.5) -- (.9,-.25);
-  \draw (.9,.25) -- (.9,.5);
+  \draw (.9,-.5) -- (.9,.5);
   \node at (.8,.32) {\tiny{$n$}}; % replace with \bullet?
-  \ncircle{}{(.9,0)}{.25}{180}{}
+  \ncircle{unshaded}{(.9,0)}{.2}{180}{}
  \end{tikzpicture}\]
 gives an embedding $\Phi:Q_n\to P_n$ on the level of Markov towers.
 In terms of the string calculus of pivotal modules over tensor categories, $\Phi$ places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
@@ -5753,7 +5740,7 @@ $
  \node at (0.6,-.9) {\tiny{$1$}};
 \end{tikzpicture}
 $
-\item (Left Capping) In \S\ref{ssec:canonical}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
+\item (Left Capping) In \S\ref{sec:StronglyMarkovPA}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
 we discussed that the left-capping tangle in the canonical planar $\ast$-algebra is given for $n\geq 1$ by 
 \[
 E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
@@ -5873,10 +5860,12 @@ we know that $P_\bullet$ is a planar $\ast$-algebra isomorphic to $G_\bullet$. T
 
 \begin{cor}[The Embedding Theorem]
  \label{cor:EmbeddingTheorem} % remember to switch the label when changing type of thm later
- A subfactor planar algebra $Q_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a cyclic $Q_\bullet$-module.
+ A subfactor planar algebra $Q_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a connected right planar $Q_\bullet$-module.
 \end{cor}
 
-In particular, by considering $(Q_\bullet,1)$ as a cyclic right module over itself, we recover the main result of \cite{MR2812459}, and by instead considering $Q_\bullet$ as a left module, we obtain an embedding into the graph planar algebra of the dual principle graph. 
+In particular, by considering $\cQ_\bullet$ as a connected right planar $\cQ_\bullet$-module, we recover the main result of \cite{MR2812459}.
+\nn{The following was correct previously; please fix.}
+ and by instead considering $\cQ_\bullet$ as a left module, we obtain an embedding into the graph planar algebra of the dual principle graph. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Invariance of the embedding}
