@@ -5564,7 +5564,6 @@ Let $M_\bullet$ be the Markov tower obtained from $\cM_\bullet$ from Example \re
 Choose $r\geq 0$ such that the inclusion $M_{2r}\subseteq (M_{2r+1},\tr_{2r+1})\subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
 Then setting $(A_n, \tr_n):=(M_{2r+n},\tr_{2r+n})$ for $n\geq 0$ as described in \S\ref{ssec:shift}, $A_0\subseteq (A_1, \tr_1)$ is a strongly Markov inclusion, and the tower $(A_n,\tr_{2r+n})$ is a strongly Markov tower. 
 Let $\cP_\bullet$ be the canonical relative commutant planar $\dag$-algebra of the inclusion $A_0\subseteq (A_1, \tr_1)$ described in \S\ref{sec:StronglyMarkovPA}.
-\nn{B to A below here. Also fix math fonts.}
 %By \cite[Thm.~3.28]{MR2812459}, % it may be possible to shorten this reference, to the summary earlier in the paper. 
 %the relative commutants of this tower are isomorphic to the box spaces of the canonical shaded $*$-planar algebra $\cP_\bullet$ of the Bratteli diagram of $B_0\subseteq B_1$. 
 %Explicitly, 
@@ -5582,8 +5581,8 @@ Therefore, the tangle
   \node at (.8,.32) {\tiny{$n$}}; % replace with \bullet?
   \ncircle{unshaded}{(.9,0)}{.2}{180}{}
  \end{tikzpicture}\]
-gives an embedding $\Phi:Q_n\to P_n$ on the level of Markov towers.
-In terms of the string calculus of pivotal modules over tensor categories, $\Phi$ places $2r$ strings to the left of elements in $Q_{n,+}$  and $2r+1$ strings to the left of elements in $Q_{n,-}$:
+gives an embedding $\Phi:\cQ_n\to\cP_n$ on the level of Markov towers.
+In terms of the string calculus of pivotal modules over tensor categories, $\Phi$ places $2r$ strings to the left of elements in $\cQ_{n,+}$  and $2r+1$ strings to the left of elements in $\cQ_{n,-}$:
 \[ \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,.7);
  \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
@@ -5605,24 +5604,15 @@ In terms of the string calculus of pivotal modules over tensor categories, $\Phi
  \node at (0.45,-.9) {\tiny{$n$}};
  \node at (0,-0.9){\tiny{$2r$}};
 \end{tikzpicture} \]
-Here, the unshaded-shaded strand is a simple generator of the category of projections $\cC$ of $Q_\bullet$, while the shaded-unshaded red strand is a generator of a cyclic pivotal right module category over $\cC$.
+Here, the unshaded-shaded strand is a simple generator of the category of projections $\cC$ of $\cQ_\bullet$, while the shaded-unshaded red strand is a generator of a cyclic pivotal right module category over $\cC$.
 
-It remains to use Lemma \ref{lem:SufficientConditionsForPlanarMap} to show that this embedding is a morphism of planar $\dag$-algebras.
 \begin{thm}
  The map $\Phi$ is a $\dag$-planar algebra embedding. 
 \end{thm} 
-
 \begin{proof}
-Observe that for all $x,y \in Q_{\bullet}$, we have that 
-\begin{align*}
- \Phi(x^{*}) &= \Phi(x)^{\ast} \\
- \Phi(xy) &= \Phi(x)\Phi(y) \\
- E_n &= \id_{m}\otimes \overline{E}_{2r+n} \\
- i_n &= \id_{m}\otimes \overline{i}_{2r+n} \\
- f_n &= \id_{m} \otimes e_{2r+n} 
-\end{align*}
+ For clarity, let us denote the conditional expectation and inclusion in $\cP_\bullet$ by $\overline{E}$ and $\overline{i}$, reserving the plain symbols for their counterparts in $\cQ_\bullet$. Similarly, let us denote the $n$-th Jones projection in $\cP_\bullet$ by $f_n$, reserving $e_n$ for the Jones projection in $\cQ_\bullet$. 
 
- We now check that $\Phi$ is a planar algebra map:
+ We need only check the hypothese of Lemma \ref{lem:SufficientConditionsForPlanarMap}: that $\Phi$ commutes with the action of several tangles. 
 
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Jones Projections)
@@ -5744,17 +5734,17 @@ $
 \item (Left Capping) In \S\ref{sec:StronglyMarkovPA}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
 we discussed that the left-capping tangle in the canonical planar $\ast$-algebra is given for $n\geq 1$ by 
 \[
-E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
+E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
 \]
-where $\{b\}$ is a Pimnser Popa basis of $B_1$ over $B_0$. 
-This means that, for any $x \in Q_{n,+}$, we have 
+where $\{b\}$ is a Pimnser Popa basis of $A_1$ over $A_0$. 
+This means that, for any $x \in\cQ_{n,+}$, we have 
 
 \centerline{
   \begin{minipage}{\linewidth}
    \[
-    d^2E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x))
+    d^2E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x))
     =
-\sum_{b\in B}
+\sum_{b}
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
  \fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,-0.7) -- (0,-0.7) -- (0,-2.1) -- (0.6,-2.1) -- (0.6,2.1) -- (0,2.1);
@@ -5770,7 +5760,7 @@ This means that, for any $x \in Q_{n,+}$, we have
  \node at (-.15,0) {\tiny{$2r$}};
 \end{tikzpicture} 
 =
-\sum_{b\in B}
+\sum_{b}
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
  \fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.5)arc(180:0:.3cm) -- (1.2,-1.5) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.7) -- (0,-.7) -- (0,-2.1) -- (1.5,-2.1) -- (1.5,2.1);
@@ -5820,10 +5810,10 @@ This means that, for any $x \in Q_{n,+}$, we have
  \]
   \end{minipage}
 }
-Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, we have $E^{B_0'\cap B_{n}}_{B_1'\cap B_{n}}(\Phi(x)) =\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)$.
+Clearly, the last diagram depicts an element of  $\Phi(\cQ_{\bullet})$. In fact, we have $E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x)) =\Phi\left(E^{\c\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)$.
 
-\item (Left Inclusion) The negative inclusion $i^{-}_{n} : P_{n,-} \to P_{n+1,+}$ is just the identity on the relative commutant planar algebra.
- Graphically, $\overline{i}$ is equivalent to adding a string on the left. Thus, for $x$ in $Q_{n,-}$ we have that:
+\item (Left Inclusion) The negative inclusion $i^{-}_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the identity on the relative commutant planar algebra.
+ Graphically, $\overline{i}$ is equivalent to adding a string on the left. Thus, for $x$ in $\cQ_{n,-}$ we have that:
 \[
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
@@ -5856,12 +5846,12 @@ Clearly, the last diagram depicts an element of  $\Phi(Q_{\bullet})$. In fact, w
 \end{enumerate}
 \end{proof}
 
-We have checked that $\Phi:Q_{\bullet}\to P_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $G_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
-we know that $P_\bullet$ is a planar $\ast$-algebra isomorphic to $G_\bullet$. Thus, we have an embedding of $Q_\bullet$ into $G_\bullet$.
+We have checked that $\Phi:\cQ_{\bullet}\to\cP_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $\cG_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
+we know that $\cP_\bullet$ is a planar $\ast$-algebra isomorphic to $\cG_\bullet$. Thus, we have an embedding of $\cQ_\bullet$ into $\cG_\bullet$.
 
 \begin{cor}[The Embedding Theorem]
  \label{cor:EmbeddingTheorem} % remember to switch the label when changing type of thm later
- A subfactor planar algebra $Q_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a connected right planar $Q_\bullet$-module.
+ A subfactor planar algebra $\cQ_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a connected right planar $\cQ_\bullet$-module.
 \end{cor}
 
 In particular, by considering $\cQ_\bullet$ as a connected right planar $\cQ_\bullet$-module, we recover the main result of \cite{MR2812459}.
