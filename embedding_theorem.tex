@@ -5614,8 +5614,8 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
 
  We need only check the hypotheses of Lemma \ref{lem:SufficientConditionsForPlanarMap}: that $\Phi$ commutes with the action of several tangles.
 
-\begin{enumerate}[label={\rm(\arabic*)}]
-\item (Jones Projections)
+\begin{itemize}
+ \item (Jones Projections)
  $\displaystyle\Phi(e_n)=\Phi\left(
 \begin{tikzpicture}[baseline]
  \draw (-.1,-.7) -- (-.1,.7);
@@ -5624,9 +5624,9 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
 % \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (-.1,-.9) {\tiny{$n-1$}};
 \end{tikzpicture}
-  \right)\quad
+  \right)\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.85,-.7) -- (-1.15,-.7) -- (-1.15,.7) -- (-.85,.7) -- (-.85,-.7);
  \draw[thick,red] (-.85,-.7) -- (-.85,.7);
@@ -5638,9 +5638,9 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
  \node at (-.1,-.9) {\tiny{$n-1$}};
  \node at (-.55,.9) {\tiny{$2r$}};
 \end{tikzpicture}
-\quad
+\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.4,-.7) -- (-.7,-.7) -- (-.7,.7) -- (-.4,.7) -- (-.4,-.7);
  \draw[thick,red] (-.4,-.7) -- (-.4,.7);
@@ -5661,9 +5661,9 @@ $
  \node at (0,-0.9) {\tiny{$n-1$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-  \right)\quad
+  \right)\,
   =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
@@ -5674,9 +5674,9 @@ $
  \node at (0,-0.9) {\tiny{$n-1$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\quad
+\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
@@ -5701,9 +5701,9 @@ $
  \node at (0.45,-.9) {\tiny{$1$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\right)\quad
+\right)\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
@@ -5716,9 +5716,9 @@ $
  \node at (0,0) {\scriptsize{$x$}};
  \node at (0.45,-.9) {\tiny{$1$}};
 \end{tikzpicture}
-\quad
+\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.75,-.7) -- (-1.05,-.7) -- (-1.05,.7) -- (-.75,.7) -- (-.75,-.7);
  \draw[thick,red] (-.75,-.7) -- (-.75,.7);
@@ -5748,76 +5748,78 @@ This means that, for any $x \in\cQ_{n,+}$, we have
     d^2E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x))
     =
 \sum_{b}
+% Previously, the text on the top and bottom of the diagrams had different offsets because of the character height. 
+% Someone may want to change this back later, or better yet, use anchors on the node right (maybe).
 \begin{tikzpicture}[baseline]
- \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
- \fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,-0.7) -- (0,-0.7) -- (0,-2.1) -- (0.6,-2.1) -- (0.6,2.1) -- (0,2.1);
- \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
- \draw (0.6,-2.1) -- (0.6,2.1);
- \draw (0.3,-.7) -- (0.3,.7);
- \draw (0,-2.1) -- (0,2.1);
+ \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
+ \fill[shaded] (0,1.7) -- (0,0.5) -- (0.3,0.5) -- (0.3,-0.5) -- (0,-0.5) -- (0,-1.7) -- (0.6,-1.7) -- (0.6,1.7) -- (0,1.7);
+ \draw[thick,red] (-0.6,-1.7) -- (-0.6,1.7);
+ \draw (0.6,-1.7) -- (0.6,1.7);
+ \draw (0.3,-.5) -- (0.3,.5);
+ \draw (0,-1.7) -- (0,1.7);
  \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
- \roundNbox{unshaded}{(0.15,1)}{.3}{0.6}{0}{$b$}
- \roundNbox{unshaded}{(0.15,-1)}{.3}{0.6}{0}{$b^\ast$}
- \node at (0.6,-2.3) {\tiny{$n-1$}};
- \node at (0,2.2) {\tiny{$2r+1$}};
+ \roundNbox{unshaded}{(0.15,0.8)}{.3}{0.6}{0}{$b$}
+ \roundNbox{unshaded}{(0.15,-0.8)}{.3}{0.6}{0}{$b^\ast$}
+ \node at (0.6,-2) {\tiny{$n-1$}};
+ \node at (0,2) {\tiny{$2r+1$}};
  \node at (-.15,0) {\tiny{$2r$}};
-\end{tikzpicture} 
+\end{tikzpicture}
 =
 \sum_{b}
 \begin{tikzpicture}[baseline]
- \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
- \fill[shaded] (0,2.1) -- (0,0.7) -- (0.3,0.7) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.5)arc(180:0:.3cm) -- (1.2,-1.5) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.7) -- (0,-.7) -- (0,-2.1) -- (1.5,-2.1) -- (1.5,2.1);
- \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
- \draw (0.3,.7)--(0.3,0.25) arc (-180:0:.15cm)-- (0.6,1.5) arc(180:0:.3cm) -- (1.2,.15);
- \draw (0.3,-.7)--(0.3,-0.25) arc (180:0:.15cm)-- (0.6,-1.5) arc(-180:0:.3cm) -- (1.2,-.15);
- \draw (0,-2.1) -- (0,2.1);
- \draw (1.5,-2.1) -- (1.5,2.1);
- \draw[dashed] (-1,1.5) --  (-1,-1.5) --  (0.8,-1.5) --  (0.8,1.5) -- (-1,1.5);
+ \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
+ \fill[shaded] (0,1.7) -- (0,0.5) -- (0.3,0.5) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.3)arc(180:0:.3cm) -- (1.2,-1.3) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.5) -- (0,-.5) -- (0,-1.7) -- (1.5,-1.7) -- (1.5,1.7);
+ \draw[thick,red] (-0.6,-1.7) -- (-0.6,1.7);
+ \draw (0.3,.5)--(0.3,0.25) arc (-180:0:.15cm)-- (0.6,1.3) arc(180:0:.3cm) -- (1.2,.15);
+ \draw (0.3,-.7)--(0.3,-0.25) arc (180:0:.15cm)-- (0.6,-1.3) arc(-180:0:.3cm) -- (1.2,-.15);
+ \draw (0,-1.7) -- (0,1.7);
+ \draw (1.5,-1.7) -- (1.5,1.7);
+ \draw[dashed] (-1,1.3) --  (-1,-1.3) --  (0.8,-1.3) --  (0.8,1.3) -- (-1,1.3);
  \roundNbox{unshaded}{(1.35,0)}{.3}{0}{0}{$x$}
- \roundNbox{unshaded}{(0.15,1)}{.3}{0.6}{0}{$b$}
- \roundNbox{unshaded}{(0.15,-1)}{.3}{0.6}{0}{$b^\ast$}
- \node at (1.5,-2.3) {\tiny{$n-1$}};
- \node at (0,2.2) {\tiny{$2r+1$}};
+ \roundNbox{unshaded}{(0.15,0.8)}{.3}{0.6}{0}{$b$}
+ \roundNbox{unshaded}{(0.15,-0.8)}{.3}{0.6}{0}{$b^\ast$}
+ \node at (1.5,-2) {\tiny{$n-1$}};
+ \node at (0,2) {\tiny{$2r+1$}};
  \node at (-.15,0) {\tiny{$2r$}};
 \end{tikzpicture} 
-=
+=\,
 \begin{tikzpicture}[baseline]
- \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
- \fill[shaded] (0,2.1) -- (1.5,2.1) -- (1.5,-2.1) -- (0,-2.1) -- (0,2.1);
- \filldraw[unshaded] (0.6,1.5) arc(180:0:.3cm) -- (1.2,-1.5)arc(0:-180:0.3cm) -- (0.6,1.5); 
- \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
- \draw (0,-2.1) -- (0,2.1);
- \draw (1.5,-2.1) -- (1.5,2.1);
- \draw[dashed] (-1,1.5) --  (-1,-1.5) --  (0.8,-1.5) --  (0.8,1.5) -- (-1,1.5);
- \roundNbox{unshaded}{(1.35,0)}{.3}{0}{0}{$x$}
- \node at (1.5,-2.3) {\tiny{$n-1$}};
- \node at (0,2.2) {\tiny{$2r+1$}};
- \node at (0.5,0) {\tiny{$1$}};
+ \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
+ \fill[shaded] (-0.3,1.7) -- (1.2,1.7) -- (1.2,-1.7) -- (-0.3,-1.7) -- (-0.3,1.7);
+ \filldraw[unshaded] (0.3,1.3) arc(180:0:.3cm) -- (0.9,-1.3)arc(0:-180:0.3cm) -- (0.3,1.3); 
+ \draw[thick,red] (-0.6,-1.7) -- (-0.6,1.7);
+ \draw (-0.3,-1.7) -- (-0.3,1.7);
+ \draw (1.2,-1.7) -- (1.2,1.7);
+ \draw[dashed] (-1,1.3) --  (-1,-1.3) --  (0.5,-1.3) --  (0.5,1.3) -- (-1,1.3);
+ \roundNbox{unshaded}{(1.05,0)}{.3}{0}{0}{$x$}
+ \node at (1.2,-2) {\tiny{$n-1$}};
+ \node at (-0.3,2) {\tiny{$2r+1$}};
+ \node at (0.2,0) {\tiny{$1$}};
 \end{tikzpicture} 
-=
-\begin{tikzpicture}[baseline]
- \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
- \fill[shaded] (0,2.1) -- (.9,2.1) -- (.9,-2.1) -- (0,-2.1) -- (0,2.1);
- \fill[unshaded] (0.3,0.7) arc(180:0:.15cm) -- (0.6,-0.7)arc(0:-180:0.15cm) -- (0.3,0.7); 
- \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
- \draw (0.3,0.7) arc(180:0:.15cm) -- (0.6,.15);
- \draw (0.3,-0.7) arc(-180:0:.15cm) -- (0.6,-.15);
- \draw (0.3,0.7) -- (0.3,-0.7);
- \draw (0,-2.1) -- (0,2.1);
- \draw (0.9,-2.1) -- (0.9,2.1);
- \roundNbox{unshaded}{(0.75,0)}{.3}{0}{0}{$x$}
- \node at (0.9,-2.3) {\tiny{$n-1$}};
- \node at (0,2.2) {\tiny{$2r+1$}};
-\end{tikzpicture}
-\,.
-=d^2\Phi\left(E^{\c\cQ_{n,+}}_{\cQ_{n-1,-}}(x)
+% % Having this picture is kind of nice, but this line is really wide and two lines isn't justified imo.
+%    \,
+% \begin{tikzpicture}[baseline]
+%  \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
+%  \fill[shaded] (-0.3,2.1) -- (.6,2.1) -- (.6,-2.1) -- (-0.3,-2.1) -- (-0.3,2.1);
+%  \fill[unshaded] (0,0.7) arc(180:0:.15cm) -- (0.3,-0.7)arc(0:-180:0.15cm) -- (0,0.7); 
+%  \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
+%  \draw (0,0.7) arc(180:0:.15cm) -- (0.3,.15);
+%  \draw (0,-0.7) arc(-180:0:.15cm) -- (0.3,-.15);
+%  \draw (0,0.7) -- (0,-0.7);
+%  \draw (-0.3,-2.1) -- (-0.3,2.1);
+%  \draw (0.6,-2.1) -- (0.6,2.1);
+%  \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+%  \node at (0.6,-2.3) {\tiny{$n-1$}};
+%  \node at (-0.3,2.2) {\tiny{$2r+1$}};
+% \end{tikzpicture}
+=d^2\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)
  \]
   \end{minipage}
 }
 
 \item (Left Inclusion) The left inclusion $i^{-}_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the inclusion $A_1'\bigcap A_{n+1}\to A_0'\bigcap A_{n+1}$.
  Graphically, $\overline{i^-}$ is equivalent to adding a string on the left. Thus, for $x$ in $\cQ_{n,-}$, we have that:
-\[
+\[i_n(\Phi(x))=
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
  \fill[shaded] (-0.45,-0.7) -- (-0.45,0.7) -- (0.15,0.7) -- (0.15,-0.7) -- (-0.45,-0.7);
@@ -5827,11 +5829,10 @@ This means that, for any $x \in\cQ_{n,+}$, we have
  \roundNbox{unshaded}{(0.15,0)}{.3}{0}{0}{$x$};
  \node at (0.15,0.8){\tiny{$n$}};
  \node at (-0.45, -0.9){\tiny{$2r+1$}};
- \node at (-0.30,-1.6){\scriptsize{$i_n(\Phi(x))$}};
 \end{tikzpicture}
-\quad
+\,
 =
-\quad
+\,
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
  \fill[shaded] (0.15,-0.7) -- (0.15,0.7) -- (0.6,0.7) -- (0.6,-0.7) -- (0.15,-0.7);
@@ -5844,9 +5845,9 @@ This means that, for any $x \in\cQ_{n,+}$, we have
  \node at (0.6,0.8){\tiny{$n$}};
  \node at (-0.45, -0.9){\tiny{$2r$}};
  \node at (0.15,-0.9){\tiny{1}};
- \node at (0.15,-1.6){\scriptsize{$\Phi(\overline{i^{-}_{n}}(x))$}};
-\end{tikzpicture}\]
-\end{enumerate}
+\end{tikzpicture}
+=\Phi(\overline{i^{-}_{n}}(x))\]
+\end{itemize}
 \end{proof}
 
 We have checked that $\Phi:\cQ_{\bullet}\to\cP_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $\cG_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
