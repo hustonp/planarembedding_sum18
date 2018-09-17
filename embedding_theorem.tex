@@ -5610,13 +5610,13 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
  The map $\Phi$ is a $\dag$-planar algebra embedding. 
 \end{thm} 
 \begin{proof}
- For clarity, let us denote the conditional expectation and inclusion in $\cP_\bullet$ by $\overline{E}$ and $\overline{i}$, reserving the plain symbols for their counterparts in $\cQ_\bullet$. Similarly, let us denote the $n$-th Jones projection in $\cP_\bullet$ by $f_n$, reserving $e_n$ for the Jones projection in $\cQ_\bullet$. 
+ For clarity, let us denote the conditional expectation and inclusions in $\cP_\bullet$ by $\overline{E}$ and $\overline{i}$, reserving the plain symbols for their counterparts in $\cQ_\bullet$. Similarly, let us denote the $n$-th Jones projection in $\cP_\bullet$ by $f_n$, reserving $e_n$ for the Jones projection in $\cQ_\bullet$. 
 
  We need only check the hypotheses of Lemma \ref{lem:SufficientConditionsForPlanarMap}: that $\Phi$ commutes with the action of several tangles.
 
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Jones Projections)
-$
+ $\displaystyle\Phi(e_n)=\Phi\left(
 \begin{tikzpicture}[baseline]
  \draw (-.1,-.7) -- (-.1,.7);
  \draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
@@ -5624,8 +5624,8 @@ $
 % \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (-.1,-.9) {\tiny{$n-1$}};
 \end{tikzpicture}
-\quad
-\mapsto
+  \right)\quad
+=
 \quad
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.85,-.7) -- (-1.15,-.7) -- (-1.15,.7) -- (-.85,.7) -- (-.85,-.7);
@@ -5650,9 +5650,10 @@ $
 % \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (.55,0) {\tiny{$2r+n-1$}};
 \end{tikzpicture}
+=f_n
 $
 \item (Conditional Expectation) \label{condex} 
-$
+ $\displaystyle\Phi(\overline{E_n}(x))=\Phi\left(
 \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,.7);
  \draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
@@ -5660,8 +5661,8 @@ $
  \node at (0,-0.9) {\tiny{$n-1$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\quad
-\mapsto
+  \right)\quad
+  =
 \quad
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
@@ -5688,9 +5689,10 @@ $
  \node at (-.6,.9) {\tiny{$2r$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
+=E_n(\Phi(x))
 $
 \item (Right Inclusion)
-$
+ $\displaystyle \overline{i_n}(x)=i_n\left(
 \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,0.7);
  \draw (0.45,-.7) -- (0.45,.7);
@@ -5699,8 +5701,8 @@ $
  \node at (0.45,-.9) {\tiny{$1$}};
  \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\quad
-\mapsto
+\right)\quad
+=
 \quad
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
@@ -5730,6 +5732,7 @@ $
  \node at (0,0) {\scriptsize{$x$}};
  \node at (0.6,-.9) {\tiny{$1$}};
 \end{tikzpicture}
+=i_n(\Phi(x))
 $
 \item (Left Capping) In \S\ref{sec:StronglyMarkovPA}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
 we discussed that the left-capping tangle in the canonical planar $\ast$-algebra is given for $n\geq 1$ by 
@@ -5807,13 +5810,13 @@ This means that, for any $x \in\cQ_{n,+}$, we have
  \node at (0,2.2) {\tiny{$2r+1$}};
 \end{tikzpicture}
 \,.
+=d^2\Phi\left(E^{\c\cQ_{n,+}}_{\cQ_{n-1,-}}(x)
  \]
   \end{minipage}
 }
-Clearly, the last diagram depicts an element of  $\Phi(\cQ_{\bullet})$. In fact, we have $E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x)) =\Phi\left(E^{\c\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)$.
 
-\item (Left Inclusion) The negative inclusion $i^{-}_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the identity on the relative commutant planar algebra.
- Graphically, $\overline{i}$ is equivalent to adding a string on the left. Thus, for $x$ in $\cQ_{n,-}$ we have that:
+\item (Left Inclusion) The left inclusion $i^{-}_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the inclusion $A_1'\bigcap A_{n+1}\to A_0'\bigcap A_{n+1}$.
+ Graphically, $\overline{i^-}$ is equivalent to adding a string on the left. Thus, for $x$ in $\cQ_{n,-}$, we have that:
 \[
 \begin{tikzpicture}[baseline]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
