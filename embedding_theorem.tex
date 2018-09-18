@@ -266,6 +266,7 @@
 \tikzstyle{over}=[double, draw=white, super thick, double=]
 \tikzstyle{relativecommutantshading}=[fill=blue!20!white]
 \tikzstyle{ctwoshading}=[fill=red!15!white]
+\tikzstyle{Bshading}=[fill=blue!15!white]
 
 \newcommand{\roundNbox}[6]{
  \draw[rounded corners=5pt, very thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
@@ -810,16 +811,13 @@ We leave this exploration to a future article as it would take us too far afield
 %For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
 %We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
 
-
-\nn{switch P and Q below here.}
-
-We now specialize to the hypotheses of the module embedding theorem, i.e., $\cP_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding projection category with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
+We now specialize to the hypotheses of the module embedding theorem, i.e., $\cQ_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding projection category with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
 In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
 This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
 We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
 
-By \cite[\S2.3]{MR2812459}, the inclusion $A_0:=M_{2r} \subset (M_{2r+1}, \tr_{2r+1}) =: (A_1, \tr_1)$ has a canonical associated planar $\dag$-algebra $\cQ_\bullet$, which is built from the tower of higher relative commutants.
-Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cQ_\bullet$ is \emph{non-canonically} isomorphic to the bipartite graph planar algebra $\cG_\bullet$ of the Bratteli diagram of the inclusion $A_0 \subset A_1$, which is also the fusion graph $\Gamma$. 
+By \cite[\S2.3]{MR2812459}, the inclusion $A_0:=M_{2r} \subset (M_{2r+1}, \tr_{2r+1}) =: (A_1, \tr_1)$ has a canonical associated planar $\dag$-algebra $\cP_\bullet$, which is built from the tower of higher relative commutants.
+Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cP_\bullet$ is \emph{non-canonically} isomorphic to the bipartite graph planar algebra $\cG_\bullet$ of the Bratteli diagram of the inclusion $A_0 \subset A_1$, which is also the fusion graph $\Gamma$. 
 (This isomorphism depends on the loop algebra representation for $A_0 \subset A_1$ from \cite[\S3.1]{MR2812459}, which amounts to choosing compatible bases for the algebras.)
 %Notice that we may canonically identify $\Gamma$ with the principal graph of the Markov tower $M_\bullet$ and the fusion graph for $(\cM,m)$ with respect to $c\in \cC$.
 
@@ -827,7 +825,7 @@ Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cQ_\bullet$ is \em
 
 \begin{thmalpha}
 \label{thm:ModulePAEmbedding}
-The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cP_{n,\pm} \to \cQ_{n,\pm}$
+The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cQ_{n,\pm} \to \cP_{n,\pm}$
 $$
 \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,.7);
@@ -852,14 +850,14 @@ $$
  \node at (-0.4,-.9) {\tiny{$m$}};
 \end{tikzpicture} 
 $$
-give a planar $\dag$-algebra embedding $\cP_\bullet \hookrightarrow \cQ_\bullet$.
+give a planar $\dag$-algebra embedding $\cQ_\bullet \hookrightarrow \cP_\bullet$.
 \end{thmalpha}
 
-Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cP_\bullet$ from \cite{MR2812459}.
+Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cQ_\bullet$ from \cite{MR2812459}.
 Similarly, we get an embedding into the graph planar algebra of the dual principal graph from choosing $\cM= \cC_{10} \oplus \cC_{11}$ and $m \in \cC_{10}$ is an arbitrary choice of simple object.
 
 Notice we made two choices in our proof of the module embedding theorem; we picked a simple object $m\in \cM$, and we picked $r\geq 0$ such that $M_{2r}\subset (M_{2r+1},\tr_{2r+1})$ is strongly Markov.
-In our final Section \ref{sec:InvarianceOfEmbedding}, we explain that picking a different simple $m'\in \cM$ or a different $r'\geq 0$, we get an equivalent planar $\dag$-algebra embedding $\cP_\bullet \to \cG\cP\cA(\Gamma)_\bullet$.
+In our final Section \ref{sec:InvarianceOfEmbedding}, we explain that picking a different simple $m'\in \cM$ or a different $r'\geq 0$, we get an equivalent planar $\dag$-algebra embedding $\cQ_\bullet \to \cG\cP\cA(\Gamma)_\bullet$.
 Indeed, we show that the two strongly Markov inclusions are related by a shift and a compression by a projection with central support 1, and these processes yield planar $\dag$-isomorphisms on the associated canonical relative commutant planar algebras.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5120,15 +5118,15 @@ The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by addi
 defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\bullet}$.
 \end{thm}
 \begin{proof}
-The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satistfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in red in order to increase clarity.
+The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satistfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in blue in order to increase clarity.
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Right Inclusion)
 \[
 \begin{tikzpicture}[baseline=-0.1]
-\draw[red] (0,-0.7) -- (0,0.7);
-\draw[red] (0.45,-0.7) -- (0.45,0.7);
-\roundNbox{unshaded, draw=red}{(0,0)}{.3}{0}{0}{\textcolor{red}{\tiny{$\Phi(x)$}}};
-\node at (0,-0.9){\textcolor{red}{\tiny{$n$}}};
+\draw[blue] (0,-0.7) -- (0,0.7);
+\draw[blue] (0.45,-0.7) -- (0.45,0.7);
+\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 = 
@@ -5157,11 +5155,11 @@ The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order 
 \item (Left Inclusion)
 \[
 \begin{tikzpicture}[baseline=-0.1,xscale=-1]
-\fill[ctwoshading] (0,-0.7) rectangle (0.45,0.7);
-\draw[red] (0,-0.7) -- (0,0.7);
-\draw[red] (0.45,-0.7) -- (0.45,0.7);
-\roundNbox{unshaded, draw=red}{(0,0)}{.3}{0}{0}{\textcolor{red}{\tiny{$\Phi(x)$}}};
-\node at (0,-0.9){\textcolor{red}{\tiny{$n$}}};
+\fill[Bshading] (0,-0.7) rectangle (0.45,0.7);
+\draw[blue] (0,-0.7) -- (0,0.7);
+\draw[blue] (0.45,-0.7) -- (0.45,0.7);
+\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 = 
@@ -5192,10 +5190,10 @@ The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order 
 \item (Right Capping)
 \[
 \begin{tikzpicture}[baseline=-0.1]
-\draw[red] (0,-0.7) -- (0,0.7);
-\draw[red] (0.15,0.3) arc(180:0:0.15) -- (0.45,-0.3) arc(0:-180:0.15);
-\roundNbox{unshaded, draw=red}{(0,0)}{.3}{0}{0}{\textcolor{red}{\tiny{$\Phi(x)$}}};
-\node at (0,-0.9){\textcolor{red}{\tiny{$n$}}};
+\draw[blue] (0,-0.7) -- (0,0.7);
+\draw[blue] (0.15,0.3) arc(180:0:0.15) -- (0.45,-0.3) arc(0:-180:0.15);
+\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 =
@@ -5224,11 +5222,11 @@ The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order 
 \item (Left Capping) We again apply the trick from \cite[Theorem~4.1]{MR2812459}. Let $B$ be a Pimsner-Popa basis of $A_3$ over $A_2$.
 \[
 \begin{tikzpicture}[baseline=-0.1]
-\fill[ctwoshading] (-0.6,-0.7) rectangle (0,0.7);
-\draw[red] (0,-0.7) -- (0,0.7);
-\filldraw[unshaded,draw=red] (-0.15,0.3) arc(0:180:0.15) -- (-0.45,-0.3) arc(-180:0:0.15);
-\roundNbox{unshaded,draw=red}{(0,0)}{0.3}{0}{0}{\textcolor{red}{\tiny{$\Phi(x)$}}};
-\node at (0,-0.9){\textcolor{red}{\tiny{$n$}}};
+\fill[Bshading] (-0.6,-0.7) rectangle (0,0.7);
+\draw[blue] (0,-0.7) -- (0,0.7);
+\filldraw[unshaded,draw=blue] (-0.15,0.3) arc(0:180:0.15) -- (-0.45,-0.3) arc(-180:0:0.15);
+\roundNbox{unshaded,draw=blue}{(0,0)}{0.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 =
@@ -5543,8 +5541,9 @@ Hence \eqref{eq:LeftCappingForCompression} holds, and the result follows.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The module embedding theorem via towers of algebras}
 
-We have finally developed the tools necessary to prove Theorem \ref{thm:ModulePAEmbedding}, which turns a finite depth cyclic right pivotal module $\cM$ over the category of projections $\cC$ of a subfactor planar algebra $\cQ_\bullet$ (or equivalently, a finite depth connected right planar module over $\cQ_\bullet$) into an embedding of $\cQ_\bullet$ into the graph planar algebra of the fusion graph of $\cM$. % tricky to strike the balance between precision and clarity here
-In particular, we recover the embedding of a subfactor planar algebra into the graph planar algebra of its own principal graph, described in \cite{MR2812459}, as a special case, along with an embedding into the graph planar algebra of the dual principal graph. We will then verify that, up to an automorphism of the graph planar algebra, the resulting embedding does not depend on the choice of generating object for the module category.
+We have finally developed the tools necessary to prove Theorem \ref{thm:ModulePAEmbedding}, which turns a finite depth cyclic right pivotal module $(\cM,m)$ over the category of projections $\cC$ of a subfactor planar algebra $\cQ_\bullet$ (or equivalently, a finite depth connected right planar module over $\cQ_\bullet$) into an embedding of $\cQ_\bullet$ into the graph planar algebra of the fusion graph of $\cM$ with respect to the unshaded-shaded strand $X\in \cQ_{1,+}$. % tricky to strike the balance between precision and clarity here
+As a special case, we recover the embedding of a subfactor planar algebra into the graph planar algebra of its own principal graph, described in \cite{MR2812459}, along with an embedding into the graph planar algebra of the dual principal graph. 
+We then verify that, up to an automorphism of the graph planar algebra, the resulting embedding does not depend on the choice of generating object for the module category.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The Embedding Theorem}
@@ -5610,14 +5609,15 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
  The map $\Phi$ is a $\dag$-planar algebra embedding. 
 \end{thm} 
 \begin{proof}
- For clarity, let us denote the conditional expectations and inclusions in $\cP_\bullet$ by $\overline{E}$ and $\overline{i}$, reserving the plain symbols for their counterparts in $\cQ_\bullet$. Similarly, let us denote the $n$-th Jones projection in $\cP_\bullet$ by $f_n$, reserving $e_n$ for the Jones projection in $\cQ_\bullet$.
+ For clarity, let us denote the conditional expectations and inclusions in $\cQ_\bullet$ by $\cE$ and $\iota$, reserving the plain symbols for their counterparts in $\cP_\bullet$. 
+ Similarly, let us denote the $n$-th Jones projection in $\cQ_\bullet$ by $\varepsilon_n$, reserving $e_n$ for the Jones projection in $\cP_\bullet$.
 
  We need only check the hypotheses of Lemma \ref{lem:SufficientConditionsForPlanarMap}: that $\Phi$ commutes with the action of several tangles.
 
 \begin{itemize}
  \item (Jones Projections)
- $\displaystyle\Phi(e_n)=\Phi\left(
-\begin{tikzpicture}[baseline]
+ $\displaystyle\Phi(\varepsilon_n)=\Phi\left(
+\begin{tikzpicture}[baseline=-.1cm]
  \draw (-.1,-.7) -- (-.1,.7);
  \draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
  \draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
@@ -5627,7 +5627,7 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
   \right)\,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.85,-.7) -- (-1.15,-.7) -- (-1.15,.7) -- (-.85,.7) -- (-.85,-.7);
  \draw[thick,red] (-.85,-.7) -- (-.85,.7);
  \draw (-.55,-.7) -- (-.55,.7);
@@ -5641,7 +5641,7 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
 \,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.4,-.7) -- (-.7,-.7) -- (-.7,.7) -- (-.4,.7) -- (-.4,-.7);
  \draw[thick,red] (-.4,-.7) -- (-.4,.7);
  \draw (-.1,-.7) -- (-.1,.7);
@@ -5650,86 +5650,80 @@ Here, the unshaded-shaded strand is a simple generator of the category of projec
 % \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (.55,0) {\tiny{$2r+n-1$}};
 \end{tikzpicture}
-=f_n
+=e_n
 $
 \item (Conditional Expectation) \label{condex} 
- $\displaystyle\Phi(\overline{E_n}(x))=\Phi\left(
-\begin{tikzpicture}[baseline]
+ $\displaystyle\Phi(\cE_n(x))=\Phi\left(
+\begin{tikzpicture}[baseline=-.1cm]
  \draw (0,-.7) -- (0,.7);
  \draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \node at (0,-0.9) {\tiny{$n-1$}};
- \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
   \right)\,
   =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
  \draw (-.6,-.7) -- (-.6,.7);
  \draw (0,-.7) -- (0,.7);
  \draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \node at (0,-0.9) {\tiny{$n-1$}};
- \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 \,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
  \draw (-.6,-.7) -- (-.6,.7);
  \draw (0,-.7) -- (0,.7);
  \draw (.15,.3) -- (.15,.7) arc (180:0:.3cm) -- (.75,-.7) arc (0:-180:.3) -- (.15,-.3);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \draw[dashed] (-1.4,-.65) -- (-1.4,.65) -- (.45,.65) -- (.45,-.65) -- (-1.4,-.65);
  \node at (-.2,-.9) {\tiny{$n-1$}};
  \node at (-.6,.9) {\tiny{$2r$}};
- \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 =E_n(\Phi(x))
 $
 \item (Right Inclusion)
- $\displaystyle \overline{i_n}(x)=i_n\left(
-\begin{tikzpicture}[baseline]
+ $\displaystyle \iota_n(x)=i_n\left(
+\begin{tikzpicture}[baseline=-.1cm]
  \draw (0,-.7) -- (0,0.7);
  \draw (0.45,-.7) -- (0.45,.7);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \node at (0,-.9) {\tiny{$n$}};
  \node at (0.45,-.9) {\tiny{$1$}};
- \node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 \right)\,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.9,-.7) -- (-1.2,-.7) -- (-1.2,.7) -- (-.9,.7) -- (-.9,-.7);
  \draw[thick,red] (-.9,-.7) -- (-.9,.7);
  \draw (-.6,-.7) -- (-.6,.7);
  \draw (0,-.7) -- (0,0.7);
  \draw (0.45,-.7) -- (0.45,.7);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \node at (0,-.9) {\tiny{$n$}};
  \node at (-.6,.9) {\tiny{$2r$}};
- \node at (0,0) {\scriptsize{$x$}};
  \node at (0.45,-.9) {\tiny{$1$}};
 \end{tikzpicture}
 \,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.75,-.7) -- (-1.05,-.7) -- (-1.05,.7) -- (-.75,.7) -- (-.75,-.7);
  \draw[thick,red] (-.75,-.7) -- (-.75,.7);
  \draw (-.45,-.7) -- (-.45,.7);
  \draw (0,-.7) -- (0,0.7);
  \draw (0.6,-.7) -- (0.6,.7);
- \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{}
+ \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
  \draw[dashed] (-1.25,-.65) -- (-1.25,.65) -- (.45,.65) -- (.45,-.65) -- (-1.25,-.65);
  \node at (0,-.9) {\tiny{$n$}};
  \node at (-.45,.9) {\tiny{$2r$}};
- \node at (0,0) {\scriptsize{$x$}};
  \node at (0.6,-.9) {\tiny{$1$}};
 \end{tikzpicture}
 =i_n(\Phi(x))
@@ -5741,16 +5735,14 @@ E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
 \]
 where $\{b\}$ is a Pimnser Popa basis of $A_1$ over $A_0$. 
 This means that, for any $x \in\cQ_{n,+}$, we have 
-
-\centerline{
-  \begin{minipage}{\linewidth}
-   \[
+\nn{the factors of $d$ are off here!}
+$$
     d^2E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x))
     =
 \sum_{b}
 % Previously, the text on the top and bottom of the diagrams had different offsets because of the character height. 
 % Someone may want to change this back later, or better yet, use anchors on the node right (maybe).
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm, scale=.8]
  \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
  \fill[shaded] (0,1.7) -- (0,0.5) -- (0.3,0.5) -- (0.3,-0.5) -- (0,-0.5) -- (0,-1.7) -- (0.6,-1.7) -- (0.6,1.7) -- (0,1.7);
  \draw[thick,red] (-0.6,-1.7) -- (-0.6,1.7);
@@ -5766,7 +5758,7 @@ This means that, for any $x \in\cQ_{n,+}$, we have
 \end{tikzpicture}
 =
 \sum_{b}
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm, scale=.8]
  \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
  \fill[shaded] (0,1.7) -- (0,0.5) -- (0.3,0.5) -- (0.3,0.25)arc (-180:0:.15cm)-- (0.6,1.3)arc(180:0:.3cm) -- (1.2,-1.3) arc(0:-180:0.3cm) -- (0.6,-0.25) arc(0:180:0.15cm) -- (0.3,-0.5) -- (0,-.5) -- (0,-1.7) -- (1.5,-1.7) -- (1.5,1.7);
  \draw[thick,red] (-0.6,-1.7) -- (-0.6,1.7);
@@ -5783,7 +5775,7 @@ This means that, for any $x \in\cQ_{n,+}$, we have
  \node at (-.15,0) {\tiny{$2r$}};
 \end{tikzpicture} 
 =\,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm, scale=.8]
  \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
  \fill[shaded] (-0.3,1.7) -- (1.2,1.7) -- (1.2,-1.7) -- (-0.3,-1.7) -- (-0.3,1.7);
  \filldraw[unshaded] (0.3,1.3) arc(180:0:.3cm) -- (0.9,-1.3)arc(0:-180:0.3cm) -- (0.3,1.3); 
@@ -5812,15 +5804,15 @@ This means that, for any $x \in\cQ_{n,+}$, we have
 %  \node at (0.6,-2.3) {\tiny{$n-1$}};
 %  \node at (-0.3,2.2) {\tiny{$2r+1$}};
 % \end{tikzpicture}
-=d^2\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right)
- \]
-  \end{minipage}
-}
+=d^2\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right).
+$$
 
-\item (Left Inclusion) The left inclusion $i^{-}_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the inclusion $A_1'\bigcap A_{n+1}\to A_0'\bigcap A_{n+1}$.
- Graphically, $\overline{i^-}$ is equivalent to adding a string on the left. Thus, for $x$ in $\cQ_{n,-}$, we have that:
-\[i_n(\Phi(x))=
-\begin{tikzpicture}[baseline]
+\item (Left Inclusion) 
+The left inclusion $l_{n} : \cP_{n,-} \to\cP_{n+1,+}$ is just the inclusion $A_1'\cap A_{n+1}\to A_0'\cap A_{n+1}$.
+Graphically, $\ell_n:\cQ_{n,-} \to\cQ_{n+1,+}$ is equivalent to adding a string on the left. 
+Thus, for $x\in \cQ_{n,-}$, we have that:
+\[l_n(\Phi(x))=
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
  \fill[shaded] (-0.45,-0.7) -- (-0.45,0.7) -- (0.15,0.7) -- (0.15,-0.7) -- (-0.45,-0.7);
  \draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
@@ -5833,7 +5825,7 @@ This means that, for any $x \in\cQ_{n,+}$, we have
 \,
 =
 \,
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
  \fill[ctwoshading] (-.9,-.7) -- (-0.9,.7) -- (-1.3,0.7) -- (-1.3,-0.7) -- (-0.9,-0.7);
  \fill[shaded] (0.15,-0.7) -- (0.15,0.7) -- (0.6,0.7) -- (0.6,-0.7) -- (0.15,-0.7);
  \draw[red, thick] (-0.9,-0.7) -- (-0.9,0.7);
@@ -5846,19 +5838,23 @@ This means that, for any $x \in\cQ_{n,+}$, we have
  \node at (-0.45, -0.9){\tiny{$2r$}};
  \node at (0.15,-0.9){\tiny{1}};
 \end{tikzpicture}
-=\Phi(\overline{i^{-}_{n}}(x))\]
+=\Phi(\overline{\ell_{n}}(x))\]
 \end{itemize}
 \end{proof}
 
-We have checked that $\Phi:\cQ_{\bullet}\to\cP_{\bullet}$ is a planar $\ast$-algebra inclusion. Let $\cG_\bullet$ be the bipartite graph planar algebra of the fusion graph of $x$ acting on $\cM$. Then by Theorem 3.33 in \cite{MR2812459}, 
-we know that $\cP_\bullet$ is a planar $\ast$-algebra isomorphic to $\cG_\bullet$. Thus, we have an embedding of $\cQ_\bullet$ into $\cG_\bullet$.
+We have checked that $\Phi:\cQ_{\bullet}\to\cP_{\bullet}$ is a planar $\dag$-algebra inclusion. 
+Let $\cG_\bullet$ be the bipartite graph planar algebra of the fusion graph of $X$ acting on $\cM$. 
+Then by Theorem 3.33 in \cite{MR2812459}, 
+we know that $\cP_\bullet$ is a planar $\dag$-algebra isomorphic to $\cG_\bullet$. 
+Thus, we have an embedding of $\cQ_\bullet$ into $\cG_\bullet$.
 
 \begin{cor}[The Embedding Theorem]
  \label{cor:EmbeddingTheorem} % remember to switch the label when changing type of thm later
  A subfactor planar algebra $\cQ_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a connected right planar $\cQ_\bullet$-module.
 \end{cor}
 
-In particular, by considering $(\cQ_\bullet,1_+)$ as a connected right planar $\cQ_\bullet$-module, we recover the main result of \cite{MR2812459}. By instead considering $(\cQ_\bullet,Y)$ for $Y$ a simple summand of $\overline{X}$, we obtain an embedding of $\cQ_\bullet$ into the graph planar algebra for the dual principal graph.
+In particular, by considering $(\cQ_\bullet,1_{0,+})$ as a connected right planar $\cQ_\bullet$-module, we recover the main result of \cite{MR2812459}. 
+By instead considering $(\cQ_\bullet,Y)$ for $Y$ a simple summand of the shaded-unshaded strand $\overline{X}\in \cQ_{1,-}$, we obtain an embedding of $\cQ_\bullet$ into the graph planar algebra for the dual principal graph.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Invariance of the embedding}
