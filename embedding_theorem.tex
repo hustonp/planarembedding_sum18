@@ -129,6 +129,7 @@
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\Obj}{Obj}
 
 
 % Math %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4465,10 +4466,12 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 \end{defn}
 
 \begin{rem}
-\nn{edit this remark to explain that the $\cT\cL\cJ$-action on itself is dagger tensor equivalent to the usual tensor category structure of $\cT\cL\cJ$.}
-To that end, note that the category of projections of the Markov tower $TLJ_\bullet$ is equivalent to the tensor category $\TLJ$, with the internal tensor product given by an action of $\TLJ$ on itself. 
-That the above definition of the action defines a tensor category in the special case of $\TLJ$ is easier to see; in $\TLJ$, plenty of isotopy is available, wheras the category $\cM$, is not a-priori a planar algebra or module. 
-Then the morphism $\coev_{[n]}\in\TLJ([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition.
+ In order to give the category of projections of a Markov tower the structure of a pivotal right $\TLJ$-module, it will be helpful to present $\TLJ$ as a category of projections. Reassuringly, the category of projections $\cT$ of the Markov tower ${TLJ}_\bullet$ is $\dag$-tensor equivalent to the tensor category $\TLJ$, with the internal tensor product given by the action of $\TLJ$ on itself. 
+ Since $\End([n]_{\cT})=\End([n]_{\TLJ})={TLJ}_n$, it is clear that the map $\Phi:\Obj(\cT)\to\Obj(\TLJ)$ sending $[n]_{\cT}\to[n]_{\TLJ}$ can be extended functorially to all objects in the idempotent completions, and to all endomorphisms. 
+ The morphism $\coev_{[n]}\in\cT([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition. 
+ Declaring that $\Phi(\coev_{[n]})=\coev_{[n]}$ then determines $\Phi$ everywhere. 
+ 
+ That the resulting $\Phi$ is a well-defined tensor dagger equivalence of categories is a series of computations in $TLJ_\bullet$, but since the Markov tower structure on $TLJ_\bullet$ comes from a planar algebra structure, they follow by isotopy. The difficulty in stating the above definitions for composition and tensor product in the category of projections is that, a priori, a general Markov tower may not extend to a planar algebra structure. One should think of the definitions for composition and tensor product in the category of projections as being obtained by isotoping the much simpler definitions for a planar algebra into a form that can be written down in terms of the data of a Markov tower. 
 \end{rem}
 
 \begin{defn}[Pivotal module structure] 
