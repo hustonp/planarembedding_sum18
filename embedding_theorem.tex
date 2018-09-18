@@ -1392,19 +1392,91 @@ As an application, we get a classification of pivotal module $\Cstar$ categories
 
 \begin{defn}
 Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
- We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$. The process is similar to that in \cite[Def.~3.2]{MR2812459}:.
+ We build a connected right planar $\cP_\bullet$-module $\cM_\bullet$ by defining $\cM_k := \End_\cC( m \vartriangleleft X^{\text{alt}\otimes k})$ for $k\geq 0$, and we define the action of the shaded planar module operad via the diagrammatic calculus for $\cM$. The process is similar to that in \cite[Def.~3.2]{MR2812459}.
  
-We first define a standard form for tanges of the shaded planar module operad, such that every tangle is isotopic to one in standard form. We say a tangle is in \textit{standard form} if 
+We first define a standard form for tangles of the shaded planar module operad, such that every tangle is isotopic to one in standard form. We say a tangle is in \textit{standard form} if 
 \begin{enumerate}[label={\rm(SF\arabic*)}]
- \item Each disk and semidisc, including the output semidisc, is rectangular in shape, with an equal number of strings emerging from the top and bottom,
+ \item Each disc and semidisc, including the output semidisc, is rectangular in shape, with an equal number of strings emerging from the top and bottom,
  \item in the case of a disc, the starred boundary interval includes the left side, and 
  \item a horizontal line through the tangle passes through a disc, semidisc, or extremum of a strand at most once. 
 \end{enumerate}
 
-\nn{
-first, provide a tangle in standard form.
-Then supply what happens for inserting an $\cM$-morphism, inserting a $\cC$-morphism, and cups and caps.
-Then do an explicit example using our tangle in standard form.}
+Given a shaded planar module tangle $T$ of type \nn{define type}
+$(k_0;k_1,\dots, k_r; (\ell_1,\pm_1),\dots, (\ell_s, \pm_s))$ 
+together with appropriate inputs $(f_1,\dots, f_r, x_1,\dots, x_s)$ with $m_i \in \cM_{k_i}$ and $x_j \in \cP_{\ell_j, \pm_j}$,
+we begin with the identity morphism of $m \vartriangleleft X^{\text{alt}k_0}$ in $\cM_{k_0}$,
+and we move an imaginary horizontal line upwards along the tangle.
+Each time the horizontal line passes a disc, semidisc, or local extrema (which can happen only one at a time!), we compose with a morphism from $\cM$.
+In more detail, when the horizontal line passes:
+\begin{itemize}
+\item
+the $i$-th input semidisc with vertical stands to the right, we compose with $f_j \vartriangleleft \id$, where $\id$ is the appropriate identity morphism corresponding to the strands to the right of the input semidisc
+\item
+the $j$-th input disk with vertical strands to the left and right, we compose with $\id_{m}\vartriangleleft \id_l \otimes x \otimes \id_r$ where $\id_l, \id_r$ correspond to the  appropriate identity morphisms corresponding to the strands to the left and right of the input disc
+\item
+a local extrema with vertical strands to the left and right, we compose with $\id_{m}\vartriangleleft \id_l \otimes v \otimes \id_r$ where $v$ stands for the following (co)evaluation or its dagger depending on the shading:
+$$
+\begin{tikzpicture}[baseline=-.1cm]
+ \fill[shaded] (-.2,-.2) rectangle (.8,.3);
+ \filldraw[unshaded] (0,-.2) arc (180:0:.3cm);
+\end{tikzpicture}
+\leadsto
+\ev_X
+\qquad\qquad
+\begin{tikzpicture}[baseline=-.1cm, yscale=-1]
+ \filldraw[shaded] (0,-.2) arc (180:0:.3cm);
+\end{tikzpicture}
+\leadsto
+\coev_X
+\qquad\qquad
+\begin{tikzpicture}[baseline=-.1cm, yscale=-1]
+ \fill[shaded] (-.2,-.2) rectangle (.8,.3);
+ \filldraw[unshaded] (0,-.2) arc (180:0:.3cm);
+\end{tikzpicture}
+\leadsto
+\ev_X^\dag
+\qquad\qquad
+\begin{tikzpicture}[baseline=-.1cm]
+ \filldraw[shaded] (0,-.2) arc (180:0:.3cm);
+\end{tikzpicture}
+\leadsto
+\coev_X^\dag,
+$$
+and $\id_l, \id_r$ are the appropriate identity morphisms as above.
+\end{itemize}
+The output is the composite morphism in $\cM_{k_0} := \End_\cM(m \vartriangleleft X^{\text{alt}k_0})$.
+One then checks that the resulting composite morphism is independent of the choice of standard form for the shaded planar module tangle $T$.
+
+\begin{ex}
+Here is an explicit example of a tangle in standard form, together with the corresponding multi-linear map obtained by composing the associated morphisms in $\cM$ from bottom to top:
+\begin{align*}
+\begin{tikzpicture}[baseline = -.1cm]
+ \filldraw[shaded] (.3,-1.5) arc (-180:0:.25cm) -- (.8,0) arc (180:0:.25cm) -- (1.5,0) .. controls ++(90:.4cm) and ++(270:.4cm) .. (.7,.9) -- (.3,.9) -- (.3,-.9);
+ \filldraw[shaded] (.3,1.5) -- (.3,2.2) -- (1.5,2.2) arc (90:-90:2.2cm) -- (.3,-2.2) .. controls ++(90:.3cm) and ++(270:1.3cm) .. (1.3,-.6) -- (1.5,-.6) arc (-180:0:.25cm) -- (2,0) .. controls ++(90:1.5cm) and ++(90:1cm) .. (.7,1.5);
+ \filldraw[unshaded] (1.5,-2.2) .. controls ++(90:.5cm) and ++(270:1cm) .. (3,0) .. controls ++(90:1cm) and ++(270:.5cm) .. (1.5,2.2) arc (90:-90:2.2cm);
+%
+ \halfcircle{}{(0,0)}{2.2}{1.5}{}
+%
+ \openhalfcircle{}{(0,1.2)}{.3}{.4}{\scriptsize{$2$}}
+ \openhalfcircle{}{(0,-1.2)}{.3}{0}{\scriptsize{$1$}}
+ \ncircle{unshaded}{(1.4,-.3)}{.3}{180}{\scriptsize{$3$}}
+ \ncircle{unshaded}{(2.8,.575)}{.3}{180}{\scriptsize{$4$}}
+%
+  \node at (-2.5,-2.1) {\scriptsize{$\id_m\vartriangleleft \coev_X \otimes \id_{X\otimes \overline{X}}$}};
+  \node at (-2.5,-1.5) {\scriptsize{$- \vartriangleleft \id_{\overline{X}\otimes X\otimes \overline{X}}$}};
+  \node at (-2.5,-.9) {\scriptsize{$\id_m\vartriangleleft \id_{X\otimes \overline{X}\otimes X} \otimes \ev_X^\dag \otimes \id_{\overline{X}}$}};
+  \node at (-2.5,-.3) {\scriptsize{$\id_m\vartriangleleft \id_{X\otimes \overline{X}}\otimes - \otimes \id_{X\otimes \overline{X}}$}};
+  \node at (-2.5,.3) {\scriptsize{$\id_m\vartriangleleft \id_{X}\otimes \coev_X^\dag \otimes \id_{\overline{X}\otimes X\otimes \overline{X}}$}};
+  \node at (-2.5,.9) {\scriptsize{$\id_m\vartriangleleft \id_{X\otimes \overline{X}\otimes X}\otimes - $}};
+  \node at (-2.5,1.5) {\scriptsize{$-\vartriangleleft \id_{X\otimes \overline{X}}$}};
+  \node at (-2.5,2.1) {\scriptsize{$\id_m\vartriangleleft \id_{X}\otimes \coev_X^\dag \otimes \id_{\overline{X}}$}};
+\end{tikzpicture}
+:
+\cM_1\otimes \cM_2 \otimes \cP_{2,+} \otimes \cP_{1,-}
+&\longrightarrow 
+\cM_{2}
+\end{align*}
+\end{ex}
 
 %Suppose $T$ is a tangle in standard form with input semidiscs of types $(k_i)_{i=1}^r$, input discs of types $((\ell_j,\pm_j))_{j=1}^s$, and output type $k_0$. 
 %Choose endomorphisms $\xi_i\in\cM_{k_i}$ and $\eta_j\in\End((X^{\pm_j})^{\text{alt}\otimes{\ell_j}}$. 
