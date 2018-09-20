@@ -4235,7 +4235,7 @@ We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$.
 As for morphisms, we first consider the case where one morphism is the identity. 
  If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
  The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
-\[f\vartriangleleft 1_{j+k}=f\circ
+\[f\vartriangleleft 1_{j+k}=f\cdot
  % \TLPlusPIso{n}{k}{j}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -4250,7 +4250,7 @@ As for morphisms, we first consider the case where one morphism is the identity.
  \end{tikzpicture}
  \text{,}\]
 while for $j<k$, we set 
-\[f\vartriangleleft 1_j=f\circ
+\[f\vartriangleleft 1_j=f\cdot
  % \TLMinusPIso{n}{j}{k}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -4276,7 +4276,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  % So, they will be annoying to edit. Hopefully they are good enough to be treated as atoms. 
  \begingroup\allowdisplaybreaks % To avoid huge blank space before this stuff. Pairs with \endgroup after the \end{align*}
  \begin{align*}
-  (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\circ
+  (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot
   % \TLPlusPIso{n}{k}{j{+}2k{+}i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
@@ -4318,7 +4318,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[dashed] (0,0) -- (2.6,0);
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
-  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
   % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
@@ -4347,7 +4347,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \right)
   \\&= 
-  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
     \begin{scope}[shift={(.1,0)}]
@@ -4387,7 +4387,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[dashed] (0,0) -- (2.6,0);
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
-  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
   % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
@@ -4416,7 +4416,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
  \right)\right)
   \\&= 
-  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,0)}] % noop, but see exchange comment below
     \begin{scope}[shift={(.1,0)}]
@@ -4458,7 +4458,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
-  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
   % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
@@ -4507,7 +4507,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \node at (1.3,.5) {$g$};
   \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
  \end{tikzpicture}
- \circ\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
+ \cdot\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
   % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=-0.2cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4532,7 +4532,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[dashed] (0,0) -- (2.4,0);
   %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
   % \end{tikzpicture}
-  % \circ
+  % \cdot
   % \TLPlusPIso{n+j+k}{k+i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
    \begin{scope}[shift={(.1,-1)}]
@@ -4579,7 +4579,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (1.3,.5) {$g$};
    \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
   \end{tikzpicture}
-  \circ\iota(f)\circ
+  \cdot\iota(f)\cdot
   % \TLPlusPIso{n}{k}{j}
   \begin{tikzpicture}[baseline=-0.1cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4600,7 +4600,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
   % \end{tikzpicture}
-% \circ
+% \cdot
 % \TLPlusPIso{n+j+k}{k}{i+k}
   % \begin{tikzpicture}[baseline=.3cm]
    \draw[dashed] (0,0) -- (2,0);
