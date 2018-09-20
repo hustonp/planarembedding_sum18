@@ -4509,7 +4509,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  \end{tikzpicture}
  \circ\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
   % \TLPlusPIso{n}{k}{j+2k+i}
-  \begin{tikzpicture}[baseline=.3cm]
+  \begin{tikzpicture}[baseline=-0.2cm]
    \begin{scope}[shift={(.1,0)}]
     \draw (.1,0) -- (.1,.8);
     \draw (.3,.8) arc (-180:0:.2cm);
@@ -4517,41 +4517,44 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
     \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
     \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
     \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
-    \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
-    \draw (1.3,0) arc (180:0:.2cm);
     \node at (.1,1) {\scriptsize{$n$}};
-    \node at (.3,1) {\scriptsize{$k$}};
+    \node at (.3,1) {\scriptsize{$k$}}; % this goes with the arc
+    \node at (.7,1) {\scriptsize{$k$}}; % and so does this
     \node at (.9,1) {\scriptsize{$j$}};
     \node at (1.1,1) {\scriptsize{$k$}};
-    \node at (1.3,1) {\scriptsize{$i$}};
-    \node at (1.5,1) {\scriptsize{$k$}};
-    \node at (1.7,1) {\scriptsize{$i$}};
-    \node at (1.3,-.2) {\scriptsize{$k$}};
-   \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
-  \end{tikzpicture}
-  \circ
-  % \TLPlusPIso{n+j+k}{k+i}{k}
-  \begin{tikzpicture}[baseline=.4cm]
-   \begin{scope}[shift={(.1,0)}]
-    \draw (.1,0) -- (.1,1);
-    \node at (.1,1.2) {\scriptsize{$n$}};
-    \draw (.3,0) -- (.3,1);
-    \node at (.3,1.2) {\scriptsize{$j$}};
-    \draw (.5,0) -- (.5,1);
-    \node at (.5,1.2) {\scriptsize{$k$}};
-    \draw (.7,1) arc (-180:0:.4cm);
-    \node at (.7,1.2) {\scriptsize{$k$}};
-    \draw (.9,1) arc (-180:0:.2cm);
-    \node at (.9,1.2) {\scriptsize{$i$}};
-    \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
-    \node at (1.7,1.2) {\scriptsize{$k$}};
-    \draw (1.3,0) arc (180:0:.4cm);
-    \node at (1.3,-.2) {\scriptsize{$i$}};
+    \node at (1.3,1) {\scriptsize{$k$}};
+    \node at (1.5,1) {\scriptsize{$i$}};
+    \draw (1.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.9,.8);
+    \node at (1.9,1) {\scriptsize{$i$}};
     \draw (1.5,0) arc (180:0:.2cm);
-    \node at (1.5,-.2) {\scriptsize{$k$}};
+    \node at (1.9,.3) {\scriptsize{$k$}};
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   \draw[dashed] (0,0) -- (2.4,0);
+  %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+  % \end{tikzpicture}
+  % \circ
+  % \TLPlusPIso{n+j+k}{k+i}{k}
+  % \begin{tikzpicture}[baseline=.4cm]
+   \begin{scope}[shift={(.1,-1)}]
+    \draw (.1,0) -- (.1,1);
+    \node at (.1,-.2) {\scriptsize{$n$}};
+    \draw (.3,0) -- (.3,1);
+    \node at (.3,-.2) {\scriptsize{$j$}};
+    \draw (.5,0) -- (.5,1);
+    \node at (.5,-.2) {\scriptsize{$k$}};
+    \draw (.7,1) arc (-180:0:.4cm); % k
+    \draw (.9,1) arc (-180:0:.2cm); % i
+    \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.9,1);
+    \node at (1.1,-0.2) {\scriptsize{$k$}};
+    \draw (1.3,0) arc (180:0:.4cm);
+    \node at (1.3,-0.2) {\scriptsize{$i$}};
+    \node at (2.1,-0.2) {\scriptsize{$i$}};
+    \draw (1.5,0) arc (180:0:.2cm);
+    \node at (1.5,-0.2) {\scriptsize{$k$}};
+    \node at (1.9,-0.2) {\scriptsize{$k$}};
+   \end{scope}
+  %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.4,0.8);
   \end{tikzpicture}
   \right)\right)
   \\&= % This step is where bubble gets used. 
@@ -4578,45 +4581,47 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \circ\iota(f)\circ
   % \TLPlusPIso{n}{k}{j}
-  \begin{tikzpicture}[baseline=.3cm]
+  \begin{tikzpicture}[baseline=-0.1cm]
    \begin{scope}[shift={(.1,0)}]
     \draw (.1,0) -- (.1,.8);
     \node at (.1,1) {\scriptsize{$n$}};
     \draw (.3,.8) arc (-180:0:.2cm);
     \node at (.3,1) {\scriptsize{$k$}};
+    \node at (.7,1) {\scriptsize{$k$}};
     \draw (.3,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
     \node at (.9,1) {\scriptsize{$j$}};
-    \draw (.5,0) arc (180:0:.2cm);
-    \node at (.5,-.2) {\scriptsize{$k$}};
-    \draw (1.1,0) -- (1.1,.8);
-    \node at (1.1,1) {\scriptsize{$k$}};
+    \draw (.5,0) arc (180:0:.2cm); % k
     \draw (1.3,0) -- (1.3,.8);
-    \node at (1.3,1) {\scriptsize{$i$}};
+    \node at (1.3,1) {\scriptsize{$k$}};
     \draw (1.5,0) -- (1.5,.8);
-    \node at (1.5,1) {\scriptsize{$k$}};
+    \node at (1.5,1) {\scriptsize{$i$}};
+    \draw (1.7,0) -- (1.7,.8);
+    \node at (1.7,1) {\scriptsize{$k$}};
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
-  \end{tikzpicture}
-\circ
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+  % \end{tikzpicture}
+% \circ
 % \TLPlusPIso{n+j+k}{k}{i+k}
-  \begin{tikzpicture}[baseline=.3cm]
-   \begin{scope}[shift={(.1,0)}]
+  % \begin{tikzpicture}[baseline=.3cm]
+   \draw[dashed] (0,0) -- (2,0);
+   \begin{scope}[shift={(.1,-0.8)}]
     \draw (.1,0) -- (.1,.8);
-    \node at (.1,1) {\scriptsize{$n$}};
+    \node at (.1,-0.2) {\scriptsize{$n$}};
     \draw (.3,0) -- (.3,.8);
-    \node at (.3,1) {\scriptsize{$j$}};
+    \node at (.3,-0.2) {\scriptsize{$j$}};
     \draw (.5,0) -- (.5,.8);
-    \node at (.5,1) {\scriptsize{$k$}};
-    \draw (.7,.8) arc (-180:0:.2cm);
-    \node at (.7,1) {\scriptsize{$k$}};
-    \draw (.7,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
-    \node at (1.3,1) {\scriptsize{$i$}};
+    \node at (.5,-0.2) {\scriptsize{$k$}};
+    \draw (.9,.8) arc (-180:0:.2cm); % k
     \draw (.9,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
-    \node at (1.5,1) {\scriptsize{$k$}};
-    \draw (1.1,0) arc (180:0:.2cm);
-    \node at (1.5,-.2) {\scriptsize{$k$}};
+    \node at (0.9,-0.2) {\scriptsize{$i$}};
+    \draw (1.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+    \node at (1.1,-0.2) {\scriptsize{$k$}};
+    \draw (1.3,0) arc (180:0:.2cm);
+    \node at (1.3,-.2) {\scriptsize{$k$}};
+    \node at (1.7,-.2) {\scriptsize{$k$}};
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+   \draw[thick, rounded corners = 5pt] (0,-0.8) rectangle (2,0.8);
   \end{tikzpicture}
 \right)\\
 &=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
