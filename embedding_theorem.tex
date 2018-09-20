@@ -1206,8 +1206,8 @@ $$
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
 Tangles of the shaded planar module operad can also be composed with shaded planar tangles, by plugging a shaded planar tangle into an input disk. 
-One should think of the box spaces for semidisks as being endomrphisms of objects in a module category, while the involvement of full disks allows a planar algebra to act on the module. 
-The input disks and semidiscs are also numbered, with the numbering determining the order of the tensor factors in the domain of the action map as depicted above. Like the shaded planar operad, the shaded planar module operad is a symmetric operad, and vectorspaces form a symmetric monoidal category, so we often supress the numbering. 
+One should think of the box spaces for semidisks as being endomorphisms of objects in a module category, while the involvement of full disks allows a planar algebra to act on the module. 
+The input disks and semidiscs are also numbered, with the numbering determining the order of the tensor factors in the domain of the action map as depicted above. Like the shaded planar operad, the shaded planar module operad is a symmetric operad, and vectorspaces form a symmetric monoidal category, so we often suppress the numbering. 
 
 \begin{defn}
 \label{def:RightPlanarModule}
@@ -1255,7 +1255,7 @@ We call $\cM_\bullet$ \emph{connected} if $\dim(\cM_0) = 1$.
 In this case, we can canonically identify $\cM_0 = \bbC$ as a $\Cstar$-algebra, and each $\Tr_k$ is a scalar-valued.
 We define $\tr_n := d^{-k} \Tr_k$, where $d$ is the loop parameter of $\cP_\bullet$.
 Notice that the $\tr_k$ are faithful tracial states.
-We will see that, under the correspondance of Theorem \ref{thm:ModuleEquivalence}, connected right planar modules correspond to cyclic pivotal right module $\Cstar$-categories.
+We will see that, under the correspondence of Theorem \ref{thm:ModuleEquivalence}, connected right planar modules correspond to cyclic pivotal right module $\Cstar$-categories.
 \end{defn}
 
 \begin{ex}
@@ -1363,7 +1363,7 @@ $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Equivalence of modules}
 
-In this section, $\cP_\bullet$ will denore a subfactor planar algebra, and $(\cC, X)$ will denote its unitary $2\times 2$ multitensor category of projections, where $X = 1_0 \otimes X \otimes 1_1$ is the generating unshaded-shaded strand.
+In this section, $\cP_\bullet$ will denote a subfactor planar algebra, and $(\cC, X)$ will denote its unitary $2\times 2$ multitensor category of projections, where $X = 1_0 \otimes X \otimes 1_1$ is the generating unshaded-shaded strand.
 We now sketch the proof of the following theorem.
 
 \begin{thm*}[Theorem \ref{thm:ModuleEquivalence}]
@@ -1498,7 +1498,7 @@ Here is an explicit example of a tangle in standard form, together with the corr
 \begin{defn}
 Given a connected right planar $\cP_\bullet$-module $\cM_\bullet$, we let $\cM$ be its \emph{category of projections}.
 The objects of $\cM$ are the orthogonal projections in $\cM_k$ for $k\geq 0$.
-The hom space $\cM(p \to q)$ for $p\in \cM_j$ and $q\in \cM_k$ is only nonzero if $j \equiv k \mod 2$; in this case, we define
+The $\Hom$-space $\cM(p \to q)$ for $p\in \cM_j$ and $q\in \cM_k$ is only nonzero if $j \equiv k \mod 2$; in this case, we define
 $$
 \cM(p \to q)
 :=
@@ -2299,7 +2299,7 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 We can determine the Bratteli diagram and principal graph for $(pM_np, \tr_n^p, pe_{n+1})$, as follows. 
 If $p$ has central support $1$, then the Bratteli diagram is unchanged. 
 In general, any vertices on the bottom row corresponding to simple summands of $M_0$ where $p$ does not have support disappear, as well as those edges no longer supported from below. 
-By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtatin the Bratteli diagram for $(pM_np, \tr_n^p, pe_{n+1})$.
+By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtain the Bratteli diagram for $(pM_np, \tr_n^p, pe_{n+1})$.
 \end{remark}
 
 \begin{nota}
@@ -2448,7 +2448,7 @@ M_{(n+1)k-1}
 \end{tikzpicture}
 \,.
 \end{align*}
-Since we may perform isotopy in the Temerley-Lieb-Jones subalgebra of $M_{(n+1)k}$, we may decompose the diagram on the right hand side as follows:
+Since we may perform isotopy in the Temperley-Lieb-Jones subalgebra of $M_{(n+1)k}$, we may decompose the diagram on the right hand side as follows:
 $$
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
@@ -2556,7 +2556,7 @@ We now define the category of projections of a Markov tower.
 \begin{defn}
 \label{def:MarkovProjections}
 Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
-We define the category $\cM$ to be the unitary Karoubi completion (formally adding orthogonal direct sums, and then taking the orthogonal projection completion) of the $\Cstar$ category $\cM_0$ with finite dimensional hom spaces defined as follows.
+We define the category $\cM$ to be the unitary Karoubi completion (formally adding orthogonal direct sums, and then taking the orthogonal projection completion) of the $\Cstar$ category $\cM_0$ with finite dimensional $\Hom$-spaces defined as follows.
 \begin{itemize}
 \item
 The objects of $\cM_0$ are the symbols $[n]$ for $n\geq 0$.
@@ -2597,7 +2597,7 @@ For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\d
 %where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
 %We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
 \item
-We define composition in three cases. In each, we make use of Temperley-Lieb diagrams. The Jones projections of a Markov tower generate an image of the Markov tower of Temperely-Lieb algebras, so each such diagram represents a well-defined element of $M_\bullet$. 
+We define composition in three cases. In each, we make use of Temperley-Lieb diagrams. The Jones projections of a Markov tower generate an image of the Markov tower of Temperley-Lieb algebras, so each such diagram represents a well-defined element of $M_\bullet$. 
 \begin{enumerate}[label={\rm(C\arabic*)}]
 \item
 \label{compose:upup}
@@ -3191,7 +3191,7 @@ $\dag$ is a dagger structure on $\cM_0$,
 for every $f\in \cM_0([n]\to [n+2j])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2j]\to [n+2j])$ such that 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
 \item
-there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2i])$ and $\cM_0([n+2j] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
+there are (pullback) norms on the (finite dimensional) $\Hom$-spaces $\cM_0([n]\to [n+2i])$ and $\cM_0([n+2j] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
 Notice that in a $\Cstar$ category, these norms can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
@@ -3973,7 +3973,7 @@ Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitarily Karoubi comp
 Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in canonical bijection with the vertices of the principal graph.
 \end{cor}
 \begin{proof}
-All endomorphism algebras of $\cM$ are finite dimensional $\Cstar$ algebras which are semisimple, and thus $\cM$ is semisimple. By \ref{EP:BasicContruction}, every minimal projection in $X_{n+2}$ for $n\geq 0$ is equivalent to a minimal projection in $M_{n}$ via a parial isometry in $\cM_0([n] \to [n+2])$. 
+All endomorphism algebras of $\cM$ are finite dimensional $\Cstar$ algebras which are semisimple, and thus $\cM$ is semisimple. By \ref{EP:BasicContruction}, every minimal projection in $X_{n+2}$ for $n\geq 0$ is equivalent to a minimal projection in $M_{n}$ via a partial isometry in $\cM_0([n] \to [n+2])$. 
 Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism $p\in M_{n+1} = \cM_0([n] \to [n+2])$, which is a partial isometry using the definition of composition \ref{compose:updown} and \ref{compose:downup} in $\cM_0$, and this exhausts all equivalence classes of minimal projections in $X_{n+2}$.
 By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
@@ -5356,7 +5356,7 @@ The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by addi
 defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\bullet}$.
 \end{thm}
 \begin{proof}
-The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satistfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in blue in order to increase clarity.
+The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satisfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in blue in order to increase clarity.
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Right Inclusion)
 \[
@@ -5532,7 +5532,7 @@ Hence the map is surjective.
 We now show the map is injective.
 Suppose $x \in z(N'\cap M)$ such that $px = 0$.
 By (1), $z(N'\cap M) = zN' \cap zMz$.
-Then for all unitaries $u\in U(N)$, $upz = z(up) \in zN$, so 
+Then for all unitary $u\in U(N)$, $upz = z(up) \in zN$, so 
 $0 = upxu^* = (upz)xu^* = x(upzu^*) = xupu^*$.
 Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 \end{proof}
