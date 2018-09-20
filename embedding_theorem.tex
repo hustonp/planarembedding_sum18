@@ -4632,6 +4632,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
 \end{defn}
 
 \begin{rem}
+ \label{rem:TLAsCatOfProjections}
  In order to give the category of projections of a Markov tower the structure of a pivotal right $\TLJ$-module, it will be helpful to present $\TLJ$ as a category of projections. Reassuringly, the category of projections $\cT$ of the Markov tower ${TLJ}_\bullet$ is $\dag$-tensor equivalent to the tensor category $\TLJ$, with the internal tensor product given by the action of $\TLJ$ on itself. 
  Since $\End([n]_{\cT})=\End([n]_{\TLJ})={TLJ}_n$, it is clear that the map $\Phi:\Obj(\cT)\to\Obj(\TLJ)$ sending $[n]_{\cT}\to[n]_{\TLJ}$ can be extended functorially to all objects in the idempotent completions, and to all endomorphisms. 
  The morphism $\coev_{[n]}\in\cT([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition. 
@@ -4677,7 +4678,7 @@ and thus $\Tr^\cM$ satisfies \ref{PivotalModule:tracial}.
 To see that $\Tr^\cM$ satisfies \ref{PivotalModule:compatible}, we must show that for all $n$, $k$, and $f\in\cM([n]\to[n])$,
  \[\Tr^\cM_{[n]\vartriangleleft[k]}(f)=\Tr^\cM_{[n]}\left((1\vartriangleleft\coev_{[k]}^\dag)\circ(f\vartriangleleft1_{[k]})\circ(1\vartriangleleft\coev_{[k]})\right).
  \]
- Now by Remark \nn{above}, it is straightforward to show the left and right sides of the above equation are respectively equal to the left and right sides of the following equation, which trivially holds:
+ Now by Remark \ref{rem:TLAsCatOfProjections}, it is straightforward to show the left and right sides of the above equation are respectively equal to the left and right sides of the following equation, which trivially holds:
   \[
   \Tr(f)
   =
