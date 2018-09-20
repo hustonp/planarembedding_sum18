@@ -4269,106 +4269,244 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  
  Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
  We show the case where $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to{m+2\ell}_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in{(k+j)}_{\TLJ}\to(k+j)+2(k+i)_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar. \nn{are they all?}
- Let $\iota$ denote the inclusions in $M_\bullet$, and let $\lambda$ and $\rho$ denote the left and right inclusions in $\TLJ$. 
+ 
+ Let $\iota$ denote the inclusion in $M_\bullet$. 
  By definition, we have 
- \nn{can use string diagrams for $g$, which is in $\cT\cL\cJ$!}
+ % BEWARE: The diagrams in the following argument have a lot of redundant scoping, intended to help combine previous tickets cleanly
+ % So, they will be annoying to edit. Hopefully they are good enough to be treated as atoms. 
  \begin{align*}
   (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\circ
   % \TLPlusPIso{n}{k}{j{+}2k{+}i}
   \begin{tikzpicture}[baseline=.3cm]
-   \begin{scope}[shift={(.1,0)}]
-    \draw (.1,0) -- (.1,.8);
-    \draw (.3,.8) arc (-180:0:.2cm);
-    \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
-    \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
-    \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
-    \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
-    \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
-    \draw (1.3,0) arc (180:0:.2cm);
-    \node at (.1,1) {\scriptsize{$n$}};
-    \node at (.3,1) {\scriptsize{$k$}};
-    \node at (.9,1) {\scriptsize{$j$}};
-    \node at (1.1,1) {\scriptsize{$k$}};
-    \node at (1.3,1) {\scriptsize{$i$}};
-    \node at (1.5,1) {\scriptsize{$k$}};
-    \node at (1.7,1) {\scriptsize{$i$}};
-    \node at (1.3,-.2) {\scriptsize{$k$}};
+   \begin{scope}[shift={(0,1)}]
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,.8);
+     \node at (.1,1) {\scriptsize{$n$}};
+     \draw (.3,.8) arc (-180:0:.2cm);
+     \node at (.3,1) {\scriptsize{$k$}};
+     \node at (.7,1) {\scriptsize{$k$}};
+     \begin{scope}[shift={(.2,0)}] % interacts with $g$
+      \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+      \node at (.9,1) {\scriptsize{$j$}};
+      \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+      \node at (1.1,1) {\scriptsize{$k$}};
+      \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+      \node at (1.3,1) {\scriptsize{$i$}};
+      \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+      \node at (1.5,1) {\scriptsize{$k$}};
+     \end{scope}
+     \begin{scope}[shift={(.4,0)}] % avoids $g$ to the right
+      \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+      \node at (1.7,1) {\scriptsize{$i$}};
+      \draw (1.3,0) arc (180:0:.2cm);
+      \node at (1.8,.3) {\scriptsize{$k$}};
+     \end{scope}
+    \end{scope}
+    \draw[dashed] (0,0) -- (2.6,0);
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
-  \end{tikzpicture}
-  \circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+   \draw (.2,0) -- (.2,1); % n
+   \draw (.6,0) -- (.6,1); % lines running through $g$
+   \draw (.8,0) -- (.8,1);
+   \draw (1,0) -- (1,1);
+   \draw (1.2,0) -- (1.2,1);
+   \draw[thick, rounded corners = 5pt, fill=white] (.4,.2) rectangle (1.5,.8);
+   \node at (.95,.5) {$g$};
+   \draw (1.6,0) -- (1.6,1); % lines right of $g$
+   \draw (1.8,0) -- (1.8,1);
+   \draw (2.2,0) -- (2.2,1);
+   \draw[dashed] (0,0) -- (2.6,0);
+   \begin{scope}[shift={(0,-1)}]
+  %\end{tikzpicture}
+  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
   % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
-  \begin{tikzpicture}[baseline=.4cm]
-   \begin{scope}[shift={(.1,0)}]
-    \draw (.1,0) -- (.1,1);
-    \node at (.1,1.2) {\scriptsize{$n$}};
-    \draw (.3,0) -- (.3,1);
-    \node at (.3,1.2) {\scriptsize{$j$}};
-    \draw (.5,0) -- (.5,1);
-    \node at (.5,1.2) {\scriptsize{$k$}};
-    \draw (.7,1) arc (-180:0:.4cm);
-    \node at (.7,1.2) {\scriptsize{$k$}};
-    \draw (.9,1) arc (-180:0:.2cm);
-    \node at (.9,1.2) {\scriptsize{$i$}};
-    \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
-    \node at (1.7,1.2) {\scriptsize{$k$}};
-    \draw (1.3,0) arc (180:0:.4cm);
-    \node at (1.3,-.2) {\scriptsize{$i$}};
-    \draw (1.5,0) arc (180:0:.2cm);
-    \node at (1.5,-.2) {\scriptsize{$k$}};
+  % \begin{tikzpicture}[baseline=.4cm]
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,1);
+     \node at (.1,-0.2) {\scriptsize{$n$}};
+     \begin{scope}[shift={(.2,0)}] % stuff that interacts with $g$
+      \draw (.3,0) -- (.3,1);
+      \node at (.3,-0.2) {\scriptsize{$j$}};
+      \draw (.5,0) -- (.5,1);
+      \node at (.5,-0.2) {\scriptsize{$k$}};
+      \draw (.7,1) arc (-180:0:.4cm); % k
+      \draw (.9,1) arc (-180:0:.2cm); % i
+      \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.9,1);
+      \node at (1,-0.2) {\scriptsize{$k$}};
+      \draw (1.3,0) arc (180:0:.4cm);
+      \node at (1.3,-0.2) {\scriptsize{$i$}};
+      \node at (2.1,-0.2) {\scriptsize{$i$}};
+      \draw (1.5,0) arc (180:0:.2cm);
+      \node at (1.5,-0.2) {\scriptsize{$k$}};
+      \node at (1.9,-0.2) {\scriptsize{$k$}};
+     \end{scope}
+    \end{scope}
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
   \right)
   \\&= 
-  \iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
-  % \TLPlusPIso{n}{k}{j+2k+i}
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
-   \begin{scope}[shift={(.1,0)}]
-    \draw (.1,0) -- (.1,.8);
-    \draw (.3,.8) arc (-180:0:.2cm);
-    \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
-    \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
-    \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
-    \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
-    \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
-    \draw (1.3,0) arc (180:0:.2cm);
-    \node at (.1,1) {\scriptsize{$n$}};
-    \node at (.3,1) {\scriptsize{$k$}};
-    \node at (.9,1) {\scriptsize{$j$}};
-    \node at (1.1,1) {\scriptsize{$k$}};
-    \node at (1.3,1) {\scriptsize{$i$}};
-    \node at (1.5,1) {\scriptsize{$k$}};
-    \node at (1.7,1) {\scriptsize{$i$}};
-    \node at (1.3,-.2) {\scriptsize{$k$}};
+   \begin{scope}[shift={(0,1)}]
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,.8);
+     \node at (.1,1) {\scriptsize{$n$}};
+     \draw (.3,.8) arc (-180:0:.2cm);
+     \node at (.3,1) {\scriptsize{$k$}};
+     \begin{scope}[shift={(.2,0)}] % interacts with $g$
+      \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+      \node at (.9,1) {\scriptsize{$j$}};
+      \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+      \node at (1.1,1) {\scriptsize{$k$}};
+      \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+      \node at (1.3,1) {\scriptsize{$i$}};
+      \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+      \node at (1.5,1) {\scriptsize{$k$}};
+     \end{scope}
+     \begin{scope}[shift={(.4,0)}] % avoids $g$ to the right
+      \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+      \node at (1.7,1) {\scriptsize{$i$}};
+      \draw (1.3,0) arc (180:0:.2cm);
+      \node at (1.8,.3) {\scriptsize{$k$}};
+     \end{scope}
+    \end{scope}
+    \draw[dashed] (0,0) -- (2.6,0);
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
+   \draw (.2,0) -- (.2,1); % n
+   \draw (.6,0) -- (.6,1); % lines running through $g$
+   \draw (.8,0) -- (.8,1);
+   \draw (1,0) -- (1,1);
+   \draw (1.2,0) -- (1.2,1);
+   \draw[thick, rounded corners = 5pt, fill=white] (.4,.2) rectangle (1.5,.8);
+   \node at (.95,.5) {$g$};
+   \draw (1.6,0) -- (1.6,1); % lines right of $g$
+   \draw (1.8,0) -- (1.8,1);
+   \draw (2.2,0) -- (2.2,1);
+   \draw[dashed] (0,0) -- (2.6,0);
+   \begin{scope}[shift={(0,-1)}]
+  %\end{tikzpicture}
+  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+  % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
+  % \begin{tikzpicture}[baseline=.4cm]
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,1);
+     \node at (.1,-0.2) {\scriptsize{$n$}};
+     \begin{scope}[shift={(.2,0)}] % stuff that interacts with $g$
+      \draw (.3,0) -- (.3,1);
+      \node at (.3,-0.2) {\scriptsize{$j$}};
+      \draw (.5,0) -- (.5,1);
+      \node at (.5,-0.2) {\scriptsize{$k$}};
+      \draw (.7,1) arc (-180:0:.4cm); % k
+      \draw (.9,1) arc (-180:0:.2cm); % i
+      \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.9,1);
+      \node at (1,-0.2) {\scriptsize{$k$}};
+      \draw (1.3,0) arc (180:0:.4cm);
+      \node at (1.3,-0.2) {\scriptsize{$i$}};
+      \node at (2.1,-0.2) {\scriptsize{$i$}};
+      \draw (1.5,0) arc (180:0:.2cm);
+      \node at (1.5,-0.2) {\scriptsize{$k$}};
+      \node at (1.9,-0.2) {\scriptsize{$k$}};
+     \end{scope}
+    \end{scope}
+   \end{scope}
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
-  \circ\rho\lambda(g)\circ
-  % \TLPlusPIso{n+j+k}{k+i}{k}
-  \begin{tikzpicture}[baseline=.4cm]
-   \begin{scope}[shift={(.1,0)}]
-    \draw (.1,0) -- (.1,1);
-    \node at (.1,1.2) {\scriptsize{$n$}};
-    \draw (.3,0) -- (.3,1);
-    \node at (.3,1.2) {\scriptsize{$j$}};
-    \draw (.5,0) -- (.5,1);
-    \node at (.5,1.2) {\scriptsize{$k$}};
-    \draw (.7,1) arc (-180:0:.4cm);
-    \node at (.7,1.2) {\scriptsize{$k$}};
-    \draw (.9,1) arc (-180:0:.2cm);
-    \node at (.9,1.2) {\scriptsize{$i$}};
-    \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,1);
-    \node at (1.7,1.2) {\scriptsize{$k$}};
-    \draw (1.3,0) arc (180:0:.4cm);
-    \node at (1.3,-.2) {\scriptsize{$i$}};
-    \draw (1.5,0) arc (180:0:.2cm);
-    \node at (1.5,-.2) {\scriptsize{$k$}};
+ \right)\right)
+  \\&= 
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,0)}] % noop, but see exchange comment below
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,.8);
+     \draw (.3,.8) arc (-180:0:.2cm);
+     \begin{scope}[shift={(.2,0)}] % interacts with $g$
+      \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
+      \draw (.5,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.1,.8);
+      \draw (.7,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.3,.8);
+      \draw (.9,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,.8);
+     \end{scope}
+     \begin{scope}[shift={(.4,0)}] % avoids $g$ to the right
+      \draw (1.1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.7,.8);
+      \draw (1.3,0) arc (180:0:.2cm);
+     \end{scope}
+    \end{scope}
+    \draw[dashed] (0,0) -- (2.6,0);
    \end{scope}
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
-  \end{tikzpicture}\right)
- \\&= 
- \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+   \begin{scope}[shift={(0,.8)}] % exchange two blocks
+    \draw (.2,0) -- (.2,1);
+    \node at (.2,1.2) {\scriptsize{$n$}};
+    \draw (.4,0) -- (.4,1); 
+    \node at (.4,1.2) {\scriptsize{$k$}};
+    \draw (.8,0) -- (.8,1); % k
+    \node at (.8,1.2) {\scriptsize{$k$}};
+    \draw (1.2,0) -- (1.2,1);
+    \node at (1.2,1.2) {\scriptsize{$j$}};
+    \draw (1.4,0) -- (1.4,1);
+    \node at (1.4,1.2) {\scriptsize{$k$}};
+    \draw (1.6,0) -- (1.6,1);
+    \node at (1.6,1.2) {\scriptsize{$i$}};
+    \draw (1.8,0) -- (1.8,1);
+    \node at (1.8,1.2) {\scriptsize{$k$}};
+    \draw[thick, rounded corners = 5pt, fill=white] (1,.2) rectangle (2,.8);
+    \node at (1.5,.5) {$g$};
+    \draw (2.2,0) -- (2.2,1);
+    \node at (2.2,1.2) {\scriptsize{$i$}};
+    \draw[dashed] (0,0) -- (2.6,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-1)}]
+  %\end{tikzpicture}
+  %\circ \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\circ
+  % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
+  % \begin{tikzpicture}[baseline=.4cm]
+    \begin{scope}[shift={(.1,0)}]
+     \draw (.1,0) -- (.1,1);
+     \node at (.1,-0.2) {\scriptsize{$n$}};
+     \begin{scope}[shift={(.2,0)}] % stuff that interacts with $g$
+      \draw (.3,0) -- (.3,1);
+      \node at (.3,-0.2) {\scriptsize{$j$}};
+      \draw (.5,0) -- (.5,1);
+      \node at (.5,-0.2) {\scriptsize{$k$}};
+      \draw (.7,1) arc (-180:0:.4cm); % k
+      \draw (.9,1) arc (-180:0:.2cm); % i
+      \draw (1,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.9,1);
+      \node at (1,-0.2) {\scriptsize{$k$}};
+      \draw (1.3,0) arc (180:0:.4cm);
+      \node at (1.3,-0.2) {\scriptsize{$i$}};
+      \node at (2.1,-0.2) {\scriptsize{$i$}};
+      \draw (1.5,0) arc (180:0:.2cm);
+      \node at (1.5,-0.2) {\scriptsize{$k$}};
+      \node at (1.9,-0.2) {\scriptsize{$k$}};
+     \end{scope}
+    \end{scope}
+   \end{scope}
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
+   \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
+  \end{tikzpicture}
+ \right)\right)
+ \\&=E^{n+j+4k+i}_{n+j+3k+i}\left(
+ % \lambda(g)
+ \begin{tikzpicture}[baseline=.3cm]
+  \draw (.2,0) -- (.2,1);
+  \node at (.2,1.2) {\scriptsize{$n$}};
+  \draw (.4,0) -- (.4,1);
+  \node at (.4,1.2) {\scriptsize{$k$}};
+  \draw (.6,0) -- (.6,1);
+  \node at (.6,1.2) {\scriptsize{$k$}};
+  \draw (1,0) -- (1,1);
+  \node at (1,1.2) {\scriptsize{$j$}};
+  \draw (1.2,0) -- (1.2,1);
+  \node at (1.2,1.2) {\scriptsize{$k$}};
+  \draw (1.4,0) -- (1.4,1);
+  \node at (1.4,1.2) {\scriptsize{$i$}};
+  \draw (1.6,0) -- (1.6,1);
+  \node at (1.6,1.2) {\scriptsize{$k$}};
+  \draw[thick, rounded corners = 5pt, fill=white] (.8,.2) rectangle (1.8,.8);
+  \node at (1.3,.5) {$g$};
+  \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
+ \end{tikzpicture}
+ \circ\iota(f)\circ E^{n+j+4k+2i}_{n+j+4k+i}\left(
   % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4414,9 +4552,30 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
   \end{tikzpicture}
-  \right)
-  \\&= 
-  \lambda(g)\circ\iota(f)\circ E^{n+j+3k+2i}_{n+j+2k+i}\left(
+  \right)\right)
+  \\&= % This step is where bubble gets used. 
+  % \lambda(g)
+  E^{n+j+4k+i}_{n+j+3k+i}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,1);
+   \node at (.2,1.2) {\scriptsize{$n$}};
+   \draw (.4,0) -- (.4,1);
+   \node at (.4,1.2) {\scriptsize{$k$}};
+   \draw (.6,0) -- (.6,1);
+   \node at (.6,1.2) {\scriptsize{$k$}};
+   \draw (1,0) -- (1,1);
+   \node at (1,1.2) {\scriptsize{$j$}};
+   \draw (1.2,0) -- (1.2,1);
+   \node at (1.2,1.2) {\scriptsize{$k$}};
+   \draw (1.4,0) -- (1.4,1);
+   \node at (1.4,1.2) {\scriptsize{$i$}};
+   \draw (1.6,0) -- (1.6,1);
+   \node at (1.6,1.2) {\scriptsize{$k$}};
+   \draw[thick, rounded corners = 5pt, fill=white] (.8,.2) rectangle (1.8,.8);
+   \node at (1.3,.5) {$g$};
+   \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
+  \end{tikzpicture}
+  \circ\iota(f)\circ
   % \TLPlusPIso{n}{k}{j}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(.1,0)}]
