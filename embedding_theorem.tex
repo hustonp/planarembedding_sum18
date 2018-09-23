@@ -4938,7 +4938,8 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
   \end{tikzpicture}
   \\&= 
-  \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
+  \iota\left(
+  \underbrace{E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4952,7 +4953,8 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (.8,-.2) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
   \end{tikzpicture}
-  \right)\right)\cdot
+  \right)}_{z}
+  \right)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
@@ -4991,8 +4993,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   }
   }
   {=}
-  \iota\left(
-  \underbrace{E^{n+2i}_{n+i}\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot
+  \iota\left(E^{n+2i}_{n+i}\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -5018,8 +5019,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (.8,1) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1,.8);
   \end{tikzpicture}
-  \right)}_{z}
-  \right)\cdot
+  \right)\right)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
