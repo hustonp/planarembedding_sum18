@@ -4612,7 +4612,477 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  \end{align*}
  \endgroup
  It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
- It is even easier to check that the action is associative. 
+ Functoriality in the right variable comes directly from the definition, but functoriality in the left variable is more involved.
+ We describe a representative case. Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+2i+2j]_{\cM}\to[n+2i]_{\cM}$, and suppose $m=k+i+j$. Then
+ \begin{align*}
+  (g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) &= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,0) -- (.4,.8);
+   \node at (.4,1) {\scriptsize{$i$}};
+   \draw (.6,0) -- (.6,.8);
+   \node at (.6,1) {\scriptsize{$i$}};
+   \draw (.8,0) arc (180:0:.2cm);
+   \node at (.8,-.2) {\scriptsize{$j$}};
+   \node at (1.2,-.2) {\scriptsize{$j$}};
+   \draw (.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.4,0);
+   \node at (.8,1) {\scriptsize{$k$}};
+   \draw (1,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.6,0);
+   \node at (1,1) {\scriptsize{$i$}};
+   \draw (1.2,.8) arc (-180:0:.2cm);
+   \node at (1.2,1) {\scriptsize{$j$}};
+   \node at (1.6,1) {\scriptsize{$j$}};
+   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
+  \end{tikzpicture}
+  \cdot\iota(g)\cdot\iota(f)\cdot
+  % \rho\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.4)}]
+    \draw (.2,0) -- (.2,1);
+    \node at (.2,1.2) {\scriptsize{$n$}};
+    \draw (.4,1) arc (-180:0:.4cm);
+    \node at (.4,1.2) {\scriptsize{$j$}};
+    \node at (1.2,1.2) {\scriptsize{$j$}};
+    \draw (.6,1) arc (-180:0:.2cm);
+    \node at (.6,1.2) {\scriptsize{$i$}};
+    \node at (1,1.2) {\scriptsize{$i$}};
+    \draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.5,1);
+    \node at (1.5,1.2) {\scriptsize{$k$}};
+    \draw (.8,0) arc (180:0:.4cm); % i
+    \draw (1,0) arc (180:0:.2cm); % j
+    \draw (2,0) -- (2,1);
+    \node at (2,1.2) {\scriptsize{$i$}};
+   \end{scope}
+   \draw[dashed] (0,.4) -- (2.2,.4);
+  % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.3,1);
+  % \end{tikzpicture}
+  % \right)\cdot
+  % \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,-.4)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,0) -- (.4,.8);
+    \node at (.4,-.2) {\scriptsize{$k$}};
+    \begin{scope}[shift={(.2,0)}]
+     \draw (.6,0) -- (.6,.8);
+     \node at (.6,-.2) {\scriptsize{$i$}};
+     \draw (.8,0) -- (.8,.8);
+     \node at (.8,-.2) {\scriptsize{$j$}};
+     \draw (1,0) arc (180:0:.2cm);
+     \node at (1,-.2) {\scriptsize{$i$}};
+     \node at (1.4,-.2) {\scriptsize{$i$}};
+     \draw (1.2,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.6,0);
+     \node at (1.6,-.2) {\scriptsize{$i$}};
+     \draw (1.4,.8) arc (-180:0:.2cm); % i
+    \end{scope}
+   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.5,.8);
+   \end{scope}
+   \draw[thick, rounded corners = 5pt] (0,-.4) rectangle (2.2,1.4);
+  \end{tikzpicture}
+  \right)
+  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.2)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,1) {\scriptsize{$n$}};
+    \draw (.4,0) -- (.4,.8);
+    \node at (.4,1) {\scriptsize{$i$}};
+    \draw (.6,0) -- (.6,.8);
+    \node at (.6,1) {\scriptsize{$i$}};
+    \draw (.8,0) arc (180:0:.2cm);
+    \node at (.9,.35) {\scriptsize{$j$}}; % bubble
+    \draw (1,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.4,0);
+    \node at (1,1) {\scriptsize{$k$}};
+    \draw (1.2,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.6,0);
+    \node at (1.2,1) {\scriptsize{$i$}};
+    \draw (1.4,.8) arc (-180:0:.2cm);
+    \node at (1.4,1) {\scriptsize{$j$}};
+    \node at (1.8,1) {\scriptsize{$j$}};
+   \end{scope}
+   \draw[dashed] (0,.3) -- (2,.3);
+   \begin{scope}[shift={(0,-.6)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,0) -- (.4,.8);
+    \node at (.4,-.2) {\scriptsize{$i$}};
+    \draw (.6,0) -- (.6,.8);
+    \node at (.6,-.2) {\scriptsize{$i$}};
+    \draw (.8,.8) arc (-180:0:.2cm); % j bubble
+    \draw (.8,0) arc (180:0:.2cm);
+    \node at (.8,-.2) {\scriptsize{$j$}};
+    \node at (1.2,-.2) {\scriptsize{$j$}};
+    \draw (1.4,0) -- (1.4,.8);
+    \node at (1.4,-.2) {\scriptsize{$k$}};
+    \draw (1.6,0) -- (1.6,.8);
+    \node at (1.6,-.2) {\scriptsize{$i$}};
+   \end{scope}
+   \draw[thick, rounded corners = 5pt] (0,-.6) rectangle (2,1);
+  \end{tikzpicture}
+  \cdot\iota(g)\cdot\iota(f)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.8)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,1) {\scriptsize{$n$}};
+    \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+    \node at (.6,1) {\scriptsize{$j$}};
+    \draw (.8,.8) arc (-180:0:.2cm);
+    \node at (.8,1) {\scriptsize{$i$}};
+    \node at (1.2,1) {\scriptsize{$i$}};
+    \draw (.4,0) arc (180:0:.2cm); % i
+    \draw (1.4,0) -- (1.4,.8);
+    \node at (1.4,1) {\scriptsize{$j$}};
+    \draw (1.6,0) -- (1.6,.8);
+    \node at (1.6,1) {\scriptsize{$k$}};
+    \draw (1.8,0) -- (1.8,.8);
+    \node at (1.8,1) {\scriptsize{$i$}};
+    \draw[dashed] (0,0) -- (2,0);
+   \end{scope}
+   \begin{scope}[shift={(0,0)}]
+    \draw (.2,0) -- (.2,.8); % n
+    \draw (.4,0) -- (.4,.8); % i
+    \draw (.8,0) -- (.8,.8); % i
+    \node at (.6,.4) {\scriptsize{$i$}}; % i bubble, enlongated
+    \draw (1,.8) arc (-180:0:.2cm); % j
+    \draw (1,0) arc(180:0:.2cm);
+    \node at (1.2,.4) {\scriptsize{$j$}}; % j bubble
+    \draw (1.6,0) -- (1.6,.8); % k
+    \draw (1.8,0) -- (1.8,.8); % i
+    \draw[dashed] (0,0) -- (2,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-.8)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,.8) arc (-180:0:.2cm); % i
+    \draw (1,.8) arc (-180:0:.2cm); % j bubble
+    \draw (1.6,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (.9,0);
+    \node at (.9,-.2) {\scriptsize{$k$}};
+    \draw (1.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.1,0);
+    \node at (1.1,-.2) {\scriptsize{$i$}};
+    \draw (1.3,0) arc (180:0:.2cm);
+    \node at (1.3,-.2) {\scriptsize{$j$}};
+    \node at (1.7,-.2) {\scriptsize{$j$}};
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,-.8) rectangle (2,1.6);
+  \end{tikzpicture}
+  \right)
+  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,0) -- (.4,.8);
+   \node at (.4,1) {\scriptsize{$i$}};
+   \draw (.6,0) -- (.6,.8);
+   \node at (.6,1) {\scriptsize{$i$}};
+   \begin{scope}[shift={(.4,0)}] % easier than search and replace
+   \draw (.4,0) arc (180:0:.2cm);
+    \node at (.4,-.2) {\scriptsize{$j$}};
+    \node at (.8,-.2) {\scriptsize{$j$}};
+    \draw (.6,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1,0);
+    \node at (.6,1) {\scriptsize{$k$}};
+    \draw (.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.2,0);
+    \node at (.8,1) {\scriptsize{$i$}};
+    \draw (1,.8) arc (-180:0:.2cm);
+    \node at (1,1) {\scriptsize{$j$}};
+    \node at (1.4,1) {\scriptsize{$j$}};
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (2,.8);
+  \end{tikzpicture}
+  \cdot\iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\right)
+  \cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.4)}]
+    \draw (.2,0) -- (.2,.8); % n
+    \draw (.4,0) -- (.4,.8); % i
+    \draw (.8,0) -- (.8,.8); % i
+    \node at (.6,.4) {\scriptsize{$i$}}; % i bubble, enlongated
+    \draw (1,.8) arc (-180:0:.2cm); % j
+    \draw (1,0) arc(180:0:.2cm);
+    \node at (1.2,.4) {\scriptsize{$j$}}; % j bubble
+    \draw (1.6,0) -- (1.6,.8); % k
+    \draw (1.8,0) -- (1.8,.8); % i
+    \draw[dashed] (0,0) -- (2.3,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-.4)}]
+    \draw (.2,0) -- (.2,1);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,.8) arc (-180:0:.2cm); % i
+    \draw (1,.8) arc (-180:0:.2cm); % j bubble
+    \draw (1.6,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (.8,0);
+    \node at (.8,-.2) {\scriptsize{$k$}};
+    \draw (1.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1,0);
+    \node at (1,-.2) {\scriptsize{$i$}};
+    \draw (1.3,0) arc (180:0:.4cm);
+    \node at (1.3,-.2) {\scriptsize{$j$}};
+    \node at (2.1,-.2) {\scriptsize{$j$}};
+    \draw (1.5,0) arc (180:0:.2cm);
+    \node at (1.5,-.2) {\scriptsize{$i$}};
+    \node at (1.9,-.2) {\scriptsize{$i$}};
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,-.4) rectangle (2.3,1.2);
+  \end{tikzpicture}
+  \right)
+  \\&=
+  \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\right)\cdot E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.8)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,1) {\scriptsize{$n$}};
+    \draw (.4,0) -- (.4,.8);
+    \node at (.4,1) {\scriptsize{$i$}};
+    \draw (.8,0) -- (.8,.8);
+    \node at (.8,1) {\scriptsize{$i$}};
+    \begin{scope}[shift={(.6,0)}] % easier than search and replace
+     \draw (.4,0) arc (180:0:.2cm); % j
+     \draw (.6,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1,0);
+     \node at (.6,1) {\scriptsize{$k$}};
+     \draw (.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.2,0);
+     \node at (.8,1) {\scriptsize{$i$}};
+     \draw (1,.8) arc (-180:0:.2cm);
+     \node at (1,1) {\scriptsize{$j$}};
+     \node at (1.4,1) {\scriptsize{$j$}};
+    \end{scope}
+    \draw[dashed] (0,0) -- (2.4,0);
+   \end{scope}
+   \begin{scope}[shift={(0,0)}]
+    \draw (.2,0) -- (.2,.8); % n
+    \draw (.4,0) -- (.4,.8); % i
+    \draw (.8,0) -- (.8,.8); % i
+    \node at (.6,.4) {\scriptsize{$i$}}; % i bubble, enlongated
+    \draw (1,.8) arc (-180:0:.2cm); % j
+    \draw (1,0) arc(180:0:.2cm);
+    \node at (1.2,.4) {\scriptsize{$j$}}; % j bubble
+    \draw (1.6,0) -- (1.6,.8); % k
+    \draw (1.8,0) -- (1.8,.8); % i
+    \draw[dashed] (0,0) -- (2.4,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-.8)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,.8) arc (-180:0:.2cm);
+    \node at (.6,.5) {\scriptsize{$i$}}; % i labelled inside
+    \draw (1,.8) arc (-180:0:.2cm); % j bubble
+    \draw (1.6,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (.9,0);
+    \node at (.9,-.2) {\scriptsize{$k$}};
+    \draw (1.8,.8) .. controls ++(-90:.3cm) and ++(-270:.3cm) .. (1.1,0);
+    \node at (1.1,-.2) {\scriptsize{$i$}};
+    \begin{scope}[shift={(.3,0)}] % line up with top caps
+     \draw (1.1,0) arc (180:0:.4cm);
+     \node at (1.1,-.2) {\scriptsize{$j$}};
+     \node at (1.9,-.2) {\scriptsize{$j$}};
+     \draw (1.3,0) arc (180:0:.2cm);
+     \node at (1.3,-.2) {\scriptsize{$i$}};
+     \node at (1.7,-.2) {\scriptsize{$i$}};
+    \end{scope}
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,-.8) rectangle (2.4,1.6);
+  \end{tikzpicture}
+  \right)
+  \\&= 
+  \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\right)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,.8) arc (-180:0:.2cm);
+   \node at (.4,1) {\scriptsize{$i$}};
+   \node at (.8,1) {\scriptsize{$i$}};
+   \draw (.6,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+   \node at (1,1) {\scriptsize{$k$}};
+   \draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+   \node at (1.2,1) {\scriptsize{$j$}};
+   \draw (1,0) arc (180:0:.2cm);
+   \node at (1,-.2) {\scriptsize{$i$}};
+   \node at (1.4,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
+  \end{tikzpicture}
+  \\&= 
+  \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\right)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.4)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,1) {\scriptsize{$n$}};
+    \draw (.4,0) arc (180:0:.2cm); % i
+    \draw (.4,.8) arc (-180:0:.2cm);
+    \node at (.4,1) {\scriptsize{$i$}};
+    \node at (.8,1) {\scriptsize{$i$}};
+    \draw (1,0) -- (1,.8);
+    \node at (1,1) {\scriptsize{$k$}};
+    \draw (1.2,0) -- (1.2,.8);
+    \node at (1.2,1) {\scriptsize{$j$}};
+    \draw[dashed] (0,0) -- (1.6,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-.4)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,.8) arc (-180:0:.2cm); % i
+    \draw (.6,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+    \node at (.6,-.2) {\scriptsize{$k$}};
+    \draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+    \node at (.8,-.2) {\scriptsize{$j$}};
+    \draw (1,0) arc (180:0:.2cm);
+    \node at (1,-.2) {\scriptsize{$i$}};
+    \node at (1.4,-.2) {\scriptsize{$i$}};
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
+  \end{tikzpicture}
+  \\& % Left Kink here
+  \underset{
+  \substack{
+  \text{(Lem.~\ref{lem:LeftKink} for}
+  \\
+  \text{ 
+  $z$ with $j=0$)}
+  }
+  }
+  {=}
+  \iota\left(
+  \underbrace{E^{n+2i}_{n+i}\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw (.4,.8) arc (-180:0:.2cm);
+   \node at (.4,1) {\scriptsize{$i$}};
+   \node at (.8,1) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1,.8);
+  \end{tikzpicture}
+  \right)}_{z}
+  \right)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \begin{scope}[shift={(0,.4)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,1) {\scriptsize{$n$}};
+    \draw (.4,0) arc (180:0:.2cm); % i
+    \draw (.4,.8) arc (-180:0:.2cm);
+    \node at (.4,1) {\scriptsize{$i$}};
+    \node at (.8,1) {\scriptsize{$i$}};
+    \draw (1,0) -- (1,.8);
+    \node at (1,1) {\scriptsize{$k$}};
+    \draw (1.2,0) -- (1.2,.8);
+    \node at (1.2,1) {\scriptsize{$j$}};
+    \draw[dashed] (0,0) -- (1.6,0);
+   \end{scope}
+   \begin{scope}[shift={(0,-.4)}]
+    \draw (.2,0) -- (.2,.8);
+    \node at (.2,-.2) {\scriptsize{$n$}};
+    \draw (.4,.8) arc (-180:0:.2cm); % i
+    \draw (.6,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+    \node at (.6,-.2) {\scriptsize{$k$}};
+    \draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+    \node at (.8,-.2) {\scriptsize{$j$}};
+    \draw (1,0) arc (180:0:.2cm);
+    \node at (1,-.2) {\scriptsize{$i$}};
+    \node at (1.4,-.2) {\scriptsize{$i$}};
+   \end{scope}
+   \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
+  \end{tikzpicture}
+  \\&= \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.6,.8) .. controls ++(-90:.3cm) and ++ (-270:.3cm) .. (1,0);
+   \node at (.6,1) {\scriptsize{$j$}};
+   \draw (.8,.8) arc (-180:0:.2cm);
+   \node at (.8,1) {\scriptsize{$i$}};
+   \node at (1.2,1) {\scriptsize{$i$}};
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.4,-.2) {\scriptsize{$i$}};
+   \node at (.8,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
+  \end{tikzpicture}
+  \right)\right)\cdot
+  \begin{tikzpicture}[baseline=.3cm]
+   \draw (.2,0) -- (.2,.8);
+   \node at (.2,1) {\scriptsize{$n$}};
+   \draw (.4,.8) arc (-180:0:.2cm);
+   \node at (.4,1) {\scriptsize{$i$}};
+   \node at (.8,1) {\scriptsize{$i$}};
+   \draw (.6,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
+   \node at (1,1) {\scriptsize{$k$}};
+   \draw (.8,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1.2,.8);
+   \node at (1.2,1) {\scriptsize{$j$}};
+   \draw (1,0) arc (180:0:.2cm);
+   \node at (1,-.2) {\scriptsize{$i$}};
+   \node at (1.4,-.2) {\scriptsize{$i$}};
+   \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
+  \end{tikzpicture}
+  \\&= (g\circ f)\vartriangleleft1_m
+ \end{align*}
+
+ It is easier to check that the action is associative.
+ \nn{So do it.}
 \end{defn}
 
 \begin{rem}
