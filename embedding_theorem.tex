@@ -2617,12 +2617,11 @@ If $x\in \cM_0([n] \to [n+2i])$ and $y\in \cM_0([n+2i] \to [n+2i+2j])$, we defin
 $$
 y\circ x
 :=
-E^{n+2i+j}_{n+i+j}
+d^iE^{n+2i+j}_{n+i+j}
 \left(
 \raisebox{.3cm}{$
 \underbrace{
 y\cdot x \cdot
-d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
  \draw (.2,0) -- (.2,.8);
@@ -2656,12 +2655,11 @@ we define
 $$
 y\circ x
 :=
-E^{n+2i + j}_{n+i}
+d^iE^{n+2i + j}_{n+i}
 \left(
 \raisebox{.3cm}{$
 \underbrace{
 y\cdot x\cdot
-d^{-i}\,
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
  \draw (.2,0) -- (.2,.8);
@@ -3209,9 +3207,6 @@ Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
 \end{itemize}
 Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
-%In Proposition \ref{prop:MarkovAssociative} below, we verify that composition is associative.
-%It follows immediately from the definition of composition that $\dag$ is a well-defined dagger structure on $\cM_0$.
-%In Proposition \ref{prop:MarkovCstar} below, we verify $\cM_0$ is a $\Cstar$ category under this dagger structure.
 \end{defn}
 
 
@@ -3225,7 +3220,6 @@ We begin with the following lemma.
 
  \begin{lem}
  \label{lem:LeftKink}
-  \nn{From here, the width of the usual partial isometry between Jones projections is inconsistntly sized. Bikeshed.}
 For all $x \in M_{n+2i+j}$,
 $
 d^i
@@ -3274,8 +3268,7 @@ x\cdot
  \node at (.4,1) {\scriptsize{$i$}};
  \node at (1,1) {\scriptsize{$j$}};
 \end{tikzpicture}
-$ 
-
+$\,.
 \end{lem}
 
 
@@ -3640,7 +3633,7 @@ Then
 $$
 \pi(y\circ x)
 =
-d^{-2i-j}E_{n+i+j}^{n+2i+j}
+d^{-j}E_{n+i+j}^{n+2i+j}
 \left(yx \cdot 
  % \TLPlusPIso{n}{i}{j}
  \begin{tikzpicture}[baseline=.3cm]
@@ -3690,13 +3683,13 @@ d^{-i-j} yx \cdot
 $$
 
 \item[\underline{Case 2:}]
-\nn{experimental clean up}
 Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$. 
 Then 
 \begin{align*}
 \pi(y\circ x)
 &=
-d^{-i-j}E_{n+i}^{n+2i+j}\left(yx\cdot 
+d^{-j}
+E_{n+i}^{n+2i+j}\left(yx\cdot 
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
  \draw (.2,0) -- (.2,.8);
@@ -3728,7 +3721,7 @@ d^{-i-j}E_{n+i}^{n+2i+j}\left(yx\cdot
 %$$
 %Using Lemma \ref{lem:LeftKink}, we have 
 %$$
-d^{-2i-j}E_{n+i}^{n+2i}\left(
+d^{-i-j}E_{n+i}^{n+2i}\left(
 \underbrace{
 E_{n+2i}^{n+2i+j}\left(yx\cdot
  % \TLMinusPIso{n}{i}{j}
@@ -3754,7 +3747,7 @@ E_{n+2i}^{n+2i+j}\left(yx\cdot
   \node at (.4,1) {\scriptsize{$i$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
  \end{tikzpicture}
-\right)\cdot
+\right)\cdot\,
  % \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
@@ -3779,7 +3772,7 @@ $z$ with $j=0$)}
 }
 }
 {=}
-d^{-i-j}
+d^{-2i-j}
 E_{n+2i}^{n+2i+j}\left(yx\cdot
  % \TLMinusPIso{n}{i}{j}
 \begin{tikzpicture}[baseline = .3cm]
@@ -3809,7 +3802,7 @@ E_{n+2i}^{n+2i+j}\left(yx\cdot
  \end{tikzpicture}
  \\&
  \underset{\text{(Prop.~\ref{prop:MultistepJonesProjections})}}{=}
- d^{-i-2j}
+ d^{-2i-2j}\,
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3852,31 +3845,63 @@ E_{n+2i}^{n+2i+j}\left(yx\cdot
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
  \end{tikzpicture} 
 \\&=
+ d^{-i-2j}\,
+ \begin{tikzpicture}[baseline=.3cm]
+  \draw (.2,0) -- (.2,.8);
+  \node at (.2,1) {\scriptsize{$n$}};
+  \draw (.4,0) -- (.4,.8);
+  \node at (.4,1) {\scriptsize{$i$}};
+  \draw (.6,0) -- (.6,.8);
+  \node at (.6,1) {\scriptsize{$i$}};
+  \draw (.8,0) arc (180:0:.2cm);
+  \node at (.8,-.2) {\scriptsize{$j$}};
+  \draw (.8,.8) arc (-180:0:.2cm);
+  \node at (.8,1) {\scriptsize{$j$}};
+  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
+ \end{tikzpicture}
+\cdot yx \cdot 
+ \begin{tikzpicture}[baseline=.3cm]
+  \draw (.2,0) -- (.2,.8);
+  \node at (.2,1) {\scriptsize{$n$}};
+  \draw (.4,0) arc (180:0:.2cm);
+  \node at (.4,-.2) {\scriptsize{$i$}};
+  \draw (1,0) arc (180:0:.2cm);
+  \node at (1,-.2) {\scriptsize{$j$}};
+  \draw (.4,.8) arc (-180:0:.5cm);
+  \node at (.4,1) {\scriptsize{$i$}};
+  \draw (.6,.8) arc (-180:0:.3cm);
+  \node at (.6,1) {\scriptsize{$j$}};
+  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.6,.8);
+ \end{tikzpicture}
+\\&=
 \pi(y)\cdot \pi(x).
 \end{align*}
 
 \item[\underline{Case 3:}]
-Let $x:[n]\rightarrow [n+2i+2j]$ and $y:[n+2i+2j]\rightarrow [n+2i]$.
-Then 
+Let $x:[n+2i]\rightarrow [n]$ and $y:[n]\to [n+2i+2j]$.
+Then
 \begin{align*}
  \pi(y\circ x) 
  &= 
- d^{-i-j}
+ d^{-j}\left(
  y\cdot\,
- % \TLPlusPIso{n}{i}{j}
- \begin{tikzpicture}[baseline=.3cm]
-  \draw (.2,0) -- (.2,.8);
-  \node at (.2,1) {\scriptsize{$n$}};
-  \draw (.6,0) arc (180:0:.2cm);
-  \node at (.6,-.2) {\scriptsize{$i$}};
-  \draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
-  \node at (1,1) {\scriptsize{$j$}};
-  \draw (.4,.8) arc (-180:0:.2cm);
-  \node at (.4,1) {\scriptsize{$i$}};
-  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
- \end{tikzpicture}
- \,\cdot x \cdot\,
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
+d^{-i}\,
+\begin{tikzpicture}[baseline = .3cm]
+ \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
+ \draw (.2,0) -- (.2,.8);
+ \draw (.8,.8) arc (-180:0:.2cm);
+ \draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+ \draw (.5,0) arc (180:0:.2cm);
+% \draw (1.5,0) -- (1.5,.8);
+ \node at (.2,1) {\scriptsize{$n$}};
+ \node at (.5,1) {\scriptsize{$j$}};
+ \node at (.8,1) {\scriptsize{$i$}};
+ \node at (.5,-.2) {\scriptsize{$i$}};
+% \node at (1.5,1) {\scriptsize{$j$}};
+\end{tikzpicture}
+ \,\cdot x 
+ \right)
+ \cdot\,
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3893,20 +3918,20 @@ Then
  =
  d^{-i-j}
  y\cdot
- % \TLPlusPIso{n}{i}{j}
- \begin{tikzpicture}[baseline=.3cm]
-  \draw (.2,0) -- (.2,.8);
-  \node at (.2,1) {\scriptsize{$n$}};
-  \draw (.6,0) arc (180:0:.2cm);
-  \node at (.6,-.2) {\scriptsize{$i$}};
-  \draw (.4,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (1,.8);
-  \node at (1,1) {\scriptsize{$j$}};
-  \draw (.4,.8) arc (-180:0:.2cm);
-  \node at (.4,1) {\scriptsize{$i$}};
-  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
- \end{tikzpicture}
+\begin{tikzpicture}[baseline = .3cm]
+ \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.7,.8);
+ \draw (.2,0) -- (.2,.8);
+ \draw (.8,.8) arc (-180:0:.2cm);
+ \draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
+ \draw (.5,0) arc (180:0:.2cm);
+ \draw (1.5,0) -- (1.5,.8);
+ \node at (.2,1) {\scriptsize{$n$}};
+ \node at (.5,1) {\scriptsize{$j$}};
+ \node at (.8,1) {\scriptsize{$i$}};
+ \node at (.5,-.2) {\scriptsize{$i$}};
+ \node at (1.5,1) {\scriptsize{$j$}};
+\end{tikzpicture}
 \,\cdot\,
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTCapcup{j}\TLTThrough{k}\TLTEnd
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3920,12 +3945,10 @@ Then
   \node at (.8,1) {\scriptsize{$j$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.4,.8);
  \end{tikzpicture}
-\cdot x % \cdot
- % \TLTStart\TLTThrough{n}\TLTThrough{2i}\TLTThrough{2j}\TLTCapcup{k}\TLTEnd\\
+\cdot x 
 \\&= 
 d^{-i-j}
 y\cdot\, 
- % \TLCapJoin{n}{i}{j}{j}{i}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3957,232 +3980,6 @@ Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism
 By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
 
-
-
-
-%\begin{prop}
-%\label{prop:MarkovAssociative}
-%The composition from Definition \ref{def:MarkovProjections} is associative.
-%\end{prop}
-%\begin{proof}
-%\nn{TODO}
-%\end{proof}
-%
-%\begin{prop}
-%\label{prop:MarkovCstar}
-%The dagger structure from Definition \ref{def:MarkovProjections} endows $\cM_0$ with the structure of a $\Cstar$ category.
-%\end{prop}
-%\begin{proof}
-%Notice that by \eqref{eq:n to n to n}, the $\dag$-algebra $\cM_0([n] \to [n])$ is $\dag/*$-isomorphic to the von Neumann algebra $M_n$.
-%Now defining
-%$$
-%p:=
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
-% \draw (.2,0) -- (.2,.8);
-% \draw (.5,.8) arc (-180:0:.2cm);
-% \draw (.5,0) arc (180:0:.2cm);
-% \node at (.2,1) {\scriptsize{$n$}};
-% \node at (.5,1) {\scriptsize{$k$}};
-% \node at (.5,-.2) {\scriptsize{$k$}};
-%\end{tikzpicture}\,,
-%$$
-%for $k>0$, combining \eqref{eq:n to n to n}, \eqref{eq:n to n+2k to n}, and \eqref{eq:n+2j to n to n+2j}, we get a $\dag/*$-algebra isomorphism 
-%$$
-%\pi:
-%\begin{pmatrix}
-%\cM_0([n] \to [n]) & \cM_0([n+2k] \to [n])
-%\\
-%\cM_0([n] \to [n+2k]) & \cM_0([n+2k] \to [n+2k])
-%\end{pmatrix}
-%\longrightarrow
-%\begin{pmatrix}
-%p & 0
-%\\
-%0  & 1_{n+2k}
-%\end{pmatrix}
-%M_2(M_{n+2k})
-%\begin{pmatrix}
-%p & 0
-%\\
-%0  &1_{n+2k}
-%\end{pmatrix}
-%$$
-%by defining
-%$$
-%\pi
-%\begin{pmatrix}
-%a & b
-%\\
-%c  & d
-%\end{pmatrix}
-%:=
-%\begin{pmatrix}
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw (.2,.6) arc (-180:0:.2cm);
-% \draw (.2,-.6) arc (180:0:.2cm);
-% \draw (0,-.6) -- (0,.6);
-% \roundNbox{unshaded}{(0,0)}{.2}{0}{0}{$a$}
-% \node at (0,-.8) {\scriptsize{$n$}};
-% \node at (0,.8) {\scriptsize{$n$}};
-% \node at (.2,.8) {\scriptsize{$k$}};
-% \node at (.2,-.8) {\scriptsize{$k$}};
-% \node at (.6,.8) {\scriptsize{$k$}};
-% \node at (.6,-.8) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%& 
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw (.2,.6) arc (-180:0:.2cm);
-% \draw (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
-% \draw (0,-.6) -- (0,.6);
-% \draw (.2,-.6) -- (.2,0);
-% \roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{$b$}
-% \node at (0,-.8) {\scriptsize{$n$}};
-% \node at (0,.8) {\scriptsize{$n$}};
-% \node at (.2,.8) {\scriptsize{$k$}};
-% \node at (.2,-.8) {\scriptsize{$k$}};
-% \node at (.6,.8) {\scriptsize{$k$}};
-% \node at (.6,-.8) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%\\
-%\begin{tikzpicture}[baseline = .3cm, yscale =-1]
-% \draw (.2,.6) arc (-180:0:.2cm);
-% \draw (.2,.1) arc (180:0:.2cm) -- (.6,-.6);
-% \draw (0,-.6) -- (0,.6);
-% \draw (.2,-.6) -- (.2,0);
-% \roundNbox{unshaded}{(0,-.1)}{.2}{0}{.2}{$c$}
-% \node at (0,-.8) {\scriptsize{$n$}};
-% \node at (0,.8) {\scriptsize{$n$}};
-% \node at (.2,.8) {\scriptsize{$k$}};
-% \node at (.2,-.8) {\scriptsize{$k$}};
-% \node at (.6,.8) {\scriptsize{$k$}};
-% \node at (.6,-.8) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%&
-%\begin{tikzpicture}[baseline = .3cm, yscale =-1]
-% \draw (0,-.6) -- (0,.6);
-% \roundNbox{unshaded}{(0,0)}{.2}{0}{0}{$d$}
-% \node at (0,-.8) {\scriptsize{$n+2k$}};
-% \node at (0,.8) {\scriptsize{$n+2k$}};
-%\end{tikzpicture}
-%\end{pmatrix}.
-%$$
-%We immediately have:
-%\begin{itemize}
-%\item
-%for every $f\in \cM_0([n]\to [n+2k])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2k]\to [n+2k])$ such that 
-%$f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
-%\item
-%there are (pullback) norms on the (finite dimensional) hom spaces $\cM_0([n]\to [n+2j])$ and $\cM_0([n+2k] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
-%Notice that in a $\Cstar$ category, these norm can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
-%Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
-%}
-%(To prove sub-multiplicativity, one forms an appropriate $3\times 3$ matrix algebra over an appropriate von Neumann algebra from $M_\bullet$.
-%\nn{Submultiplicativity is actually the interesting part due to the interesting nature of composition, and perhaps should be spelled out.})
-%\begin{align*}
-%&
-%\begin{pmatrix}
-%\cM_0([n] \to [n]) 
-%& 
-%\cM_0([n+2j] \to [n])
-%&
-%\cM_0([n+2j+2k] \to [n])
-%\\
-%\cM_0([n] \to [n+2j]) 
-%& 
-%\cM_0([n+2j] \to [n+2j])
-%&
-%\cM_0([n+2j+2k] \to [n+2j])
-%\\
-%\cM_0([n] \to [n+2j+2k]) 
-%& 
-%\cM_0([n+2j] \to [n+2j+2k])
-%&
-%\cM_0([n+2j+2k] \to [n+2j+2k])
-%\end{pmatrix}
-%\\&\hspace{4cm}\cong
-%\end{align*}
-%\end{itemize}
-%
-%
-%First, note that when $k=0$, by \eqref{eq:n to n to n}, $f^\dag \circ f = f^*f$ and $f\circ f^\dag = ff^*$, so we may assume $k>0$.
-%By \eqref{eq:n to n+2k to n}, $f^\dag \circ f = E^{n+k}_n(f^*f) \geq 0$ in $M_n$.
-%Hence by \eqref{eq:n to n to n}, we may take $g :=  E^{n+k}_n(f^*f)^{1/2}$.
-%Next, by \eqref{eq:n+2j to n to n+2j}, 
-%$$
-%f\circ f^\dag = 
-%f \cdot
-%d^{-k}\,
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
-% \draw (.2,0) -- (.2,.8);
-% \draw (.5,.8) arc (-180:0:.2cm);
-% \draw (.5,0) arc (180:0:.2cm);
-% \node at (.2,1) {\scriptsize{$n$}};
-% \node at (.5,1) {\scriptsize{$k$}};
-% \node at (.5,-.2) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%\cdot f^*
-%=
-%\left(
-%\underbrace{
-%f \cdot
-%d^{-k}\,
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
-% \draw (.2,0) -- (.2,.8);
-% \draw (.5,.8) arc (-180:0:.2cm);
-% \draw (.5,0) arc (180:0:.2cm);
-% \node at (.2,1) {\scriptsize{$n$}};
-% \node at (.5,1) {\scriptsize{$k$}};
-% \node at (.5,-.2) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%}_{:=h \in M_{n+2k}}
-%\right)
-%\left(
-%\underbrace{
-%d^{-k}\,
-%\begin{tikzpicture}[baseline = .3cm]
-% \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
-% \draw (.2,0) -- (.2,.8);
-% \draw (.5,.8) arc (-180:0:.2cm);
-% \draw (.5,0) arc (180:0:.2cm);
-% \node at (.2,1) {\scriptsize{$n$}};
-% \node at (.5,1) {\scriptsize{$k$}};
-% \node at (.5,-.2) {\scriptsize{$k$}};
-%\end{tikzpicture}
-%\cdot f^*
-%}_{=h^\dag}
-%\right),
-%$$
-%so taking $h$ as above works.
-%
-%Second, for every $n\geq 0$, we provide a norm oFirst, we notice that the map 
-%given by
-%$$
-%$$
-%is a $*$-algebra isomorphism.
-%
-%
-%
-%For $f\in \cM_0([n] \to [n+2k])$, we define $\|f\|$ by taking the operator norm of the following element in the following $\Cstar$ algebra:
-%$$
-%\|f\|
-%:=
-%\left\|
-%\pi
-%\begin{pmatrix}
-%0 & f
-%\\
-%0  & 0
-%\end{pmatrix}
-%\right\|
-%$$
-%
-%\nn{TODO}
-%
-%This completes the proof.
-%\end{proof}
 
 \begin{rem}
 \label{rem:HowMCategoryChangesUnderMarkovTowerOperations}
@@ -4218,6 +4015,7 @@ We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$.
 As for morphisms, we first consider the case where one morphism is the identity. 
  If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
  The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
+ \nn{check factors of $d$ below here!}
 \[f\vartriangleleft 1_{j+k}
 :=
 f\cdot
@@ -4264,7 +4062,11 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  % So, they will be annoying to edit. Hopefully they are good enough to be treated as atoms. 
  \begingroup\allowdisplaybreaks % To avoid huge blank space before this stuff. Pairs with \endgroup after the \end{align*}
  \begin{align*}
-  (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot
+  (f\vartriangleleft 1_{2i+j+3k})\circ(1_{n}\vartriangleleft g) 
+  &
+  \underset{\ref{compose:upup}}{=}
+  d^{i+k} 
+  E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot
   % \TLPlusPIso{n}{k}{j{+}2k{+}i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
@@ -4335,6 +4137,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \right)
   \\&= 
+  d^{i+k}  
   E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
@@ -4404,6 +4207,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
  \right)\right)
   \\&= 
+  d^{i+k}  
   E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,0)}] % noop, but see exchange comment below
@@ -4474,7 +4278,8 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
  \right)\right)
- \\&=E^{n+j+4k+i}_{n+j+3k+i}\left(
+ \\&=d^{i+k}  
+E^{n+j+4k+i}_{n+j+3k+i}\left(
  % \lambda(g)
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,1);
@@ -4547,7 +4352,8 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \right)\right)
   \\&= % This step is where bubble gets used. 
   % \lambda(g)
-  E^{n+j+4k+i}_{n+j+3k+i}\left(
+d^{i+k}  
+E^{n+j+4k+i}_{n+j+3k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,1);
    \node at (.2,1.2) {\scriptsize{$n$}};
@@ -4569,6 +4375,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \cdot\iota(f)\cdot
   % \TLPlusPIso{n}{k}{j}
+d^{-i}
   \begin{tikzpicture}[baseline=-0.1cm]
    \begin{scope}[shift={(.1,0)}]
     \draw (.1,0) -- (.1,.8);
@@ -4612,14 +4419,18 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners = 5pt] (0,-0.8) rectangle (2,0.8);
   \end{tikzpicture}
 \right)\\
-&=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
+&\underset{\ref{compose:upup}}{=}
+(1\vartriangleleft g)\circ(f\vartriangleleft 1)
  \end{align*}
  \endgroup
  It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
  Functoriality in the right variable comes directly from the definition, but functoriality in the left variable is more involved.
  We describe a representative case. Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+2i+2j]_{\cM}\to[n+2i]_{\cM}$, and suppose $m=k+i+j$. Then
  \begin{align*}
-  (g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) &= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  (g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) 
+  &= 
+  d^{i+j}
+  E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4685,7 +4496,9 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners = 5pt] (0,-.4) rectangle (2.2,1.4);
   \end{tikzpicture}
   \right)
-  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \\&= 
+  d^{-i}
+  E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
@@ -4770,7 +4583,9 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,-.8) rectangle (2,1.6);
   \end{tikzpicture}
   \right)
-  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \\&= 
+  d^{-i+j}
+  E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4841,6 +4656,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \right)
   \\&=
+   d^{-i+j}
   \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4911,6 +4727,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \right)
   \\&= 
+   d^{-2i}
   \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4942,6 +4759,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
   \end{tikzpicture}
   \\&= 
+  d^{-3i}
   \iota\left(
   \underbrace{E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
@@ -4971,6 +4789,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
     \node at (1,1) {\scriptsize{$k$}};
     \draw (1.2,0) -- (1.2,.8);
     \node at (1.2,1) {\scriptsize{$j$}};
+    \node at (.6,.35) {\scriptsize{$i$}};
     \draw[dashed] (0,0) -- (1.6,0);
    \end{scope}
    \begin{scope}[shift={(0,-.4)}]
@@ -4987,7 +4806,8 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
   \end{tikzpicture}
-  \\& % Left Kink here
+  \\& 
+  % Left Kink here
   \underset{
   \substack{
   \text{(Lem.~\ref{lem:LeftKink} for}
@@ -4997,6 +4817,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   }
   }
   {=}
+  d^{-2i}
   \iota\left(E^{n+2i}_{n+i}\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -5036,6 +4857,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
     \node at (1,1) {\scriptsize{$k$}};
     \draw (1.2,0) -- (1.2,.8);
     \node at (1.2,1) {\scriptsize{$j$}};
+    \node at (.6,.35) {\scriptsize{$i$}};
     \draw[dashed] (0,0) -- (1.6,0);
    \end{scope}
    \begin{scope}[shift={(0,-.4)}]
@@ -5052,7 +4874,9 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
   \end{tikzpicture}
-  \\&= \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot
+  \\&= 
+  d^{-i}
+  \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
