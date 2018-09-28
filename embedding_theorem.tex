@@ -4264,7 +4264,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
  % So, they will be annoying to edit. Hopefully they are good enough to be treated as atoms. 
  \begingroup\allowdisplaybreaks % To avoid huge blank space before this stuff. Pairs with \endgroup after the \end{align*}
  \begin{align*}
-  (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot
+  (f\vartriangleleft 1)\circ(1\vartriangleleft g) &= E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot d^{-(i+k)}
   % \TLPlusPIso{n}{k}{j{+}2k{+}i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
@@ -4335,7 +4335,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
   \right)
   \\&= 
-  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(d^{-(i+k)}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
     \begin{scope}[shift={(.1,0)}]
@@ -4404,7 +4404,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \end{tikzpicture}
  \right)\right)
   \\&= 
-  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
+  E^{n+j+4k+i}_{n+j+3k+i}\left(\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(d^{-(i+k)}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,0)}] % noop, but see exchange comment below
     \begin{scope}[shift={(.1,0)}]
@@ -4495,7 +4495,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
   \node at (1.3,.5) {$g$};
   \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
  \end{tikzpicture}
- \cdot\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
+ \cdot\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(d^{-(i+k)}
   % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=-0.2cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4567,7 +4567,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (1.3,.5) {$g$};
    \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
   \end{tikzpicture}
-  \cdot\iota(f)\cdot
+  \cdot\iota(f)\cdot d^{-(2i+k)}
   % \TLPlusPIso{n}{k}{j}
   \begin{tikzpicture}[baseline=-0.1cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4612,7 +4612,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners = 5pt] (0,-0.8) rectangle (2,0.8);
   \end{tikzpicture}
 \right)\\
-&=(1\vartriangleleft g)\circ(f\vartriangleleft 1)
+&=d^{-2i}(1\vartriangleleft g)\circ(f\vartriangleleft 1)
  \end{align*}
  \endgroup
  It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
@@ -4639,7 +4639,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (1.6,1) {\scriptsize{$j$}};
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
   \end{tikzpicture}
-  \cdot\iota(g)\cdot\iota(f)\cdot
+  \cdot\iota(g)\cdot\iota(f)\cdot d^{-i}
   % \rho\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
@@ -4685,7 +4685,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners = 5pt] (0,-.4) rectangle (2.2,1.4);
   \end{tikzpicture}
   \right)
-  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(d^{-j}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
@@ -4723,7 +4723,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners = 5pt] (0,-.4) rectangle (2,1.2);
   \end{tikzpicture}
-  \cdot\iota(g)\cdot\iota(f)\cdot
+  \cdot\iota(g)\cdot\iota(f)\cdot d^{-(2i+j)}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.8)}]
     \draw (.2,0) -- (.2,.8);
@@ -4770,7 +4770,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,-.8) rectangle (2,1.6);
   \end{tikzpicture}
   \right)
-  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \\&= E^{n+3i+k+2j}_{n+2i+k+j}\left( % d^{-j} dissapears. Calculate it; E_n and e_n have a factor of d^{-1}, the diagram we draw is de_n rather than e_n, but we still use the regular E_n. So changing de for E means a factor of d appears.
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4807,7 +4807,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
   \end{tikzpicture}
   \right)\right)
-  \cdot
+  \cdot d^{-(2i+j)}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8); % n
@@ -4855,7 +4855,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (.8,-.2) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
   \end{tikzpicture}
-  \right)\right)\cdot E^{n+3i+k+2j}_{n+2i+k+j}\left(
+  \right)\right)\cdot d^{-(2i+j)}E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.8)}]
     \draw (.2,0) -- (.2,.8);
@@ -4925,7 +4925,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (.8,-.2) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
   \end{tikzpicture}
-  \right)\right)\cdot
+  \right)\right)\cdot d^{-3i} % applying E and removing bubbles gives -i-j+2j
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -4958,7 +4958,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.4,.8);
   \end{tikzpicture}
   \right)}_{z}
-  \right)\cdot
+  \right)\cdot d^{-2i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
@@ -5023,7 +5023,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (.8,1) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1,.8);
   \end{tikzpicture}
-  \right)\right)\cdot
+  \right)\right)\cdot d^{-i} % Lemma creates d^i
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,.8);
@@ -5052,7 +5052,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \end{scope}
    \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
   \end{tikzpicture}
-  \\&= \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot
+  \\&= \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot % now all d are gone, because the last step removed an $i$-fold bubble
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
    \node at (.2,1) {\scriptsize{$n$}};
@@ -5082,7 +5082,7 @@ For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger.
    \node at (1.4,-.2) {\scriptsize{$i$}};
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
   \end{tikzpicture}
-  \\&= (g\circ f)\vartriangleleft1_m
+  \\&= d^i(g\circ f)\vartriangleleft1_m
  \end{align*}
 
  It is easier to check that the action is associative.
