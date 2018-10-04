@@ -539,10 +539,10 @@
 
 \maketitle
 \begin{abstract}
- Jones and Penneys have shown that a finite depth subfactor planar $\dag$-algebra embeds in the bipartite graph planar algebra of its principal graph, via a Markov towers of algebras approach.
- We relate several equivalent perspectives on the notion of modules over a subfactor planar $\dag$-algebra, and show that a Markov tower is equivalent to a module over the Temperley-Lieb planar algebra.
- As a corollary, we obtain a classification of semisimple pivotal $\Cstar$-modules over Temperley-Lieb in terms of pointed graphs with a Perron vertex weighting.
- We then generalize the Markov towers of algebras approach to describe how a finite depth subfactor planar $\dag$-algebra embeds in the bipartite graph planar algebra of the fusion graph of any of its cyclic modules.
+Jones and Penneys showed that a finite depth subfactor planar algebra embeds in the bipartite graph planar algebra of its principal graph, via a Markov towers of algebras approach.
+ We relate several equivalent perspectives on the notion of module over a subfactor planar algebra, and show that a Markov tower is equivalent to a module over the Temperley-Lieb-Jones planar algebra.
+ As a corollary, we obtain a classification of semisimple pivotal $\Cstar$ modules over Temperley-Lieb-Jones in terms of pointed graphs with a Frobenius-Perron vertex weighting.
+ We then generalize the Markov towers of algebras approach to show that a finite depth subfactor planar algebra embeds in the bipartite graph planar algebra of the fusion graph of any of its cyclic modules.
 \end{abstract}
 
 
@@ -553,10 +553,10 @@
 
 Jones' planar algebras \cite{math.QA/9909027} are a powerful method to construct \cite{MR2979509,EH3} and classify \cite{MR3166042,MR3345186,1509.00038} finite index ${\rm II}_1$ subfactors.
 Many exotic examples have been constructed via \emph{graph planar algebra embedding}, i.e., by finding \emph{evaluable} planar subalgebras of graph planar algebras.
-By \cite{MR2812459}, and finite depth subfactor planar algebra embeds in the graph planar algebra of its principal graph.
+By \cite{MR2812459}, any finite depth subfactor planar algebra embeds in the graph planar algebra of its principal graph.
 This result also extends to infinite depth subfactor planar algebras by \cite{gpa}.
 
-To date, graph planar algebra embedding has been used for:
+To date, graph planar algebra embedding has been used to construct:
 \begin{itemize}
 \item
 the $E_6$ and $E_8$ subfactor planar algebras \cite{MR1929335}
@@ -570,8 +570,8 @@ quantum group planar algebras \cite{MR3306607}, and
 the extended Haagerup fusion categories \cite{MR2979509,EH3}.
 \end{itemize}
 While none of the constructions above rely on the embedding theorem from \cite{MR2812459},
-this theorem gives us the motivation to do the hard work of looking for the embedding.
-However, the theorem is necessary for Liu's important classification theorem for composites of $A_3$ and $A_4$ subfactor planar algebras \cite{MR3345186}, which shows that higher quotients do not exist, as the possible generator does not embed in the appropriate graph planar algebra.
+the embedding theorem gives us the motivation to do the hard work of looking for the embedding.
+However, the embedding theorem is necessary for Liu's important classification theorem for composites of $A_3$ and $A_4$ subfactor planar algebras \cite{MR3345186}, in which he shows that higher quotients of $A_3*A_4$ do not exist because the possible generator does not embed in the appropriate graph planar algebra.
 
 As noted in \cite{MR2812459}, it was rather surprising that the dual principal graph made no appearance in the embedding theorem.
 Adding to this mystery, certain examples above could be constructed by embedding into planar algebras of bipartite graphs which are completely different from the principal and dual principal graphs \cite{MR2679382,MR3402358,EH3}.
@@ -589,15 +589,15 @@ indecomposable finitely semisimple pivotal left $\cC$-module $\Cstar$ categories
 \end{itemize}
 \end{thm}
 
-The proof in \cite{EH3} is mostly in the language of tensor categories and their modules.
+The proof in \cite{EH3} is mostly in the language of tensor and module categories.
 In this article, we provide an independent proof in the original towers of algebras approach to subfactor theory \cite{MR936086,MR999799,MR1278111} and the graph planar algebra embedding theorem \cite{MR2812459}.
 
 Our starting point is the well-known correspondence between:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$ with its canonical \emph{balanced} unitary dual functor
+unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$ with its canonical spherical/balanced unitary dual functor
 (see \cite{MR2091457,1808.00323}),\footnote{
- That $X$ is a generator means that any proper full subcategory of $\cC$ containing $X$ which is closed under tensor product, direct sum, taking dual, and taking subobjects is equivalent to $\cC$; see definition \ref{def:multitensor}. 
+ That $X$ is a generator means that any proper full subcategory of $\cC$ containing $X$ which is closed under tensor product, direct sum, taking dual, and taking subobjects is equivalent to $\cC$; see Definition \ref{def:multitensor}. 
 } 
 and
 \item
@@ -624,7 +624,7 @@ together with an action of the
 shaded planar module operad, 
 which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
 We refer the reader to Definition \ref{def:PlanarModule} for the details, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:\,\footnote{ 
-We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic as the category of finite dimensional $\bbC$-vector spaces is symmetric.
+We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic as the tensor category of finite dimensional complex vector spaces is symmetric.
 }
 $$
 \begin{tikzpicture}[baseline = -.1cm]
@@ -654,7 +654,7 @@ $$
 \,:
 (\cM_3 \otimes \cM_1) \otimes (\cP_{2,+}\otimes \cP_{1,-} \otimes \cP_{3,+}) \to \cM_{4}
 $$
-Here, one can glue shaded planar module tangles into the module input semidisks, and one can glue circular shaded planar tangles into the circular input disks.
+Here, one can glue shaded planar module tangles into the module input semidisks, and one can glue shaded planar tangles into the circular input disks.
 In addition, the tower of algebras $(\cM_k)_{k \geq 0}$ must satisfy that multiplication in the von Neumann algebra $\cM_k$ is given by the tangle
 $$
 \begin{tikzpicture}[baseline = -.1cm]
@@ -705,16 +705,16 @@ There is an equivalence between:
 \item
 pivotal right $\cC$-module $\Cstar$ categories $(\cM,\Tr^\cM)$ with choice of simple basepoint $m = m\vartriangleleft 1_0$, and
 \item
-connected right planar modules $\cM_\bullet$ for $\cP_\bullet$
+connected right planar modules $\cM_\bullet$ for $\cP_\bullet$.
 %\item
 %cyclic right lattice modules $M_\bullet$ for $\cA_{\bullet, \bullet}$.
 \end{enumerate}
 \end{thmalpha}
 
-One passes from (2) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ and $(\cC, X)$.
-One passes from (1) to (2) using the diagrammatic calculus, similar to how one gets a subfactor planar algebra from $(\cC, X)$ \cite{MR2811311,1808.00323}.
+One passes from (2) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ and $(\cC, X)$ \cite{MR2559686,MR3405915}.
+One passes from (1) to (2) using the diagrammatic calculus for module categories, similar to how one gets a subfactor planar algebra from $(\cC, X)$ via the diagrammatic calculus for pivotal categories \cite{MR2811311,1808.00323}.
 
-From the pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple basepoint $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a 
+From a pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple basepoint $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a 
 tower of finite dimensional von Neumann algebras by setting
 $$
 M_n := \End_\cM(m \vartriangleleft  \underbrace{X\otimes \overline{X} \otimes \cdots \otimes X^?}_{n \text{ tensorands}})
@@ -759,7 +759,7 @@ d^{-1}
 \big)
 \in M_{2k+3}.
 \end{align*}
-Here, $(\overline{X}, \ev_X, \coev_X)$ is the balanced dual of $X$, $m$ is graphically represented by a red strand, and the left hand side of $m$ is shaded to denote the absence of a left $\cC$-action.
+Here, $(\overline{X}, \ev_X, \coev_X)$ is the balanced dual of $X$, $m$ is graphically represented by a red strand, and the left hand side of $m$ is shaded red to denote the absence of a left $\cC$-action.
 
 We call $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ 
 a \emph{Markov tower} as it satisfies the following axioms:
@@ -775,6 +775,8 @@ For all $n\geq 1$, we have the Pimsner-Popa pull down property \cite{MR860811}: 
 \end{enumerate}
 One should view a Markov tower as an analog of Popa's $\lambda$-lattices \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
 Indeed, one should compare \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2) and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.
+We expect that the notion of Markov tower with some compatibility axioms is the correct notion of a right module for Popa's $\lambda$-lattices (see Remark \ref{rem:LambdaLatticeModule}).
+We leave this exploration to a future article as it would take us too far afield.
 
 Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}; we mention a few here, and we refer the reader to \S\ref{sec:MarkovTowers} for more details.
 The traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
@@ -796,9 +798,6 @@ are in bijection with
 pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
 \end{coralpha}
 
-We expect that the notion of Markov tower with some compatibility axioms is the correct notion of a right module for Popa's $\lambda$-lattices (see Remark \ref{rem:LambdaLatticeModule}).
-We leave this exploration to a future article as it would take us too far afield.
-
 %We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
 %\begin{enumerate}[label={\rm(\arabic*)}]
 %\item
@@ -815,10 +814,9 @@ We leave this exploration to a future article as it would take us too far afield
 %For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
 %We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
 
-We now specialize to the hypotheses of the module embedding theorem, i.e., $\cQ_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding projection category with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
-In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is equal to the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
-This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar.
-We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
+We now specialize to the hypotheses of the module embedding theorem, i.e., $\cQ_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding spherical unitary multifusion category of projections with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
+In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
+This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar (see \cite[1.1.4(c)]{MR1278111}).
 
 By \cite[\S2.3]{MR2812459}, the inclusion $A_0:=M_{2r} \subset (M_{2r+1}, \tr_{2r+1}) =: (A_1, \tr_1)$ has a canonical associated planar $\dag$-algebra $\cP_\bullet$, which is built from the tower of higher relative commutants.
 Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cP_\bullet$ is \emph{non-canonically} isomorphic to the bipartite graph planar algebra $\cG_\bullet$ of the Bratteli diagram of the inclusion $A_0 \subset A_1$, which is also the fusion graph $\Gamma$. 
@@ -827,9 +825,9 @@ Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cP_\bullet$ is \em
 
 %We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra $\cP_\bullet$.
 
-\begin{thmalpha}
+\begin{thmalpha}[Module embedding]
 \label{thm:ModulePAEmbedding}
-The unital $*$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cQ_{n,\pm} \to \cP_{n,\pm}$
+The unital $\dag$-algebra maps $\Phi_{n,\pm}:= \id_m \vartriangleleft \id_{(X\otimes \overline{X})^{\otimes r}}\vartriangleleft - : \cQ_{n,\pm} \to \cP_{n,\pm}$
 $$
 \begin{tikzpicture}[baseline]
  \draw (0,-.7) -- (0,.7);
@@ -857,17 +855,17 @@ $$
 give a planar $\dag$-algebra embedding $\cQ_\bullet \hookrightarrow \cP_\bullet$.
 \end{thmalpha}
 
-Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{\cC_{00}}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cQ_\bullet$ from \cite{MR2812459}.
-Similarly, we get an embedding into the graph planar algebra of the dual principal graph from choosing $\cM= \cC_{10} \oplus \cC_{11}$ and $m \in \cC_{10}$ is an arbitrary choice of simple object.
+Choosing $\cM = \cC_{00}\oplus \cC_{10}$ and $m = 1_{0}$ corresponding to the unshaded empty diagram exactly recovers the embedding into the graph planar algebra of the principal graph of $\cQ_\bullet$ from \cite{MR2812459}.
+Similarly, we get an embedding into the graph planar algebra of the dual principal graph by choosing $\cM= \cC_{10} \oplus \cC_{11}$ and an arbitrary simple object $m \in \cC_{10}$.
 
-Notice we made two choices in our proof of the module embedding theorem; we picked a simple object $m\in \cM$, and we picked $r\geq 0$ such that $M_{2r}\subset (M_{2r+1},\tr_{2r+1})$ is strongly Markov.
-In our final Section \ref{sec:InvarianceOfEmbedding}, we explain that picking a different simple $m'\in \cM$ or a different $r'\geq 0$, we get an equivalent planar $\dag$-algebra embedding $\cQ_\bullet \to \cG\cP\cA(\Gamma)_\bullet$.
-Indeed, we show that the two strongly Markov inclusions are related by a shift and a compression by a projection with central support 1, and these processes yield planar $\dag$-isomorphisms on the associated canonical relative commutant planar algebras.
+Notice we made three choices in our proof of the Module Embedding Theorem \ref{thm:ModulePAEmbedding}; we picked a simple object $m\in \cM$ with $m=m\vartriangleleft 1_0$, an $r\geq 0$ such that $M_{2r}\subset (M_{2r+1},\tr_{2r+1})$ is strongly Markov, and a planar $\dag$-algebra isomorphism $\cQ_\bullet \cong \cG\cP\cA(\Gamma)_\bullet$.
+In our final Section \ref{sec:InvarianceOfEmbedding}, we explain that different choices still produce an equivalent planar $\dag$-algebra embedding $\cQ_\bullet \to \cG\cP\cA(\Gamma)_\bullet$.
+Indeed, we show that the two corresponding strongly Markov inclusions are related by a shift and a compression by a projection with central support 1, and these processes yield planar $\dag$-isomorphisms on the associated canonical relative commutant planar algebras.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Acknowledgements.}
 
-This article is the undergraduate research project by Desmond Coles and Srivatsa Srinivas which was supervised by Peter Huston and David Penneys during Summer 2018, supported by Penneys' NSF DMS grant 1654159.
+This article is the undergraduate research project of Desmond Coles and Srivatsa Srinivas, which was supervised by Peter Huston and David Penneys during Summer 2018, supported by Penneys' NSF DMS CAREER grant 1654159.
 The authors would like to thank Corey Jones for many helpful conversations.
 Additionally, David Penneys would like to thank Emily Peters and Noah Snyder for helpful conversations.
 
@@ -2206,7 +2204,8 @@ This is equivalent to $x = \sum_b b E_{A_0}(b^*x)$ for all $x\in A_1$, and also 
 (see also \cite{MR996807}).
 
 Given a strongly Markov inclusion $A_0\subset (A_1, \tr_1)$, 
-its \emph{Watatani index} \cite{MR996807} is the scalar $[A_1:A_0]:=\Tr_2(1) = \sum_b bb^* $ (see also \cite[1.1.4(c)]{MR1278111}).
+its \emph{Watatani index} \cite{MR996807} is the scalar $[A_1:A_0]:=\Tr_2(1) = \sum_b bb^* $.
+We refer the reader to \cite[1.1.4(c)]{MR1278111} for other equivalent properties for the Watatani index in the presence of a Pimsner-Popa basis. 
 We may iterate the Jones basic construction to get a tower of von Neumann algebras $(A_n ,\tr_n, e_{n+1})_{n\geq 0}$ with faithful tracial states such that each inclusion $A_{n}\subset (A_{n+1}, \tr_{n+1})$ is strongly Markov with index $[A_{n+1}: A_n] = [A_1:A_0]$ \cite{MR2812459}.
 By \cite[Prop.~2.7.3]{MR996807}, the relative commutants $A_i' \cap A_j$ for $i\leq j$ are always finite dimensional von Neumann algebras.
 \end{defn}
