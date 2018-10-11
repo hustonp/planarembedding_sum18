@@ -1455,7 +1455,7 @@ $$
 $$
 and $\id_l, \id_r$ are the appropriate identity morphisms as above.
 \end{itemize}
-The output is the composite morphism in $\cM_{k_0} := \End_\cM(m \vartriangleleft X^{\text{alt}k_0})$.
+The output is the composite morphism in $\cM_{k_0} = \End_\cM(m \vartriangleleft X^{\text{alt}k_0})$.
 One then checks that the resulting composite morphism is independent of the choice of standard form for the shaded planar module tangle $T$.
 
 \begin{ex}
@@ -1865,12 +1865,12 @@ In \S\ref{sec:TLJmodules} below, we will see that Markov towers are exactly a $\
 \subsection{Markov towers and their elementary properties}
 \label{sec:MarkovTowersAndElementaryProperties}
 \begin{defn}
-A \emph{Markov tower} $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n_1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
+A \emph{Markov tower} $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ consists of a sequence $(M_n, \tr_n)_{n\geq 0}$ of finite dimensional von Neumann algebras, such that $M_n$ is unitally included in $M_{n+1}$, each $M_n$ has a faithful normal tracial states such that $\tr_{n+1}|_{M_n} = \tr_n$ for all $n\geq 0$, and there is a sequence of \emph{Jones projections} $e_n \in M_{n+1}$ for all $n\geq 1$, such that:
 \begin{enumerate}[label={\rm(M\arabic*)}]
 \item
 \label{eq:MarkovJonesProjections}
 The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations:
-\begin{enumerate}[label={\rm(\alph*)}]
+\begin{enumerate}[label={\rm(TLJ\arabic*)}]
 \item
 $e_i^2 = e_i = e_i^*$ for all $i$,
 \item
@@ -1894,12 +1894,12 @@ We call a Markov tower \emph{connected} if $\dim(M_0) = 1$.
 
 \begin{rem}
 One should think of the preceding definition as obtained from Popa's definition of \emph{$\lambda$-sequence} \cite{MR1334479} and removing one of the two sequences of algebras, together with the commuting square condition.
-Compare the existence of Jones projections \ref{eq:MarkovJonesProjections} and \ref{eq:MarkovImplement} with (1.3.2), and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.)
+Compare the existence of Jones projections, \ref{eq:MarkovJonesProjections}, and \ref{eq:MarkovImplement} with (1.3.2), and \ref{eq:MarkovIndex} and \ref{eq:MarkovPullDown} with (1.3.3') from \cite{MR1334479} respectively.
 \end{rem}
 
 
 \begin{rem}\label{pulldowniff}
-$M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
+Observe that $M_n e_n M_n$ is a 2-sided ideal in $M_{n+1}$ for all $n\geq 1$ if and only if the pull down condition holds. Indeed, if the pull down condition holds, then $M_{n+1} M_n e_n M_n \subseteq M_{n+1} e_n M_n = M_n e_n M_n$; the same argument holds on the right by first taking adjoints. Conversely, if $M_n e_n M_n$ is a 2-sided ideal, then $M_{n+1} e_n = (M_{n+1} e_n)e_n \subseteq (M_n e_n M_n) e_n = M_n e_n$.
 \end{rem}
 
 \begin{prop}\label{prop:ElementaryMarkov} A Markov tower satisfies the following elementary properties for $n\geq 1$.
@@ -2005,27 +2005,27 @@ This follows immediately from \ref{EP:NewStuff}.
 
 
 Notice that by \ref{EP:BasicContruction}, the Bratteli diagram for the inclusion $M_{n}\subset M_{n+1}$ consists of the reflection of the Bratteli diagram for the inclusion $M_{n-1} \subset M_n$, together with possibly some new edges and vertices corresponding to simple summands of $Y_{n+1}$. 
-By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition:
+By \ref{EP:NewStuff}, the new vertices at level $n+1$ only connect to the vertices that were new at level $n$. This leads to the following definition.
 
 \begin{defn}
-The \emph{principal graph} of the Markov tower $(M_n,\tr_n, e_{n+1})$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
-
+The \emph{principal graph} of the Markov tower $M_\bullet$ consists of the \emph{new} vertices at every level $n$ of the Bratteli diagram, together with all the edges connecting them.
 A Markov tower is said to have \emph{finite depth} if the principal graph is finite.
 \end{defn}
 
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
-Let $(M_n)$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
+Let $M_\bullet$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
 Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ contains the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, along with additional vertices and edges which are part of the principal graph. 
-At the base, all of Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. We can therefore ``unravel" the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $(M_n,\tr_n,e_{n+1})$.
+At the base, all of the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. 
+We can therefore `unravel' the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $M_\bullet$.
 
 \begin{fact}\label{Fact:BratteliPrincipal}
- If a Markov tower $(M_n)$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $(M_n)$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
+ If a Markov tower $M_\bullet$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $M_\bullet$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
 \end{fact}
 
 \begin{defn}
 The principal graph $\Gamma$ of a Markov tower $M_\bullet$ has a \emph{quantum dimension function} $\dim : V(\Gamma) \to \bbR_{>0}$ given as follows.
-Let $v \in V(\Gamma)$, and let $p\in M_k$ be a minimal projection corresponding to the vertex $v$.
-We define $\dim(v) := \tr_k(p)$, and we note this dimension is independent of the choice of $p \in M_k$ and $k\geq 0$.
+Let $v \in V(\Gamma)$, and let $p\in M_k$ be a minimal projection with $k$ minimal corresponding to the vertex $v$.
+We define $\dim(v) :=d^k \tr_k(p)$, and we note this dimension is independent of the choice of $p \in M_k$ representing $v$.
 Moreover, the quantum dimension function $\dim$ satisfies the Frobenius-Perron property
 \begin{equation}
 \label{eq:QuantumDimension}
@@ -2121,6 +2121,7 @@ e_{2k+2,+}
  \filldraw[unshaded] (.3,-.48) arc (180:0:.3cm);
  \node at (.4,0){\tiny{$2k+1$}};
 \end{tikzpicture} 
+\,.
 $$
 \end{ex}
 
@@ -2224,7 +2225,7 @@ Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})_{n\geq 
 We now classify all connected Markov towers in terms of pointed bipartite graphs and quantum dimension functions.
 
 \begin{ex}
-Suppose $(\Gamma, v)$ is a pointed bipartite graph with countably many vertices and edges, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
+Suppose $(\Gamma, v)$ is a locally finite pointed bipartite graph with countably many vertices, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
 We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \cite{MR999799,MR1473221}.
 We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
 
@@ -2263,17 +2264,17 @@ For each of these operations, we discuss how the principal graph changes.
 We omit the proof of the following straightforward proposition.
 \begin{prop}[Shifting a Markov tower]
 \label{prop:ShiftMarkovTower}
-Suppose $(M_n, \tr_n, e_{n+1})$ is a Markov tower.
-For any $k\geq 1$, $(M_{n+k}, \tr_{n+k}, e_{n+k+1})$ is also a Markov tower.
+Suppose $M_\bullet=(M_n, \tr_n, e_{n+1})_{n\geq 0}$ is a Markov tower.
+For any $k\geq 1$, $M_{\bullet+k}:=(M_{n+k}, \tr_{n+k}, e_{n+k+1})_{n\geq 0}$ is also a Markov tower.
 \end{prop}
 
 \begin{remark}
  \label{Rem:ShiftTowerEffects}
-Notice that shifting a Markov tower simply truncates the Bratteli diagram, and by \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
+Notice that shifting a Markov tower simply truncates the Bratteli diagram, and by Fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
 \end{remark}
 
 %Similar to the discussion in \S\ref{sec:CompressionIso}, 
-Given a Markov tower $(M_n,\tr_n, e_{n+1})$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
+Given a Markov tower $M_\bullet$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
 First, for all $n\geq 0$, we define a faithful trace $\tr_n^p$ on $pM_n p$ by
 \begin{equation}
 \label{eq:CompressedTrace}
@@ -2287,7 +2288,7 @@ E^p_n : pM_np \to pM_{n-1}p
 \qquad
 E^p_n(pxp) := E_n(pxp) = pE_n(x)p
 \end{equation}
-Notice that since $[e_n,p] = 0$ for all $n\in \bbN$, we have for all $pxp \in pM_n p$, we have 
+Notice that since $[e_n,p] = 0$ for all $n\in \bbN$, for all $pxp \in pM_n p$ we have 
 \begin{equation}
 \label{eq:CompressionImplementsConditionalExpectation}
 e_np (pxp) e_np = p e_nxe_np = pE_n(x)e_np = E_n^p(pxp)e_np,
@@ -2295,8 +2296,8 @@ e_np (pxp) e_np = p e_nxe_np = pE_n(x)e_np = E_n^p(pxp)e_np,
 so the conditional expectation is implemented by $e_np$.
 
 \begin{prop}
-Suppose $(M_n,\tr_n, e_{n+1})$ is a Markov tower of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
-Then $(pM_np, \tr_n^p, pe_{n+1})$ is a Markov tower, where $\tr_n^p$ is defined as in \eqref{eq:CompressedTrace}.
+Suppose $M_\bullet = (M_n,\tr_n, e_{n+1})_{n\geq0}$ is a Markov tower of finite dimensional von Neumann algebras and $p\in P(M_0)$ is a nonzero projection.
+Then $pMp_\bullet:= (pM_np, \tr_n^p, pe_{n+1})_{n\geq0}$ is a Markov tower, where $\tr_n^p$ is defined as in \eqref{eq:CompressedTrace}.
 \end{prop}
 \begin{proof}
 First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections}, since $[e_n,p]=0$ for all $n\geq 0$.
@@ -2307,10 +2308,10 @@ Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe
 
 \begin{remark}
  \label{Rem:CompressionTowerEffects}
-We can determine the Bratteli diagram and principal graph for $(pM_np, \tr_n^p, pe_{n+1})$, as follows. 
+We can determine the Bratteli diagram and principal graph for $pMp_\bullet$, as follows. 
 If $p$ has central support $1$, then the Bratteli diagram is unchanged. 
 In general, any vertices on the bottom row corresponding to simple summands of $M_0$ where $p$ does not have support disappear, as well as those edges no longer supported from below. 
-By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtain the Bratteli diagram for $(pM_np, \tr_n^p, pe_{n+1})$.
+By proceeding up the tower and, at each level, removing those vertices and edges no longer supported from below, we obtain the Bratteli diagram for $pMp_\bullet$.
 \end{remark}
 
 \begin{nota}
