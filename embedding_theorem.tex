@@ -5969,7 +5969,7 @@ Taking sup over $u \in U(N)$ yields $0 = xz = x$.
 
 
 Similar to the discussion in \S\ref{sec:OperationsOnMarkovTowers}, 
-given an inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, we obtain another inclusion of tracial von Neumann algebras by compression by a non-zero projection $p\in P(M_0)$.
+given an inclusion of tracial von Neumann algebras $A_0\subset (A_1, \tr_1)$, we obtain another inclusion of tracial von Neumann algebras by compression by a non-zero projection $p\in P(A_0)$.
 We define a faithful trace $\tr_1^p$ on $pA_1 p$ by
 \begin{equation}
 \label{eq:CompressedTrace1}
@@ -5983,7 +5983,7 @@ E^p_1 : pA_1p \to pA_{0}p
 \qquad
 E^p_1(pxp) := E_1(pxp) = pE_1(x)p
 \end{equation}
-Notice that since $[e_1,p] = 0$, we have for all $pxp \in pM_1 p$, we have 
+Notice that since $[e_1,p] = 0$, we have for all $pxp \in pA_1 p$, we have 
 \begin{equation}
 \label{eq:CompressionImplementsConditionalExpectation1}
 e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1^p(pxp)e_1p,
@@ -6031,9 +6031,10 @@ Then for any Pimsner-Popa basis $\{b\}$ for $A_1$ over $A_0$, $\{pbap\}$ is a Pi
 \item
 The inclusion $pA_0p \subset (pA_1p, \tr_1^p)$ is strongly Markov with index $[pA_1p:pA_0p] = [A_1:A_0]$.
 \item
-The inclusion $pA_0p \subset pA_1p \subset (pA_2p , \tr_2^p, pe_1)$ is standard.
+The inclusion $pA_0p \subset (pA_1p, \tr_1^p) \subset (pA_2p , \tr_2^p, pe_1)$\footnote{
+The definition of $\tr^p_2$ is analogous to \eqref{eq:CompressedTrace1}.
+} is standard.
 \end{enumerate}
-(Here, the definition of $\tr^p_2$ is analogous to \eqref{eq:CompressedTrace1}.)
 %Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
 %The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
 \end{prop}
@@ -6093,13 +6094,13 @@ By iterating Lemma \ref{lem:BasicConstructionRecognition} and Proposition \ref{p
 
 \begin{cor}
 \label{cor:CompressJonesTower}
-Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusion}, and let $(A_n, \tr_n, e_n)$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
-Then $(pA_np, \tr_n^p, pe_n)$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
+Assume the hypotheses of Proposition \ref{prop:CompressingStronglyMarkovInclusion}, and let $A_\bullet=(A_n, \tr_n, e_{n+1})_{n\geq 0}$ be the Jones tower for $A_0 \subset (A_1, \tr_1)$.
+Then $pAp_\bullet:=(pA_np, \tr_n^p, pe_{n+1})_{n\geq 0}$ is isomorphic to the Jones tower of $pA_0p \subset (pA_1p, \tr_1^p)$.
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Suppose $A_0\subset A_1$ is a strongly Markov inclusion of tracial von Neumann algebras.
+Suppose $A_0\subset (A_1,\tr_1)$ is a strongly Markov inclusion of tracial von Neumann algebras.
 Denote by $\cP_\bullet$ the canonical planar $\dag$-algebra whose box spaces are given by
 $$
 \cP_{n,+}
@@ -6111,7 +6112,7 @@ A_0'\cap A_n
 A_1'\cap A_{n+1}.
 $$
 Suppose $p\in P(A_0)$ is a projection such that $A_0pA_0 = A_0$.
-By Corollary \ref{cor:CompressJonesTower}, the Jones tower for $pA_0p \subset (pA_1p, \tr^p_1)$ is given by $(pA_np, \tr^p_n, e_np)$, and thus we get another canonical planar $\dag$-algebra $\cQ_\bullet$ whose box spaces are given by
+By Corollary \ref{cor:CompressJonesTower}, the Jones tower for $pA_0p \subset (pA_1p, \tr^p_1)$ is given by $(pA_np, \tr^p_n, pe_{n+1})_{n\geq 0}$, and thus we get another canonical planar $\dag$-algebra $\cQ_\bullet$ whose box spaces are given by
 $$
 \cQ_{n,+}
 :=
@@ -6133,8 +6134,8 @@ We prove the unital $*$-algebra isomorphisms $\Phi_{n,\pm}$ satisfy the conditio
 First, note that $\Phi_{n,\pm}(e_n) = pe_n$, so Jones projections in $\cP_\bullet$ map to Jones projections in $\cQ_\bullet$ by Corollary \ref{cor:CompressJonesTower}.
 Hence Condition (1) of Lemma \ref{lem:SufficientConditionsForPlanarMap} is satisfied.
 
-The only interesting part of checking Condition (2) of Lemma \ref{lem:SufficientConditionsForPlanarMap} holds is verifying that left capping commutes with $\Phi_{n,\pm}$.
-First, by Proposition \ref{prop:LeftCapping}, if $\{b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$, then for all $x\in \cP_{n,+}:= A_0'\cap A_n$,
+The only interesting part in checking Condition (2) of Lemma \ref{lem:SufficientConditionsForPlanarMap} holds is verifying that left capping commutes with $\Phi_{n,\pm}$.
+First, by Proposition \ref{prop:LeftCapping}, if $\{b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$, then for all $x\in \cP_{n,+}= A_0'\cap A_n$,
 $$
 \begin{tikzpicture}[xscale=-1, baseline = -.1cm]
  \fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
@@ -6162,9 +6163,9 @@ This means that picking Pimsner-Popa bases $\{b\}$ for $A_1$ over $A_0$ and $\{a
 \end{tikzpicture}
 \right)
 =
-d^{-1}p\sum_{\beta} b xb^* 
+d^{-1}p\sum_{b} b xb^* 
 \overset{\text{?}}{=} 
-d^{-1}\sum_{b} apxa^*
+d^{-1}\sum_{a} apxa^*
 =
 \begin{tikzpicture}[xscale=-1, baseline = -.1cm]
  \fill[shaded] (.85,-.5) -- (.85,.5) -- (0,.5) -- (0,-.5);
@@ -6176,9 +6177,9 @@ d^{-1}\sum_{b} apxa^*
 \end{tikzpicture}
 .
 \end{equation}
-The trick is to carefully choose a Pimsner-Popa basis for $A_1$ over $A_0$.
+The trick is to carefully choose our Pimsner-Popa basis for $A_1$ over $A_0$.
 We take the Pimsner-Popa basis $\{a\}$ for $pA_1p$ over $pA_0p$ and we take the disjoint union with $\{(1-p)b\}$, where $\{b\}$ was our Pimsner-Popa basis for $A_1$ over $A_0$.
-We now claim $\{c\} = \{a\}\cup \{b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$.
+We now claim $\{c\} = \{a\}\cup \{(1-p)b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$.
 Indeed, since $a = pap \in pA_1p$ for all $a\in \{a\}$, we have
 $$
 \sum_{c} c e_1 c^*
