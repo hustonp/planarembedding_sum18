@@ -2390,9 +2390,9 @@ We now show that taking every $k$-th algebra in a Markov tower gives us another 
 
 \begin{prop}
 \label{prop:MultistepJonesProjections}
-Suppose $(M_n, \tr_, e_{n+1})$ is a Markov tower, and let $j\geq 0$ and $k\geq 1$.
+Suppose $M_\bullet=(M_n, \tr_, e_{n+1})$ is a Markov tower, and let $j\geq 0$ and $k\geq 1$.
 Define $g_n \in M_{j+(n+1)k}$ as in Notation \ref{nota:TLJK Diagrams}.
-Then $(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
+Then $M_{j+k\bullet}:=(M_{j+nk}, \tr_{j+nk}, g_{n+1})_{n\geq 0}$ is a Markov tower.
 \end{prop}
 \begin{proof}
 We saw Condition \ref{eq:MarkovJonesProjections} holds from the diagrammatic calculus, and Conditions \ref{eq:MarkovImplement} and \ref{eq:MarkovIndex} are straightforward induction arguments.
@@ -2549,10 +2549,10 @@ This completes the proof.
 
 \begin{remark}
  \label{Rem:MultistepTowerEffects}
-If $\left( M_n, \tr_n, e_{n+1} \right )_{n \geq 0}$ is a Markov tower, then we know from Proposition \ref{prop:MultistepJonesProjections} that 
-$\left( M_{kn}, \tr_{kn}, g_{n+1} \right )_{n\geq 0}$ is also a Markov tower. 
-The Bratteli diagram for $\left( M_{kn}, \tr_{kn}, g_{kn} \right )_{n\geq 0}$ can be read off the original Bratteli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new diagram is the number of upward paths between those vertices in the old diagram.
-Note that, since a vertex of the multistep principal graph may belong to the old stuff in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph.
+If $M_\bullet$ is a Markov tower, then we know from Proposition \ref{prop:MultistepJonesProjections} that 
+$M_{k\bullet}$ is also a Markov tower. 
+The Bratteli diagram for $M_{k\bullet}$ can be read off the original Bratteli diagram quite easily: the vertices of the level of the Bratteli diagram corresponding to $M_{kn}$ are the same in both towers, while the number of edges between two vertices in the new diagram is the number of upward paths between those vertices in the old diagram.
+Note that, since a vertex of the multistep principal graph may belong to the `old stuff' in the original Bratteli diagram, the number of edges between adjacent vertices in the multistep principal graph is not simply the number of paths in the original principal graph.
 In the case where $k$ is odd, taking the $k$-step basic construction therefore collapses the vertices of each $k$ levels of the principal graph into one level; when $k$ is even, we lose the odd part of the principal graph entirely, but aside from this, the situation is the same.
 \end{remark}
 
@@ -2566,7 +2566,7 @@ We now define the category of projections of a Markov tower.
 
 \begin{defn}
 \label{def:MarkovProjections}
-Let $M_\bullet = (M_n, \tr_n, e_{n+1})$ be a Markov tower.
+Let $M_\bullet = (M_n, \tr_n, e_{n+1})_{n\geq 0}$ be a Markov tower.
 We define the category $\cM$ to be the unitary Karoubi completion (formally adding orthogonal direct sums, and then taking the orthogonal projection completion) of the $\Cstar$ category $\cM_0$ with finite dimensional $\Hom$-spaces defined as follows.
 \begin{itemize}
 \item
@@ -2640,7 +2640,9 @@ $}
 \cM_0([n] \to [n+2i+2j]).
 $$
 We define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition 
-$\cM_0([n+2i+2j] \to [n+2i]) \otimes \cM_0([n+2i] \to [n]) \to \cM_0([n+2i+2j] \to [n])$.
+$$
+\cM_0([n+2i+2j] \to [n+2i]) \otimes \cM_0([n+2i] \to [n]) \to \cM_0([n+2i+2j] \to [n]).
+$$
 To show $x^\dag \circ y^\dag$ is well-defined, we check that when $i=j=0$,
 \begin{equation}
 \label{eq:n to n to n}
@@ -2679,7 +2681,9 @@ M_{n+i}
 \cM_0([n] \to [n+2i]).
 $$
 As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
-$\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n])$.
+$$
+\cM_0([m] \to [m+2k]) \otimes \cM_0([n+2j] \to [n]) \to \cM_0([m] \to [n]).
+$$
 To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $i=0$, 
 \begin{equation}
 \label{eq:n to n+2k to n}
@@ -2720,7 +2724,9 @@ M_{n+2i+j}
 \cM_0([n+2i] \to [n+2i+2j]).
 $$
 As above, we define the composite $x^\dag \circ y^\dag := (y\circ x)^\dag$, which defines composition
-$\cM_0([n+2i+2j] \to [n]) \otimes \cM_0([n] \to [n+2i]) \to \cM_0([n+2i+2j] \to [n+2i])$.
+$$
+\cM_0([n+2i+2j] \to [n]) \otimes \cM_0([n] \to [n+2i]) \to \cM_0([n+2i+2j] \to [n+2i]).
+$$
 To show that $x^\dag \circ y^\dag$ is well-defined, we check that when $j=0$, 
 \begin{equation}
 \label{eq:n+2j to n to n+2j}
@@ -2760,9 +2766,46 @@ d^{-i}\,
 \end{itemize}
 Showing that composition is associative directly from the definitions above is a highly non-trivial exercise using the axioms \ref{eq:MarkovJonesProjections} -- \ref{eq:MarkovPullDown} of a Markov tower.
 A better way to prove associativity is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite{MR808930} 
-$\cL:=(\cM_0([a] \to[b]))_{a,b}$ where $a,b\in \{n, n+2i, n+2i+2j, n+2i+2j+2k \}$
+$$
+\cL:=
+\resizebox{.95\hsize}{!}{$
+\left(\begin{array}{llll}
+\cM_0([n] \to[n])
+&
+\cM_0([n{+}2i] \to[n])
+&
+\cM_0([n{+}2(i{+}j)] \to[n])
+&
+\cM_0([n{+}2(i{+}j{+}k)] \to[n])
+\\
+\cM_0([n] \to[n{+}2i])
+&
+\cM_0([n{+}2i] \to[n{+}2i])
+&
+\cM_0([n{+}2(i{+}j)] \to[n{+}2i])
+&
+\cM_0([n{+}2(i{+}j{+}k)] \to[n{+}2i])
+\\
+\cM_0([n] \to[n{+}2(i{+}j)])
+&
+\cM_0([n{+}2i] \to[n{+}2(i{+}j)])
+&
+\cM_0([n{+}2(i{+}j)] \to[n{+}2(i{+}j)])
+&
+\cM_0([n{+}2(i{+}j{+}k)] \to[n{+}2(i{+}j)])
+\\
+\cM_0([n] \to[n{+}2(i{+}j{+}k)])
+&
+\cM_0([n{+}2i] \to[n{+}2(i{+}j{+}k)])
+&
+\cM_0([n{+}2(i{+}j)] \to[n{+}2(i{+}j{+}k)])
+&
+\cM_0([n{+}2(i{+}j{+}k)] \to[n{+}2(i{+}j{+}k)])
+\end{array}\right)
+$}
+$$ 
 is $\dag/*$-isomorphic to a von Neumann algebra, which is necessarily associative!
-This technique also offers the advantage that it, simultaneously proves $\cM_0$ is $\Cstar$.\footnote{
+This technique also offers the advantage that it simultaneously proves $\cM_0$ is $\Cstar$.\footnote{
 Just as being a $\Cstar$ algebra is a property of a complex $*$-algebra, being a $\Cstar$ category is a property of a $\bbC$-linear dagger category.
 }
 
@@ -2782,7 +2825,7 @@ M_{n{+}i{+}j{+}k} & M_{n{+}2i{+}j{+}k} & M_{n{+}2i{+}2j{+}k} & M_{n{+}2i{+}2j{+}
 \end{array}
 \right).
 \end{equation}
-We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to pM_4(M_{n+2i+2j+2k})p$
+We define the following map entry-wise; that is, for an element $x \in \cL$, we plug $x_{ab}$ into the input disk in the $ab$-th entry of the map $\pi :\cL \to p\operatorname{Mat}_4(M_{n+2i+2j+2k})p$ given by
 \begin{equation}
 \label{eq:4x4Map}
 \resizebox{.92\hsize}{!}{
@@ -3122,7 +3165,7 @@ d^{-k}
 \end{pmatrix}
 $}
 \end{equation}
-where $p\in M_4(M_{n+2i+2j+2k})$ is the following projection:
+where $p\in \operatorname{Mat}_4(M_{n+2i+2j+2k})$ is the following projection:
 $$
 p:=
 \operatorname{diag}\left(
@@ -3190,7 +3233,7 @@ d^{-k}
 \right).
 $$
 In Proposition \ref{prop:InjectiveAlgebraMap} below, we verify the map $\pi$ is an injective unital algebra map satisfying $\pi(x^\dag) = \pi(x)^*$, and is thus an isomorphism onto its image.
-Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $pM_4(M_{n+2i+2j+2k})p$, which means $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
+Thus $\im(\pi)$ is a unital $*$-subalgebra of the finite dimensional von Neumann algebra $p\operatorname{Mat}_4(M_{n+2i+2j+2k})p$, which means $\im(\pi)$ is a von Neumann algebra by the finite dimensional bicommutant theorem \cite[Thm.~3.2.1]{JonesVNA}.
 By looking at the $2\times 2$ and $3\times 3$ corners of the linking algebra $\cL$ and \eqref{eq:4x4Map},
 we immediately see: 
 \begin{itemize}
@@ -3211,7 +3254,7 @@ Hence $\cM_0$ is $\Cstar$, and thus so is its unitary Karoubi completion $\cM$.
 
 \begin{prop}
 \label{prop:InjectiveAlgebraMap}
-The map $\pi: \cL \to pM_4(M_{n+2i+2j+2k})p$ from Definition \ref{def:MarkovProjections} is an injective algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
+The map $\pi: \cL \to p\operatorname{Mat}_4(M_{n+2i+2j+2k})p$ from Definition \ref{def:MarkovProjections} is an injective unital algebra map such that $\pi(x^\dag) = \pi(x)^*$ for all $x\in \cL$.
 \end{prop}
 
 
@@ -3970,11 +4013,12 @@ y\cdot\,
 
 \begin{cor}
 \label{cor:SemisimpleProjectionCategory}
-Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitarily Karoubi complete $\Cstar$ category of projections.
+Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitary Karoubi completion. % $\Cstar$ category of projections.
 Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in canonical bijection with the vertices of the principal graph.
 \end{cor}
 \begin{proof}
-All endomorphism algebras of $\cM$ are finite dimensional $\Cstar$ algebras which are semisimple, and thus $\cM$ is semisimple. By \ref{EP:BasicContruction}, every minimal projection in $X_{n+2}$ for $n\geq 0$ is equivalent to a minimal projection in $M_{n}$ via a partial isometry in $\cM_0([n] \to [n+2])$. 
+All endomorphism algebras of $\cM_0$ are finite dimensional $\Cstar$ algebras which are semisimple, and thus $\cM$ is semisimple. 
+By \ref{EP:BasicContruction}, every minimal projection in $X_{n+2}$ for $n\geq 0$ is equivalent to a minimal projection in $M_{n}$ via a partial isometry in $\cM_0([n] \to [n+2])$. 
 Explicitly, $p\in M_n$ is equivalent to $p e_{n+1} \in M_{n+2}$ via the morphism $p\in M_{n+1} = \cM_0([n] \to [n+2])$, which is a partial isometry using the definition of composition \ref{compose:updown} and \ref{compose:downup} in $\cM_0$, and this exhausts all equivalence classes of minimal projections in $X_{n+2}$.
 By recursion, we see that the equivalence classes of minimal projections in $M_\bullet$ are in canonical bijective correspondence with the minimal projections in the $(Y_n)_{n\geq 0}$, which are exactly the vertices of the principal graph.
 \end{proof}
@@ -3983,7 +4027,7 @@ By recursion, we see that the equivalence classes of minimal projections in $M_\
 \begin{rem}
 \label{rem:HowMCategoryChangesUnderMarkovTowerOperations}
 By Remark \ref{Rem:ShiftTowerEffects}, the category of projections of a Markov tower is invariant (up to equivalence) under applying shifts. 
-By Remark \ref{Rem:CompressionTowerEffects}, the category of projections of the compression $pM_\bullet p$ is the subcategory of the category of projections of $M_\bullet$ generated by minimal projections under $p$. 
+By Remark \ref{Rem:CompressionTowerEffects}, the category of projections of the compression $pMp_\bullet $ is the subcategory of the category of projections of $M_\bullet$ generated by minimal projections under $p$. 
 In particular, if $p\neq 0$ and the Bratteli diagram of $M_\bullet$ is connected, then the two categories of projections are again equivalent. 
 Finally, in the case of the multistep tower, we see by Remark \ref{Rem:MultistepTowerEffects} that the category of projections of $M_{k\bullet}$ is equivalent to the category of projections for $M_\bullet$ when $k$ is odd, and to the subcategory generated by the even part when $k$ is even.
 \end{rem}
@@ -4010,13 +4054,21 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 The $\TLJ$ action on $\cM$ comes from the fact that $TLJ_\bullet$ is the initial Markov tower for a given parameter. % say more?
 By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define the action of the objects $[m,\pm]_{\cT\cL\cJ}$ on $1_{[n]_\cM}$ for every $n$ and $m$, and then define the action functorially on morphisms. 
  
-We set $[m]_\cM\vartriangleleft [n]_{\TLJ}=[m+n]_\cM$. 
-As for morphisms, we first consider the case where one morphism is the identity. 
- If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we simply add $n$ strings on the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\TLJ}\to[n+b]_{\TLJ}\subseteq M_{n+(a+b)/2}$. % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
- The case of $f\vartriangleleft 1$ is more complicated. If $f\in \cM([n],[n+2k])=M_{n+k}$, then we define 
- \nn{check factors of $d$ below here!}
-\[f\vartriangleleft 1_{j+k}
+We set $[m]_\cM\vartriangleleft [n]_{\TLJ}:=[m+n]_\cM$. 
+For morphisms, we first consider the case where one morphism is the identity. 
+ If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we first add $n$ strings to the left to obtain $1_n \otimes_{\TLJ} g \in \TLJ([a+n]_{\TLJ} \to [b+n]_{\TLJ})$, and we define $1_{M_n}\vartriangleleft g\in \cM([a+n]_\cM \to [b+n]_\cM)$ to be the image of the element $1_n \otimes_{\TLJ} g$ in $M_{n+(a+b)/2}$. 
+%  the image of $g$ in $M_{a+b/2}$, which may still be represented by some linear combination of Kauffman diagrams, and we add $n$ strings to the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\cM}\to[n+b]_{\cM} \subseteq M_{n+(a+b)/2}$.
+% \nn{why is this well-defined? We add strings to the left and }
+ % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
+ The case of $f\vartriangleleft 1$ is more complicated. 
+ If $f\in \cM([n]\to [n+2k])=M_{n+k}$, then we define 
+\nn{There must be a mistake here, since $j=k$ should be the same for both.
+I think there is only one definition, the first one, and the second is just wrong.}
+% \nn{check factors of $d$ below here!}
+\[
+f\vartriangleleft 1_{j}
 :=
+\begin{cases}
 f\cdot
  % \TLPlusPIso{n}{k}{j}
  \begin{tikzpicture}[baseline=.3cm]
@@ -4030,10 +4082,9 @@ f\cdot
   \node at (.4,1) {\scriptsize{$k$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
  \end{tikzpicture}
- \,\text{,}\]
-while for $j<k$, we define 
-\[f\vartriangleleft 1_j
-:=
+&
+\text{if }k\geq j
+\\
 f\cdot
  % \TLMinusPIso{n}{j}{k}
  \begin{tikzpicture}[baseline=.3cm]
@@ -4047,12 +4098,15 @@ f\cdot
   \node at (.6,1) {\scriptsize{$k$}};
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.2,.8);
  \end{tikzpicture}
-\, \text{.}\]
-For $f:[n]\to[m]$ where $m<n$, we define $f\vartriangleleft 1$ by taking dagger. 
-
+&
+\text{if }j<k.
+\end{cases}
+\]
+For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag \vartriangleleft 1)^\dag$.
  
  Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
- We show the case where $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to{m+2\ell}_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. In other words, $g\in{(k+j)}_{\TLJ}\to(k+j)+2(k+i)_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar.
+ We prove the case $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to [m+2\ell]_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. 
+ In other words, $g\in[k+j]_{\TLJ}\to[k+j+2(k+i)]_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar.
  % \nn{are they all?}
  
  Let $\iota$ denote the inclusion in $M_\bullet$. In the following, since $g\in\TLJ$, we represent $g$ by a ticket within Temperley-Lieb tangles, which we may freely move via isotopy.
@@ -4424,7 +4478,8 @@ d^{-i}
  \endgroup
  It is more straightforward to check that for $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. From there, routine abstract nonsense verifies that defining $f\vartriangleleft g=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ makes $\cdot\vartriangleleft\cdot$ a bifunctor.
  Functoriality in the right variable comes directly from the definition, but functoriality in the left variable is more involved.
- We describe a representative case. Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+2i+2j]_{\cM}\to[n+2i]_{\cM}$, and suppose $m=k+i+j$. Then
+ We describe a representative case. 
+ Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+2i+2j]_{\cM}\to[n+2i]_{\cM}$, and suppose $m=k+i+j$. Then
  \begin{align*}
   (g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) 
   &= 
