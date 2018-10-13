@@ -5481,12 +5481,11 @@ $.
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\dag$-planar algebra, and then make use of the following theorem:
 
 \begin{thm}[{\cite[Theorem 3.28]{MR2812459}}] \label{planaralgebraisomorphism}
-The canonical planar $\dag$-algebra associated to the strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\dag$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
+The canonical planar $\dag$-algebra associated to the strongly Markov inclusion of finite dimensional von Neumann algebras $A_0\subseteq (A_1,\tr_1)$ is isomorphic to the bipartite graph planar $\dag$-algebra of the Bratteli diagram for the inclusion $A_0\subseteq A_1$.
 \end{thm}
 
-
-
-The following two subsections will describe two isomorphisms between canonical $\dag$-planar algebras of related strongly Markov inclusions. Both are well known to experts, and will motivate constructions detailed in the later sections of this article.
+The following two subsections  describe two isomorphisms between canonical $\dag$-planar algebras of related strongly Markov inclusions. 
+Both are well known to experts, and will motivate constructions detailed in the later sections of this article.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The shift isomorphism} 
@@ -5593,11 +5592,21 @@ d^{-2(k-j)} \sum_{b } bxb^{\ast}
 \]
 and is independent of the choice of basis.
 \end{prop}
-From the definition of the canonical $\ast$-planar algebra, one can work out that (in the language of Lemma \ref{lem:SufficientConditionsForPlanarMap}) right capping is simply the conditional expectation in the Markov tower $A_\bullet$, while left capping is the expectation on relative commutants described in the previous proposition. Thus, left capping is how the Pimsner-Popa basis makes shows itself graphically. The full details can be found in \cite[Prop.~2.47]{MR2812459}. 
+From the definition of the canonical $\dag$-planar algebra $\cP_\bullet$ of $A_\bullet$, one can work out that (in the language of Lemma \ref{lem:SufficientConditionsForPlanarMap}), right capping is simply the conditional expectation in the Markov tower $A_\bullet$, while left capping is the expectation on relative commutants described in the previous proposition. 
+Thus, left capping is how the Pimsner-Popa basis shows itself graphically. 
+The full details can be found in \cite[Prop.~2.47]{MR2812459}. 
 
 \begin{cor}
 \label{cor:OntoCor}
-The following maps from $A'_i \cap A_{n}$ to $A'_{k+i} \cap A_{n+k+i}$, where $i \in \{0,1\}$
+Adding $k$ strings to the left of $x$ gives a unital $\ast$-algebra isomorphisms
+$\cP_{n,\pm} \to \cP_{n+k,\pm'}$
+where $\pm' = \pm$ if $k$ is even and $\mp$ if $k$ is odd.
+%
+%$A'_0 \cap A_{n}\to A'_{k} \cap A_{n+k}$
+%and
+%$A'_0 \cap A_{n}\to A'_{k} \cap A_{n+k}$
+%
+% for $i \in \{0,1\}$.
 % then we have that $x$ can represented in the following form as a string diagram in the box space $A'_0\cap A_{n+k}$ for the canonical planar $\ast$-algebra for $A_0\subseteq (A_1,\tr_1)$:
 \[
 \begin{tikzpicture}[baseline=-.1cm]
@@ -5605,7 +5614,7 @@ The following maps from $A'_i \cap A_{n}$ to $A'_{k+i} \cap A_{n+k+i}$, where $i
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
 \node at (0,-.9) {\tiny{$n$}};
 \end{tikzpicture}
-\mapsto
+\,\,\mapsto
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (0.45,-.7) -- (0.45,.7);
 \draw (0,-.7) -- (0,.7);
@@ -5613,32 +5622,34 @@ The following maps from $A'_i \cap A_{n}$ to $A'_{k+i} \cap A_{n+k+i}$, where $i
 \node at (0.45,-.9) {\tiny{$n$}};
 \node at (0,-0.9){\tiny{$k$}};
 \end{tikzpicture}
-\qquad
-\qquad
-\qquad
-\begin{tikzpicture}[baseline=-.1cm]
-\fill[shaded] (-0.45,-0.7) rectangle (0,0.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
-\node at (0,-.9) {\tiny{$n$}};
-\end{tikzpicture}
-\mapsto
-\begin{tikzpicture}[baseline=-.1cm]
-\fill[shaded] (-0.3,-0.7) rectangle (0.45,0.7);
-\draw (0.45,-.7) -- (0.45,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
-\node at (0.45,-.9) {\tiny{$n$}};
-\node at (0,-0.9){\tiny{$k$}};
-\end{tikzpicture}
+%\qquad
+%\qquad
+%\qquad
+%\begin{tikzpicture}[baseline=-.1cm]
+%\fill[shaded] (-0.45,-0.7) rectangle (0,0.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
+%\node at (0,-.9) {\tiny{$n$}};
+%\end{tikzpicture}
+%\mapsto
+%\begin{tikzpicture}[baseline=-.1cm]
+%\fill[shaded] (-0.3,-0.7) rectangle (0.45,0.7);
+%\draw (0.45,-.7) -- (0.45,.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
+%\node at (0.45,-.9) {\tiny{$n$}};
+%\node at (0,-0.9){\tiny{$k$}};
+%\end{tikzpicture}
 \]
-defined by adding $k$ strings to the left of $x$ are unital $\ast$-isomorphisms.
+
 
 %and we have a similar result for elements of $A_3'\cap A_{n+3}$ when represented in string diagrams in $A'_{1}\cap A_{n+3}$.%
 \end{cor}
 
 \begin{proof} 
-We first prove the case where $i=0$. The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459}. Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
+We first prove the result for $\cP_{n,+} = A_0'\cap A_n$. 
+The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459} in the equality marked $(!)$. 
+Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
 For $x\in A'_k\cap A_{n+k}$, the element $y\in A_0'\cap A_n$ is uniquely determined by
 \begin{equation*}
 %\begin{tikzpicture}[baseline]
@@ -5652,9 +5663,9 @@ x
 E_{A'_k}^{A_0'}(x)
 =
 d^{-2k} \sum_{b \in B} bxb^{\ast}
-=
+\underset{(!)}{=}
 d^{-k}
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
 \draw (-.75,-.7) -- (-.75,.7);
 \draw (0,-.7) -- (0,.7);
@@ -5664,7 +5675,7 @@ d^{-k}
 %\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 =
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
 \draw (-1.5,-.7) -- (-1.5,.7);
 \draw (0,-.7) -- (0,.7);
@@ -5684,9 +5695,9 @@ d^{-k}
 \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$y$}
 \node at (0.45,-.9) {\tiny{$n$}};
 \node at (0,-0.9){\tiny{$k$}};
-\end{tikzpicture}
+\end{tikzpicture}\,.
 \end{equation*}
-The proof is similar for the case $i=1$.
+The proof is similar for $\cP_{n,-}$.
 \end{proof}
 
 %\nn{Do we really need the following as opposed to just showing it in the Shift by 2 Isomorphism?}
@@ -5717,25 +5728,26 @@ The proof is similar for the case $i=1$.
 %
 %\nn{above are dave's collisions}
 
-Let us denote the canonical planar $\ast$-algebra for the inclusion $A_0 \subseteq (A_1,\tr_1)$ by $\mathcal{A}_{\bullet}$ and the canonical planar $\ast$-algebra for $A_2 \subset (A_3,\tr_3)$ by $\mathcal{B}_{\bullet}$.
+Recall that the canonical planar $\dag$-algebra for the inclusion $A_0 \subseteq (A_1,\tr_1)$ is denoted by $\cP_{\bullet}$.
+We denote the canonical planar $\dag$-algebra for $A_2 \subset (A_3,\tr_3)$ by $\cQ_{\bullet}$.
 
 \begin{thm}[Shift Isomorphism]
 \label{ShiftIso}
-The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,\pm}$
-% and adding three strings in front of elements of $\mathcal{A}_{n,-}$ 
+The map $\Phi:\cP_{\bullet} \to \cQ_{\bullet}$, obtained by adding two strings in front of elements of $\cP_{n,\pm}$
+% and adding three strings in front of elements of $\cP_{n,-}$ 
 %=======
 %\begin{thm}[Shift by 2 Isomorphism]
-%The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by adding two strings in front of elements of $\mathcal{A}_{n,+}$ and adding three strings in front of elements of $\mathcal{A}_{n,-}$ viewed as elements of $mathcal{A}_{n+1,+}$ 
+%The map $\Phi:\cP_{\bullet} \to \cQ_{\bullet}$, obtained by adding two strings in front of elements of $\cP_{n,+}$ and adding three strings in front of elements of $\cP_{n,-}$ viewed as elements of $mathcal{A}_{n+1,+}$ 
 %>>>>>>> Stashed changes
 \[
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (0,-.9) {\tiny{$n$}};
 %\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\mapsto
-\begin{tikzpicture}[baseline]
+\,\,\mapsto
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (0.45,-.7) -- (0.45,.7);
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
@@ -5745,15 +5757,15 @@ The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by addi
 \qquad
 \qquad
 \qquad
-\begin{tikzpicture}[baseline]
+\begin{tikzpicture}[baseline=-.1cm]
 \fill[shaded] (-.5,-.7) rectangle (0,.7);
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (0,-.9) {\tiny{$n$}};
 %\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-\mapsto
-\begin{tikzpicture}[baseline]
+\,\,\mapsto
+\begin{tikzpicture}[baseline=-.1cm]
 \fill[shaded] (-.3,-.7) rectangle (0.45,.7);
 \draw (0.45,-.7) -- (0.45,.7);
 \draw (0,-.7) -- (0,.7);
@@ -5762,117 +5774,120 @@ The map $\Phi:\mathcal{A}_{\bullet} \to \mathcal{B}_{\bullet}$, obtained by addi
 \node at (0,-0.9){\tiny{$2$}};
 \end{tikzpicture}
 \]
-defines a planar $\ast$-algebra isomorphism between $\cA_{\bullet}$ and $\cB_{\bullet}$.
+defines a planar $\dag$-algebra isomorphism between $\cP_{\bullet}$ and $\cQ_{\bullet}$.
 \end{thm}
 \begin{proof}
-The map is an isomorphism between box spaces due to \ref{cor:OntoCor}. In order to show that this map commutes with the action of tangles, we just have to show that it satisfies the requirements of \ref{lem:SufficientConditionsForPlanarMap}. We draw the string diagrams of $\cB_{\bullet}$ in blue in order to increase clarity.
+The map is an isomorphism between box spaces due to Corollary \ref{cor:OntoCor}. 
+In order to show that this map commutes with the action of tangles, we just have to show that it satisfies the requirements of Lemma \ref{lem:SufficientConditionsForPlanarMap}. 
+We draw the string diagrams of $\cQ_{\bullet}$ in blue in order to increase clarity.
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item (Right Inclusion)
-\[
-\begin{tikzpicture}[baseline=-0.1]
-\draw[blue] (0,-0.7) -- (0,0.7);
+$
+\begin{tikzpicture}[baseline=-.1cm]
+\draw[blue] (-.2,-0.7) -- (-.2,0.7);
 \draw[blue] (0.45,-0.7) -- (0.45,0.7);
-\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
-\node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
+\roundNbox{unshaded, draw=blue}{(-.2,0)}{.3}{.15}{.15}{\textcolor{blue}{{$\Phi(x)$}}};
+\node at (-.2,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 = 
 \quad
-\begin{tikzpicture}[baseline=-0.1]
-\draw (-0.3,-0.7) -- (-0.3,0.7);
-\draw (0.3,-0.7) -- (0.3,0.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{\tiny{$\Phi(x)$}};
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-0.2,-0.7) -- (-0.2,0.7);
+\draw (0.2,-0.7) -- (0.2,0.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{{$\Phi(x)$}};
 \draw (0.6,-0.7) -- (0.6,0.7);
-\node at (-0.3,-0.9){\tiny{$2$}};
-\node at (0.3,-0.9){\tiny{$n$}};
+\node at (-0.2,-0.9){\tiny{$2$}};
+\node at (0.2,-0.9){\tiny{$n$}};
 \end{tikzpicture}
 \quad
 =
 \quad
-\begin{tikzpicture}[baseline=-0.1]
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (0,-0.7) -- (0,0.7);
 \draw (-0.6,-0.7) -- (-0.6,0.7);
-\draw[dashed] (-0.45,-0.6) rectangle (0.6,0.6);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{\tiny{$x$}};
+\draw[dashed] (-0.45,-0.5) rectangle (0.6,0.5);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{{$x$}};
 \draw (0.45,-0.7) -- (0.45,0.7);
 \node at (0,-0.9){\tiny{$n$}};
 \node at (-0.6,-0.9){\tiny{$2$}};
 \end{tikzpicture}
-\]
+$
 \item (Left Inclusion)
-\[
-\begin{tikzpicture}[baseline=-0.1,xscale=-1]
-\fill[Bshading] (0,-0.7) rectangle (0.45,0.7);
-\draw[blue] (0,-0.7) -- (0,0.7);
+$
+\begin{tikzpicture}[baseline=-.1cm,xscale=-1]
+\fill[Bshading] (-.2,-0.7) rectangle (0.45,0.7);
+\draw[blue] (-.2,-0.7) -- (-.2,0.7);
 \draw[blue] (0.45,-0.7) -- (0.45,0.7);
-\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\roundNbox{unshaded, draw=blue}{(-.3,0)}{.3}{.15}{.15}{\textcolor{blue}{{$\Phi(x)$}}};
 \node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 = 
 \quad
-\begin{tikzpicture}[baseline=-0.1,xscale=-1]
+\begin{tikzpicture}[baseline=-.1cm,xscale=-1]
 \fill[shaded] (-0.3,-0.7) rectangle (0.6,0.7);
-\draw (-0.3,-0.7) -- (-0.3,0.7);
-\draw (0.3,-0.7) -- (0.3,0.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{\tiny{$\Phi(x)$}};
+\draw (-0.2,-0.7) -- (-0.2,0.7);
+\draw (0.2,-0.7) -- (0.2,0.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{{$\Phi(x)$}};
 \draw (0.6,-0.7) -- (0.6,0.7);
-\node at (-0.3,-0.9){\tiny{$n$}};
-\node at (0.3,-0.9){\tiny{$2$}};
+\node at (-0.2,-0.9){\tiny{$n$}};
+\node at (0.2,-0.9){\tiny{$2$}};
 \end{tikzpicture}
 \quad
 =
 \quad
-\begin{tikzpicture}[baseline=-0.1,xscale=-1]
+\begin{tikzpicture}[baseline=-.1cm,xscale=-1]
 \fill[shaded] (0,-0.7) rectangle (0.75,0.7);
 \draw (0,-0.7) -- (0,0.7);
 \draw (0.75,-0.7) -- (0.75,0.7);
-\draw[dashed] (-0.45,-0.6) rectangle (0.6,0.6);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{\tiny{$x$}};
+\draw[dashed] (-0.45,-0.5) rectangle (0.6,0.5);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{{$x$}};
 \draw (0.45,-0.7) -- (0.45,0.7);
 \node at (0,-0.9){\tiny{$n$}};
 \node at (0.45,-0.9){\tiny{$2$}};
 \end{tikzpicture}
-\]
+$
 \item (Right Capping)
-\[
-\begin{tikzpicture}[baseline=-0.1]
+$
+\begin{tikzpicture}[baseline=-.1cm]
 \draw[blue] (0,-0.7) -- (0,0.7);
-\draw[blue] (0.15,0.3) arc(180:0:0.15) -- (0.45,-0.3) arc(0:-180:0.15);
-\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\draw[blue] (0.2,0.3) arc(180:0:0.2) -- (0.6,-0.3) arc(0:-180:0.2);
+\roundNbox{unshaded, draw=blue}{(0,0)}{.3}{.15}{.15}{\textcolor{blue}{{$\Phi(x)$}}};
 \node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
 =
 \quad
-\begin{tikzpicture}[baseline=-0.1]
-\draw (-0.3,-0.7) -- (-0.3,0.7);
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-0.2,-0.7) -- (-0.2,0.7);
 \draw (0,-0.7) -- (0,0.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{\tiny{$\Phi(x)$}};
-\draw (0.3,0.3) arc(180:0:0.15) -- (0.6,-0.3) arc(0:-180:0.15);
-\node at (-0.3,-0.9){\tiny{$2$}};
+\roundNbox{unshaded}{(0,0)}{.3}{0.15}{0.15}{{$\Phi(x)$}};
+\draw (0.2,0.3) arc(180:0:0.2) -- (0.6,-0.3) arc(0:-180:0.2);
+\node at (-0.2,-0.9){\tiny{$2$}};
 \node at (0,-0.9){\tiny{$n$}};
 \end{tikzpicture}
 \quad
 =
 \quad
-\begin{tikzpicture}[baseline=-0.1]
+\begin{tikzpicture}[baseline=-.1cm]
 \draw (0,-0.7) -- (0,0.7);
 \draw (-0.6,-0.7) -- (-0.6,0.7);
-\draw[dashed] (-0.45,-0.6) rectangle (0.6,0.6);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{\tiny{$x$}};
+\draw[dashed] (-0.45,-0.55) rectangle (0.6,0.55);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{{$x$}};
 \draw (0.15,0.3) arc(180:0:0.15) -- (0.45,-0.3) arc(0:-180:0.15);
 \node at (0,-0.9){\tiny{$n$}};
 \node at (-0.6,-0.9){\tiny{$2$}};
 \end{tikzpicture}
-\]
+$
 \item (Left Capping) We again apply the trick from \cite[Theorem~4.1]{MR2812459}. Let $B$ be a Pimsner-Popa basis of $A_3$ over $A_2$.
-\[
+Then
+\begin{equation*}
 \begin{tikzpicture}[baseline=-0.1]
-\fill[Bshading] (-0.6,-0.7) rectangle (0,0.7);
+\fill[Bshading] (-0.8,-0.7) rectangle (0,0.7);
 \draw[blue] (0,-0.7) -- (0,0.7);
-\filldraw[unshaded,draw=blue] (-0.15,0.3) arc(0:180:0.15) -- (-0.45,-0.3) arc(-180:0:0.15);
-\roundNbox{unshaded,draw=blue}{(0,0)}{0.3}{0}{0}{\textcolor{blue}{\tiny{$\Phi(x)$}}};
+\filldraw[unshaded,draw=blue] (-0.2,0.3) arc(0:180:0.2) -- (-0.6,-0.3) arc(-180:0:0.2);
+\roundNbox{unshaded,draw=blue}{(0,0)}{0.3}{.15}{.15}{\textcolor{blue}{{$\Phi(x)$}}};
 \node at (0,-0.9){\textcolor{blue}{\tiny{$n$}}};
 \end{tikzpicture}
 \quad
@@ -5883,18 +5898,23 @@ d^{-1}\sum_{b\in B} b\Phi(x)b^{\ast}
 =
 \begin{tikzpicture}[baseline=-0.1]
 \fill[shaded] (-1.05,-0.7) rectangle (0,0.7);
-\draw[dashed] (-0.6,-0.6) rectangle (0.45,0.6);
 \draw (-0.75,-0.7) -- (-0.75,0.7);
 \draw (0,-0.7) -- (0,0.7);
 \filldraw[unshaded] (-0.15,0.3) arc(0:180:0.15) -- (-0.45,-0.3) arc(-180:0:0.15);
-\roundNbox{unshaded}{(0,0)}{0.3}{0}{0}{\tiny{$x$}};
+\roundNbox{unshaded}{(0,0)}{0.3}{0}{0}{{$x$}};
 \node at (0,-0.9){\tiny{$n$}};
 \node at (-0.75,-0.9){\tiny{$2$}};
+\draw[dashed] (-0.6,-0.55) rectangle (0.45,0.55);
 \end{tikzpicture}
-\]
+\,.
+\qedhere
+\end{equation*}
 \end{enumerate}
 \end{proof}
-Similarly, by Remark \ref{Rem:ShiftTowerEffects}, the categories of projections of each planar algebra are equivalent.
+
+\begin{rem}
+By Remark \ref{Rem:ShiftTowerEffects}, the categories of projections of $\cP_\bullet$ and $\cQ_\bullet$ as in Theorem \ref{ShiftIso} are equivalent.
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsection{Compressing inclusions of von Neumann algebras} 
