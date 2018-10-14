@@ -559,11 +559,11 @@ This result also extends to infinite depth subfactor planar algebras by \cite{gp
 To date, graph planar algebra embedding has been used to construct:
 \begin{itemize}
 \item
-the $E_6$ and $E_8$ subfactor planar algebras \cite{MR1929335}
+the $E_6$ and $E_8$ subfactor planar algebras \cite{MR1929335},
 \item
-group planar algebras \cite{MR2511128}
+group planar algebras \cite{MR2511128},
 \item
-Haagerup-Izumi quadratic subfactors \cite{MR2679382,MR2822034,MR3314808,MR3394622,MR3402358}
+Haagerup-Izumi quadratic subfactors \cite{MR2679382,MR2822034,MR3314808,MR3394622,MR3402358},
 \item
 quantum group planar algebras \cite{MR3306607}, and
 \item
@@ -617,14 +617,14 @@ $$
 $$
 where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
 
-A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$\,\footnote{
+A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$,\footnote{
 The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
 }
 together with an action of the 
 shaded planar module operad, 
 which is a variation of Voronov's Swiss cheese operad \cite{MR1718089}.
 We refer the reader to Definition \ref{def:PlanarModule} for the details, but we include a representative tangle below which acts amongst the algebras $\cM_k$ and the box spaces $\cP_{n,\pm}$:\,\footnote{ 
-We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic as the tensor category of finite dimensional complex vector spaces is symmetric.
+We use the convention that all $\cM_k$ appear before $\cP_{n,\pm}$ in the tensor product; this is not problematic, as the tensor category of finite dimensional complex vector spaces is symmetric.
 }
 $$
 \begin{tikzpicture}[baseline = -.1cm]
@@ -719,7 +719,7 @@ tower of finite dimensional von Neumann algebras by setting
 $$
 M_n := \End_\cM(m \vartriangleleft  \underbrace{X\otimes \overline{X} \otimes \cdots \otimes X^?}_{n \text{ tensorands}})
 $$
-where for our generator $X\in \cC$, $X^? = X$ if $n$ is even and $X^? = \overline{X}$ if $n$ is odd.
+where for our generator $X\in \cC$, we set $X^? = X$ if $n$ is even and $X^? = \overline{X}$ if $n$ is odd.
 The trace $\Tr^\cM$ endows each von Neumann algebra $M_n$ with a faithful tracial state $\tr_n := \Tr^\cM(\id_n)^{-1} \Tr^\cM$ together with canonical Jones projections $e_n \in M_{n+1}$ for all $n\geq 1$.
 Based on the parity of $n$, the $e_n$ are defined for $k\geq 0$ by
 \begin{align*}
@@ -6558,13 +6558,13 @@ Hence, replacing $r$ with $r'$ results in an equivalent embedding.
 
 Third, suppose we chose the simple object $n\in \cM_0 \subset \cM$ instead of $m$, where $\cM_0 = \cM\vartriangleleft 1_0$.
 For $i\geq 0$, define $N_i := \End_\cM(n \vartriangleleft X^{\text{alt}\otimes i})$.
-Since $\cM$ is indecomposable as a right $\cC$-module category, there is an $j>0$ such that $n$ is a subobject of $m \vartriangleleft X^{\text{alt}\otimes 2j}$.
+Since $\cM$ is indecomposable as a right $\cC$-module category, there is a $j>0$ such that $n$ is a subobject of $m \vartriangleleft X^{\text{alt}\otimes 2j}$.
 Fix an orthogonal projection $p \in M_{2j} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2j})$ with image isomorphic to $n$.
 Notice that the compressed shifted Markov tower $(pM_{2j+k}p, \tr_{2j+k}^p, pe_{2j+k+1})_{k\geq 0}$ is $*$-isomorphic to the Markov tower $(N_{k}, \tr_k, f_{k+1})_{k\geq 0}$, where we denote by $e_i$ the Jones projections in $M_\bullet $ and by $f_i$ the Jones projections in $N_\bullet$.
 Again, since $\cM$ is indecomposable, we may fix $k>0$ sufficiently large such that the following three conditions hold:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
-The projection $p\vartriangleleft \id_{X^{\text{alt}\otimes 2k}}$ has central support 1 in the finite dimensional von Neumann algebra $M_{2(j+k)} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2(j+k)})$, which is equivalent to $M_{2(k+j)} = M_{2(k+j)}p M_{2(k+j)}$ by finite dimensionality.
+ The projection $p\vartriangleleft \id_{X^{\text{alt}\otimes 2k}}$ has central support 1 in the finite dimensional von Neumann algebra $M_{2(j+k)} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2(j+k)})$, which is equivalent to $M_{2(j+k)} = M_{2(j+k)}p M_{2(j+k)}$ by finite dimensionality.
 \item
 Setting $r:= 2(j+k)$, the inclusion $M_{2r} \subseteq (M_{2r+1}, \tr_{2r+1}) \subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
 \item
