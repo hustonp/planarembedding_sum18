@@ -312,193 +312,6 @@
                      \end{tikzpicture}}}
      }
 
-% TIKZ boxes for commonly used TLJ elements %%%%%
-
-% produces partial iso with #1 through strands on the left, #2 cups and caps, and #3 through strings snaking right between them
-\newcommand{\TLPlusPIso}[3]{
- \TLTStart
- \TLTThrough{#1}
- \TLTSnakeR{#2}{#3}
- \TLTEnd
-}
-
-% same as above, but the #3 through strings head the other way 
-\newcommand{\TLMinusPIso}[3]{
- \TLTStart
- \TLTThrough{#1}
- \TLTSnakeL{#2}{#3}
- \TLTEnd
-}
-
-% with #1 through strings left, join #2 caps (left) and #3 caps (right) into #4(inside)+#5(outside) caps
-\newcommand{\TLCapJoin}[5]{
- \TLTStart
- \TLTThrough{#1}
- \TLTCapJoin{#2}{#3}{#4}{#5}
- \TLTEnd
-}
-
-% again, dagger of above 
-\newcommand{\TLCapSplit}[5]{
- \TLTStart
- \TLTThrough{#1}
- \TLTCapSplit{#2}{#3}{#4}{#5}
- \TLTEnd
-}
-
-% a set of commands for generating tickets with TL diagrams inside
-% an example which uses pretty much everything:
-% \[\TLPlusPIso{n}{i}{j}\cdot\TLCapJoin{n}{i}{j}{j}{i}=\TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTThrough{j}\TLTThrough{j}\TLTEnd\cdot\TLTStart\TLTThrough{n}\TLTThrough{i}\TLTSnakeR{m}{x}\TLTThrough{i}\TLTSnakeL{w}{u}\TLTCapJoin{i}{j}{j}{I}\TLTCapSplit{k}{x}{x}{k}\TLTCapcup{j}\TLTEnd\]
-% one can also include manually crafted stuff in the middle, no problem. Just remember to increment TLTlead
-\usepackage{calc}
-
-\newcommand{\TLTCalcLabelOffset}[3][0cm]{
- \settowidth{#2}{\scriptsize{$#3$}}
- \setlength{#2}{.5#2}
- \setlength{#2}{\maxof{#2}{#1}}
-}
-
-\newcommand{\TLTEnd}{
- \draw[thick, rounded corners = 5pt] (0,0) rectangle ($ (TLTlead) + (0,.8) $);
- \end{tikzpicture}
-}
-
-\newcommand{\TLTStart}{
- \begin{tikzpicture}[baseline=.3cm]
- \coordinate (TLTlead) at (.2,0); % remove or drastically reduce this 
- \let\TLTlabelwidth\relax
- \newlength{\TLTlabelwidth}
-}
- 
-% #1 - label
-\newcommand{\TLTThrough}[1]{
- \TLTCalcLabelOffset[.2cm]{\TLTlabelwidth}{#1}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
- \begin{scope}[shift=(TLTlead)]
-  \draw (0,0) -- (0,.8);
-  \node at (0,1) {\scriptsize{$#1$}};
- \end{scope}
-  \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
-}
-
-% #1 - label
-\newcommand{\TLTCapcup}[1]{
- \TLTCalcLabelOffset[.2cm]{\TLTlabelwidth}{#1}
-  \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
- \begin{scope}[shift=(TLTlead)]
-  \draw (0,0) arc (180:0:.2);
-  \draw (0,.8) arc (-180:0:.2);
-  \node at (0,1) {\scriptsize{$#1$}};
- \end{scope}
- \TLTCalcLabelOffset[.5cm]{\TLTlabelwidth}{#1}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0)$);
-}
-
-% a partial iso of #2 through strings moving right past #1 cups 
-\newcommand{\TLTSnakeR}[2]{
- \let\TLTscwidth\relax
- \newlength{\TLTscwidth}
- \let\TLTsswidth\relax
- \newlength{\TLTsswidth}
- \TLTCalcLabelOffset[.2cm]{\TLTscwidth}{#1}
- \TLTCalcLabelOffset[.5cm]{\TLTsswidth}{#2}
- \setlength{\TLTlabelwidth}{\TLTscwidth+\TLTsswidth}
- \setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.7cm}} % should be noop
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTscwidth},0) $);
- \begin{scope}[shift=(TLTlead)]
-  \draw (.1,.8) arc (-180:0:.2cm);
-  \draw (.1,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. ($ (.1,.8) + ({\TLTlabelwidth},0) $);
-  \draw ($ (.1,0) + ({\TLTsswidth},0) $) arc (180:0:.2cm);
-  \node at (.1,1) {\scriptsize{$#1$}};
-  \node at ($ (.1,1) + ({\TLTlabelwidth},0) $) {\scriptsize{$#2$}};
-  \node at ($ (.1,-.2) + ({\TLTsswidth},0) $) {\scriptsize{$#1$}};
- \end{scope}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth+\TLTsswidth},0) $);
-}
- 
-% a partial iso of #2 through strings moving left past #1 cups 
-\newcommand{\TLTSnakeL}[2]{
- \let\TLTscwidth\relax
- \newlength{\TLTscwidth}
- \let\TLTsswidth\relax
- \newlength{\TLTsswidth}
- \TLTCalcLabelOffset[.2cm]{\TLTscwidth}{#1}
- \TLTCalcLabelOffset[.1cm]{\TLTsswidth}{#2}
- \setlength{\TLTlabelwidth}{\TLTscwidth+\TLTsswidth}
- \setlength{\TLTlabelwidth}{\maxof{\TLTlabelwidth}{.5cm}} % now does something
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTsswidth},0) $);
- \begin{scope}[shift=(TLTlead)]
-  \draw ($ (.1,.8) + ({\TLTsswidth+\TLTscwidth},0) $) arc (-180:0:.2cm);
-  \draw ($ (.1,0) + ({\TLTlabelwidth},0) $) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.1,.8);
-  \draw (.1,0) arc (180:0:.2cm);
-  \node at ($ (.1,1) + ({\TLTsswidth+\TLTscwidth},0) $) {\scriptsize{$#1$}};
-  \node at (.1,1) {\scriptsize{$#2$}};
-  \node at (.1,-.2) {\scriptsize{$#1$}};
- \end{scope}
- \setlength{\TLTscwidth}{\maxof{\TLTscwidth}{.5cm}} % if cap is longer than label
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth+\TLTscwidth},0) $);
-}
-
-% join a bottom of #1 caps (left) and #2 caps (right) into #3(inside)+#4(outside) caps together on top
-\newcommand{\TLTCapJoin}[4]{
- \let\TLTjoinlwidth\relax
- \newlength{\TLTjoinlwidth}
- \let\TLTjoinrwidth\relax
- \newlength{\TLTjoinrwidth}
- \let\TLTsplitlwidth\relax
- \newlength{\TLTsplitlwidth}
- \let\TLTsplitrwidth\relax
- \newlength{\TLTsplitrwidth}
- \TLTCalcLabelOffset[.8cm]{\TLTjoinrwidth}{#4} % guess good is default + .2cm
- \TLTCalcLabelOffset[.15cm]{\TLTjoinlwidth}{#3} % make lots of space
- \TLTCalcLabelOffset[.6cm]{\TLTsplitlwidth}{#1}
- \TLTCalcLabelOffset[.6cm]{\TLTsplitrwidth}{#2}
- \setlength{\TLTlabelwidth}{\maxof{\TLTjoinlwidth}{\TLTsplitlwidth}}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
- \setlength{\TLTlabelwidth}{\maxof{\TLTjoinrwidth}{\TLTsplitrwidth}} % maybe more suggestive to move this
- \begin{scope}[shift=(TLTlead)]
-  \draw (0,.8) arc (-180:0:.5);
-  \draw (0.2,.8) arc (-180:0:.3);
-  \draw (0,0) arc (180:0:.2);
-  \draw ({\TLTsplitlwidth},0) arc (180:0:.2);
-  \node at (0,1) {\scriptsize{$#4$}};
-  \node at ({\TLTjoinlwidth},1) {\scriptsize{$#3$}};
-  \node at (0,-.2) {\scriptsize{$#1$}};
-  \node at ({\TLTsplitlwidth},-.2) {\scriptsize{$#2$}};
- \end{scope}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
-}
-
-% dagger of the above
-\newcommand{\TLTCapSplit}[4]{
- \let\TLTjoinlwidth\relax
- \newlength{\TLTjoinlwidth}
- \let\TLTjoinrwidth\relax
- \newlength{\TLTjoinrwidth}
- \let\TLTsplitlwidth\relax
- \newlength{\TLTsplitlwidth}
- \let\TLTsplitrwidth\relax
- \newlength{\TLTsplitrwidth}
- \TLTCalcLabelOffset[.8cm]{\TLTjoinrwidth}{#4} % guess good is default + .2cm
- \TLTCalcLabelOffset[.15cm]{\TLTjoinlwidth}{#3} % make lots of space
- \TLTCalcLabelOffset[.6cm]{\TLTsplitlwidth}{#1}
- \TLTCalcLabelOffset[.6cm]{\TLTsplitrwidth}{#2}
- \setlength{\TLTlabelwidth}{\maxof{\TLTjoinlwidth}{\TLTsplitlwidth}}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
- \setlength{\TLTlabelwidth}{\maxof{\TLTjoinrwidth}{\TLTsplitrwidth}} % maybe more suggestive to move this
- \begin{scope}[shift=(TLTlead)]
-  \draw (0,0) arc (-180:0:.5);
-  \draw (0.2,0) arc (-180:0:.3);
-  \draw (0,.8) arc (180:0:.2);
-  \draw ({\TLTsplitlwidth},.8) arc (180:0:.2);
-  \node at (0,-.2) {\scriptsize{$#4$}};
-  \node at ({\TLTjoinlwidth},-.2) {\scriptsize{$#3$}};
-  \node at (0,1) {\scriptsize{$#1$}};
-  \node at ({\TLTsplitlwidth},1) {\scriptsize{$#2$}};
- \end{scope}
- \coordinate (TLTlead) at ($ (TLTlead) + ({\TLTlabelwidth},0) $);
-}
-
 % premade TIKZ stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\uscircle}{
 \begin{tikzpicture}
@@ -3678,7 +3491,6 @@ $$
 =
 d^{-j}E_{n+i+j}^{n+2i+j}
 \left(yx \cdot 
- % \TLPlusPIso{n}{i}{j}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3692,7 +3504,6 @@ d^{-j}E_{n+i+j}^{n+2i+j}
  \end{tikzpicture}
  \right) 
 \cdot 
-% \TLCapJoin{n}{i}{j}{j}{i} 
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3708,7 +3519,6 @@ d^{-j}E_{n+i+j}^{n+2i+j}
  \end{tikzpicture}
 \underset{\text{(Lem.~\ref{lem:LeftKink})}}{=} 
 d^{-i-j} yx \cdot 
- % \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTThrough{2k}\TLTEnd 
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3745,7 +3555,6 @@ E_{n+i}^{n+2i+j}\left(yx\cdot
  \node at (.5,-.2) {\scriptsize{$i$}};
 \end{tikzpicture}
 \right)\cdot
- % \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTCapcup{j}\TLTCapcup{k}\TLTEnd\\
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3767,7 +3576,6 @@ E_{n+i}^{n+2i+j}\left(yx\cdot
 d^{-i-j}E_{n+i}^{n+2i}\left(
 \underbrace{
 E_{n+2i}^{n+2i+j}\left(yx\cdot
- % \TLMinusPIso{n}{i}{j}
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
  \draw (.2,0) -- (.2,.8);
@@ -3791,7 +3599,6 @@ E_{n+2i}^{n+2i+j}\left(yx\cdot
   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
  \end{tikzpicture}
 \right)\cdot\,
- % \TLTStart\TLTThrough{n}\TLTCapcup{i}\TLTEnd
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -3817,7 +3624,6 @@ $z$ with $j=0$)}
 {=}
 d^{-2i-j}
 E_{n+2i}^{n+2i+j}\left(yx\cdot
- % \TLMinusPIso{n}{i}{j}
 \begin{tikzpicture}[baseline = .3cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.5,.8);
  \draw (.2,0) -- (.2,.8);
@@ -4069,7 +3875,6 @@ f\vartriangleleft 1_{j}
 :=
 \begin{cases}
 f\cdot
- % \TLPlusPIso{n}{k}{j}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -4085,7 +3890,6 @@ f\cdot
 \text{if }k\geq j
 \\
 f\cdot
- % \TLMinusPIso{n}{j}{k}
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,.8);
   \node at (.2,1) {\scriptsize{$n$}};
@@ -4120,7 +3924,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
   \underset{\ref{compose:upup}}{=}
   d^{i+k} 
   E^{n+j+4k+2i}_{n+j+3k+i}\left(\iota(f)\cdot
-  % \TLPlusPIso{n}{k}{j{+}2k{+}i}
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,1)}]
     \begin{scope}[shift={(.1,0)}]
@@ -4162,7 +3965,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
   %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
@@ -4232,7 +4034,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
   %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
@@ -4304,7 +4105,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
    \begin{scope}[shift={(0,-1)}]
   %\end{tikzpicture}
   %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \TLPlusPIso{n{+}j{+}k}{k{+}i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
@@ -4354,7 +4154,6 @@ E^{n+j+4k+i}_{n+j+3k+i}\left(
   \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
  \end{tikzpicture}
  \cdot\iota(f)\cdot E^{n+j+4k+2i}_{n+j+4k+i}\left(
-  % \TLPlusPIso{n}{k}{j+2k+i}
   \begin{tikzpicture}[baseline=-0.2cm]
    \begin{scope}[shift={(.1,0)}]
     \draw (.1,0) -- (.1,.8);
@@ -4379,7 +4178,6 @@ E^{n+j+4k+i}_{n+j+3k+i}\left(
   %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
   % \end{tikzpicture}
   % \cdot
-  % \TLPlusPIso{n+j+k}{k+i}{k}
   % \begin{tikzpicture}[baseline=.4cm]
    \begin{scope}[shift={(.1,-1)}]
     \draw (.1,0) -- (.1,1);
@@ -4427,7 +4225,6 @@ E^{n+j+4k+i}_{n+j+3k+i}\left(
    \draw[thick,rounded corners = 5pt] (0,0) rectangle (2,1);
   \end{tikzpicture}
   \cdot\iota(f)\cdot
-  % \TLPlusPIso{n}{k}{j}
 d^{-i}
   \begin{tikzpicture}[baseline=-0.1cm]
    \begin{scope}[shift={(.1,0)}]
@@ -4449,7 +4246,6 @@ d^{-i}
    % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
   % \end{tikzpicture}
 % \cdot
-% \TLPlusPIso{n+j+k}{k}{i+k}
   % \begin{tikzpicture}[baseline=.3cm]
    \draw[dashed] (0,0) -- (2,0);
    \begin{scope}[shift={(.1,-0.8)}]
