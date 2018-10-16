@@ -47,18 +47,14 @@
    citecolor={medium-blue}, urlcolor={medium-blue}
 }
 
-%\addtolength{\textwidth}{.5in}
 \usepackage{longtable}
 \usepackage{fullpage}
-%\renewcommand{\arraystretch}{1.5}
 
 % Page size %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength\topmargin{-.25in}
 \setlength\headheight{0in}
 \setlength\headsep{.2in}
 \setlength\textheight{9in}
-%\addtolength{\hoffset}{-0.25in}
-%\addtolength{\textwidth}{.5in}
 \setlength\parindent{0.25in}
 
 % Theorems %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -99,10 +95,6 @@
 \newtheorem{remark}[thm]{Remark}
 \newtheorem{rems}[thm]{Remarks}
 \newtheorem{warn}[thm]{Warning}
-
-% Figure Numbering %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage{chngcntr} %Numbers figures by section
-%\counterwithin{figure}{section}
 
 % Operators %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareMathOperator{\Ad}{Ad}
@@ -174,8 +166,6 @@
 \newcommand{\corey}[1]{\marginpar{\tiny \textcolor{green}{CJ: #1}}}
 \newcommand{\des}[1]{\marginpar{\tiny \textcolor{purple}{DJC: #1}}}
 \newcommand{\Af}{\mathcal{A}\Lambda_{F}}
-%\newcommand{\WStar}{\bfW\text{*}}
-%\newcommand{\Irr}{\text{Irr}(\mathcal{C})}
 
 % tricky way to iterate macros over a list
 \def\semicolon{;}
@@ -611,22 +601,6 @@ are in bijection with
 pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
 \end{coralpha}
 
-%We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
-%\begin{enumerate}[label={\rm(\arabic*)}]
-%\item
-%The projections $(e_n)$ satisfy the Temperley-Lieb-Jones relations with parameter $d>0$ (our convention for $d$ is $e_ie_{i\pm 1}e_i = d^{-2} e_i$.)
-%\item
-%For all $x\in M_n$, $e_n xe_n = E_n(x) e_n$, where $E_n: M_n \to M_{n-1}$ is the canonical trace-preserving conditional expectation.
-%\item
-%For all $n\geq 1$, $E_{n+1}(e_n) = d^{-2}$.
-%\item
-%For all $n\geq 1$, we have the Pimsner-Popa pull down property: $M_{n+1} e_n = M_n e_n$, which is equivalent to $M_n e_n M_n$ being a 2-sided ideal in $M_{n+1}$.
-%\end{enumerate}
-%One should view a Markov tower as an analog of Popa's \emph{$\lambda$-sequence/lattice} \cite{MR1334479} where we only have one tower of algebras rather than a tower/lattice of commuting squares.
-%Markov towers satisfy many nice properties exhibited by standard invariants of finite index ${\rm II}_1$ subfactors from \cite[Ch.~4]{MR999799}.
-%For example, the traces satisfy the \emph{Markov property} $\tr_{n+2}(x e_n) = d^{-2}\tr_{n+1}(x)$ for every $x\in M_{n+1}$, and the Markov tower has a \emph{principal graph} consisting of the non-reflected part of the Bratteli diagram at each step.
-%We refer the reader to \S\ref{sec:MarkovTowers} for more details on Markov towers of finite dimensional von Neumann algebras.
-
 We now specialize to the hypotheses of the module embedding theorem, i.e., $\cQ_\bullet$ is a finite depth subfactor planar algebra, $(\cC, X)$ is its corresponding spherical unitary multifusion category of projections with generator $X= 1_0 \otimes X \otimes 1_1$ the unshaded-shaded strand, and $(\cM, \Tr^\cM, m)$ is a pivotal right $\cC$-module $\Cstar$ category with simple basepoint $m = m\vartriangleleft 1_0$.
 In this case, the Markov tower $M_\bullet$ constructed above has finite depth, and its principal graph $\Gamma$ is the \emph{fusion graph} of $(\cM,m)$ with respect to $X\in \cC$.
 This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, \tr_{2r+1})$ is \emph{strongly Markov}, meaning that there is a finite \emph{Pimsner-Popa basis} $\{b\}$ for $M_{2r+1}$ over $M_{2r}$ satisfying $\sum_b be_{2r} b^* = 1_{M_{2r+2}}$, and the \emph{Watatani index} $\sum_b bb^*$ \cite{MR996807} is a scalar (see \cite[1.1.4(c)]{MR1278111}).
@@ -634,9 +608,6 @@ This means there is an $r>0$ such that the inclusion $M_{2r} \subset (M_{2r+1}, 
 By \cite[\S2.3]{MR2812459}, the inclusion $A_0:=M_{2r} \subset (M_{2r+1}, \tr_{2r+1}) =: (A_1, \tr_1)$ has a canonical associated planar $\dag$-algebra $\cP_\bullet$, which is built from the tower of higher relative commutants.
 Moreover, by \cite[Thm.~3.8]{MR2812459}, the planar algebra $\cP_\bullet$ is \emph{non-canonically} isomorphic to the bipartite graph planar algebra $\cG_\bullet$ of the Bratteli diagram of the inclusion $A_0 \subset A_1$, which is also the fusion graph $\Gamma$. 
 (This isomorphism depends on the loop algebra representation for $A_0 \subset A_1$ from \cite[\S3.1]{MR2812459}, which amounts to choosing compatible bases for the algebras.)
-%Notice that we may canonically identify $\Gamma$ with the principal graph of the Markov tower $M_\bullet$ and the fusion graph for $(\cM,m)$ with respect to $c\in \cC$.
-
-%We are now in the position to state the embedding theorem for module categories for a finite depth subfactor planar algebra $\cP_\bullet$.
 
 \begin{thmalpha}[Module embedding]
 \label{thm:ModulePAEmbedding}
@@ -955,9 +926,6 @@ $\Tr^\cM_m(g \circ f) = \Tr^\cM_n(f\circ g)$ for all $f\in \cM(m\to n)$ and $g\i
 \item
 \label{PivotalModule:positive}
 $\Tr^\cM_m(f^\dag \circ f) \geq 0$ for all $f\in \cM(m \to n)$, and $\Tr^\cM_m(f^\dag \circ f) =0$ if and only if $f = 0$.
-%\item
-%(normalized)
-%$\Tr^\cM_m( \id_m) = 1_\bbC$.
 \item
 \label{PivotalModule:compatible}
 For all $m\in \cM$ and $c\in \cC$,
@@ -1067,8 +1035,6 @@ Moreover, we require that for each $k$, the following map $\cM_k \to \cM_0$ is p
 %
  \openhalfcircle{}{(0,0)}{.25}{0}{}
  \node at (.8,0) {\scriptsize{$k$}};
-% \node at (.4,.8) {\scriptsize{$n$}};
-% \node at (.4,-.8) {\scriptsize{$n$}};
 \end{tikzpicture}
 :
 \cM_k \to \cM_0
@@ -1149,7 +1115,6 @@ $$
  \filldraw[unshaded] (3.85,.8) .. controls ++(-135:.8cm) and ++(135:.3cm) .. (3.85,-.8) arc (-23:23:2cm);
 %
  \draw[very thick] (-1,0) arc (180:90:2cm) -- (2,2) arc (90:-90:2cm) -- (1,-2) arc (-90:-180:2cm);
-% \halfcircle{}{(0,0)}{2}{2}{}
 %
  \ncircle{unshaded}{(-.2,0)}{.25}{180}{\scriptsize{$1$}}
  \ncircle{unshaded}{(.3,1)}{.4}{180}{\scriptsize{$3$}}
@@ -1160,25 +1125,6 @@ $$
  \node at (-.85,0) {\scriptsize{$\star$}};
 \end{tikzpicture}
 $$
-%
-%
-%\nn{todo: define $\widetilde{\cT}$ from $\cT$.}
-%
-%Now if $\cP_\bullet$ is a finite depth subfactor planar algebra and $\Phi : \cP_\bullet \hookrightarrow \cG_\bullet$ is a planar algebra embedding, then we may endow $\cM_\bullet$ with the structure of a connected right planar $\cP_\bullet$-module by defining 
-%$$
-%\rho_{k,n}(p_v m \otimes x) 
-%:=
-%\begin{tikzpicture}[baseline]
-%\draw (0,-.7) -- (0,.7);
-%\draw (1,-.7) -- (1,.7);
-%\roundNbox{unshaded}{(-.8,0)}{.25}{0}{0}{$p_v$};
-%\roundNbox{unshaded}{(0,0)}{.25}{0}{0}{$m$};
-%\roundNbox{unshaded}{(1,0)}{.25}{.2}{.2}{$\Phi(x)$};
-%\node at (0,-.9) {\tiny{$k$}};
-%\node at (1,-.9) {\tiny{$n$}};
-%\end{tikzpicture}
-%\,.
-%$$ 
 \end{ex}
 
 
@@ -1190,8 +1136,6 @@ In this section, $\cP_\bullet$ will denote a subfactor planar algebra, and $(\cC
 We now sketch the proof of the following theorem.
 
 \begin{thm*}[Theorem \ref{thm:ModuleEquivalence}]
-%\label{thm:ModuleEquivalence}
-%Let $\cP_\bullet$ be a subfactor planar algebra corresponding to $(\cC, X)$ as above.
 There is a canonical bijection between equivalence classes of
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
@@ -1202,17 +1146,6 @@ connected right planar modules $\cM_\bullet$ for $\cP_\bullet$.
 \end{thm*}
 
 As an application, we get a classification of pivotal module $\Cstar$ categories for the 2-shaded Temperley-Lieb-Jones category with parameter $d$ in Corollary \ref{cor:TLJPivotalModuleClassification}, whose proof appears in \S\ref{sec:TLJmodules}.
-
-%\nn{I expect Theorem \ref{thm:ModuleEquivalence} extends to an equivalence of categories.
-%What may be more relevant is the following theorem, which tells us when the underlying $\cC$-module $\Cstar$ categories are dagger equivalent.}
-%
-%\begin{thm}
-%Suppose $M_\bullet$ and $N_\bullet$ are two cyclic right planar modules for $\cQ_\bullet$ and $(\cM, \Tr^\cM,m)$ and $(\cN, \Tr^\cN,n)$ are the corresponding cyclic pivotal right $\cC$-module $\Cstar$ categories under the bijective correspondence from Theorem \ref{thm:ModuleEquivalence}.
-%We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be obtained from $M_\bullet$ by a a shift and a compression as in \nn{}.
-%\end{thm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{From pivotal module categories to planar modules}
 
 \begin{defn}
 Suppose $(\cM, \Tr^\cM, m)$ is an indecomposable pivotal right $\cC$-module $\Cstar$ category, and $m\in \cM$ is a distinguished simple object with $m= m \vartriangleleft 1_0$.
@@ -1301,21 +1234,6 @@ Here is an explicit example of a tangle in standard form, together with the corr
 \cM_{2}
 \end{align*}
 \end{ex}
-
-%Suppose $T$ is a tangle in standard form with input semidisks of types $(k_i)_{i=1}^r$, input disks of types $((\ell_j,\pm_j))_{j=1}^s$, and output type $k_0$. 
-%Choose endomorphisms $\xi_i\in\cM_{k_i}$ and $\eta_j\in\End((X^{\pm_j})^{\text{alt}\otimes{\ell_j}}$. 
-%As in \cite{MR2812459}, we intend to build $T((\xi_i),(\eta_j))$ by sliding a horizontal line from the bottom of $T$ to the top. 
-%For each $h\in[0,1]$, we define a $\tau_h$ in some $\cM_{n_h}$, imagining $\tau_h$ as the value corresponding to a horizontal line through $T$ at height $h$, where $0$ represents the bottom of $T$ and $1$ represents the top. 
-%When the line at $h$ does not touch extrema of strands, $\tau_h\in\cM_{n_h}$, where $n_h$ is the sum of the number of strands and the index of the box space of the input (semi)disk (if any) at height $h$. 
-%While the line of height $h$ does not pass through extrema or the top of an input (semi)disk, $\tau_h$ remains constant. 
-%The very bottom of $T$ looks the same as the identity tangle, so we set $\tau_0=1\in\cM_{k_0}$; 
-%by the top, we hope to define $T((\xi_i),(\eta_j))=\tau_1 \in \cM_{k_0}$. 
-% \nn{Add a representative tangle-in-process around here.}
-%
-%Now suppose the horizontal line passes an extremum or the top of an input (semi)disk. 
-%If $\tau_h\in\cM_{n_h}$ and between $h$ and $h'$, the horizontal line passes only the top of the $i$-th input semidisk, we simply set $\tau_{h'}=\xi_i\circ\tau_h$. Of course, in general $n_i<w(h)$; then we right-include $\xi_i$ into $\cM_{w(h)}$ by $\xi_i\to\xi_i\otimes1_{x^{\alttens{w(h)-n_i}}}$. Simiarly, when passing through the top of an input disk, we include $\eta_j$ on the right and the left before compsing, where left inclusion sends $\eta_j\to 1_{mx^{\alttens{?}}}\otimes\eta_j$. Passing through the maximum of a string becomes compsing with the coevalutation $\coev_{x}$ or $\coev_{\overline{x}}$, depending on the shading, inlucded on the left and right in the same way; similarly, passing through the minimum of a string becomes composing with a suitable evaluation. 
-% 
-% Since composition in $\cM$ is associative, tensor is functorial, and composition of tangles preserves being in standard form, the above action of tangles gives $\cM_\bullet$ the structure of an algebra over the shaded planar module operad, as desired. This algebra is a module over $\cP_\bullet$, since we mimicked the recovery of the planar algebra $\cP_\bullet$ from the multitensor category $\cC$ in defining the operad action. \nn{Did we? And if we did, has someone written this up (except for the module bit) before, for us to cite? And if not, should we have explained the algebra case first?}
 \end{defn}
 
 \begin{defn}
@@ -1420,249 +1338,6 @@ The distinguished simple basepoint of $\cM$ is given by the identity projection 
 The trace $\Tr^\cM_p : \cM(p \to p) \to \bbC$ for $p\in \cM_k$ is given by the \emph{non-normalized} trace $\Tr_k$ from \eqref{eq:NonnormalizedPlanarModuleTrace} restricted to $p\cM_k p = \cM(p \to p)$. 
 By definition, we have assumed $\Tr_k$ to be tracial and positive on endomorphisms. That the trace is also compatible with the action of $\cC$ can be seen by composing the trace tangle with the action tangles. % draw?
 \end{defn}
-
-%By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
-%Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-
-%By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
-%Since $m$ is simple, 
-%$A$ is in fact a Q-system, % Q-system or $Q$-system?
-%as described in \cite[Rmk.~2.7]{ny17}.  
-%Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
-%Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
-%We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-%By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
-%$\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
-%Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Construction of the Planar Algebra Associated to a Module Category}
-%\subsection{Constructing a Markov tower}
-
-%Given a finite depth subfactor planar algebra $Q_{\bullet}$ and a module $\cM$ over $Q_{\bullet}$, let $\cC$ and $\widetilde{\cC}$ be the multifusion categories associated to $\cG$ and $\cM$, as described in section \ref{cattheory}. 
-
-%Let $1_{\widetilde{\cC}}= 1_0 \oplus 1_1 \oplus 1_2$ be the tensor unit in $\widetilde{\cC}$, indexed so that $\cC$ is the non-unital $2\times 2$ unitary multifusion subcategory of $\widetilde{\cC}$ with $1_\cC = 1_0\oplus 1_1$, and $\cM\cong\cC_{20}\oplus \cC_{21}$. Overall,
-%$$
-%\cM 
-%=
-%\begin{pmatrix}
-%\cC_{20} & \cC_{21} 
-%\end{pmatrix}
-%\qquad\qquad
-%\cC
-%=
-%\begin{pmatrix}
-%\cC_{00} & \cC_{01} 
-%\\
-%\cC_{10} & \cC_{11}
-%\end{pmatrix}
-%\subset
-%\begin{pmatrix}
-%\cC_{00} & \cC_{01} & \cC_{02}
-%\\
-%\cC_{10} & \cC_{11} & \cC_{12}
-%\\
-%\cC_{20} & \cC_{21} & \cC_{22}
-%\end{pmatrix}
-%=
-%\widetilde{\cC}
-%$$
-%\end{defn}
-%
-%\nn{redo below here -- get planar module from module category.}
-%
-%
-%Let $x\in \cC_{01}$ be the strand pictured below:
-%$$x=
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[white] (0,-.7) rectangle (-.7,-.7);
-% \fill[shaded] (0,-.7) rectangle (.7,.7);
-% \draw (0,-.7) -- (0,.7);
-%
-%\end{tikzpicture}
-%\ \,\,\,\,\, \text{and,}\,\,\,\,\, \overline{x}=
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[white] (0,-.7) rectangle (.7,.7);
-% \fill[shaded] (0,-.7) rectangle (-.7,.7);
-% \draw[fill] (0,-.7) -- (0,.7);
-%
-%\end{tikzpicture}
-%\,\,\,\,\, \text{so} \,\,\,\,\, x\otimes \overline{x} = 
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[white] (0,-.7) rectangle (-.7,.7);
-% \fill[shaded] (0,-.7) rectangle (.7,.7);
-% \draw (0,-.7) -- (0,.7);
-% \draw (.7,-.7) -- (.7,.7);
-%
-%\end{tikzpicture}
-%$$
-%By construction, $x$ is a generating object for $\cC$. If we pick a simple object $m\in \cC_{20}$, since $\cM$ is indecomposable, we have that any object of $\cM$ is isomorphic to a direct summand of $m\otimes \xalt$ for some nonnegative integer $n$, where $$
-%x^{\text{alt}\otimes n}:=\underbrace{x\otimes \overline{x} \otimes x \otimes \cdots \otimes x^?}_{n \text{ tensorands}}\,,
-%$$ and $x^? = \overline x$ if $n$ is even and $x$ if $n$ is odd. We define $\xbaralt$ similarly.
-%
-%We will construct a finite depth Markov tower of algebras from the action of $\cC$ on $\cM$ as follows. Set $M_n:=\End_{\widetilde{\cC}}(m\otimes \xalt)$. We can represent morphisms in $M_n$ as 
-%$$
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-% \draw[thick, red] (-.15,-.7) -- (-.15,.7);
-% \draw (.15,-.7) -- (.15,.7);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (.3,.5) {\scriptsize{$n$}};
-% \node at (.3,-.5) {\scriptsize{$n$}};
-%\end{tikzpicture}
-%$$
-%where the red strand represents $m$ and the $n$ represents $x^{\text{alt}\otimes n}$. We have a faithful tracial state $\tr_n:M_n\to \C$ given by
-%\begin{equation}\label{eq:TraceAn}
-%\tr_n(f) 
-%\,:=\, 
-%\frac{1}{\dim_{\widetilde{\cC}}(m)\dim_{\widetilde{\cC}}(x)^n}\cdot\tr_{\widetilde{\cC}}(f)
-%\,=\,
-%\frac{1}{\dim_{\widetilde{\cC}}(m)}\cdot
-%\frac{1}{d^n}
-%\cdot
-%\left(
-%\begin{tikzpicture}[baseline=-.1cm, rotate=90]
-% \filldraw[thick, red, ctwoshading] (-.3,.15) arc (270:90:.2cm) -- (.3,.55) arc (90:-90:.2cm);
-% \draw (-.3,-.15) arc (90:270:.2cm) -- (.3,-.55) arc (-90:90:.2cm);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (-.7,-.35) {\scriptsize{$n$}};
-% \node at (0,-.7) {\scriptsize{$\overline{n}$}};
-% \node at (0,.75) {\scriptsize{$\overline{m}$}};
-% \node at (.7,.35) {\scriptsize{$m$}};
-%\end{tikzpicture}
-%\right)
-%\end{equation}
-%Where $n$ and $\overline{n}$ represent $\xalt$ and $\xbaralt$, respectively. 
-%This makes each $M_n$ a finite dimensional von Neumann algebra.
-%
-%\nn{$A_n \to M_n$ by convention for Markov towers. decide whether to keep next remark environment or make this a footnote.}
-%
-%\begin{rem}
-% The trace can be identified with a complex scalar because $\overline{m}\otimes m\in\cC_{00}$, the red cup $1\to\overline{m}\otimes m$ and cap $\overline{m}\otimes m\to 1$ factor through the simple summand $1_0$. Since $1_0\otimes 1\cong 1_0$, the trace is a member of the $1$-dimensional algebra $\End_{\widetilde{\cC}}(1_0)\subseteq\End_{\widetilde{\cC}}(1)$. 
-%\end{rem}
-
-%We also have a natural tracial inclusion $A_n \rightarrow A_{n+1}$ % such that the trace restricts ($tr_{n+1}|_{A_n}=tr_n$):
-%\begin{equation}\label{eq:Inclusion}
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-% \draw[thick, red] (-.15,-.7) -- (-.15,.7);
-% \draw (.15,-.7) -- (.15,.7);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (.3,.5) {\scriptsize{$n$}};
-% \node at (.3,-.5) {\scriptsize{$n$}};
-%\end{tikzpicture}
-%\mapsto
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-% \draw[thick, red] (-.15,-.7) -- (-.15,.7);
-% \draw (.15,-.7) -- (.15,.7);
-% \draw (.45,-.7) -- (.45,.7);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (.15,.9) {\scriptsize{$n$}};
-% \node at (.15,-.9) {\scriptsize{$n$}};
-% \node at (.6,0) {\scriptsize{$1$}};
-%\end{tikzpicture}
-%\end{equation}
-%and a trace preserving conditional expectation $E_n:A_n\rightarrow A_{n-1}$, 
-%\begin{equation}\label{eq:ConditionalExpectationAn}
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-% \draw[thick, red] (-.15,-.7) -- (-.15,.7);
-% \draw (.15,-.7) -- (.15,.7);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (.3,.5) {\scriptsize{$n$}};
-% \node at (.3,-.5) {\scriptsize{$n$}};
-%\end{tikzpicture}
-%\mapsto\,
-%\frac{1}{d}
-%\cdot
-%\left(\,\,
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.15,-.7) rectangle (-.5,.7);
-% \draw[thick, red] (-.15,-.7) -- (-.15,.7);
-% \draw (0,-.7) -- (0,.7);
-% \draw (.15,.3) arc (180:0:.15cm) -- (.45,-.3) arc (0:-180:.15cm);
-% \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$f$}
-% \node at (.4,.6) {\scriptsize{$n-1$}};
-% \node at (.4,-.6) {\scriptsize{$n-1$}};
-% \node at (.6,0) {\scriptsize{$1$}};
-%\end{tikzpicture}
-%\right)
-%\end{equation}
-%left inverse to the inclusion.
-%
-%Here, $d:=\dim_{\widetilde{\cC}}(x)=\dim_{\widetilde{\cC}}(\overline{x})$ the value of a closed loop appearing in the diagram. % There must be a better word for this. Maybe we should also remark why these are equal? In response: Emily peter's uses the term closed circles (on page 7 of her thesis), if that's the woridng you mean, and the equality follows from sphericality, maybe we should this should probably be in the preliminary discussion of the paragroup and the constructed multifusion category
-%Given the previously defined inclusion and that multiplication is given by vertical stacking of diagrams, it's clear that $E_n$ is $A_{n-1}$ bilinear. Similarly, we have that $tr_n=tr_{n-1} \circ E_n$.
-%
-%Finally, the Jones projections for each inclusion $A_{n}\subset A_{n+1}$ are given by
-%\begin{equation}\label{eq:JonesProjections}
-%e_n
-%:=
-%\frac1d\cdot
-%\left(\,\,
-%\begin{tikzpicture}[baseline=-.1cm]
-% \fill[ctwoshading] (-.3,-.7) rectangle (-.6,.7);
-% \draw[thick, red] (-.3,-.7) -- (-.3,.7);
-% \draw (-.1,-.7) -- (-.1,.7);
-% \draw (.1,-.7) -- (.1,-.4) arc (180:0:.15cm) -- (.4,-.7);
-% \draw (.1,.7) -- (.1,.4) arc (-180:0:.15cm) -- (.4,.7);
-%% \node at (-.1,-1) {\scriptsize{$n-1$}};
-% \node at (.3,0) {\scriptsize{$n-1$}};
-% \node at (.6,.5) {\scriptsize{$1$}};
-% \node at (.6,-.5) {\scriptsize{$1$}};
-%\end{tikzpicture}
-%\right)
-%\in
-%A_{n+1}.
-%\end{equation}
-%where the $n-1$ indicates $n-1$ vertical strands with appropriate shading to the right of the red strand. The Temperley-Lieb- % strange editor enforced wordwrap from here. lint?
-%Jones relations follow immediately from the definition and the fact that closed loops count for a factor of $d$. Similarly, 
-%for any $x\in A_n$ we have $e_nxe_n=E_n(x)e_n$. Clearly, $E_{n+1}(e_n)=d^{-2}\id_{m \otimes \xalt}$. Finally, the pull 
-%down condition holds, as for each $x\in A_{n+1}$, we have that $d^2 E_{n+1}(xe_n)e_n=xe_n$. Equivalently, $A_{n} e_n A_n$ is a 
-%two-sided ideal in $A_{n+1}$. Thus, the tower algebras given by the $A_n$ is indeed a Markov tower. 
-% 
-% 
-%\begin{prop}
-%The Markov tower of von Neumann Algebras $\left(A_n, tr_n\right)_{n\geq 0}$ is finite depth.
-%\end{prop}
-%
-%\begin{proof}
-% When $n$ is even, we have:
-% \[m\otimes \xalt \cong \bigoplus\limits_{Y\in\Irr(\cC_{20})}\left(n_YY\right) \]
-% For some nonnegative integers $n_Y$. Therefore, 
-% \[\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{Y\in \Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right) \]
-% The case when $n$ is odd is similar. This means that the Bratteli diagram for $A_n\subseteq A_{n+1}$ has at most $|\Irr(\cC_{20})|+|\Irr(\cC_{21})|$ vertices, so the principal graph must be finite. 
-%\end{proof}
-%
-%\begin{thm}
-%The principal graph obtained from the Markov tower $\left(A_n, tr_n\right)_{n\geq 0}$ is independent of the choice of $m$, and is in fact isomorphic to the fusion graph for the action of $x$ on $\cM$.
-%\end{thm}
-%
-%\begin{proof}
-%Because $x$ generates $\cC$ and $\cM$ is cyclic, we can assume that every simple object in $\cM$ is a direct summand of $m\otimes \xalt $. Essentially, our result from the fact that subsequent in inclusions $A_k\subseteq A_{k+1}$ are given by tensoring $\id_x$ and $\id_{\overline{x}}$, so they are determined entirely by the fusion rules.
-%
-%First, recall that for a finite depth Markov tower, the principal graph is canonically isomorphic to the Bratteli for the inclusion $A_n\subseteq A_{n+1}$ for $n$ large enough by \ref{BratteliPrincipal}. So, it suffices to show this Bratteli diagram is isomorphic to the fusion graph for $\cM$. Furthermore if $n$ is such that $A_n\subseteq A_{n+1}\subseteq A_{n+2}$ is standard then for $k\geq n$ the Bratteli diagram for $A_{k}\subseteq A_{k+1}$ is isomorphic to the Bratteli diagram for $A_n\subseteq A_{n+1}$, so without loss of generality, we may assume that $n$ is even.
-%
-%Let the non-negative integers $p_{Z,Y}$ be defined by the following equation:
-% \[Y\otimes x\cong\bigoplus\limits_{\Irr(\cC_{21})}\left(p_{Z,Y}Z\right)\]
-%These coefficients are exactly the coefficients for the adjacency matrix of the fusion graph for $x$ acting on $\cM$.
-%
-%Recall that
-%$$A_n=\End_{\widetilde{\cC}}\left(m\otimes\xalt\right)\cong \bigoplus\limits_{\Irr(\cC_{20})}\End_{\widetilde{\cC}}\left(n_Y Y\right)$$
-%where 
-%$$m \otimes \xalt \cong \bigoplus\limits_{\Irr(\cC_{20})}\left(n_YY\right)$$
-% Note that we may choose $n$ such that each $n_Y$ is strictly positive, as there is some $n$ such that $\bigoplus\limits_{\Irr(\cC_{20})}Y$ is isomorphic to a direct summand of $m\otimes \xalt$. (In fact, the first $n$ where this happens is exactly when the Markov tower achieves depth.) % Strictly speaking, this is not true, because the Markov tower may first achieve depth when $n$ is odd. But going into that may not clarify the proof. 
-%
-%The inclusion of $A_n \hookrightarrow A_{n+1}$ is given by $\phi \mapsto \phi \otimes \id_{x}$. Each $\phi \in A_n$ is uniquely defined as a direct sum \[\bigoplus\limits_{\Irr(\cC_{20})}\phi_Y\]
-%where each $\phi_Y \in \End_{\widetilde{\cC}}\left(n_YY\right)$. Then, distributing tensor products over the sum, we may write $\phi$ as 
-% \[\bigoplus_{\Irr(\cC_{20})}\left(\phi_Y \otimes \id_{x}\right)\]
-%But then:
-% \[\phi_Y \otimes \id_{x} \in \End_{\widetilde{\cC}}\left(n_Y Y \otimes x\right)\cong \bigoplus\limits_{\Irr({\cC}_{21})} \End_{\widetilde{\cC}}\left( p_{Z,Y} n_Y Z\right)\]
-%Since all $n_j\neq 0$ and the inclusion is unital, it is clear that $p_{Z,Y}$ gives the coefficients for the Bratteli diagram.
-%\end{proof}
-%
-%\nn{endow this markov tower with the structure of a right planar module for $\cQ_\bullet$.}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1790,9 +1465,6 @@ $$
 0 = \sum E_{n}(aa_i)E_n(b_ib)e_n = e_na\left(\sum a_i e_n b_i\right) be_n
 $$ 
 for all $a,b\in M_n$, and thus $\sum a_i e_n b_i = 0$, so the map is injective. 
-
-%To show that $\phi$ is well-defined, we may reverse the above argument, using \ref{EP:Injective}. 
-%  It is clear that $\phi$ is surjective. 
 
 \item
 For $a,b\in M_n$, by \ref{EP:MarkovTraces}, 
@@ -1962,45 +1634,6 @@ Since
  \end{tikzpicture}
  =1_{\cP_{r+1,+}}\text{,}\]
  we have that
-%Then 
-%\nn{pictures below?}
-%\begin{align*}
-%1_{M_{r+1}}
-%&=
-%1_{\cP_{r+1,+}}
-%=
-%\sum_b
-%b(e_{r,+})b^*
-%\\&=
-%=
-%\sum_b
-%b
-%\rho^{0}_{r+1}(e_{r,+})
-%\rho^{0}_{r+1}(b^*)
-%d^{-1}
-%\sum_b
-%\rho_{0,r+1}\left(
-%1_{M_0}\otimes
-%\begin{tikzpicture}[baseline=-.1cm]
-% \draw (-.2,-1) -- (-.2,1);
-% \draw (.2,1) -- (.2,.25) arc (-180:0:.2cm) -- (.6,1);
-% \draw (.2,-1) -- (.2,-.25) arc (180:0:.2cm) -- (.6,-1);
-% \roundNbox{unshaded}{(0,.5)}{.25}{.1}{.1}{$b$}
-% \roundNbox{unshaded}{(0,-.5)}{.25}{.1}{.1}{$b^*$}
-% \node at (-.35,-.9) {\scriptsize{$r$}};
-% \node at (-.35,0) {\scriptsize{$r$}};
-% \node at (-.35,.9) {\scriptsize{$r$}};
-%\end{tikzpicture}
-%\,\,\,
-%\right)
-%\\&=
-%=
-%\sum_b
-%\rho^{0}_{r}(b)
-%p_r
-%\rho^{0}_{r}(b^*).
-%\end{align*}
-%Hence 
 $\{b\}$ is a Pimsner-Popa basis for $M_{r+1}$ over $M_r$.
 Hence $M_\bullet$ has finite depth by \ref{EP:FiniteDepth}.
 The last claim follows immediately.
@@ -2052,18 +1685,6 @@ Indeed, the above example can be easily generalized to the following result.
 \label{prop:ClassificationOfMarkovTowers}
 Connected Markov towers $M_\bullet$ are classified up to $*$-isomorphism by pointed bipartite graphs $(\Gamma,v)$ with a quantum dimension function $\dim: V(\Gamma) \to \bbR_{>0}$ satisfying \eqref{eq:QuantumDimension}.
 \end{prop}
-%\begin{proof}
-%Given a connected Markov tower $M_\bullet$, we recover a pointed bipartite graph $(\Gamma,v_0)$ by taking $\Gamma$ to be the principal graph  and $v_0 := 1_{M_0}$.
-%We get a dimension function from the traces $\tr_\bullet$ by defining $\dim([p]) := \tr_n(p)$ if $p \in M_n$ is a minimal projection and $[p]$ is the associated vertex of the principal graph.
-%
-%Conversely, given a triple $(\Gamma, v_0 , \dim)$, there is a Markov tower with principal graph $\Gamma$ and with traces of the associated minimal projections given by the dimension function.
-%One gets $M_n$ by recursion using $\Gamma$ starting at $v_0$, and we define the trace vector for $M_n$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $n$.
-%
-%One then checks these two processes are mutually inverse.
-%We leave the straightforward details to the reader.
-%\nn{better to have some citations, or to supply a bit more detail here...}
-%\end{proof}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Operations on Markov towers to produce new Markov towers}
@@ -2086,7 +1707,6 @@ For any $k\geq 1$, $M_{\bullet+k}:=(M_{n+k}, \tr_{n+k}, e_{n+k+1})_{n\geq 0}$ is
 Notice that shifting a Markov tower simply truncates the Bratteli diagram, and by Fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
 \end{remark}
 
-%Similar to the discussion in \S\ref{sec:CompressionIso}, 
 Given a Markov tower $M_\bullet$, we obtain another Markov tower by compression by a non-zero projection $p\in P(M_0)$.
 First, for all $n\geq 0$, we define a faithful trace $\tr_n^p$ on $pM_n p$ by
 \begin{equation}
@@ -2142,8 +1762,6 @@ E_i
  \draw (1,0) -- (1,.8);
  \draw (.4,.8) arc (-180:0:.2cm);
  \draw (.4,0) arc (180:0:.2cm);
-% \node at (.4,1) {\scriptsize{$1$}};
-% \node at (.4,-.2) {\scriptsize{$1$}};
  \node at (.35,.4) {\scriptsize{$i$}};
  \node at (1.5,.4) {\scriptsize{$n{-}i{-}2$}};
 \end{tikzpicture}\,.
@@ -2180,12 +1798,8 @@ d^{k(k-1)}(e_{j+k}e_{j+k+1}\cdots e_{j+2k-2}e_{j+2k-1})
  \draw (.2,0) -- (.2,.8);
  \draw (1.8,0) -- (1.8,.8);
  \draw (.6,.8) arc (-180:0:.25cm);
-% \draw (1.5,.8) arc (-180:0:.15cm);
  \draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
  \draw (1,0) arc (180:0:.25cm);
-% \node at (.7,-.2) {\scriptsize{$1$}};
-% \node at (1.8,1) {\scriptsize{$1$}};
-% \node at (2,-.2) {\scriptsize{$1$}};
  \node at (.6,1) {\scriptsize{$k{-}1$}};
  \node at (1,-.2) {\scriptsize{$k{-}1$}};
  \node at (.2,-.2) {\scriptsize{$j$}};
@@ -2230,12 +1844,8 @@ M_{(n+1)k}
  \draw (.2,0) -- (.2,.8);
  \draw (1.8,0) -- (1.8,.8);
  \draw (.6,.8) arc (-180:0:.25cm);
-% \draw (1.5,.8) arc (-180:0:.15cm);
  \draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
  \draw (1,0) arc (180:0:.25cm);
-% \node at (.7,-.2) {\scriptsize{$1$}};
-% \node at (1.8,1) {\scriptsize{$1$}};
-% \node at (2,-.2) {\scriptsize{$1$}};
  \node at (.6,1) {\scriptsize{$k{-}1$}};
  \node at (1,-.2) {\scriptsize{$k{-}1$}};
  \node at (0,-.2) {\scriptsize{$(n{-}1)k$}};
@@ -2249,12 +1859,8 @@ e_{(n+1)k-1}
  \draw (.2,0) -- (.2,.8);
  \draw (1.8,0) -- (1.8,.8);
  \draw (.6,.8) arc (-180:0:.25cm);
-% \draw (1.5,.8) arc (-180:0:.15cm);
  \draw (.6,0)  .. controls ++(90:.35cm) and ++(270:.35cm) .. (1.5,.8);
  \draw (1,0) arc (180:0:.25cm);
-% \node at (.7,-.2) {\scriptsize{$1$}};
-% \node at (1.8,1) {\scriptsize{$1$}};
-% \node at (2,-.2) {\scriptsize{$1$}};
  \node at (.6,1) {\scriptsize{$k{-}1$}};
  \node at (1,-.2) {\scriptsize{$k{-}1$}};
  \node at (0,-.2) {\scriptsize{$(n{-}1)k$}};
@@ -2306,8 +1912,6 @@ d^{k-2}
 \end{tikzpicture}
 $$
 By the induction hypothesis, we have
-%\dave{used induction hypothesis for arbitrary $j$, which I set to zero earlier. 
-%This isn't the biggest deal, but it's not technically correct.}
 $$
 M_{(n+1)k-1}
 \begin{tikzpicture}[baseline = .3cm]
@@ -2371,7 +1975,6 @@ In the case where $k$ is odd, taking the $k$-step basic construction therefore c
 \end{remark}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The projection category of a Markov tower}
 
@@ -2394,33 +1997,6 @@ $\cM_0([n+2k] \to [n]) := M_{n+k}$.
 The identity morphism in $\cM_0([n] \to [n])$ is $1_{M_n}$.
 \item
 For $x\in \cM_0([n]\to [n+2k])$ or $x\in \cM_0([n+2k] \to [n])$, we define $x^\dag := x^* \in M_{n+k}$.
-%
-%\begin{align*}
-%\cM([n] \to n+2k])
-%&:=
-%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%%=
-%M_{n+k}.
-%q
-%M_{n+k}
-%f^{n+k}_n
-%p
-%\subset
-%M_{n+2k}
-%\\
-%\cM(q \to p)
-%&:=
-%%\set{x \in M_{n+k}}{ x = E^{M_{n+2k}}_{M_{n+k}}(q x f^{n+k}_{n}p)}
-%%=
-%p
-%f^{n+k}_n
-%M_{n+k}
-%q
-%\subset
-%M_{n+2k}
-%\end{align*}
-%where $f^{n+k}_{n}\in M_{n+2k} = M_{n+k} f^{n+k}_n M_{n+k}$ is the Jones projection for the \nn{standard} inclusion $M_n \subset M_k \subset (M_{n+2k}, \tr_{n+2k}, f^{n+k}_n)$.
-%We define $\cM(q \to p) := \cM(p \to q)^\dag =  \set{x^\dag}{x\in \cM(p \to q)}$.
 \item
 We define composition in three cases. In each, we make use of Temperley-Lieb diagrams. The Jones projections of a Markov tower generate an image of the Markov tower of Temperley-Lieb algebras, so each such diagram represents a well-defined element of $M_\bullet$. 
 \begin{enumerate}[label={\rm(C\arabic*)}]
@@ -3457,24 +3033,6 @@ x
  \node at (1,-.2) {\scriptsize{$j$}};
 \end{tikzpicture}\,.
 \qedhere
-%
-%
-%   \eta {}^nh^i_j{}^n r^{i+j} &=E_{n+2i+j}(F^{n+2i+j}_{n+i+j}) \eta {}^nh^i_j{}^n r^{i+j} \\
-%         &
-%E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_j) {}^n r^{i+j} 
-%\\&= 
-%E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}) {}^nr^{i+j} 
-%\\&= 
-%E_{n+2i+j}(F^{n+2i+j}_{n+i+j} \eta {}^nh^i_jF^{n+j+i}_{n+j}F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} 
-%\\&= 
-%E_{n+2i+j}(E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+2i}_{n+j+i}F^{n+j+i}_{n+j}) {}^nr^{i+j} 
-%\\&=
-%E_{n+i+j}( \eta {}^nh^i_j F^{n+j+i}_{n+j})E_{n+2i+j}(F^{n+j+2i}_{n+j+i})F^{n+j+i}_{n+j} {}^nr^{i+j} 
-%\\&= 
-%E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j})F^{n+j+i}_{n+j}{}^n r^{i+j} 
-%\\&= 
-%E_{n+i+j}( \eta {}^nh^i_jF^{n+j+i}_{n+j}){}^nr^{i+j} 
-%\\&= E_{n+i+j}( \eta {}^nh^i_j){}^nr^{i+j} 
 \end{align*}
 \end{proof}
 
@@ -3570,9 +3128,6 @@ E_{n+i}^{n+2i+j}\left(yx\cdot
  \end{tikzpicture}
 \\&
 =
-%$$
-%Using Lemma \ref{lem:LeftKink}, we have 
-%$$
 d^{-i-j}E_{n+i}^{n+2i}\left(
 \underbrace{
 E_{n+2i}^{n+2i+j}\left(yx\cdot
@@ -3741,12 +3296,10 @@ d^{-i}\,
  \draw (.8,.8) arc (-180:0:.2cm);
  \draw (1.2,0) .. controls ++(90:.3cm) and ++(270:.3cm) .. (.5,.8);
  \draw (.5,0) arc (180:0:.2cm);
-% \draw (1.5,0) -- (1.5,.8);
  \node at (.2,1) {\scriptsize{$n$}};
  \node at (.5,1) {\scriptsize{$j$}};
  \node at (.8,1) {\scriptsize{$i$}};
  \node at (.5,-.2) {\scriptsize{$i$}};
-% \node at (1.5,1) {\scriptsize{$j$}};
 \end{tikzpicture}
  \,\cdot x 
  \right)
@@ -3820,7 +3373,7 @@ y\cdot\,
 
 \begin{cor}
 \label{cor:SemisimpleProjectionCategory}
-Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitary Karoubi completion. % $\Cstar$ category of projections.
+Let $M_\bullet$ be a Markov sequence and let $\cM$ be its unitary Karoubi completion. 
 Then $\cM$ is semisimple, and the isomorphism classes of simple objects are in canonical bijection with the vertices of the principal graph.
 \end{cor}
 \begin{proof}
@@ -3864,12 +3417,8 @@ By construction, to define an action of $\TLJ$ on $\cM$, it suffices to define t
 We set $[m]_\cM\vartriangleleft [n]_{\TLJ}:=[m+n]_\cM$. 
 For morphisms, we first consider the case where one morphism is the identity. 
  If $g:[a]_{\TLJ}\to[b]_{\TLJ}$, we first add $n$ strings to the left to obtain $1_n \otimes_{\TLJ} g \in \TLJ([a+n]_{\TLJ} \to [b+n]_{\TLJ})$, and we define $1_{M_n}\vartriangleleft g\in \cM([a+n]_\cM \to [b+n]_\cM)$ to be the image of the element $1_n \otimes_{\TLJ} g$ in $M_{n+(a+b)/2}$. 
-%  the image of $g$ in $M_{a+b/2}$, which may still be represented by some linear combination of Kauffman diagrams, and we add $n$ strings to the left to obtain $1_{M_n}\vartriangleleft g\in[n+a]_{\cM}\to[n+b]_{\cM} \subseteq M_{n+(a+b)/2}$.
-% \nn{why is this well-defined? We add strings to the left and }
- % maybe change this since the map $\TLJ\to M_\bullet$ is not an inclusion
  The case of $f\vartriangleleft 1$ is more complicated. 
  If $f\in \cM([n]\to [n+2k])=M_{n+k}$, then we define 
-% \nn{check factors of $d$ below here!}
 \[
 f\vartriangleleft 1_{j}
 :=
@@ -3911,7 +3460,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
  Next, we check that $(f\vartriangleleft1)\circ(1\vartriangleleft g)=(1\vartriangleleft g)\circ(f\vartriangleleft1)$. 
  We illustrate the case $f:[n]_{\cM}\to[n+2k]_{\cM}$ and $g:[m]_{\TLJ}\to [m+2\ell]_{\TLJ}$, where both $m\ge k$ and $\ell\ge k$. 
  In other words, $g\in[k+j]_{\TLJ}\to[k+j+2(k+i)]_{\TLJ}$ for some non-negative $i$ and $j$. The other cases are similar.
- % \nn{are they all?}
  
  Let $\iota$ denote the inclusion in $M_\bullet$. In the following, since $g\in\TLJ$, we represent $g$ by a ticket within Temperley-Lieb tangles, which we may freely move via isotopy.
  By definition, we have 
@@ -3963,9 +3511,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
    \draw (2.2,0) -- (2.2,1);
    \draw[dashed] (0,0) -- (2.6,0);
    \begin{scope}[shift={(0,-1)}]
-  %\end{tikzpicture}
-  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
      \node at (.1,-0.2) {\scriptsize{$n$}};
@@ -3987,7 +3532,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
      \end{scope}
     \end{scope}
    \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
    \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
   \right)
@@ -4032,9 +3576,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
    \draw (2.2,0) -- (2.2,1);
    \draw[dashed] (0,0) -- (2.6,0);
    \begin{scope}[shift={(0,-1)}]
-  %\end{tikzpicture}
-  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
      \node at (.1,-0.2) {\scriptsize{$n$}};
@@ -4056,7 +3597,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
      \end{scope}
     \end{scope}
    \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
    \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
  \right)\right)
@@ -4103,9 +3643,6 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
     \draw[dashed] (0,0) -- (2.6,0);
    \end{scope}
    \begin{scope}[shift={(0,-1)}]
-  %\end{tikzpicture}
-  %\cdot \rho(\lambda_{m+2\ell}^{m+2\ell+n}(g))\cdot
-  % \begin{tikzpicture}[baseline=.4cm]
     \begin{scope}[shift={(.1,0)}]
      \draw (.1,0) -- (.1,1);
      \node at (.1,-0.2) {\scriptsize{$n$}};
@@ -4127,13 +3664,11 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
      \end{scope}
     \end{scope}
    \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
    \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.6,1.8);
   \end{tikzpicture}
  \right)\right)
  \\&=d^{i+k}  
 E^{n+j+4k+i}_{n+j+3k+i}\left(
- % \lambda(g)
  \begin{tikzpicture}[baseline=.3cm]
   \draw (.2,0) -- (.2,1);
   \node at (.2,1.2) {\scriptsize{$n$}};
@@ -4175,10 +3710,6 @@ E^{n+j+4k+i}_{n+j+3k+i}\left(
     \node at (1.9,.3) {\scriptsize{$k$}};
    \end{scope}
    \draw[dashed] (0,0) -- (2.4,0);
-  %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2,.8);
-  % \end{tikzpicture}
-  % \cdot
-  % \begin{tikzpicture}[baseline=.4cm]
    \begin{scope}[shift={(.1,-1)}]
     \draw (.1,0) -- (.1,1);
     \node at (.1,-.2) {\scriptsize{$n$}};
@@ -4197,12 +3728,10 @@ E^{n+j+4k+i}_{n+j+3k+i}\left(
     \node at (1.5,-0.2) {\scriptsize{$k$}};
     \node at (1.9,-0.2) {\scriptsize{$k$}};
    \end{scope}
-  %  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.4,1);
    \draw[thick, rounded corners = 5pt] (0,-1) rectangle (2.4,0.8);
   \end{tikzpicture}
   \right)\right)
   \\&= % This step is where bubble gets used. 
-  % \lambda(g)
 d^{i+k}  
 E^{n+j+4k+i}_{n+j+3k+i}\left(
   \begin{tikzpicture}[baseline=.3cm]
@@ -4243,10 +3772,6 @@ d^{-i}
     \draw (1.7,0) -- (1.7,.8);
     \node at (1.7,1) {\scriptsize{$k$}};
    \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
-  % \end{tikzpicture}
-% \cdot
-  % \begin{tikzpicture}[baseline=.3cm]
    \draw[dashed] (0,0) -- (2,0);
    \begin{scope}[shift={(.1,-0.8)}]
     \draw (.1,0) -- (.1,.8);
@@ -4264,7 +3789,6 @@ d^{-i}
     \node at (1.3,-.2) {\scriptsize{$k$}};
     \node at (1.7,-.2) {\scriptsize{$k$}};
    \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
    \draw[thick, rounded corners = 5pt] (0,-0.8) rectangle (2,0.8);
   \end{tikzpicture}
 \right)\\
@@ -4273,10 +3797,6 @@ d^{-i}
  \end{align*}
  \endgroup
  To show that $\vartriangleleft$ is a well-defined bifunctor, it remains to show that for morphisms $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. 
- %Hence 
-% From there, routine abstract nonsense verifies that defining 
- %$f\vartriangleleft g:=(f\vartriangleleft1)\circ(1\vartriangleleft g)$ gives a well defined bifunctor.
- % $\cdot\vartriangleleft\cdot$ a bifunctor.
  Functoriality in the right variable comes directly from the definition, but functoriality in the left variable is more involved and done in cases.
  We illustrate a representative case. 
  Suppose $f:[n]_{\cM}\to[n+2i+2j]_{\cM}$ and $g:[n+2i+2j]_{\cM}\to[n+2i]_{\cM}$, and set $m:=k+i+j$. 
@@ -4306,7 +3826,6 @@ d^{-i}
    \draw[thick, rounded corners = 5pt] (0,0) rectangle (1.8,.8);
   \end{tikzpicture}
   \cdot\iota(g)\cdot\iota(f)\cdot
-  % \rho\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
     \draw (.2,0) -- (.2,1);
@@ -4325,10 +3844,6 @@ d^{-i}
     \node at (2,1.2) {\scriptsize{$i$}};
    \end{scope}
    \draw[dashed] (0,.4) -- (2.2,.4);
-  % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.3,1);
-  % \end{tikzpicture}
-  % \right)\cdot
-  % \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,-.4)}]
     \draw (.2,0) -- (.2,.8);
     \node at (.2,-.2) {\scriptsize{$n$}};
@@ -4346,7 +3861,6 @@ d^{-i}
      \node at (1.6,-.2) {\scriptsize{$i$}};
      \draw (1.4,.8) arc (-180:0:.2cm); % i
     \end{scope}
-   % \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.5,.8);
    \end{scope}
    \draw[thick, rounded corners = 5pt] (0,-.4) rectangle (2.2,1.4);
   \end{tikzpicture}
@@ -4827,7 +4341,7 @@ Since we have already shown that $\vartriangleleft$ is a bifunctor, it suffices 
 \begin{rem}
  Notice that the principal graph of $M_\bullet$ is exactly the fusion graph for the associated $\cT\cL\cJ$-module category $\cM$ with respect to the unshaded-shaded strand $X\in \cT\cL\cJ$ with basepoint the simple projection $1_{M_0}\in \cM$. By Remark \ref{rem:HowMCategoryChangesUnderMarkovTowerOperations}, the operation of shifting the Markov tower does not change $\cM$ (up to equivalence), but corresponds to replacing the basepoint $1_{M_0}$ with $[0]\vartriangleleft X^{\text{alt}\otimes 2n}$. 
  Similarly, compressing by a minimal projection $p\in M_n$ corresponds to moving the basepoint to $p$.
- In contrast, the multistep basic construction, which may affect the principal graph, is analagous to replacing $X\in\TLJ$ with $X^{\text{alt}\otimes 2n}$, without changing the basepoint of $\cM$. The $\TLJ$-module structure on the category of projections $\cM^{(n)}$ of $M_{n\bullet}$ comes from combining the action of the subcategory $\TLJ^{(n)}$ of $\TLJ$ generated by subobjects of $[kn]_{\TLJ}$ %(which is equivalent to $\TLJ$) 
+ In contrast, the multistep basic construction, which may affect the principal graph, is analagous to replacing $X\in\TLJ$ with $X^{\text{alt}\otimes 2n}$, without changing the basepoint of $\cM$. The $\TLJ$-module structure on the category of projections $\cM^{(n)}$ of $M_{n\bullet}$ comes from combining the action of the subcategory $\TLJ^{(n)}$ of $\TLJ$ generated by subobjects of $[kn]_{\TLJ}$
  and the pivotal $\TLJ$-right module structure of $\TLJ^{(n)}$.
 \end{rem}
 
@@ -4836,10 +4350,6 @@ Since we have already shown that $\vartriangleleft$ is a bifunctor, it suffices 
 Observe that we may identify the \emph{tensor} category $\TLJ$ as the category of projections of the Markov tower ${TLJ}_\bullet$, where the tensor structure is given by the $\TLJ$-module structure from Definition \ref{def:ModuleFromMarkovTower}. 
  One should think of the definitions for composition and tensor product in the category of projections as being obtained by isotoping the much simpler definitions for a planar algebra into a form that can be written down in terms of the data of a Markov tower. 
  Notice that under this identification, $\ev_{[n]}\in\cT\cL\cJ([2n]\to[0])$ and $\coev_{[n]}\in\cT\cL\cJ([0]\to[2n])$ are both identified with $1_n\in TLJ_n$ under Definition \ref{def:MarkovProjections}; one then checks they satisfy the zig-zag axioms using the definitions of $\vartriangleleft$ from Definition \ref{def:ModuleFromMarkovTower} and composition from Definition \ref{def:MarkovProjections}.
-% Since $\End([n]_{\cT})=\End([n]_{\TLJ})={TLJ}_n$, it is clear that the map $\Phi:\Obj(\cT)\to\Obj(\TLJ)$ sending $[n]_{\cT}\to[n]_{\TLJ}$ can be extended functorially to all objects in the idempotent completions, and to all endomorphisms. 
-% The morphism $\coev_{[n]}\in\cT([0]\to[2n])$ is just $1\in TLJ_n$; evaluation and coevaluation are baked into the definition of composition. 
-% Declaring that $\Phi(\coev_{[n]})=\coev_{[n]}$ then determines $\Phi$ everywhere.  
-% That the resulting $\Phi$ is a well-defined tensor dagger equivalence of categories is a series of computations in $TLJ_\bullet$, but since the Markov tower structure on $TLJ_\bullet$ comes from a planar algebra structure, they follow by isotopy. The difficulty in stating the above definitions for composition and tensor product in the category of projections is that, a priori, a general Markov tower may not extend to a planar algebra structure. 
 \end{rem}
 
 
@@ -4999,59 +4509,8 @@ We begin this section by recalling the construction of the canonical planar $\da
 The reader is advised to review the definition of a strongly Markov inclusion from Definition \ref{def:StronglyMarkovInclusion} before proceeding.
 We then discuss various operations on the inclusion, and how such operations affect (or do not affect!) the planar algebra.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Strongly Markov inclusions} 
-%\label{sec:StronglyMarkovInclusions}
-%
-%\dave{do we always use $A_0 \subset (A_1, \tr_1)$ for a strongly Markov inclusion and $(M_n, \tr_n, e_n)$ for a Markov tower?
-%This could help alleviate some confusion!}
-%For the duration of this paper, assume that any trace on a finite von Neumann algebra is a faithful, normal, tracial state. For finite von Neumann algebras $A_0\subseteq A_1$ with traces $\tr_0$ and $\tr_1$, we write $A_0\subseteq (A_1,\tr_1)$ when $\tr_0|_{A_0}=\tr_0$. Let $e_1$ be the Jones projection onto $L^2(A_0,\tr_0)$ and $E_{A_0}$ the unique trace preserving conditional expectation. Let $A_2$ be obtained from $A_1$ and $A_0$ via the basic construction. We will now recall some basic facts about such inclusions.
-%\begin{defn}
-%Given an inclusion of finite von Neumann algebras with trace,  $A_0\subseteq (A_1,\tr_1)$, a \textit{Pimsner-Popa basis for $A_1$ over $A_0$} is any finite subset $B\subset A_1$ such that any of the following equivalent properties hold:
-%
-%\begin{itemize}
-% \item $1=\sum_{b\in B}be_1b^*$.
-% \item For any $x\in A_1$ we have that $x=\sum_{b\in B}bE_{A_0}(b^*x)$.
-% \item For any $x\in A_1$ we have that $x=\sum_{b\in B}E_{A_0}(bx)b^*$.
-%\end{itemize}
-%
-%
-%\end{defn}
-%Due to 
-%\cite[Prop.~3(b)]{MR561983}
-%(see also \cite{MR996807}),
-%we have the following:
-%\begin{prop}
-%The following are equivalent:
-%
-%\begin{itemize}
-%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-%\item $A_2=A_1e_1A_1$
-%\end{itemize}
-%\end{prop}
-%We will be concerned primarily with a particular type of inclusion $A_0\subseteq A_1$, which is given in the following definition.
-%\begin{defn}
-%Let $\Tr_2$ be the canonical, faithful, normal, semifinite trace for $A_2$ given by the extension of $xe_1y \mapsto \tr_1(xy)$.
-%The inclusion $A_0\subseteq A_1$ is said to be \textit{strongly Markov} if:
-%\begin{itemize}
-%\item $\Tr_2$ is finite and $\Tr_2(1)^{-1}Tr_2|_{A_1}=\tr_1$.
-%\item There is a Pimsner-Popa basis for $A_1$ over $A_0$.
-%\end{itemize}
-%\end{defn}
-%
-%Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of finite dimensional von Neumann algebras with $[A_1:A_0]=d^2$ then we can iterate the basic construction to obtain a tower of algebras.
-%
-%\nn{towers of relative commutants}
-%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The canonical relative commutant planar algebra}% of a strongly Markov inclusion} 
 \label{sec:StronglyMarkovPA}
-%\subsection{Planar algebras}
-%\label{ssec:canonical}
-
-%Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
 There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\dag$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. 
 Denote by $(A_n,\tr_n)_{n\geq 0}$ the Jones tower for inclusion $A_0\subset (A_1,\tr_1)$.
@@ -5065,7 +4524,6 @@ which are finite dimensional by \cite[Prop.~2.7.3]{MR996807}.
 We refer the reader to \cite[\S2.3]{MR2812459} for the action of tangles.
 The $\dag$-structure is given by $*$ in the relative commutants. 
 We remark that one important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$, but not on a choice of basis. 
-%We refer the reader to \cite{MR2812459} for more details on this construction. 
 
 The following theorem uniquely characterizes the canonical relative commutant planar $\dag$-algebra.
 
@@ -5184,95 +4642,6 @@ x\in \cP_{n+1,+}= A_0'\cap A_{n+1}
 $.
 \end{enumerate}
 \end{thm}
-
-%We will need the following:
-%\begin{prop}[{\cite[Prop 2.25]{MR2812459}}]\label{iso}
-%For any $n$, the map:
-%\[
-%\theta_n: \bigotimes_{A_0}^{n}A_1 \rightarrow A_n
-%\]
-%defined by $x_1\otimes\cdots x_n \mapsto x_1v_1x_2v_2\cdots x_nv_n$, where $v_k:=d^ne_ne_{n-1}\cdots e_1$, is an $A_1-A_1$ bimodule isomorphism.
-%\end{prop}
-%
-%For the following definition, we will always assume shaded planar tangles are in \textit{standard form}, meaning:
-%\begin{itemize}
-%\item All input/output disks are parallel rectangles.
-%\item All strings are smooth, strings emanating from the input disks come from the top of the disk, and strings connected to the output disk connect to the top.
-%\item The maxima and minima of any two strings occurs at different heights, and no extrema ever occurs at the same height as that of the top or bottom of a rectangle.
-%\item The $\ast$ of a tangle is always on the left edge of the boundary rectangle.
-%\end{itemize}
-%
-%
-%\begin{defn} 
-%The canonical planar $\ast$-algebra of a strongly Markov inclusion $A_0\subseteq (A_1,\tr_1)$ is defined as follows:
-%
-% The box spaces are $P_{n,+}:=\theta_n^{-1}(A_0'\cap A_{n}) $ and $P_{n,-}:=\theta_n^{-1}(A_1'\cap A_{n+1})$. 
-% In the sequel, we will supress the isomorphisms $\theta_n$ and $\theta_n^{-1}$ to ease the notation. 
-%
-% Suppose a tangle $T$ has type $(r,\pm)$ and $s$ input rectangles of types $(r_i,\pm_i)$. If we arrange $T$ in standard form, the action of $T$ can be understood by reading the tangle from top to bottom, moving a horizontal line upwards. At the bottom, we begin with $1\in A_i$, where $i$ is $0$ if $T$ has type $(r,+)$ and $1$ if $T$ has type $(r,-)$. By the top, we will have produced an element of $A_i$-invariant element of $A_{r+i}$, depending on a choice of pure tensor $\nu=\otimes_{i=1}^r\nu_i\in\otimes_{i=1}^rP_{r_i,\pm_i}$. Let $n_y$ be the number of shaded regions intersected by a horizontal line at a height $y$. We first consider $y$ such that the horizontal line intersects no input disks or extrema of strands. At these levels, one can read off an $A_i$-invariant element $\eta_y\in \otimes^{n_y}A_1$, which remains constant as long as the horizontal line intersects no disks or extrema. One should think of shaded regions as representing elements of $A_1$ and unshaded regions as representing $\otimes_{A_0}$. We will now describe what happens when the line moves upwards and passes through extrema of the strings and input rectangles:
-% \begin{itemize}
-% \item If the horizontal line passes through the $j$-th input rectangle and there are $t$ shaded regions to the left of it, and it has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
-% \[
-% x_1\otimes\cdots \otimes x_{n_y} 
-% \mapsto 
-% x_1\otimes \cdots\otimes x_t\otimes \nu_j \otimes x_{t+1}\otimes \cdots\otimes x_{n_y}
-% \]
-%  If the rectangle has type $(r_j,+)$, then at vertical height $y$, we insert $\nu_j$ into $\eta_y$ in the following way:
-% \[
-% x_1\otimes\cdots \otimes x_{n_y} 
-% \mapsto 
-% x_1\otimes \cdots x_t \nu_j \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
-% =
-% x_1\otimes \cdots \nu_j x_t  \otimes x_{t+1}\otimes \cdots \otimes x_{n_y}
-% \]
-% Both of these maps are well-defined by \cite[Lem.~2.29]{MR2812459}.
-% \item The effect of passing upwards through the extrema of a strand is as follows: 
-%\begin{align*}
-% &\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-%  \fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-%  \fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-%  \fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \fill[unshaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-%  \draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-%  \draw[thick] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-% \end{tikzpicture}
-% \,: x\otimes y\mapsto xy \\
-% &\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-%  \fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-%  \fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-%  \fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \fill[shaded] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-%  \draw[thick] (.6,-1) -- (.6,0) arc (0:180:.6cm) -- (-.6,-1);
-%  \draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-% \end{tikzpicture}
-% \,: x\otimes y \otimes z \mapsto dxE_{M_0}(y)\otimes z=dx\otimes E_{M_0}(y) z \\
-% &\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-%  \fill[unshaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-%  \fill[unshaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-%  \fill[shaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \fill[unshaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-%  \draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-%  \draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-% \end{tikzpicture}
-% \,: x \mapsto d^{-1}\sum\limits_{b\in B}xb\otimes b^{\ast}=d^{-1}\sum\limits_{b\in B}b\otimes b^{\ast} x \\
-% &\begin{tikzpicture}[scale=0.6, baseline = -.1cm]
-%  \fill[shaded](-1.2,-1) -- (-1.2,1) -- (-1,1) -- (-1,-1) -- (-1.2,-1);
-%  \fill[shaded](1.2,-1) -- (1.2,1) -- (1,1) -- (1,-1) -- (1.2,-1);
-%  \fill[unshaded] (-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \fill[shaded] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-%  \draw[thick] (.6,1) -- (.6,0) arc (0:-180:.6cm) -- (-.6,1);
-%  \draw[thick](-1,-1) -- (-1,1) -- (1,1) -- (1,-1) -- (-1,-1);
-%  \draw[thick] (-1.2,-1) -- (-1.2,1) -- (1.2,1) -- (1.2,-1) -- (-1.2,-1);
-% \end{tikzpicture}
-% \,: x\otimes y \mapsto x\otimes 1 \otimes y 
-%\end{align*}
-% 
-%\end{itemize} 
-%The $\dag$-structure on tangles given by horizontal reflection of tangles, and the natural $\ast$-structure on the von Neumann algebras.
-%\end{defn}
 
 We will proceed with the same general technique for defining the embedding of planar algebras as in \cite{MR2812459}, in that we will also initially embed into the canonical $\dag$-planar algebra, and then make use of the following theorem:
 
@@ -5397,13 +4766,6 @@ The full details can be found in \cite[Prop.~2.47]{MR2812459}.
 Adding $k$ strings to the left of $x$ gives a unital $\ast$-algebra isomorphisms
 $\cP_{n,\pm} \to \cP_{n+k,\pm'}$
 where $\pm' = \pm$ if $k$ is even and $\mp$ if $k$ is odd.
-%
-%$A'_0 \cap A_{n}\to A'_{k} \cap A_{n+k}$
-%and
-%$A'_0 \cap A_{n}\to A'_{k} \cap A_{n+k}$
-%
-% for $i \in \{0,1\}$.
-% then we have that $x$ can represented in the following form as a string diagram in the box space $A'_0\cap A_{n+k}$ for the canonical planar $\ast$-algebra for $A_0\subseteq (A_1,\tr_1)$:
 \[
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (0,-.7) -- (0,.7);
@@ -5418,28 +4780,8 @@ where $\pm' = \pm$ if $k$ is even and $\mp$ if $k$ is odd.
 \node at (0.45,-.9) {\tiny{$n$}};
 \node at (0,-0.9){\tiny{$k$}};
 \end{tikzpicture}
-%\qquad
-%\qquad
-%\qquad
-%\begin{tikzpicture}[baseline=-.1cm]
-%\fill[shaded] (-0.45,-0.7) rectangle (0,0.7);
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$}
-%\node at (0,-.9) {\tiny{$n$}};
-%\end{tikzpicture}
-%\mapsto
-%\begin{tikzpicture}[baseline=-.1cm]
-%\fill[shaded] (-0.3,-0.7) rectangle (0.45,0.7);
-%\draw (0.45,-.7) -- (0.45,.7);
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
-%\node at (0.45,-.9) {\tiny{$n$}};
-%\node at (0,-0.9){\tiny{$k$}};
-%\end{tikzpicture}
 \]
 
-
-%and we have a similar result for elements of $A_3'\cap A_{n+3}$ when represented in string diagrams in $A'_{1}\cap A_{n+3}$.%
 \end{cor}
 
 \begin{proof} 
@@ -5448,12 +4790,6 @@ The following implicitly uses a trick due to Vaughan Jones that can be found in 
 Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
 For $x\in A'_k\cap A_{n+k}$, the element $y\in A_0'\cap A_n$ is uniquely determined by
 \begin{equation*}
-%\begin{tikzpicture}[baseline]
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-%\node at (0,-.9) {\tiny{$n$}};
-%\node at (0,0) {\scriptsize{$x$}};
-%\end{tikzpicture}
 x
 =
 E_{A'_k}^{A_0'}(x)
@@ -5468,7 +4804,6 @@ d^{-k}
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (-.55,0) {\tiny{$k$}};
 \node at (-.85,0) {\tiny{$k$}};
-%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 =
 \begin{tikzpicture}[baseline=-.1cm]
@@ -5479,7 +4814,6 @@ d^{-k}
 \draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
 \node at (-.55,0) {\tiny{$k$}};
 \node at (-1.6,0) {\tiny{$k$}};
-%\node at (0,0) {\scriptsize{$x$}};
 \node at (0,-.9) {\tiny{$n$}};
 \node at (-1.05,0) {\tiny{$d^{-k}$}};
 \end{tikzpicture}
@@ -5496,51 +4830,17 @@ d^{-k}
 The proof is similar for $\cP_{n,-}$.
 \end{proof}
 
-%\nn{Do we really need the following as opposed to just showing it in the Shift by 2 Isomorphism?}
-%\begin{cor}
-%
-%For all $n\geq 0$, the relative commutant $A_2'\cap A_{n+2}\subset A_0'\cap A_{n+2}$ is equal to 
-%$$
-%\set{
-%\begin{tikzpicture}[baseline=-.1cm]
-%\draw (0.45,-.7) -- (0.45,.7);
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
-%\node at (0.45,-.9) {\tiny{$n$}};
-%\node at (0,-0.9){\tiny{$2$}};
-%\end{tikzpicture}\,\,
-%}{
-%x \in A_0'\cap A_n
-%}.
-%$$
-%That is, the `shift by 2' gives a unital $*$-algebra isomorphism $A_0'\cap A_n \to A_2'\cap A_{n+2}$.
-%Similarly, the `shift by 2' gives a unital $*$-algebra isomorphism $A_1'\cap A_{n+1} \to A_3'\cap A_{n+3}$.
-%\end{cor}
-%\begin{proof}
-%The map is well defined since it is just the application of a planar tangle on the element of the relative commutant planar algebra.
-%
-%If $x$ belongs to $A'_2 \cap A_n$ then we have the following
-%\end{proof}
-%
-%\nn{above are dave's collisions}
-
 Recall that the canonical planar $\dag$-algebra for the inclusion $A_0 \subseteq (A_1,\tr_1)$ is denoted by $\cP_{\bullet}$.
 We denote the canonical planar $\dag$-algebra for $A_2 \subset (A_3,\tr_3)$ by $\cQ_{\bullet}$.
 
 \begin{thm}[Shift Isomorphism]
 \label{ShiftIso}
 The map $\Phi:\cP_{\bullet} \to \cQ_{\bullet}$, obtained by adding two strings in front of elements of $\cP_{n,\pm}$
-% and adding three strings in front of elements of $\cP_{n,-}$ 
-%=======
-%\begin{thm}[Shift by 2 Isomorphism]
-%The map $\Phi:\cP_{\bullet} \to \cQ_{\bullet}$, obtained by adding two strings in front of elements of $\cP_{n,+}$ and adding three strings in front of elements of $\cP_{n,-}$ viewed as elements of $mathcal{A}_{n+1,+}$ 
-%>>>>>>> Stashed changes
 \[
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (0,-.9) {\tiny{$n$}};
-%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 \,\,\mapsto
 \begin{tikzpicture}[baseline=-.1cm]
@@ -5558,7 +4858,6 @@ The map $\Phi:\cP_{\bullet} \to \cQ_{\bullet}$, obtained by adding two strings i
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (0,-.9) {\tiny{$n$}};
-%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 \,\,\mapsto
 \begin{tikzpicture}[baseline=-.1cm]
@@ -5713,7 +5012,7 @@ By Remark \ref{Rem:ShiftTowerEffects}, the categories of projections of $\cP_\bu
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Compressing inclusions of von Neumann algebras} 
+
 \subsection{The compression isomorphism}
 \label{sec:CompressionIso}
 
@@ -5831,8 +5130,6 @@ The inclusion $pA_0p \subset (pA_1p, \tr_1^p) \subset (pA_2p , \tr_2^p, pe_1)$\f
 The definition of $\tr^p_2$ is analogous to \eqref{eq:CompressedTrace1}.
 } is standard.
 \end{enumerate}
-%Suppose $X\subset Y$ is a finite index \nn{finite index needed?} $\rm{II}_1$-subfactor and $p\in X$ is a nonzero projection.
-%The basic construction of $pXp\subset pYp$ is $p\langle Y, e_X\rangle p = \langle pYp, pe_X\rangle$, where $\langle Y, e_X\rangle$ is the basic construction of $X\subset Y$.
 \end{prop}
 \begin{proof}
 \mbox{}
@@ -5882,8 +5179,6 @@ pE_2(e_1)
 [pA_1p:pA_0p]^{-1} 1_{pA_1p}.
 $$
 Finally, \ref{eq:RecognitionSpan} follows immediately from the existence of a Pimsner-Popa basis for $pA_1p$ over $pA_0p$ by part (1).
-%One uses the Pimsner-Popa recognition lemma \cite[Proposition 1.2]{MR965748} (see also \cite[Lemma 2.15]{MR2812459}) for the basic construction to show that $pe_X \in p\langle X, Y\rangle p$ is the Jones projection implementing the conditional expectation $E_X(pyp) = pE_X(y)p$.
-%The only interesting part is proving $pYp$ and $pe_X$ generate $p\langle Y, e_X\rangle p$, which follows easily from the fact that $Ype_X p Y \subset \langle Y, e_X\rangle$ is a 2-sided ideal by the Pimsner-Popa pull down lemma \cite[Lemma 1.2]{MR860811}, and is thus equal to $\langle Y, e_X\rangle$.
 \end{proof}
 
 By iterating Lemma \ref{lem:BasicConstructionRecognition} and Proposition \ref{prop:CompressingStronglyMarkovInclusion}, we immediately obtain the following.
@@ -5981,8 +5276,6 @@ $$
 \sum_{c} c e_1 c^*
 =
 \sum_{a} ape_1 a^* + \sum_{b} (1-p)be_1 b^*(1-p) 
-%=
-%\sum_{a} ape_1a^* + (1-p)\left(\sum_{b} be_1 b^*\right)(1-p) 
 =
 p+(1-p)
 = 
@@ -6023,18 +5316,9 @@ The tangle
  \end{tikzpicture}\]
 gives a map $\cQ_\bullet\to \cM_\bullet$, which is injective since $\cM_\bullet$ is non-zero and connected. 
 Let $M_\bullet$ be the Markov tower obtained from $\cM_\bullet$ from Example \ref{example:MarkovTowerFromPlanarModule}.
-% Is this enough?
 Choose $r\geq 0$ such that the inclusion $M_{2r}\subseteq (M_{2r+1},\tr_{2r+1})\subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
 Then setting $(A_n, \tr_n):=(M_{2r+n},\tr_{2r+n})$ for $n\geq 0$ as described in \S\ref{ssec:shift}, $A_0\subseteq (A_1, \tr_1)$ is a strongly Markov inclusion, and the tower $(A_n,\tr_{2r+n})$ is a strongly Markov tower. 
 Let $\cP_\bullet$ be the canonical relative commutant planar $\dag$-algebra of the inclusion $A_0\subseteq (A_1, \tr_1)$ described in \S\ref{sec:StronglyMarkovPA}.
-%By \cite[Thm.~3.28]{MR2812459}, % it may be possible to shorten this reference, to the summary earlier in the paper. 
-%the relative commutants of this tower are isomorphic to the box spaces of the canonical shaded $*$-planar algebra $\cP_\bullet$ of the Bratteli diagram of $B_0\subseteq B_1$. 
-%Explicitly, 
-%$$
-% \cP_{n,+} =  B'_{0}\cap B_{n}
-% \qquad\qquad
-% \cP_{n,-}  = B'_{1}\cap B_{n+1}.
-%$$
 Therefore, the tangle 
  \[\begin{tikzpicture}[baseline]
   \halfcircle{}{(0,0)}{.5}{1}{}
@@ -6085,7 +5369,6 @@ Here, the unshaded-shaded strand is a generator of the category of projections $
  \draw (-.1,-.7) -- (-.1,.7);
  \draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
  \draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
-% \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (-.1,-.9) {\tiny{$n-1$}};
 \end{tikzpicture}
   \right)\,
@@ -6098,7 +5381,6 @@ Here, the unshaded-shaded strand is a generator of the category of projections $
  \draw (-.1,-.7) -- (-.1,.7);
  \draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
  \draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
-% \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (-.1,-.9) {\tiny{$n-1$}};
  \node at (-.55,.9) {\tiny{$2r$}};
 \end{tikzpicture}
@@ -6111,7 +5393,6 @@ Here, the unshaded-shaded strand is a generator of the category of projections $
  \draw (-.1,-.7) -- (-.1,.7);
  \draw (.5,-.7) -- (.5,-.4) arc (180:0:.15cm) -- (.8,-.7);
  \draw (.5,.7) -- (.5,.4) arc (-180:0:.15cm) -- (.8,.7);
-% \node at (-.1,-1) {\scriptsize{$n-1$}};
  \node at (.55,0) {\tiny{$2r+n-1$}};
 \end{tikzpicture}
 =e_n
@@ -6192,7 +5473,7 @@ $
 \end{tikzpicture}
 =i_n(\Phi(x))
 $
-\item (Left Capping) In \S\ref{sec:StronglyMarkovPA}, % maybe cite definition. % maybe expand the explanation of the definitio, to make the claim about $\gamma_n$ clear
+\item (Left Capping) In \S\ref{sec:StronglyMarkovPA},
 we discussed that the left-capping tangle in the canonical planar $\ast$-algebra is given for $n\geq 1$ by 
 \[
 E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(x) = \frac{1}{d^2}\sum_{b}bxb^\ast
@@ -6203,8 +5484,6 @@ $$
     d^2E^{A_0'\cap A_{n}}_{A_1'\cap A_{n}}(\Phi(x))
     =
 \sum_{b}
-% Previously, the text on the top and bottom of the diagrams had different offsets because of the character height. 
-% Someone may want to change this back later, or better yet, use anchors on the node right (maybe).
 \begin{tikzpicture}[baseline=-.1cm, scale=.8]
  \fill[ctwoshading] (-1,-1.7) -- (-1,1.7) -- (-.6,1.7) -- (-.6,-1.7) -- (-1,-1.7);
  \fill[shaded] (0,1.7) -- (0,0.5) -- (0.3,0.5) -- (0.3,-0.5) -- (0,-0.5) -- (0,-1.7) -- (0.6,-1.7) -- (0.6,1.7) -- (0,1.7);
@@ -6251,22 +5530,6 @@ $$
  \node at (-0.3,2) {\tiny{$2r+1$}};
  \node at (0.2,0) {\tiny{$1$}};
 \end{tikzpicture} 
-% % Having this picture is kind of nice, but this line is really wide and two lines isn't justified imo.
-%    \,
-% \begin{tikzpicture}[baseline]
-%  \fill[ctwoshading] (-1,-2.1) -- (-1,2.1) -- (-.6,2.1) -- (-.6,-2.1) -- (-1,-2.1);
-%  \fill[shaded] (-0.3,2.1) -- (.6,2.1) -- (.6,-2.1) -- (-0.3,-2.1) -- (-0.3,2.1);
-%  \fill[unshaded] (0,0.7) arc(180:0:.15cm) -- (0.3,-0.7)arc(0:-180:0.15cm) -- (0,0.7); 
-%  \draw[thick,red] (-0.6,-2.1) -- (-0.6,2.1);
-%  \draw (0,0.7) arc(180:0:.15cm) -- (0.3,.15);
-%  \draw (0,-0.7) arc(-180:0:.15cm) -- (0.3,-.15);
-%  \draw (0,0.7) -- (0,-0.7);
-%  \draw (-0.3,-2.1) -- (-0.3,2.1);
-%  \draw (0.6,-2.1) -- (0.6,2.1);
-%  \roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$x$}
-%  \node at (0.6,-2.3) {\tiny{$n-1$}};
-%  \node at (-0.3,2.2) {\tiny{$2r+1$}};
-% \end{tikzpicture}
 =d^2\Phi\left(E^{\cQ_{n,+}}_{\cQ_{n-1,-}}(x)\right).
 $$
 
@@ -6315,7 +5578,7 @@ we know that $\cP_\bullet$ is a planar $\dag$-algebra isomorphic to $\cG_\bullet
 Thus, we have an embedding of $\cQ_\bullet$ into $\cG_\bullet$.
 
 \begin{cor}[The Embedding Theorem]
- \label{cor:EmbeddingTheorem} % remember to switch the label when changing type of thm later
+ \label{cor:EmbeddingTheorem}
  A finite depth subfactor planar algebra $\cQ_\bullet$ can be embedded into the bipartite graph planar algebra of the fusion graph of a connected right planar $\cQ_\bullet$-module.
 \end{cor}
 
