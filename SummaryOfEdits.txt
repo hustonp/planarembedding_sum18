@@ -33,15 +33,20 @@ need to add the inner disk 1, since the definition of Mv implies that the left w
 (12) p.12, l.12 : what is C(r, s) ?
 (13) p.12, l.40 : can ”be” obtained
 (14) p.13, l.44 : is there any difference between pn and En ?
+-Yes, e_n \in M_{n+1}, but p_n is the abstract Jones projection from the basic construction of M_{n-1}\subset M_n. 
+TODO: explicitly state what p_n is.
+
 (15) p.14, l.25 : why do you claim that y commute with ae1 ? (which is of course true assuming the claim you are proving). Another way to prove this claim is simply to use that aen−1enen−1b ⊂ Xn+1 = MnenMn, which directly implies y(aen−1enen−1b) = 0 by the fact Mn+1 = Yn+1 􏰀 MnenMn as direct sum of von Neumann algebras.
 (16) p.14, l.53 : you did not mention how to unravel the graph. Maybe you could add a reference to explain it (or simply state the reflection formula, which is not so long to write down).
-(17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C∗- category
-(18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and theoneofP ?
+(17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*- category
+(18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and the one of P?
+-Not that comes to mind.
+
 (19) p.15, l.50 : introduce the Pimsner-Popa basis before or at least refer to Definition 3.13 
 (20) p.16, l.7 : avoid introducing the operator J since there is no use of it later. There are already a lot of definitions.
-(21) p.16, l.15 : T r(􏰁 bb∗)
+(21) p.16, l.15 : Tr(\sum bb^*)
 (22) p.16, l.38 : add that the graph is connected
-(23) p.17, Remark 3.9 : This remark is true but a bit misleading. In general there is a general grading on the principal graph (using your notations, the degree of a vertex v being the component Yk in which it appeared), and this grading changes after truncation. In particular if the original principal graph was pointed, this is not the case anymore after truncation. It may be a good idea to mention it.
+(23) p.17, Remark 3.19 : This remark is true but a bit misleading. In general there is a general grading on the principal graph (using your notations, the degree of a vertex v being the component Yk in which it appeared), and this grading changes after truncation. In particular if the original principal graph was pointed, this is not the case anymore after truncation. It may be a good idea to mention it.
 (24) p.17, l.32 : 1Mn → 1pMnp
 (25) p.18, l.31 : how do you apply M4 ? I couldn’t find a way to apply it due to the order of the multiplication enk . . . e(n+1)k−1. Or maybe you only mean ⊂ instead of = at the beginning of l.31 ?
 On line 36, once again I don’t get how you get an equality. Before applying f(n−1)k+1+(k−1), (n−1)k+1
@@ -55,6 +60,9 @@ you have to apply the above diagram on M(n+1)k−1, which is not necessarily sur
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn di+j into d−j , or am I wrong ?
 (34) p.28, l.17 : ”One now shows these two processes are mutually inverse up to dagger equivalence.” It looks like there is something missing after this sentence.
+-Showing these are mutually inverse is left to the reader.
+TODO: make more explicit.
+
 (35) p.30, l.50 : I don’t think that the map is surjective. Maybe you mean an isomorphism on the shifted planar algebra ? (I think this is what you meant, given the following theorem).
 (36) p.31, l.55 : how do you show that d−1 􏰁b∈B bΦ(x)b∗ corresponds to the right picture ?
 (37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u ∈ N′p and p ≤ q as projections in N and q ∈ N∩N′, you can directly write u = qvqp with v ∈ N′ (you don’t need to assume u unitary and use isometries), and your u0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u0mnpξ” to conclude that qvq ∈ qMq.
