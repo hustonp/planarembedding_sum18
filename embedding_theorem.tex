@@ -795,7 +795,7 @@ We thus get the following corollary, which should be compared with the non-pivot
 \label{cor:TLJPivotalModuleClassification}
 Equivalence classes of pivotal $\cT\cL\cJ(d)$-module $\Cstar$ categories with simple basepoint
 are in bijection with 
-pointed connected bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
+pointed connected locally finite bipartite graphs $(\Gamma, v)$ with a quantum dimension function.
 \end{coralpha}
 
 %We call the tower of algebras with Jones projections $(M_n,\tr_n, e_{n+1})_{n\in \bbN}$ a \emph{Markov tower}, as it satisfies the following properties:
@@ -895,7 +895,7 @@ There is also a checkerboard shading, and a distinguished interval marked $\star
 If the $\star$ for the $i$-th disk is on an interval which meets an unshaded region, that disk has \emph{type} $(k_i, +)$, and if it meets a shaded region, the disk has type $(k_i,-)$.
 A tangle with $r$ input disks has \emph{type}
  $((k_0,\pm_0);(k_1,\pm_1),\dots, (k_r, \pm_r))$ if the output disk has type $(k_0, \pm_0)$ and the $i$-th input disk has type $(k_i, \pm_i)$.
-There is a natural definition of the composite tangle $T \circ_i S$ when the output disk of a tangle $T$ has the same type as the $i$-th input disk of a tangle $T$.
+There is a natural definition of the composite tangle $T \circ_i S$ when the output disk of a tangle $S$ has the same type as the $i$-th input disk of a tangle $T$.
 We give a representative example below, and we refer the reader to \cite{MR2679382,MR2972458} for a more precise definition.
 $$
 \begin{tikzpicture}[baseline = -.1cm]
@@ -1274,7 +1274,9 @@ We will see that, under the correspondence of Theorem \ref{thm:ModuleEquivalence
 
 \begin{ex}
 Suppose $\cG_\bullet =\cG\cP\cA(\Gamma)_\bullet$ is the graph planar algebra of the bipartite graph $\Gamma$.
-Then for any $+$/even vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{k}:= p_v \cG_{k,\pm}$ and action of the planar module operad by
+Then for any $+$/even vertex $v$ of $\Gamma$, we get a cyclic right planar module $\cM_\bullet = \cM(\Gamma,v)_\bullet$ by defining $\cM(\Gamma, v)_{k}:= p_v \cG_{k,\pm}$ 
+where $p_v\in \cG_{0,+}$ is the projection corresponding to the vertex $v$
+and action of the planar module operad by
 $$
 Z_{\cM_\bullet}(\cT)
 \left(
@@ -1414,16 +1416,16 @@ We first define a standard form for tangles of the shaded planar module operad, 
 
 Given a shaded planar module tangle $T$ with type 
 $(k_0;k_1,\dots, k_r; (\ell_1,\pm_1),\dots, (\ell_s, \pm_s))$ 
-together with appropriate inputs $(f_1,\dots, f_r, x_1,\dots, x_s)$ with $m_i \in \cM_{k_i}$ and $x_j \in \cP_{\ell_j, \pm_j}$,
+together with appropriate inputs $(m_1,\dots, m_r, x_1,\dots, x_s)$ with $m_i \in \cM_{k_i}$ and $x_j \in \cP_{\ell_j, \pm_j}$,
 we begin with the identity morphism of $m \vartriangleleft X^{\text{alt}k_0}$ in $\cM_{k_0}$,
 and we move an imaginary horizontal line upwards along the tangle.
 Each time the horizontal line passes a disk, semidisk, or local extrema (which can happen only one at a time!), we compose with a morphism from $\cM$.
 In more detail, when the horizontal line passes:
 \begin{itemize}
 \item
-the $i$-th input semidisk with vertical stands to the right, we compose with $f_j \vartriangleleft \id$, where $\id$ is the appropriate identity morphism corresponding to the strands to the right of the input semidisk
+the $i$-th input semidisk with vertical strands to the right, we compose with $m_i \vartriangleleft \id$, where $\id$ is the appropriate identity morphism corresponding to the strands to the right of the input semidisk
 \item
-the $j$-th input disk with vertical strands to the left and right, we compose with $\id_{m}\vartriangleleft \id_l \otimes x \otimes \id_r$ where $\id_l, \id_r$ correspond to the  appropriate identity morphisms corresponding to the strands to the left and right of the input disk
+the $j$-th input disk with vertical strands to the left and right, we compose with $\id_{m}\vartriangleleft \id_l \otimes x_j \otimes \id_r$ where $\id_l, \id_r$ correspond to the  appropriate identity morphisms corresponding to the strands to the left and right of the input disk
 \item
 a local extrema with vertical strands to the left and right, we compose with $\id_{m}\vartriangleleft \id_l \otimes v \otimes \id_r$ where $v$ stands for the following (co)evaluation or its dagger depending on the shading:
 $$
@@ -1569,7 +1571,7 @@ p \vartriangleleft r
  \halfcircle{}{(0,0)}{.6}{1.3}{}
 %
  \halfcircle{unshaded}{(0,0)}{.25}{.25}{$p$}
- \ncircle{unshaded}{(1.2,0)}{.25}{180}{$q$}
+ \ncircle{unshaded}{(1.2,0)}{.25}{180}{$r$}
  \node at (.7,.4) {\scriptsize{$2j+1$}};
  \node at (.7,-.4) {\scriptsize{$2j+1$}};
  \node at (1.4,.4) {\scriptsize{$n$}};

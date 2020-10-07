@@ -5,15 +5,31 @@ We would like to thank the referee for their helpful comments and their careful 
 (1) Introduction : you are using a lot of terms from category theory. If it is not possible to avoid them, at least provide a good reference to get the relevant definitions.
 (2) p.4, l.40 : The tower of algebra TLJ d is never properly defined in the manuscript. Please introduce it, since it plays a central role in the paper.
 (3) p.4, l.41 : add that the graph is locally finite.
+-done
+
 (4) p.5, l.55 : mention that the strings don’t intersect the input disk.
 (5) p.6, l.5 : tangle T → tangle S.
+-done
+
 (6) p.10, l.4 : what is pv ? The projection on loops based at v ?
+-p_v is the projection in G_{0,+} corresponding to v. It acts on G_{k,+} by projecting to loops based at v.
+
 (7) p.10, example 2.10 : There is nothing wrong with the definition, but I wonder why you
 need to add the inner disk 1, since the definition of Mv implies that the left white region is already colored v (in the original spin picture of the paper of Jones, I guess this is the one you are using here). What is the map Φ ?
+-p_v is the first argument of Z_G(\tilde T), which corresponds to the 0-box labelled 1 in \tilde T. The original definition of Jones does not allow for all vertex labels in regions; rather the planar algebra is only 2-shaded. One gets an action of planar tangles by taking sums over states, in which regions are shaded by vertices. So we must explicitly shade the left-most region by v by adding this 0-box.
+
 (8) p.11, l.5, l.13 : mj → fj
+-f_j \to m_j
+
 (9) p.11, l.12 : stands→ strands and fi instead of fj.
+-done (m_i instead of f_j)
+
 (10) p.11, l.18 : x → xi.
+-x \to x_j
+
 (11) p.12, l.10 : you have to put r instead of q in the right diagram
+-done
+
 (12) p.12, l.12 : what is C(r, s) ?
 (13) p.12, l.40 : can ”be” obtained
 (14) p.13, l.44 : is there any difference between pn and En ?
