@@ -352,7 +352,7 @@ Jones and Penneys have shown that a finite depth subfactor planar $*$-algebra em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Jones' planar algebras \cite{math.QA/9909027} are a powerful method to construct \cite{MR2979509,EH3} and classify \cite{MR3166042,MR3345186,1509.00038} finite index ${\rm II}_1$ subfactors.
+Jones' planar algebras \cite{math.QA/9909027} are a powerful method to construct \cite{MR2979509,1810.06076} and classify \cite{MR3166042,MR3345186,1509.00038} finite index ${\rm II}_1$ subfactors.
 Many exotic examples have been constructed via \emph{graph planar algebra embedding}, i.e., by finding \emph{evaluable} planar subalgebras of graph planar algebras.
 By \cite{MR2812459}, and finite depth subfactor planar algebra embeds in the graph planar algebra of its principal graph.
 This result also extends to infinite depth subfactor planar algebras by \cite{gpa}.
@@ -368,17 +368,17 @@ Haagerup-Izumi quadratic subfactors \cite{MR2679382,MR2822034,MR3314808,MR339462
 \item
 quantum group planar algebras \cite{MR3306607}, and
 \item
-the extended Haagerup fusion categories \cite{MR2979509,EH3}.
+the extended Haagerup fusion categories \cite{MR2979509,1810.06076}.
 \end{itemize}
 While none of the constructions above rely on the embedding theorem from \cite{MR2812459},
 this theorem gives us the motivation to do the hard work of looking for the embedding.
 However, the theorem is necessary for Liu's important classification theorem for composites of $A_3$ and $A_4$ subfactor planar algebras \cite{MR3345186}, which shows that higher quotients do not exist, as the possible generator does not embed in the appropriate graph planar algebra.
 
 As noted in \cite{MR2812459}, it was rather surprising that the dual principal graph made no appearance in the embedding theorem.
-Adding to this mystery, certain examples above could be constructed by embedding into planar algebras of bipartite graphs which are completely different from the principal and dual principal graphs \cite{MR2679382,MR3402358,EH3}.
+Adding to this mystery, certain examples above could be constructed by embedding into planar algebras of bipartite graphs which are completely different from the principal and dual principal graphs \cite{MR2679382,MR3402358,1810.06076}.
 The answer to why this occurs is the following theorem:
 
-\begin{thm}[\cite{EH3}]
+\begin{thm}[\cite{1810.06076}]
 Let $\cP_\bullet$ be a finite depth subfactor planar algebra and $\cC$ its unitary $2\times 2$ multifusion category of projections with generator $X \in \cP_{1,+}$, the unshaded-shaded strand.
 Endow $\cC$ with the canonical spherical structure inherited from $\cP_\bullet$.
 There is a bijective correspondence between:
@@ -390,7 +390,7 @@ indecomposable finitely semisimple pivotal left $\cC$-module $\Cstar$ categories
 \end{itemize}
 \end{thm}
 
-The proof in \cite{EH3} is mostly in the language of tensor categories and their modules.
+The proof in \cite{1810.06076} is mostly in the language of tensor categories and their modules.
 In this article, we provide an independent proof in the original towers of algebras approach to subfactor theory \cite{MR936086,MR999799,MR1278111} and the graph planar algebra embedding theorem \cite{MR2812459}.
 
 Our starting point is the well-known correspondence between:
@@ -408,7 +408,7 @@ Popa's standard $\lambda$-lattices $A_{\bullet,\bullet}$ of commuting squares \c
 In \S\ref{sec:Modules}, we build on this correspondence by defining analogous notions of \emph{right modules} for these algebraic objects.
 We briefly describe these objects here, and we refer the reader to \S\ref{sec:3TypesOfModules} for more details.
 
-A \emph{pivotal} module category for $\cC$ is a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category equipped with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\cM(m\to m)$ which is compatible with the right $\cC$-action \cite{MR3019263,EH3}.
+A \emph{pivotal} module category for $\cC$ is a finitely semisimple $\Cstar$ category $\cM$ which is an indecomposable right $\cC$-module category equipped with a faithful positive trace $\Tr^\cM_m$ on each endomorphism $\Cstar$ algebra $\cM(m\to m)$ which is compatible with the right $\cC$-action \cite{MR3019263,1810.06076}.
 That is, for all $m\in \cM$, $c\in \cC$, and $f\in \End_\cM(m \vartriangleleft c)$, 
 $$
 \Tr^\cM_{m\vartriangleleft c}(f)
@@ -2242,7 +2242,7 @@ The principal graph of $\cP_+$ is finite if and only if the principal graph of $
 A \emph{unitary $2\times 2$ multitensor category} $\cC$ is an indecomposable rigid $\Cstar$ tensor category which is Karoubi complete such that $1_\cC$ has an orthogonal decomposition into simple objects as $1_\cC = 1_0 \oplus 1_1$.
 We write $\cC_{ij} := 1_i \otimes \cC \otimes 1_j$ for $i,j \in \{0,1\}$.
 By \cite{MR1444286}, such a $\cC$ is automatically semisimple.
-When $\cC$ is finitely semisimple, it is called a unitary $2\times 2$ \emph{multifusion} category \cite{egno}.
+When $\cC$ is finitely semisimple, it is called a unitary $2\times 2$ \emph{multifusion} category \cite{MR3242743}.
 
 We say $X\in \cC_{01}$ \emph{generates} $\cC$ if every object of $\cC$ is isomorphic to a direct summand of an alternating tensor power of $X$ and $\overline{X}$
 $$
@@ -2729,16 +2729,16 @@ We have a dagger equivalence $\cM \cong \cN$ if and only if $N_\bullet$ can be o
 
 Starting with the $2\times 2$ unitary multifusion category $\cC$ of projections of a finite depth subfactor planar algebra $\cQ_\bullet$ and an indecomposable right $\cC$-module category $\cM$ with distinguished simple object $m\in \cM$, we build a Markov tower and endow it with the structure of a right planar module for $\cQ_\bullet$.
 
-%By a module over $Q_\bullet$, we mean a $\ast$-module category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
+%By a module over $Q_\bullet$, we mean a $\ast$-modMR1976459ule category over the $\ast$-multitensor category $\cC$. Let $\cM$ be a cyclic left $\cC$-module category with generator $m$. 
 %Since $\cM$ is indecomposable, we can take $m$ to be simple. 
-By \cite{ostrik03}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
+By \cite{MR1976459}, there is an algebra $A$ internal to $\cC$ such that $\cM\cong\FreeMod_\cC(A)$, the category of free right $A$-modules internal to $\cC$, namely the $\cC$-valued internal $\End$ of $m$. 
 Since $m$ is simple, 
 $A$ is in fact a Q-system, % Q-system or $Q$-system?
-as described in \cite[Rmk.~2.7]{ny17}.  
+as described in \cite[Rmk.~2.7]{MR3933035}.  
 Each module in this category is of the form $X\otimes A$ for some $X\in\cC$. 
 Each $X$ in $\cC$ is trivially a bimodule over the tensor unit $1_{0,+}\oplus1_{0,-}$, so each $X\in\Irr(\cC)$ is a module over either $1_{0,+}$ or $1_{0,-}$ on each side. 
 We can therefore view $\cC$ as the $2$-category of bimodules over the algebra objects $1_{0,+}$ and $1_{0,-}$ and $\cM$ as the category of $1_{0,+}-A$ and $1_{0,-}-A$ bimodules. 
-By \cite[Thm.~4.1]{ny17}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
+By \cite[Thm.~4.1]{MR3933035}, we can again obtain a $3\times 3$ unitary multifusion category $\widetilde{\cC}$ from the $2$-category of bimodules over the algebras $1_{0,+}$, $1_{0,-}$, and $A$, into which
 $\cC$ has a monoidal dagger embedding and $\cM$ has a $\cC$-module dagger embedding.
 Taking the full subcategory of objects which are preserved by tensoring by the appropriate components of the tensor unit allows us to recover a $2\times 2$ multifusion subcategory $\cC$ and a cyclic $\cC$-module $\cM$. 
 
@@ -3049,7 +3049,7 @@ Recall that if $A_0\subseteq (A_1,\tr_1)$ is a strongly Markov inclusion of fini
 %\subsection{Planar algebras}
 \label{ssec:canonical}
 
-Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{jones}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
+Planar algebras were originally introduced in \cite{math.QA/9909027}. We will use the same definitions and conventions as \cite{MR2812459}, \cite{MR2679382}, \cite{math.QA/9909027}, and \cite{MR2972458}. The reader is referred to these references for further information on planar algebras. 
 
 There is a canonical planar algebra structure on the towers of relative commutants, called the \textit{canonical planar $\ast$-algebra of a strongly Markov inclusion} corresponding to $A_0\subseteq (A_1,\tr_1)$. One important feature of this construction is that it depends on the existence of a Pimsner-Popa basis for $A_1$ over $A_0$. 
 We refer the reader to \cite{MR2812459} for more details on this construction. 
