@@ -8,6 +8,7 @@ We would like to thank the referee for their helpful comments and their careful 
 -done
 
 (4) p.5, l.55 : mention that the strings don’t intersect the input disk.
+-done
 (5) p.6, l.5 : tangle T → tangle S.
 -done
 
