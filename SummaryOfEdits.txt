@@ -32,6 +32,7 @@ need to add the inner disk 1, since the definition of Mv implies that the left w
 -done
 
 (12) p.12, l.12 : what is C(r, s) ?
+-Replaced by C(r→s)
 (13) p.12, l.40 : can ”be” obtained
 (14) p.13, l.44 : is there any difference between pn and En ?
 -Yes, e_n \in M_{n+1}, but p_n is the abstract Jones projection from the basic construction of M_{n-1}\subset M_n. 
