@@ -1860,7 +1860,7 @@ By definition, we have assumed $\Tr_k$ to be tracial and positive on endomorphis
 \label{sec:MarkovTowers}
 
 So far, we have presented two versions of the concept of a module over a subfactor planar algebra. The algebraic data of each shares a common structure: that of a \emph{Markov tower} of finite dimensional tracial von Neumann algebras. Studying elementary properties of Markov towers will therefore allow us to state many important results about planar modules in single, common language.  
-The definition of a Markov tower can obtained from the definition of Popa's $\lambda$-\emph{sequences of commuting squares} from \cite{MR1334479} by forgetting one of the towers, 
+The definition of a Markov tower can be obtained from the definition of Popa's $\lambda$-\emph{sequences of commuting squares} from \cite{MR1334479} by forgetting one of the towers,
 analogous to the way one defines a module for an algebraic object by replacing one argument of the algebraic operation with an element from the module. In short, Markov towers are the towers-of-algebras analog of a module category. 
 In \S\ref{sec:TLJmodules} below, we will see that Markov towers are exactly a $\lambda$-lattice approach to pivotal Temperley-Lieb-Jones module categories; this motivates the view of subfactor planar modules as simply Markov towers with an additional structure. 
 
@@ -2305,7 +2305,7 @@ Then $pMp_\bullet:= (pM_np, \tr_n^p, pe_{n+1})_{n\geq0}$ is a Markov tower, wher
 \begin{proof}
 First, it is easy to see that the projections $(pe_n)_{n\geq 1}$ satisfy the Temperley-Lieb-Jones relations \ref{eq:MarkovJonesProjections}, since $[e_n,p]=0$ for all $n\geq 0$.
 That $pe_n$ implements the trace-preserving conditional expectation $pM_np \to pM_{n-1}p$ as in \ref{eq:MarkovImplement} was shown above in \eqref{eq:CompressionImplementsConditionalExpectation}.
-Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{M_n}$, so \ref{eq:MarkovIndex} holds.
+Using \eqref{eq:CompressedConditionalExpectation}, this immediately implies that $E_{n+1}^p(pe_n) = pE_{n+1}(e_n) = d^{-2}p = d^{-2} 1_{pM_np}$, so \ref{eq:MarkovIndex} holds.
 Finally, for all $n\geq 1$, $pM_{n+1}p (pe_n) = pM_{n+1}e_np = pM_ne_np = pM_npe_n$, so we have \ref{eq:MarkovPullDown}.
 \end{proof}
 
@@ -3247,7 +3247,7 @@ $\dag$ is a dagger structure on $\cM_0$,
 for every $f\in \cM_0([n]\to [n+2j])$, there is a $g\in \cM_0([n] \to [n])$ and an $h\in \cM_0([n+2j]\to [n+2j])$ such that 
 $f^\dag \circ f = g^\dag \circ g$ and $f\circ f^\dag = h^\dag \circ h$, and
 \item
-there are (pullback) norms on the (finite dimensional) $\Hom$-spaces $\cM_0([n]\to [n+2i])$ and $\cM_0([n+2j] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f^2\|$.\footnote{
+there are (pullback) norms on the (finite dimensional) $\Hom$-spaces $\cM_0([n]\to [n+2i])$ and $\cM_0([n+2j] \to [n])$ which are sub-multiplicative with respect to composition and which satisfy the $\Cstar$ axiom $\|f^\dag \circ f \| = \|f\|^2$.\footnote{
 Notice that in a $\Cstar$ category, these norms can be recovered from spectral radii together with the positivity and $\Cstar$ axioms.
 Thus these norms are \emph{not} part of the data of the $\Cstar$ category.
 }
