@@ -61,6 +61,7 @@ you have to apply the above diagram on M(n+1)k−1, which is not necessarily sur
 -Done
 (29) p.22, l.44 : in this equality you are using the diagrammatic formulation of the conditional expectation. It may be a good idea to mention the diagrammatic picture in the definition of a planar algebra or a Markov tower.
 (30) p.24, l.51 : j ≥ k
+-Fixed the mistake.
 (31) p.25 , L.20 : there is a k missing on top of a string.
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn di+j into d−j , or am I wrong ?
