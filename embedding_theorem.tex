@@ -1128,7 +1128,7 @@ We now define the various notions of module for
 a unitary $2\times 2$ multitensor category $\cC$ with its canonical unitary spherical structure and a generator $X\in \cC_{01}$,
 and
 \item
-a subfactor planar algebra $\cQ_\bullet$.
+a subfactor planar algebra $\cP_\bullet$.
 \end{itemize}
 
 \begin{defn}
@@ -1509,6 +1509,7 @@ Here is an explicit example of a tangle in standard form, together with the corr
 \end{defn}
 
 \begin{defn}
+%Let $\cP_\bullet$ be a subfactor planar algebra and $\cC$ the corresponding $2\times 2$ unitary multitensor category of projections under the equivalence from Theorem \ref{thm:SubfactorTensorCategoryEquivalence}.
 Given a connected right planar $\cP_\bullet$-module $\cM_\bullet$, we let $\cM$ be its \emph{category of projections}.
 The objects of $\cM$ are the orthogonal projections in $\cM_k$ for $k\geq 0$.
 The $\Hom$-space $\cM(p \to q)$ for $p\in \cM_j$ and $q\in \cM_k$ is only nonzero if $j \equiv k \mod 2$; in this case, we define
@@ -2135,7 +2136,7 @@ Suppose $\cP_\bullet$ is a finite depth subfactor planar algebra and $\cM_\bulle
 Then the associated Markov tower $M_\bullet$ has finite depth, with $\operatorname{depth}(M_\bullet) \leq \operatorname{depth}(\cP_\bullet)$.
 \end{lem}
 \begin{proof}
-Let $r$ be minimal such that $\cP_{r+1,+} = \cP_{r,+} e_{r,+}\cP_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $\cP_{r+1,+}$ over $\cP_{r,+}$ so that $\sum_b b e_{r,+} b^* = 1_{\cP_{r+1,+}}$.
+Let $r$ be minimal such that $\cP_{r+1,+} = \cP_{r,+} e_{r,+}\cP_{r,+}$, and let $\{b\}$ be a Pimsner-Popa basis for $\cP_{r+1,+}$ over $\cP_{r,+}$ (see Definition \ref{def:StronglyMarkovInclusion}) so that $\sum_b b e_{r,+} b^* = 1_{\cP_{r+1,+}}$.
 Since 
  \[1_{M_{r+1}}=
  \begin{tikzpicture}[baseline]
@@ -2201,11 +2202,13 @@ The last claim follows immediately.
 \label{def:StronglyMarkovInclusion}
 Recall from \cite{MR1278111} that an inclusion of finite von Neumann algebras $A_0\subset A_1$ with a faithful normal tracial state $\tr_1$ on $A_1$ is called a \emph{Markov inclusion} 
 if
-the canonical faithful normal semifinite trace on the Jones basic construction $A_2 = JA_0'J = \langle A_1, e_1\rangle \subset B(L^2(A_1, \tr_1))$ given by the extension of $xe_1y \mapsto \tr_1(xy)$ is finite and $\Tr_2(1)^{-1}\Tr_2|_{A_1}=\tr_1$.
+the canonical faithful normal semifinite trace on the Jones basic construction $A_2 %= JA_0'J 
+= \langle A_1, e_1\rangle \subset B(L^2(A_1, \tr_1))$ given by the extension of $xe_1y \mapsto \tr_1(xy)$ is finite and $\Tr_2(1)^{-1}\Tr_2|_{A_1}=\tr_1$.
 
 Following \cite{MR2812459}, we call such an inclusion \emph{strongly Markov} if moreover there is a \emph{Pimsner-Popa basis} for $A_1$ over $A_0$, which is a finite subset $\{b\}\subset A_1$ such that $1_{A_2} = \sum_b b e_1b^*$.
 This is equivalent to $x = \sum_b b E_{A_0}(b^*x)$ for all $x\in A_1$, and also to $A_2 = A_1e_1A_1$ by \cite[Prop.~3(b)]{MR561983}
 (see also \cite{MR996807}).
+In this case, setting $\tr_2:=\Tr_2(1)^{-1}\Tr_2$ on $A_2$, the unique trace-preserving conditional expectation $E^{A_2}_{A_1}:A_2\to A_1$ is given by the extension of $xe_1y \mapsto \Tr_2(1)^{-1}xy$.
 
 Given a strongly Markov inclusion $A_0\subset (A_1, \tr_1)$, 
 its \emph{Watatani index} \cite{MR996807} is the scalar $[A_1:A_0]:=\Tr_2(1) = \sum_b bb^* $.
@@ -2228,7 +2231,7 @@ Similarly, $(A_1'\cap A_{n+1} , \tr_{n+1}|_{A_1'\cap A_{n+1}} , e_{n+2})_{n\geq 
 We now classify all connected Markov towers in terms of pointed bipartite graphs and quantum dimension functions.
 
 \begin{ex}
-Suppose $(\Gamma, v)$ is a locally finite pointed bipartite graph with countably many vertices, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
+Suppose $(\Gamma, v)$ is a locally finite pointed connected bipartite graph with countably many vertices, and $\dim : V(\Gamma) \to \bbR_{>0}$ is a quantum dimension function satisfying \eqref{eq:QuantumDimension}.
 We construct a connected Markov tower $M_\bullet$ by defining $M_0 = \bbC$, and inductively constructing each $M_k$ as dictated by the principal graph $\Gamma$ starting at $v$ in the usual way \cite{MR999799,MR1473221}.
 We define the trace vector for $M_k$ by normalizing the vector obtained from $\dim$ applied to the minimal projections appearing at level $k$.
 
@@ -2273,7 +2276,8 @@ For any $k\geq 1$, $M_{\bullet+k}:=(M_{n+k}, \tr_{n+k}, e_{n+k+1})_{n\geq 0}$ is
 
 \begin{remark}
  \label{Rem:ShiftTowerEffects}
-Notice that shifting a Markov tower simply truncates the Bratteli diagram, and by Fact \ref{Fact:BratteliPrincipal}, the principal graph is unchanged.
+Notice that shifting a Markov tower simply truncates the Bratteli diagram.
+By Fact \ref{Fact:BratteliPrincipal}, the underlying (unpointed) graph of the principal graph remains unchanged.
 \end{remark}
 
 %Similar to the discussion in \S\ref{sec:CompressionIso}, 
@@ -2769,7 +2773,7 @@ d^{-i}\,
 \end{enumerate}
 \end{itemize}
 Showing that composition is associative directly from the definitions above is a highly non-trivial exercise using the axioms \ref{eq:MarkovJonesProjections} -- \ref{eq:MarkovPullDown} of a Markov tower.
-A better way to prove associativity is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite{MR808930} 
+A better way to prove associativity is to prove that each $4\times 4$ (possibly non-associative) \emph{linking algebra} \cite[Proof of Prop.~1.14]{MR808930}\footnote{The important linking algebra construction appears implicitly in \cite[Proof of Prop.~1.14]{MR808930}.}
 $$
 \cL:=
 \resizebox{.95\hsize}{!}{$
