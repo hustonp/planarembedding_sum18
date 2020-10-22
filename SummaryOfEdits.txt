@@ -74,6 +74,7 @@ TODO: make more explicit.
 (37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u ∈ N′p and p ≤ q as projections in N and q ∈ N∩N′, you can directly write u = qvqp with v ∈ N′ (you don’t need to assume u unitary and use isometries), and your u0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u0mnpξ” to conclude that qvq ∈ qMq.
 Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
 (38) p.32, l.43 : delete ”we have”
+-Done
 (39) p.33 l.15 : A0 = pA0p is actually equivalent to the central support of p being 1A0
 (40) p.37, l.55 (1): why is it clear that we can find k large enough such that the projection
 has central support 1 ?
