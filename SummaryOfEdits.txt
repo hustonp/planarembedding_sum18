@@ -65,6 +65,7 @@ you have to apply the above diagram on M(n+1)k−1, which is not necessarily sur
 (31) p.25 , L.20 : there is a k missing on top of a string.
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn di+j into d−j , or am I wrong ?
+-Fixed
 (34) p.28, l.17 : ”One now shows these two processes are mutually inverse up to dagger equivalence.” It looks like there is something missing after this sentence.
 -Showing these are mutually inverse is left to the reader.
 TODO: make more explicit.
