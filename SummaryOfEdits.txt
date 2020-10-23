@@ -82,6 +82,7 @@ you have to apply the above diagram on M(n+1)k−1, which is not necessarily sur
 (31) p.25 , L.20 : there is a k missing on top of a string.
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn di+j into d−j , or am I wrong ?
+-Fixed
 (34) p.28, l.17 : ”One now shows these two processes are mutually inverse up to dagger equivalence.” It looks like there is something missing after this sentence.
 -Showing these are mutually inverse is left to the reader.
 TODO: make more explicit.
@@ -91,6 +92,7 @@ TODO: make more explicit.
 (37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u ∈ N′p and p ≤ q as projections in N and q ∈ N∩N′, you can directly write u = qvqp with v ∈ N′ (you don’t need to assume u unitary and use isometries), and your u0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u0mnpξ” to conclude that qvq ∈ qMq.
 Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
 (38) p.32, l.43 : delete ”we have”
+-Done
 (39) p.33 l.15 : A0 = pA0p is actually equivalent to the central support of p being 1A0
 (40) p.37, l.55 (1): why is it clear that we can find k large enough such that the projection
 has central support 1 ?

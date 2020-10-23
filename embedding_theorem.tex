@@ -4495,7 +4495,7 @@ d^{-i}
  \begin{align*}
   (g\vartriangleleft 1_m)\circ (f\vartriangleleft 1_m) 
   &= 
-  d^{i+j}
+  d^i
   E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4563,7 +4563,7 @@ d^{-i}
   \end{tikzpicture}
   \right)
   \\&= 
-  d^{-i}
+  d^{-2j}
   E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \begin{scope}[shift={(0,.4)}]
@@ -4650,7 +4650,7 @@ d^{-i}
   \end{tikzpicture}
   \right)
   \\&= 
-  d^{-i+j}
+  d^{-j}
   E^{n+3i+k+2j}_{n+2i+k+j}\left(
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4722,7 +4722,7 @@ d^{-i}
   \end{tikzpicture}
   \right)
   \\&=
-   d^{-i+j}
+   d^0
   \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4793,7 +4793,7 @@ d^{-i}
   \end{tikzpicture}
   \right)
   \\&= 
-   d^{-2i}
+   d^{-i}
   \iota\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4825,7 +4825,7 @@ d^{-i}
    \draw[thick, rounded corners=5pt] (0,0) rectangle (1.6,.8);
   \end{tikzpicture}
   \\&= 
-  d^{-3i}
+  d^{-2i}
   \iota\left(
   \underbrace{E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot % this time indexing $\iota$ might actually be the right move
   \begin{tikzpicture}[baseline=.3cm]
@@ -4883,7 +4883,7 @@ d^{-i}
   }
   }
   {=}
-  d^{-2i}
+  d^{-i}
   \iota\left(E^{n+2i}_{n+i}\left(E^{n+2i+j}_{n+2i}\left(g\cdot\iota(f)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -4941,7 +4941,7 @@ d^{-i}
    \draw[thick, rounded corners=5pt] (0,-.4) rectangle (1.6,1.2);
   \end{tikzpicture}
   \\&= 
-  d^{-i}
+  d^i
   \iota\left(E^{n+2i+j}_{n+i}\left(g\cdot\iota(f)\cdot
   \begin{tikzpicture}[baseline=.3cm]
    \draw (.2,0) -- (.2,.8);
@@ -5990,7 +5990,7 @@ E^p_1 : pA_1p \to pA_{0}p
 \qquad
 E^p_1(pxp) := E_1(pxp) = pE_1(x)p
 \end{equation}
-Notice that since $[e_1,p] = 0$, we have for all $pxp \in pA_1 p$, we have 
+Notice that since $[e_1,p] = 0$, for all $pxp \in pA_1 p$, we have
 \begin{equation}
 \label{eq:CompressionImplementsConditionalExpectation1}
 e_1p (pxp) e_1p = p e_1xe_1p = pE_1(x)e_1p = E_1^p(pxp)e_1p,
