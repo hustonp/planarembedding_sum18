@@ -80,7 +80,9 @@ TODO: explicitly state what p_n is.
 -Fixed the mistake.
 
 (31) p.25 , L.20 : there is a k missing on top of a string.
+-Fixed
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
+-Good idea.
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn d^{i+j} into d^{−j}, or am I wrong?
 -Fixed
 

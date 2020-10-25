@@ -4206,6 +4206,7 @@ For $f\in \cM([n]\to[m])$ where $m<n$, we define $f\vartriangleleft 1 := (f^\dag
      \node at (.1,1) {\scriptsize{$n$}};
      \draw (.3,.8) arc (-180:0:.2cm);
      \node at (.3,1) {\scriptsize{$k$}};
+     \node at (.7,1) {\scriptsize{$k$}};
      \begin{scope}[shift={(.2,0)}] % interacts with $g$
       \draw (.3,0)  .. controls ++(90:.3cm) and ++(270:.3cm) .. (.9,.8);
       \node at (.9,1) {\scriptsize{$j$}};
@@ -4480,7 +4481,7 @@ d^{-i}
   \end{tikzpicture}
 \right)\\
 &\underset{\ref{compose:upup}}{=}
-(1\vartriangleleft g)\circ(f\vartriangleleft 1).
+(1_{n+2k}\vartriangleleft g)\circ(f\vartriangleleft 1_{k+j}).
  \end{align*}
  \endgroup
  To show that $\vartriangleleft$ is a well-defined bifunctor, it remains to show that for morphisms $f$ and $g$ in $\cM$ and $h$ and $k$ in $\TLJ$, we have $(g\vartriangleleft 1)\circ(f\vartriangleleft 1)=(g\circ f)\vartriangleleft 1$ and $(1\vartriangleleft k)\circ(1\vartriangleleft h)=1\vartriangleleft(k\circ h)$. 
