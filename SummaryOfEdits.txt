@@ -68,6 +68,7 @@ TODO: explicitly state what p_n is.
 -done
 
 (25) p.18, l.31 : how do you apply (M4) ? I couldn’t find a way to apply it due to the order of the multiplication e_{nk}.. e_{(n+1)k−1}. Or maybe you only mean \subset instead of = at the beginning of l.31 ? On line 36, once again I don’t get how you get an equality. Before applying f^{(n−1)k+1+(k−1)}_{(n−1)k+1} you have to apply the above diagram on M_{(n+1)k−1}, which is not necessarily surjective (even if it is a posteriori).
+-Indeed, these two equalities should have been \subseteq, which is sufficient for our purposes. Fixed.
 (26) p.19, l.45 : Mention that you are embedding x in Mn+2i+j, since otherwise the number of strings don’t match.
 (27) p.20, l.43 : I could not find any mention of ”Linking algebra” in [GLR85]. Please precise what you mean by this term, and provide a precise reference inside [GLR85].
 -The linking algebra construction appears implicitly in the proof of Prop 1.14 in GLR. We've included a footnote.

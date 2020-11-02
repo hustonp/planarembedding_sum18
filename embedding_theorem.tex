@@ -2434,7 +2434,7 @@ M_{(n+1)k}
  \node at (1,-.2) {\scriptsize{$k{-}1$}};
  \node at (0,-.2) {\scriptsize{$(n{-}1)k$}};
 \end{tikzpicture}
-\\&=
+\\&\subseteq
 M_{(n+1)k-1} 
 e_{(n+1)k-1}
 \cdot \,
@@ -2531,7 +2531,7 @@ M_{nk+(k-1)}
  \node at (1.75,.2) {\scriptsize{$k$}};
  \node at (.2,-.2) {\scriptsize{$(n{-}1)k$}};
 \end{tikzpicture}
-=
+\subseteq
 M_{nk}\,
 \begin{tikzpicture}[baseline = .9cm]
  \draw[thick, rounded corners = 5pt] (0,0) rectangle (2.2,2);
@@ -2550,7 +2550,7 @@ M_{nk}\,
 =
 M_{nk} g_n.
 $$
-This completes the proof.
+This shows that $M_{(n+1)k}g_n\subseteq M_{nk}g_n$; since $M_{nk}\subseteq M_{(n+1)k}$, we conclude that $M_{(n+1)k}g_n=M_{nk}g_n$.
 \end{proof}
 
 
