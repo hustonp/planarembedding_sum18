@@ -6024,8 +6024,7 @@ In this case, where $(B,\tr_B,p)$ is isomorphic to the basic construction $A_2$ 
 
 We now prove that compression by well-behaved projections of $A_0$ preserves the strong Markov structure.
 Here, `well-behaved' is the condition 
-$A_0 = A_0 p A_0 := \spann\set{apb}{a,b\in A_0}$,
-which implies that the central support of $p$ in $A_0$ is $1$.
+$A_0 = A_0 p A_0 := \spann\set{apb}{a,b\in A_0}$; equivalently, that the central support of $p$ in $A_0$ is $1$.
 
 \begin{prop}
 \label{prop:CompressingStronglyMarkovInclusion}
@@ -6573,6 +6572,7 @@ Again, since $\cM$ is indecomposable, we may fix $k>0$ sufficiently large such t
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
  The projection $p\vartriangleleft \id_{X^{\text{alt}\otimes 2k}}$ has central support 1 in the finite dimensional von Neumann algebra $M_{2(j+k)} = \End_\cM(m \vartriangleleft X^{\text{alt}\otimes 2(j+k)})$, which is equivalent to $M_{2(j+k)} = M_{2(j+k)}p M_{2(j+k)}$ by finite dimensionality.
+  (That $\mathcal{M}$ is indecomposable ensures that every minimal central projection is contained in $p\vartriangleleft\id_{X^{\text{alt}\otimes 2k}}$ for some $k$, and that $1\le X\overline{X}$ ensures that the central support of $p\vartriangleleft\id_{X^{\text{alt}\otimes 2k}}$ increases with $k$.)
 \item
 Setting $r:= 2(j+k)$, the inclusion $M_{2r} \subseteq (M_{2r+1}, \tr_{2r+1}) \subseteq (M_{2r+2}, \tr_{2r+2}, e_{2r+1})$ is standard.
 \item

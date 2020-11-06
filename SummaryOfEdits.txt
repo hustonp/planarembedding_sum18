@@ -99,5 +99,7 @@ Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
 -Done
 
 (39) p.33 l.15 : A0 = pA0p is actually equivalent to the central support of p being 1A0
+-Good point, reworded to make that clear.
 (40) p.37, l.55 (1): why is it clear that we can find k large enough such that the projection
 has central support 1 ?
+-Added a brief explanation of why.
