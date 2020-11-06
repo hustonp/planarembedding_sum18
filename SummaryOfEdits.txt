@@ -72,6 +72,8 @@ TODO: explicitly state what p_n is.
 -Indeed, these two equalities should have been \subseteq, which is sufficient for our purposes. Fixed.
 
 (26) p.19, l.45 : Mention that you are embedding x in M_{n+2i+j}, since otherwise the number of strings don’t match.
+-This is the purpose of writing \in M_{n+2i+j} in the underbrace, since we know M_{n+i}\subset M_{n+2i+j}. We've provided more detail in (C1), and we've left the reader to do the necessary type checking in (C2) and (C3) for themselves.
+
 (27) p.20, l.43 : I could not find any mention of ”Linking algebra” in [GLR85]. Please precise what you mean by this term, and provide a precise reference inside [GLR85].
 -The linking algebra construction appears implicitly in the proof of Prop 1.14 in GLR. We've included a footnote.
 
