@@ -5947,21 +5947,17 @@ The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
 \mbox{}
 \item[\underline{Proof of (1):}]
 The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
-
-Clearly $(N'\cap M)p \subseteq (N'p) \cap pMp$.
-Suppose $u$ is a unitary in $(N'p) \cap pMp$.
+Clearly, $(N'\cap M)p \subseteq (N'p) \cap pMp$.
 Let $K$ be the closure of $NpH$.
 Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
-Define $u_0$ in $B(K)$ by $u_0 (np\xi) := npu\xi$.
-One now verifies that $u_0$ is an isometry and thus is well-defined.
-Look at the operator $u_0q \in N' \cap B(H)$, and note that $u = u_0qp \in N'p$.
-We claim that $u_0q \in M$, so that $u = u_0qp \in (N' \cap M)p$.
+Suppose $x\in(N'p) \cap pMp$.
+Then there is $y\in  N'$ with $x=qyqp$.
+Let $x_0=qyq$.
+We claim that $x_0 \in M$, so that $x = x_0p \in (N' \cap M)p$.
 First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
 we have
-$mu_0np\xi  = mnup\xi = nupm\xi = u_0npm\xi = u_0mnp\xi$.
-Thus $u_0 \in qMq$.
-Since $q \in M$, for all $m \in M'$, we have $u_0qm\xi = u_0mq\xi = mu_0q\xi$.
-Hence $u_0q$ commutes with $M'$ on $H$, and $u_0q \in M$. 
+$mx_0np\xi  = mnx_0p\xi = nx_0pm\xi = x_0npm\xi = x_0mnp\xi$.
+Thus $x_0 \in qMq \subseteq M$, as claimed.
 
 \item[\underline{Proof of (2):}]
 For $x\in N'\cap M$, we have $p(zx) = px$.
