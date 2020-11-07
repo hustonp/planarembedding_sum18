@@ -2620,7 +2620,7 @@ We define composition in three cases. In each, we make use of Temperley-Lieb dia
 \begin{enumerate}[label={\rm(C\arabic*)}]
 \item
 \label{compose:upup}
-If $x\in \cM_0([n] \to [n+2i])$ and $y\in \cM_0([n+2i] \to [n+2i+2j])$, we define 
+If $x\in \cM_0([n] \to [n+2i])=M_{n+i}$ and $y\in \cM_0([n+2i] \to [n+2i+2j])=M_{n+2i+j}$, as $x\in M_{n+i}\subset M_{n+2i+j}$, we define 
 $$
 y\circ x
 :=
@@ -5609,6 +5609,7 @@ The full details can be found in \cite[Prop.~2.47]{MR2812459}.
 Adding $k$ strings to the left of $x$ gives a unital $\ast$-algebra isomorphisms
 $\cP_{n,\pm} \to \cP_{n+k,\pm'}$
 where $\pm' = \pm$ if $k$ is even and $\mp$ if $k$ is odd.
+\todo{what is written here is false; what is commented out is correct.}
 %
 %$A'_0 \cap A_{n}\to A'_{k} \cap A_{n+k}$
 %and
@@ -5659,6 +5660,7 @@ We first prove the result for $\cP_{n,+} = A_0'\cap A_n$.
 The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459} in the equality marked $(!)$. 
 Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
 For $x\in A'_k\cap A_{n+k}$, the element $y\in A_0'\cap A_n$ is uniquely determined by
+\todo{think more about this...}
 \begin{equation*}
 %\begin{tikzpicture}[baseline]
 %\draw (0,-.7) -- (0,.7);
@@ -5671,6 +5673,21 @@ x
 E_{A'_k}^{A_0'}(x)
 =
 d^{-2k} \sum_{b \in B} bxb^{\ast}
+=
+d^{-2k}
+\begin{tikzpicture}[baseline=-.1cm]
+%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+%\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-1.7) -- (0,1.7);
+\draw (.4,-1.7) -- (.4,1.7);
+\roundNbox{unshaded}{(0,1)}{.3}{0}{0}{$b$};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{.4}{$x$};
+\roundNbox{unshaded}{(0,-1)}{.3}{0}{0}{$b^*$};
+\node at (-.2,1.5) {\tiny{$k$}};
+\node at (-.2,.5) {\tiny{$k$}};
+\node at (-.2,-.5) {\tiny{$k$}};
+\node at (-.2,-1.5) {\tiny{$k$}};
+\end{tikzpicture}
 \underset{(!)}{=}
 d^{-k}
 \begin{tikzpicture}[baseline=-.1cm]

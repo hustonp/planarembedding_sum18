@@ -9,6 +9,7 @@ We would like to thank the referee for their helpful comments and their careful 
 
 (4) p.5, l.55 : mention that the strings don’t intersect the input disk.
 -done
+
 (5) p.6, l.5 : tangle T → tangle S.
 -done
 
@@ -45,7 +46,7 @@ TODO: explicitly state what p_n is.
 -y\in M_{n+1} is assumed to be a central projection as in the proof of [GHJ, THm.4.6.3(vi)], so it will commute with ae_{n-1}\in M_n. Thank you for the alternative proof.
 
 (16) p.14, l.53 : you did not mention how to unravel the graph. Maybe you could add a reference to explain it (or simply state the reflection formula, which is not so long to write down).
-(17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*- category
+(17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*-category
 (18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and the one of P?
 -Not that comes to mind.
 
@@ -69,7 +70,10 @@ TODO: explicitly state what p_n is.
 
 (25) p.18, l.31 : how do you apply (M4) ? I couldn’t find a way to apply it due to the order of the multiplication e_{nk}.. e_{(n+1)k−1}. Or maybe you only mean \subset instead of = at the beginning of l.31 ? On line 36, once again I don’t get how you get an equality. Before applying f^{(n−1)k+1+(k−1)}_{(n−1)k+1} you have to apply the above diagram on M_{(n+1)k−1}, which is not necessarily surjective (even if it is a posteriori).
 -Indeed, these two equalities should have been \subseteq, which is sufficient for our purposes. Fixed.
-(26) p.19, l.45 : Mention that you are embedding x in Mn+2i+j, since otherwise the number of strings don’t match.
+
+(26) p.19, l.45 : Mention that you are embedding x in M_{n+2i+j}, since otherwise the number of strings don’t match.
+-This is the purpose of writing \in M_{n+2i+j} in the underbrace, since we know M_{n+i}\subset M_{n+2i+j}. We've provided more detail in (C1), and we've left the reader to do the necessary type checking in (C2) and (C3) for themselves.
+
 (27) p.20, l.43 : I could not find any mention of ”Linking algebra” in [GLR85]. Please precise what you mean by this term, and provide a precise reference inside [GLR85].
 -The linking algebra construction appears implicitly in the proof of Prop 1.14 in GLR. We've included a footnote.
 
@@ -92,7 +96,10 @@ TODO: explicitly state what p_n is.
 TODO: make more explicit.
 
 (35) p.30, l.50 : I don’t think that the map is surjective. Maybe you mean an isomorphism on the shifted planar algebra ? (I think this is what you meant, given the following theorem).
-(36) p.31, l.55 : how do you show that d−1 􏰁b∈B bΦ(x)b∗ corresponds to the right picture ?
+(36) p.31, l.55 : how do you show that d^{−1}\sum_{b\in B} b\Phi(x)b^* corresponds to the right picture?
+-This is the content of Vaughan Jones' trick from [JP, Theorem 4.1] which is marked by (!). As it is clearly marked, we do not feel that reproducing it is necessary here.
+TODO: I'm not convinced the prood here is optimal or correct. Think about this more.
+
 (37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u ∈ N′p and p ≤ q as projections in N and q \in N\cap N', you can directly write u = qvqp with v \in N' (you don't need to assume u unitary and use isometries), and your u_0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u_0mnp\xi” to conclude that qvq \in qMq.
 Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
 -Thank you for this clarifying observation.
@@ -101,6 +108,7 @@ Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
 
 (39) p.33 l.15 : A0 = pA0p is actually equivalent to the central support of p being 1A0
 -Good point, reworded to make that clear.
+
 (40) p.37, l.55 (1): why is it clear that we can find k large enough such that the projection
 has central support 1 ?
 -Added a brief explanation of why.
