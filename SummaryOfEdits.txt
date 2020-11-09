@@ -96,6 +96,8 @@ TODO: explicitly state what p_n is.
 TODO: make more explicit.
 
 (35) p.30, l.50 : I don’t think that the map is surjective. Maybe you mean an isomorphism on the shifted planar algebra ? (I think this is what you meant, given the following theorem).
+-Good catch.
+TODO: Make sure Dave checks this. It made sense to me, but he was worried.
 (36) p.31, l.55 : how do you show that d^{−1}\sum_{b\in B} b\Phi(x)b^* corresponds to the right picture?
 -This is the content of Vaughan Jones' trick from [JP, Theorem 4.1] which is marked by (!). As it is clearly marked, we do not feel that reproducing it is necessary here.
 TODO: I'm not convinced the prood here is optimal or correct. Think about this more.
