@@ -2018,10 +2018,10 @@ A Markov tower is said to have \emph{finite depth} if the principal graph is fin
 
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $M_\bullet$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
-Notice that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ contains the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, along with additional vertices and edges which are part of the principal graph. 
-At the base, all of the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph. 
-We can therefore `unravel' the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $M_\bullet$.
-
+One can `unravel' the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $M_\bullet$, as follows.
+By definition, $M_0=Y_0$ and $M_1=Y_1$, so all of the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph.
+Notice also that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the union of two subgraphs: one is the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, and the other is, by definition, part of the principal graph.
+By induction, the Bratteli diagram for $M_k\subseteq M_{k+1}$ is isomorphic to a full subgraph of the principal graph, with the isomorphism uniquely determined by the reflections.
 \begin{fact}\label{Fact:BratteliPrincipal}
  If a Markov tower $M_\bullet$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $M_\bullet$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
 \end{fact}

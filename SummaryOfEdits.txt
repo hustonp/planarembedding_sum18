@@ -47,6 +47,8 @@ TODO: explicitly state what p_n is.
 -y\in M_{n+1} is assumed to be a central projection as in the proof of [GHJ, THm.4.6.3(vi)], so it will commute with ae_{n-1}\in M_n. Thank you for the alternative proof.
 
 (16) p.14, l.53 : you did not mention how to unravel the graph. Maybe you could add a reference to explain it (or simply state the reflection formula, which is not so long to write down).
+-We have tried to make the forgoing description clearer.
+TODO: consider whether we did it well enough
 (17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*-category
 -We now define it when the concept is first referenced.
 (18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and the one of P?
