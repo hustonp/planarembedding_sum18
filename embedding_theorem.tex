@@ -2047,7 +2047,69 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 We discuss various examples of Markov towers in great detail.
 
 \begin{ex}
-The Temperley-Lieb-Jones algebras of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$.
+ Suppose $\mathcal{P}_\bullet$ is a subfactor planar algebra.
+ Then the box spaces $\mathcal{P}_{n,+}$ form a Markov tower with the same index.
+ The algebra and Markov tower structure are as in \cite{MR2679382}:
+ the algebra composition, inclusion, and trace are given by
+ \[y\circ x=
+  \begin{tikzpicture}[baseline = -.1cm]
+   \draw (0,-1.2) -- (0,1.2);
+   \node at (0,-1.4) {\scriptsize{$n$}};
+   \ncircle{}{(0,0)}{1.2}{180}{}
+   \ncircle{unshaded}{(0,-.5)}{.4}{180}{\scriptsize{$x$}}
+   \ncircle{unshaded}{(0,.5)}{.4}{180}{\scriptsize{$y$}}
+  \end{tikzpicture}\text{,}
+  \qquad\qquad
+  \iota(x)=
+  \begin{tikzpicture}[baseline = -.1cm]
+   \draw (0,-1.2) -- (0,1.2);
+   \node at (0,-1.4) {\scriptsize{$n$}};
+   \draw (.8485,-.8485) -- (.8485,+.8485);
+   \ncircle{}{(0,0)}{1.2}{180}{}
+   \ncircle{unshaded}{(0,0)}{.4}{180}{}
+  \end{tikzpicture}\text{,}
+  \qquad\qquad\text{and }
+  \tr(x)=
+  \begin{tikzpicture}[baseline = -.1cm]
+   \draw (0,-.4) arc (-180:0:.3cm) -- (.6,.4) arc (0:180:.3cm) -- (0,.4);
+   \node at (.3,-.9) {\scriptsize{$n$}};
+   \ncircle{}{(0,0)}{1.2}{180}{}
+   \ncircle{unshaded}{(0,0)}{.4}{180}{}
+  \end{tikzpicture}
+ \]
+ Consequently, the conditional expectation $E:\mathcal{P}_{n+1,+}\to\mathcal{P}_{n,+}$ is given by
+ \[E(x)=
+  \begin{tikzpicture}[baseline = -.1cm]
+   \draw (0,-1.2) -- (0,1.2);
+   \node at (0,-1.4) {\scriptsize{$n-1$}};
+   \draw (.2,-.3) arc (-180:0:.25cm) -- (.7,.3) arc (0:180:.25cm) -- (.2,.3);
+   \ncircle{}{(0,0)}{1.2}{180}{}
+   \ncircle{unshaded}{(0,0)}{.4}{180}{}
+  \end{tikzpicture}
+ \]
+ and the Jones projections are the images of the tangles
+  $\begin{tikzpicture}[baseline = .3cm]
+   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+   \draw (.2,0) -- (.2,.8);
+   \draw (.4,.8) arc (-180:0:.2cm);
+   \draw (.4,0) arc (180:0:.2cm);
+   \node at (.2,-.2) {\scriptsize{$n-1$}};
+   \node at (-.2,.4) {\scriptsize{$\ast$}};
+  \end{tikzpicture}$.
+
+ For essentially the same reasons, the box spaces of a right planar module for a subfactor planar algebra also form a Markov tower.
+\end{ex}
+
+\begin{ex}
+ As a special case of the above, % HERE consider citation
+ the Temperley-Lieb-Jones algebras $TLJ(d)_n$ of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$; when $d=4\cos(\pi/n)^2$, the principal graph is $A_{n-2}$. % HERE check
+ The algebra $TLJ(d)_n$ is the $2n$-th box space of the Temperley-Lieb subfactor planar algebra of \cite{math.QA/9909027} with loop parameter $d$.
+ It is spanned as a complex vectorspace by (unshaded) planar tangles with no input discs, which we depict as tickets cotaining $n$ strings, with $n$ endpoints on the bottom of the ticket and $n$ on the top, using the distinguised interval on the boundary of a tangle as the left side of the ticket.
+ Composition is accomplished by stacking tickets and replacing any closed loops with a factor of $d$. % HERE make sure we haven't mixed up d with d^2 or d^\frac{1}{2} anywhere.
+ As before, inclusion involves adding a string on the right, and conditional expectation involves closing off the rightmost string.
+
+ Since the Jones projections generate each $TLJ(d)_n$ as an algebra, there is a canonical homomorphism $TLJ(d)_\bullet\to M_\bullet$ for any Markov tower $M_\bullet$ of index $d$.
+ % HERE and consider one more sentance about how this carries over to the other two perspectives considered in this paper.
 \end{ex}
 
 

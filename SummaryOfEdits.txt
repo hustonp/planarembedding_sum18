@@ -4,6 +4,7 @@ We would like to thank the referee for their helpful comments and their careful 
 
 (1) Introduction : you are using a lot of terms from category theory. If it is not possible to avoid them, at least provide a good reference to get the relevant definitions.
 (2) p.4, l.40 : The tower of algebra TLJ d is never properly defined in the manuscript. Please introduce it, since it plays a central role in the paper.
+-The Markov tower TLJ is now called out as an important example of a Markov tower obtained from a planar algebra, as Example 3.10.
 (3) p.4, l.41 : add that the graph is locally finite.
 -done
 
@@ -81,6 +82,7 @@ TODO: explicitly state what p_n is.
 -Done
 
 (29) p.22, l.44 : in this equality you are using the diagrammatic formulation of the conditional expectation. It may be a good idea to mention the diagrammatic picture in the definition of a planar algebra or a Markov tower.
+-Here, we are using a diagrammatic formulation of the conditional expectation in the Markov tower TLJ, which is explained in our (newly added) Example 3.9.
 (30) p.24, l.51 : j \geq k
 -Fixed the mistake.
 
