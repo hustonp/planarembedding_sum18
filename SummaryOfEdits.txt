@@ -48,6 +48,7 @@ TODO: explicitly state what p_n is.
 
 (16) p.14, l.53 : you did not mention how to unravel the graph. Maybe you could add a reference to explain it (or simply state the reflection formula, which is not so long to write down).
 (17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*-category
+-We now define it when the concept is first referenced.
 (18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and the one of P?
 -Not that comes to mind.
 
