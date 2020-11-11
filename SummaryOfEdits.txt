@@ -3,6 +3,8 @@ Summary of edits to "The module embedding theorem via towers of algebras"
 We would like to thank the referee for their helpful comments and their careful reading of the manuscript. We have implemented the requested changes, which we summarize below.
 
 (1) Introduction : you are using a lot of terms from category theory. If it is not possible to avoid them, at least provide a good reference to get the relevant definitions.
+-Additional references have been added.
+TODO: Consider NeT for unitary/C* stuff? But Dave probably knows best.
 (2) p.4, l.40 : The tower of algebra TLJ d is never properly defined in the manuscript. Please introduce it, since it plays a central role in the paper.
 -The Markov tower TLJ is now called out as an important example of a Markov tower obtained from a planar algebra, as Example 3.10.
 (3) p.4, l.41 : add that the graph is locally finite.
