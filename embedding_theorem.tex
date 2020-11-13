@@ -589,7 +589,9 @@ indecomposable finitely semisimple pivotal left $\cC$-module $\Cstar$ categories
 \end{itemize}
 \end{thm}
 
-The proof in \cite{1810.06076} is mostly in the language of tensor and module categories, for which a canonical reference is \cite{MR3242743}.
+The proof in \cite{1810.06076} is mostly in the language of tensor and module categories, 
+for which a standard reference is the textbook \cite{MR3242743};
+for the $\rm C^*$ setting, see the textbook \cite{MR3204665}.
 In this article, we provide an independent proof in the original towers of algebras approach to subfactor theory \cite{MR0696688,MR936086,MR999799,MR1278111} and the graph planar algebra embedding theorem \cite{MR2812459}.
 
 Our starting point is the well-known correspondence between:
@@ -1932,7 +1934,7 @@ By convention, we define $Y_0 = M_0$ and $Y_1 = M_1$, so that $X_0 = (0)$ and $X
 
 \item
 \label{EP:BasicContruction}
-The map $ae_n b\mapsto ap_n b$ gives a $*$-isomorphism from $X_{n+1}=M_n e_n M_n$ to $\langle M_n , p_n\rangle=M_np_nM_n$, the Jones basic construction of $M_{n-1} \subseteq M_n$ acting on $L^2(M_n,\tr_n)$.
+The map $ae_n b\mapsto ap_n b$ gives a $*$-isomorphism from $X_{n+1}=M_n e_n M_n$ to $\langle M_n , p_n\rangle=M_np_nM_n$, the Jones basic construction of $M_{n-1} \subseteq M_n$ acting on $L^2(M_n,\tr_n)$, where $p_n$ is the canonical Jones projection.
 
 \item
 \label{EP:OtherMarkovDef}
@@ -2018,10 +2020,11 @@ A Markov tower is said to have \emph{finite depth} if the principal graph is fin
 
 It follows that a Markov tower has finite depth if and only if there is $n\in \bbN$ such that $Y_n = (0)$, as in \ref{EP:FiniteDepth}. 
 Let $M_\bullet$ be a Markov tower with finite depth, and take the minimal integer $n\in \bbN$ such that $Y_n=(0)$. 
-One can `unravel' the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $M_\bullet$, as follows.
+One can `unravel' the Bratteli diagram for $M_{n}\subseteq M_{n+1}$ to obtain the principal graph for the Markov tower $M_\bullet$ as follows.
 By definition, $M_0=Y_0$ and $M_1=Y_1$, so all of the Bratteli diagram for $M_0\subseteq M_1$ is part of the principal graph.
 Notice also that for $k<n$, the Bratteli diagram of $M_k\subseteq M_{k+1}$ is the union of two subgraphs: one is the reflection of the Bratteli diagram of $M_{k-1}\subseteq M_{k}$, and the other is, by definition, part of the principal graph.
-By induction, the Bratteli diagram for $M_k\subseteq M_{k+1}$ is isomorphic to a full subgraph of the principal graph, with the isomorphism uniquely determined by the reflections.
+By induction, the Bratteli diagram for $M_k\subseteq M_{k+1}$ is isomorphic to a full subgraph of the principal graph, with the isomorphism uniquely determined by the previous reflections.
+
 \begin{fact}\label{Fact:BratteliPrincipal}
  If a Markov tower $M_\bullet$ has finite depth and $n\in \bbN$ is such that $Y_n=(0)$, then for $k\geq n$, there is a canonical graph isomorphism between the principal graph of $M_\bullet$ and the Bratteli diagram for $M_{k}\subseteq M_{k+1}$.
 \end{fact}
@@ -2047,69 +2050,73 @@ where we write $w\sim v$ to mean $w$ is connected to $v$, and the above sum is t
 We discuss various examples of Markov towers in great detail.
 
 \begin{ex}
- Suppose $\mathcal{P}_\bullet$ is a subfactor planar algebra.
- Then the box spaces $\mathcal{P}_{n,+}$ form a Markov tower with the same index.
- The algebra and Markov tower structure are as in \cite{MR2679382}:
- the algebra composition, inclusion, and trace are given by
- \[y\circ x=
-  \begin{tikzpicture}[baseline = -.1cm]
-   \draw (0,-1.2) -- (0,1.2);
-   \node at (0,-1.4) {\scriptsize{$n$}};
-   \ncircle{}{(0,0)}{1.2}{180}{}
-   \ncircle{unshaded}{(0,-.5)}{.4}{180}{\scriptsize{$x$}}
-   \ncircle{unshaded}{(0,.5)}{.4}{180}{\scriptsize{$y$}}
-  \end{tikzpicture}\text{,}
-  \qquad\qquad
-  \iota(x)=
-  \begin{tikzpicture}[baseline = -.1cm]
-   \draw (0,-1.2) -- (0,1.2);
-   \node at (0,-1.4) {\scriptsize{$n$}};
-   \draw (.8485,-.8485) -- (.8485,+.8485);
-   \ncircle{}{(0,0)}{1.2}{180}{}
-   \ncircle{unshaded}{(0,0)}{.4}{180}{}
-  \end{tikzpicture}\text{,}
-  \qquad\qquad\text{and }
-  \tr(x)=
-  \begin{tikzpicture}[baseline = -.1cm]
-   \draw (0,-.4) arc (-180:0:.3cm) -- (.6,.4) arc (0:180:.3cm) -- (0,.4);
-   \node at (.3,-.9) {\scriptsize{$n$}};
-   \ncircle{}{(0,0)}{1.2}{180}{}
-   \ncircle{unshaded}{(0,0)}{.4}{180}{}
-  \end{tikzpicture}
- \]
- Consequently, the conditional expectation $E:\mathcal{P}_{n+1,+}\to\mathcal{P}_{n,+}$ is given by
- \[E(x)=
-  \begin{tikzpicture}[baseline = -.1cm]
-   \draw (0,-1.2) -- (0,1.2);
-   \node at (0,-1.4) {\scriptsize{$n-1$}};
-   \draw (.2,-.3) arc (-180:0:.25cm) -- (.7,.3) arc (0:180:.25cm) -- (.2,.3);
-   \ncircle{}{(0,0)}{1.2}{180}{}
-   \ncircle{unshaded}{(0,0)}{.4}{180}{}
-  \end{tikzpicture}
- \]
- and the Jones projections are the images of the tangles
-  $\begin{tikzpicture}[baseline = .3cm]
-   \draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
-   \draw (.2,0) -- (.2,.8);
-   \draw (.4,.8) arc (-180:0:.2cm);
-   \draw (.4,0) arc (180:0:.2cm);
-   \node at (.2,-.2) {\scriptsize{$n-1$}};
-   \node at (-.2,.4) {\scriptsize{$\ast$}};
-  \end{tikzpicture}$.
+Suppose $\mathcal{P}_\bullet$ is a subfactor planar algebra.
+Then the box spaces $\mathcal{P}_{n,+}$ form a Markov tower with the same index.
+The algebra and Markov tower structure are as explained in \cite{MR2679382}:
+the algebra composition, inclusion, and trace are given by
+\[y\circ x=
+\begin{tikzpicture}[baseline = -.1cm]
+\draw (0,-1.2) -- (0,1.2);
+\node at (0,-1.4) {\scriptsize{$n$}};
+\ncircle{}{(0,0)}{1.2}{180}{}
+\ncircle{unshaded}{(0,-.5)}{.4}{180}{\scriptsize{$x$}}
+\ncircle{unshaded}{(0,.5)}{.4}{180}{\scriptsize{$y$}}
+\end{tikzpicture}\text{,}
+\qquad\qquad
+\iota(x)=
+\begin{tikzpicture}[baseline = -.1cm]
+\draw (0,-1.2) -- (0,1.2);
+\node at (0,-1.4) {\scriptsize{$n$}};
+\draw (.8485,-.8485) -- (.8485,+.8485);
+\ncircle{}{(0,0)}{1.2}{180}{}
+\ncircle{unshaded}{(0,0)}{.4}{180}{}
+\end{tikzpicture}\text{,}
+\qquad\qquad\text{and }
+\tr(x)=
+\begin{tikzpicture}[baseline = -.1cm]
+\draw (0,-.4) arc (-180:0:.3cm) -- (.6,.4) arc (0:180:.3cm) -- (0,.4);
+\node at (.3,-.9) {\scriptsize{$n$}};
+\ncircle{}{(0,0)}{1.2}{180}{}
+\ncircle{unshaded}{(0,0)}{.4}{180}{}
+\end{tikzpicture}
+\]
+Consequently, the conditional expectation $E:\mathcal{P}_{n+1,+}\to\mathcal{P}_{n,+}$ is given by
+\[E(x)=
+\begin{tikzpicture}[baseline = -.1cm]
+\draw (0,-1.2) -- (0,1.2);
+\node at (0,-1.4) {\scriptsize{$n{-}1$}};
+\draw (.2,-.3) arc (-180:0:.25cm) -- (.7,.3) arc (0:180:.25cm) -- (.2,.3);
+\ncircle{}{(0,0)}{1.2}{180}{}
+\ncircle{unshaded}{(0,0)}{.4}{180}{}
+\end{tikzpicture}
+\]
+and the Jones projections are the images of the tangles
+$\begin{tikzpicture}[baseline = .3cm]
+\draw[thick, rounded corners = 5pt] (0,0) rectangle (1,.8);
+\draw (.2,0) -- (.2,.8);
+\draw (.4,.8) arc (-180:0:.2cm);
+\draw (.4,0) arc (180:0:.2cm);
+\node at (.2,-.2) {\scriptsize{$n{-}1$}};
+\node at (-.2,.4) {\scriptsize{$\star$}};
+\end{tikzpicture}$.
 
- For essentially the same reasons, the box spaces of a right planar module for a subfactor planar algebra also form a Markov tower.
+For essentially the same reasons, the box spaces of a right planar module for a subfactor planar algebra also form a Markov tower.
 \end{ex}
 
 \begin{ex}
- As a special case of the above, % HERE consider citation
- the Temperley-Lieb-Jones algebras $TLJ(d)_n$ of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph $A_{\infty}$; when $d=4\cos(\pi/n)^2$, the principal graph is $A_{n-2}$. % HERE check
- The algebra $TLJ(d)_n$ is the $2n$-th box space of the Temperley-Lieb subfactor planar algebra of \cite{math.QA/9909027} with loop parameter $d$.
- It is spanned as a complex vectorspace by (unshaded) planar tangles with no input discs, which we depict as tickets cotaining $n$ strings, with $n$ endpoints on the bottom of the ticket and $n$ on the top, using the distinguised interval on the boundary of a tangle as the left side of the ticket.
- Composition is accomplished by stacking tickets and replacing any closed loops with a factor of $d$. % HERE make sure we haven't mixed up d with d^2 or d^\frac{1}{2} anywhere.
- As before, inclusion involves adding a string on the right, and conditional expectation involves closing off the rightmost string.
+As a special case of the above, 
+the Temperley-Lieb-Jones algebras $TLJ(d)_n$ of modulus $d\geq 2$ with the usual Jones projections and Markov traces form a Markov tower with principal graph the $A_{\infty}$ Coxeter-Dynkin diagram.
+When $d=4\cos(\pi/n)^2$ for $n\geq 3$, we replace $TLJ_n(d)$ by its semisimple quotient, which is obtained by moding out by length zero vectors, where length is measured using the $\|\cdot\|_2$-norm from the canonical trace.
+In this case, the principal graph is the $A_{n-2}$ Coxeter-Dynkin diagram. 
 
- Since the Jones projections generate each $TLJ(d)_n$ as an algebra, there is a canonical homomorphism $TLJ(d)_\bullet\to M_\bullet$ for any Markov tower $M_\bullet$ of index $d$.
- % HERE and consider one more sentance about how this carries over to the other two perspectives considered in this paper.
+The algebra $TLJ(d)_n$ is the $(n,+)$ box space of the Temperley-Lieb subfactor planar algebra $TLJ_\bullet$ of \cite{math.QA/9909027} with loop parameter $d$.
+It is spanned as a complex vector space by planar tangles with no input discs, which we depict as coupons containing $n$ strings, with $n$ endpoints on the bottom and $n$ endpoints on the top, with the distinguished interval on left hand side.
+These diagrams have a checkerboard shading, and we require the distinguished interval to meet an unshaded region.
+Composition is vertical stacking and replacing any closed loops with a factor of $d$. 
+As before, inclusion is adding a string on the right, and conditional expectation involves closing off the rightmost string and diving by $d$.
+
+Since the Jones projections generate each $TLJ(d)_n$ as an algebra, 
+given any Markov tower $M_\bullet$ of modulus $d$, there is a canonical Markov tower homomorphism $TLJ(d)_\bullet\to M_\bullet$ which is compatible with inclusions, conditional expectations, and traces.
 \end{ex}
 
 
@@ -2156,7 +2163,8 @@ d^{-1}
 \big)
 \in M_{2k+3}.
 \end{align*}
- The principal graph of $M_\bullet$ is precisely the fusion graph of $\cM$ with respect to $X$: vertices are isomorphism classes of simple objects in $\cM$, and there are $\dim(\cM(YX,Z))$ edges from $Y$ to $Z$ (where $Y$ is unshaded on the right).
+The principal graph of $M_\bullet$ is precisely the \emph{fusion graph} of $\cM$ with respect to $X$: 
+vertices are isomorphism classes of simple objects in $\cM$, and there are $\dim(\cM(Y\vartriangleleft X\to Z))$ edges from $Y$ to $Z$ (where $Y$ is unshaded on the right).
 \end{ex}
 
 \begin{ex}
@@ -2612,7 +2620,8 @@ M_{nk}\,
 =
 M_{nk} g_n.
 $$
-This shows that $M_{(n+1)k}g_n\subseteq M_{nk}g_n$; since $M_{nk}\subseteq M_{(n+1)k}$, we conclude that $M_{(n+1)k}g_n=M_{nk}g_n$.
+This shows that $M_{(n+1)k}g_n\subseteq M_{nk}g_n$. 
+Since it is clear that $M_{nk}\subseteq M_{(n+1)k}$, we conclude that $M_{(n+1)k}g_n=M_{nk}g_n$.
 \end{proof}
 
 
@@ -5189,7 +5198,7 @@ To see that $\Tr^\cM$ satisfies \ref{PivotalModule:compatible}, we must show tha
 We saw in Definitions \ref{def:ModuleFromMarkovTower} and \ref{def:PivotalModuleFromMarkovTower} how a connected Markov tower of modulus $d$ gives us a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category.
 We saw in Example \ref{ex:MarkovTowerFromRightModule} that given a cyclic pivotal right $\cT\cL\cJ(d)$-module $\Cstar$ category $(\cM, m,\Tr^\cM)$, 
 defining $M_n := \End(m \vartriangleleft X^{\text{alt}\otimes n})$ and $\tr_n := \Tr^\cM_{m \vartriangleleft X^{\text{alt}\otimes n}}$ defines a connected Markov tower.
-One now shows these two processes are mutually inverse up to dagger equivalence.
+We leave it as an exercise to the reader to show these two processes are mutually inverse up to dagger equivalence.
 \end{proof}
 
 
@@ -5712,38 +5721,82 @@ $A'_1 \cap A_{n}\to A'_{k+1} \cap A_{n+k+1}$
 \end{cor}
 
 \begin{proof} 
-We first prove the result for $\cP_{n,+} = A_0'\cap A_n$. 
-The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459} in the equality marked $(!)$. 
-Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
-For $x\in A'_k\cap A_{n+k}$, the preimage $y\in A_0'\cap A_n$ is uniquely determined by
-\begin{equation*}
-%\begin{tikzpicture}[baseline]
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-%\node at (0,-.9) {\tiny{$n$}};
+We prove the result for $\cP_{n,+} = A_0'\cap A_n$; the proof for $\cP_{n,-}$ is similar.
+The map adding $k$ strings to the left is clearly an injective $*$-algebra map.
+By the definition of the action of tangles for canonical planar algebra associated to a strongly Markov inclusion \cite[\S2.3]{MR2812459},
+\begin{equation}
+\label{eq:kStringLeftCap}
+d^{-k}
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\node at (-.55,0) {\tiny{$k$}};
+\node at (-.85,0) {\tiny{$k$}};
 %\node at (0,0) {\scriptsize{$x$}};
-%\end{tikzpicture}
+\end{tikzpicture}
+=
+d^{-2(k-j)}
+\sum_{b}
+bxb^*
+\end{equation}
+for some Pimsner-Popa basis $B$ for $A_{k}$ over $A_0$.
+In more detail, 
+$$
+B=\set{c_{k-1} v_{k-1}c_{k-2}v_{k-2}\cdots v_{1} c_1}{c_1,\dots, c_{k-1} \in C}
+$$
+for some/any Pimsner-Popa basis $C$ for $A_1$ over $A_0$ 
+and
+$v_i := e_{i}\cdots e_2e_1$ for all $i$.
+\todo{something like this works... check the indices}
+By Proposition \ref{prop:LeftCapping}, the right hand side of \eqref{eq:kStringLeftCap} above is exactly $E^{A_0'}_{A_k'}(x)$;
+hence the conditional expectation $E^{A_0'}_{A_k'}: A_0'\cap A_{n+k} \to A_k'\cap A_{n+k}$ is given diagrammatically by
+$$
+E^{A_0'}_{A_k'}(x)
+=
+d^{-k}
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\node at (-.55,0) {\tiny{$k$}};
+\node at (-.85,0) {\tiny{$k$}};
+%\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}\,.
+$$
+Thus if $x\in A_k'\cap A_{n+k}$, we have
+%The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459} in the equality marked $(!)$. 
+%Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
+%By the multistep basic construction for strongly Markov inclusions \cite[Prop.~2.20]{MR2812459},
+%the map $A_{n+k} \to A_{n+2k}$ given by $x\mapsto x f^{n+k}_{n}$ is injective.
+%Observe that when $x\in A'_k\cap A_{n+k}$, we have
+%$$
+%x f^{n+k}_{n} 
+%= 
+\begin{equation*}
 x
 =
 E_{A'_k}^{A_0'}(x)
+%d^{-2k} \sum_{b \in B} bxb^{\ast}
+%=
+%d^{-2k}
+%\begin{tikzpicture}[baseline=-.1cm]
+%%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+%%\draw (-.75,-.7) -- (-.75,.7);
+%\draw (0,-1.7) -- (0,1.7);
+%\draw (.4,-1.7) -- (.4,1.7);
+%\roundNbox{unshaded}{(0,1)}{.3}{0}{0}{$b$};
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{.4}{$x$};
+%\roundNbox{unshaded}{(0,-1)}{.3}{0}{0}{$b^*$};
+%\node at (-.2,1.5) {\tiny{$k$}};
+%\node at (-.2,.5) {\tiny{$k$}};
+%\node at (-.2,-.5) {\tiny{$k$}};
+%\node at (-.2,-1.5) {\tiny{$k$}};
+%\end{tikzpicture}
+%\underset{(!)}{=}
 =
-d^{-2k} \sum_{b \in B} bxb^{\ast}
-=
-d^{-2k}
-\begin{tikzpicture}[baseline=-.1cm]
-%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-%\draw (-.75,-.7) -- (-.75,.7);
-\draw (0,-1.7) -- (0,1.7);
-\draw (.4,-1.7) -- (.4,1.7);
-\roundNbox{unshaded}{(0,1)}{.3}{0}{0}{$b$};
-\roundNbox{unshaded}{(0,0)}{.3}{0}{.4}{$x$};
-\roundNbox{unshaded}{(0,-1)}{.3}{0}{0}{$b^*$};
-\node at (-.2,1.5) {\tiny{$k$}};
-\node at (-.2,.5) {\tiny{$k$}};
-\node at (-.2,-.5) {\tiny{$k$}};
-\node at (-.2,-1.5) {\tiny{$k$}};
-\end{tikzpicture}
-\underset{(!)}{=}
 d^{-k}
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
@@ -5766,18 +5819,18 @@ d^{-k}
 %\node at (0,0) {\scriptsize{$x$}};
 \node at (0,-.9) {\tiny{$n$}};
 \node at (-1.05,0) {\tiny{$d^{-k}$}};
-\end{tikzpicture}
-\quad
-=
-\begin{tikzpicture}[baseline=-.1cm]
-\draw (0.45,-.7) -- (0.45,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$y$}
-\node at (0.45,-.9) {\tiny{$n$}};
-\node at (0,-0.9){\tiny{$k$}};
-\end{tikzpicture}\,.
+\end{tikzpicture}\,,
+%\quad
+%=
+%\begin{tikzpicture}[baseline=-.1cm]
+%\draw (0.45,-.7) -- (0.45,.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0.45,0)}{.3}{0}{0}{$y$}
+%\node at (0.45,-.9) {\tiny{$n$}};
+%\node at (0,-0.9){\tiny{$k$}};
+%\end{tikzpicture}\,.
 \end{equation*}
-The proof is similar for $\cP_{n,-}$.
+which is in the image of the map which adds $k$ strings to the left.
 \end{proof}
 
 %\nn{Do we really need the following as opposed to just showing it in the Shift by 2 Isomorphism?}
@@ -6021,15 +6074,28 @@ The map $x\mapsto px$ is an isomorphism $z(N'\cap M) \to p(N'\cap M)$.
 The proof of (1) is similar to the proof of the standard fact that $(pNp)' = N'p$.
 Clearly, $(N'\cap M)p \subseteq (N'p) \cap pMp$.
 Let $K$ be the closure of $NpH$.
-Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$.
+Let $q\in B(H)$ be the projection onto $K$, which is clearly in $N' \cap N = Z(N)$ as $K$ is both $N$- and $N'$-invariant.
 Suppose $x\in(N'p) \cap pMp$.
-Then there is $y\in  N'$ with $x=qyqp$.
-Let $x_0=qyq$.
+Then 
+since $p\leq q$ and $q\in Z(N)$, 
+there is $y\in  N'$ with $x=yp=yqp=qyqp$.
+Set $x_0:=qyq \in N'$.
 We claim that $x_0 \in M$, so that $x = x_0p \in (N' \cap M)p$.
 First, for any $m \in M'$, $n \in N$, and $\xi\in H$,
 we have
-$mx_0np\xi  = mnx_0p\xi = nx_0pm\xi = x_0npm\xi = x_0mnp\xi$.
-Thus $x_0 \in qMq \subseteq M$, as claimed.
+$$
+mx_0np\xi  
+\underset{x_0\in N'}{=} 
+mnx_0p\xi 
+\underset{nx_0p\in M}{=} 
+nx_0pm\xi 
+\underset{x_0\in N'}{=}
+x_0npm\xi 
+\underset{np\in M}{=} 
+x_0mnp\xi.
+$$
+Thus $x_0$ commutes with $M'$ on $K$, and so $x_0=x_0q$ commutes with $M'$ on $H$.
+Thus $x_0\in M$ as claimed.
 
 \item[\underline{Proof of (2):}]
 For $x\in N'\cap M$, we have $p(zx) = px$.

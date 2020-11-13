@@ -1,12 +1,13 @@
 Summary of edits to "The module embedding theorem via towers of algebras"
 
-We would like to thank the referee for their helpful comments and their careful reading of the manuscript. We have implemented the requested changes, which we summarize below.
+We would like to thank the referee for their helpful comments and their careful reading of the manuscript. We have implemented the requested changes, which have greatly improved the article. We summarize our edits below.
 
 (1) Introduction : you are using a lot of terms from category theory. If it is not possible to avoid them, at least provide a good reference to get the relevant definitions.
--Additional references have been added.
-TODO: Consider NeT for unitary/C* stuff? But Dave probably knows best.
-(2) p.4, l.40 : The tower of algebra TLJ d is never properly defined in the manuscript. Please introduce it, since it plays a central role in the paper.
--The Markov tower TLJ is now called out as an important example of a Markov tower obtained from a planar algebra, as Example 3.10.
+-Additional references to textbooks on (C*) tensor categories have been added.
+
+(2) p.4, l.40 : The tower of algebra TLJ_d is never properly defined in the manuscript. Please introduce it, since it plays a central role in the paper.
+-We now begin Section 3.2 with two important examples of Markov towers: the + box spaces of a planar algebra, and in particular the tower of TLJ algebras. These are now Examples 3.9 and 3.10 respectively.
+
 (3) p.4, l.41 : add that the graph is locally finite.
 -done
 
@@ -42,19 +43,19 @@ need to add the inner disk 1, since the definition of Mv implies that the left w
 -fixed
 
 (14) p.13, l.44 : is there any difference between p_n and E_n ?
--Yes, e_n \in M_{n+1}, but p_n is the abstract Jones projection from the basic construction of M_{n-1}\subset M_n. 
-TODO: explicitly state what p_n is.
+-Yes, e_n \in M_{n+1} comes from the propert (M1) of a Markov tower, but p_\in B(L^2(M_n,\tr_n)) is the abstract Jones projection from the basic construction of M_{n-1}\subset M_n. 
 
 (15) p.14, l.25 : why do you claim that y commute with ae_{n-1} ? (which is of course true assuming the claim you are proving). Another way to prove this claim is simply to use that ae_{n−1}e_ne_{n−1}b \in X_{n+1} = M_ne_nM_n, which directly implies y(ae_{n−1}e_ne_{n−1}b) = 0 by the fact M_{n+1} = Y_{n+1}\oplus M_ne_nM_n as direct sum of von Neumann algebras.
 -y\in M_{n+1} is assumed to be a central projection as in the proof of [GHJ, THm.4.6.3(vi)], so it will commute with ae_{n-1}\in M_n. Thank you for the alternative proof.
 
 (16) p.14, l.53 : you did not mention how to unravel the graph. Maybe you could add a reference to explain it (or simply state the reflection formula, which is not so long to write down).
 -We have tried to make the forgoing description clearer.
-TODO: consider whether we did it well enough
+
 (17) p.15, l.36 : up to my knowledge, you did not define the fusion graph of a module C*-category
--We now define it when the concept is first referenced.
+-We now define it when the concept is first referenced in Example 3.11.
+
 (18) p.15, Lemma 3.12 : is there any other relation between the principal graph of M and the one of P?
--Not that comes to mind.
+-Not that comes to mind besides having the same FP eigenvalue.
 
 (19) p.15, l.50 : introduce the Pimsner-Popa basis before or at least refer to Definition 3.13 
 -We have included a reference to Def. 3.13.
@@ -88,30 +89,32 @@ TODO: consider whether we did it well enough
 
 (29) p.22, l.44 : in this equality you are using the diagrammatic formulation of the conditional expectation. It may be a good idea to mention the diagrammatic picture in the definition of a planar algebra or a Markov tower.
 -Here, we are using a diagrammatic formulation of the conditional expectation in the Markov tower TLJ, which is explained in our (newly added) Example 3.9.
+
 (30) p.24, l.51 : j \geq k
 -Fixed the mistake.
 
 (31) p.25 , L.20 : there is a k missing on top of a string.
 -Fixed
+
 (32) p.25, l.54 : could you mention the indices of both 1, in order to help the reader ?
 -Good idea.
+
 (33) p. 26 l. 17-25-32-39 : I think there may be something wrong with the exponents of d. For example, in the second equality, adding 2j + i loops should turn d^{i+j} into d^{−j}, or am I wrong?
 -Fixed
 
 (34) p.28, l.17 : ”One now shows these two processes are mutually inverse up to dagger equivalence.” It looks like there is something missing after this sentence.
--Showing these are mutually inverse is left to the reader.
-TODO: make more explicit.
-
+-Showing these are mutually inverse is left to the reader as an exercise.
+ 
 (35) p.30, l.50 : I don’t think that the map is surjective. Maybe you mean an isomorphism on the shifted planar algebra ? (I think this is what you meant, given the following theorem).
 -Good catch.
-TODO: Make sure Dave checks this. It made sense to me, but he was worried.
-(36) p.31, l.55 : how do you show that d^{−1}\sum_{b\in B} b\Phi(x)b^* corresponds to the right picture?
--This is the content of Vaughan Jones' trick from [JP, Theorem 4.1] which is marked by (!). As it is clearly marked, we do not feel that reproducing it is necessary here.
-TODO: I'm not convinced the prood here is optimal or correct. Think about this more.
 
-(37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u ∈ N′p and p ≤ q as projections in N and q \in N\cap N', you can directly write u = qvqp with v \in N' (you don't need to assume u unitary and use isometries), and your u_0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u_0mnp\xi” to conclude that qvq \in qMq.
-Since q ∈ N ⊂ M, this directly implies that u ∈ Mp.
--Thank you for this clarifying observation.
+(36) p.31, l.55 : how do you show that d^{−1}\sum_{b\in B} b\Phi(x)b^* corresponds to the right picture?
+-What was previously writte in this proof was incorrect. This follows by directly interpreting the action of tangles in the canonical planar algebra associated to a strongly Markov inclusion. We have provided the details with appropriate references.
+
+(37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u \in N′p and p \leq q as projections in N and q \in N\cap N', you can directly write u = qvqp with v \in N' (you don't need to assume u unitary and use isometries), and your u_0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u_0mnp\xi” to conclude that qvq \in qMq.
+Since q \in N \subset M, this directly implies that u \in Mp.
+-Thank you for this clarifying observation. We've updated our proof with your suggestion.
+
 (38) p.32, l.43 : delete ”we have”
 -Done
 
