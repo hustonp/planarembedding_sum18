@@ -109,7 +109,7 @@ need to add the inner disk 1, since the definition of Mv implies that the left w
 -Good catch.
 
 (36) p.31, l.55 : how do you show that d^{−1}\sum_{b\in B} b\Phi(x)b^* corresponds to the right picture?
--What was previously writte in this proof was incorrect. This follows by directly interpreting the action of tangles in the canonical planar algebra associated to a strongly Markov inclusion. We have provided the details with appropriate references.
+-What was previously written in this proof was incorrect. This follows by directly interpreting the action of tangles in the canonical planar algebra associated to a strongly Markov inclusion. We have provided the details with appropriate references.
 
 (37) p.32, proof of (1) : I think some part of the proof could be simplified. First, since u \in N′p and p \leq q as projections in N and q \in N\cap N', you can directly write u = qvqp with v \in N' (you don't need to assume u unitary and use isometries), and your u_0 corresponds to qvq. Then, you can use your reasoning ”First, ... = u_0mnp\xi” to conclude that qvq \in qMq.
 Since q \in N \subset M, this directly implies that u \in Mp.
