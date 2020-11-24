@@ -5700,7 +5700,7 @@ bxb^*
 where $B$ is some (any) Pimsner-Popa basis for $A_{k}$ over $A_0$.
 \end{lem}
 \begin{proof}
-Recall from \cite[Prop.~2.25]{} we have an isomorphism of $A_1-A_1$ bimodules
+Recall from \cite[Prop.~2.25]{MR2812459} we have an isomorphism of $A_1-A_1$ bimodules
 $$
 \theta_k : 
 \bigotimes^k_{A_0} A_1 
@@ -5714,12 +5714,12 @@ $$
 where $v_j := d^{j}e_j \cdots e_1$.
 
 Now to compute the action of tangles in the canonical planar algebra,
-we isotope it into a \emph{standard form} \nn{} and read from bottom to top.
+we isotope it into a \emph{standard form} \cite[\S2.3]{MR2812459} and read from bottom to top.
 Under the isomorphism $\theta_k$. we have
 $$
 d^{-k}\,
 \begin{tikzpicture}[baseline=-.1cm]
-\draw (-.6,-.7) -- (-.6,.7) node[above]{$\scriptstyle k$};
+\draw (-.6,-.7) -- (-.6,.7) node[above]{$\scriptstyle 2k$};
 \draw (-.15,-.7) -- (-.15,.7) node[above]{$\scriptstyle k$};
 \draw (.15,-.7) -- (.15,.7) node[above]{$\scriptstyle n$};
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
@@ -5730,8 +5730,8 @@ d^{-k}\,
 \draw (0,0) -- (0,.7) node[above]{$\scriptstyle 2n$};
 \draw (-.3,.3) -- (-.3,.7) node[above]{$\scriptstyle k$};
 \draw (.3,.3) -- (.3,.7) node[above]{$\scriptstyle k$};
-\draw (-.6,.7) -- (-.6,-.1) arc (-180:-90:.6cm) node[above]{$\scriptstyle k$} arc (-90:0:.6cm) -- (.6,.7);
-\draw (-.8,.7) -- (-.8,-.1) arc (-180:-90:.8cm) node[below]{$\scriptstyle k$} arc (-90:0:.8cm) -- (.8,.7);
+\draw (-.7,.7) -- (-.7,-.1) arc (-180:-90:.7cm) node[above]{$\scriptstyle 2k$} arc (-90:0:.7cm) -- (.7,.7);
+%\draw (-.8,.7) -- (-.8,-.1) arc (-180:-90:.8cm) node[below]{$\scriptstyle k$} arc (-90:0:.8cm) -- (.8,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{.15}{.15}{$x$};
 \end{tikzpicture}
 =
@@ -5739,20 +5739,21 @@ d^{-2k}\sum_{c_1,\dots,c_k\in C} c_k \otimes \cdots \otimes c_1 \otimes x \otime
 =
 d^{-2k}\sum_{b\in B} b \otimes x \otimes b^*.
 $$
-Here, we define $B:= \set{c_k \otimes \cdots \otimes c_1}{c_1,\dots,c_k\in C}$, which is easily seen to be a Pimsner-Popa basis for $A_k$ over $A_0$ under the $A_0-A_0$ bimodule isomorphism $A_k \cong \bigotimes^k_{A_0} A_1$.
-(Observe this isomorphism )
-\todo{fix all this.}
-Next, we observe that the multiplication is given graphically by stacking, which under standard form isotopy looks as follows:
+Here, we define $B:= \set{c_k \otimes \cdots \otimes c_1}{c_1,\dots,c_k\in C}$, and it is easy to see that $\theta_k^{-1}(B)$ is a Pimsner-Popa basis for $A_k$ over $A_0$.
+Finally, the diagram in question in obtained from the above diagram by applying two $k$-cabled caps on top, which corresponds to the $A_k-A_k$ bimodule structure on $A_{n+k}$ under the isomorphism $\theta_{n+k}$, i.e.,
 $$
+d^{-k}\,
 \begin{tikzpicture}[baseline=-.1cm]
-\draw (-.6,-.7) -- (-.6,.7) node[above]{$\scriptstyle k$};
-\draw (-.15,-.7) -- (-.15,.7) node[above]{$\scriptstyle k$};
-\draw (.15,-.7) -- (.15,.7) node[above]{$\scriptstyle n$};
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) node[below]{$\scriptsize n$} -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\node at (-.55,0) {\tiny{$k$}};
+\node at (-.85,0) {\tiny{$k$}};
+%\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
-$$
-Hence
-$$
+\xrightarrow{\text{isotopy}}
+d^{-k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (0,0) -- (0,.7) node[above]{$\scriptstyle 2n$};
 \draw (-.2,.3) arc (0:180:.2cm) -- (-.6,-.1) arc (-180:-90:.6cm) node[above]{$\scriptstyle k$} arc (-90:0:.6cm) -- (.6,.3) arc (0:180:.2cm);
@@ -5760,42 +5761,9 @@ $$
 \roundNbox{unshaded}{(0,0)}{.3}{.1}{.1}{$x$};
 \end{tikzpicture}
 =
-d^{-k}\sum_{b\in B} bxb^*
+d^{-2k}\sum_{b\in B} bxb^*
 $$
 as claimed.
-
-
-
-
-\todo{}
-
-
-%
-%In the figure below, we do the special case $k=3$, where $C$ is some choice of Pimsner-Popa basis for $A_1$ over $A_0$:
-%$$
-%\begin{tikzpicture}[baseline=-.1cm]
-%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-%\draw (-.75,-.7) -- (-.75,.7);
-%\draw (0,-.7) -- (0,.7);
-%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-%\node at (-.55,0) {\tiny{$3$}};
-%\node at (-.85,0) {\tiny{$3$}};
-%%\node at (0,0) {\scriptsize{$x$}};
-%\end{tikzpicture}
-%\xrightarrow{\text{isotopy}}
-%\begin{tikzpicture}[baseline=-.1cm]
-%\draw (0,0) -- (0,.5);
-%\roundNbox{unshaded}{(0,0)}{.3}{.2}{.2}{$x$};
-%\end{tikzpicture}
-%\todo{}
-%$$
-%$$
-%B=\set{c_{k-1} v_{k-1}c_{k-2}v_{k-2}\cdots v_{1} c_1}{c_1,\dots, c_{k-1} \in C}
-%$$
-%for some/any Pimsner-Popa basis $C$ for $A_1$ over $A_0$ 
-%and
-%$v_i := e_{i}\cdots e_2e_1$ for all $i$.
-%\todo{something like this works... check the indices}
 \end{proof}
 
 
