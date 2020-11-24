@@ -5673,7 +5673,131 @@ and is independent of the choice of basis.
 \end{prop}
 From the definition of the canonical $\dag$-planar algebra $\cP_\bullet$ of $A_\bullet$, one can work out that (in the language of Lemma \ref{lem:SufficientConditionsForPlanarMap}), right capping is simply the conditional expectation in the Markov tower $A_\bullet$, while left capping is the expectation on relative commutants described in the previous proposition. 
 Thus, left capping is how the Pimsner-Popa basis shows itself graphically. 
-The full details can be found in \cite[Prop.~2.47]{MR2812459}. 
+We formalize this statement in the following lemma.
+%The full details can be found in \cite[Prop.~2.47]{MR2812459}. 
+
+\begin{lem}
+\label{lem:GraphicalLeftCap}
+For $x\in A_k'\cap A_{n+k}$,
+the action of tangles for the canonical planar algebra associated to a strongly Markov inclusion \cite[\S2.3]{MR2812459} gives the equality
+\begin{equation*}
+%\label{eq:kStringLeftCap}
+d^{-k}
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+\draw (-.75,-.7) -- (-.75,.7);
+\draw (0,-.7) -- (0,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\node at (-.55,0) {\tiny{$k$}};
+\node at (-.85,0) {\tiny{$k$}};
+%\node at (0,0) {\scriptsize{$x$}};
+\end{tikzpicture}
+=
+d^{-2k}
+\sum_{b\in B}
+bxb^*
+\end{equation*}
+where $B$ is some (any) Pimsner-Popa basis for $A_{k}$ over $A_0$.
+\end{lem}
+\begin{proof}
+Recall from \cite[Prop.~2.25]{} we have an isomorphism of $A_1-A_1$ bimodules
+$$
+\theta_k : 
+\bigotimes^k_{A_0} A_1 
+\longrightarrow 
+A_k
+\qquad\text{given by}\qquad
+a_1\otimes \cdots \otimes a_k
+\longmapsto
+a_1 v_1\cdots v_{k-1}a_k
+$$
+where $v_j := d^{j}e_j \cdots e_1$.
+
+Now to compute the action of tangles in the canonical planar algebra,
+we isotope it into a \emph{standard form} \nn{} and read from bottom to top.
+Under the isomorphism $\theta_k$. we have
+$$
+d^{-k}\,
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-.6,-.7) -- (-.6,.7) node[above]{$\scriptstyle k$};
+\draw (-.15,-.7) -- (-.15,.7) node[above]{$\scriptstyle k$};
+\draw (.15,-.7) -- (.15,.7) node[above]{$\scriptstyle n$};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\end{tikzpicture}
+\xrightarrow{\text{isotopy}}
+d^{-k}\,
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (0,0) -- (0,.7) node[above]{$\scriptstyle 2n$};
+\draw (-.3,.3) -- (-.3,.7) node[above]{$\scriptstyle k$};
+\draw (.3,.3) -- (.3,.7) node[above]{$\scriptstyle k$};
+\draw (-.6,.7) -- (-.6,-.1) arc (-180:-90:.6cm) node[above]{$\scriptstyle k$} arc (-90:0:.6cm) -- (.6,.7);
+\draw (-.8,.7) -- (-.8,-.1) arc (-180:-90:.8cm) node[below]{$\scriptstyle k$} arc (-90:0:.8cm) -- (.8,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{.15}{.15}{$x$};
+\end{tikzpicture}
+=
+d^{-2k}\sum_{c_1,\dots,c_k\in C} c_k \otimes \cdots \otimes c_1 \otimes x \otimes c_1^*\otimes \cdots \otimes c_k^*
+=
+d^{-2k}\sum_{b\in B} b \otimes x \otimes b^*.
+$$
+Here, we define $B:= \set{c_k \otimes \cdots \otimes c_1}{c_1,\dots,c_k\in C}$, which is easily seen to be a Pimsner-Popa basis for $A_k$ over $A_0$ under the $A_0-A_0$ bimodule isomorphism $A_k \cong \bigotimes^k_{A_0} A_1$.
+(Observe this isomorphism )
+\todo{fix all this.}
+Next, we observe that the multiplication is given graphically by stacking, which under standard form isotopy looks as follows:
+$$
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (-.6,-.7) -- (-.6,.7) node[above]{$\scriptstyle k$};
+\draw (-.15,-.7) -- (-.15,.7) node[above]{$\scriptstyle k$};
+\draw (.15,-.7) -- (.15,.7) node[above]{$\scriptstyle n$};
+\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+\end{tikzpicture}
+$$
+Hence
+$$
+\begin{tikzpicture}[baseline=-.1cm]
+\draw (0,0) -- (0,.7) node[above]{$\scriptstyle 2n$};
+\draw (-.2,.3) arc (0:180:.2cm) -- (-.6,-.1) arc (-180:-90:.6cm) node[above]{$\scriptstyle k$} arc (-90:0:.6cm) -- (.6,.3) arc (0:180:.2cm);
+\draw (-.8,.7) -- (-.8,-.1) arc (-180:-90:.8cm) node[below]{$\scriptstyle k$} arc (-90:0:.8cm) -- (.8,.7);
+\roundNbox{unshaded}{(0,0)}{.3}{.1}{.1}{$x$};
+\end{tikzpicture}
+=
+d^{-k}\sum_{b\in B} bxb^*
+$$
+as claimed.
+
+
+
+
+\todo{}
+
+
+%
+%In the figure below, we do the special case $k=3$, where $C$ is some choice of Pimsner-Popa basis for $A_1$ over $A_0$:
+%$$
+%\begin{tikzpicture}[baseline=-.1cm]
+%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+%\draw (-.75,-.7) -- (-.75,.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+%\node at (-.55,0) {\tiny{$3$}};
+%\node at (-.85,0) {\tiny{$3$}};
+%%\node at (0,0) {\scriptsize{$x$}};
+%\end{tikzpicture}
+%\xrightarrow{\text{isotopy}}
+%\begin{tikzpicture}[baseline=-.1cm]
+%\draw (0,0) -- (0,.5);
+%\roundNbox{unshaded}{(0,0)}{.3}{.2}{.2}{$x$};
+%\end{tikzpicture}
+%\todo{}
+%$$
+%$$
+%B=\set{c_{k-1} v_{k-1}c_{k-2}v_{k-2}\cdots v_{1} c_1}{c_1,\dots, c_{k-1} \in C}
+%$$
+%for some/any Pimsner-Popa basis $C$ for $A_1$ over $A_0$ 
+%and
+%$v_i := e_{i}\cdots e_2e_1$ for all $i$.
+%\todo{something like this works... check the indices}
+\end{proof}
+
 
 \begin{cor}
 \label{cor:OntoCor}
@@ -5722,51 +5846,29 @@ $A'_1 \cap A_{n}\to A'_{k+1} \cap A_{n+k+1}$
 
 \begin{proof} 
 We prove the result for $\cP_{n,+} = A_0'\cap A_n$; the proof for $\cP_{n,-}$ is similar.
-The map adding $k$ strings to the left is clearly an injective $*$-algebra map.
-By the definition of the action of tangles for canonical planar algebra associated to a strongly Markov inclusion \cite[\S2.3]{MR2812459},
-\begin{equation}
-\label{eq:kStringLeftCap}
-d^{-k}
-\begin{tikzpicture}[baseline=-.1cm]
-\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-.75,-.7) -- (-.75,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-\node at (-.55,0) {\tiny{$k$}};
-\node at (-.85,0) {\tiny{$k$}};
-%\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}
-=
-d^{-2(k-j)}
-\sum_{b}
-bxb^*
-\end{equation}
-for some Pimsner-Popa basis $B$ for $A_{k}$ over $A_0$.
-In more detail, 
-$$
-B=\set{c_{k-1} v_{k-1}c_{k-2}v_{k-2}\cdots v_{1} c_1}{c_1,\dots, c_{k-1} \in C}
-$$
-for some/any Pimsner-Popa basis $C$ for $A_1$ over $A_0$ 
-and
-$v_i := e_{i}\cdots e_2e_1$ for all $i$.
-\todo{something like this works... check the indices}
-By Proposition \ref{prop:LeftCapping}, the right hand side of \eqref{eq:kStringLeftCap} above is exactly $E^{A_0'}_{A_k'}(x)$;
-hence the conditional expectation $E^{A_0'}_{A_k'}: A_0'\cap A_{n+k} \to A_k'\cap A_{n+k}$ is given diagrammatically by
-$$
-E^{A_0'}_{A_k'}(x)
-=
-d^{-k}
-\begin{tikzpicture}[baseline=-.1cm]
-\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-.75,-.7) -- (-.75,.7);
-\draw (0,-.7) -- (0,.7);
-\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-\node at (-.55,0) {\tiny{$k$}};
-\node at (-.85,0) {\tiny{$k$}};
-%\node at (0,0) {\scriptsize{$x$}};
-\end{tikzpicture}\,.
-$$
-Thus if $x\in A_k'\cap A_{n+k}$, we have
+Denote the map adding $k$ strings to the left by $\psi$.
+Clearly $\psi$ is an injective $*$-algebra map.
+By combining Proposition \ref{prop:LeftCapping} and Lemma \ref{lem:GraphicalLeftCap},
+for $x\in A_{k}'\cap A_{n+k}$, for some Pimsner-Popa basis $B$ for $A_k$ over $A_0$, we have
+%$$
+%x
+%=
+%E^{A_0'}_{A_k'}(x)
+%=
+%d^{-2k}\sum_{b\in B} bxb^*
+%=
+%d^{-k}
+%\begin{tikzpicture}[baseline=-.1cm]
+%\draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
+%\draw (-.75,-.7) -- (-.75,.7);
+%\draw (0,-.7) -- (0,.7);
+%\roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
+%\node at (-.55,0) {\tiny{$k$}};
+%\node at (-.85,0) {\tiny{$k$}};
+%%\node at (0,0) {\scriptsize{$x$}};
+%\end{tikzpicture}\,.
+%$$
+%Thus if $x\in A_k'\cap A_{n+k}$, we have
 %The following implicitly uses a trick due to Vaughan Jones that can be found in \cite[Theorem~4.1]{MR2812459} along with the pictorial description of $f^{n}_{n-k}$ in the Multistep Basic Construction \cite[Remark~2.44]{MR2812459} in the equality marked $(!)$. 
 %Let $B$ be a Pimsner-Popa basis for $A_k$ over $A_0$.
 %By the multistep basic construction for strongly Markov inclusions \cite[Prop.~2.20]{MR2812459},
@@ -5779,7 +5881,8 @@ Thus if $x\in A_k'\cap A_{n+k}$, we have
 x
 =
 E_{A'_k}^{A_0'}(x)
-%d^{-2k} \sum_{b \in B} bxb^{\ast}
+\underset{\text{Prop.~\ref{prop:LeftCapping}}}{=}
+d^{-2k} \sum_{b \in B} bxb^*
 %=
 %d^{-2k}
 %\begin{tikzpicture}[baseline=-.1cm]
@@ -5796,7 +5899,7 @@ E_{A'_k}^{A_0'}(x)
 %\node at (-.2,-1.5) {\tiny{$k$}};
 %\end{tikzpicture}
 %\underset{(!)}{=}
-=
+\underset{\text{Lem.~\ref{lem:GraphicalLeftCap}}}{=}
 d^{-k}
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
@@ -5805,21 +5908,23 @@ d^{-k}
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
 \node at (-.55,0) {\tiny{$k$}};
 \node at (-.85,0) {\tiny{$k$}};
+\node at (0,-.9) {\tiny{$n$}};
 %\node at (0,0) {\scriptsize{$x$}};
 \end{tikzpicture}
 =
+\psi\left(d^{-k}\,
 \begin{tikzpicture}[baseline=-.1cm]
 \draw (-.15,.3) arc(0:180:.15) -- (-.45,-.3) arc(-180:0:.15);
-\draw (-1.5,-.7) -- (-1.5,.7);
+%\draw (-1.5,-.7) -- (-1.5,.7);
 \draw (0,-.7) -- (0,.7);
 \roundNbox{unshaded}{(0,0)}{.3}{0}{0}{$x$};
-\draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
+%\draw[dashed] (-.75,-.5) -- (.5,-.5) -- (.5,.5) -- (-.75,.5) -- (-.75,-.5);
 \node at (-.55,0) {\tiny{$k$}};
-\node at (-1.6,0) {\tiny{$k$}};
+%\node at (-1.6,0) {\tiny{$k$}};
 %\node at (0,0) {\scriptsize{$x$}};
 \node at (0,-.9) {\tiny{$n$}};
-\node at (-1.05,0) {\tiny{$d^{-k}$}};
-\end{tikzpicture}\,,
+%\node at (-1.05,0) {\tiny{$d^{-k}$}};
+\end{tikzpicture}\right).
 %\quad
 %=
 %\begin{tikzpicture}[baseline=-.1cm]
@@ -5830,7 +5935,7 @@ d^{-k}
 %\node at (0,-0.9){\tiny{$k$}};
 %\end{tikzpicture}\,.
 \end{equation*}
-which is in the image of the map which adds $k$ strings to the left.
+We conclude that $\psi$ is a unital $*$-algebra isomorphism.
 \end{proof}
 
 %\nn{Do we really need the following as opposed to just showing it in the Shift by 2 Isomorphism?}
