@@ -1,6 +1,15 @@
 Summary of edits to "The module embedding theorem via towers of algebras"
 
-We would like to thank the referee for their helpful comments and their careful reading of the manuscript. We have implemented the requested changes, which have greatly improved the article. We summarize our edits below.
+We would like to thank the referee for their helpful comments and their careful reading of the manuscript. We have implemented the requested changes, which have greatly improved the article. We summarize our edits below. 
+
+
+General comment:
+
+I think it would have been better to also explain the meaning of this fact in terms of SU_q(2) homogeneous spaces: namely, which homogeneous spaces correspond to pivotal C*-module categories? ... I particularly invite the authors to emphasize Corollary B, and if possible to develop the relation with the results of [DC-Y]. 
+
+- TODO
+
+Minor comments:
 
 (1) Introduction : you are using a lot of terms from category theory. If it is not possible to avoid them, at least provide a good reference to get the relevant definitions.
 -Additional references to textbooks on (C*) tensor categories have been added.

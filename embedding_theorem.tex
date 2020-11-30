@@ -598,7 +598,7 @@ Our starting point is the well-known correspondence between:
 \begin{enumerate}[label={\rm(\arabic*)}]
 \item
 unitary $2\times 2$ multitensor categories $\cC$ with orthogonal decomposition into simples $1_\cC = 1_0 \oplus 1_1$ and generator $X = 1_0 \otimes X \otimes 1_1$ with its canonical spherical/balanced unitary dual functor
-(see \cite{MR2091457,1808.00323}),\footnote{
+(see \cite{MR2091457,MR4133163}),\footnote{
  That $X$ is a generator means that any proper full subcategory of $\cC$ containing $X$ which is closed under tensor product, direct sum, taking dual, and taking subobjects is equivalent to $\cC$; see Definition \ref{def:multitensor}. 
 } 
 and
@@ -617,7 +617,7 @@ $$
 (\id_m \vartriangleleft\coev_c^\dag) \circ (f\vartriangleleft\id_{\overline{c}}) \circ (\id_m \vartriangleleft \coev_c)
 ),
 $$
-where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,1808.00323}.
+where $(\overline{c}, \ev_c, \coev_c)$ is the canonical \emph{balanced} dual of $c\in \cC$ \cite{MR1444286,MR2091457,MR3342166,MR4133163}.
 
 A \emph{(connected) right planar module} $\cM_\bullet$ for a subfactor planar algebra $\cP_\bullet$ is a sequence of finite dimensional von Neumann algebras $(\cM_k)_{k\geq 0}$ with $\dim(\cM_0) = 1$,\footnote{
 The adjective \emph{connected} refers to the condition that $\dim(\cM_0) = 1$.
@@ -714,7 +714,7 @@ connected right planar modules $\cM_\bullet$ for $\cP_\bullet$.
 \end{thmalpha}
 
 One passes from (2) to (1) in Theorem \ref{thm:ModuleEquivalence} by taking the category of projections, similar to the correspondence between $\cP_\bullet$ and $(\cC, X)$ \cite{MR2559686,MR3405915}.
-One passes from (1) to (2) using the diagrammatic calculus for module categories, similar to how one gets a subfactor planar algebra from $(\cC, X)$ via the diagrammatic calculus for pivotal categories \cite{MR2811311,1808.00323}.
+One passes from (1) to (2) using the diagrammatic calculus for module categories, similar to how one gets a subfactor planar algebra from $(\cC, X)$ via the diagrammatic calculus for pivotal categories \cite{MR2811311,MR4133163}.
 
 From a pivotal semisimple right $\cC$-module $\Cstar$ category $(\cM, \Tr^\cM)$ together with a choice of simple basepoint $m\in \cM$ with $m= m\vartriangleleft 1_0$, we build a 
 tower of finite dimensional von Neumann algebras by setting
@@ -887,7 +887,7 @@ We then introduce the notion of a planar module for a subfactor planar algebra, 
 \subsection{Unitary multitensor categories and subfactor planar algebras}  
 \label{sec:CategoriesPlanarAlgberasLattices}
 
-In this section, we rapidly recall the definitions of a subfactor planar algebra \cite{math.QA/9909027} and its unitary $2\times 2$ multitensor category of projections \cite{MR2811311,1808.00323}.
+In this section, we rapidly recall the definitions of a subfactor planar algebra \cite{math.QA/9909027} and its unitary $2\times 2$ multitensor category of projections \cite{MR2811311,MR4133163}.
 
 \begin{defn}
 The \emph{shaded planar operad} consists of shaded planar tangles with the operation of composition.
@@ -1081,7 +1081,7 @@ X^{ \text{alt}\otimes n}
 \underbrace{\overline{X} \otimes X\otimes \cdots \otimes \overline{X}^?}_{n\text{ tensorands}}
 $$
 where $X^? = X$ if $n$ is odd and $\overline{X}$ when $n$ is even, and $\overline{X}^? = \overline{X}$ when $n$ is odd and $X$ when $n$ is even.
-Here, $(\overline{X}, \ev_X, \coev_X)$ is the canonical \emph{balanced} dual of $X$ \cite{MR3342166,1805.09234,1808.00323} which satisfies the zig-zag axioms and the balancing equation
+Here, $(\overline{X}, \ev_X, \coev_X)$ is the canonical \emph{balanced} dual of $X$ \cite{MR3342166,MR3994584,MR4133163} which satisfies the zig-zag axioms and the balancing equation
 $$
 \psi(\ev_X \circ (\id_{\overline{X}} \otimes f) \circ \ev_X^\dag)
 =
@@ -1097,7 +1097,7 @@ The following theorem is well-known to experts.
 \begin{thm}
 \label{thm:SubfactorTensorCategoryEquivalence}
 There is an equivalence of categories\,\footnote{We suppress the subtlety about the right hand side of this equivalence being a contractible 2-category. 
-We refer the reader to \cite{1607.06041,1808.00323} for more details.}
+We refer the reader to \cite{1607.06041,MR4133163} for more details.}
 \[
 \left\{\, 
 \parbox{4.8cm}{\rm Subfactor planar algebras $\cP_\bullet$}\,\left\}
@@ -1107,7 +1107,7 @@ We refer the reader to \cite{1607.06041,1808.00323} for more details.}
 \]
 \end{thm}
 
-Starting with a subfactor planar algebra $\cP_\bullet$, one may form its unitary $2\times 2$ multitensor category of projections $\cC$ \cite{MR2559686,MR3405915,1808.00323}, which comes with a canonical generator corresponding to the unshaded-shaded strand in $\cP_{1,+}$, and the canonical spherical unitary dual functor \cite{MR3342166,1805.09234,1808.00323}.
+Starting with a subfactor planar algebra $\cP_\bullet$, one may form its unitary $2\times 2$ multitensor category of projections $\cC$ \cite{MR2559686,MR3405915,MR4133163}, which comes with a canonical generator corresponding to the unshaded-shaded strand in $\cP_{1,+}$, and the canonical spherical unitary dual functor \cite{MR3342166,MR3994584,MR4133163}.
 This unitary $2\times 2$ multitensor category can also be thought of as a unitary 2-category called the \emph{paragroup}; we refer the reader to \cite{MR3157990} for more details.
 
 Starting with a pair $(\cC, X)$, we get a subfactor planar algebra by defining
@@ -1117,7 +1117,7 @@ $$
 \cP_{n,-} := \End_\cC(\overline{X}^{ \text{alt} \otimes n}),
 $$
 and we define the action of the shaded planar operad via the diagrammatic calculus for pivotal tensor categories.
-We refer the reader to \cite{MR2811311,1808.00323} for more details.
+We refer the reader to \cite{MR2811311,MR4133163} for more details.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Modules for unitary multitensor categories and subfactor planar algebras}
