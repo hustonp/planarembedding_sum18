@@ -6347,7 +6347,7 @@ First, note that $\Phi_{n,\pm}(e_n) = pe_n$, so Jones projections in $\cP_\bulle
 Hence Condition (1) of Lemma \ref{lem:SufficientConditionsForPlanarMap} is satisfied.
 
 The only interesting part in checking Condition (2) of Lemma \ref{lem:SufficientConditionsForPlanarMap} holds is verifying that left capping commutes with $\Phi_{n,\pm}$.
-First, by Proposition \ref{prop:LeftCapping}, if $\{b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$, then for all $x\in \cP_{n,+}= A_0'\cap A_n$,
+First, by Proposition \ref{prop:LeftCapping}, if $\{b\}$ is any Pimsner-Popa basis for $A_1$ over $A_0$, then for all $x\in \cP_{n,+}= A_0'\cap A_n$,
 $$
 \begin{tikzpicture}[xscale=-1, baseline = -.1cm]
  \fill[shaded] (.6,-.5) -- (.6,.5) -- (0,.5) -- (0,-.5);
@@ -6360,7 +6360,7 @@ $$
 =
 d^{-1} \sum_{b} b xb^*.
 $$
-This means that picking Pimsner-Popa bases $\{b\}$ for $A_1$ over $A_0$ and $\{a\}$ for $pA_1p$ over $pA_0p$, we must show that
+This means that, picking Pimsner-Popa bases $\{b\}$ for $A_1$ over $A_0$ and $\{a\}$ for $pA_1p$ over $pA_0p$, we must show that
 \begin{equation}
 \label{eq:LeftCappingForCompression}
 \Phi_{n-1,-}
@@ -6390,13 +6390,13 @@ d^{-1}\sum_{a} apxa^*
 .
 \end{equation}
 The trick is to carefully choose our Pimsner-Popa basis for $A_1$ over $A_0$.
-We take the Pimsner-Popa basis $\{a\}$ for $pA_1p$ over $pA_0p$ and we take the disjoint union with $\{(1-p)b\}$, where $\{b\}$ was our Pimsner-Popa basis for $A_1$ over $A_0$.
-We now claim $\{c\} = \{a\}\cup \{(1-p)b\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$.
+We take the Pimsner-Popa basis $\{a\}$ for $pA_1p$ over $pA_0p$ and take the disjoint union with $\{(1-p)c\}$, where $\{c\}$ is a Pimsner-Popa basis for $A_1$ over $A_0$.
+We now claim $\{b\} = \{a\}\cup \{(1-p)c\}$ is also a Pimsner-Popa basis for $A_1$ over $A_0$.
 Indeed, since $a = pap \in pA_1p$ for all $a\in \{a\}$, we have
 $$
-\sum_{c} c e_1 c^*
+\sum_{b} b e_1 b^*
 =
-\sum_{a} ape_1 a^* + \sum_{b} (1-p)be_1 b^*(1-p) 
+\sum_{a} ape_1 a^* + \sum_{c} (1-p)ce_1 c^*(1-p)
 %=
 %\sum_{a} ape_1a^* + (1-p)\left(\sum_{b} be_1 b^*\right)(1-p) 
 =
@@ -6404,11 +6404,11 @@ p+(1-p)
 = 
 1_{A_2}.
 $$
-Thus for this special choice of Pimsner-Popa basis for $A_1$ over $A_0$, we immediately obtain
+Thus, for this special choice of Pimsner-Popa basis for $A_1$ over $A_0$, we immediately obtain
 $$
-p\sum_{c} c xc^* 
+p\sum_{b} b xb^*
 = 
-p\left(\sum_{a} a(px)a^* + \sum_{b} (1-p)bx b^*(1-p) \right)
+p\left(\sum_{a} a(px)a^* + \sum_{b} (1-p)cx c^*(1-p) \right)
 =
 \sum_{a} apxa^*.
 $$
