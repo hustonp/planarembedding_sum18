@@ -7,7 +7,7 @@ General comment:
 
 I think it would have been better to also explain the meaning of this fact in terms of SU_q(2) homogeneous spaces: namely, which homogeneous spaces correspond to pivotal C*-module categories? ... I particularly invite the authors to emphasize Corollary B, and if possible to develop the relation with the results of [DC-Y]. 
 
-- We agree that this would be an interesting question, but we feel it is beyond to scope of the present article. Investigating this connection would require a deep analysis of quantum homogeneous spaces. We have included the following paragraph after the statement of Corollary B:
+- We agree that this is an interesting question, but we feel it is beyond to scope of the present article. Investigating this connection would require a deep analysis of quantum homogeneous spaces. We have included the following paragraph after the statement of Corollary B:
 
 "It would be interesting to determine under the Tannaka-Krein duality of \cite{MR3420332} which property on the (Morita class) of quantum homogeneous space over $SU_q(2)$ corresponds to the existence of a compatible module trace $\Tr^\cM$ on the corresponding module category $\cM$."
 
