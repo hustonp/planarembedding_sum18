@@ -1,0 +1,144 @@
+ \documentclass[11pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb}
+ \usepackage{tikz}
+ 	 \usetikzlibrary{arrows,backgrounds}
+\usepackage[all]{xy}
+\usetikzlibrary{shapes}
+\usetikzlibrary{cd}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations,decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{fit,calc,through}
+\usetikzlibrary{external}
+\usetikzlibrary{arrows}
+\tikzset{vertex/.style = {shape=circle,draw,fill=black,inner sep=0pt,minimum size=5pt}}
+\tikzset{edge/.style = {->,> = latex', bend right}}
+\tikzset{
+	super thick/.style={line width=3pt}
+}
+\tikzset{
+    quadruple/.style args={[#1] in [#2] in [#3] in [#4]}{
+        #1,preaction={preaction={preaction={draw,#4},draw,#3}, draw,#2}
+    }
+}
+\tikzstyle{shaded}=[fill=gray!25!white]
+\tikzstyle{shadedpink}=[left color= white, right color = Salmon]
+\tikzstyle{unshaded}=[fill=white]
+\tikzstyle{empty box}=[circle, draw, thick, fill=white, opaque, inner sep=2mm]
+\tikzstyle{annular}=[scale=.7, inner sep=1mm, baseline]
+\tikzstyle{rectangular}=[scale=.75, inner sep=1mm, baseline=-.1cm]
+\tikzstyle{mid>}=[decoration={markings, mark=at position 0.5 with {\arrow{>}}}, postaction={decorate}]
+\tikzstyle{mid<}=[decoration={markings, mark=at position 0.5 with {\arrow{<}}}, postaction={decorate}]
+\tikzstyle{over}=[double, draw=white, super thick, double=]
+\tikzstyle{relativecommutantshading}=[fill=blue!20!white]
+\tikzstyle{ctwoshading}=[fill=red!15!white]
+
+\newcommand{\roundNbox}[6]{
+	\draw[rounded corners=5pt, very thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
+	\coordinate (ZZa) at ($#2+(-#4,0)$);
+	\coordinate (ZZb) at ($#2+(#5,0)$);
+	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
+}
+
+
+\newcommand{\nbox}[6]{
+	\draw[thick, #1] ($#2+(-#3,-#3)+(-#4,0)$) rectangle ($#2+(#3,#3)+(#5,0)$);
+	\coordinate (ZZa) at ($#2+(-#4,0)$);
+	\coordinate (ZZb) at ($#2+(#5,0)$);
+	\node at ($1/2*(ZZa)+1/2*(ZZb)$) {#6};
+}
+
+\newcommand{\ncircle}[5]{
+	\draw[very thick, #1] #2 circle (#3);
+	\node at #2 {#5};
+%	\filldraw[red] ($#2+(#4:#3cm)$) circle (.05cm);
+	\node at ($#2+(#4:.15cm)+(#4:#3cm)$) {$\star$};
+}
+
+\newcommand{\halfcircle}[4]{
+	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (#3,#3) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) + (0,.0211) $); 
+	\node at ($ #2 + .75*(#3,0) $) {#4};
+}
+
+\newcommand{\openhalfcircle}[5]{
+	\draw[very thick, #1] ($ #2 + (0,#3) $) -- ($ #2 + (#4,0) + (#3,#3) $) arc (90:-90:#3cm) -- ($ #2 - (0,#3) $) -- ($ #2 + (0,#3) $); 
+	\draw[ultra thick, white] ($ #2 + (0,#3) - (0,.0211) $) -- ($ #2 - (0,#3) + (0,.0211) $);
+	\node at ($ #2 + .75*(#3,0) +.5*(#4,0) $) {#5};
+}
+
+  \newcommand{\tikzmath}[2][]
+     {\vcenter{\hbox{\begin{tikzpicture}[#1]#2
+                     \end{tikzpicture}}}
+     }
+
+
+ \tikzset{
+  rectangle with rounded corners north west/.initial=5pt,
+  rectangle with rounded corners south west/.initial=5pt,
+  rectangle with rounded corners north east/.initial=5pt,
+  rectangle with rounded corners south east/.initial=5pt,
+}
+\makeatletter
+\pgfdeclareshape{rectangle with rounded corners}{
+  \inheritsavedanchors[from=rectangle] % this is nearly a rectangle
+  \inheritanchorborder[from=rectangle]
+  \inheritanchor[from=rectangle]{center}
+  \inheritanchor[from=rectangle]{north}
+  \inheritanchor[from=rectangle]{south}
+  \inheritanchor[from=rectangle]{west}
+  \inheritanchor[from=rectangle]{east}
+  \inheritanchor[from=rectangle]{north east}
+  \inheritanchor[from=rectangle]{south east}
+  \inheritanchor[from=rectangle]{north west}
+  \inheritanchor[from=rectangle]{south west}
+  \backgroundpath{% this is new
+    % store lower right in xa/ya and upper right in xb/yb
+    \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+    \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+    % construct main path
+    \pgfkeysgetvalue{/tikz/rectangle with rounded corners north west}{\pgf@rectc}
+    \pgfsetcornersarced{\pgfpoint{\pgf@rectc}{\pgf@rectc}}
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+    \pgfkeysgetvalue{/tikz/rectangle with rounded corners north east}{\pgf@rectc}
+    \pgfsetcornersarced{\pgfpoint{\pgf@rectc}{\pgf@rectc}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+    \pgfkeysgetvalue{/tikz/rectangle with rounded corners south east}{\pgf@rectc}
+    \pgfsetcornersarced{\pgfpoint{\pgf@rectc}{\pgf@rectc}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+    \pgfkeysgetvalue{/tikz/rectangle with rounded corners south west}{\pgf@rectc}
+    \pgfsetcornersarced{\pgfpoint{\pgf@rectc}{\pgf@rectc}}
+    \pgfpathclose
+ }
+}
+\newcommand{\dave}[1]{\marginpar{\tiny \textcolor{orange}{DP: #1}}}
+
+\begin{document}
+
+
+\dave{here's a representative tangle from the operad i'd like to use.}
+%\makeatother
+\begin{tikzpicture}
+  \node[
+  draw, very thick, 
+  shape=rectangle with rounded corners,
+  rectangle with rounded corners north west=0pt,
+  rectangle with rounded corners south west=0pt,
+  rectangle with rounded corners north east=5pt,
+  rectangle with rounded corners south east=5pt,
+] (a) {Long piece of text};
+\end{tikzpicture}
+
+$$
+\begin{tikzpicture}
+	\halfcircle{}{(0,0)}{2}{}
+	\openhalfcircle{}{(0,1)}{.3}{0}{$n$}
+	\openhalfcircle{}{(0,-1)}{.3}{.4}{$m$}
+	\ncircle{unshaded}{(2.5,1)}{.4}{180}{}
+	\ncircle{unshaded}{(1.5,0)}{.4}{0}{}
+	\ncircle{unshaded}{(2.5,-1)}{.4}{270}{}
+\end{tikzpicture}
+$$
+
+
+\end{document}
