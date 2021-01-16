@@ -1,0 +1,22 @@
+Summary of edits for R1
+
+We thank the reader for their careful reading of our revised manuscript and for these helpful comments. We address each comment below.
+
+List of minor comments.
+Example 3.8 : TLJ \to \mathcal{TLJ}
+
+-We think this is meant for the second paragraph in Example 3.10. We have changed TLJ_\bullet to \mathcal{TLJ}(d)_\bullet to denote the planar algebra.
+
+p.10, Example 2.10 : what is \Phi?
+
+-\Phi: P_\bullet \to G_\bullet is a planar algebra embedding. For some reason, we forgot to say this, which makes the example extremely confusing. We've now added it.
+
+(14) : I was thinking of E_n rather than e_n. According to me E_n and p_n are more or less the
+same object (except maybe that E_n : L^2(M_n, Tr_n) \to L^2(M_{n−1}, Tr_{n−1}) \subset L^2(M_n, Tr_n) whereas p_n = i_{M_{n−1}\subset M_n} \circ E_n is an operator from L^2(M_n,Tr_n) to L^2(M_n,Tr_n), where i_{M_{n−1}\subset M_n} is the inclusion of M_{n−1} into M_n). In any case I guess anyone familiar with Jones basic construction understands your point.
+
+-To us, E_n : M_n \to M_{n-1} is a conditional expectation, and p_n is an operator on L^2(M_n,\tr_n). You are correct that since the M_n are finite dimensional, one could make this identification if you identify M_{n-1} with its image in M_n. However, given these would be different in the infinite dimensional finite von Neumann algebra case, we feel it is better to distinguish the two, especially in light of Remark 3.5.
+
+p.32, proof of Lemma 4.5 : I don’t think you defined the set C (is it the Pimsner-Popa
+basis of A0 ⊂ A1 ?)
+
+-Yes, this is correct. Sorry for the omission.
